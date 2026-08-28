@@ -1,0 +1,13 @@
+# Nested product repositories
+/Front-End/public-site/
+/Front-End/admin-panel/
+/Back-End/
+
+# Local outputs
+/graphify-out/
+/.env
+/.env.*
+!.env.example
+*.log
+Thumbs.db
+.DS_Store

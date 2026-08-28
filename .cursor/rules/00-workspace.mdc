@@ -1,0 +1,9 @@
+---
+description: Canonical workspace boundaries and startup sequence
+alwaysApply: true
+---
+
+Read `AGENTS.md` and the target repository `AGENTS.md` before editing.
+Treat the three product directories as independent Git repositories.
+Use `Docs/00-governance/AUTHORITY-ORDER.md` to resolve document conflicts.
+Do not copy legacy frontend code. Do not invent content or API contracts.
