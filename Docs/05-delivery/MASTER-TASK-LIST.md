@@ -31,7 +31,7 @@ Status markers: `[x]` verified complete, `[ ]` not complete.
 - [x] PS-05d: Accept the resolved OpenAPI artifacts for scaffold foundation with exact schema hashes and access-test evidence.
 - [x] PS-06: Publish current-versus-target error compatibility matrix.
 - [x] PS-07: Accept same-origin reverse-proxy, cookie, CSRF, and MFA topology baseline.
-- [ ] PS-08: Populate owner-approved factual content manifest.
+- [ ] PS-08: Seed v1 ingested (`owner-content-seed-v1/`); per-record production approval still open.
 - [ ] PS-09: Approve runtime media promotion ledger records.
 - [ ] PS-10: Acquire, license, subset, and test four self-hosted font families.
 - [ ] PS-11: Implement documented CI checks and branch protection.

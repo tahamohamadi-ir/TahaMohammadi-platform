@@ -15,7 +15,7 @@
 
 ## Intake format
 
-For each record, add one row to `OWNER-CONTENT-MANIFEST.md` with its stable ID, locale, source path/URL, hash for a supplied file, approval state, publication state, translation state, and any restriction. A record may be approved for internal administration while still marked `not-public`.
+For each record, add one row to `OWNER-CONTENT-MANIFEST.md` or ingest through `owner-content-seed-v1/cms-package/`. Seed v1 is draft-only until individually approved.
 
 ## Safe defaults until supplied
 

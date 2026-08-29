@@ -1,0 +1,715 @@
+{
+  "generated_at": "2026-08-29T02:03:00-07:00",
+  "records": [
+    {
+      "content_id": "profile.identity.en",
+      "title": "Taha Mohammadi",
+      "locale": "en",
+      "content_type": "profile_identity",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "profile.identity.fa",
+      "title": "طه محمدی",
+      "locale": "fa",
+      "content_type": "profile_identity",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "profile.bio.en",
+      "title": "About Taha",
+      "locale": "en",
+      "content_type": "profile_bio",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "profile.bio.fa",
+      "title": "درباره طه محمدی",
+      "locale": "fa",
+      "content_type": "profile_bio",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "research.statement.en",
+      "title": "Research Statement",
+      "locale": "en",
+      "content_type": "research_statement",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "research.statement.fa",
+      "title": "بیانیه پژوهشی",
+      "locale": "fa",
+      "content_type": "research_statement",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "research.focus.human-centered-ai.en",
+      "title": "Human-Centered AI",
+      "locale": "en",
+      "content_type": "research_focus",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "research.focus.trustworthy-controllable-ai.en",
+      "title": "Trustworthy & Controllable AI",
+      "locale": "en",
+      "content_type": "research_focus",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "research.focus.visual-analytics-decision-support.en",
+      "title": "Visual Analytics & Decision Support",
+      "locale": "en",
+      "content_type": "research_focus",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "research.focus.behavioral-data-personalization.en",
+      "title": "Behavioral Data & Personalization",
+      "locale": "en",
+      "content_type": "research_focus",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "research.focus.edge-local-ai.en",
+      "title": "Edge & Local AI",
+      "locale": "en",
+      "content_type": "research_focus",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "research.focus.digital-health-wearable-ai.en",
+      "title": "Digital Health & Wearable AI",
+      "locale": "en",
+      "content_type": "research_focus",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "engineering.statement.en",
+      "title": "Engineering",
+      "locale": "en",
+      "content_type": "engineering_statement",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "engineering.statement.fa",
+      "title": "مهندسی",
+      "locale": "fa",
+      "content_type": "engineering_statement",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "project.pars-sql.en",
+      "title": "PARS-SQL / VTD-Edge",
+      "locale": "en",
+      "content_type": "project",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "project.pars-sql.fa",
+      "title": "PARS-SQL / VTD-Edge",
+      "locale": "fa",
+      "content_type": "project",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "project.behavior-platform.en",
+      "title": "Behavioral Evidence & Personalization Platform",
+      "locale": "en",
+      "content_type": "project",
+      "approval_state": "private",
+      "publication_state": "not-public",
+      "visibility": "private",
+      "restrictions": [
+        "Do not publish technical details, employer-sensitive architecture, screenshots, datasets, or internal metrics until explicitly cleared."
+      ]
+    },
+    {
+      "content_id": "project.behavior-platform.fa",
+      "title": "پلتفرم شواهد رفتاری و شخصی‌سازی",
+      "locale": "fa",
+      "content_type": "project",
+      "approval_state": "private",
+      "publication_state": "not-public",
+      "visibility": "private",
+      "restrictions": [
+        "جزئیات فنی، معماری حساس کارفرما، تصاویر، داده‌ها یا شاخص‌های داخلی تا زمان اخذ مجوز صریح منتشر نشوند."
+      ]
+    },
+    {
+      "content_id": "project.dashboard-research.en",
+      "title": "Organizational Dashboard Research & Design",
+      "locale": "en",
+      "content_type": "project",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": [
+        "Publish only records, screenshots, metrics, and organization names that the owner has explicit rights to disclose."
+      ]
+    },
+    {
+      "content_id": "project.dashboard-research.fa",
+      "title": "پژوهش و طراحی داشبوردهای سازمانی",
+      "locale": "fa",
+      "content_type": "project",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": [
+        "فقط رکوردها، تصاویر، شاخص‌ها و نام سازمان‌هایی منتشر شوند که مالک سایت مجوز صریح افشای آن‌ها را دارد."
+      ]
+    },
+    {
+      "content_id": "writing.visual-discourse.en",
+      "title": "A Comparative Analysis of Reformist and Principlist Visual Discourses in Presidential Elections (1997–2017)",
+      "locale": "en",
+      "content_type": "writing",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": [
+        "Do not display as a peer-reviewed publication. Label clearly as a manuscript until a venue and publication record exist."
+      ]
+    },
+    {
+      "content_id": "writing.vtd-edge.en",
+      "title": "VTD-Edge: Reliable, Privacy-Preserving Persian NLP-to-SQL on Resource-Constrained Devices",
+      "locale": "en",
+      "content_type": "writing",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": [
+        "Do not display as published or accepted."
+      ]
+    },
+    {
+      "content_id": "writing.dashboard-book.en",
+      "title": "Guidelines for Designing Information Dashboards Using Data Storytelling Methodology",
+      "locale": "en",
+      "content_type": "writing",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": [
+        "Do not label as published until ISBN/publisher/publication evidence exists."
+      ]
+    },
+    {
+      "content_id": "writing.dashboard-book.fa",
+      "title": "راهنمای طراحی داشبوردهای اطلاعاتی با رویکرد داستان‌گویی داده",
+      "locale": "fa",
+      "content_type": "writing",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": [
+        "تا زمان وجود شواهد ناشر/ISBN/انتشار، به‌عنوان اثر منتشرشده برچسب نخورد."
+      ]
+    },
+    {
+      "content_id": "education.ma.visual-communication.en",
+      "title": "M.A. in Visual Communication",
+      "locale": "en",
+      "content_type": "education",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": [
+        "Confirm dates, GPA, and thesis wording against official academic records before publication."
+      ]
+    },
+    {
+      "content_id": "education.ma.visual-communication.fa",
+      "title": "کارشناسی ارشد ارتباط تصویری",
+      "locale": "fa",
+      "content_type": "education",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": [
+        "تاریخ‌ها، معدل و عنوان پایان‌نامه پیش از انتشار با مدارک رسمی تطبیق داده شوند."
+      ]
+    },
+    {
+      "content_id": "education.ba.interior-architecture.en",
+      "title": "B.A. in Interior Architecture",
+      "locale": "en",
+      "content_type": "education",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": [
+        "Confirm dates and GPA against official academic records before publication."
+      ]
+    },
+    {
+      "content_id": "education.ba.interior-architecture.fa",
+      "title": "کارشناسی معماری داخلی",
+      "locale": "fa",
+      "content_type": "education",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": [
+        "تاریخ‌ها و معدل پیش از انتشار با مدارک رسمی تطبیق داده شوند."
+      ]
+    },
+    {
+      "content_id": "experience.mci.en",
+      "title": "Software Engineer — Mobile Communication Company of Iran (MCI)",
+      "locale": "en",
+      "content_type": "experience",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": [
+        "Keep employer-sensitive details out of public copy."
+      ]
+    },
+    {
+      "content_id": "experience.mci.fa",
+      "title": "مهندس نرم‌افزار — همراه اول",
+      "locale": "fa",
+      "content_type": "experience",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": [
+        "Keep employer-sensitive details out of public copy."
+      ]
+    },
+    {
+      "content_id": "experience.naeo.en",
+      "title": "Researcher & Dashboard Product Designer — National Administrative and Employment Organization of Iran",
+      "locale": "en",
+      "content_type": "experience",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": [
+        "Organization naming, screenshots, data, and outcomes require explicit disclosure approval."
+      ]
+    },
+    {
+      "content_id": "experience.naeo.fa",
+      "title": "پژوهشگر و طراح محصول داشبورد — سازمان اداری و استخدامی کشور",
+      "locale": "fa",
+      "content_type": "experience",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": [
+        "Organization naming, screenshots, data, and outcomes require explicit disclosure approval."
+      ]
+    },
+    {
+      "content_id": "experience.shaparak.en",
+      "title": "Full-Stack Developer — Shaparak Electronic Card Payment Network System",
+      "locale": "en",
+      "content_type": "experience",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": [
+        "Confirm preferred organization naming."
+      ]
+    },
+    {
+      "content_id": "experience.shaparak.fa",
+      "title": "توسعه‌دهنده فول‌استک — شاپرک",
+      "locale": "fa",
+      "content_type": "experience",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": [
+        "Confirm preferred organization naming."
+      ]
+    },
+    {
+      "content_id": "experience.sajaya.en",
+      "title": "Full-Stack Developer & UI/UX Consultant — Sajaya Negar",
+      "locale": "en",
+      "content_type": "experience",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": [
+        "Confirm preferred organization naming."
+      ]
+    },
+    {
+      "content_id": "experience.sajaya.fa",
+      "title": "توسعه‌دهنده فول‌استک و مشاور UI/UX — سجایا نگار",
+      "locale": "fa",
+      "content_type": "experience",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": [
+        "Confirm preferred organization naming."
+      ]
+    },
+    {
+      "content_id": "learning.stanford-health-ai.en",
+      "title": "Stanford Medicine AI in Healthcare Series",
+      "locale": "en",
+      "content_type": "credential",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": [
+        "Publish only after the credential/certificate source is attached to the manifest."
+      ]
+    },
+    {
+      "content_id": "learning.stanford-health-ai.fa",
+      "title": "مجموعه هوش مصنوعی در سلامت Stanford Medicine",
+      "locale": "fa",
+      "content_type": "credential",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": [
+        "فقط پس از افزودن منبع گواهی/اعتبارنامه به manifest منتشر شود."
+      ]
+    },
+    {
+      "content_id": "learning.partial-ml-dl-genai.en",
+      "title": "Additional Structured Coursework",
+      "locale": "en",
+      "content_type": "credential",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": [
+        "Keep the word 'partial'; do not present as completed certification."
+      ]
+    },
+    {
+      "content_id": "availability.phd-2027.en",
+      "title": "2027 Research Availability",
+      "locale": "en",
+      "content_type": "availability",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": [
+        "Time-sensitive availability statement; review regularly."
+      ]
+    },
+    {
+      "content_id": "availability.phd-2027.fa",
+      "title": "آمادگی برای فرصت‌های پژوهشی ۲۰۲۷",
+      "locale": "fa",
+      "content_type": "availability",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": [
+        "بیانیه زمان‌حساس است و باید به‌صورت دوره‌ای بازبینی شود."
+      ]
+    },
+    {
+      "content_id": "contact.email",
+      "title": "Email",
+      "locale": "und",
+      "content_type": "contact_link",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "contact.linkedin",
+      "title": "LinkedIn",
+      "locale": "und",
+      "content_type": "contact_link",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "contact.github",
+      "title": "GitHub",
+      "locale": "und",
+      "content_type": "contact_link",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "contact.orcid",
+      "title": "ORCID",
+      "locale": "und",
+      "content_type": "contact_link",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "contact.website",
+      "title": "Website",
+      "locale": "und",
+      "content_type": "contact_link",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "route.home.en",
+      "title": "Home",
+      "locale": "en",
+      "content_type": "route_copy",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "route.home.fa",
+      "title": "خانه",
+      "locale": "fa",
+      "content_type": "route_copy",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "route.about.en",
+      "title": "About",
+      "locale": "en",
+      "content_type": "route_copy",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "route.about.fa",
+      "title": "درباره",
+      "locale": "fa",
+      "content_type": "route_copy",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "route.research.en",
+      "title": "Research",
+      "locale": "en",
+      "content_type": "route_copy",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "route.research.fa",
+      "title": "پژوهش",
+      "locale": "fa",
+      "content_type": "route_copy",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "route.projects.en",
+      "title": "Projects",
+      "locale": "en",
+      "content_type": "route_copy",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "route.projects.fa",
+      "title": "پروژه‌ها",
+      "locale": "fa",
+      "content_type": "route_copy",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "route.writing.en",
+      "title": "Writing",
+      "locale": "en",
+      "content_type": "route_copy",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "route.writing.fa",
+      "title": "نوشتار",
+      "locale": "fa",
+      "content_type": "route_copy",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "route.publications.en",
+      "title": "Research Outputs",
+      "locale": "en",
+      "content_type": "route_copy",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "route.publications.fa",
+      "title": "خروجی‌های پژوهشی",
+      "locale": "fa",
+      "content_type": "route_copy",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "route.learning.en",
+      "title": "Learning",
+      "locale": "en",
+      "content_type": "route_copy",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "route.learning.fa",
+      "title": "یادگیری",
+      "locale": "fa",
+      "content_type": "route_copy",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "route.creative.en",
+      "title": "Creative Work",
+      "locale": "en",
+      "content_type": "route_copy",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "route.creative.fa",
+      "title": "آثار خلاقه",
+      "locale": "fa",
+      "content_type": "route_copy",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "route.cv.en",
+      "title": "CV",
+      "locale": "en",
+      "content_type": "route_copy",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "route.cv.fa",
+      "title": "رزومه",
+      "locale": "fa",
+      "content_type": "route_copy",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "route.contact.en",
+      "title": "Contact",
+      "locale": "en",
+      "content_type": "route_copy",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    },
+    {
+      "content_id": "route.contact.fa",
+      "title": "تماس",
+      "locale": "fa",
+      "content_type": "route_copy",
+      "approval_state": "needs-owner-input",
+      "publication_state": "draft",
+      "visibility": "public",
+      "restrictions": []
+    }
+  ]
+}

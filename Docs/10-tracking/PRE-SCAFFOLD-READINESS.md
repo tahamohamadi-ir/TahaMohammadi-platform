@@ -11,7 +11,7 @@ Status values: `PASS` is evidenced now; `OPEN` needs implementation or owner inp
 | PS-05 OpenAPI | PASS | `OPENAPI-ACCEPTANCE.md` locks schema hashes, endpoint inventory, canonical route/client rules, and verified access fixtures for scaffold foundation |
 | PS-06 errors | PASS | Current-versus-target matrix exists; backend normalization remains open |
 | PS-07 auth/topology | PASS | Same-origin reverse-proxy baseline documented; staging browser evidence remains open |
-| PS-08 owner content | BLOCKED | Owner content manifest has no approved factual entries yet |
+| PS-08 owner content | OPEN | Seed v1 ingested at `Docs/01-product/owner-content-seed-v1/` (66 structured records; 0 published); production approval still required per record |
 | PS-09 media | OPEN | Owner approved all local Asset sources; derivatives, route assignment, accessibility text/crop, and QA remain required |
 | PS-10 fonts | OPEN | Vazirmatn/Estedad open-font direction is recommended; final family selection plus pinned binaries, licenses, subsets, and computed-style evidence remain required |
 | PS-11 CI | OPEN | Two-phase CI rollout is defined; Phase 0 can be activated now and Phase 1 requires the selected scaffold commands/lockfiles |
