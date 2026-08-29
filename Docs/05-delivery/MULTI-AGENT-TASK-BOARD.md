@@ -103,19 +103,19 @@ Wave 4 (release)
 | PUBLIC-040 | PUBLIC-030 | Implement language gateway `/` per `ROUTE-REGISTRY.md` | Gateway renders; sets locale links |
 | PUBLIC-050 | PUBLIC-020 | Pin self-hosted fonts (Newsreader, Inter, Estedad, Vazirmatn) | WOFF2 in repo; license files present |
 | PUBLIC-060 | PUBLIC-050 | Wire `--font-display` / `--font-body` tokens per locale | Computed-style test passes |
-| PUBLIC-070 | PUBLIC-020 | Light/Dark/system theme via CSS variables + island toggle | Theme persists; no flash regression |
-| PUBLIC-080 | PUBLIC-070 | Reduced-motion and focus-visible baseline | a11y smoke checklist pass |
+| PUBLIC-070 ✅ | PUBLIC-020 | Light/Dark/system theme via CSS variables + island toggle | **Done** — WP-10 persists requested/resolved state before paint and passes multi-instance acceptance. |
+| PUBLIC-080 ✅ | PUBLIC-070 | Reduced-motion and focus-visible baseline | **Done** — WP-10 visible-focus and reduced-motion acceptance pass. |
 | PUBLIC-090 | PUBLIC-010 | Generate public API types from accepted OpenAPI hash | Types committed; hash pin in repo |
 | PUBLIC-100 | PUBLIC-090 | Implement typed API client with published-only filter | Client refuses non-published records |
 | PUBLIC-110 | PUBLIC-100 | Locale route helpers + canonical/hreflang utilities | Unit tests for `fa`/`en` paths |
 | PUBLIC-120 | PUBLIC-110, BACKEND-050 | Env schema (`PUBLIC_API_BASE`, etc.) + dev proxy config | `.env.example` validated |
-| PUBLIC-130 | PUBLIC-080 | Map design tokens from `agent-kit/tokens.json` | Token test matches authority |
+| PUBLIC-130 ✅ | PUBLIC-080 | Map design tokens from `agent-kit/tokens.json` | **Done** — portable snapshot and authority-equal token contract validate locally and centrally. |
 | PUBLIC-140 | PUBLIC-130 | Build primitives (button, link, card, tag, badge, …) per `components.json` | Story/atlas entries exist |
 | PUBLIC-150 | PUBLIC-140 | Build Header, Footer, skip link, page shell | Keyboard nav works RTL/LTR |
 | PUBLIC-160 | PUBLIC-150 | Build six shared templates from `templates.json` | Templates render in atlas |
 | PUBLIC-170 | PUBLIC-160 | Local-only Visual Atlas `DESIGN_ATLAS=1` → `/_design/` | Atlas excluded from production build |
 | PUBLIC-180 | PUBLIC-100 | Content-state components: loading, empty, unavailable, error, untranslated | State matrix tests |
-| PUBLIC-190 | PUBLIC-180, BACKEND-070 | Home page both locales using seed (draft-safe: no false publish) | No-JS HTML contains main content |
+| PUBLIC-190 [~] | PUBLIC-180, BACKEND-070 | Home page both locales using seed (draft-safe: no false publish) | **Structure complete; visual acceptance open.** Independent QA `PASS` and explicit owner acceptance remain required. |
 | PUBLIC-200 | PUBLIC-190 | About + research routes | Profile fetch uses `/api/profiles/{locale}/about` only |
 | PUBLIC-210 | PUBLIC-200 | Projects + writing indexes and detail routes | Slug only from API; unavailable honest |
 | PUBLIC-220 | PUBLIC-210 | Publications, teaching, creative routes with seed empty states | Creative/teaching/CV empty copy from seed v1.1 |
@@ -130,6 +130,12 @@ Wave 4 (release)
 | PUBLIC-310 | PUBLIC-300 | Contract fixture tests vs OpenAPI | CI green |
 | PUBLIC-320 | BACKEND-180 | Integrated smoke with backend staging | Cookies/proxy pass |
 | PUBLIC-350 | PUBLIC-320 | Public release evidence package | `R4` + `R8` public slice complete |
+
+### Home recovery hold
+
+- WP-10 closes only `PUBLIC-070`, `PUBLIC-080`, and `PUBLIC-130`; `PUBLIC-140` through `PUBLIC-180` remain owned by their assigned packets.
+- `PUBLIC-190` is not Done: its structure is complete, but visual acceptance is open pending `PUBLIC-180`, `BACKEND-070`, independent visual QA `PASS`, and explicit owner acceptance.
+- `PUBLIC-200+` is frozen until that acceptance. This does not mark R3 or R4 complete.
 
 ---
 

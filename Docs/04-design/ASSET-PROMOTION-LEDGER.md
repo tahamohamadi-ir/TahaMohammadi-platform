@@ -18,6 +18,20 @@ The owner approved the contents of `Front-End/Assets` on 2026-08-29 as source ma
 | learning-sage-library | `art/learning-sage-library.png` | Teaching preview | **Pending owner mapping** | Suggested: defer until teaching records exist. |
 | gallery-ivory-forms | `art/gallery-ivory-forms.png` | Creative preview | **Pending owner mapping** | Suggested: defer until creative portfolio exists. |
 
+## Owner decisions recorded for Home + Gateway recovery
+
+These decisions resolve role and mapping only. They do **not** establish derivatives, runtime promotion, accessible text alternatives, crop rules, or visual acceptance.
+
+| Decision | Scope | Promotion boundary retained |
+|---|---|---|
+| Existing logo and favicon approved as-is; derivatives allowed, redesign not approved. | `brand-primary`, `brand-favicon` | Derivative, manifest, and runtime evidence remain pending. |
+| Organizational Dashboard mapping confirmed. | `project-dashboard-systems` | Runtime promotion remains pending. |
+| PARS-SQL mapping confirmed. | `project-data-architecture` | Runtime promotion remains pending. |
+| Writing, Teaching, and Creative are decorative preview roles. | `blog-coral-stairs`, `learning-sage-library`, `gallery-ivory-forms` | No record/page runtime use is established by this decision. |
+| Visual communication network remains deferred. | `project-visual-communication-network` | Must not enter runtime. |
+| Placeholder ivory stairs is excluded from Home. | `project-placeholder-ivory-stairs` | It is not a Home asset or a substitute for a project record. |
+| Home graph uses text-free Light/Dark backplates with semantic overlays. | Home graph backplates | Asset promotion and visual QA remain pending. |
+
 ## Promotion checklist
 
 See `ASSET-PROMOTION-OWNER-GUIDE.md` for what the owner must decide vs what agents handle.
