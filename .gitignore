@@ -7,6 +7,14 @@
 # Docs/references/frontend-design-authority/.
 /Front-End/Assets/
 
+# Repowise local index (workspace coordination only)
+.repowise/
+.repowise-workspace/
+.repowise-workspace.yaml
+
+# Local agent tooling state
+.serena/
+
 # Local outputs
 /graphify-out/
 /.env

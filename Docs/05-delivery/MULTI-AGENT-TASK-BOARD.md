@@ -28,6 +28,8 @@ Wave 0 — COMPLETE (2026-08-29)
 
 Wave 1 — IN PROGRESS (2026-08-29)
   BACKEND-060..080  seed import — **complete** (`4e4fb75`)
+  BACKEND-081..082  empty-state route copy + admin-only seed records — **complete**
+  BACKEND-041       backend CI workflow — **complete** (`.github/workflows/ci.yml`)
   COORD-040..050   OpenAPI TS contract docs — **complete**
   PUBLIC-090       OpenAPI types + client skeleton — **complete**; PUBLIC-100..120 open
   ADMIN-050..060   admin types + client skeleton — **complete**; ADMIN-070..110 open
@@ -78,10 +80,10 @@ Wave 4 (release)
 | BACKEND-080 | BACKEND-070 | Add pytest for seed import + public API non-leak | Tests pass in CI |
 | BACKEND-090 | BACKEND-050 | Inventory `Infra/legacy-monorepo` paths; classify rewrite vs delete | Inventory doc in `Back-End/docs/` |
 | BACKEND-100 | BACKEND-090 | Draft standalone Docker Compose for **new** platform only | Compose file uses new paths; separate DB port |
-| BACKEND-110 | — | Reconcile public endpoints vs `ROUTE-REGISTRY.md` | Gap list in `Back-End/docs/contracts/` |
+| BACKEND-110 ✅ | — | Reconcile public endpoints vs `ROUTE-REGISTRY.md` | **Done** — gap list at `Back-End/docs/contracts/PUBLIC-ROUTE-RECONCILIATION.md` (gaps A–E) |
 | BACKEND-120 | — | Reconcile admin endpoints vs admin workflow map | Gap list documented |
-| BACKEND-130 | BACKEND-110, BACKEND-120 | Add response-shape fixtures per `ERROR-COMPATIBILITY-MATRIX.md` | Fixture tests pass |
-| BACKEND-140 | BACKEND-130 | Schema compatibility tests for accepted OpenAPI hashes | Tests fail on hash drift |
+| BACKEND-130 ✅ | BACKEND-110, BACKEND-120 | Add response-shape fixtures per `ERROR-COMPATIBILITY-MATRIX.md` | **Done** — `Back-End/tests/fixtures/contracts/{public,admin,errors}/` + `tests/test_contract_fixtures.py` |
+| BACKEND-140 ✅ | BACKEND-130 | Schema compatibility tests for accepted OpenAPI hashes | **Done** — `tests/test_openapi_hash_drift.py` (LF-canonical; CRLF acceptance provenance documented) |
 | BACKEND-150 | — | Plan error envelope normalization (no breaking change) | ADR or contract note approved |
 | BACKEND-160 | BACKEND-100 | Validate backup/restore commands for new repo layout | Drill steps documented |
 | BACKEND-170 | PUBLIC-120, ADMIN-110 | Same-origin proxy integration test plan with frontends | Integration test checklist exists |

@@ -9,4 +9,5 @@
 | 2026-08-29 | Treat `Front-End/Assets/concepts` as UI/UX source and `concepts/page-families` as page-detail source | Owner instruction |
 | 2026-08-29 | Use a hybrid design-reference model: ignored local incoming source plus one curated tracked authority | Owner instruction and consolidation design |
 | 2026-08-29 | Use same-origin reverse-proxy delivery as the pre-scaffold auth/CSRF baseline | Migrated backend production settings and deployment topology |
+| 2026-08-29 | Treat global agent skills and plugins as workstation tooling, not product dependencies; use of a skill does not authorize repository, design-authority, contract, or runtime changes | Agent-tooling review; `02-architecture/DEPENDENCY-POLICY.md`; `04-design/DESIGN-AUTHORITY.md` |
 | 2026-08-29 | Seed v1.1 + tracked design authority take priority over live legacy CMS content; replace `tahamohamadi.ir` with greenfield stack rather than migrate old DB unless a later task proves faster | Owner instruction; no legacy content migration in Wave 0 |
