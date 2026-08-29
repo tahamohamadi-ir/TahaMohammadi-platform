@@ -1,0 +1,67 @@
+﻿content_id,content_type,locale,slug,route,title,approval_state,publication_state,visibility,translation_state
+profile.identity.en,profile_identity,en,identity,/,Taha Mohammadi,needs-owner-input,draft,public,approved
+profile.identity.fa,profile_identity,fa,identity,/,طه محمدی,needs-owner-input,draft,public,approved
+profile.bio.en,profile_bio,en,bio,/about,About Taha,needs-owner-input,draft,public,approved
+profile.bio.fa,profile_bio,fa,bio,/about,درباره طه محمدی,needs-owner-input,draft,public,approved
+research.statement.en,research_statement,en,research-statement,/research,Research Statement,needs-owner-input,draft,public,approved
+research.statement.fa,research_statement,fa,research-statement,/research,بیانیه پژوهشی,needs-owner-input,draft,public,approved
+research.focus.human-centered-ai.en,research_focus,en,human-centered-ai,/research,Human-Centered AI,needs-owner-input,draft,public,untranslated
+research.focus.trustworthy-controllable-ai.en,research_focus,en,trustworthy-controllable-ai,/research,Trustworthy & Controllable AI,needs-owner-input,draft,public,untranslated
+research.focus.visual-analytics-decision-support.en,research_focus,en,visual-analytics-decision-support,/research,Visual Analytics & Decision Support,needs-owner-input,draft,public,untranslated
+research.focus.behavioral-data-personalization.en,research_focus,en,behavioral-data-personalization,/research,Behavioral Data & Personalization,needs-owner-input,draft,public,untranslated
+research.focus.edge-local-ai.en,research_focus,en,edge-local-ai,/research,Edge & Local AI,needs-owner-input,draft,public,untranslated
+research.focus.digital-health-wearable-ai.en,research_focus,en,digital-health-wearable-ai,/research,Digital Health & Wearable AI,needs-owner-input,draft,public,untranslated
+engineering.statement.en,engineering_statement,en,engineering,/about,Engineering,needs-owner-input,draft,public,approved
+engineering.statement.fa,engineering_statement,fa,engineering,/about,مهندسی,needs-owner-input,draft,public,approved
+project.pars-sql.en,project,en,pars-sql-vtd-edge,/projects,PARS-SQL / VTD-Edge,needs-owner-input,draft,public,approved
+project.pars-sql.fa,project,fa,pars-sql-vtd-edge,/projects,PARS-SQL / VTD-Edge,needs-owner-input,draft,public,approved
+project.behavior-platform.en,project,en,behavioral-evidence-personalization,/projects,Behavioral Evidence & Personalization Platform,private,not-public,private,approved
+project.behavior-platform.fa,project,fa,behavioral-evidence-personalization,/projects,پلتفرم شواهد رفتاری و شخصی‌سازی,private,not-public,private,approved
+project.dashboard-research.en,project,en,organizational-dashboard-research,/projects,Organizational Dashboard Research & Design,needs-owner-input,draft,public,approved
+project.dashboard-research.fa,project,fa,organizational-dashboard-research,/projects,پژوهش و طراحی داشبوردهای سازمانی,needs-owner-input,draft,public,approved
+writing.visual-discourse.en,writing,en,visual-discourse-elections,/writing,A Comparative Analysis of Reformist and Principlist Visual Discourses in Presidential Elections (1997–2017),needs-owner-input,draft,public,not-needed
+writing.vtd-edge.en,writing,en,vtd-edge-manuscript,/writing,"VTD-Edge: Reliable, Privacy-Preserving Persian NLP-to-SQL on Resource-Constrained Devices",needs-owner-input,draft,public,not-needed
+writing.dashboard-book.en,writing,en,dashboard-data-storytelling-book,/writing,Guidelines for Designing Information Dashboards Using Data Storytelling Methodology,needs-owner-input,draft,public,approved
+writing.dashboard-book.fa,writing,fa,dashboard-data-storytelling-book,/writing,راهنمای طراحی داشبوردهای اطلاعاتی با رویکرد داستان‌گویی داده,needs-owner-input,draft,public,approved
+education.ma.visual-communication.en,education,en,ma-visual-communication,/about/education,M.A. in Visual Communication,needs-owner-input,draft,public,approved
+education.ma.visual-communication.fa,education,fa,ma-visual-communication,/about/education,کارشناسی ارشد ارتباط تصویری,needs-owner-input,draft,public,approved
+education.ba.interior-architecture.en,education,en,ba-interior-architecture,/about/education,B.A. in Interior Architecture,needs-owner-input,draft,public,approved
+education.ba.interior-architecture.fa,education,fa,ba-interior-architecture,/about/education,کارشناسی معماری داخلی,needs-owner-input,draft,public,approved
+experience.mci.en,experience,en,software-engineer-mci,/about/experience,Software Engineer — Mobile Communication Company of Iran (MCI),needs-owner-input,draft,public,approved
+experience.mci.fa,experience,fa,software-engineer-mci,/about/experience,مهندس نرم‌افزار — همراه اول,needs-owner-input,draft,public,approved
+experience.naeo.en,experience,en,researcher-dashboard-product-designer,/about/experience,Researcher & Dashboard Product Designer — National Administrative and Employment Organization of Iran,needs-owner-input,draft,public,approved
+experience.naeo.fa,experience,fa,researcher-dashboard-product-designer,/about/experience,پژوهشگر و طراح محصول داشبورد — سازمان اداری و استخدامی کشور,needs-owner-input,draft,public,approved
+experience.shaparak.en,experience,en,full-stack-shaparak,/about/experience,Full-Stack Developer — Shaparak Electronic Card Payment Network System,needs-owner-input,draft,public,approved
+experience.shaparak.fa,experience,fa,full-stack-shaparak,/about/experience,توسعه‌دهنده فول‌استک — شاپرک,needs-owner-input,draft,public,approved
+experience.sajaya.en,experience,en,full-stack-uiux-sajaya,/about/experience,Full-Stack Developer & UI/UX Consultant — Sajaya Negar,needs-owner-input,draft,public,approved
+experience.sajaya.fa,experience,fa,full-stack-uiux-sajaya,/about/experience,توسعه‌دهنده فول‌استک و مشاور UI/UX — سجایا نگار,needs-owner-input,draft,public,approved
+learning.stanford-health-ai.en,credential,en,stanford-ai-healthcare,/learning,Stanford Medicine AI in Healthcare Series,needs-owner-input,draft,public,approved
+learning.stanford-health-ai.fa,credential,fa,stanford-ai-healthcare,/learning,مجموعه هوش مصنوعی در سلامت Stanford Medicine,needs-owner-input,draft,public,approved
+learning.partial-ml-dl-genai.en,credential,en,partial-ml-dl-genai,/learning,Additional Structured Coursework,needs-owner-input,draft,public,not-needed
+availability.phd-2027.en,availability,en,phd-research-2027,/contact,2027 Research Availability,needs-owner-input,draft,public,approved
+availability.phd-2027.fa,availability,fa,phd-research-2027,/contact,آمادگی برای فرصت‌های پژوهشی ۲۰۲۷,needs-owner-input,draft,public,approved
+contact.email,contact_link,und,email,/contact,Email,needs-owner-input,draft,public,not-needed
+contact.linkedin,contact_link,und,linkedin,/contact,LinkedIn,needs-owner-input,draft,public,not-needed
+contact.github,contact_link,und,github,/contact,GitHub,needs-owner-input,draft,public,not-needed
+contact.orcid,contact_link,und,orcid,/contact,ORCID,needs-owner-input,draft,public,not-needed
+contact.website,contact_link,und,website,/contact,Website,needs-owner-input,draft,public,not-needed
+route.home.en,route_copy,en,home,/,Home,needs-owner-input,draft,public,approved
+route.home.fa,route_copy,fa,home,/,خانه,needs-owner-input,draft,public,approved
+route.about.en,route_copy,en,about,/about,About,needs-owner-input,draft,public,approved
+route.about.fa,route_copy,fa,about,/about,درباره,needs-owner-input,draft,public,approved
+route.research.en,route_copy,en,research,/research,Research,needs-owner-input,draft,public,approved
+route.research.fa,route_copy,fa,research,/research,پژوهش,needs-owner-input,draft,public,approved
+route.projects.en,route_copy,en,projects,/projects,Projects,needs-owner-input,draft,public,approved
+route.projects.fa,route_copy,fa,projects,/projects,پروژه‌ها,needs-owner-input,draft,public,approved
+route.writing.en,route_copy,en,writing,/writing,Writing,needs-owner-input,draft,public,approved
+route.writing.fa,route_copy,fa,writing,/writing,نوشتار,needs-owner-input,draft,public,approved
+route.publications.en,route_copy,en,publications,/publications,Research Outputs,needs-owner-input,draft,public,approved
+route.publications.fa,route_copy,fa,publications,/publications,خروجی‌های پژوهشی,needs-owner-input,draft,public,approved
+route.learning.en,route_copy,en,learning,/learning,Learning,needs-owner-input,draft,public,approved
+route.learning.fa,route_copy,fa,learning,/learning,یادگیری,needs-owner-input,draft,public,approved
+route.creative.en,route_copy,en,creative,/creative,Creative Work,needs-owner-input,draft,public,approved
+route.creative.fa,route_copy,fa,creative,/creative,آثار خلاقه,needs-owner-input,draft,public,approved
+route.cv.en,route_copy,en,cv,/cv,CV,needs-owner-input,draft,public,approved
+route.cv.fa,route_copy,fa,cv,/cv,رزومه,needs-owner-input,draft,public,approved
+route.contact.en,route_copy,en,contact,/contact,Contact,needs-owner-input,draft,public,approved
+route.contact.fa,route_copy,fa,contact,/contact,تماس,needs-owner-input,draft,public,approved

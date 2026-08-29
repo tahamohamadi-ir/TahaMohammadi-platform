@@ -1,0 +1,45 @@
+{
+  "canonical_domain": "https://tahamohamadi.ir",
+  "links": [
+    {
+      "id": "email",
+      "url": "mailto:taha95mohammadi@gmail.com",
+      "public": true
+    },
+    {
+      "id": "linkedin",
+      "url": "https://linkedin.com/in/taha-mohammadi",
+      "public": true
+    },
+    {
+      "id": "github",
+      "url": "https://github.com/tahamohamadi-ir",
+      "public": true
+    },
+    {
+      "id": "open_source_project",
+      "url": "https://github.com/tahamohamadi-ir/ADHD-VTD",
+      "public": true
+    },
+    {
+      "id": "orcid",
+      "url": "https://orcid.org/0009-0006-7736-7638",
+      "public": true
+    },
+    {
+      "id": "website",
+      "url": "https://tahamohamadi.ir",
+      "public": true
+    }
+  ],
+  "private_or_unavailable": [
+    {
+      "id": "phone",
+      "reason": "Private by default; no public value included in seed package."
+    },
+    {
+      "id": "location",
+      "reason": "Needs owner decision before publication."
+    }
+  ]
+}

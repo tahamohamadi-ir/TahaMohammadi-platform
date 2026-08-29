@@ -1,0 +1,3053 @@
+{
+  "package_version": "1.0.0",
+  "generated_at": "2026-08-29T02:03:00-07:00",
+  "locale_policy": "Independent locales; no automatic fallback.",
+  "publication_gate": "Only records with status.approval_state == 'approved', status.publication_state == 'published', and status.visibility == 'public' may be exposed by published-only APIs.",
+  "source_integrity": {
+    "owner-public-content.md": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+    "candidate-records.md": "bda76664a61453abe25dcc1a116765f306f91700d3dda2a2e9c4798bfcda73c7",
+    "owner-content-gaps.md": "4146b7cc5be7e122a1d699fc84057e93128a75a97e7cb5dd30854e6503e32caa"
+  },
+  "records": [
+    {
+      "content_id": "profile.identity.en",
+      "content_type": "profile_identity",
+      "slug": "identity",
+      "locale": "en",
+      "title": "Taha Mohammadi",
+      "excerpt": "Software Engineer & Researcher in Human-Centered AI, Data Systems, and Visual Analytics",
+      "body_markdown": "Building reliable AI and data systems that help people reason, decide, and work with complex information.",
+      "route": "/",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {
+        "name": "Taha Mohammadi",
+        "professional_title": "Software Engineer & Researcher in Human-Centered AI, Data Systems, and Visual Analytics",
+        "headline": "Building reliable AI and data systems that help people reason, decide, and work with complex information.",
+        "one_line_profile": "Software engineer with an interdisciplinary background in visual communication, working across human-centered AI, trustworthy intelligent systems, data infrastructure, and decision-support design."
+      },
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 1. Identity / English"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "Taha Mohammadi — Human-Centered AI, Data Systems & Visual Analytics",
+        "description": "Software engineer and researcher working across human-centered AI, trustworthy intelligent systems, data infrastructure, and visual analytics.",
+        "canonical_path": "/en/",
+        "index": false,
+        "follow": true,
+        "og_title": "Taha Mohammadi — Human-Centered AI, Data Systems & Visual Analytics",
+        "og_description": "Software engineer and researcher working across human-centered AI, trustworthy intelligent systems, data infrastructure, and visual analytics.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "profile.identity.fa",
+      "content_type": "profile_identity",
+      "slug": "identity",
+      "locale": "fa",
+      "title": "طه محمدی",
+      "excerpt": "مهندس نرم‌افزار و پژوهشگر در حوزه هوش مصنوعی انسان‌محور، سامانه‌های داده و تحلیل بصری",
+      "body_markdown": "سامانه‌های قابل‌اعتماد هوش مصنوعی و داده می‌سازم تا کار با اطلاعات پیچیده، تصمیم‌گیری و استدلال انسانی را بهتر کنند.",
+      "route": "/",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {
+        "name": "طه محمدی",
+        "professional_title": "مهندس نرم‌افزار و پژوهشگر در حوزه هوش مصنوعی انسان‌محور، سامانه‌های داده و تحلیل بصری",
+        "headline": "سامانه‌های قابل‌اعتماد هوش مصنوعی و داده می‌سازم تا کار با اطلاعات پیچیده، تصمیم‌گیری و استدلال انسانی را بهتر کنند.",
+        "one_line_profile": "مهندس نرم‌افزار با پیش‌زمینه میان‌رشته‌ای در ارتباط تصویری که در تقاطع هوش مصنوعی انسان‌محور، سامانه‌های هوشمند قابل‌اعتماد، زیرساخت داده و طراحی ابزارهای پشتیبان تصمیم فعالیت می‌کند."
+      },
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 1. Identity / فارسی"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "طه محمدی — هوش مصنوعی انسان‌محور، سامانه‌های داده و تحلیل بصری",
+        "description": "مهندس نرم‌افزار و پژوهشگر در تقاطع هوش مصنوعی انسان‌محور، سامانه‌های هوشمند قابل‌اعتماد، زیرساخت داده و تحلیل بصری.",
+        "canonical_path": "/fa/",
+        "index": false,
+        "follow": true,
+        "og_title": "طه محمدی — هوش مصنوعی انسان‌محور، سامانه‌های داده و تحلیل بصری",
+        "og_description": "مهندس نرم‌افزار و پژوهشگر در تقاطع هوش مصنوعی انسان‌محور، سامانه‌های هوشمند قابل‌اعتماد، زیرساخت داده و تحلیل بصری.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "profile.bio.en",
+      "content_type": "profile_bio",
+      "slug": "bio",
+      "locale": "en",
+      "title": "About Taha",
+      "excerpt": "Software engineer and researcher working between engineering, HCI, and applied AI.",
+      "body_markdown": "Taha Mohammadi is a software engineer and researcher whose work sits between engineering, human-computer interaction, and applied AI. Since 2020, he has worked on production software and data systems while developing a research direction around trustworthy Human-AI interaction, natural-language data access, behavioral-data architecture, visual analytics, and decision support.\n\nHis academic background in Visual Communication shapes how he approaches technical systems: not only as computational artifacts, but as interfaces through which people interpret evidence, uncertainty, and machine-generated recommendations. His current work explores how AI systems can remain useful without becoming opaque or over-authoritative—through clarification, validation, provenance, controllability, and explicit abstention when evidence is insufficient.\n\nHe is preparing for doctoral research focused on Human-Centered AI, trustworthy and controllable AI systems, visual analytics, and—where the research setting supports it—digital health, wearable/edge AI, and multimodal human data.",
+      "route": "/about",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 2. Short bio / English"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "About Taha Mohammadi",
+        "description": "Background, research direction, and engineering work across human-centered AI, software, data systems, and visual analytics.",
+        "canonical_path": "/en/about",
+        "index": false,
+        "follow": true,
+        "og_title": "About Taha Mohammadi",
+        "og_description": "Background, research direction, and engineering work across human-centered AI, software, data systems, and visual analytics.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "profile.bio.fa",
+      "content_type": "profile_bio",
+      "slug": "bio",
+      "locale": "fa",
+      "title": "درباره طه محمدی",
+      "excerpt": "مهندس نرم‌افزار و پژوهشگر در مرز مهندسی، تعامل انسان و رایانه و هوش مصنوعی کاربردی.",
+      "body_markdown": "طه محمدی مهندس نرم‌افزار و پژوهشگری است که فعالیتش در مرز میان مهندسی نرم‌افزار، تعامل انسان و رایانه و هوش مصنوعی کاربردی شکل گرفته است. او از سال ۲۰۲۰ در توسعه سامانه‌های نرم‌افزاری و داده‌ای در مقیاس سازمانی فعالیت کرده و هم‌زمان مسیر پژوهشی خود را بر تعامل قابل‌اعتماد انسان و هوش مصنوعی، دسترسی زبانی به داده، معماری داده‌های رفتاری، تحلیل بصری و پشتیبانی از تصمیم‌گیری متمرکز کرده است.\n\nپیش‌زمینه دانشگاهی او در ارتباط تصویری باعث شده سامانه‌های فنی را فقط به‌عنوان مصنوعات محاسباتی نبیند، بلکه آن‌ها را واسط‌هایی بداند که انسان از طریقشان شواهد، عدم‌قطعیت و پیشنهادهای تولیدشده توسط ماشین را تفسیر می‌کند. در پروژه‌های فعلی او، موضوعاتی مانند شفاف‌سازی درخواست، اعتبارسنجی، منشأ و ردپای شواهد، کنترل‌پذیری و امتناع صریح سیستم در شرایط نامطمئن، بخش اصلی طراحی سامانه هستند.\n\nاو برای ادامه پژوهش در مقطع دکترا بر هوش مصنوعی انسان‌محور، سامانه‌های هوشمند قابل‌اعتماد و کنترل‌پذیر، تحلیل بصری و—در بسترهای پژوهشی مناسب—سلامت دیجیتال، هوش مصنوعی لبه/پوشیدنی و داده‌های چندوجهی انسانی تمرکز دارد.",
+      "route": "/about",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 2. Short bio / فارسی"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "درباره طه محمدی",
+        "description": "مسیر حرفه‌ای و پژوهشی طه محمدی در هوش مصنوعی انسان‌محور، مهندسی نرم‌افزار، سامانه‌های داده و تحلیل بصری.",
+        "canonical_path": "/fa/about",
+        "index": false,
+        "follow": true,
+        "og_title": "درباره طه محمدی",
+        "og_description": "مسیر حرفه‌ای و پژوهشی طه محمدی در هوش مصنوعی انسان‌محور، مهندسی نرم‌افزار، سامانه‌های داده و تحلیل بصری.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "research.statement.en",
+      "content_type": "research_statement",
+      "slug": "research-statement",
+      "locale": "en",
+      "title": "Research Statement",
+      "excerpt": "How can intelligent systems extend human capability without obscuring evidence, uncertainty, or control?",
+      "body_markdown": "My research interest is centered on a practical question: **how can intelligent systems extend human capability without obscuring evidence, uncertainty, or control?**\n\nI am particularly interested in systems where AI participates in analysis, decision support, or interaction rather than acting as an invisible replacement for human judgment. This includes natural-language interfaces to structured data, agentic workflows with validation and human oversight, adaptive systems that distinguish observed behavior from inferred user state, and visual interfaces that make evidence and uncertainty easier to inspect.\n\nMy engineering background leads me to study these questions as end-to-end system problems. Model behavior matters, but so do data quality, provenance, permissions, interaction design, failure handling, latency, observability, and the moment at which a system should clarify, defer, or abstain.",
+      "route": "/research",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {
+        "focus_areas": [
+          "Human-Centered AI and Human-AI Interaction",
+          "Trustworthy, controllable, and agentic AI systems",
+          "Visual analytics and AI-assisted decision support",
+          "Behavioral-data systems and explainable personalization",
+          "Privacy-aware local and edge AI",
+          "Digital health and wearable AI as a developing research direction"
+        ]
+      },
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 3. Research statement / English"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "Research — Taha Mohammadi",
+        "description": "Research on human-centered AI, trustworthy and controllable intelligent systems, visual analytics, behavioral data, and privacy-aware AI.",
+        "canonical_path": "/en/research",
+        "index": false,
+        "follow": true,
+        "og_title": "Research — Taha Mohammadi",
+        "og_description": "Research on human-centered AI, trustworthy and controllable intelligent systems, visual analytics, behavioral data, and privacy-aware AI.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "research.statement.fa",
+      "content_type": "research_statement",
+      "slug": "research-statement",
+      "locale": "fa",
+      "title": "بیانیه پژوهشی",
+      "excerpt": "سامانه‌های هوشمند چگونه می‌توانند توانایی انسان را افزایش دهند، بدون آن‌که شواهد، عدم‌قطعیت یا کنترل را پنهان کنند؟",
+      "body_markdown": "محور اصلی علاقه پژوهشی من یک پرسش عملی است: **سامانه‌های هوشمند چگونه می‌توانند توانایی انسان را افزایش دهند، بدون آن‌که شواهد، عدم‌قطعیت یا امکان کنترل را پنهان کنند؟**\n\nبرای من، هوش مصنوعی زمانی ارزشمندتر است که در تحلیل، پشتیبانی از تصمیم یا تعامل با انسان مشارکت کند، نه این‌که به‌صورت نامرئی جای قضاوت انسانی را بگیرد. این نگاه شامل رابط‌های زبان طبیعی برای داده‌های ساختاریافته، جریان‌های عامل‌محور همراه با اعتبارسنجی و نظارت انسانی، سامانه‌های تطبیقی که رفتار مشاهده‌شده را از برداشت سیستم درباره کاربر جدا نگه می‌دارند، و رابط‌های بصری برای فهم بهتر شواهد و عدم‌قطعیت است.\n\nپیش‌زمینه مهندسی من باعث می‌شود این مسائل را در سطح یک سامانه کامل بررسی کنم. رفتار مدل مهم است، اما کیفیت داده، منشأ و ردپای اطلاعات، مجوزها، طراحی تعامل، مدیریت خطا، تأخیر، مشاهده‌پذیری و این‌که سیستم در چه زمانی باید سؤال بپرسد، تصمیم را به انسان واگذار کند یا از پاسخ خودداری کند نیز به همان اندازه اهمیت دارند.",
+      "route": "/research",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {
+        "focus_areas": [
+          "هوش مصنوعی انسان‌محور و تعامل انسان و هوش مصنوعی",
+          "سامانه‌های هوشمند قابل‌اعتماد، کنترل‌پذیر و عامل‌محور",
+          "تحلیل بصری و پشتیبانی از تصمیم با کمک هوش مصنوعی",
+          "سامانه‌های داده رفتاری و شخصی‌سازی توضیح‌پذیر",
+          "هوش مصنوعی محلی و لبه با ملاحظات حریم خصوصی",
+          "سلامت دیجیتال و هوش مصنوعی پوشیدنی به‌عنوان مسیر پژوهشی در حال توسعه"
+        ]
+      },
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 3. Research statement / فارسی"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "پژوهش — طه محمدی",
+        "description": "پژوهش درباره هوش مصنوعی انسان‌محور، سامانه‌های قابل‌اعتماد و کنترل‌پذیر، تحلیل بصری، داده‌های رفتاری و هوش مصنوعی با ملاحظات حریم خصوصی.",
+        "canonical_path": "/fa/research",
+        "index": false,
+        "follow": true,
+        "og_title": "پژوهش — طه محمدی",
+        "og_description": "پژوهش درباره هوش مصنوعی انسان‌محور، سامانه‌های قابل‌اعتماد و کنترل‌پذیر، تحلیل بصری، داده‌های رفتاری و هوش مصنوعی با ملاحظات حریم خصوصی.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "research.focus.human-centered-ai.en",
+      "content_type": "research_focus",
+      "slug": "human-centered-ai",
+      "locale": "en",
+      "title": "Human-Centered AI",
+      "excerpt": "Designing AI systems around human goals, interpretation, agency, and real-world use—not only model capability.",
+      "body_markdown": "Designing AI systems around human goals, interpretation, agency, and real-world use—not only model capability.",
+      "route": "/research",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "untranslated",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 1,
+      "tags": [
+        "research-focus"
+      ],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 4. Research focus cards / Human-Centered AI"
+        }
+      ],
+      "restrictions": [],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "research.focus.trustworthy-controllable-ai.en",
+      "content_type": "research_focus",
+      "slug": "trustworthy-controllable-ai",
+      "locale": "en",
+      "title": "Trustworthy & Controllable AI",
+      "excerpt": "Clarification, validation, provenance, abstention, human approval, and failure-aware system behavior.",
+      "body_markdown": "Clarification, validation, provenance, abstention, human approval, and failure-aware system behavior.",
+      "route": "/research",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "untranslated",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 2,
+      "tags": [
+        "research-focus"
+      ],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 4. Research focus cards / Trustworthy & Controllable AI"
+        }
+      ],
+      "restrictions": [],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "research.focus.visual-analytics-decision-support.en",
+      "content_type": "research_focus",
+      "slug": "visual-analytics-decision-support",
+      "locale": "en",
+      "title": "Visual Analytics & Decision Support",
+      "excerpt": "Turning complex data into inspectable, interactive evidence for strategic, tactical, and operational decisions.",
+      "body_markdown": "Turning complex data into inspectable, interactive evidence for strategic, tactical, and operational decisions.",
+      "route": "/research",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "untranslated",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 3,
+      "tags": [
+        "research-focus"
+      ],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 4. Research focus cards / Visual Analytics & Decision Support"
+        }
+      ],
+      "restrictions": [],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "research.focus.behavioral-data-personalization.en",
+      "content_type": "research_focus",
+      "slug": "behavioral-data-personalization",
+      "locale": "en",
+      "title": "Behavioral Data & Personalization",
+      "excerpt": "Building event and data models that separate observed evidence from inferred user state and preserve traceability.",
+      "body_markdown": "Building event and data models that separate observed evidence from inferred user state and preserve traceability.",
+      "route": "/research",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "untranslated",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 4,
+      "tags": [
+        "research-focus"
+      ],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 4. Research focus cards / Behavioral Data & Personalization"
+        }
+      ],
+      "restrictions": [],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "research.focus.edge-local-ai.en",
+      "content_type": "research_focus",
+      "slug": "edge-local-ai",
+      "locale": "en",
+      "title": "Edge & Local AI",
+      "excerpt": "Exploring privacy-aware and resource-conscious intelligent systems that can operate close to users and data.",
+      "body_markdown": "Exploring privacy-aware and resource-conscious intelligent systems that can operate close to users and data.",
+      "route": "/research",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "untranslated",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 5,
+      "tags": [
+        "research-focus"
+      ],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 4. Research focus cards / Edge & Local AI"
+        }
+      ],
+      "restrictions": [],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "research.focus.digital-health-wearable-ai.en",
+      "content_type": "research_focus",
+      "slug": "digital-health-wearable-ai",
+      "locale": "en",
+      "title": "Digital Health & Wearable AI",
+      "excerpt": "A developing research direction focused on responsible use of health, behavioral, and multimodal human data. This is a future-facing research direction, not a claim of completed clinical or physiological-sensing research.",
+      "body_markdown": "A developing research direction focused on responsible use of health, behavioral, and multimodal human data. This is a future-facing research direction, not a claim of completed clinical or physiological-sensing research.",
+      "route": "/research",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "untranslated",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 6,
+      "tags": [
+        "research-focus"
+      ],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 4. Research focus cards / Digital Health & Wearable AI"
+        }
+      ],
+      "restrictions": [],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "engineering.statement.en",
+      "content_type": "engineering_statement",
+      "slug": "engineering",
+      "locale": "en",
+      "title": "Engineering",
+      "excerpt": "Backend, data, and AI-enabled systems with an emphasis on reliability.",
+      "body_markdown": "I work primarily on backend, data, and AI-enabled systems. My engineering experience includes Java, Spring Boot, Python, SQL, PostgreSQL, Oracle, MongoDB, REST/integration services, data pipelines, and enterprise software architecture.\n\nIn applied AI work, I focus on system reliability around language models rather than treating model output as inherently correct. My projects use mechanisms such as ambiguity detection, retrieval, deterministic validation, controlled execution, traceable repair, evaluation pipelines, and safe abstention.",
+      "route": "/about",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 5. Engineering statement / English"
+        }
+      ],
+      "restrictions": [],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "engineering.statement.fa",
+      "content_type": "engineering_statement",
+      "slug": "engineering",
+      "locale": "fa",
+      "title": "مهندسی",
+      "excerpt": "سامانه‌های بک‌اند، داده و هوش مصنوعی با تمرکز بر قابلیت اطمینان.",
+      "body_markdown": "تمرکز اصلی من در مهندسی روی سامانه‌های بک‌اند، داده و راهکارهای مبتنی بر هوش مصنوعی است. تجربه فنی من شامل Java، Spring Boot، Python، SQL، PostgreSQL، Oracle، MongoDB، سرویس‌های REST و یکپارچه‌سازی، پایپ‌لاین‌های داده و معماری سامانه‌های سازمانی است.\n\nدر کارهای مرتبط با هوش مصنوعی، تمرکز من بر قابل‌اعتماد کردن سامانه پیرامون مدل‌های زبانی است، نه فرض‌کردن درستی خروجی مدل. در پروژه‌ها از سازوکارهایی مانند تشخیص ابهام، بازیابی اطلاعات، اعتبارسنجی قطعی، اجرای کنترل‌شده، ترمیم قابل‌ردیابی، ارزیابی ساختاریافته و امتناع ایمن استفاده می‌کنم.",
+      "route": "/about",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 5. Engineering statement / فارسی"
+        }
+      ],
+      "restrictions": [],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "project.pars-sql.en",
+      "content_type": "project",
+      "slug": "pars-sql-vtd-edge",
+      "locale": "en",
+      "title": "PARS-SQL / VTD-Edge",
+      "excerpt": "Reliable Persian natural-language interaction with structured data.",
+      "body_markdown": "A Persian natural-language-to-data system designed for reliable interaction with structured databases. The system combines normalization, ambiguity and safety routing, schema/value linking, retrieval, local or quantized language models, deterministic SQL validation, controlled read-only execution, repair/reflexion, and visual or narrative output.\n\nThe research emphasis is not only query generation. It is on the conditions under which an AI system should clarify, validate, repair, or abstain—and on how those decisions can be evaluated and traced.",
+      "route": "/projects",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [
+        "human-centered-ai",
+        "nlp-to-sql",
+        "trustworthy-ai",
+        "local-ai"
+      ],
+      "links": [
+        {
+          "label": "Repository",
+          "url": "https://github.com/tahamohamadi-ir/ADHD-VTD",
+          "rel": "repository"
+        }
+      ],
+      "data": {
+        "project_status": "ongoing research and engineering project"
+      },
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 6. Selected project records / project.pars-sql"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "PARS-SQL / VTD-Edge — Taha Mohammadi",
+        "description": "A Persian natural-language-to-data research system focused on clarification, validation, safe execution, repair, and abstention.",
+        "canonical_path": "/en/projects/pars-sql-vtd-edge",
+        "index": false,
+        "follow": true,
+        "og_title": "PARS-SQL / VTD-Edge — Taha Mohammadi",
+        "og_description": "A Persian natural-language-to-data research system focused on clarification, validation, safe execution, repair, and abstention.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "project.pars-sql.fa",
+      "content_type": "project",
+      "slug": "pars-sql-vtd-edge",
+      "locale": "fa",
+      "title": "PARS-SQL / VTD-Edge",
+      "excerpt": "تعامل قابل‌اعتماد زبان طبیعی فارسی با داده‌های ساختاریافته.",
+      "body_markdown": "سامانه‌ای برای تبدیل درخواست‌های زبان طبیعی فارسی به تعامل قابل‌اعتماد با پایگاه‌های داده ساختاریافته. این سامانه از نرمال‌سازی، تشخیص ابهام و ریسک، اتصال به طرح و مقادیر داده، بازیابی، مدل‌های زبانی محلی یا کم‌حجم، اعتبارسنجی قطعی SQL، اجرای فقط‌خواندنی کنترل‌شده، ترمیم/بازاندیشی و خروجی بصری یا روایی استفاده می‌کند.\n\nتمرکز پژوهشی پروژه فقط تولید کوئری نیست؛ بلکه این است که سامانه در چه شرایطی باید سؤال بپرسد، اعتبارسنجی کند، خروجی را اصلاح کند یا از ادامه فرایند خودداری کند و این تصمیم‌ها چگونه قابل ارزیابی و ردیابی باشند.",
+      "route": "/projects",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [
+        "human-centered-ai",
+        "nlp-to-sql",
+        "trustworthy-ai",
+        "local-ai"
+      ],
+      "links": [
+        {
+          "label": "مخزن کد",
+          "url": "https://github.com/tahamohamadi-ir/ADHD-VTD",
+          "rel": "repository"
+        }
+      ],
+      "data": {
+        "project_status": "پروژه پژوهشی و مهندسی در حال توسعه"
+      },
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 6. Selected project records / project.pars-sql"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "PARS-SQL / VTD-Edge — طه محمدی",
+        "description": "سامانه پژوهشی برای تعامل زبان طبیعی فارسی با داده با تمرکز بر شفاف‌سازی، اعتبارسنجی، اجرای ایمن، ترمیم و امتناع.",
+        "canonical_path": "/fa/projects/pars-sql-vtd-edge",
+        "index": false,
+        "follow": true,
+        "og_title": "PARS-SQL / VTD-Edge — طه محمدی",
+        "og_description": "سامانه پژوهشی برای تعامل زبان طبیعی فارسی با داده با تمرکز بر شفاف‌سازی، اعتبارسنجی، اجرای ایمن، ترمیم و امتناع.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "project.behavior-platform.en",
+      "content_type": "project",
+      "slug": "behavioral-evidence-personalization",
+      "locale": "en",
+      "title": "Behavioral Evidence & Personalization Platform",
+      "excerpt": "A behavioral-data architecture that separates observed user intent from system-generated activity before personalization.",
+      "body_markdown": "An event and behavioral-data architecture that distinguishes genuine user intent and action from backend- or system-generated activity before profiles or personalization are produced. The architecture emphasizes typed event contracts, interaction/session provenance, privacy constraints, data-quality gates, and an explicit distinction between observed evidence and inferred user state.",
+      "route": "/projects",
+      "status": {
+        "approval_state": "private",
+        "publication_state": "not-public",
+        "translation_state": "approved",
+        "visibility": "private"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [
+        "behavioral-data",
+        "personalization",
+        "privacy",
+        "human-ai-interaction"
+      ],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 6. Selected project records / project.behavior-platform"
+        }
+      ],
+      "restrictions": [
+        "Do not publish technical details, employer-sensitive architecture, screenshots, datasets, or internal metrics until explicitly cleared."
+      ],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "project.behavior-platform.fa",
+      "content_type": "project",
+      "slug": "behavioral-evidence-personalization",
+      "locale": "fa",
+      "title": "پلتفرم شواهد رفتاری و شخصی‌سازی",
+      "excerpt": "معماری داده رفتاری برای تفکیک قصد مشاهده‌شده کاربر از فعالیت تولیدشده توسط سیستم پیش از شخصی‌سازی.",
+      "body_markdown": "معماری داده رویداد و رفتار که پیش از تولید پروفایل یا شخصی‌سازی، قصد و کنش واقعی کاربر را از فعالیت‌های تولیدشده در بک‌اند یا سایر اجزای سیستم جدا می‌کند. این معماری بر قراردادهای رویدادی نوع‌دار، منشأ و پیوستگی تعامل/نشست، محدودیت‌های حریم خصوصی، کنترل کیفیت داده و تفکیک صریح میان شواهد مشاهده‌شده و استنباط سیستم از وضعیت کاربر تأکید دارد.",
+      "route": "/projects",
+      "status": {
+        "approval_state": "private",
+        "publication_state": "not-public",
+        "translation_state": "approved",
+        "visibility": "private"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [
+        "behavioral-data",
+        "personalization",
+        "privacy",
+        "human-ai-interaction"
+      ],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 6. Selected project records / project.behavior-platform"
+        }
+      ],
+      "restrictions": [
+        "جزئیات فنی، معماری حساس کارفرما، تصاویر، داده‌ها یا شاخص‌های داخلی تا زمان اخذ مجوز صریح منتشر نشوند."
+      ],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "project.dashboard-research.en",
+      "content_type": "project",
+      "slug": "organizational-dashboard-research",
+      "locale": "en",
+      "title": "Organizational Dashboard Research & Design",
+      "excerpt": "Research and design across nine organizational dashboard suites.",
+      "body_markdown": "Research and design work on nine organizational dashboard suites, combining literature review, stakeholder interviews, information-needs analysis, KPI derivation, data analysis, information visualization, interaction design, and iterative evaluation.",
+      "route": "/projects",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": "2022",
+        "end": "2025",
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [
+        "visual-analytics",
+        "dashboard",
+        "decision-support",
+        "stakeholder-research"
+      ],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 6. Selected project records / project.dashboard-research"
+        }
+      ],
+      "restrictions": [
+        "Publish only records, screenshots, metrics, and organization names that the owner has explicit rights to disclose."
+      ],
+      "seo": {
+        "title": "Organizational Dashboard Research & Design — Taha Mohammadi",
+        "description": "Research and design across nine organizational dashboard suites using stakeholder interviews, KPI design, visualization, and iterative evaluation.",
+        "canonical_path": "/en/projects/organizational-dashboard-research",
+        "index": false,
+        "follow": true,
+        "og_title": "Organizational Dashboard Research & Design — Taha Mohammadi",
+        "og_description": "Research and design across nine organizational dashboard suites using stakeholder interviews, KPI design, visualization, and iterative evaluation.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "project.dashboard-research.fa",
+      "content_type": "project",
+      "slug": "organizational-dashboard-research",
+      "locale": "fa",
+      "title": "پژوهش و طراحی داشبوردهای سازمانی",
+      "excerpt": "پژوهش و طراحی ۹ مجموعه داشبورد سازمانی.",
+      "body_markdown": "پژوهش و طراحی ۹ مجموعه داشبورد سازمانی با ترکیبی از مرور ادبیات، مصاحبه با ذی‌نفعان، تحلیل نیازهای اطلاعاتی، استخراج شاخص‌ها، تحلیل داده، مصورسازی اطلاعات، طراحی تعامل و ارزیابی تکرارشونده.",
+      "route": "/projects",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": "2022",
+        "end": "2025",
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [
+        "visual-analytics",
+        "dashboard",
+        "decision-support",
+        "stakeholder-research"
+      ],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 6. Selected project records / project.dashboard-research"
+        }
+      ],
+      "restrictions": [
+        "فقط رکوردها، تصاویر، شاخص‌ها و نام سازمان‌هایی منتشر شوند که مالک سایت مجوز صریح افشای آن‌ها را دارد."
+      ],
+      "seo": {
+        "title": "پژوهش و طراحی داشبوردهای سازمانی — طه محمدی",
+        "description": "پژوهش و طراحی ۹ مجموعه داشبورد سازمانی با مصاحبه ذی‌نفعان، طراحی شاخص، مصورسازی و ارزیابی تکرارشونده.",
+        "canonical_path": "/fa/projects/organizational-dashboard-research",
+        "index": false,
+        "follow": true,
+        "og_title": "پژوهش و طراحی داشبوردهای سازمانی — طه محمدی",
+        "og_description": "پژوهش و طراحی ۹ مجموعه داشبورد سازمانی با مصاحبه ذی‌نفعان، طراحی شاخص، مصورسازی و ارزیابی تکرارشونده.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "writing.visual-discourse.en",
+      "content_type": "writing",
+      "slug": "visual-discourse-elections",
+      "locale": "en",
+      "title": "A Comparative Analysis of Reformist and Principlist Visual Discourses in Presidential Elections (1997–2017)",
+      "excerpt": "A research manuscript extending the author's M.A. work on visual communication, political imagery, and comparative visual discourse analysis.",
+      "body_markdown": "A research manuscript extending the author's M.A. work on visual communication, political imagery, and comparative visual discourse analysis.",
+      "route": "/writing",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "not-needed",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {
+        "work_status": "manuscript in final revision",
+        "peer_reviewed": false
+      },
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 7. Writing and research outputs / writing.visual-discourse"
+        }
+      ],
+      "restrictions": [
+        "Do not display as a peer-reviewed publication. Label clearly as a manuscript until a venue and publication record exist."
+      ],
+      "seo": {
+        "title": "Visual Discourse Manuscript — Taha Mohammadi",
+        "description": "Research manuscript extending M.A. work on visual communication, political imagery, and comparative visual discourse analysis.",
+        "canonical_path": "/en/writing/visual-discourse-elections",
+        "index": false,
+        "follow": true,
+        "og_title": "Visual Discourse Manuscript — Taha Mohammadi",
+        "og_description": "Research manuscript extending M.A. work on visual communication, political imagery, and comparative visual discourse analysis.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "writing.vtd-edge.en",
+      "content_type": "writing",
+      "slug": "vtd-edge-manuscript",
+      "locale": "en",
+      "title": "VTD-Edge: Reliable, Privacy-Preserving Persian NLP-to-SQL on Resource-Constrained Devices",
+      "excerpt": "Technical manuscript in preparation on reliable, privacy-preserving Persian NLP-to-SQL.",
+      "body_markdown": "Technical manuscript in preparation on reliable, privacy-preserving Persian NLP-to-SQL on resource-constrained devices.",
+      "route": "/writing",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "not-needed",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {
+        "work_status": "manuscript in preparation",
+        "peer_reviewed": false
+      },
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 7. Writing and research outputs / writing.vtd-edge"
+        }
+      ],
+      "restrictions": [
+        "Do not display as published or accepted."
+      ],
+      "seo": {
+        "title": "VTD-Edge Manuscript — Taha Mohammadi",
+        "description": "Technical manuscript in preparation on reliable, privacy-preserving Persian NLP-to-SQL.",
+        "canonical_path": "/en/writing/vtd-edge-manuscript",
+        "index": false,
+        "follow": true,
+        "og_title": "VTD-Edge Manuscript — Taha Mohammadi",
+        "og_description": "Technical manuscript in preparation on reliable, privacy-preserving Persian NLP-to-SQL.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "writing.dashboard-book.en",
+      "content_type": "writing",
+      "slug": "dashboard-data-storytelling-book",
+      "locale": "en",
+      "title": "Guidelines for Designing Information Dashboards Using Data Storytelling Methodology",
+      "excerpt": "A 12-chapter Persian-language book manuscript under scientific and editorial revision.",
+      "body_markdown": "A book-length work on information dashboards, visual analytics, data quality, uncertainty, evaluation, Human-AI analytics, and decision support.",
+      "route": "/writing",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {
+        "work_status": "book manuscript under scientific and editorial revision",
+        "language": "fa",
+        "chapters": 12,
+        "published": false
+      },
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 7. Writing and research outputs / writing.dashboard-book"
+        }
+      ],
+      "restrictions": [
+        "Do not label as published until ISBN/publisher/publication evidence exists."
+      ],
+      "seo": {
+        "title": "Dashboard & Data Storytelling Book Manuscript — Taha Mohammadi",
+        "description": "A 12-chapter Persian-language book manuscript on information dashboards, visual analytics, uncertainty, evaluation, and decision support.",
+        "canonical_path": "/en/writing/dashboard-data-storytelling-book",
+        "index": false,
+        "follow": true,
+        "og_title": "Dashboard & Data Storytelling Book Manuscript — Taha Mohammadi",
+        "og_description": "A 12-chapter Persian-language book manuscript on information dashboards, visual analytics, uncertainty, evaluation, and decision support.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "writing.dashboard-book.fa",
+      "content_type": "writing",
+      "slug": "dashboard-data-storytelling-book",
+      "locale": "fa",
+      "title": "راهنمای طراحی داشبوردهای اطلاعاتی با رویکرد داستان‌گویی داده",
+      "excerpt": "دست‌نوشته کتاب فارسی ۱۲ فصلی در حال بازبینی علمی و ویرایشی.",
+      "body_markdown": "کتابی درباره طراحی داشبوردهای اطلاعاتی، تحلیل بصری، کیفیت داده، عدم‌قطعیت، ارزیابی، تحلیل انسان و هوش مصنوعی و پشتیبانی از تصمیم که در حال بازبینی علمی و ویرایشی است.",
+      "route": "/writing",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {
+        "work_status": "دست‌نوشته کتاب در حال بازبینی علمی و ویرایشی",
+        "language": "fa",
+        "chapters": 12,
+        "published": false
+      },
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 7. Writing and research outputs / writing.dashboard-book"
+        }
+      ],
+      "restrictions": [
+        "تا زمان وجود شواهد ناشر/ISBN/انتشار، به‌عنوان اثر منتشرشده برچسب نخورد."
+      ],
+      "seo": {
+        "title": "کتاب داشبورد و داستان‌گویی داده — طه محمدی",
+        "description": "دست‌نوشته کتاب ۱۲ فصلی درباره داشبوردهای اطلاعاتی، تحلیل بصری، عدم‌قطعیت، ارزیابی و پشتیبانی از تصمیم.",
+        "canonical_path": "/fa/writing/dashboard-data-storytelling-book",
+        "index": false,
+        "follow": true,
+        "og_title": "کتاب داشبورد و داستان‌گویی داده — طه محمدی",
+        "og_description": "دست‌نوشته کتاب ۱۲ فصلی درباره داشبوردهای اطلاعاتی، تحلیل بصری، عدم‌قطعیت، ارزیابی و پشتیبانی از تصمیم.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "education.ma.visual-communication.en",
+      "content_type": "education",
+      "slug": "ma-visual-communication",
+      "locale": "en",
+      "title": "M.A. in Visual Communication",
+      "excerpt": "Shahed University, Tehran, Iran — 2018–2022 — GPA 17.52/20.",
+      "body_markdown": "Thesis: *Analysis of Visual Elements in Iranian Presidential Campaign Advertisements (1997–2017)*",
+      "route": "/about/education",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": "2018",
+        "end": "2022",
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {
+        "institution": "Shahed University",
+        "location": "Tehran, Iran",
+        "degree_level": "master",
+        "gpa": "17.52/20",
+        "thesis_title": "Analysis of Visual Elements in Iranian Presidential Campaign Advertisements (1997–2017)"
+      },
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 8. Education / English"
+        }
+      ],
+      "restrictions": [
+        "Confirm dates, GPA, and thesis wording against official academic records before publication."
+      ],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "education.ma.visual-communication.fa",
+      "content_type": "education",
+      "slug": "ma-visual-communication",
+      "locale": "fa",
+      "title": "کارشناسی ارشد ارتباط تصویری",
+      "excerpt": "دانشگاه شاهد، تهران — ۱۳۹۷–۱۴۰۱ — معدل ۱۷٫۵۲ از ۲۰.",
+      "body_markdown": "پایان‌نامه: «بررسی عناصر تصویری تبلیغات جریان‌های سیاسی منتخب در انتخابات ریاست جمهوری ایران (۱۳۷۶–۱۳۹۶)»",
+      "route": "/about/education",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": "2018",
+        "end": "2022",
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {
+        "institution": "دانشگاه شاهد",
+        "location": "تهران",
+        "degree_level": "master",
+        "gpa": "۱۷٫۵۲ از ۲۰",
+        "thesis_title": "بررسی عناصر تصویری تبلیغات جریان‌های سیاسی منتخب در انتخابات ریاست جمهوری ایران (۱۳۷۶–۱۳۹۶)"
+      },
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 8. Education / فارسی"
+        }
+      ],
+      "restrictions": [
+        "تاریخ‌ها، معدل و عنوان پایان‌نامه پیش از انتشار با مدارک رسمی تطبیق داده شوند."
+      ],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "education.ba.interior-architecture.en",
+      "content_type": "education",
+      "slug": "ba-interior-architecture",
+      "locale": "en",
+      "title": "B.A. in Interior Architecture",
+      "excerpt": "Soore University, Tehran, Iran — 2014–2018 — GPA 16.48/20.",
+      "body_markdown": "Bachelor's degree in Interior Architecture.",
+      "route": "/about/education",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": "2014",
+        "end": "2018",
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {
+        "institution": "Soore University",
+        "location": "Tehran, Iran",
+        "degree_level": "bachelor",
+        "gpa": "16.48/20"
+      },
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 8. Education / English"
+        }
+      ],
+      "restrictions": [
+        "Confirm dates and GPA against official academic records before publication."
+      ],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "education.ba.interior-architecture.fa",
+      "content_type": "education",
+      "slug": "ba-interior-architecture",
+      "locale": "fa",
+      "title": "کارشناسی معماری داخلی",
+      "excerpt": "دانشگاه سوره، تهران — ۱۳۹۳–۱۳۹۷ — معدل ۱۶٫۴۸ از ۲۰.",
+      "body_markdown": "کارشناسی معماری داخلی.",
+      "route": "/about/education",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": "2014",
+        "end": "2018",
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {
+        "institution": "دانشگاه سوره",
+        "location": "تهران",
+        "degree_level": "bachelor",
+        "gpa": "۱۶٫۴۸ از ۲۰"
+      },
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 8. Education / فارسی"
+        }
+      ],
+      "restrictions": [
+        "تاریخ‌ها و معدل پیش از انتشار با مدارک رسمی تطبیق داده شوند."
+      ],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "experience.mci.en",
+      "content_type": "experience",
+      "slug": "software-engineer-mci",
+      "locale": "en",
+      "title": "Software Engineer — Mobile Communication Company of Iran (MCI)",
+      "excerpt": "Backend, data, integration, and applied-AI engineering for enterprise systems, with work spanning requirements, architecture, implementation, data flows, reliability, and AI-enabled workflows.",
+      "body_markdown": "Backend, data, integration, and applied-AI engineering for enterprise systems, with work spanning requirements, architecture, implementation, data flows, reliability, and AI-enabled workflows.",
+      "route": "/about/experience",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": "2020",
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 9. Professional experience"
+        }
+      ],
+      "restrictions": [
+        "Keep employer-sensitive details out of public copy."
+      ],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "experience.mci.fa",
+      "content_type": "experience",
+      "slug": "software-engineer-mci",
+      "locale": "fa",
+      "title": "مهندس نرم‌افزار — همراه اول",
+      "excerpt": "مهندسی بک‌اند، داده، یکپارچه‌سازی و هوش مصنوعی کاربردی در سامانه‌های سازمانی؛ از تحلیل نیاز و معماری تا پیاده‌سازی، جریان داده، قابلیت اطمینان و جریان‌های کاری مبتنی بر هوش مصنوعی.",
+      "body_markdown": "مهندسی بک‌اند، داده، یکپارچه‌سازی و هوش مصنوعی کاربردی در سامانه‌های سازمانی؛ از تحلیل نیاز و معماری تا پیاده‌سازی، جریان داده، قابلیت اطمینان و جریان‌های کاری مبتنی بر هوش مصنوعی.",
+      "route": "/about/experience",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": "2020",
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 9. Professional experience"
+        }
+      ],
+      "restrictions": [
+        "Keep employer-sensitive details out of public copy."
+      ],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "experience.naeo.en",
+      "content_type": "experience",
+      "slug": "researcher-dashboard-product-designer",
+      "locale": "en",
+      "title": "Researcher & Dashboard Product Designer — National Administrative and Employment Organization of Iran",
+      "excerpt": "Research, stakeholder analysis, information architecture, KPI design, visualization, and iterative product design for organizational dashboards.",
+      "body_markdown": "Research, stakeholder analysis, information architecture, KPI design, visualization, and iterative product design for organizational dashboards.",
+      "route": "/about/experience",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": "2022",
+        "end": "2025",
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 9. Professional experience"
+        }
+      ],
+      "restrictions": [
+        "Organization naming, screenshots, data, and outcomes require explicit disclosure approval."
+      ],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "experience.naeo.fa",
+      "content_type": "experience",
+      "slug": "researcher-dashboard-product-designer",
+      "locale": "fa",
+      "title": "پژوهشگر و طراح محصول داشبورد — سازمان اداری و استخدامی کشور",
+      "excerpt": "پژوهش، تحلیل ذی‌نفعان، معماری اطلاعات، طراحی شاخص‌ها، مصورسازی و طراحی تکرارشونده محصول برای داشبوردهای سازمانی.",
+      "body_markdown": "پژوهش، تحلیل ذی‌نفعان، معماری اطلاعات، طراحی شاخص‌ها، مصورسازی و طراحی تکرارشونده محصول برای داشبوردهای سازمانی.",
+      "route": "/about/experience",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": "2022",
+        "end": "2025",
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 9. Professional experience"
+        }
+      ],
+      "restrictions": [
+        "Organization naming, screenshots, data, and outcomes require explicit disclosure approval."
+      ],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "experience.shaparak.en",
+      "content_type": "experience",
+      "slug": "full-stack-shaparak",
+      "locale": "en",
+      "title": "Full-Stack Developer — Shaparak Electronic Card Payment Network System",
+      "excerpt": "Enterprise application development and dashboard/workbench capabilities, including requirements, data modeling, implementation, and production troubleshooting.",
+      "body_markdown": "Enterprise application development and dashboard/workbench capabilities, including requirements, data modeling, implementation, and production troubleshooting.",
+      "route": "/about/experience",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": "2024",
+        "end": "2024",
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 9. Professional experience"
+        }
+      ],
+      "restrictions": [
+        "Confirm preferred organization naming."
+      ],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "experience.shaparak.fa",
+      "content_type": "experience",
+      "slug": "full-stack-shaparak",
+      "locale": "fa",
+      "title": "توسعه‌دهنده فول‌استک — شاپرک",
+      "excerpt": "توسعه سامانه‌های سازمانی و قابلیت‌های داشبورد/محیط کاری، شامل تحلیل نیاز، مدل‌سازی داده، پیاده‌سازی و بررسی مسائل محیط عملیاتی.",
+      "body_markdown": "توسعه سامانه‌های سازمانی و قابلیت‌های داشبورد/محیط کاری، شامل تحلیل نیاز، مدل‌سازی داده، پیاده‌سازی و بررسی مسائل محیط عملیاتی.",
+      "route": "/about/experience",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": "2024",
+        "end": "2024",
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 9. Professional experience"
+        }
+      ],
+      "restrictions": [
+        "Confirm preferred organization naming."
+      ],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "experience.sajaya.en",
+      "content_type": "experience",
+      "slug": "full-stack-uiux-sajaya",
+      "locale": "en",
+      "title": "Full-Stack Developer & UI/UX Consultant — Sajaya Negar",
+      "excerpt": "Full-stack product development and UI/UX work across management software, using modern web technologies, Java/Spring Boot, databases, and Figma.",
+      "body_markdown": "Full-stack product development and UI/UX work across management software, using modern web technologies, Java/Spring Boot, databases, and Figma.",
+      "route": "/about/experience",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": "2020",
+        "end": "2020",
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 9. Professional experience"
+        }
+      ],
+      "restrictions": [
+        "Confirm preferred organization naming."
+      ],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "experience.sajaya.fa",
+      "content_type": "experience",
+      "slug": "full-stack-uiux-sajaya",
+      "locale": "fa",
+      "title": "توسعه‌دهنده فول‌استک و مشاور UI/UX — سجایا نگار",
+      "excerpt": "توسعه فول‌استک محصول و طراحی UI/UX برای نرم‌افزارهای مدیریتی با استفاده از فناوری‌های وب، Java/Spring Boot، پایگاه‌های داده و Figma.",
+      "body_markdown": "توسعه فول‌استک محصول و طراحی UI/UX برای نرم‌افزارهای مدیریتی با استفاده از فناوری‌های وب، Java/Spring Boot، پایگاه‌های داده و Figma.",
+      "route": "/about/experience",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": "2020",
+        "end": "2020",
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 9. Professional experience"
+        }
+      ],
+      "restrictions": [
+        "Confirm preferred organization naming."
+      ],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "learning.stanford-health-ai.en",
+      "content_type": "credential",
+      "slug": "stanford-ai-healthcare",
+      "locale": "en",
+      "title": "Stanford Medicine AI in Healthcare Series",
+      "excerpt": "Structured healthcare-AI training completed across 2025–2026.",
+      "body_markdown": "Structured training covering clinical context, clinical data, machine learning in healthcare, evaluation of AI applications, and a healthcare-AI capstone.",
+      "route": "/learning",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": "2025",
+        "end": "2026",
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {
+        "recorded_completion": "54.5 AMA PRA Category 1 Credits"
+      },
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 10. Learning and professional development / Stanford Medicine AI in Healthcare Series"
+        }
+      ],
+      "restrictions": [
+        "Publish only after the credential/certificate source is attached to the manifest."
+      ],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "learning.stanford-health-ai.fa",
+      "content_type": "credential",
+      "slug": "stanford-ai-healthcare",
+      "locale": "fa",
+      "title": "مجموعه هوش مصنوعی در سلامت Stanford Medicine",
+      "excerpt": "آموزش ساختاریافته هوش مصنوعی در سلامت در سال‌های ۲۰۲۵–۲۰۲۶.",
+      "body_markdown": "مجموعه آموزشی ساختاریافته در زمینه بافت بالینی، داده‌های سلامت، یادگیری ماشین در سلامت، ارزیابی کاربردهای هوش مصنوعی و پروژه نهایی هوش مصنوعی در سلامت.",
+      "route": "/learning",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": "2025",
+        "end": "2026",
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {
+        "recorded_completion": "54.5 AMA PRA Category 1 Credits"
+      },
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 10. Learning and professional development / Stanford Medicine AI in Healthcare Series"
+        }
+      ],
+      "restrictions": [
+        "فقط پس از افزودن منبع گواهی/اعتبارنامه به manifest منتشر شود."
+      ],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "learning.partial-ml-dl-genai.en",
+      "content_type": "credential",
+      "slug": "partial-ml-dl-genai",
+      "locale": "en",
+      "title": "Additional Structured Coursework",
+      "excerpt": "Partial coursework in machine learning, deep learning, and generative AI.",
+      "body_markdown": "- Machine Learning with Python\n- Deep Learning with TensorFlow/Keras\n- Generative AI / Large Language Models",
+      "route": "/learning",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "not-needed",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {
+        "completion_status": "partial",
+        "certificate_completed": false
+      },
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 10. Learning and professional development / Additional structured coursework"
+        }
+      ],
+      "restrictions": [
+        "Keep the word 'partial'; do not present as completed certification."
+      ],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "availability.phd-2027.en",
+      "content_type": "availability",
+      "slug": "phd-research-2027",
+      "locale": "en",
+      "title": "2027 Research Availability",
+      "excerpt": "Open to funded PhD and research opportunities for 2027 in Human-Centered AI, Human-AI Interaction, trustworthy AI, visual analytics, intelligent data systems, and digital health.",
+      "body_markdown": "Open to funded PhD and research opportunities for 2027 in Human-Centered AI, Human-AI Interaction, trustworthy AI, visual analytics, intelligent data systems, and digital health.",
+      "route": "/contact",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 11. Availability / English draft"
+        }
+      ],
+      "restrictions": [
+        "Time-sensitive availability statement; review regularly."
+      ],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "availability.phd-2027.fa",
+      "content_type": "availability",
+      "slug": "phd-research-2027",
+      "locale": "fa",
+      "title": "آمادگی برای فرصت‌های پژوهشی ۲۰۲۷",
+      "excerpt": "برای فرصت‌های پژوهشی و دکترای دارای تأمین مالی در سال ۲۰۲۷ در حوزه‌های هوش مصنوعی انسان‌محور، تعامل انسان و هوش مصنوعی، هوش مصنوعی قابل‌اعتماد، تحلیل بصری، سامانه‌های هوشمند داده و سلامت دیجیتال آماده گفت‌وگو و همکاری هستم.",
+      "body_markdown": "برای فرصت‌های پژوهشی و دکترای دارای تأمین مالی در سال ۲۰۲۷ در حوزه‌های هوش مصنوعی انسان‌محور، تعامل انسان و هوش مصنوعی، هوش مصنوعی قابل‌اعتماد، تحلیل بصری، سامانه‌های هوشمند داده و سلامت دیجیتال آماده گفت‌وگو و همکاری هستم.",
+      "route": "/contact",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 11. Availability / فارسی پیش‌نویس"
+        }
+      ],
+      "restrictions": [
+        "بیانیه زمان‌حساس است و باید به‌صورت دوره‌ای بازبینی شود."
+      ],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "contact.email",
+      "content_type": "contact_link",
+      "slug": "email",
+      "locale": "und",
+      "title": "Email",
+      "excerpt": "mailto:taha95mohammadi@gmail.com",
+      "body_markdown": "mailto:taha95mohammadi@gmail.com",
+      "route": "/contact",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "not-needed",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [
+        {
+          "label": "Email",
+          "url": "mailto:taha95mohammadi@gmail.com",
+          "rel": "email"
+        }
+      ],
+      "data": {
+        "url": "mailto:taha95mohammadi@gmail.com",
+        "rel": "email"
+      },
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 12. Contact and verified public destinations"
+        }
+      ],
+      "restrictions": [],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "contact.linkedin",
+      "content_type": "contact_link",
+      "slug": "linkedin",
+      "locale": "und",
+      "title": "LinkedIn",
+      "excerpt": "https://linkedin.com/in/taha-mohammadi",
+      "body_markdown": "https://linkedin.com/in/taha-mohammadi",
+      "route": "/contact",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "not-needed",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [
+        {
+          "label": "LinkedIn",
+          "url": "https://linkedin.com/in/taha-mohammadi",
+          "rel": "profile"
+        }
+      ],
+      "data": {
+        "url": "https://linkedin.com/in/taha-mohammadi",
+        "rel": "profile"
+      },
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 12. Contact and verified public destinations"
+        }
+      ],
+      "restrictions": [],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "contact.github",
+      "content_type": "contact_link",
+      "slug": "github",
+      "locale": "und",
+      "title": "GitHub",
+      "excerpt": "https://github.com/tahamohamadi-ir",
+      "body_markdown": "https://github.com/tahamohamadi-ir",
+      "route": "/contact",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "not-needed",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/tahamohamadi-ir",
+          "rel": "profile"
+        }
+      ],
+      "data": {
+        "url": "https://github.com/tahamohamadi-ir",
+        "rel": "profile"
+      },
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 12. Contact and verified public destinations"
+        }
+      ],
+      "restrictions": [],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "contact.orcid",
+      "content_type": "contact_link",
+      "slug": "orcid",
+      "locale": "und",
+      "title": "ORCID",
+      "excerpt": "https://orcid.org/0009-0006-7736-7638",
+      "body_markdown": "https://orcid.org/0009-0006-7736-7638",
+      "route": "/contact",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "not-needed",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [
+        {
+          "label": "ORCID",
+          "url": "https://orcid.org/0009-0006-7736-7638",
+          "rel": "identifier"
+        }
+      ],
+      "data": {
+        "url": "https://orcid.org/0009-0006-7736-7638",
+        "rel": "identifier"
+      },
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 12. Contact and verified public destinations"
+        }
+      ],
+      "restrictions": [],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "contact.website",
+      "content_type": "contact_link",
+      "slug": "website",
+      "locale": "und",
+      "title": "Website",
+      "excerpt": "https://tahamohamadi.ir",
+      "body_markdown": "https://tahamohamadi.ir",
+      "route": "/contact",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "not-needed",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [
+        {
+          "label": "Website",
+          "url": "https://tahamohamadi.ir",
+          "rel": "canonical"
+        }
+      ],
+      "data": {
+        "url": "https://tahamohamadi.ir",
+        "rel": "canonical"
+      },
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 12. Contact and verified public destinations"
+        }
+      ],
+      "restrictions": [],
+      "seo": {},
+      "relations": []
+    },
+    {
+      "content_id": "route.home.en",
+      "content_type": "route_copy",
+      "slug": "home",
+      "locale": "en",
+      "title": "Home",
+      "excerpt": "Research, engineering, and writing around human-centered intelligent systems.",
+      "body_markdown": "I work across software engineering, AI, data systems, visual analytics, and interaction design—with a focus on systems that remain inspectable, controllable, and useful in real decisions.",
+      "route": "/",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 13. Route-level copy / home / EN"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "Home — Taha Mohammadi",
+        "description": "Research, engineering, and writing around human-centered intelligent systems.",
+        "canonical_path": "/en",
+        "index": false,
+        "follow": true,
+        "og_title": "Home — Taha Mohammadi",
+        "og_description": "Research, engineering, and writing around human-centered intelligent systems.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "route.home.fa",
+      "content_type": "route_copy",
+      "slug": "home",
+      "locale": "fa",
+      "title": "خانه",
+      "excerpt": "پژوهش، مهندسی و نوشتن درباره سامانه‌های هوشمند انسان‌محور.",
+      "body_markdown": "در مرز مهندسی نرم‌افزار، هوش مصنوعی، سامانه‌های داده، تحلیل بصری و طراحی تعامل کار می‌کنم؛ با تمرکز بر سامانه‌هایی که در تصمیم‌های واقعی قابل‌فهم، کنترل‌پذیر و مفید باقی بمانند.",
+      "route": "/",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 13. Route-level copy / home / FA"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "خانه — طه محمدی",
+        "description": "پژوهش، مهندسی و نوشتن درباره سامانه‌های هوشمند انسان‌محور.",
+        "canonical_path": "/fa",
+        "index": false,
+        "follow": true,
+        "og_title": "خانه — طه محمدی",
+        "og_description": "پژوهش، مهندسی و نوشتن درباره سامانه‌های هوشمند انسان‌محور.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "route.about.en",
+      "content_type": "route_copy",
+      "slug": "about",
+      "locale": "en",
+      "title": "About",
+      "excerpt": "My path is intentionally interdisciplinary.",
+      "body_markdown": "My path is intentionally interdisciplinary: from architecture and visual communication to production software, data systems, and applied AI. That combination shapes the questions I work on today—how people understand machine-generated output, how evidence should be presented, and how intelligent systems can assist without hiding uncertainty or taking away meaningful control.",
+      "route": "/about",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 13. Route-level copy / about / EN"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "About — Taha Mohammadi",
+        "description": "My path is intentionally interdisciplinary.",
+        "canonical_path": "/en/about",
+        "index": false,
+        "follow": true,
+        "og_title": "About — Taha Mohammadi",
+        "og_description": "My path is intentionally interdisciplinary.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "route.about.fa",
+      "content_type": "route_copy",
+      "slug": "about",
+      "locale": "fa",
+      "title": "درباره",
+      "excerpt": "مسیر حرفه‌ای و پژوهشی من عمداً میان‌رشته‌ای بوده است.",
+      "body_markdown": "مسیر حرفه‌ای و پژوهشی من عمداً میان‌رشته‌ای بوده است: از معماری و ارتباط تصویری تا توسعه نرم‌افزار، سامانه‌های داده و هوش مصنوعی کاربردی. همین ترکیب، پرسش‌های اصلی امروز من را شکل داده است: انسان خروجی تولیدشده توسط ماشین را چگونه می‌فهمد، شواهد چگونه باید نمایش داده شوند، و سامانه‌های هوشمند چگونه می‌توانند کمک کنند بدون آن‌که عدم‌قطعیت را پنهان یا کنترل معنادار را از کاربر سلب کنند.",
+      "route": "/about",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 13. Route-level copy / about / FA"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "درباره — طه محمدی",
+        "description": "مسیر حرفه‌ای و پژوهشی من عمداً میان‌رشته‌ای بوده است.",
+        "canonical_path": "/fa/about",
+        "index": false,
+        "follow": true,
+        "og_title": "درباره — طه محمدی",
+        "og_description": "مسیر حرفه‌ای و پژوهشی من عمداً میان‌رشته‌ای بوده است.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "route.research.en",
+      "content_type": "route_copy",
+      "slug": "research",
+      "locale": "en",
+      "title": "Research",
+      "excerpt": "My research focuses on the boundary between intelligent-system capability and human agency.",
+      "body_markdown": "My research focuses on the boundary between intelligent-system capability and human agency. I study the system-level mechanisms that make AI easier to inspect and govern: clarification, validation, provenance, uncertainty, controlled execution, repair, and abstention.",
+      "route": "/research",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 13. Route-level copy / research / EN"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "Research — Taha Mohammadi",
+        "description": "My research focuses on the boundary between intelligent-system capability and human agency.",
+        "canonical_path": "/en/research",
+        "index": false,
+        "follow": true,
+        "og_title": "Research — Taha Mohammadi",
+        "og_description": "My research focuses on the boundary between intelligent-system capability and human agency.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "route.research.fa",
+      "content_type": "route_copy",
+      "slug": "research",
+      "locale": "fa",
+      "title": "پژوهش",
+      "excerpt": "پژوهش من بر مرز میان توانمندی سامانه هوشمند و عاملیت انسان تمرکز دارد.",
+      "body_markdown": "پژوهش من بر مرز میان توانمندی سامانه هوشمند و عاملیت انسان تمرکز دارد. سازوکارهایی را بررسی می‌کنم که هوش مصنوعی را قابل‌بررسی‌تر و قابل‌کنترل‌تر می‌کنند: شفاف‌سازی، اعتبارسنجی، منشأ شواهد، عدم‌قطعیت، اجرای کنترل‌شده، ترمیم و امتناع.",
+      "route": "/research",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 13. Route-level copy / research / FA"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "پژوهش — طه محمدی",
+        "description": "پژوهش من بر مرز میان توانمندی سامانه هوشمند و عاملیت انسان تمرکز دارد.",
+        "canonical_path": "/fa/research",
+        "index": false,
+        "follow": true,
+        "og_title": "پژوهش — طه محمدی",
+        "og_description": "پژوهش من بر مرز میان توانمندی سامانه هوشمند و عاملیت انسان تمرکز دارد.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "route.projects.en",
+      "content_type": "route_copy",
+      "slug": "projects",
+      "locale": "en",
+      "title": "Projects",
+      "excerpt": "Selected systems and research prototypes.",
+      "body_markdown": "Selected systems and research prototypes spanning natural-language data access, behavioral-data architecture, visual analytics, and decision support.",
+      "route": "/projects",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 13. Route-level copy / projects / EN"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "Projects — Taha Mohammadi",
+        "description": "Selected systems and research prototypes.",
+        "canonical_path": "/en/projects",
+        "index": false,
+        "follow": true,
+        "og_title": "Projects — Taha Mohammadi",
+        "og_description": "Selected systems and research prototypes.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "route.projects.fa",
+      "content_type": "route_copy",
+      "slug": "projects",
+      "locale": "fa",
+      "title": "پروژه‌ها",
+      "excerpt": "سامانه‌ها و نمونه‌های پژوهشی منتخب.",
+      "body_markdown": "مجموعه‌ای از سامانه‌ها و نمونه‌های پژوهشی در حوزه دسترسی زبانی به داده، معماری داده‌های رفتاری، تحلیل بصری و پشتیبانی از تصمیم.",
+      "route": "/projects",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 13. Route-level copy / projects / FA"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "پروژه‌ها — طه محمدی",
+        "description": "سامانه‌ها و نمونه‌های پژوهشی منتخب.",
+        "canonical_path": "/fa/projects",
+        "index": false,
+        "follow": true,
+        "og_title": "پروژه‌ها — طه محمدی",
+        "og_description": "سامانه‌ها و نمونه‌های پژوهشی منتخب.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "route.writing.en",
+      "content_type": "route_copy",
+      "slug": "writing",
+      "locale": "en",
+      "title": "Writing",
+      "excerpt": "Long-form technical and research writing.",
+      "body_markdown": "Long-form technical and research writing on dashboards, data storytelling, Human-AI analytics, reliable AI systems, and visual communication.",
+      "route": "/writing",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 13. Route-level copy / writing / EN"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "Writing — Taha Mohammadi",
+        "description": "Long-form technical and research writing.",
+        "canonical_path": "/en/writing",
+        "index": false,
+        "follow": true,
+        "og_title": "Writing — Taha Mohammadi",
+        "og_description": "Long-form technical and research writing.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "route.writing.fa",
+      "content_type": "route_copy",
+      "slug": "writing",
+      "locale": "fa",
+      "title": "نوشتار",
+      "excerpt": "نوشتارهای پژوهشی و فنی بلند.",
+      "body_markdown": "نوشتارهای پژوهشی و فنی بلند درباره داشبوردها، داستان‌گویی داده، تحلیل انسان و هوش مصنوعی، سامانه‌های هوشمند قابل‌اعتماد و ارتباط تصویری.",
+      "route": "/writing",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 13. Route-level copy / writing / FA"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "نوشتار — طه محمدی",
+        "description": "نوشتارهای پژوهشی و فنی بلند.",
+        "canonical_path": "/fa/writing",
+        "index": false,
+        "follow": true,
+        "og_title": "نوشتار — طه محمدی",
+        "og_description": "نوشتارهای پژوهشی و فنی بلند.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "route.publications.en",
+      "content_type": "route_copy",
+      "slug": "publications",
+      "locale": "en",
+      "title": "Research Outputs",
+      "excerpt": "Research outputs shown with their actual status.",
+      "body_markdown": "Peer-reviewed publications, manuscripts, technical papers, and other research outputs are shown with their actual status. Work in preparation is never presented as published.",
+      "route": "/publications",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 13. Route-level copy / publications / EN"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "Research Outputs — Taha Mohammadi",
+        "description": "Research outputs shown with their actual status.",
+        "canonical_path": "/en/publications",
+        "index": false,
+        "follow": true,
+        "og_title": "Research Outputs — Taha Mohammadi",
+        "og_description": "Research outputs shown with their actual status.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "route.publications.fa",
+      "content_type": "route_copy",
+      "slug": "publications",
+      "locale": "fa",
+      "title": "خروجی‌های پژوهشی",
+      "excerpt": "خروجی‌ها با وضعیت واقعی خود نمایش داده می‌شوند.",
+      "body_markdown": "مقالات داوری‌شده، دست‌نوشته‌ها، متون فنی و سایر خروجی‌های پژوهشی با وضعیت واقعی خود نمایش داده می‌شوند. اثری که در حال آماده‌سازی است هرگز به‌عنوان اثر منتشرشده نمایش داده نمی‌شود.",
+      "route": "/publications",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 13. Route-level copy / publications / FA"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "خروجی‌های پژوهشی — طه محمدی",
+        "description": "خروجی‌ها با وضعیت واقعی خود نمایش داده می‌شوند.",
+        "canonical_path": "/fa/publications",
+        "index": false,
+        "follow": true,
+        "og_title": "خروجی‌های پژوهشی — طه محمدی",
+        "og_description": "خروجی‌ها با وضعیت واقعی خود نمایش داده می‌شوند.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "route.learning.en",
+      "content_type": "route_copy",
+      "slug": "learning",
+      "locale": "en",
+      "title": "Learning",
+      "excerpt": "Selected structured learning and professional development.",
+      "body_markdown": "Selected structured learning and professional development that directly supports my research and engineering work.",
+      "route": "/learning",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 13. Route-level copy / learning / EN"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "Learning — Taha Mohammadi",
+        "description": "Selected structured learning and professional development.",
+        "canonical_path": "/en/learning",
+        "index": false,
+        "follow": true,
+        "og_title": "Learning — Taha Mohammadi",
+        "og_description": "Selected structured learning and professional development.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "route.learning.fa",
+      "content_type": "route_copy",
+      "slug": "learning",
+      "locale": "fa",
+      "title": "یادگیری",
+      "excerpt": "آموزش‌های ساختاریافته و توسعه حرفه‌ای منتخب.",
+      "body_markdown": "منتخبی از آموزش‌های ساختاریافته و توسعه حرفه‌ای که مستقیماً از مسیر پژوهشی و مهندسی من پشتیبانی می‌کنند.",
+      "route": "/learning",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 13. Route-level copy / learning / FA"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "یادگیری — طه محمدی",
+        "description": "آموزش‌های ساختاریافته و توسعه حرفه‌ای منتخب.",
+        "canonical_path": "/fa/learning",
+        "index": false,
+        "follow": true,
+        "og_title": "یادگیری — طه محمدی",
+        "og_description": "آموزش‌های ساختاریافته و توسعه حرفه‌ای منتخب.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "route.creative.en",
+      "content_type": "route_copy",
+      "slug": "creative",
+      "locale": "en",
+      "title": "Creative Work",
+      "excerpt": "Selected visual and design work, published only with clear rights and credits.",
+      "body_markdown": "Selected visual and design work will be published only where authorship, credits, and media rights are clear.",
+      "route": "/creative",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 13. Route-level copy / creative / EN"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "Creative Work — Taha Mohammadi",
+        "description": "Selected visual and design work, published only with clear rights and credits.",
+        "canonical_path": "/en/creative",
+        "index": false,
+        "follow": true,
+        "og_title": "Creative Work — Taha Mohammadi",
+        "og_description": "Selected visual and design work, published only with clear rights and credits.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "route.creative.fa",
+      "content_type": "route_copy",
+      "slug": "creative",
+      "locale": "fa",
+      "title": "آثار خلاقه",
+      "excerpt": "آثار بصری و طراحی فقط با حقوق و اعتباردهی روشن منتشر می‌شوند.",
+      "body_markdown": "آثار منتخب بصری و طراحی فقط در مواردی منتشر می‌شوند که مالکیت اثر، اعتباردهی و حقوق انتشار رسانه روشن باشد.",
+      "route": "/creative",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 13. Route-level copy / creative / FA"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "آثار خلاقه — طه محمدی",
+        "description": "آثار بصری و طراحی فقط با حقوق و اعتباردهی روشن منتشر می‌شوند.",
+        "canonical_path": "/fa/creative",
+        "index": false,
+        "follow": true,
+        "og_title": "آثار خلاقه — طه محمدی",
+        "og_description": "آثار بصری و طراحی فقط با حقوق و اعتباردهی روشن منتشر می‌شوند.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "route.cv.en",
+      "content_type": "route_copy",
+      "slug": "cv",
+      "locale": "en",
+      "title": "CV",
+      "excerpt": "Current owner-approved academic and professional documents.",
+      "body_markdown": "Academic and professional documents are provided only in owner-approved, current versions.",
+      "route": "/cv",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 13. Route-level copy / cv / EN"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "CV — Taha Mohammadi",
+        "description": "Current owner-approved academic and professional documents.",
+        "canonical_path": "/en/cv",
+        "index": false,
+        "follow": true,
+        "og_title": "CV — Taha Mohammadi",
+        "og_description": "Current owner-approved academic and professional documents.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "route.cv.fa",
+      "content_type": "route_copy",
+      "slug": "cv",
+      "locale": "fa",
+      "title": "رزومه",
+      "excerpt": "مدارک آکادمیک و حرفه‌ای جاری و تأییدشده.",
+      "body_markdown": "مدارک آکادمیک و حرفه‌ای فقط در نسخه‌های جاری و تأییدشده توسط مالک سایت ارائه می‌شوند.",
+      "route": "/cv",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 13. Route-level copy / cv / FA"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "رزومه — طه محمدی",
+        "description": "مدارک آکادمیک و حرفه‌ای جاری و تأییدشده.",
+        "canonical_path": "/fa/cv",
+        "index": false,
+        "follow": true,
+        "og_title": "رزومه — طه محمدی",
+        "og_description": "مدارک آکادمیک و حرفه‌ای جاری و تأییدشده.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "route.contact.en",
+      "content_type": "route_copy",
+      "slug": "contact",
+      "locale": "en",
+      "title": "Contact",
+      "excerpt": "Email is the preferred contact channel.",
+      "body_markdown": "For research, doctoral opportunities, technical collaboration, or selected consulting inquiries, email is the preferred contact channel.",
+      "route": "/contact",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 13. Route-level copy / contact / EN"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "Contact — Taha Mohammadi",
+        "description": "Email is the preferred contact channel.",
+        "canonical_path": "/en/contact",
+        "index": false,
+        "follow": true,
+        "og_title": "Contact — Taha Mohammadi",
+        "og_description": "Email is the preferred contact channel.",
+        "og_type": "website"
+      },
+      "relations": []
+    },
+    {
+      "content_id": "route.contact.fa",
+      "content_type": "route_copy",
+      "slug": "contact",
+      "locale": "fa",
+      "title": "تماس",
+      "excerpt": "ایمیل مسیر ترجیحی ارتباط است.",
+      "body_markdown": "برای فرصت‌های پژوهشی و دکترا، همکاری فنی یا درخواست‌های منتخب مشاوره، ایمیل مسیر ترجیحی ارتباط است.",
+      "route": "/contact",
+      "status": {
+        "approval_state": "needs-owner-input",
+        "publication_state": "draft",
+        "translation_state": "approved",
+        "visibility": "public"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "published_at": null,
+        "retired_at": null,
+        "record_updated_at": "2026-08-29T02:03:00-07:00"
+      },
+      "sort_order": 0,
+      "tags": [],
+      "links": [],
+      "data": {},
+      "evidence": [
+        {
+          "kind": "owner_draft_source",
+          "source_path": "Docs/01-product/owner-content-seed-v1/source/owner-public-content.md",
+          "source_hash": "0c8851020f78ef4424b67e8cd5c92772f813bf21a5d18bd13f4942781c6a1770",
+          "locator": "# 13. Route-level copy / contact / FA"
+        }
+      ],
+      "restrictions": [],
+      "seo": {
+        "title": "تماس — طه محمدی",
+        "description": "ایمیل مسیر ترجیحی ارتباط است.",
+        "canonical_path": "/fa/contact",
+        "index": false,
+        "follow": true,
+        "og_title": "تماس — طه محمدی",
+        "og_description": "ایمیل مسیر ترجیحی ارتباط است.",
+        "og_type": "website"
+      },
+      "relations": []
+    }
+  ]
+}

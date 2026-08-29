@@ -1,0 +1,246 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tahamohamadi.ir/schemas/content-record.schema.json",
+  "title": "Taha Site Content Record",
+  "type": "object",
+  "required": [
+    "content_id",
+    "content_type",
+    "slug",
+    "locale",
+    "title",
+    "excerpt",
+    "body_markdown",
+    "route",
+    "status",
+    "dates",
+    "sort_order",
+    "tags",
+    "links",
+    "data",
+    "evidence",
+    "restrictions",
+    "seo",
+    "relations"
+  ],
+  "properties": {
+    "content_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "content_type": {
+      "type": "string",
+      "enum": [
+        "profile_identity",
+        "profile_bio",
+        "research_statement",
+        "research_focus",
+        "engineering_statement",
+        "project",
+        "writing",
+        "education",
+        "experience",
+        "credential",
+        "availability",
+        "contact_link",
+        "route_copy",
+        "document",
+        "legal_notice"
+      ]
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "locale": {
+      "type": "string",
+      "enum": [
+        "en",
+        "fa",
+        "und"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "excerpt": {
+      "type": "string"
+    },
+    "body_markdown": {
+      "type": "string"
+    },
+    "route": {
+      "type": "string"
+    },
+    "status": {
+      "type": "object",
+      "required": [
+        "approval_state",
+        "publication_state",
+        "translation_state",
+        "visibility"
+      ],
+      "properties": {
+        "approval_state": {
+          "type": "string",
+          "enum": [
+            "approved",
+            "needs-owner-input",
+            "private",
+            "unavailable",
+            "superseded"
+          ]
+        },
+        "publication_state": {
+          "type": "string",
+          "enum": [
+            "not-public",
+            "draft",
+            "published",
+            "retired"
+          ]
+        },
+        "translation_state": {
+          "type": "string",
+          "enum": [
+            "not-needed",
+            "approved",
+            "untranslated",
+            "not-authorized"
+          ]
+        },
+        "visibility": {
+          "type": "string",
+          "enum": [
+            "public",
+            "private",
+            "admin-only"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "dates": {
+      "type": "object",
+      "required": [
+        "start",
+        "end",
+        "published_at",
+        "retired_at",
+        "record_updated_at"
+      ],
+      "properties": {
+        "start": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "end": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "published_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "retired_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "record_updated_at": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "sort_order": {
+      "type": "integer"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "label",
+          "url",
+          "rel"
+        ],
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "rel": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "data": {
+      "type": "object"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "source_path",
+          "source_hash",
+          "locator"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string"
+          },
+          "source_path": {
+            "type": "string"
+          },
+          "source_hash": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "locator": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "restrictions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "seo": {
+      "type": "object"
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  },
+  "additionalProperties": false
+}
