@@ -1,6 +1,6 @@
 # Multi-Agent Task Board
 
-Status: active execution board for parallel agents.  
+Status: **Wave 0 complete** (2026-08-29). Wave 1 active: seed import + OpenAPI types.  
 Canonical rollup: `MASTER-TASK-LIST.md` (milestones only).  
 This document is the **detailed work queue** with dependencies and verification gates.
 
@@ -21,13 +21,12 @@ A legacy `tahamohamadi-website` Docker stack may run on ports 80/443 with its ow
 ## Wave map (parallel lanes)
 
 ```text
-Wave 0 (start now — parallel)
-  COORD-010..030   docs/CI governance
-  BACKEND-010..050 PostgreSQL + env + health
-  PUBLIC-010..080  Astro scaffold foundation
-  ADMIN-010..070   React/Vite scaffold foundation
+Wave 0 — COMPLETE (2026-08-29)
+  BACKEND-010..050  disposable PostgreSQL :5433, migrate, /health/
+  PUBLIC-010..040   Astro 7 + Tailwind 4 + i18n gateway
+  ADMIN-010..040    React 19 + Vite + /admin/ shell
 
-Wave 1 (after Wave 0 slice A)
+Wave 1 (start now — parallel)
   BACKEND-060..120 seed v1.1 import + import tests
   COORD-040..050   OpenAPI TS types contract wiring
   PUBLIC-090..120  API client + locale routes

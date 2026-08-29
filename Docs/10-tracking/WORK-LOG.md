@@ -19,3 +19,10 @@
 - Retired `Docs/references/site-redesign/`; promoted `Docs/references/frontend-design-authority/` as the sole tracked visual reference (30 unique binary checksums after deduplicating 3 hash-identical files from the bootstrap-era 33-hash pack).
 - Passed agent-kit validator, OpenAPI access tests (9), and Django system check.
 - Aligned `PROVENANCE.json`, deferred-validation DEF-006, risk-register IDs, and repository task lists with `OPENAPI-ACCEPTANCE.md` scaffold-foundation status.
+
+## 2026-08-29 — Wave 0 multi-agent execution
+
+- Owner decision: seed v1.1 + Assets/authority outrank live legacy CMS; greenfield replace over DB migration (logged in `DECISION-LOG.md`).
+- Published `LOCAL-RUNTIME-SSOT.md` and `scripts/promote-design-intake.ps1` for Assets → design-authority promotion.
+- Started parallel Wave 0 lanes: BACKEND-010..050, PUBLIC-010..040, ADMIN-010..040.
+- Wave 0 multi-agent execution complete; Wave 1 verification added below.

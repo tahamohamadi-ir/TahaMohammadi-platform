@@ -48,13 +48,13 @@ Status markers: `[x]` verified complete, `[ ]` not complete.
 - [x] Run Ruff without modifying migrations; all checks pass.
 - [x] Run the full pytest suite; 636 tests pass.
 - [x] Record the migrated test baseline; no failures occurred.
-- [ ] Start the backend with development settings.
-- [ ] Verify `/health/` against a local PostgreSQL database.
-- [ ] Apply all migrations to an empty PostgreSQL database.
+- [x] Start the backend with development settings.
+- [x] Verify `/health/` against a local PostgreSQL database.
+- [x] Apply all migrations to an empty PostgreSQL database.
 - [x] Export the current public OpenAPI schema (PS-05; `Back-End/docs/contracts/openapi/current/public-openapi.json`).
 - [x] Export the current admin OpenAPI schema (PS-05; `Back-End/docs/contracts/openapi/current/admin-openapi.json`).
 - [x] Generate an endpoint inventory from source and OpenAPI (PS-05; `endpoint-inventory.md`).
-- [ ] Reconcile `.env.example` with Docker-local and standalone-local database profiles.
+- [x] Reconcile `.env.example` with Docker-local and standalone-local database profiles.
 - [ ] Confirm same-origin reverse-proxy routing in disposable local/staging browser checks.
 - [ ] Remove legacy SPA-serving responsibility from backend only after admin cutover.
 - [ ] Rewrite active backend container and deployment files for the new repository paths.
@@ -75,8 +75,8 @@ Status markers: `[x]` verified complete, `[ ]` not complete.
 
 ## R3 — Public design foundation
 
-- [ ] Scaffold Astro 7 and TypeScript 5.9.
-- [ ] Configure Tailwind CSS 4 with a verified processing pipeline.
+- [x] Scaffold Astro 7 and TypeScript 5.9.
+- [x] Configure Tailwind CSS 4 with a verified processing pipeline.
 - [ ] Self-host Newsreader, Inter, Estedad, and Vazirmatn.
 - [ ] Implement semantic Light and Dark tokens.
 - [ ] Add computed-style token tests.
@@ -92,7 +92,7 @@ Status markers: `[x]` verified complete, `[ ]` not complete.
 
 ## R4 — Public page families
 
-- [ ] Implement the language gateway.
+- [x] Implement the language gateway.
 - [ ] Implement Persian and English Home pages.
 - [ ] Implement About and profile routes.
 - [ ] Implement Research and Publications indexes and details.
@@ -112,7 +112,7 @@ Status markers: `[x]` verified complete, `[ ]` not complete.
 
 ## R5 — Admin foundation
 
-- [ ] Scaffold React 19, TypeScript 5.9, and Vite.
+- [x] Scaffold React 19, TypeScript 5.9, and Vite.
 - [ ] Configure routing and guarded layouts.
 - [ ] Implement session and CSRF client behavior.
 - [ ] Generate or validate the admin API client.

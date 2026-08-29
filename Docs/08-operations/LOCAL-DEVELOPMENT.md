@@ -1,5 +1,9 @@
 # Local Development
 
+## Content and design authority
+
+**Seed v1.1 + tracked design authority take priority over the live legacy CMS.** See `LOCAL-RUNTIME-SSOT.md` for the single-source-of-truth map and promotion workflow (`scripts/promote-design-intake.ps1`).
+
 ## Existing Docker stacks on this machine
 
 The legacy `tahamohamadi-website` compose stack (nginx, Next.js, Django, PostgreSQL 16) may already run on ports **80/443**. That stack is **not** the new platform runtime. Do not point new-platform development at its database or containers unless a task explicitly documents a one-time migration experiment.
@@ -9,14 +13,14 @@ The new platform uses:
 | Product | Path | Runtime status |
 |---|---|---|
 | Backend | `Back-End/` | Migrated Django; use disposable PostgreSQL |
-| Public site | `Front-End/public-site/` | Scaffold pending (Astro) |
-| Admin panel | `Front-End/admin-panel/` | Scaffold pending (React/Vite) |
+| Public site | `Front-End/public-site/` | Wave 0 scaffold in progress (Astro) |
+| Admin panel | `Front-End/admin-panel/` | Wave 0 scaffold in progress (React/Vite) |
 
 ## Backend baseline
 
 Run backend commands from `Back-End/`.
 Use Python 3.12 and `uv`.
-Use a **disposable** PostgreSQL database for the new platform — separate database name, user, and host port (for example `localhost:5433`) so it never collides with other projects.
+Use a **disposable** PostgreSQL database for the new platform — host port **5433**, database `taha_platform_dev`. See `Back-End/docs/operations/LOCAL-DATABASE.md` and `Back-End/docker-compose.dev.yml`.
 
 Recommended first-time sequence:
 
@@ -30,8 +34,14 @@ Recommended first-time sequence:
 
 ## Public and admin baseline
 
-The frontend repositories do not have application scaffolds yet.
-Their executable commands become authoritative only after scaffold tasks complete and are committed.
+After Wave 0 scaffold commits:
+
+| Repo | Dev command | Default port |
+|---|---|---|
+| `Front-End/public-site/` | `npm run dev` | 4321 |
+| `Front-End/admin-panel/` | `npm run dev` | 5173 |
+
+Proxy `/api` to `http://127.0.0.1:8000` per each repo's `vite.config` / Astro config.
 
 Do not reuse the legacy local stack script because its paths target the old monorepo.
 
