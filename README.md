@@ -8,6 +8,7 @@ Goal: Build the public site and admin panel from scratch while preserving the us
 
 | Product | Local path | GitHub repository |
 |---|---|---|
+| Coordination docs | `Docs/` (this workspace) | `tahamohamadi-ir/TahaMohammadi-platform` |
 | Public site | `Front-End/public-site` | `tahamohamadi-ir/TahaMohammadi-platform-FrontEnd-publicSite` |
 | Admin panel | `Front-End/admin-panel` | `tahamohamadi-ir/TahaMohammadi-platform-FrontEnd-adminPanel` |
 | Backend | `Back-End` | `tahamohamadi-ir/TahaMohammadi-platform-backEnd` |

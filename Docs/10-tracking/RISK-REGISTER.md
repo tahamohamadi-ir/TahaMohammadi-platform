@@ -11,4 +11,4 @@
 | RISK-007 | Local-only checks are mistaken for CI enforcement | Medium | Required CI checks plus implemented workflows | PS-11 and R8 pass |
 | RISK-008 | Reference copy is mistaken for publishable content | High | Authority order and asset approval register | Owner publication approval recorded |
 | RISK-009 | Visual QA becomes false-green | High | Computed-style checks and manual comparison | R8 evidence complete |
-| RISK-010 | Root coordination documents lack a remote | Medium | Keep a local Git repository; create a governance remote before team scaling | Remote configured and pushed |
+| RISK-010 | Root coordination documents lack a remote | Medium | Keep a local Git repository; create a governance remote before team scaling | Remote configured at `tahamohamadi-ir/TahaMohammadi-platform` (2026-08-29) |
