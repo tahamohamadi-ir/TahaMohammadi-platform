@@ -27,3 +27,5 @@
 - Started parallel Wave 0 lanes: BACKEND-010..050, PUBLIC-010..040, ADMIN-010..040.
 - Wave 0 multi-agent execution complete; Wave 1 verification added below.
 - COORD-040/050: `OPENAPI-TYPESCRIPT-GENERATION.md` and `CONTRACT-FIXTURE-PATHS.md` committed (`b5204e8`).
+- [Backend seed import](b6bf1fce-8a04-40a3-8ef5-eb106256cd51): `import_content_seed` + migration 0020 pushed (`4e4fb75`); 641 tests pass.
+- OpenAPI snapshot hash drift vs `OPENAPI-ACCEPTANCE.md` pins noted by frontend generators — PS-05 re-evidence required before regenerating types via npm script.

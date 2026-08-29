@@ -34,7 +34,7 @@ Status markers: `[x]` verified complete, `[ ]` not complete.
 - [x] PS-05d: Accept the resolved OpenAPI artifacts for scaffold foundation with exact schema hashes and access-test evidence.
 - [x] PS-06: Publish current-versus-target error compatibility matrix.
 - [x] PS-07: Accept same-origin reverse-proxy, cookie, CSRF, and MFA topology baseline.
-- [ ] PS-08: Seed v1.1 ingested (`owner-content-seed-v1/`; 85 records); per-record production approval still open.
+- [ ] PS-08: Seed v1.1 imported to backend (`import_content_seed`; 85 draft records); per-record production approval still open.
 - [ ] PS-09: Approve runtime media promotion ledger records.
 - [ ] PS-10: Acquire, license, subset, and test four self-hosted font families.
 - [ ] PS-11: Implement documented CI checks and branch protection (see `MULTI-AGENT-TASK-BOARD.md` COORD-030).
@@ -67,7 +67,7 @@ Status markers: `[x]` verified complete, `[ ]` not complete.
 - [ ] Freeze the error envelope.
 - [ ] Freeze media identifiers and rendition fields.
 - [ ] Freeze locale and untranslated-content behavior.
-- [ ] Generate TypeScript API types from accepted OpenAPI.
+- [x] Generate TypeScript API types from accepted OpenAPI (public-site + admin-panel; hash drift guard active — see WORK-LOG).
 - [ ] Add backend schema compatibility tests.
 - [ ] Add public-site contract fixtures.
 - [ ] Add admin-panel contract fixtures.

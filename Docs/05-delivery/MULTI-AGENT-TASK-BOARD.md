@@ -26,11 +26,11 @@ Wave 0 — COMPLETE (2026-08-29)
   PUBLIC-010..040   Astro 7 + Tailwind 4 + i18n gateway
   ADMIN-010..040    React 19 + Vite + /admin/ shell
 
-Wave 1 (start now — parallel)
-  BACKEND-060..120 seed v1.1 import + import tests
-  COORD-040..050   OpenAPI TS types contract wiring — **COORD-040/050 complete** (2026-08-29)
-  PUBLIC-090..120  API client + locale routes
-  ADMIN-080..110   admin API client + auth shell
+Wave 1 — IN PROGRESS (2026-08-29)
+  BACKEND-060..080  seed import — **complete** (`4e4fb75`)
+  COORD-040..050   OpenAPI TS contract docs — **complete**
+  PUBLIC-090       OpenAPI types + client skeleton — **complete**; PUBLIC-100..120 open
+  ADMIN-050..060   admin types + client skeleton — **complete**; ADMIN-070..110 open
 
 Wave 2 (after Wave 1)
   PUBLIC-130..220  design system + shell + atlas
