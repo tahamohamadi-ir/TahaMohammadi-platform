@@ -103,13 +103,13 @@ Wave 4 (release)
 | PUBLIC-040 | PUBLIC-030 | Implement language gateway `/` per `ROUTE-REGISTRY.md` | Gateway renders; sets locale links |
 | PUBLIC-050 | PUBLIC-020 | Pin self-hosted fonts (Newsreader, Inter, Estedad, Vazirmatn) | WOFF2 in repo; license files present |
 | PUBLIC-060 | PUBLIC-050 | Wire `--font-display` / `--font-body` tokens per locale | Computed-style test passes |
-| PUBLIC-070 ✅ | PUBLIC-020 | Light/Dark/system theme via CSS variables + island toggle | **Done** — WP-10 persists requested/resolved state before paint and passes multi-instance acceptance. |
+| PUBLIC-070 ✅ | PUBLIC-020 | Light/Dark/system theme via CSS variables + island toggle | **Done** — WP-10 persists and announces requested/resolved state before paint; focused acceptance covers preference changes, persistence, event detail/count, and multiple controls. |
 | PUBLIC-080 ✅ | PUBLIC-070 | Reduced-motion and focus-visible baseline | **Done** — WP-10 visible-focus and reduced-motion acceptance pass. |
 | PUBLIC-090 | PUBLIC-010 | Generate public API types from accepted OpenAPI hash | Types committed; hash pin in repo |
 | PUBLIC-100 | PUBLIC-090 | Implement typed API client with published-only filter | Client refuses non-published records |
 | PUBLIC-110 | PUBLIC-100 | Locale route helpers + canonical/hreflang utilities | Unit tests for `fa`/`en` paths |
 | PUBLIC-120 | PUBLIC-110, BACKEND-050 | Env schema (`PUBLIC_API_BASE`, etc.) + dev proxy config | `.env.example` validated |
-| PUBLIC-130 ✅ | PUBLIC-080 | Map design tokens from `agent-kit/tokens.json` | **Done** — portable snapshot and authority-equal token contract validate locally and centrally. |
+| PUBLIC-130 ✅ | PUBLIC-080 | Map design tokens from `agent-kit/tokens.json` | **Done** — complete primitive/semantic/type/motion/layout/component projection, portable snapshot, and authority-equal contract validate locally and centrally. |
 | PUBLIC-140 | PUBLIC-130 | Build primitives (button, link, card, tag, badge, …) per `components.json` | Story/atlas entries exist |
 | PUBLIC-150 | PUBLIC-140 | Build Header, Footer, skip link, page shell | Keyboard nav works RTL/LTR |
 | PUBLIC-160 | PUBLIC-150 | Build six shared templates from `templates.json` | Templates render in atlas |
