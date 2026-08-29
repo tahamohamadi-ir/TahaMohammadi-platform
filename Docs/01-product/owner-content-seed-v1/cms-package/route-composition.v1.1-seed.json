@@ -1,0 +1,255 @@
+{
+  "version": "1.1.0-seed",
+  "fallback_policy": "none",
+  "publish_filter": {
+    "approval_state": "approved",
+    "publication_state": "published",
+    "visibility": "public"
+  },
+  "routes": {
+    "home": {
+      "path": "/{locale}/",
+      "sections": [
+        {
+          "slot": "hero",
+          "records": [
+            "profile.identity.{locale}",
+            "route.home.{locale}"
+          ]
+        },
+        {
+          "slot": "research",
+          "records": [
+            "research.statement.{locale}"
+          ]
+        },
+        {
+          "slot": "research-focus",
+          "records": [
+            "research.focus.human-centered-ai.en",
+            "research.focus.trustworthy-controllable-ai.en",
+            "research.focus.visual-analytics-decision-support.en"
+          ],
+          "locale_rule": "render only exact-locale records; omit cards in fa until approved fa records exist"
+        },
+        {
+          "slot": "featured-projects",
+          "records": [
+            "project.pars-sql.{locale}",
+            "project.dashboard-research.{locale}"
+          ]
+        },
+        {
+          "slot": "availability",
+          "records": [
+            "availability.phd-2027.{locale}"
+          ]
+        },
+        {
+          "slot": "contact",
+          "records": [
+            "contact.email",
+            "contact.linkedin",
+            "contact.github",
+            "contact.orcid"
+          ]
+        }
+      ]
+    },
+    "about": {
+      "path": "/{locale}/about",
+      "sections": [
+        {
+          "slot": "intro",
+          "records": [
+            "route.about.{locale}",
+            "profile.bio.{locale}"
+          ]
+        },
+        {
+          "slot": "engineering",
+          "records": [
+            "engineering.statement.{locale}"
+          ]
+        },
+        {
+          "slot": "education",
+          "records": [
+            "education.ma.visual-communication.{locale}",
+            "education.ba.interior-architecture.{locale}"
+          ]
+        },
+        {
+          "slot": "experience",
+          "records": [
+            "experience.mci.{locale}",
+            "experience.naeo.{locale}",
+            "experience.shaparak.{locale}",
+            "experience.sajaya.{locale}"
+          ]
+        }
+      ],
+      "optional_sections": [
+        {
+          "slot": "teaching",
+          "records": [
+            "seed.empty.teaching.{locale}"
+          ],
+          "render_default": false,
+          "reason": "No verified Taha teaching record yet."
+        }
+      ]
+    },
+    "research": {
+      "path": "/{locale}/research",
+      "sections": [
+        {
+          "slot": "intro",
+          "records": [
+            "route.research.{locale}",
+            "research.statement.{locale}"
+          ]
+        },
+        {
+          "slot": "focus",
+          "records": [
+            "research.focus.human-centered-ai.en",
+            "research.focus.trustworthy-controllable-ai.en",
+            "research.focus.visual-analytics-decision-support.en",
+            "research.focus.behavioral-data-personalization.en",
+            "research.focus.edge-local-ai.en",
+            "research.focus.digital-health-wearable-ai.en"
+          ],
+          "locale_rule": "no fallback; omit untranslated records in fa"
+        },
+        {
+          "slot": "systems",
+          "records": [
+            "project.pars-sql.{locale}",
+            "project.dashboard-research.{locale}"
+          ]
+        }
+      ]
+    },
+    "projects": {
+      "path": "/{locale}/projects",
+      "sections": [
+        {
+          "slot": "intro",
+          "records": [
+            "route.projects.{locale}"
+          ]
+        },
+        {
+          "slot": "records",
+          "records": [
+            "project.pars-sql.{locale}",
+            "project.dashboard-research.{locale}"
+          ],
+          "private_candidates": [
+            "project.behavior-platform.{locale}"
+          ]
+        }
+      ]
+    },
+    "writing": {
+      "path": "/{locale}/writing",
+      "sections": [
+        {
+          "slot": "intro",
+          "records": [
+            "route.writing.{locale}"
+          ]
+        },
+        {
+          "slot": "records",
+          "records": [
+            "writing.dashboard-book.{locale}",
+            "writing.visual-discourse.en",
+            "writing.vtd-edge.en"
+          ],
+          "locale_rule": "exact locale only; English-only records are omitted on fa unless translated/approved"
+        }
+      ]
+    },
+    "learning": {
+      "path": "/{locale}/learning",
+      "sections": [
+        {
+          "slot": "intro",
+          "records": [
+            "route.learning.{locale}"
+          ]
+        },
+        {
+          "slot": "credentials",
+          "records": [
+            "learning.stanford-health-ai.{locale}",
+            "learning.partial-ml-dl-genai.en"
+          ],
+          "locale_rule": "no fallback"
+        }
+      ]
+    },
+    "cv": {
+      "path": "/{locale}/cv",
+      "sections": [
+        {
+          "slot": "intro",
+          "records": [
+            "route.cv.{locale}"
+          ]
+        },
+        {
+          "slot": "download-empty-state",
+          "records": [
+            "seed.empty.cv.{locale}"
+          ]
+        }
+      ],
+      "downloads": {
+        "records": [],
+        "reason": "No owner-approved public CV/resume file is in the current package."
+      }
+    },
+    "contact": {
+      "path": "/{locale}/contact",
+      "sections": [
+        {
+          "slot": "intro",
+          "records": [
+            "route.contact.{locale}",
+            "availability.phd-2027.{locale}"
+          ]
+        },
+        {
+          "slot": "links",
+          "records": [
+            "contact.email",
+            "contact.linkedin",
+            "contact.github",
+            "contact.orcid",
+            "contact.website"
+          ]
+        }
+      ]
+    },
+    "creative": {
+      "path": "/{locale}/creative",
+      "sections": [
+        {
+          "slot": "intro",
+          "records": [
+            "route.creative.{locale}"
+          ]
+        },
+        {
+          "slot": "empty-state",
+          "records": [
+            "seed.empty.creative.{locale}"
+          ]
+        }
+      ]
+    }
+  }
+}

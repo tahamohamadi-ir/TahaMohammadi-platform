@@ -46,9 +46,12 @@ Persian and English are independent content records.
 ## Files
 
 - `content-model.schema.json` — JSON Schema for a content record.
-- `content-records.json` — complete seed package with metadata and records.
-- `content-records.ndjson` — one record per line for batch import.
-- `route-composition.json` — page/slot composition and record dependencies.
+- `content-records.json` — base seed package **v1.0.0** (66 records).
+- `content-records.v1.1-seed.json` — **import target** merged seed (85 records).
+- `content-records.ndjson` — one record per line for batch import (v1.0.0 baseline).
+- `route-composition.json` — page/slot composition **v1.0.0**.
+- `route-composition.v1.1-seed.json` — composition with creative/teaching/CV empty states.
+- `supplement/` — v1.1 supplement registry, dev settings, validation (`supplement/README.md`).
 - `content-id-registry.csv` — flat registry useful for CMS migration planning.
 - `owner-approval-queue.json` — records that still need owner review or publication action.
 - `link-registry.json` — canonical public destinations and intentionally private/missing links.

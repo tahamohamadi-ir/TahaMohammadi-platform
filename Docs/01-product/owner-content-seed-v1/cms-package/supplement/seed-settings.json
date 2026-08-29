@@ -1,0 +1,12 @@
+{
+  "public_email": true,
+  "contact_form_only": false,
+  "show_orcid_in_primary_contact": false,
+  "show_phone": false,
+  "show_public_city_country": false,
+  "show_phd_2027_availability": true,
+  "public_cv_download": false,
+  "public_resume_download": false,
+  "default_media_policy": "withhold-until-rights-confirmed",
+  "locale_fallback": "none"
+}

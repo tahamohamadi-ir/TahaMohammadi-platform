@@ -1,0 +1,20 @@
+﻿content_id,content_type,locale,visibility,approval_state,publication_state,title
+seed.empty.creative.en,route_copy,en,public,approved,draft,Creative work
+seed.empty.creative.fa,route_copy,fa,public,approved,draft,آثار خلاقه
+seed.empty.teaching.en,route_copy,en,public,approved,draft,Teaching
+seed.empty.teaching.fa,route_copy,fa,public,approved,draft,تدریس
+seed.empty.cv.en,document,en,public,approved,draft,CV
+seed.empty.cv.fa,document,fa,public,approved,draft,رزومه
+admin.academic.ma-diploma,document,und,admin-only,private,not-public,M.A. diploma verification
+admin.academic.ma-transcript,document,und,admin-only,private,not-public,M.A. transcript verification
+admin.academic.ba-diploma,document,und,admin-only,private,not-public,B.A. diploma verification
+admin.academic.ba-transcript,document,und,admin-only,private,not-public,B.A. transcript verification
+admin.academic.thesis,document,und,admin-only,private,not-public,Thesis-title verification
+admin.credential.stanford,document,und,admin-only,private,not-public,Stanford credential verification
+admin.project.behavior-ip,document,und,admin-only,private,not-public,Behavioral platform publication clearance
+admin.project.dashboard-rights,document,und,admin-only,private,not-public,Dashboard media/publication rights
+admin.legal.stack,legal_notice,und,admin-only,private,not-public,Legal copy dependency
+admin.writing.visual-discourse,document,und,admin-only,private,not-public,Metadata checklist — writing.visual-discourse.en
+admin.writing.vtd-edge,document,und,admin-only,private,not-public,Metadata checklist — writing.vtd-edge.en
+admin.writing.dashboard-book,document,und,admin-only,private,not-public,Metadata checklist — writing.dashboard-book.en
+admin.settings.publication-defaults,document,und,admin-only,private,not-public,Seed publication defaults

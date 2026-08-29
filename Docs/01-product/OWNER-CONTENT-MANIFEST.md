@@ -1,10 +1,10 @@
 # Owner Content Manifest
 
-Status: **Seed v1 ingested** — candidate records exist; **zero production-approved** entries.
+Status: **Seed v1.1 ingested** — candidate + supplement records exist; **zero production-published** entries.
 
 Canonical seed package: `Docs/01-product/owner-content-seed-v1/`
 
-Nothing in Seed v1 is published until the owner explicitly approves wording, source evidence, and publication state per record.
+Nothing in Seed v1/v1.1 is production-published until the owner explicitly approves wording, source evidence, and publication state per record.
 
 ## Publication gate
 
@@ -14,15 +14,14 @@ publication_state == published
 visibility == public
 ```
 
-## Seed v1 summary (2026-08-29)
+## Seed summary (2026-08-29)
 
-| Metric | Value |
-|---|---|
-| Structured CMS records | 66 |
-| Flat manifest candidates | 39 |
-| Published | 0 |
-| Private by default | 2 (`project.behavior-platform`, `contact.phone`) |
-| Validation | PASS (`owner-content-seed-v1/cms-package/validate_content.py`) |
+| Package | Records | Published | Import file |
+|---|---|---|---|
+| v1.0.0 base | 66 | 0 | `cms-package/content-records.json` |
+| v1.1 supplement | +19 (85 total) | 0 | `cms-package/content-records.v1.1-seed.json` |
+
+Supplement adds: bilingual empty states (creative, teaching, CV) and admin-only verification rows (academic evidence, IP clearance, legal dependency, writing checklists, seed defaults).
 
 ## Required record fields
 
@@ -45,10 +44,12 @@ visibility == public
 | Read/edit owner prose | `owner-content-seed-v1/source/owner-public-content.md` |
 | See what is still missing | `owner-content-seed-v1/source/owner-content-gaps.md` |
 | Review candidate rows | `owner-content-seed-v1/manifest/candidate-records.md` |
-| Import/backend seed | `owner-content-seed-v1/cms-package/content-records.json` |
+| Import/backend seed | `owner-content-seed-v1/cms-package/content-records.v1.1-seed.json` |
+| Supplement registry | `owner-content-seed-v1/cms-package/supplement/supplement-registry.csv` |
+| Dev defaults | `owner-content-seed-v1/cms-package/supplement/seed-settings.json` |
 | Owner approval queue | `owner-content-seed-v1/cms-package/owner-approval-queue.json` |
 
-## Source file integrity (Seed v1)
+## Source file integrity
 
 | File | SHA-256 |
 |---|---|
@@ -58,4 +59,4 @@ visibility == public
 
 ## Production approval
 
-Until a record is individually marked `approved` + `published`, the UI uses an honest unavailable state or omits the module; it never falls back to concept art copy.
+Until a record is individually marked `approved` + `published`, the UI uses an honest unavailable/empty state or omits the module; it never falls back to concept art copy.

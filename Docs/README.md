@@ -11,7 +11,8 @@ Goal: Give humans and agents one reliable path through the platform documents.
 5. `04-design/DESIGN-AUTHORITY.md`
 6. `05-delivery/MASTER-ROADMAP.md`
 7. `05-delivery/MASTER-TASK-LIST.md`
-8. Target repository documents
+8. `05-delivery/MULTI-AGENT-TASK-BOARD.md`
+9. Target repository documents
 
 ## Folder ownership
 
