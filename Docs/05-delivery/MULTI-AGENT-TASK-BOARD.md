@@ -135,7 +135,7 @@ Wave 4 (release)
 
 - WP-10 closes only `PUBLIC-070`, `PUBLIC-080`, and `PUBLIC-130`; `PUBLIC-140` through `PUBLIC-180` remain owned by their assigned packets.
 - `PUBLIC-190` is not Done: its structure is complete, but visual acceptance is open pending `PUBLIC-180`, `BACKEND-070`, independent visual QA `PASS`, and explicit owner acceptance.
-- `PUBLIC-200+` is frozen until that acceptance. This does not mark R3 or R4 complete.
+- Page-family development `PUBLIC-200` through `PUBLIC-240` is frozen until that acceptance. `WP-25` and `PUBLIC-260` remain allowed. This does not mark R3 or R4 complete.
 
 ---
 
