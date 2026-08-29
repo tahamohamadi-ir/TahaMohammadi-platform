@@ -1,0 +1,392 @@
+[
+  {
+    "delete_path": "assets/MANIFEST.md",
+    "sha256": "f189be1f651171a688c090f1be319dff39e13053e47bd598dafcd42bcb66d5dd",
+    "retained_path": "authority/provenance/ASSET-MANIFEST.md",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/PROMPTS.md",
+    "sha256": "73625bc87e019d4189bfa957c8e1ebb35d03274f1fa174ac240b05386850044a",
+    "retained_path": "authority/provenance/PROMPTS.md",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/art/blog-coral-stairs.png",
+    "sha256": "908e890360742228f27fabbd21569588eb0302cb656f9889a545f42749d04720",
+    "retained_path": "authority/art/blog-coral-stairs.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/art/gallery-ivory-forms.png",
+    "sha256": "855296e8dd1541f173c529c30293f3848ef3d45eb3b07d92e64ffb89a4140d4e",
+    "retained_path": "authority/art/gallery-ivory-forms.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/art/learning-sage-library.png",
+    "sha256": "21ef859df5e6e2177538eb5a71d0f44d8615d32fa53f1586d8b8d3d5461e1418",
+    "retained_path": "authority/art/learning-sage-library.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/art/portal-centered-dark.png",
+    "sha256": "5520a6063c223dd7ad3896e26c7e0b52aa321bfb427a04ef620de7563b975181",
+    "retained_path": "authority/art/portal-centered-dark.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/art/portal-centered-light.png",
+    "sha256": "855fd82d363c7f2840d5e9359331e8cd29e1d1a54ea2e432f6cf2ae15fd09e2f",
+    "retained_path": "authority/art/portal-centered-light.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/art/portal-orbit-dark.png",
+    "sha256": "e10ff56456b6d9f7b3596311a378197f3600bee92d0993169216ff4caf3edd50",
+    "retained_path": "authority/art/portal-orbit-dark.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/art/portal-orbit-light.png",
+    "sha256": "3e9316a95370a3401da8b3cd7c0007e404fe3bd985aeb70a082e13b7ff1fbf2b",
+    "retained_path": "authority/art/portal-orbit-light.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/art/project-dashboard-systems.png",
+    "sha256": "c33ee40fcf13ffe3a7c359285c74eb9eb45415d92b061e550e1c5b2c35029ba4",
+    "retained_path": "authority/art/project-dashboard-systems.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/art/project-data-architecture.png",
+    "sha256": "b31c2bced438d03337daa225d284fe10aa3f6595785afe5db36b3f458eb925f1",
+    "retained_path": "authority/art/project-data-architecture.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/art/project-placeholder-ivory-stairs.png",
+    "sha256": "b8c237066aaeb903889eebb5cd8f3153c37997fdf8de5ff389e840ec8aec1d3c",
+    "retained_path": "authority/art/project-placeholder-ivory-stairs.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/art/project-visual-communication-network.png",
+    "sha256": "fbceedb903700246442f201f113cfc9b59df18f5f4a5681c379ca8cd61b9db33",
+    "retained_path": "authority/art/project-visual-communication-network.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/brand/SOURCE-NOTE.md",
+    "sha256": "0ed9875ede43978b665793daa5d6f8bd9172ca7e518d4c44720888f467d582b5",
+    "retained_path": "authority/brand/SOURCE-NOTE.md",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/brand/taha-mark-favicon.png",
+    "sha256": "3019401d3a84e042616398990f9322419252fc2e24c81a793e5feb22b5029ca8",
+    "retained_path": "authority/brand/taha-mark-favicon.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/brand/taha-mark-primary.png",
+    "sha256": "232276518f4b97351574fdfffc7b230fdd402bb7356c096a3694701959cd5cc8",
+    "retained_path": "authority/brand/taha-mark-primary.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/concepts/admin-graph-editor-dark-concept-v1.png",
+    "sha256": "f005f093c66b8476b331b442432d175336840d9296b4657ba41a1a94bd4b1b8b",
+    "retained_path": "authority/concepts/admin-graph-editor-dark-concept-v1.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/concepts/blog-detail-fa-light-concept-v1.png",
+    "sha256": "99c5890ff290bc12a5d20e2e5bab3da2d43a88514c7c036535a6d0fe846325d9",
+    "retained_path": "authority/concepts/blog-detail-fa-light-concept-v1.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/concepts/home-dark-concept-v3-final.png",
+    "sha256": "288c12ed5c85800beda45b375a4966c00fd9e4ca7a3fda15a1c826bd691d82c3",
+    "retained_path": "authority/concepts/home-dark-concept-v3-final.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/concepts/home-light-concept-v3-final.png",
+    "sha256": "c0b963f1f08056bf43eb04ade87bb4c8d329ff15327fe654067683f2a3a156f3",
+    "retained_path": "authority/concepts/home-light-concept-v3-final.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/concepts/home-mobile-fa-light-concept-v1.png",
+    "sha256": "d5bbeb56c09a38c42ba1f7b06e74a9215b0872a337450d80596e0708ecfa02c1",
+    "retained_path": "authority/concepts/home-mobile-fa-light-concept-v1.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/concepts/language-gateway-dark-concept-v1.png",
+    "sha256": "2c2bbb6980331722912825e256f771a83b5c55d505517cdd83400694a434beda",
+    "retained_path": "authority/concepts/language-gateway-dark-concept-v1.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/concepts/project-detail-fa-dark-concept-v1.png",
+    "sha256": "4ee1a8a8ef69c12306fd8a5e353bd613b31b8bec57f4e3ef4f14dc3331cc6f25",
+    "retained_path": "authority/concepts/project-detail-fa-dark-concept-v1.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/concepts/page-families/about-cv-light.png",
+    "sha256": "b26103b898b837b3dfc1574974cd9bf7b6fd7614c897a5cf3c94b56ed577a6e2",
+    "retained_path": "authority/concepts/page-families/about-cv-light.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/concepts/page-families/contact-dark.png",
+    "sha256": "fb1f14d9a7d3d4ebf4b62c2570fc626dd7c5bb6f44dc223e13f3883ae6ca35f1",
+    "retained_path": "authority/concepts/page-families/contact-dark.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/concepts/page-families/creative-detail-dark.png",
+    "sha256": "a4f04e3597116c28eb82bfdbcf478e44610699862fc07ac45b00df9900774526",
+    "retained_path": "authority/concepts/page-families/creative-detail-dark.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/concepts/page-families/creative-index-light.png",
+    "sha256": "0b07398f53ec531e9840b8f01a0000cd0e82745e563e216bb04be55ec4c521b1",
+    "retained_path": "authority/concepts/page-families/creative-index-light.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/concepts/page-families/projects-index-dark.png",
+    "sha256": "5edfb769e61cb11b6a8e4272cdde9218b85ef0bca5b29975a51c43ed5890303a",
+    "retained_path": "authority/concepts/page-families/projects-index-dark.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/concepts/page-families/research-publications-index-light.png",
+    "sha256": "dc78c3831c2cce225f28d2a6c106e3aa82919caaea6fbc0855c396bf6956b919",
+    "retained_path": "authority/concepts/page-families/research-publications-index-light.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/concepts/page-families/teaching-index-dark.png",
+    "sha256": "fd15db30701f954e17c4600d9d3f99da9e93456d7da4174d8e93f0bfc1a942bc",
+    "retained_path": "authority/concepts/page-families/teaching-index-dark.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/concepts/page-families/writing-index-light.png",
+    "sha256": "72d54716202bcfb661f3a20f1b75988fb347a44a4f0b23daa41f8f46df53a1f2",
+    "retained_path": "authority/concepts/page-families/writing-index-light.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/concepts/requested-2026-08-25/home-dark-final-reference.png",
+    "sha256": "288c12ed5c85800beda45b375a4966c00fd9e4ca7a3fda15a1c826bd691d82c3",
+    "retained_path": "authority/concepts/home-dark-concept-v3-final.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/concepts/requested-2026-08-25/home-dark-safe-reference.png",
+    "sha256": "6f935befd5a1952155669ba8ab51f331454f63043057702b051f26cbd893e11e",
+    "retained_path": "authority/concepts/variants/home-dark-safe-reference.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/concepts/requested-2026-08-25/home-light-alternate-reference.png",
+    "sha256": "311c88d0b8e700cbd6ac3e3c982f4b1baf91b4c504258eb45f2c1b522ffa5e7b",
+    "retained_path": "authority/concepts/variants/home-light-alternate-reference.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/concepts/requested-2026-08-25/home-light-final-reference.png",
+    "sha256": "c0b963f1f08056bf43eb04ade87bb4c8d329ff15327fe654067683f2a3a156f3",
+    "retained_path": "authority/concepts/home-light-concept-v3-final.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/concepts/requested-2026-08-25/language-gateway-centered-dark-reference.png",
+    "sha256": "2c2bbb6980331722912825e256f771a83b5c55d505517cdd83400694a434beda",
+    "retained_path": "authority/concepts/language-gateway-dark-concept-v1.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "assets/page-families/PRODUCTION-REGISTER.md",
+    "sha256": "9aa6e5d640f8bcd72962b0e0a7ce1c3fe35c8d46486dd398bdbdf008bdbccf56",
+    "retained_path": "authority/provenance/PRODUCTION-REGISTER.md",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-022748ec-86d1-4eea-908d-57462c0dfb88.png",
+    "sha256": "d5bbeb56c09a38c42ba1f7b06e74a9215b0872a337450d80596e0708ecfa02c1",
+    "retained_path": "authority/concepts/home-mobile-fa-light-concept-v1.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-045b1f46-037e-4515-a485-e3642361600b.png",
+    "sha256": "f005f093c66b8476b331b442432d175336840d9296b4657ba41a1a94bd4b1b8b",
+    "retained_path": "authority/concepts/admin-graph-editor-dark-concept-v1.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-0c9deb45-9c44-44db-a914-14f4f4d7ec9e.png",
+    "sha256": "288c12ed5c85800beda45b375a4966c00fd9e4ca7a3fda15a1c826bd691d82c3",
+    "retained_path": "authority/concepts/home-dark-concept-v3-final.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-1638a433-5644-4b88-9335-3cb39fcb9be6.png",
+    "sha256": "21ef859df5e6e2177538eb5a71d0f44d8615d32fa53f1586d8b8d3d5461e1418",
+    "retained_path": "authority/art/learning-sage-library.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-297fa10a-3511-43f4-9633-23a2078bff18.png",
+    "sha256": "3e9316a95370a3401da8b3cd7c0007e404fe3bd985aeb70a082e13b7ff1fbf2b",
+    "retained_path": "authority/art/portal-orbit-light.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-3f8c99ca-c3b7-415e-87da-2014d6d1259a.png",
+    "sha256": "fbceedb903700246442f201f113cfc9b59df18f5f4a5681c379ca8cd61b9db33",
+    "retained_path": "authority/art/project-visual-communication-network.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-409ba74a-6da8-4c8e-9577-3bdea1427626.png",
+    "sha256": "855fd82d363c7f2840d5e9359331e8cd29e1d1a54ea2e432f6cf2ae15fd09e2f",
+    "retained_path": "authority/art/portal-centered-light.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-473919d8-e2c3-4105-8a3e-41a347fe80cc.png",
+    "sha256": "e10ff56456b6d9f7b3596311a378197f3600bee92d0993169216ff4caf3edd50",
+    "retained_path": "authority/art/portal-orbit-dark.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-4fac97e3-4548-4eb5-928a-66cc3ae4db2f.png",
+    "sha256": "855296e8dd1541f173c529c30293f3848ef3d45eb3b07d92e64ffb89a4140d4e",
+    "retained_path": "authority/art/gallery-ivory-forms.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-57d02de4-e0d7-4cb5-91c2-791172a2f5b6.png",
+    "sha256": "b31c2bced438d03337daa225d284fe10aa3f6595785afe5db36b3f458eb925f1",
+    "retained_path": "authority/art/project-data-architecture.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-58b829d1-c8e8-4470-be54-a5a76cdc1c55.png",
+    "sha256": "99c5890ff290bc12a5d20e2e5bab3da2d43a88514c7c036535a6d0fe846325d9",
+    "retained_path": "authority/concepts/blog-detail-fa-light-concept-v1.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-59affeec-534c-44fd-ac05-d0336e28f902.png",
+    "sha256": "2c2bbb6980331722912825e256f771a83b5c55d505517cdd83400694a434beda",
+    "retained_path": "authority/concepts/language-gateway-dark-concept-v1.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-5cfaae2c-937d-45b7-b44e-84f067978c7c.png",
+    "sha256": "4ee1a8a8ef69c12306fd8a5e353bd613b31b8bec57f4e3ef4f14dc3331cc6f25",
+    "retained_path": "authority/concepts/project-detail-fa-dark-concept-v1.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-67b950c3-a542-44f8-9866-391b3155aa1a.png",
+    "sha256": "b26103b898b837b3dfc1574974cd9bf7b6fd7614c897a5cf3c94b56ed577a6e2",
+    "retained_path": "authority/concepts/page-families/about-cv-light.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-7e44f293-63c5-4812-a8db-d96e281c65b5.png",
+    "sha256": "311c88d0b8e700cbd6ac3e3c982f4b1baf91b4c504258eb45f2c1b522ffa5e7b",
+    "retained_path": "authority/concepts/variants/home-light-alternate-reference.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-8a2e2736-e01e-4f11-8a4b-ecf476f5866c.png",
+    "sha256": "5edfb769e61cb11b6a8e4272cdde9218b85ef0bca5b29975a51c43ed5890303a",
+    "retained_path": "authority/concepts/page-families/projects-index-dark.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-8d40974a-9996-4c12-b245-9cdfb6fe5037.png",
+    "sha256": "dc78c3831c2cce225f28d2a6c106e3aa82919caaea6fbc0855c396bf6956b919",
+    "retained_path": "authority/concepts/page-families/research-publications-index-light.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-8eb2f8d9-a680-4e56-91d0-39d5091f98bc.png",
+    "sha256": "908e890360742228f27fabbd21569588eb0302cb656f9889a545f42749d04720",
+    "retained_path": "authority/art/blog-coral-stairs.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-9217ee28-c3b3-4349-b3da-9388995f952c.png",
+    "sha256": "6f935befd5a1952155669ba8ab51f331454f63043057702b051f26cbd893e11e",
+    "retained_path": "authority/concepts/variants/home-dark-safe-reference.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-962981ce-17e3-4e50-a884-5a64dd885654.png",
+    "sha256": "c33ee40fcf13ffe3a7c359285c74eb9eb45415d92b061e550e1c5b2c35029ba4",
+    "retained_path": "authority/art/project-dashboard-systems.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-a914c91c-81d4-4820-9b31-75d3469db6ba.png",
+    "sha256": "c0b963f1f08056bf43eb04ade87bb4c8d329ff15327fe654067683f2a3a156f3",
+    "retained_path": "authority/concepts/home-light-concept-v3-final.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-aed65a55-4fbf-4da2-a825-e5b8bfc969d0.png",
+    "sha256": "fd15db30701f954e17c4600d9d3f99da9e93456d7da4174d8e93f0bfc1a942bc",
+    "retained_path": "authority/concepts/page-families/teaching-index-dark.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-b975fded-e78b-4c0b-89e1-7a79e993e9f2.png",
+    "sha256": "5520a6063c223dd7ad3896e26c7e0b52aa321bfb427a04ef620de7563b975181",
+    "retained_path": "authority/art/portal-centered-dark.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-ca64831a-0500-4919-b414-24badab13768.png",
+    "sha256": "b8c237066aaeb903889eebb5cd8f3153c37997fdf8de5ff389e840ec8aec1d3c",
+    "retained_path": "authority/art/project-placeholder-ivory-stairs.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-d44fe536-231d-4b99-9478-a8101dc604ce.png",
+    "sha256": "a4f04e3597116c28eb82bfdbcf478e44610699862fc07ac45b00df9900774526",
+    "retained_path": "authority/concepts/page-families/creative-detail-dark.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-e6de06d5-637d-4f1f-b65f-e4d7381b3d75.png",
+    "sha256": "72d54716202bcfb661f3a20f1b75988fb347a44a4f0b23daa41f8f46df53a1f2",
+    "retained_path": "authority/concepts/page-families/writing-index-light.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-f5c05dc7-8754-4beb-a201-6be7c25c3822.png",
+    "sha256": "fb1f14d9a7d3d4ebf4b62c2570fc626dd7c5bb6f44dc223e13f3883ae6ca35f1",
+    "retained_path": "authority/concepts/page-families/contact-dark.png",
+    "deletion_authorized_only_if_hash_matches": true
+  },
+  {
+    "delete_path": "others/exec-f7a80680-e3f7-47c4-b4c4-ada11c4a154d.png",
+    "sha256": "0b07398f53ec531e9840b8f01a0000cd0e82745e563e216bb04be55ec4c521b1",
+    "retained_path": "authority/concepts/page-families/creative-index-light.png",
+    "deletion_authorized_only_if_hash_matches": true
+  }
+]

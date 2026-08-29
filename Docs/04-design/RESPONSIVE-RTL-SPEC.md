@@ -2,7 +2,7 @@
 
 ## Required widths
 
-Test at 320, 390, 768, 1024, 1440, and 1920 CSS pixels.
+Test at 320, 390, 768, 1024, 1280, and 1440 CSS pixels.
 
 ## Reflow rules
 
@@ -11,6 +11,7 @@ Test at 320, 390, 768, 1024, 1440, and 1920 CSS pixels.
 - Navigation must not depend on hover.
 - Touch targets remain at least 44 by 44 CSS pixels.
 - Media preserves focal guidance without stretching.
+- Page-family reference comparison uses the matching PF-01 through PF-08 concept and theme before a visual result is accepted.
 
 ## Direction rules
 

@@ -27,7 +27,9 @@
 
 - Backend migration source: `D:\Project\Taha-personal-platform\apps\cms`
 - Backend source commit: `cdaa283fac9da57c6d88e22aa0751be6214b6cf6`
-- Design reference source: `D:\Project\Taha-personal-platform\New\site-redesign`
+- Local design input source: `D:\Project\tahamohammadi-platform\Front-End\Assets`
+- Tracked design authority: `Docs\references\frontend-design-authority`
+- Visual authority: `concepts/`; page detail authority: `concepts/page-families/`
 - Legacy public frontend: audit evidence only
 - Legacy admin frontend: audit evidence only
 
@@ -37,6 +39,7 @@
 - Architecture: `Docs/02-architecture/SYSTEM-ARCHITECTURE.md`
 - Interfaces: `Docs/03-contracts/`
 - Design: `Docs/04-design/`
+- Tracked visual reference: `Docs/references/frontend-design-authority/`
 - Roadmap: `Docs/05-delivery/MASTER-ROADMAP.md`
 - Tasks: `Docs/05-delivery/MASTER-TASK-LIST.md`
 - Migration: `Docs/07-migration/`

@@ -11,6 +11,9 @@
 | `no-results` | Search or filter has no matches | Clear query reset action |
 | `unauthorized` | Authentication is required | Sign-in path without leaking data |
 | `forbidden` | User lacks permission | Safe denial and navigation recovery |
+| `rate-limited` | Server accepted identity but rejected frequency | Safe wait/retry explanation without exposing limits or internal data |
+| `conflict` | A revision changed after the editor opened it | Preserve unsaved work, show conflict state, and offer explicit refresh/compare recovery |
 
 Decorative empty-state art must not replace the state message.
 Icons must have bounded computed dimensions.
+Form submissions distinguish transport failure, server validation, authorization, rate limit, and success; no generic success state is shown before backend confirmation.

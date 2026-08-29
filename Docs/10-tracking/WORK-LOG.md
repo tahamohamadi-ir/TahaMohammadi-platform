@@ -13,3 +13,9 @@
 - Synced the backend with CPython 3.12.13 and the locked dependency set.
 - Passed Ruff, all 636 backend tests, Django settings checks, and migration-plan generation.
 - Published all three product repositories and recorded their exact commits.
+
+## 2026-08-29 — Frontend reference consolidation and tracking alignment
+
+- Retired `Docs/references/site-redesign/`; promoted `Docs/references/frontend-design-authority/` as the sole tracked visual reference (30 unique binary checksums after deduplicating 3 hash-identical files from the bootstrap-era 33-hash pack).
+- Passed agent-kit validator, OpenAPI access tests (9), and Django system check.
+- Aligned `PROVENANCE.json`, deferred-validation DEF-006, risk-register IDs, and repository task lists with `OPENAPI-ACCEPTANCE.md` scaffold-foundation status.

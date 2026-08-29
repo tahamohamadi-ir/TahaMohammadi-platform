@@ -7,6 +7,7 @@
 3. Semantic Dark roles
 4. Component aliases
 
+Before scaffold, the machine source is `Docs/references/frontend-design-authority/agent-kit/tokens.json` with status `design-approved`. After implementation and token QA, runtime CSS variables become the implementation authority and must match accepted semantic roles.
 CSS variables must exist in browser-computed styles.
 The production CSS must not contain unprocessed framework directives.
 
@@ -17,12 +18,12 @@ The production CSS must not contain unprocessed framework directives.
 | English | Newsreader Variable | Inter Variable |
 | Persian | Estedad Variable | Vazirmatn Variable |
 
-Fonts must be self-hosted after license and subset review.
+Fonts must be self-hosted after the source, license, subset, WOFF2, fallback, and computed-style checks in `FONT-ACQUISITION-PLAN.md` pass.
 Each locale uses only its two assigned families.
 
 ## Component baseline
 
-The canonical component inventory is `references/site-redesign/implementation-reference/agent-kit/components.json`.
+The canonical component inventory is `references/frontend-design-authority/agent-kit/components.json`.
 Do not create a second general component library.
 
 Every interactive component must define:

@@ -3,6 +3,10 @@
 /Front-End/admin-panel/
 /Back-End/
 
+# Local owner-provided incoming design package; the tracked curated authority is
+# Docs/references/frontend-design-authority/.
+/Front-End/Assets/
+
 # Local outputs
 /graphify-out/
 /.env

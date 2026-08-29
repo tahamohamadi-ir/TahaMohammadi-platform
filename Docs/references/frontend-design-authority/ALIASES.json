@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "rule": "Aliases identify an equivalent canonical asset; an alias never stores a second byte copy.",
+  "aliases": [
+    {
+      "legacy_path": "concepts/requested-2026-08-25/home-dark-final-reference.png",
+      "canonical_path": "concepts/home-dark-concept-v3-final.png",
+      "reason": "Owner-requested final-reference name; byte-identical to canonical Dark Home concept."
+    },
+    {
+      "legacy_path": "concepts/requested-2026-08-25/home-light-final-reference.png",
+      "canonical_path": "concepts/home-light-concept-v3-final.png",
+      "reason": "Owner-requested final-reference name; byte-identical to canonical Light Home concept."
+    },
+    {
+      "legacy_path": "concepts/requested-2026-08-25/language-gateway-centered-dark-reference.png",
+      "canonical_path": "concepts/language-gateway-dark-concept-v1.png",
+      "reason": "Owner-requested gateway name; byte-identical to canonical gateway concept."
+    }
+  ]
+}

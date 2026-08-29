@@ -1,0 +1,50 @@
+{
+  "version": "1.0.0",
+  "authority_id": "taha-frontend-design-authority-2026-08-29",
+  "incoming_source": "Front-End/Assets",
+  "status": "tracked-reference-only",
+  "ui_ux_authority": {
+    "primary": "concepts",
+    "page_detail": "concepts/page-families",
+    "runtime_copy_rule": "Raster text is not content authority."
+  },
+  "roles": {
+    "concepts": "UI/UX hierarchy, theme, responsive, RTL and page-family visual reference",
+    "art": "runtime candidate media pending promotion ledger approval",
+    "brand": "owner-provided visual identity source media",
+    "agent_kit": "machine-readable design contract",
+    "provenance": "historical and migration evidence"
+  },
+  "required_files": [
+    "README.md",
+    "ALIASES.json",
+    "design-dna.json",
+    "concepts/home-dark-concept-v3-final.png",
+    "concepts/home-light-concept-v3-final.png",
+    "concepts/home-mobile-fa-light-concept-v1.png",
+    "concepts/language-gateway-dark-concept-v1.png",
+    "concepts/blog-detail-fa-light-concept-v1.png",
+    "concepts/project-detail-fa-dark-concept-v1.png",
+    "concepts/admin-graph-editor-dark-concept-v1.png",
+    "concepts/page-families/creative-index-light.png",
+    "concepts/page-families/creative-detail-dark.png",
+    "concepts/page-families/writing-index-light.png",
+    "concepts/page-families/projects-index-dark.png",
+    "concepts/page-families/research-publications-index-light.png",
+    "concepts/page-families/teaching-index-dark.png",
+    "concepts/page-families/about-cv-light.png",
+    "concepts/page-families/contact-dark.png",
+    "brand/taha-mark-primary.png",
+    "agent-kit/assets.json",
+    "agent-kit/components.json",
+    "agent-kit/templates.json",
+    "agent-kit/tokens.json",
+    "agent-kit/validate.mjs"
+  ],
+  "expected": {
+    "components": 24,
+    "templates": 6,
+    "duplicate_hashes": 0,
+    "figma_network_access": "none"
+  }
+}

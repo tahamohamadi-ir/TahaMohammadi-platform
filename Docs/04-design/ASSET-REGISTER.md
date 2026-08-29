@@ -1,10 +1,9 @@
 # Asset Register
 
-## Preserved source
+## Canonical source
 
-The managed design pack is stored at `Docs/references/site-redesign/`.
-Its `SHA256SUMS.txt` contains 33 managed binary records.
-All 33 records matched after transfer on 2026-08-28.
+The managed design pack is stored at `Docs/references/frontend-design-authority/`.
+`SHA256SUMS.txt`, `AUTHORITY-MANIFEST.json`, and `ALIASES.json` are the integrity and deduplication records. `Front-End/Assets` remains an ignored local comparison source; it is not an active runtime or agent authority.
 
 ## Runtime candidates
 
@@ -23,4 +22,4 @@ Preserve master files unchanged.
 Generate responsive AVIF and WebP derivatives during the public-site implementation.
 Preload only the actual LCP image.
 Lazy-load non-critical media.
-Record owner publication approval before a candidate becomes public.
+Record owner publication approval, rights/credit, alt or decorative decision, crop/focal rule, and derivative output in `ASSET-PROMOTION-LEDGER.md` before a candidate becomes public.

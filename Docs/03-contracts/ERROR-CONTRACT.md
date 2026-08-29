@@ -1,6 +1,8 @@
 # Error Contract
 
-JSON errors use this stable shape:
+The stable envelope below is a target for new compatible endpoints, not a statement about every migrated response today. The current backend response shapes and consumer mappings are normative in `ERROR-COMPATIBILITY-MATRIX.md` until a tested normalization packet is accepted.
+
+Target envelope:
 
 ```json
 {
@@ -12,4 +14,4 @@ JSON errors use this stable shape:
 ```
 
 Public messages must not expose stack traces, filesystem paths, credentials, database details, or internal identifiers.
-Clients map unknown errors to a safe generic state and preserve the request identifier.
+Clients map unknown errors to a safe generic state. A request identifier is preserved only when the server actually provides one.

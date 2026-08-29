@@ -6,3 +6,4 @@
 - Route alternates exist only when the alternate content is published.
 - Mixed-direction identifiers use isolation elements or CSS bidi isolation.
 - Locale switching preserves the equivalent route when one exists.
+- Route families, redirect policy, canonical URLs, and alternate rules are owned by `Docs/02-architecture/ROUTE-REGISTRY.md`.

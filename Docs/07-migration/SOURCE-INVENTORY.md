@@ -15,8 +15,9 @@ These files are reference-only until new repository paths are verified.
 
 ## Design source
 
-- Source: `D:\Project\Taha-personal-platform\New\site-redesign`
-- Destination: `Docs/references/site-redesign`
+- Local incoming source: `D:\Project\tahamohammadi-platform\Front-End\Assets`
+- Tracked curated destination: `Docs/references/frontend-design-authority`
+- Retired tracked destination: `Docs/references/site-redesign` (its content is superseded by the authority and Git history)
 - Managed binary records checked: 33
 - Hash mismatches: 0
 

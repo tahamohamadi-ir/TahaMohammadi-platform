@@ -6,4 +6,5 @@
 - Server-side permission checks are mandatory.
 - MFA remains available for privileged access.
 - Recovery codes are hashed and shown only during generation.
-- Authentication failures return a stable error envelope without sensitive detail.
+- Authentication failures use the current safe response mapping in `ERROR-COMPATIBILITY-MATRIX.md` until a normalized envelope is adopted.
+- The accepted pre-scaffold topology is same-origin reverse-proxy delivery. Cross-origin cookies, CORS, or API hosting require a separate accepted topology decision and browser evidence.

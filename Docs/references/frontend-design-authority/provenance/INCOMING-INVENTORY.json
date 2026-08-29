@@ -1,0 +1,1998 @@
+{
+  "generated_at": "2026-08-29T07:53:10.6850493Z",
+  "incoming_root": "D:\\Project\\tahamohammadi-platform\\Front-End\\Assets",
+  "authority_root": "D:\\Project\\tahamohammadi-platform\\Docs\\references\\frontend-design-authority",
+  "file_count": 172,
+  "unique_hash_count": 105,
+  "total_bytes": 174809510,
+  "items": [
+    {
+      "path": "ACCEPTANCE-GATES.md",
+      "sha256": "9ecab0243587eac5f42efda29e9ad4c50227cda7ba9cbffb7103142370f6436b",
+      "bytes": 3619,
+      "extension": ".md",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "AGENT-COORDINATION.md",
+      "sha256": "db94d24276d1469547137b3f97703b793089227310585c636cff9d0102cd167e",
+      "bytes": 4682,
+      "extension": ".md",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "design.md",
+      "sha256": "d63f540ad3e809e4355be3c9948c292595e2c177cfad87fff5e4f1ecc7f72585",
+      "bytes": 5834,
+      "extension": ".md",
+      "classification": "history",
+      "retained_paths": [
+        "legacy/design.md"
+      ],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "DOCUMENT-MIGRATION-MAP.md",
+      "sha256": "6b3e2cc871f3f51f4847efaa236708b785bc5ce348f6036021f3424c697fe0f1",
+      "bytes": 2941,
+      "extension": ".md",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "figma-lite-state.json",
+      "sha256": "d0d352b8bc0ea3acfc726c898e6aabf24251854f6b1e47a702fa4418340db849",
+      "bytes": 1331,
+      "extension": ".json",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "FRONTEND-IMPLEMENTATION-ARCHITECTURE-BLUEPRINT.md",
+      "sha256": "5fdf76ecdc46ce6ebbe92b1ca9be598653fd0df6bfb7a8da3f17911638e7ce54",
+      "bytes": 21709,
+      "extension": ".md",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "IDEA-vision.md",
+      "sha256": "4043f6481b0f6b8e43ab767723737602292c654309c9c5e92577a7d944abf99f",
+      "bytes": 3517,
+      "extension": ".md",
+      "classification": "history",
+      "retained_paths": [
+        "legacy/IDEA-vision.md"
+      ],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "MANIFEST.md",
+      "sha256": "b5246bc91e6fc80d3f7e5e62d918f5ba9f09f20c8baef4327864f2388c7dbbe0",
+      "bytes": 4613,
+      "extension": ".md",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "MASTER-SPEC.md",
+      "sha256": "bbf7ab59058642ac878a7fd64696c0d404c446749085c8eee0b4ccf727535538",
+      "bytes": 9009,
+      "extension": ".md",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "MULTI-AGENT-TASK-LIST.md",
+      "sha256": "b0806117acd1c27ea7b546986d6462249664ed49210474a677234a15e48bee14",
+      "bytes": 22042,
+      "extension": ".md",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "PROMPTS.md",
+      "sha256": "73625bc87e019d4189bfa957c8e1ebb35d03274f1fa174ac240b05386850044a",
+      "bytes": 12150,
+      "extension": ".md",
+      "classification": "needs-review",
+      "retained_paths": [
+        "authority/provenance/PROMPTS.md"
+      ],
+      "canonical_retained_paths": [
+        "authority/provenance/PROMPTS.md"
+      ]
+    },
+    {
+      "path": "README.md",
+      "sha256": "b087f6e29aa07554c28f703860e0cfa03054e3c69562a23249902df70d8e869b",
+      "bytes": 3284,
+      "extension": ".md",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "REFERENCE-MANIFEST.json",
+      "sha256": "7e2291e823b029910f1a3b2c533214a6f501161df9afd9c91a49d43448c2c5a8",
+      "bytes": 1616,
+      "extension": ".json",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "SHA256SUMS.txt",
+      "sha256": "f31146e8ead7313e64d84e5ef13177ff75000b11dee0a2503bd2e78db58935ca",
+      "bytes": 3619,
+      "extension": ".txt",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "SOURCE-INVENTORY.md",
+      "sha256": "33abf427dd3d9399ef1f47501820d83ee21c2927f0024cbff41c04f875053c83",
+      "bytes": 3448,
+      "extension": ".md",
+      "classification": "needs-review",
+      "retained_paths": [
+        "authority/provenance/SOURCE-INVENTORY.md"
+      ],
+      "canonical_retained_paths": [
+        "authority/provenance/SOURCE-INVENTORY.md"
+      ]
+    },
+    {
+      "path": "WORKTREE-SNAPSHOT.md",
+      "sha256": "42f7e7ac4012cd5d00df13314d4304a05509b423f6acef82d7eec8c41ac9e135",
+      "bytes": 1530,
+      "extension": ".md",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "agent-kit/assets.json",
+      "sha256": "a220cbb6d1c5bc9eb7f3bb9922c5d0597407c840957a5187b24ea761c109b081",
+      "bytes": 2232,
+      "extension": ".json",
+      "classification": "retained-local-source",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "agent-kit/components.json",
+      "sha256": "002fc1533bfc64cc4b6878b82fe61f69aa737a3b8c53465d834d7bebb8fa7395",
+      "bytes": 4420,
+      "extension": ".json",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/agent-kit/components.json"
+      ],
+      "canonical_retained_paths": [
+        "authority/agent-kit/components.json"
+      ]
+    },
+    {
+      "path": "agent-kit/README.md",
+      "sha256": "3b013d6544d308843d041321634205c76003106ebd059fb77a954c0566b062ef",
+      "bytes": 2748,
+      "extension": ".md",
+      "classification": "retained-local-source",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "agent-kit/templates.json",
+      "sha256": "3d06aa617f32078cda0006f5b93c064a0e3e7723ad347172374add16064336d1",
+      "bytes": 2182,
+      "extension": ".json",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/agent-kit/templates.json"
+      ],
+      "canonical_retained_paths": [
+        "authority/agent-kit/templates.json"
+      ]
+    },
+    {
+      "path": "agent-kit/tokens.json",
+      "sha256": "c9cda5ab7bf63a8c66ef92599881efab1d3c6a0730395ec745f822b55f0942a7",
+      "bytes": 3576,
+      "extension": ".json",
+      "classification": "retained-local-source",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "agent-kit/validate.mjs",
+      "sha256": "106b7a0538abd91a30eeb6cd885db603ece411d514adbb9e65cc7ec4ed022f1d",
+      "bytes": 2430,
+      "extension": ".mjs",
+      "classification": "retained-local-source",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "agent-kit/figma-plugin/code.js",
+      "sha256": "aacde0d3811f6e6895ef8e17057c109a8b2a4bf4d5cca1156af01d3599d967c7",
+      "bytes": 17301,
+      "extension": ".js",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/agent-kit/figma-plugin/code.js"
+      ],
+      "canonical_retained_paths": [
+        "authority/agent-kit/figma-plugin/code.js"
+      ]
+    },
+    {
+      "path": "agent-kit/figma-plugin/manifest.json",
+      "sha256": "05ce7aa9276f7d04c7547f0d17d35622bfcf3bc852530b6c23bdb295fdd72aa1",
+      "bytes": 243,
+      "extension": ".json",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/agent-kit/figma-plugin/manifest.json"
+      ],
+      "canonical_retained_paths": [
+        "authority/agent-kit/figma-plugin/manifest.json"
+      ]
+    },
+    {
+      "path": "agent-kit/figma-plugin/README.md",
+      "sha256": "79ab080c401f8efea025b03c2554286e864cdf9f95f9f66124b8b699ae2afb7b",
+      "bytes": 1107,
+      "extension": ".md",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/agent-kit/figma-plugin/README.md"
+      ],
+      "canonical_retained_paths": [
+        "authority/agent-kit/figma-plugin/README.md"
+      ]
+    },
+    {
+      "path": "art/blog-coral-stairs.png",
+      "sha256": "908e890360742228f27fabbd21569588eb0302cb656f9889a545f42749d04720",
+      "bytes": 2125757,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/art/blog-coral-stairs.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/blog-coral-stairs.png"
+      ]
+    },
+    {
+      "path": "art/gallery-ivory-forms.png",
+      "sha256": "855296e8dd1541f173c529c30293f3848ef3d45eb3b07d92e64ffb89a4140d4e",
+      "bytes": 1899013,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/art/gallery-ivory-forms.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/gallery-ivory-forms.png"
+      ]
+    },
+    {
+      "path": "art/learning-sage-library.png",
+      "sha256": "21ef859df5e6e2177538eb5a71d0f44d8615d32fa53f1586d8b8d3d5461e1418",
+      "bytes": 1909282,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/art/learning-sage-library.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/learning-sage-library.png"
+      ]
+    },
+    {
+      "path": "art/portal-centered-dark.png",
+      "sha256": "5520a6063c223dd7ad3896e26c7e0b52aa321bfb427a04ef620de7563b975181",
+      "bytes": 1581366,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/art/portal-centered-dark.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/portal-centered-dark.png"
+      ]
+    },
+    {
+      "path": "art/portal-centered-light.png",
+      "sha256": "855fd82d363c7f2840d5e9359331e8cd29e1d1a54ea2e432f6cf2ae15fd09e2f",
+      "bytes": 1449165,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/art/portal-centered-light.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/portal-centered-light.png"
+      ]
+    },
+    {
+      "path": "art/portal-orbit-dark.png",
+      "sha256": "e10ff56456b6d9f7b3596311a378197f3600bee92d0993169216ff4caf3edd50",
+      "bytes": 1807980,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/art/portal-orbit-dark.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/portal-orbit-dark.png"
+      ]
+    },
+    {
+      "path": "art/portal-orbit-light.png",
+      "sha256": "3e9316a95370a3401da8b3cd7c0007e404fe3bd985aeb70a082e13b7ff1fbf2b",
+      "bytes": 1580570,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/art/portal-orbit-light.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/portal-orbit-light.png"
+      ]
+    },
+    {
+      "path": "art/project-dashboard-systems.png",
+      "sha256": "c33ee40fcf13ffe3a7c359285c74eb9eb45415d92b061e550e1c5b2c35029ba4",
+      "bytes": 2093185,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/art/project-dashboard-systems.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/project-dashboard-systems.png"
+      ]
+    },
+    {
+      "path": "art/project-data-architecture.png",
+      "sha256": "b31c2bced438d03337daa225d284fe10aa3f6595785afe5db36b3f458eb925f1",
+      "bytes": 1888350,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/art/project-data-architecture.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/project-data-architecture.png"
+      ]
+    },
+    {
+      "path": "art/project-placeholder-ivory-stairs.png",
+      "sha256": "b8c237066aaeb903889eebb5cd8f3153c37997fdf8de5ff389e840ec8aec1d3c",
+      "bytes": 2050182,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/art/project-placeholder-ivory-stairs.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/project-placeholder-ivory-stairs.png"
+      ]
+    },
+    {
+      "path": "art/project-visual-communication-network.png",
+      "sha256": "fbceedb903700246442f201f113cfc9b59df18f5f4a5681c379ca8cd61b9db33",
+      "bytes": 2062826,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/art/project-visual-communication-network.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/project-visual-communication-network.png"
+      ]
+    },
+    {
+      "path": "assets/MANIFEST.md",
+      "sha256": "f189be1f651171a688c090f1be319dff39e13053e47bd598dafcd42bcb66d5dd",
+      "bytes": 4646,
+      "extension": ".md",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/provenance/ASSET-MANIFEST.md"
+      ],
+      "canonical_retained_paths": [
+        "authority/provenance/ASSET-MANIFEST.md"
+      ]
+    },
+    {
+      "path": "assets/PROMPTS.md",
+      "sha256": "73625bc87e019d4189bfa957c8e1ebb35d03274f1fa174ac240b05386850044a",
+      "bytes": 12150,
+      "extension": ".md",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/provenance/PROMPTS.md"
+      ],
+      "canonical_retained_paths": [
+        "authority/provenance/PROMPTS.md"
+      ]
+    },
+    {
+      "path": "assets/README.md",
+      "sha256": "94ea46773d3f1677174fabdaae601710d2e0b4aca199b205602db71c124b30d3",
+      "bytes": 11247,
+      "extension": ".md",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "assets/SHA256SUMS.txt",
+      "sha256": "f56dada6343fed83eaf8462b29f2a303248244fe6363d68fe0cc8fd446a78145",
+      "bytes": 3629,
+      "extension": ".txt",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "assets/art/blog-coral-stairs.png",
+      "sha256": "908e890360742228f27fabbd21569588eb0302cb656f9889a545f42749d04720",
+      "bytes": 2125757,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/art/blog-coral-stairs.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/blog-coral-stairs.png"
+      ]
+    },
+    {
+      "path": "assets/art/gallery-ivory-forms.png",
+      "sha256": "855296e8dd1541f173c529c30293f3848ef3d45eb3b07d92e64ffb89a4140d4e",
+      "bytes": 1899013,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/art/gallery-ivory-forms.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/gallery-ivory-forms.png"
+      ]
+    },
+    {
+      "path": "assets/art/learning-sage-library.png",
+      "sha256": "21ef859df5e6e2177538eb5a71d0f44d8615d32fa53f1586d8b8d3d5461e1418",
+      "bytes": 1909282,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/art/learning-sage-library.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/learning-sage-library.png"
+      ]
+    },
+    {
+      "path": "assets/art/portal-centered-dark.png",
+      "sha256": "5520a6063c223dd7ad3896e26c7e0b52aa321bfb427a04ef620de7563b975181",
+      "bytes": 1581366,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/art/portal-centered-dark.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/portal-centered-dark.png"
+      ]
+    },
+    {
+      "path": "assets/art/portal-centered-light.png",
+      "sha256": "855fd82d363c7f2840d5e9359331e8cd29e1d1a54ea2e432f6cf2ae15fd09e2f",
+      "bytes": 1449165,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/art/portal-centered-light.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/portal-centered-light.png"
+      ]
+    },
+    {
+      "path": "assets/art/portal-orbit-dark.png",
+      "sha256": "e10ff56456b6d9f7b3596311a378197f3600bee92d0993169216ff4caf3edd50",
+      "bytes": 1807980,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/art/portal-orbit-dark.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/portal-orbit-dark.png"
+      ]
+    },
+    {
+      "path": "assets/art/portal-orbit-light.png",
+      "sha256": "3e9316a95370a3401da8b3cd7c0007e404fe3bd985aeb70a082e13b7ff1fbf2b",
+      "bytes": 1580570,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/art/portal-orbit-light.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/portal-orbit-light.png"
+      ]
+    },
+    {
+      "path": "assets/art/project-dashboard-systems.png",
+      "sha256": "c33ee40fcf13ffe3a7c359285c74eb9eb45415d92b061e550e1c5b2c35029ba4",
+      "bytes": 2093185,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/art/project-dashboard-systems.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/project-dashboard-systems.png"
+      ]
+    },
+    {
+      "path": "assets/art/project-data-architecture.png",
+      "sha256": "b31c2bced438d03337daa225d284fe10aa3f6595785afe5db36b3f458eb925f1",
+      "bytes": 1888350,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/art/project-data-architecture.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/project-data-architecture.png"
+      ]
+    },
+    {
+      "path": "assets/art/project-placeholder-ivory-stairs.png",
+      "sha256": "b8c237066aaeb903889eebb5cd8f3153c37997fdf8de5ff389e840ec8aec1d3c",
+      "bytes": 2050182,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/art/project-placeholder-ivory-stairs.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/project-placeholder-ivory-stairs.png"
+      ]
+    },
+    {
+      "path": "assets/art/project-visual-communication-network.png",
+      "sha256": "fbceedb903700246442f201f113cfc9b59df18f5f4a5681c379ca8cd61b9db33",
+      "bytes": 2062826,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/art/project-visual-communication-network.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/project-visual-communication-network.png"
+      ]
+    },
+    {
+      "path": "assets/brand/SOURCE-NOTE.md",
+      "sha256": "0ed9875ede43978b665793daa5d6f8bd9172ca7e518d4c44720888f467d582b5",
+      "bytes": 1130,
+      "extension": ".md",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/brand/SOURCE-NOTE.md"
+      ],
+      "canonical_retained_paths": [
+        "authority/brand/SOURCE-NOTE.md"
+      ]
+    },
+    {
+      "path": "assets/brand/taha-mark-favicon.png",
+      "sha256": "3019401d3a84e042616398990f9322419252fc2e24c81a793e5feb22b5029ca8",
+      "bytes": 3208,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/brand/taha-mark-favicon.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/brand/taha-mark-favicon.png"
+      ]
+    },
+    {
+      "path": "assets/brand/taha-mark-primary.png",
+      "sha256": "232276518f4b97351574fdfffc7b230fdd402bb7356c096a3694701959cd5cc8",
+      "bytes": 8075,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/brand/taha-mark-primary.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/brand/taha-mark-primary.png"
+      ]
+    },
+    {
+      "path": "assets/brand/logo-polish/README.md",
+      "sha256": "4eadf01600ab5b1db7757dd817452c00489587fe72791ca7cbaef0fec76dde78",
+      "bytes": 1673,
+      "extension": ".md",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "assets/brand/logo-polish/review-board.html",
+      "sha256": "893fef21111a51f528c4c7062167a8a79fb8bfd2d1e443c6df623c56a322bac4",
+      "bytes": 3746,
+      "extension": ".html",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "assets/brand/logo-polish/review-board.png",
+      "sha256": "467c7ddde68c03698dd65418330583f15134f9eefc761041772273ee56289f1e",
+      "bytes": 71186,
+      "extension": ".png",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "assets/brand/logo-polish/taha-mark-refined-1024.png",
+      "sha256": "abd0b728a25f938c6f5bb4f7db24e612909b25e6068256c11321bde1bff1f314",
+      "bytes": 27330,
+      "extension": ".png",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "assets/brand/logo-polish/taha-mark-refined-64.png",
+      "sha256": "e4f840dcff58c426c3c1e2741ee8d736e186894e261fb28105cd35cd95a03bbe",
+      "bytes": 895,
+      "extension": ".png",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "assets/brand/logo-polish/taha-mark-refined-dark-1024.png",
+      "sha256": "f7cf568a681e96766e59dacab9ed9be18f7e699df64a5008a1b62726aea69589",
+      "bytes": 25078,
+      "extension": ".png",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "assets/brand/logo-polish/taha-mark-refined-dark.svg",
+      "sha256": "da6e9ce8cc0bd9a24937b484903bd4f38cc02e4535f4bfb7b7aa7995fa6ef764",
+      "bytes": 1163,
+      "extension": ".svg",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "assets/brand/logo-polish/taha-mark-refined-mono-1024.png",
+      "sha256": "2379f0ef599488023a76a46e350d0d781510505614e336b657d05c3bdcdb7134",
+      "bytes": 17573,
+      "extension": ".png",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "assets/brand/logo-polish/taha-mark-refined-mono.svg",
+      "sha256": "af80bfd3299f849bda94baab19ec83a1cbf330a4920c88c1053955b9e53f6bd8",
+      "bytes": 465,
+      "extension": ".svg",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "assets/brand/logo-polish/taha-mark-refined.svg",
+      "sha256": "6100657905b8942f87b55afe2338dfcc28edaa50c9722f5de0cd46a95a369cef",
+      "bytes": 1159,
+      "extension": ".svg",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "assets/brand/logo-redesign-concepts/option-01-portal-monogram.png",
+      "sha256": "fe4cdd74a3f62ab374893da27d2606ccb313bcb16aac500414b6206247d37a73",
+      "bytes": 472661,
+      "extension": ".png",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "assets/brand/logo-redesign-concepts/option-02-research-constellation.png",
+      "sha256": "891d66b191e928f71870db6bd1af48647d14402c8ebd8d73ce9ed9b806d03b1c",
+      "bytes": 381755,
+      "extension": ".png",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "assets/brand/logo-redesign-concepts/option-03-human-signal.png",
+      "sha256": "45c738e0e6248de6e3d36e60200d22dcf13232b6020438bc56f4d0893a1fdb44",
+      "bytes": 457327,
+      "extension": ".png",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "assets/brand/logo-redesign-concepts/README.md",
+      "sha256": "ee520565051cce5583f05c5ec1a4d1904ec5b0026694c0a4374b5357b579b036",
+      "bytes": 1762,
+      "extension": ".md",
+      "classification": "needs-review",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "assets/concepts/admin-graph-editor-dark-concept-v1.png",
+      "sha256": "f005f093c66b8476b331b442432d175336840d9296b4657ba41a1a94bd4b1b8b",
+      "bytes": 1421423,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/admin-graph-editor-dark-concept-v1.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/admin-graph-editor-dark-concept-v1.png"
+      ]
+    },
+    {
+      "path": "assets/concepts/blog-detail-fa-light-concept-v1.png",
+      "sha256": "99c5890ff290bc12a5d20e2e5bab3da2d43a88514c7c036535a6d0fe846325d9",
+      "bytes": 1175153,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/blog-detail-fa-light-concept-v1.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/blog-detail-fa-light-concept-v1.png"
+      ]
+    },
+    {
+      "path": "assets/concepts/home-dark-concept-v3-final.png",
+      "sha256": "288c12ed5c85800beda45b375a4966c00fd9e4ca7a3fda15a1c826bd691d82c3",
+      "bytes": 1788288,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/home-dark-concept-v3-final.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/home-dark-concept-v3-final.png"
+      ]
+    },
+    {
+      "path": "assets/concepts/home-light-concept-v3-final.png",
+      "sha256": "c0b963f1f08056bf43eb04ade87bb4c8d329ff15327fe654067683f2a3a156f3",
+      "bytes": 1654930,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/home-light-concept-v3-final.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/home-light-concept-v3-final.png"
+      ]
+    },
+    {
+      "path": "assets/concepts/home-mobile-fa-light-concept-v1.png",
+      "sha256": "d5bbeb56c09a38c42ba1f7b06e74a9215b0872a337450d80596e0708ecfa02c1",
+      "bytes": 1549163,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/home-mobile-fa-light-concept-v1.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/home-mobile-fa-light-concept-v1.png"
+      ]
+    },
+    {
+      "path": "assets/concepts/language-gateway-dark-concept-v1.png",
+      "sha256": "2c2bbb6980331722912825e256f771a83b5c55d505517cdd83400694a434beda",
+      "bytes": 1742366,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/language-gateway-dark-concept-v1.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/language-gateway-dark-concept-v1.png"
+      ]
+    },
+    {
+      "path": "assets/concepts/project-detail-fa-dark-concept-v1.png",
+      "sha256": "4ee1a8a8ef69c12306fd8a5e353bd613b31b8bec57f4e3ef4f14dc3331cc6f25",
+      "bytes": 1162881,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/project-detail-fa-dark-concept-v1.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/project-detail-fa-dark-concept-v1.png"
+      ]
+    },
+    {
+      "path": "assets/concepts/page-families/about-cv-light.png",
+      "sha256": "b26103b898b837b3dfc1574974cd9bf7b6fd7614c897a5cf3c94b56ed577a6e2",
+      "bytes": 1394358,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/page-families/about-cv-light.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/page-families/about-cv-light.png"
+      ]
+    },
+    {
+      "path": "assets/concepts/page-families/contact-dark.png",
+      "sha256": "fb1f14d9a7d3d4ebf4b62c2570fc626dd7c5bb6f44dc223e13f3883ae6ca35f1",
+      "bytes": 1657790,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/page-families/contact-dark.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/page-families/contact-dark.png"
+      ]
+    },
+    {
+      "path": "assets/concepts/page-families/creative-detail-dark.png",
+      "sha256": "a4f04e3597116c28eb82bfdbcf478e44610699862fc07ac45b00df9900774526",
+      "bytes": 1708334,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/page-families/creative-detail-dark.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/page-families/creative-detail-dark.png"
+      ]
+    },
+    {
+      "path": "assets/concepts/page-families/creative-index-light.png",
+      "sha256": "0b07398f53ec531e9840b8f01a0000cd0e82745e563e216bb04be55ec4c521b1",
+      "bytes": 1441765,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/page-families/creative-index-light.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/page-families/creative-index-light.png"
+      ]
+    },
+    {
+      "path": "assets/concepts/page-families/projects-index-dark.png",
+      "sha256": "5edfb769e61cb11b6a8e4272cdde9218b85ef0bca5b29975a51c43ed5890303a",
+      "bytes": 1639345,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/page-families/projects-index-dark.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/page-families/projects-index-dark.png"
+      ]
+    },
+    {
+      "path": "assets/concepts/page-families/research-publications-index-light.png",
+      "sha256": "dc78c3831c2cce225f28d2a6c106e3aa82919caaea6fbc0855c396bf6956b919",
+      "bytes": 1352681,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/page-families/research-publications-index-light.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/page-families/research-publications-index-light.png"
+      ]
+    },
+    {
+      "path": "assets/concepts/page-families/teaching-index-dark.png",
+      "sha256": "fd15db30701f954e17c4600d9d3f99da9e93456d7da4174d8e93f0bfc1a942bc",
+      "bytes": 1645708,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/page-families/teaching-index-dark.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/page-families/teaching-index-dark.png"
+      ]
+    },
+    {
+      "path": "assets/concepts/page-families/writing-index-light.png",
+      "sha256": "72d54716202bcfb661f3a20f1b75988fb347a44a4f0b23daa41f8f46df53a1f2",
+      "bytes": 1409529,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/page-families/writing-index-light.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/page-families/writing-index-light.png"
+      ]
+    },
+    {
+      "path": "assets/concepts/requested-2026-08-25/home-dark-final-reference.png",
+      "sha256": "288c12ed5c85800beda45b375a4966c00fd9e4ca7a3fda15a1c826bd691d82c3",
+      "bytes": 1788288,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/home-dark-concept-v3-final.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/home-dark-concept-v3-final.png"
+      ]
+    },
+    {
+      "path": "assets/concepts/requested-2026-08-25/home-dark-safe-reference.png",
+      "sha256": "6f935befd5a1952155669ba8ab51f331454f63043057702b051f26cbd893e11e",
+      "bytes": 1742898,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/variants/home-dark-safe-reference.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/variants/home-dark-safe-reference.png"
+      ]
+    },
+    {
+      "path": "assets/concepts/requested-2026-08-25/home-light-alternate-reference.png",
+      "sha256": "311c88d0b8e700cbd6ac3e3c982f4b1baf91b4c504258eb45f2c1b522ffa5e7b",
+      "bytes": 1524099,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/variants/home-light-alternate-reference.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/variants/home-light-alternate-reference.png"
+      ]
+    },
+    {
+      "path": "assets/concepts/requested-2026-08-25/home-light-final-reference.png",
+      "sha256": "c0b963f1f08056bf43eb04ade87bb4c8d329ff15327fe654067683f2a3a156f3",
+      "bytes": 1654930,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/home-light-concept-v3-final.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/home-light-concept-v3-final.png"
+      ]
+    },
+    {
+      "path": "assets/concepts/requested-2026-08-25/language-gateway-centered-dark-reference.png",
+      "sha256": "2c2bbb6980331722912825e256f771a83b5c55d505517cdd83400694a434beda",
+      "bytes": 1742366,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/language-gateway-dark-concept-v1.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/language-gateway-dark-concept-v1.png"
+      ]
+    },
+    {
+      "path": "assets/page-families/PRODUCTION-REGISTER.md",
+      "sha256": "9aa6e5d640f8bcd72962b0e0a7ce1c3fe35c8d46486dd398bdbdf008bdbccf56",
+      "bytes": 8743,
+      "extension": ".md",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/provenance/PRODUCTION-REGISTER.md"
+      ],
+      "canonical_retained_paths": [
+        "authority/provenance/PRODUCTION-REGISTER.md"
+      ]
+    },
+    {
+      "path": "brand/SOURCE-NOTE.md",
+      "sha256": "856a8be5191e205a6be043452f3de79c36483b1052a359005748214a3690632d",
+      "bytes": 639,
+      "extension": ".md",
+      "classification": "retained-local-source",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "brand/taha-mark-favicon.png",
+      "sha256": "3019401d3a84e042616398990f9322419252fc2e24c81a793e5feb22b5029ca8",
+      "bytes": 3208,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/brand/taha-mark-favicon.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/brand/taha-mark-favicon.png"
+      ]
+    },
+    {
+      "path": "brand/taha-mark-primary.png",
+      "sha256": "232276518f4b97351574fdfffc7b230fdd402bb7356c096a3694701959cd5cc8",
+      "bytes": 8075,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/brand/taha-mark-primary.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/brand/taha-mark-primary.png"
+      ]
+    },
+    {
+      "path": "concepts/admin-graph-editor-dark-concept-v1.png",
+      "sha256": "f005f093c66b8476b331b442432d175336840d9296b4657ba41a1a94bd4b1b8b",
+      "bytes": 1421423,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/concepts/admin-graph-editor-dark-concept-v1.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/admin-graph-editor-dark-concept-v1.png"
+      ]
+    },
+    {
+      "path": "concepts/blog-detail-fa-light-concept-v1.png",
+      "sha256": "99c5890ff290bc12a5d20e2e5bab3da2d43a88514c7c036535a6d0fe846325d9",
+      "bytes": 1175153,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/concepts/blog-detail-fa-light-concept-v1.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/blog-detail-fa-light-concept-v1.png"
+      ]
+    },
+    {
+      "path": "concepts/home-dark-concept-v3-final.png",
+      "sha256": "288c12ed5c85800beda45b375a4966c00fd9e4ca7a3fda15a1c826bd691d82c3",
+      "bytes": 1788288,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/concepts/home-dark-concept-v3-final.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/home-dark-concept-v3-final.png"
+      ]
+    },
+    {
+      "path": "concepts/home-light-concept-v3-final.png",
+      "sha256": "c0b963f1f08056bf43eb04ade87bb4c8d329ff15327fe654067683f2a3a156f3",
+      "bytes": 1654930,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/concepts/home-light-concept-v3-final.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/home-light-concept-v3-final.png"
+      ]
+    },
+    {
+      "path": "concepts/home-mobile-fa-light-concept-v1.png",
+      "sha256": "d5bbeb56c09a38c42ba1f7b06e74a9215b0872a337450d80596e0708ecfa02c1",
+      "bytes": 1549163,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/concepts/home-mobile-fa-light-concept-v1.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/home-mobile-fa-light-concept-v1.png"
+      ]
+    },
+    {
+      "path": "concepts/language-gateway-dark-concept-v1.png",
+      "sha256": "2c2bbb6980331722912825e256f771a83b5c55d505517cdd83400694a434beda",
+      "bytes": 1742366,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/concepts/language-gateway-dark-concept-v1.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/language-gateway-dark-concept-v1.png"
+      ]
+    },
+    {
+      "path": "concepts/project-detail-fa-dark-concept-v1.png",
+      "sha256": "4ee1a8a8ef69c12306fd8a5e353bd613b31b8bec57f4e3ef4f14dc3331cc6f25",
+      "bytes": 1162881,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/concepts/project-detail-fa-dark-concept-v1.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/project-detail-fa-dark-concept-v1.png"
+      ]
+    },
+    {
+      "path": "concepts/page-families/about-cv-light.png",
+      "sha256": "b26103b898b837b3dfc1574974cd9bf7b6fd7614c897a5cf3c94b56ed577a6e2",
+      "bytes": 1394358,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/concepts/page-families/about-cv-light.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/page-families/about-cv-light.png"
+      ]
+    },
+    {
+      "path": "concepts/page-families/contact-dark.png",
+      "sha256": "fb1f14d9a7d3d4ebf4b62c2570fc626dd7c5bb6f44dc223e13f3883ae6ca35f1",
+      "bytes": 1657790,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/concepts/page-families/contact-dark.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/page-families/contact-dark.png"
+      ]
+    },
+    {
+      "path": "concepts/page-families/creative-detail-dark.png",
+      "sha256": "a4f04e3597116c28eb82bfdbcf478e44610699862fc07ac45b00df9900774526",
+      "bytes": 1708334,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/concepts/page-families/creative-detail-dark.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/page-families/creative-detail-dark.png"
+      ]
+    },
+    {
+      "path": "concepts/page-families/creative-index-light.png",
+      "sha256": "0b07398f53ec531e9840b8f01a0000cd0e82745e563e216bb04be55ec4c521b1",
+      "bytes": 1441765,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/concepts/page-families/creative-index-light.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/page-families/creative-index-light.png"
+      ]
+    },
+    {
+      "path": "concepts/page-families/projects-index-dark.png",
+      "sha256": "5edfb769e61cb11b6a8e4272cdde9218b85ef0bca5b29975a51c43ed5890303a",
+      "bytes": 1639345,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/concepts/page-families/projects-index-dark.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/page-families/projects-index-dark.png"
+      ]
+    },
+    {
+      "path": "concepts/page-families/research-publications-index-light.png",
+      "sha256": "dc78c3831c2cce225f28d2a6c106e3aa82919caaea6fbc0855c396bf6956b919",
+      "bytes": 1352681,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/concepts/page-families/research-publications-index-light.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/page-families/research-publications-index-light.png"
+      ]
+    },
+    {
+      "path": "concepts/page-families/teaching-index-dark.png",
+      "sha256": "fd15db30701f954e17c4600d9d3f99da9e93456d7da4174d8e93f0bfc1a942bc",
+      "bytes": 1645708,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/concepts/page-families/teaching-index-dark.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/page-families/teaching-index-dark.png"
+      ]
+    },
+    {
+      "path": "concepts/page-families/writing-index-light.png",
+      "sha256": "72d54716202bcfb661f3a20f1b75988fb347a44a4f0b23daa41f8f46df53a1f2",
+      "bytes": 1409529,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/concepts/page-families/writing-index-light.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/page-families/writing-index-light.png"
+      ]
+    },
+    {
+      "path": "concepts/requested-2026-08-25/home-dark-final-reference.png",
+      "sha256": "288c12ed5c85800beda45b375a4966c00fd9e4ca7a3fda15a1c826bd691d82c3",
+      "bytes": 1788288,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/concepts/home-dark-concept-v3-final.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/home-dark-concept-v3-final.png"
+      ]
+    },
+    {
+      "path": "concepts/requested-2026-08-25/home-dark-safe-reference.png",
+      "sha256": "6f935befd5a1952155669ba8ab51f331454f63043057702b051f26cbd893e11e",
+      "bytes": 1742898,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/concepts/variants/home-dark-safe-reference.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/variants/home-dark-safe-reference.png"
+      ]
+    },
+    {
+      "path": "concepts/requested-2026-08-25/home-light-alternate-reference.png",
+      "sha256": "311c88d0b8e700cbd6ac3e3c982f4b1baf91b4c504258eb45f2c1b522ffa5e7b",
+      "bytes": 1524099,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/concepts/variants/home-light-alternate-reference.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/variants/home-light-alternate-reference.png"
+      ]
+    },
+    {
+      "path": "concepts/requested-2026-08-25/home-light-final-reference.png",
+      "sha256": "c0b963f1f08056bf43eb04ade87bb4c8d329ff15327fe654067683f2a3a156f3",
+      "bytes": 1654930,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/concepts/home-light-concept-v3-final.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/home-light-concept-v3-final.png"
+      ]
+    },
+    {
+      "path": "concepts/requested-2026-08-25/language-gateway-centered-dark-reference.png",
+      "sha256": "2c2bbb6980331722912825e256f771a83b5c55d505517cdd83400694a434beda",
+      "bytes": 1742366,
+      "extension": ".png",
+      "classification": "retained-local-source",
+      "retained_paths": [
+        "authority/concepts/language-gateway-dark-concept-v1.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/language-gateway-dark-concept-v1.png"
+      ]
+    },
+    {
+      "path": "history/design-redesign/ADMIN-CMS-FUNCTIONAL-SPEC.md",
+      "sha256": "bb954615368af9571c7d3a5c4388b4b009586b2bd7d4771fde5bb4e4d2f9e7f4",
+      "bytes": 9901,
+      "extension": ".md",
+      "classification": "history",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "history/design-redesign/MOTION-GRAPH-HANDOFF.md",
+      "sha256": "38ad6b4dd8cf8ada230601b36ec3bf05f79863fb3c6f09bb917c33a5b1f9f8d9",
+      "bytes": 6001,
+      "extension": ".md",
+      "classification": "history",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "history/design-redesign/QUALITY-AUDIT-v2.md",
+      "sha256": "a4ee14a06b11c53f5273ea96809f5ed1da8788d37fab5aa3eab12658851d5601",
+      "bytes": 3504,
+      "extension": ".md",
+      "classification": "history",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "history/design-redesign/README.md",
+      "sha256": "787871fa338333b534bc11a62a559977a01e41440922c797e11c275489b192fb",
+      "bytes": 3097,
+      "extension": ".md",
+      "classification": "history",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "history/design-redesign/page-families/CMS-CONTENT-MAPPING.md",
+      "sha256": "a3816592103395abe29190f12e01840f2851ff4b2487aa27e71f7aa8fa8fdb85",
+      "bytes": 13688,
+      "extension": ".md",
+      "classification": "history",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "history/design-redesign/page-families/FIGMA-DECISION.md",
+      "sha256": "fbc74a3175d4ea907865f25f317d8b03e2205786694d67fbdd4df93db10de7e1",
+      "bytes": 3263,
+      "extension": ".md",
+      "classification": "history",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "history/design-redesign/page-families/PAGE-FAMILY-COMPONENT-MATRIX.md",
+      "sha256": "7e395cbde885a09e0d07e9c453a4c9c56982c6cdac8711a67f0e4e58a3bdfc9d",
+      "bytes": 11297,
+      "extension": ".md",
+      "classification": "history",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "history/design-redesign/page-families/PRODUCTION-REGISTER.md",
+      "sha256": "9aa6e5d640f8bcd72962b0e0a7ce1c3fe35c8d46486dd398bdbdf008bdbccf56",
+      "bytes": 8743,
+      "extension": ".md",
+      "classification": "history",
+      "retained_paths": [
+        "authority/provenance/PRODUCTION-REGISTER.md"
+      ],
+      "canonical_retained_paths": [
+        "authority/provenance/PRODUCTION-REGISTER.md"
+      ]
+    },
+    {
+      "path": "history/design-redesign/page-families/QUALITY-AUDIT.md",
+      "sha256": "42496bf36516d2fa70889e092a6d76ebe71d6a5bd1af77dd1e94cb4897a3dee6",
+      "bytes": 6624,
+      "extension": ".md",
+      "classification": "history",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "history/design-redesign/page-families/README.md",
+      "sha256": "7ae4dee41fd03b0710fdc1b017d6e799c01338992d8da2513062bc56182158e1",
+      "bytes": 2082,
+      "extension": ".md",
+      "classification": "history",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "history/design-redesign/page-families/RESPONSIVE-RTL-STATE-SPEC.md",
+      "sha256": "10d215c329ba03025d13c37295fee2a1348a6db8fc4a03d381440ed26c819b56",
+      "bytes": 9595,
+      "extension": ".md",
+      "classification": "history",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "history/specs/2026-08-25-personal-platform-experience-redesign.md",
+      "sha256": "f2131135f3bb7ef68db2d59dd5640007faf4d304b3ff769c8718fa299dd5c6c8",
+      "bytes": 14716,
+      "extension": ".md",
+      "classification": "history",
+      "retained_paths": [
+        "legacy/superpowers/specs/2026-08-25-personal-platform-experience-redesign.md"
+      ],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "history/specs/2026-08-25-public-page-family-visual-atlas.md",
+      "sha256": "c087d65852673f5192780b7ceac15ddac59014f655c4e09cbcf788aafe369ee7",
+      "bytes": 13495,
+      "extension": ".md",
+      "classification": "history",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "others/Codex Image Aug 25, 2026, 05_23_52 AM.png",
+      "sha256": "5b873c35c7305162e6906d463d705ecb63d5f8b25a9b3875a552a6a096459493",
+      "bytes": 1665867,
+      "extension": ".png",
+      "classification": "unmanaged-unique",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "others/Codex Image Aug 25, 2026, 05_26_35 AM.png",
+      "sha256": "cc29681f266d9dcdb440d2533b7bfa4ece5dd66e59e50c7f1465324d7db58dc5",
+      "bytes": 1578300,
+      "extension": ".png",
+      "classification": "unmanaged-unique",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "others/Codex Image Aug 25, 2026, 05_40_19 AM.png",
+      "sha256": "180857e74bfbe91ef68c5c0f0842a513768b9f056aba1071db7762db3c6c5d28",
+      "bytes": 1890902,
+      "extension": ".png",
+      "classification": "unmanaged-unique",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "others/Codex Image Aug 25, 2026, 05_45_20 AM.png",
+      "sha256": "f489a3b5f55851e9c1be7f96508c8dff3fadfa4b2bacf7d447dbbb7e8810648b",
+      "bytes": 1553720,
+      "extension": ".png",
+      "classification": "unmanaged-unique",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "others/Codex Image Aug 25, 2026, 05_49_28 AM.png",
+      "sha256": "c8d91a20ff959d2ee284e254621b9ee6a5a0a6bcb5ef9308956c6b83ed94adfb",
+      "bytes": 1600256,
+      "extension": ".png",
+      "classification": "unmanaged-unique",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "others/Codex Image Aug 25, 2026, 05_53_58 AM.png",
+      "sha256": "29f0d659f01fcce4f6a847e429aa3b71b34ad0564a8cbbe73a30c34d9b59254b",
+      "bytes": 1643383,
+      "extension": ".png",
+      "classification": "unmanaged-unique",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "others/exec-022748ec-86d1-4eea-908d-57462c0dfb88.png",
+      "sha256": "d5bbeb56c09a38c42ba1f7b06e74a9215b0872a337450d80596e0708ecfa02c1",
+      "bytes": 1549163,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/home-mobile-fa-light-concept-v1.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/home-mobile-fa-light-concept-v1.png"
+      ]
+    },
+    {
+      "path": "others/exec-045b1f46-037e-4515-a485-e3642361600b.png",
+      "sha256": "f005f093c66b8476b331b442432d175336840d9296b4657ba41a1a94bd4b1b8b",
+      "bytes": 1421423,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/admin-graph-editor-dark-concept-v1.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/admin-graph-editor-dark-concept-v1.png"
+      ]
+    },
+    {
+      "path": "others/exec-0c9deb45-9c44-44db-a914-14f4f4d7ec9e.png",
+      "sha256": "288c12ed5c85800beda45b375a4966c00fd9e4ca7a3fda15a1c826bd691d82c3",
+      "bytes": 1788288,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/home-dark-concept-v3-final.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/home-dark-concept-v3-final.png"
+      ]
+    },
+    {
+      "path": "others/exec-0e1934f9-3251-407b-bc2f-47a30725b932.png",
+      "sha256": "cba03835aeaee14a7855d8dea000b048d2e1f5ba89e7c22e0f0d91b3f74215b7",
+      "bytes": 1707004,
+      "extension": ".png",
+      "classification": "unmanaged-unique",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "others/exec-1638a433-5644-4b88-9335-3cb39fcb9be6.png",
+      "sha256": "21ef859df5e6e2177538eb5a71d0f44d8615d32fa53f1586d8b8d3d5461e1418",
+      "bytes": 1909282,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/art/learning-sage-library.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/learning-sage-library.png"
+      ]
+    },
+    {
+      "path": "others/exec-297fa10a-3511-43f4-9633-23a2078bff18.png",
+      "sha256": "3e9316a95370a3401da8b3cd7c0007e404fe3bd985aeb70a082e13b7ff1fbf2b",
+      "bytes": 1580570,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/art/portal-orbit-light.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/portal-orbit-light.png"
+      ]
+    },
+    {
+      "path": "others/exec-3f8c99ca-c3b7-415e-87da-2014d6d1259a.png",
+      "sha256": "fbceedb903700246442f201f113cfc9b59df18f5f4a5681c379ca8cd61b9db33",
+      "bytes": 2062826,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/art/project-visual-communication-network.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/project-visual-communication-network.png"
+      ]
+    },
+    {
+      "path": "others/exec-409ba74a-6da8-4c8e-9577-3bdea1427626.png",
+      "sha256": "855fd82d363c7f2840d5e9359331e8cd29e1d1a54ea2e432f6cf2ae15fd09e2f",
+      "bytes": 1449165,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/art/portal-centered-light.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/portal-centered-light.png"
+      ]
+    },
+    {
+      "path": "others/exec-473919d8-e2c3-4105-8a3e-41a347fe80cc.png",
+      "sha256": "e10ff56456b6d9f7b3596311a378197f3600bee92d0993169216ff4caf3edd50",
+      "bytes": 1807980,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/art/portal-orbit-dark.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/portal-orbit-dark.png"
+      ]
+    },
+    {
+      "path": "others/exec-4fac97e3-4548-4eb5-928a-66cc3ae4db2f.png",
+      "sha256": "855296e8dd1541f173c529c30293f3848ef3d45eb3b07d92e64ffb89a4140d4e",
+      "bytes": 1899013,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/art/gallery-ivory-forms.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/gallery-ivory-forms.png"
+      ]
+    },
+    {
+      "path": "others/exec-57d02de4-e0d7-4cb5-91c2-791172a2f5b6.png",
+      "sha256": "b31c2bced438d03337daa225d284fe10aa3f6595785afe5db36b3f458eb925f1",
+      "bytes": 1888350,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/art/project-data-architecture.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/project-data-architecture.png"
+      ]
+    },
+    {
+      "path": "others/exec-58b829d1-c8e8-4470-be54-a5a76cdc1c55.png",
+      "sha256": "99c5890ff290bc12a5d20e2e5bab3da2d43a88514c7c036535a6d0fe846325d9",
+      "bytes": 1175153,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/blog-detail-fa-light-concept-v1.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/blog-detail-fa-light-concept-v1.png"
+      ]
+    },
+    {
+      "path": "others/exec-59affeec-534c-44fd-ac05-d0336e28f902.png",
+      "sha256": "2c2bbb6980331722912825e256f771a83b5c55d505517cdd83400694a434beda",
+      "bytes": 1742366,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/language-gateway-dark-concept-v1.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/language-gateway-dark-concept-v1.png"
+      ]
+    },
+    {
+      "path": "others/exec-5cfaae2c-937d-45b7-b44e-84f067978c7c.png",
+      "sha256": "4ee1a8a8ef69c12306fd8a5e353bd613b31b8bec57f4e3ef4f14dc3331cc6f25",
+      "bytes": 1162881,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/project-detail-fa-dark-concept-v1.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/project-detail-fa-dark-concept-v1.png"
+      ]
+    },
+    {
+      "path": "others/exec-67b950c3-a542-44f8-9866-391b3155aa1a.png",
+      "sha256": "b26103b898b837b3dfc1574974cd9bf7b6fd7614c897a5cf3c94b56ed577a6e2",
+      "bytes": 1394358,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/page-families/about-cv-light.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/page-families/about-cv-light.png"
+      ]
+    },
+    {
+      "path": "others/exec-7e44f293-63c5-4812-a8db-d96e281c65b5.png",
+      "sha256": "311c88d0b8e700cbd6ac3e3c982f4b1baf91b4c504258eb45f2c1b522ffa5e7b",
+      "bytes": 1524099,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/variants/home-light-alternate-reference.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/variants/home-light-alternate-reference.png"
+      ]
+    },
+    {
+      "path": "others/exec-80a38ce8-663b-4073-8cc8-44a6df241d9f.png",
+      "sha256": "64f0c3cdad21d5f13de366b621c38ec7ccf96f7f9adbfe8620755bd4a8836c1f",
+      "bytes": 1566702,
+      "extension": ".png",
+      "classification": "unmanaged-unique",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "others/exec-88ac2693-5924-4ffd-95d7-d85302969678.png",
+      "sha256": "67389ef5bac08d8e8d9711590a45e529880b3db4019f0920fa8b6fa51a10ca0b",
+      "bytes": 1560542,
+      "extension": ".png",
+      "classification": "unmanaged-unique",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "others/exec-8a2e2736-e01e-4f11-8a4b-ecf476f5866c.png",
+      "sha256": "5edfb769e61cb11b6a8e4272cdde9218b85ef0bca5b29975a51c43ed5890303a",
+      "bytes": 1639345,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/page-families/projects-index-dark.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/page-families/projects-index-dark.png"
+      ]
+    },
+    {
+      "path": "others/exec-8d40974a-9996-4c12-b245-9cdfb6fe5037.png",
+      "sha256": "dc78c3831c2cce225f28d2a6c106e3aa82919caaea6fbc0855c396bf6956b919",
+      "bytes": 1352681,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/page-families/research-publications-index-light.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/page-families/research-publications-index-light.png"
+      ]
+    },
+    {
+      "path": "others/exec-8eb2f8d9-a680-4e56-91d0-39d5091f98bc.png",
+      "sha256": "908e890360742228f27fabbd21569588eb0302cb656f9889a545f42749d04720",
+      "bytes": 2125757,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/art/blog-coral-stairs.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/blog-coral-stairs.png"
+      ]
+    },
+    {
+      "path": "others/exec-9217ee28-c3b3-4349-b3da-9388995f952c.png",
+      "sha256": "6f935befd5a1952155669ba8ab51f331454f63043057702b051f26cbd893e11e",
+      "bytes": 1742898,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/variants/home-dark-safe-reference.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/variants/home-dark-safe-reference.png"
+      ]
+    },
+    {
+      "path": "others/exec-962981ce-17e3-4e50-a884-5a64dd885654.png",
+      "sha256": "c33ee40fcf13ffe3a7c359285c74eb9eb45415d92b061e550e1c5b2c35029ba4",
+      "bytes": 2093185,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/art/project-dashboard-systems.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/project-dashboard-systems.png"
+      ]
+    },
+    {
+      "path": "others/exec-a763b3ce-75de-44bd-aba2-36061a4e56c5.png",
+      "sha256": "689e844d777e7c3456d5db1216207a3a9822b79e671c7aa9f0c72f20f826e0a4",
+      "bytes": 1569089,
+      "extension": ".png",
+      "classification": "unmanaged-unique",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "others/exec-a914c91c-81d4-4820-9b31-75d3469db6ba.png",
+      "sha256": "c0b963f1f08056bf43eb04ade87bb4c8d329ff15327fe654067683f2a3a156f3",
+      "bytes": 1654930,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/home-light-concept-v3-final.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/home-light-concept-v3-final.png"
+      ]
+    },
+    {
+      "path": "others/exec-ab4b49cc-85ab-42b4-bc36-5a8411769292.png",
+      "sha256": "654178bd07b1f6b568fd2d4717de3c986ef416dad4305ad14f8359057bc7b1e1",
+      "bytes": 1892003,
+      "extension": ".png",
+      "classification": "unmanaged-unique",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "others/exec-aed65a55-4fbf-4da2-a825-e5b8bfc969d0.png",
+      "sha256": "fd15db30701f954e17c4600d9d3f99da9e93456d7da4174d8e93f0bfc1a942bc",
+      "bytes": 1645708,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/page-families/teaching-index-dark.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/page-families/teaching-index-dark.png"
+      ]
+    },
+    {
+      "path": "others/exec-b975fded-e78b-4c0b-89e1-7a79e993e9f2.png",
+      "sha256": "5520a6063c223dd7ad3896e26c7e0b52aa321bfb427a04ef620de7563b975181",
+      "bytes": 1581366,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/art/portal-centered-dark.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/portal-centered-dark.png"
+      ]
+    },
+    {
+      "path": "others/exec-ca64831a-0500-4919-b414-24badab13768.png",
+      "sha256": "b8c237066aaeb903889eebb5cd8f3153c37997fdf8de5ff389e840ec8aec1d3c",
+      "bytes": 2050182,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/art/project-placeholder-ivory-stairs.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/art/project-placeholder-ivory-stairs.png"
+      ]
+    },
+    {
+      "path": "others/exec-d44fe536-231d-4b99-9478-a8101dc604ce.png",
+      "sha256": "a4f04e3597116c28eb82bfdbcf478e44610699862fc07ac45b00df9900774526",
+      "bytes": 1708334,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/page-families/creative-detail-dark.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/page-families/creative-detail-dark.png"
+      ]
+    },
+    {
+      "path": "others/exec-e4006cf4-d077-4203-8833-a3d8f4aca9c4.png",
+      "sha256": "61fd3173860cd53d1f7c1ae8f88cc2680c8622551ae4cba6e31dcb30f0dd340b",
+      "bytes": 1370525,
+      "extension": ".png",
+      "classification": "unmanaged-unique",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "others/exec-e6de06d5-637d-4f1f-b65f-e4d7381b3d75.png",
+      "sha256": "72d54716202bcfb661f3a20f1b75988fb347a44a4f0b23daa41f8f46df53a1f2",
+      "bytes": 1409529,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/page-families/writing-index-light.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/page-families/writing-index-light.png"
+      ]
+    },
+    {
+      "path": "others/exec-f5c05dc7-8754-4beb-a201-6be7c25c3822.png",
+      "sha256": "fb1f14d9a7d3d4ebf4b62c2570fc626dd7c5bb6f44dc223e13f3883ae6ca35f1",
+      "bytes": 1657790,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/page-families/contact-dark.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/page-families/contact-dark.png"
+      ]
+    },
+    {
+      "path": "others/exec-f7a80680-e3f7-47c4-b4c4-ada11c4a154d.png",
+      "sha256": "0b07398f53ec531e9840b8f01a0000cd0e82745e563e216bb04be55ec4c521b1",
+      "bytes": 1441765,
+      "extension": ".png",
+      "classification": "verified-duplicate",
+      "retained_paths": [
+        "authority/concepts/page-families/creative-index-light.png"
+      ],
+      "canonical_retained_paths": [
+        "authority/concepts/page-families/creative-index-light.png"
+      ]
+    },
+    {
+      "path": "others/exec-fd117345-38ac-41ea-b401-186803c0acbe.png",
+      "sha256": "5fbc2a1e4b4ae93d3ebe09eec44d62f05e40abd9e3be6397e431b0bbe463b0e2",
+      "bytes": 1526739,
+      "extension": ".png",
+      "classification": "unmanaged-unique",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "others/exec-ff83656e-5efd-411c-95f0-1ab5b2b80b70.png",
+      "sha256": "4fe8b5ebfa8c20d7e539ef0f6768e30a250d7187b09302785114151b97ddddcc",
+      "bytes": 2100428,
+      "extension": ".png",
+      "classification": "unmanaged-unique",
+      "retained_paths": [],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "superpowers/plans/2026-08-25-public-page-family-visual-atlas.md",
+      "sha256": "6fb7735a69fb0b9268463be0ac1e825fa787aaf3c6c6643dce8f086184c8eede",
+      "bytes": 23144,
+      "extension": ".md",
+      "classification": "history",
+      "retained_paths": [
+        "legacy/superpowers/plans/2026-08-25-public-page-family-visual-atlas.md"
+      ],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "superpowers/specs/2026-08-14-r0-1-opencode-go-governance-design.md",
+      "sha256": "7ac27514e34a88227eb8c09314f390de5f53df82d0c7c7472ab4c94d0daae248",
+      "bytes": 9656,
+      "extension": ".md",
+      "classification": "history",
+      "retained_paths": [
+        "legacy/superpowers/specs/2026-08-14-r0-1-opencode-go-governance-design.md"
+      ],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "superpowers/specs/2026-08-25-personal-platform-experience-redesign.md",
+      "sha256": "f2131135f3bb7ef68db2d59dd5640007faf4d304b3ff769c8718fa299dd5c6c8",
+      "bytes": 14716,
+      "extension": ".md",
+      "classification": "history",
+      "retained_paths": [
+        "legacy/superpowers/specs/2026-08-25-personal-platform-experience-redesign.md"
+      ],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "superpowers/specs/2026-08-25-public-page-family-visual-atlas.md",
+      "sha256": "d363bf56e348e529750ba107686c74649136ad065ba10127e2dc8aa47ecf6f63",
+      "bytes": 13478,
+      "extension": ".md",
+      "classification": "history",
+      "retained_paths": [
+        "legacy/superpowers/specs/2026-08-25-public-page-family-visual-atlas.md"
+      ],
+      "canonical_retained_paths": []
+    },
+    {
+      "path": "templates/TASK_SPEC_TEMPLATE.md",
+      "sha256": "d9b08205bc5e50565462ae6c1becacce1b10500165c311b2f37847434e1eccde",
+      "bytes": 1015,
+      "extension": ".md",
+      "classification": "history",
+      "retained_paths": [
+        "legacy/templates/TASK_SPEC_TEMPLATE.md"
+      ],
+      "canonical_retained_paths": []
+    }
+  ]
+}

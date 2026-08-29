@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "name": "Taha Mohammadi Frontend Design DNA",
+    "description": "Greenfield bilingual academic and professional platform. Exact tokens come from agent-kit; visual inferences come from the curated Light/Dark home, gateway, page-family and graph-editor concepts.",
+    "source_references": [
+      "concepts/home-light-concept-v3-final.png",
+      "concepts/home-dark-concept-v3-final.png",
+      "concepts/home-mobile-fa-light-concept-v1.png",
+      "concepts/language-gateway-dark-concept-v1.png",
+      "concepts/page-families/*.png",
+      "concepts/admin-graph-editor-dark-concept-v1.png",
+      "agent-kit/tokens.json"
+    ],
+    "created_at": "2026-08-29"
+  },
+  "design_system": {
+    "color": {
+      "palette_type": "analogous with restrained contextual accents",
+      "primary": { "hex": "#087c73", "role": "Light theme brand action and focus; Dark theme uses #16b8a6." },
+      "secondary": { "hex": "#182328", "role": "Light theme ink; Dark theme structural navy is #071225." },
+      "accent": { "hex": "#a77b28", "role": "Scarce gold signature and editorial emphasis; never the sole state indicator." },
+      "neutral": { "scale": ["#f7f8f5", "#ffffff", "#f1f4f2", "#dde5e3", "#b9c7c3", "#7c8a8f", "#616e74", "#182328", "#122343", "#0b1630", "#071225"], "usage": "Warm editorial Light surfaces and layered deep-navy Dark surfaces." },
+      "semantic": { "success": "#137a62 / #42a98c", "warning": "#a77b28 / #c89b3c", "error": "#b3261e / #ef6b68", "info": "#6047b8 / #8b75dc" },
+      "surface": { "background": "#f7f8f5 Light; #071225 Dark", "card": "#ffffff Light; #0b1630 Dark", "elevated": "#ffffff Light; #122343 Dark" },
+      "contrast_strategy": "High-contrast reading text with layered surfaces; teal, gold, violet, emerald and coral supplement rather than replace semantic contrast."
+    },
+    "typography": {
+      "type_scale": {
+        "display": { "size": "clamp(32px, 5vw, 64px)", "weight": "600", "line_height": "1.05", "tracking": "-0.02em" },
+        "heading_1": { "size": "clamp(30px, 4vw, 48px)", "weight": "600", "line_height": "1.1", "tracking": "-0.015em" },
+        "heading_2": { "size": "30px", "weight": "600", "line_height": "1.2", "tracking": "-0.01em" },
+        "heading_3": { "size": "24px", "weight": "600", "line_height": "1.3", "tracking": "0" },
+        "body": { "size": "16px", "weight": "400", "line_height": "1.6 Latin / 1.9 Persian", "tracking": "0" },
+        "body_small": { "size": "14px", "weight": "400", "line_height": "1.5 Latin / 1.8 Persian", "tracking": "0" },
+        "caption": { "size": "12px", "weight": "500", "line_height": "1.4", "tracking": "0.01em" },
+        "overline": { "size": "12px", "weight": "600", "line_height": "1.4", "tracking": "0.12em" }
+      },
+      "font_families": { "heading": "Newsreader Variable for English; Estedad Variable for Persian", "body": "Inter Variable for English; Vazirmatn Variable for Persian", "mono": "system-ui monospace" },
+      "font_style_notes": "Editorial serif display paired with clear variable sans body; source, license and subset are gated before runtime activation."
+    },
+    "spacing": { "base_unit": "4px", "scale": ["4px", "8px", "12px", "16px", "20px", "24px", "32px", "40px", "48px", "56px", "64px", "80px", "96px"], "content_density": "comfortable", "section_rhythm": "Large narrative section separation with compact intra-card rhythm." },
+    "layout": { "grid_system": "4 / 8 / 12 logical-column responsive grid", "max_content_width": "1280px", "columns": "4 compact, 8 tablet, 12 desktop", "gutter": "16px compact, 24px tablet, 32px desktop", "breakpoints": [320, 390, 768, 1024, 1280, 1440], "alignment_tendency": "strict editorial grid with asymmetric hero art and radial research graph." },
+    "shape": { "border_radius": { "small": "4px", "medium": "12px", "large": "16px", "pill": "999px" }, "border_usage": "Subtle 1px semantic borders; controls retain visible boundary in both themes.", "divider_style": "Low-contrast horizontal or grid-aligned dividers, never sole grouping signal." },
+    "elevation": { "shadow_style": "Subtle layered shadow in Light; tonal depth, glow and border in Dark", "levels": { "low": "surface plus border", "medium": "surface plus soft shadow or tonal offset", "high": "reserved hero/gateway layering" }, "depth_cues": "Layered navy, restrained glow, arches, orbital lines and carefully bounded glass." },
+    "iconography": { "style": "Fine-line circular technical/editorial icons", "stroke_weight": "approximately 1.5–2px", "size_scale": [16, 20, 24, 32, 40, 48], "preferred_set": "One accessible SVG icon system with visible labels where meaning is not universally obvious." },
+    "motion": { "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)", "duration_scale": { "micro": "140ms", "normal": "200ms", "macro": "280ms" }, "entrance_pattern": "Subtle opacity/translation only when motion is permitted", "exit_pattern": "Subtle opacity reduction without layout shift", "philosophy": "Minimal functional motion; reduced motion removes transforms and continuous graph animation." },
+    "components": { "button_style": "Clearly bordered or filled action with text label, icon support and 44px minimum target", "input_style": "Persistent label, visible border, explicit error/help text", "card_style": "Editorial surface with restrained border and independent title/action targets", "navigation_pattern": "Utility-rich header with active route indicator; locale and theme remain explicit", "modal_style": "Accessible dialog only for true interruption; no concept-derived decorative modal", "list_style": "Ordered editorial rows, cards or definition groups before enhancement", "component_notes": "Raster concepts describe hierarchy, not reusable markup. The agent kit remains the component/template inventory." }
+  },
+  "design_style": {
+    "aesthetic": { "mood": ["scholarly", "calm", "precise", "human-centered", "quietly ambitious"], "visual_metaphor": "A luminous portal into a connected research constellation", "era_influence": "Contemporary editorial science and refined digital atlas", "genre": "academic professional editorial", "personality_traits": ["thoughtful", "disciplined", "open", "methodical", "creative"], "adjectives": ["warm", "structured", "luminous", "evidence-led", "bilingual"] },
+    "visual_language": { "complexity": "rich but disciplined", "ornamentation": "subtle scientific and architectural accents", "whitespace_usage": "Generous Light canvas and deliberate Dark breathing room", "visual_weight_distribution": "Typography and researched imagery balance; graph/portal concentrates the hero", "focal_strategy": "Single hero plus progressive sectional evidence", "contrast_level": "High for reading and controls; low for decorative atmosphere", "texture_usage": "Fine atmospheric grain, orbital lines and architectural imagery only as bounded accents." },
+    "composition": { "hierarchy_method": "Display scale, spatial isolation, color weight and repeated section-label rhythm", "balance_type": "Asymmetric editorial hero with radial graph balance", "flow_direction": "Locale-aware logical flow; content order does not change by theme", "grouping_strategy": "Section labels, aligned cards, dividers, contained surfaces and semantic landmarks", "negative_space_role": "Supports scanning, reading measure and focal clarity rather than filling the page." },
+    "imagery": { "photo_treatment": "Curated architectural and abstract technical renders with controlled palette", "illustration_style": "Fine-line technical symbols and constellation relationships", "graphic_elements": "Portal arches, orbital lines, nodes, restrained grid, signature gold marks", "pattern_usage": "Low-opacity network motifs confined to support surfaces", "image_shape": "Editorial rectangles with consistent aspect-ratio reservation; no text baked into runtime UI." },
+    "interaction_feel": { "feedback_style": "Clear focus, selected state, inline validation and honest status", "hover_behavior": "Small tonal/border change; no large scale or disorienting movement", "transition_personality": "Smooth and restrained", "loading_style": "Stable geometry and textual state; no false progress", "microinteraction_density": "Low; interactions earn their motion through utility." },
+    "brand_voice_in_ui": { "tone": "Calm, precise and welcoming", "formality": "Professional without marketing inflation", "cta_style": "Specific invitation tied to a legitimate next action", "empty_state_approach": "Honest unavailable, empty, private and translation states with one recovery action", "error_tone": "Safe, concise, actionable and free of internal detail." }
+  },
+  "visual_effects": {
+    "overview": { "effect_intensity": "subtle-accent", "performance_tier": "lightweight with optional bounded 2D enhancement", "fallback_strategy": "Static CSS/semantic list with all information and links retained", "primary_technology": "CSS plus optional Canvas/SVG/React island for graph Phase 1" },
+    "background_effects": { "type": "noise-field and static atmospheric gradients", "description": "Deep navy or warm ivory atmosphere with very low-opacity orbital and architectural support", "technology": "CSS gradients and static image assets", "params": { "color_palette": ["#071225", "#0b1630", "#16b8a6", "#c89b3c", "#f7f8f5"], "speed": "0 by default", "density": "low", "opacity": "0.04–0.18", "blend_mode": "normal" } },
+    "particle_systems": { "enabled": false, "type": "connected-nodes", "description": "Conceptual dots belong to the semantic research graph, not a free decorative particle field.", "technology": "None before accepted graph Phase 1", "params": { "count": "0", "shape": "none", "size_range": "0", "movement_pattern": "none", "color_behavior": "semantic node accents", "interaction": "none", "spawn_area": "graph only when approved" } },
+    "3d_elements": { "enabled": false, "type": "abstract-geometry", "description": "No 3D runtime requirement. Phase 2 remains separate and cannot outrun accessible Phase 1.", "technology": "None", "params": { "renderer": "none", "lighting": "none", "camera": "none", "materials": "none", "geometry": "none", "post_processing": [], "interaction_model": "none" } },
+    "shader_effects": { "enabled": false, "type": "none", "description": "No shader is required by the approved references.", "technology": "None", "params": { "uniforms": [], "vertex_manipulation": "none", "fragment_output": "none", "noise_type": "none", "distortion": "none" } },
+    "scroll_effects": { "parallax": { "enabled": false, "layers": "0", "depth_range": "0", "speed_curve": "none" }, "scroll_triggered_animations": { "enabled": false, "trigger_points": [], "animation_type": "none", "scrub_behavior": "none" }, "scroll_morphing": { "enabled": false, "description": "Content and hierarchy must not depend on scroll motion." } },
+    "text_effects": { "type": "none", "description": "Typography communicates hierarchy without animated splitting.", "technology": "CSS only", "params": { "split_strategy": "none", "animation_per_unit": "none", "stagger": "0", "effect_style": "none" } },
+    "cursor_effects": { "enabled": false, "type": "none", "description": "No custom cursor, trail or magnetic control is permitted.", "params": { "shape": "system", "size": "system", "blend_mode": "normal", "trail": "none", "interaction_zone": "none" } },
+    "image_effects": { "type": "none", "description": "Reserve aspect ratio and use accessible static media; hover is limited to tonal treatment.", "technology": "CSS", "params": { "filter_pipeline": "none", "hover_transform": "color/border only", "reveal_animation": "none", "distortion_type": "none" } },
+    "glassmorphism_neumorphism": { "enabled": true, "style": "frosted-layers", "params": { "blur_radius": "bounded and optional", "transparency": "opaque fallback required", "border_treatment": "visible semantic border", "shadow_type": "subtle", "light_source_angle": "not applicable" } },
+    "canvas_drawings": { "enabled": false, "type": "none", "description": "The graph is not a freeform canvas requirement; an accepted Phase 1 may introduce a bounded renderer after semantic list parity exists.", "technology": "None before Phase 1", "params": { "draw_method": "none", "animation_loop": "none", "color_scheme": "semantic tokens", "responsiveness": "semantic-list fallback", "interaction": "keyboard-equivalent selection" } },
+    "svg_animations": { "enabled": false, "type": "none", "description": "Logo and icons remain static by default.", "params": { "animation_method": "none", "path_morphing": "none", "stroke_animation": "none", "filter_effects": "none" } },
+    "composite_notes": "The visual references show atmosphere through portals, orbit lines and connected research nodes. Implement those as static CSS/SVG or approved responsive media first. Any enhanced graph must expose identical relationships and navigation through semantic HTML, honor reduced motion, and fall back immediately when the renderer is unavailable."
+  }
+}

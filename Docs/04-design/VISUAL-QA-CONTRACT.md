@@ -2,7 +2,7 @@
 
 ## Required comparison
 
-Capture the reference and implementation at the same viewport, locale, theme, and state.
+Capture the matching PF-01 through PF-08 reference and implementation at the same viewport, locale, theme, and state.
 Compare hierarchy, spacing, typography, asset role, crop, density, and interaction affordance.
 
 Concept references are not pixel-perfect implementation specifications.
@@ -27,5 +27,7 @@ Visible deviations require a documented reason and owner acceptance.
 - Light and Dark visual review
 - Persian and English review
 - Reduced-motion review
+- Asset promotion-ledger role, crop, text alternative, and derivative review
+- Gateway, Home, PF-01 through PF-08, search, and all honest content-state review
 
 Build success does not close manual visual acceptance.

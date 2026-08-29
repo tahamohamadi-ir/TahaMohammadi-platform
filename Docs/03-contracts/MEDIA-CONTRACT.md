@@ -6,3 +6,4 @@
 - Public derivatives use responsive AVIF and WebP when supported.
 - Original files remain unchanged when derivatives are generated.
 - Private or draft media must not be exposed through predictable URLs.
+- Runtime media promotion additionally requires the tracked authority hash and an approved `ASSET-PROMOTION-LEDGER.md` record.

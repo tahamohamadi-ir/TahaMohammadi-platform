@@ -1,0 +1,16 @@
+{
+  "version": "2.0.0",
+  "rule": "Use production assets as media only. Never slice concept screenshots into controls.",
+  "assets": [
+    { "id": "logo", "path": "brand/taha-mark-primary.png", "role": "owner-provided PNG identity mark; native SVG is not owner-supplied", "status": "promotion-required" },
+    { "id": "home-light", "path": "concepts/home-light-concept-v3-final.png", "role": "Light hierarchy and art direction", "status": "reference-only" },
+    { "id": "home-dark", "path": "concepts/home-dark-concept-v3-final.png", "role": "Dark hierarchy and graph language", "status": "reference-only" },
+    { "id": "gateway", "path": "concepts/language-gateway-dark-concept-v1.png", "role": "Separate language gateway direction", "status": "reference-only" },
+    { "id": "mobile-fa", "path": "concepts/home-mobile-fa-light-concept-v1.png", "role": "RTL mobile recomposition", "status": "reference-only" },
+    { "id": "blog-detail-fa", "path": "concepts/blog-detail-fa-light-concept-v1.png", "role": "Long-form RTL reference", "status": "reference-only" },
+    { "id": "project-detail-fa", "path": "concepts/project-detail-fa-dark-concept-v1.png", "role": "Evidence-detail RTL reference", "status": "reference-only" },
+    { "id": "graph-editor", "path": "concepts/admin-graph-editor-dark-concept-v1.png", "role": "Admin graph-editor visual and behavior reference", "status": "reference-only" },
+    { "id": "page-families", "path": "concepts/page-families", "role": "PF-01 through PF-08 page-family visual references", "status": "reference-only" },
+    { "id": "asset-ledger", "path": "../../04-design/ASSET-PROMOTION-LEDGER.md", "role": "Runtime media promotion authority", "status": "authority" }
+  ]
+}
