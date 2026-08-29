@@ -7,8 +7,8 @@
 | `public-openapi.json` | Backend public schema endpoint | Anonymous test client | Public site |
 | `admin-openapi.json` | Backend admin schema endpoint | Verified staff plus OTP fixture | Admin panel |
 | `endpoint-inventory.md` | Backend source plus both schemas | Read-only generation | All repositories |
-| TypeScript client/types | Accepted schema version | Deterministic generator | Owning frontend only |
-| Consumer fixtures | Backend-approved DTO examples | No production data | Public and admin tests |
+| TypeScript client/types | Accepted schema version | Deterministic generator (`OPENAPI-TYPESCRIPT-GENERATION.md`) | Owning frontend only |
+| Consumer fixtures | Backend-approved DTO examples | No production data | Public and admin tests (`CONTRACT-FIXTURE-PATHS.md`) |
 
 ## Versioning rules
 

@@ -28,7 +28,7 @@ Wave 0 — COMPLETE (2026-08-29)
 
 Wave 1 (start now — parallel)
   BACKEND-060..120 seed v1.1 import + import tests
-  COORD-040..050   OpenAPI TS types contract wiring
+  COORD-040..050   OpenAPI TS types contract wiring — **COORD-040/050 complete** (2026-08-29)
   PUBLIC-090..120  API client + locale routes
   ADMIN-080..110   admin API client + auth shell
 
@@ -55,8 +55,8 @@ Wave 4 (release)
 | COORD-010 | — | Register this board; link from `MASTER-TASK-LIST.md` and each repo `TASK-LIST.md` | Board committed; links resolve |
 | COORD-020 | — | Update `PRE-SCAFFOLD-READINESS.md` for Seed v1.1 supplement ingestion | PS-08 evidence mentions v1.1 |
 | COORD-030 | — | Activate CI Phase 0 workflows (coordination validator + backend pytest/ruff/OpenAPI) | Workflows green on `main` |
-| COORD-040 | PUBLIC-090, ADMIN-080 | Add shared OpenAPI → TypeScript generation contract doc path in `Docs/03-contracts/` | Generator command + hash pin documented |
-| COORD-050 | COORD-040 | Add public/admin contract fixture file locations in `Docs/03-contracts/` | Fixture paths exist and are referenced |
+| COORD-040 ✅ | PUBLIC-090, ADMIN-080 | Add shared OpenAPI → TypeScript generation contract doc path in `Docs/03-contracts/` | **Done** — `OPENAPI-TYPESCRIPT-GENERATION.md`: generator command, output paths, hash pins |
+| COORD-050 ✅ | COORD-040 | Add public/admin contract fixture file locations in `Docs/03-contracts/` | **Done** — `CONTRACT-FIXTURE-PATHS.md`; referenced from generation doc |
 | COORD-060 | BACKEND-200, PUBLIC-350, ADMIN-320 | Staging topology checklist against `DEPLOYMENT-TOPOLOGY.md` | Browser smoke plan written with owners |
 | COORD-070 | COORD-060 | Run draft-leak + CSRF + MFA staging evidence collection | Evidence files in `Docs/10-tracking/` |
 | COORD-080 | COORD-070 | Visual/public + admin quality matrix sign-off package | `R8` evidence template filled |
