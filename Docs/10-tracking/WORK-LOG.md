@@ -26,3 +26,4 @@
 - Published `LOCAL-RUNTIME-SSOT.md` and `scripts/promote-design-intake.ps1` for Assets → design-authority promotion.
 - Started parallel Wave 0 lanes: BACKEND-010..050, PUBLIC-010..040, ADMIN-010..040.
 - Wave 0 multi-agent execution complete; Wave 1 verification added below.
+- COORD-040/050: `OPENAPI-TYPESCRIPT-GENERATION.md` and `CONTRACT-FIXTURE-PATHS.md` committed (`b5204e8`).
