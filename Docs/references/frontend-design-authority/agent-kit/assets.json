@@ -1,8 +1,120 @@
 {
-  "version": "2.0.0",
+  "version": "2.1.0",
   "rule": "Use production assets as media only. Never slice concept screenshots into controls.",
+  "runtime_assets": [
+    {
+      "id": "portal-centered-dark",
+      "path": "art/portal-centered-dark.png",
+      "slot": "gateway.atmosphere",
+      "theme": "dark",
+      "alt": "decorative",
+      "status": "runtime-promoted"
+    },
+    {
+      "id": "portal-centered-light",
+      "path": "art/portal-centered-light.png",
+      "slot": "gateway.atmosphere",
+      "theme": "light",
+      "alt": "decorative",
+      "status": "runtime-promoted"
+    },
+    {
+      "id": "portal-orbit-dark",
+      "path": "art/portal-orbit-dark.png",
+      "slot": "home.hero.atmosphere",
+      "theme": "dark",
+      "alt": "decorative",
+      "status": "runtime-promoted"
+    },
+    {
+      "id": "portal-orbit-light",
+      "path": "art/portal-orbit-light.png",
+      "slot": "home.hero.atmosphere",
+      "theme": "light",
+      "alt": "decorative",
+      "status": "runtime-promoted"
+    },
+    {
+      "id": "brand-primary",
+      "path": "brand/taha-mark-primary.png",
+      "slot": "brand.mark",
+      "theme": "both",
+      "alt": "content-by-locale",
+      "status": "runtime-promoted"
+    },
+    {
+      "id": "brand-favicon",
+      "path": "brand/taha-mark-favicon.png",
+      "slot": "brand.mark",
+      "theme": "both",
+      "alt": "decorative",
+      "status": "runtime-promoted"
+    },
+    {
+      "id": "project-dashboard-systems",
+      "path": "art/project-dashboard-systems.png",
+      "slot": "home.project.preview",
+      "mapping": "organizational-dashboard-research",
+      "alt": "content-by-locale",
+      "status": "runtime-promoted"
+    },
+    {
+      "id": "project-data-architecture",
+      "path": "art/project-data-architecture.png",
+      "slot": "home.project.preview",
+      "mapping": "pars-sql-vtd-edge",
+      "alt": "content-by-locale",
+      "status": "runtime-promoted"
+    },
+    {
+      "id": "blog-coral-stairs",
+      "path": "art/blog-coral-stairs.png",
+      "slot": "home.rail.preview",
+      "mapping": "writing",
+      "alt": "decorative",
+      "status": "runtime-promoted"
+    },
+    {
+      "id": "learning-sage-library",
+      "path": "art/learning-sage-library.png",
+      "slot": "home.rail.preview",
+      "mapping": "teaching",
+      "alt": "decorative",
+      "status": "runtime-promoted"
+    },
+    {
+      "id": "gallery-ivory-forms",
+      "path": "art/gallery-ivory-forms.png",
+      "slot": "home.rail.preview",
+      "mapping": "creative",
+      "alt": "decorative",
+      "status": "runtime-promoted"
+    }
+  ],
+  "deferred_assets": [
+    {
+      "id": "project-visual-communication-network",
+      "path": "art/project-visual-communication-network.png",
+      "reason": "owner-deferred; absent from runtime"
+    },
+    {
+      "id": "project-placeholder-ivory-stairs",
+      "path": "art/project-placeholder-ivory-stairs.png",
+      "reason": "excluded from Home/runtime in this slice"
+    },
+    {
+      "id": "home-graph-backplate-light",
+      "path": "art/home-graph-backplate-light.png",
+      "reason": "awaiting WP-25 Master Chat ACCEPT"
+    },
+    {
+      "id": "home-graph-backplate-dark",
+      "path": "art/home-graph-backplate-dark.png",
+      "reason": "awaiting WP-25 Master Chat ACCEPT"
+    }
+  ],
   "assets": [
-    { "id": "logo", "path": "brand/taha-mark-primary.png", "role": "owner-provided PNG identity mark; native SVG is not owner-supplied", "status": "promotion-required" },
+    { "id": "logo", "path": "brand/taha-mark-primary.png", "role": "owner-provided PNG identity mark; native SVG is not owner-supplied", "status": "runtime-promoted" },
     { "id": "home-light", "path": "concepts/home-light-concept-v3-final.png", "role": "Light hierarchy and art direction", "status": "reference-only" },
     { "id": "home-dark", "path": "concepts/home-dark-concept-v3-final.png", "role": "Dark hierarchy and graph language", "status": "reference-only" },
     { "id": "gateway", "path": "concepts/language-gateway-dark-concept-v1.png", "role": "Separate language gateway direction", "status": "reference-only" },
