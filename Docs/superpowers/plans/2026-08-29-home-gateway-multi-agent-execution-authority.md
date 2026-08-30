@@ -170,6 +170,48 @@ No worker assumes a branch exists. Master Chat provides the exact base commit an
 | final QA report | `WP-50` only | implementation workers | report may be revised, production code may not be edited by QA |
 | this execution authority | Master Chat only | every worker | handoff via chat, not direct edits |
 
+### Amendment B — controlled legacy-shell extraction (2026-08-30)
+
+**Decision:** The `WP-10` foundation extraction left the legacy shell selectors in
+`src/styles/global.css`, while `WP-20` is the owner of the new `shell.css` module.
+To resolve that sequencing gap without reopening token, base, theme, Home, or
+Gateway ownership, Master Chat transfers one narrow mechanical operation to
+`WP-20 / PUBLIC-150`.
+
+**Supersession:** This amendment supersedes the `global.css` prohibition in the
+`WP-20` allowlist and the ownership-matrix row above **only for the exact source
+segments listed below**. Every other `global.css` edit remains exclusively owned
+by `WP-10` and forbidden to `WP-20`.
+
+**Exact permitted operation:** In one replacement `PUBLIC-150` commit, Cursor may
+move, without semantic redesign, the legacy selectors for:
+
+- `.site-body`;
+- `.skip-link` and `.skip-link:focus`; and
+- the source segment headed `/* Site shell — header, main, footer */`, including
+  its header, navigation, language-toggle, footer, and shell theme-control
+  selectors;
+
+from `src/styles/global.css` to `src/styles/shell.css`. Equivalent selectors must
+exist exactly once after the move. `SiteLayout.astro` is the only layout permitted
+to import `shell.css`; `BaseLayout.astro` must remain at its accepted WP-10/PUBLIC-140
+content and no `shell-focus.css` (or duplicate focus stylesheet) may be created.
+
+**Focused proof allowed for this amendment:** Cursor may add a new
+`tests/e2e/public-150-shell.e2e.ts` owned by WP-20. It must assert that keyboard
+activation of the SkipLink moves focus to `#main-content` and that the destination
+has a visible tokenized focus outline. Cursor must not edit
+`tests/e2e/wp10-foundation.accessibility.e2e.ts`, other WP-10 acceptance tests,
+Playwright configuration, package files, or global token/base/theme rules.
+
+**Required replacement-commit evidence:** The commit parent is accepted
+`PUBLIC-140` (`edef566043233263ba59f2229ed40f3653f749f0`); it contains no unrelated
+file changes; `global.css` has no remaining copied selector from the listed
+legacy-shell segments; full Vitest, design validation, normal build, WP-10
+foundation/a11y checks, the new focused shell E2E, and `git diff --check` pass.
+
+---
+
 ### Known high-risk conflicts
 
 - `src/styles/global.css` is approximately 2,272 lines and currently mixes tokens, theme, Gateway, shell, stubs, and Home. Freeze it after `WP-10` extracts foundations.
