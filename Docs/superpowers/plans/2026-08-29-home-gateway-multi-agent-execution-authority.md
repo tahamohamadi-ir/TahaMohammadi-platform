@@ -212,6 +212,34 @@ foundation/a11y checks, the new focused shell E2E, and `git diff --check` pass.
 
 ---
 
+### Amendment C — isolated Atlas browser harness (2026-08-30)
+
+**Decision:** `PUBLIC-170` needs a browser that serves the Atlas-only build in
+order to prove its gated route, computed theme tokens, and reduced-motion state.
+Master Chat authorizes one isolated harness owned by WP-20, without transferring
+ownership of the default Playwright configuration.
+
+**Exact permitted files:**
+
+- `playwright.atlas.config.ts`; and
+- `tests/atlas/**`.
+
+The Atlas config must use `tests/atlas` as its own test directory and must not
+edit `playwright.config.ts`, `package.json`, the lockfile, or WP-10 test files.
+It may run `build:atlas` and start a dedicated Astro preview through Playwright's
+managed `webServer` lifecycle on its own fixed local port. A busy port must fail
+the test clearly; the harness must never call `astro preview stop`, kill a process
+that it did not start, scan for arbitrary processes, or delete another worker's
+output.
+
+**Required proof:** The isolated browser suite verifies `/_design` is present
+only in the Atlas build, validates Light and Dark computed tokens, emulates
+reduced motion, and checks the required stable visual IDs. The existing default
+Playwright suite continues to verify that the ordinary development server returns
+404 for `/_design`.
+
+---
+
 ### Known high-risk conflicts
 
 - `src/styles/global.css` is approximately 2,272 lines and currently mixes tokens, theme, Gateway, shell, stubs, and Home. Freeze it after `WP-10` extracts foundations.
