@@ -89,6 +89,36 @@
       "mapping": "creative",
       "alt": "decorative",
       "status": "runtime-contract-staged"
+    },
+    {
+      "id": "home-graph-backplate-light",
+      "path": "art/home-graph-backplate-light.png",
+      "slot": "home.graph.backplate",
+      "theme": "light",
+      "alt": "decorative",
+      "intrinsic": "1254x1254",
+      "sourceSha256": "22d8faf5f2848a79028f44dad2509806970d97f8ec557296c12e9b594f63df18",
+      "generation": {
+        "mode": "built-in-codex-imagegen",
+        "decision": "wp25-master-chat-accept",
+        "decisionDate": "2026-08-30"
+      },
+      "status": "runtime-contract-staged"
+    },
+    {
+      "id": "home-graph-backplate-dark",
+      "path": "art/home-graph-backplate-dark.png",
+      "slot": "home.graph.backplate",
+      "theme": "dark",
+      "alt": "decorative",
+      "intrinsic": "1254x1254",
+      "sourceSha256": "6687d39e8ec8bab477e1d05436e5c5d221bb98afbcf5a0ff419703f658842d23",
+      "generation": {
+        "mode": "built-in-codex-imagegen",
+        "decision": "wp25-master-chat-accept",
+        "decisionDate": "2026-08-30"
+      },
+      "status": "runtime-contract-staged"
     }
   ],
   "deferred_assets": [
@@ -101,16 +131,6 @@
       "id": "project-placeholder-ivory-stairs",
       "path": "art/project-placeholder-ivory-stairs.png",
       "reason": "excluded from Home/runtime in this slice"
-    },
-    {
-      "id": "home-graph-backplate-light",
-      "path": "art/home-graph-backplate-light.png",
-      "reason": "awaiting WP-25 Master Chat ACCEPT"
-    },
-    {
-      "id": "home-graph-backplate-dark",
-      "path": "art/home-graph-backplate-dark.png",
-      "reason": "awaiting WP-25 Master Chat ACCEPT"
     }
   ],
   "assets": [
