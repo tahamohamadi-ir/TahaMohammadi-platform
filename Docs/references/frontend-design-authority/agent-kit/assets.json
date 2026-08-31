@@ -8,7 +8,7 @@
       "slot": "gateway.atmosphere",
       "theme": "dark",
       "alt": "decorative",
-      "status": "runtime-promoted"
+      "status": "runtime-contract-staged"
     },
     {
       "id": "portal-centered-light",
@@ -16,7 +16,7 @@
       "slot": "gateway.atmosphere",
       "theme": "light",
       "alt": "decorative",
-      "status": "runtime-promoted"
+      "status": "runtime-contract-staged"
     },
     {
       "id": "portal-orbit-dark",
@@ -24,7 +24,7 @@
       "slot": "home.hero.atmosphere",
       "theme": "dark",
       "alt": "decorative",
-      "status": "runtime-promoted"
+      "status": "runtime-contract-staged"
     },
     {
       "id": "portal-orbit-light",
@@ -32,7 +32,7 @@
       "slot": "home.hero.atmosphere",
       "theme": "light",
       "alt": "decorative",
-      "status": "runtime-promoted"
+      "status": "runtime-contract-staged"
     },
     {
       "id": "brand-primary",
@@ -40,7 +40,7 @@
       "slot": "brand.mark",
       "theme": "both",
       "alt": "content-by-locale",
-      "status": "runtime-promoted"
+      "status": "runtime-contract-staged"
     },
     {
       "id": "brand-favicon",
@@ -48,23 +48,23 @@
       "slot": "brand.mark",
       "theme": "both",
       "alt": "decorative",
-      "status": "runtime-promoted"
+      "status": "runtime-contract-staged"
     },
     {
       "id": "project-dashboard-systems",
       "path": "art/project-dashboard-systems.png",
       "slot": "home.project.preview",
       "mapping": "organizational-dashboard-research",
-      "alt": "content-by-locale",
-      "status": "runtime-promoted"
+      "alt": "consumer-content",
+      "status": "runtime-contract-staged"
     },
     {
       "id": "project-data-architecture",
       "path": "art/project-data-architecture.png",
       "slot": "home.project.preview",
       "mapping": "pars-sql-vtd-edge",
-      "alt": "content-by-locale",
-      "status": "runtime-promoted"
+      "alt": "consumer-content",
+      "status": "runtime-contract-staged"
     },
     {
       "id": "blog-coral-stairs",
@@ -72,7 +72,7 @@
       "slot": "home.rail.preview",
       "mapping": "writing",
       "alt": "decorative",
-      "status": "runtime-promoted"
+      "status": "runtime-contract-staged"
     },
     {
       "id": "learning-sage-library",
@@ -80,7 +80,7 @@
       "slot": "home.rail.preview",
       "mapping": "teaching",
       "alt": "decorative",
-      "status": "runtime-promoted"
+      "status": "runtime-contract-staged"
     },
     {
       "id": "gallery-ivory-forms",
@@ -88,7 +88,7 @@
       "slot": "home.rail.preview",
       "mapping": "creative",
       "alt": "decorative",
-      "status": "runtime-promoted"
+      "status": "runtime-contract-staged"
     }
   ],
   "deferred_assets": [
@@ -114,7 +114,7 @@
     }
   ],
   "assets": [
-    { "id": "logo", "path": "brand/taha-mark-primary.png", "role": "owner-provided PNG identity mark; native SVG is not owner-supplied", "status": "runtime-promoted" },
+    { "id": "logo", "path": "brand/taha-mark-primary.png", "role": "owner-provided PNG identity mark; native SVG is not owner-supplied", "status": "runtime-contract-staged" },
     { "id": "home-light", "path": "concepts/home-light-concept-v3-final.png", "role": "Light hierarchy and art direction", "status": "reference-only" },
     { "id": "home-dark", "path": "concepts/home-dark-concept-v3-final.png", "role": "Dark hierarchy and graph language", "status": "reference-only" },
     { "id": "gateway", "path": "concepts/language-gateway-dark-concept-v1.png", "role": "Separate language gateway direction", "status": "reference-only" },
