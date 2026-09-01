@@ -2,23 +2,24 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `ddb7ae0` (+ overflow fix follow-up on integration branch)  
+**Public-site commit:** `4931455` (`main` after merge of `cx/public-page-families-280`)  
 **Coordination commit:** `f3c367d`  
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
 ---
 
-## Automated gate summary (`ddb7ae0` + overflow fix)
+## Automated gate summary (`4931455`)
 
 | Command | Exit | Summary |
 |---|---:|---|
-| `npm test` (Vitest) | 0 | 183 passed (PUBLIC-260/261 asset promotion, PUBLIC-270/280 visual scaffolds, PUBLIC-230–250 routes) |
+| `npm test` (Vitest) | 0 | unit + PUBLIC-260/261 asset promotion, PUBLIC-270/280 visual scaffolds, PUBLIC-230–250 routes |
 | `npm run validate:design` | 0 | 24 components, 6 templates |
 | `npm run build` | 0 | 23 static pages; promoted preview/rail/brand masters via Astro image pipeline |
 | `npm run validate:seo` | 0 | sitemap-index.xml, robots.txt, canonical/hreflang on sample pages, per-locale Pagefind bundles |
 | `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** (PF-02 detail — no published creative detail route) |
-| `npm run test:visual -- --grep PUBLIC-280` | 0 | **12 passed** (PF-01 six-width scaffold; 320px overflow gate green after shell fix) |
+| `npm run test:visual -- --grep PUBLIC-280` | 0 | **108 passed** (18 routes × 6 widths; PF-01..PF-08 index matrix minus PF-02 detail) |
+| CI workflow | present | `.github/workflows/ci.yml` — unit, design, SEO, build on push/PR |
 | Atlas leak check | pass | no `/_design` in production build |
 
 ---
@@ -45,9 +46,13 @@ Owner/concept comparison matrix and screenshot SHA-256 evidence still required p
 
 Playwright `@visual` stubs capture PF-01..PF-08 index routes at 1440 and 390 CSS px. Evidence checklist: `Front-End/public-site/docs/quality/PUBLIC-270-PAGE-FAMILY-VISUAL-EVIDENCE.md`. PF-02 detail remains skipped until a published creative detail route exists in the static build.
 
-### F-06 — PUBLIC-280 responsive matrix scaffold (not acceptance)
+### F-06 — PUBLIC-280 responsive matrix expanded (not acceptance)
 
-PF-01 six-width capture harness (320–1440 CSS px) scaffolded. **320px horizontal overflow** on EN creative index cleared via narrow shell utility tightening; overflow gate now applies at all matrix widths.
+Six-width capture harness (320–1440 CSS px) now covers PF-01 and PF-03..PF-08 index routes (108 captures). **320px horizontal overflow** on EN creative index cleared via narrow shell utility tightening; overflow gate applies at all matrix widths. PF-02 detail and dual-theme matrix remain open.
+
+### F-07 — PUBLIC-012 Phase 1 CI (not acceptance)
+
+`.github/workflows/ci.yml` added on `main` @ `4931455`: `npm ci`, unit tests, `validate:design`, `validate:seo`, `build` on push/PR. Playwright visual gates remain local-only.
 
 ---
 
