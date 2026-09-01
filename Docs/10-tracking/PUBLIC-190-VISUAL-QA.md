@@ -2,14 +2,14 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `27fc859` (`main` after PUBLIC-270 re-run + TASK-LIST accuracy audit)
-**Coordination commit:** `a075bf4` (updated after this gate sweep)
+**Public-site commit:** `fad71e0` (`main` after PUBLIC-270 re-run + TASK-LIST accuracy audit)
+**Coordination commit:** `d4d5c8f`
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
 ---
 
-## Automated gate summary (`27fc859`)
+## Automated gate summary (`fad71e0`)
 
 | Command | Exit | Summary |
 |---|---:|---|
@@ -19,7 +19,7 @@
 | `npm run validate:design` | 0 | 24 components, 6 templates |
 | `npm run build` | 0 | 23 static pages |
 | `npm run validate:seo` | 0 | sitemap-index.xml, robots.txt, canonical/hreflang, per-locale Pagefind bundles |
-| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** — re-run 2026-09-01 @ `27fc859`; PF-02 detail open |
+| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** — re-run 2026-09-01 @ `fad71e0`; PF-02 detail open |
 | `npm run test:visual -- --grep PUBLIC-280` | not re-run | Last green on `f3acb24` (216 passed) |
 | `npm run test:nojs` | not re-run | Last green on `f3acb24` (23 passed) |
 | `npm run test:foundation` | not re-run | Last green on `f3acb24` (6 passed) |
@@ -134,7 +134,7 @@ Home featured projects (`pars-sql-vtd-edge`, `organizational-dashboard-research`
 
 ### F-17 — Page-family routes implemented but frozen (not acceptance)
 
-`PUBLIC-201` through `PUBLIC-221` (except `PUBLIC-212` books/talks/downloads) have routes, loaders, and behavior tests on `main` @ `27fc859`. TASK-LIST updated to `[~]` — implemented; frozen pending visual acceptance. Does **not** unfreeze recovery or close `PUBLIC-190`.
+`PUBLIC-201` through `PUBLIC-221` (except `PUBLIC-212` books/talks/downloads) have routes, loaders, and behavior tests on `main` @ `fad71e0`. TASK-LIST updated to `[~]` — implemented; frozen pending visual acceptance. Does **not** unfreeze recovery or close `PUBLIC-190`.
 
 ---
 
@@ -182,4 +182,4 @@ Compare each implementation screenshot against the matching concept at the same 
 
 ## Verdict
 
-**`REVISE`** — automated gates green on `27fc859` (Vitest 214, lint, format, design, SEO, build, PUBLIC-270 visual 36 passed / 1 skipped); manual owner visual acceptance and home card link decision remain open before `PUBLIC-190` may close.
+**`REVISE`** — automated gates green on `fad71e0` (Vitest 214, lint, format, design, SEO, build, PUBLIC-270 visual 36 passed / 1 skipped); manual owner visual acceptance and home card link decision remain open before `PUBLIC-190` may close.
