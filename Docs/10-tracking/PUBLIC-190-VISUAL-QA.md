@@ -3,7 +3,7 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `3a54130` (`main` after CI standalone fixes + visual-compare formatting)
-**Coordination commit:** `558f5af`
+**Coordination commit:** `cc05602`
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
@@ -26,7 +26,7 @@ Open `compare-report.html` locally for side-by-side concept comparison. Does **n
 
 ## Automated gate summary (`3a54130`)
 
-Full local gate sweep @ `3a54130` / coordination `558f5af` (2026-09-01). Playwright suites run with clean `dist/` between commands to avoid Windows concurrent-build corruption.
+Full local gate sweep @ `3a54130` / coordination `cc05602` (2026-09-01). Playwright suites run with clean `dist/` between commands to avoid Windows concurrent-build corruption.
 
 | Command | Exit | Summary |
 |---|---:|---|
