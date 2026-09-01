@@ -3,7 +3,7 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `b12b017` (`main` after PUBLIC-011 ESLint + Prettier toolchain)
-**Coordination commit:** `pending` (update after coordination push)  
+**Coordination commit:** `060c2d6`  
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
