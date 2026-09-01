@@ -3,7 +3,7 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `56658c4` (`main` after merge of `cx/public-page-families-060`)  
-**Coordination commit:** `85953e1` (pending refresh after this doc commit)  
+**Coordination commit:** `e022708`  
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
