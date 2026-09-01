@@ -3,25 +3,47 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `3a54130` (`main` after CI standalone fixes + visual-compare formatting)
-**Coordination commit:** `4da9218`
+**Coordination commit:** `20ec277`
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
 ---
 
+## Owner visual review artifacts (`3a54130`)
+
+Captures regenerated 2026-09-01 in one Playwright session (avoids `test-results/` wipe between runs).
+
+| Artifact | Value |
+|---|---|
+| PNG capture count | **44** (`test-results/visual/*.png`) — 36 PUBLIC-270 index + 8 WP-40 home/gateway |
+| Compare report | `Front-End/public-site/test-results/visual/compare-report.html` |
+| Pairs ready | **43 / 48** (PF-02 detail ×4 optional; gateway has no concept pair) |
+| Regenerate | `cd Front-End/public-site && npm run build && npx playwright test --grep "PUBLIC-270\|WP-40 home captures\|WP-40 home and gateway capture" --workers=1 && npm run report:visual-compare` |
+
+Open `compare-report.html` locally for side-by-side concept comparison. Does **not** change verdict to PASS.
+
+---
+
 ## Automated gate summary (`3a54130`)
 
-Quick local gate sweep @ `3a54130` / coordination gate pin refresh (2026-09-01). Full Playwright matrix not re-run in this sync; prior green counts @ `faafdac` unless noted.
+Full local gate sweep @ `3a54130` / coordination `20ec277` (2026-09-01). Playwright suites run with clean `dist/` between commands to avoid Windows concurrent-build corruption.
 
 | Command | Exit | Summary |
 |---|---:|---|
 | `npm test` (Vitest) | 0 | **228 passed** — includes `public-270-visual-compare.test.ts` harness |
 | `npm run lint` | 0 | ESLint flat config (Astro + TypeScript + Prettier disable) |
 | `npm run format:check` | 0 | Prettier + `prettier-plugin-astro`; byte-pinned paths excluded via `.prettierignore` |
+| `npm run validate:design` | 0 | 24 components, 6 templates |
+| `npm run validate:seo` | 0 | sitemap-index.xml, robots.txt, canonical/hreflang, per-locale Pagefind bundles |
 | `npm run build` | 0 | 23 static pages |
+| `npm run test:foundation` | 0 | **6 passed** — WP-10 theme + PUBLIC-060 locale font computed styles |
+| `npm run test:performance` | 0 | **6 passed** — home EN/FA + creative EN LCP/CLS, font preloads, font-display swap, theme-toggle INP (1 flaky retry on first run) |
+| `npm run test:nojs` | 0 | **23 passed** — gateway, home, PF index routes, search with JS disabled |
+| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** — PF-02 creative detail open |
+| `npm run test:visual -- --grep PUBLIC-280` | 0 | **216 passed** — 6 widths × 2 locales × 2 themes on PF-01, PF-03..PF-08 index routes |
+| `npm run test:smoke` | 0 | **1 skipped** — `PUBLIC_STAGING_SITE_URL` unset (expected until BACKEND-180 staging) |
+| `npm run report:visual-compare` | 0 | **43 / 48** pairs ready from 44 PNG captures (see Owner visual review artifacts) |
 | GitHub Actions CI @ `3a54130` | pass | [run 33569434903](https://github.com/tahamohamadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33569434903) — lint, format check, unit, design, SEO, build |
-| `npm run report:visual-compare` | skipped | No `test-results/visual/*.png` captures locally; owner runs after `npm run test:visual -- --grep PUBLIC-270` |
-| Prior extended gates @ `faafdac` | see below | validate:design/seo, foundation, performance, PUBLIC-270/280, no-JS, smoke |
 
 ### Prior gate summary (`faafdac`)
 
@@ -231,6 +253,6 @@ Compare each implementation screenshot against the matching concept at the same 
 
 ## Verdict
 
-**`REVISE`** — full automated gate sweep green @ `faafdac` (Vitest 223, lint, format, design, SEO, build, foundation 6, performance 6, no-JS 23, PUBLIC-270 36/1 skipped, PUBLIC-280 216, smoke 1 skipped); F-16 home link gating shipped; manual owner visual acceptance remains open before `PUBLIC-190` may close.
+**`REVISE`** — full automated gate sweep green @ `3a54130` (Vitest 228, lint, format, design, SEO, build, foundation 6, performance 6, no-JS 23, PUBLIC-270 36/1 skipped, PUBLIC-280 216, smoke 1 skipped); owner compare report regenerated (44 PNGs, 43/48 pairs); manual owner visual acceptance remains open before `PUBLIC-190` may close.
 
 **Goal complete:** NO — owner visual compare, manual a11y, and explicit sign-off still required.
