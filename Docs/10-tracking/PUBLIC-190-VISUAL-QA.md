@@ -3,7 +3,7 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `95df072` (`main` after PUBLIC-320 staging smoke scaffold)
-**Coordination commit:** pending (this update)  
+**Coordination commit:** `db6cdbf`  
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
