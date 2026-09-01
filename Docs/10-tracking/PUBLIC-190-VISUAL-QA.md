@@ -1,15 +1,29 @@
-# PUBLIC-190 Visual and Accessibility QA Report
+﻿# PUBLIC-190 Visual and Accessibility QA Report
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `faafdac` (`main` after F-16 home link gating + PUBLIC-212 closure)
-**Coordination commit:** `a07b49f`
+**Public-site commit:** `3a54130` (`main` after CI standalone fixes + visual-compare formatting)
+**Coordination commit:** `4da9218`
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
 ---
 
-## Automated gate summary (`faafdac`)
+## Automated gate summary (`3a54130`)
+
+Quick local gate sweep @ `3a54130` / coordination gate pin refresh (2026-09-01). Full Playwright matrix not re-run in this sync; prior green counts @ `faafdac` unless noted.
+
+| Command | Exit | Summary |
+|---|---:|---|
+| `npm test` (Vitest) | 0 | **228 passed** — includes `public-270-visual-compare.test.ts` harness |
+| `npm run lint` | 0 | ESLint flat config (Astro + TypeScript + Prettier disable) |
+| `npm run format:check` | 0 | Prettier + `prettier-plugin-astro`; byte-pinned paths excluded via `.prettierignore` |
+| `npm run build` | 0 | 23 static pages |
+| GitHub Actions CI @ `3a54130` | pass | [run 33569434903](https://github.com/tahamohamadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33569434903) — lint, format check, unit, design, SEO, build |
+| `npm run report:visual-compare` | skipped | No `test-results/visual/*.png` captures locally; owner runs after `npm run test:visual -- --grep PUBLIC-270` |
+| Prior extended gates @ `faafdac` | see below | validate:design/seo, foundation, performance, PUBLIC-270/280, no-JS, smoke |
+
+### Prior gate summary (`faafdac`)
 
 Full local gate sweep @ `faafdac` / coordination `a07b49f` (2026-09-01). Playwright suites run with clean `dist/` between commands to avoid Windows concurrent-build corruption.
 
@@ -164,6 +178,10 @@ Home featured projects and publications still render from `src/lib/home-content.
 ### F-19 — CI standalone repo fixes (not acceptance)
 
 Vitest spawn uses cross-platform `npm` (not `npm.cmd` on Linux). PUBLIC-310/PUBLIC-350 skip workspace-sibling checks when Back-End/coordination repos are absent in standalone GitHub CI. Does **not** close `PUBLIC-190`.
+
+### F-20 — CI green @ `3a54130` + visual-compare formatting (not acceptance)
+
+`main` @ `3a54130`: removes unused `scriptDir` in CI-related scripts; Prettier pass on visual-compare tooling. GitHub Actions green on standalone repo. Does **not** close `PUBLIC-190` or change verdict to PASS.
 
 ---
 
