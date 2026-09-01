@@ -157,6 +157,14 @@ Home featured projects and publications still render from `src/lib/home-content.
 
 `PUBLIC-201` through `PUBLIC-221` and `PUBLIC-212` (books/talks/downloads embedded in parent families per `ROUTE-REGISTRY.md`) have routes, loaders, and behavior tests on `main`. TASK-LIST updated — implemented; frozen pending visual acceptance. Does **not** unfreeze recovery or close `PUBLIC-190`.
 
+### F-18 — Owner visual compare assist (not acceptance)
+
+`scripts/page-family-visual-compare.mjs` maps PUBLIC-270 captures to concept references; `npm run report:visual-compare` generates HTML side-by-side report from existing PNGs with SHA-256 hashes for owner sign-off. Evidence checklist updated in `docs/quality/PUBLIC-270-PAGE-FAMILY-VISUAL-EVIDENCE.md`. Does **not** close `PUBLIC-190` or change verdict to PASS.
+
+### F-19 — CI standalone repo fixes (not acceptance)
+
+Vitest spawn uses cross-platform `npm` (not `npm.cmd` on Linux). PUBLIC-310/PUBLIC-350 skip workspace-sibling checks when Back-End/coordination repos are absent in standalone GitHub CI. Does **not** close `PUBLIC-190`.
+
 ---
 
 ## Owner action required (blocking `PUBLIC-190` PASS)
@@ -176,7 +184,9 @@ Compare each implementation screenshot against the matching concept at the same 
 | PF-06 | `teaching-index-dark.png` | `public-270-pf06-{en\|fa}-{1440\|390}-dark.png` |
 | PF-07 | `about-cv-light.png` | `public-270-pf07-about-{en\|fa}-{1440\|390}-light.png`, `public-270-pf07-cv-{en\|fa}-{1440\|390}-light.png` |
 | PF-08 | `contact-dark.png` | `public-270-pf08-{en\|fa}-{1440\|390}-dark.png` |
-| Home | `concepts/page-families/home-*.png` | Run `npm run test:visual -- --grep wp40-home` or capture manually at 1440/390 EN/FA light+dark |
+| Home | `concepts/home-*.png` (see mapping table in `PUBLIC-270-PAGE-FAMILY-VISUAL-EVIDENCE.md`) | Run `npm run test:visual -- --grep "WP-40 home captures"` then `npm run report:visual-compare` |
+
+**Owner compare assist:** `npm run report:visual-compare` generates `test-results/visual/compare-report.html` — side-by-side pairs from existing PNGs. Does **not** change verdict to PASS.
 
 **Regenerate captures:** `cd Front-End/public-site && npm run build && npm run test:visual -- --grep PUBLIC-270`
 
