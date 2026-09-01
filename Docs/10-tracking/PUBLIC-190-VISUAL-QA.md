@@ -2,21 +2,22 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `4931455` (`main` after merge of `cx/public-page-families-280`)  
+**Public-site commit:** `e65b1ec` (`main` after merge of `cx/public-page-families-290`)  
 **Coordination commit:** `f3c367d`  
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
 ---
 
-## Automated gate summary (`4931455`)
+## Automated gate summary (`e65b1ec`)
 
 | Command | Exit | Summary |
 |---|---:|---|
-| `npm test` (Vitest) | 0 | unit + PUBLIC-260/261 asset promotion, PUBLIC-270/280 visual scaffolds, PUBLIC-230–250 routes |
+| `npm test` (Vitest) | 0 | **185 passed** — unit + PUBLIC-260/261 asset promotion, PUBLIC-270/280 visual scaffolds, PUBLIC-290 performance budget scaffold, PUBLIC-230–250 routes |
 | `npm run validate:design` | 0 | 24 components, 6 templates |
 | `npm run build` | 0 | 23 static pages; promoted preview/rail/brand masters via Astro image pipeline |
 | `npm run validate:seo` | 0 | sitemap-index.xml, robots.txt, canonical/hreflang on sample pages, per-locale Pagefind bundles |
+| `npm run test:performance` | 0 | **5 passed** — home EN/FA + creative EN LCP/CLS probes, locale font preloads, font-display swap |
 | `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** (PF-02 detail — no published creative detail route) |
 | `npm run test:visual -- --grep PUBLIC-280` | 0 | **108 passed** (18 routes × 6 widths; PF-01..PF-08 index matrix minus PF-02 detail) |
 | CI workflow | present | `.github/workflows/ci.yml` — unit, design, SEO, build on push/PR |
@@ -54,8 +55,12 @@ Six-width capture harness (320–1440 CSS px) now covers PF-01 and PF-03..PF-08 
 
 `.github/workflows/ci.yml` added on `main` @ `4931455`: `npm ci`, unit tests, `validate:design`, `validate:seo`, `build` on push/PR. Playwright visual gates remain local-only.
 
+### F-08 — PUBLIC-290 performance budget scaffold (not acceptance)
+
+`cx/public-page-families-290` merged to `main` @ `e65b1ec`: local LCP/CLS probes on home EN/FA and creative EN, locale font-preload contract, and `font-display: swap` CSS gate. Evidence: `docs/quality/PUBLIC-290-PERFORMANCE-BUDGET.md`. Production 75th-percentile telemetry and font CLS/preload budget closure remain open (`PUBLIC-290` stays `[~]`).
+
 ---
 
 ## Verdict
 
-**`REVISE`** — automated gates green including PUBLIC-270/280 visual capture scaffolds; manual owner visual acceptance remains open before `PUBLIC-190` may close.
+**`REVISE`** — automated gates green including PUBLIC-270/280 visual capture scaffolds and PUBLIC-290 local performance probes; manual owner visual acceptance remains open before `PUBLIC-190` may close.
