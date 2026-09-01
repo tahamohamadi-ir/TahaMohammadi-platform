@@ -2,8 +2,8 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `TBD` (`main` after F-16 home link gating + PUBLIC-212 closure)
-**Coordination commit:** `TBD`
+**Public-site commit:** `faafdac` (`main` after F-16 home link gating + PUBLIC-212 closure)
+**Coordination commit:** `3473e8e`
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
