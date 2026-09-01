@@ -3,13 +3,34 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `faafdac` (`main` after F-16 home link gating + PUBLIC-212 closure)
-**Coordination commit:** `3473e8e`
+**Coordination commit:** `a07b49f`
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
 ---
 
-## Automated gate summary (`fad71e0`)
+## Automated gate summary (`faafdac`)
+
+Full local gate sweep @ `faafdac` / coordination `a07b49f` (2026-09-01). Playwright suites run with clean `dist/` between commands to avoid Windows concurrent-build corruption.
+
+| Command | Exit | Summary |
+|---|---:|---|
+| `npm test` (Vitest) | 0 | **223 passed** — home published-link gating, PUBLIC-212 parent-family coverage |
+| `npm run lint` | 0 | ESLint flat config (Astro + TypeScript + Prettier disable) |
+| `npm run format:check` | 0 | Prettier + `prettier-plugin-astro`; byte-pinned paths excluded via `.prettierignore` |
+| `npm run validate:design` | 0 | 24 components, 6 templates |
+| `npm run build` | 0 | 23 static pages |
+| `npm run validate:seo` | 0 | sitemap-index.xml, robots.txt, canonical/hreflang, per-locale Pagefind bundles |
+| `npm run test:foundation` | 0 | **6 passed** — WP-10 theme + PUBLIC-060 locale font computed styles |
+| `npm run test:performance` | 0 | **6 passed** — home EN/FA + creative EN LCP/CLS, font preloads, font-display swap, theme-toggle INP |
+| `npm run test:nojs` | 0 | **23 passed** — gateway, home, PF index routes, search with JS disabled |
+| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** — PF-02 creative detail open |
+| `npm run test:visual -- --grep PUBLIC-280` | 0 | **216 passed** — 6 widths × 2 locales × 2 themes on PF-01, PF-03..PF-08 index routes |
+| `npm run test:smoke` | 0 | **1 skipped** — `PUBLIC_STAGING_SITE_URL` unset (expected until BACKEND-180 staging) |
+| CI workflow | present | `.github/workflows/ci.yml` — lint, format check, unit, design, SEO, build on push/PR |
+| Atlas leak check | pass | no `/_design` in production build |
+
+### Prior gate summary (`fad71e0`)
 
 | Command | Exit | Summary |
 |---|---:|---|
@@ -182,4 +203,6 @@ Compare each implementation screenshot against the matching concept at the same 
 
 ## Verdict
 
-**`REVISE`** — automated gates green (Vitest 223, lint, format, design, SEO, build, PUBLIC-270 visual 36 passed / 1 skipped on combined home|PUBLIC-270 run); F-16 home link gating shipped; manual owner visual acceptance remains open before `PUBLIC-190` may close.
+**`REVISE`** — full automated gate sweep green @ `faafdac` (Vitest 223, lint, format, design, SEO, build, foundation 6, performance 6, no-JS 23, PUBLIC-270 36/1 skipped, PUBLIC-280 216, smoke 1 skipped); F-16 home link gating shipped; manual owner visual acceptance remains open before `PUBLIC-190` may close.
+
+**Goal complete:** NO — owner visual compare, manual a11y, and explicit sign-off still required.
