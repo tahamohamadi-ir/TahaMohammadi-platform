@@ -3,7 +3,7 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `ddb7ae0` (+ overflow fix follow-up on integration branch)  
-**Coordination commit:** `856ed5d`  
+**Coordination commit:** `f3c367d`  
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
