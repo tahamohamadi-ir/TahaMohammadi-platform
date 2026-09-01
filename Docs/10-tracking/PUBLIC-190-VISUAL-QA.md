@@ -2,21 +2,22 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `e65b1ec` (`main` after merge of `cx/public-page-families-290`)  
-**Coordination commit:** `f3c367d`  
+**Public-site commit:** `56658c4` (`main` after merge of `cx/public-page-families-060`)  
+**Coordination commit:** `85953e1` (pending refresh after this doc commit)  
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
 ---
 
-## Automated gate summary (`e65b1ec`)
+## Automated gate summary (`56658c4`)
 
 | Command | Exit | Summary |
 |---|---:|---|
-| `npm test` (Vitest) | 0 | **185 passed** — unit + PUBLIC-260/261 asset promotion, PUBLIC-270/280 visual scaffolds, PUBLIC-290 performance budget scaffold, PUBLIC-230–250 routes |
+| `npm test` (Vitest) | 0 | **187 passed** — unit + PUBLIC-060 font tokens, PUBLIC-260/261 asset promotion, PUBLIC-270/280 visual scaffolds, PUBLIC-290 performance budget scaffold, PUBLIC-230–250 routes |
 | `npm run validate:design` | 0 | 24 components, 6 templates |
 | `npm run build` | 0 | 23 static pages; promoted preview/rail/brand masters via Astro image pipeline |
 | `npm run validate:seo` | 0 | sitemap-index.xml, robots.txt, canonical/hreflang on sample pages, per-locale Pagefind bundles |
+| `npm run test:foundation -- --grep PUBLIC-060` | 0 | **4 passed** — home EN/FA body/display computed `font-family`, locale CSS vars, 200% zoom |
 | `npm run test:performance` | 0 | **5 passed** — home EN/FA + creative EN LCP/CLS probes, locale font preloads, font-display swap |
 | `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** (PF-02 detail — no published creative detail route) |
 | `npm run test:visual -- --grep PUBLIC-280` | 0 | **108 passed** (18 routes × 6 widths; PF-01..PF-08 index matrix minus PF-02 detail) |
@@ -59,8 +60,12 @@ Six-width capture harness (320–1440 CSS px) now covers PF-01 and PF-03..PF-08 
 
 `cx/public-page-families-290` merged to `main` @ `e65b1ec`: local LCP/CLS probes on home EN/FA and creative EN, locale font-preload contract, and `font-display: swap` CSS gate. Evidence: `docs/quality/PUBLIC-290-PERFORMANCE-BUDGET.md`. Production 75th-percentile telemetry and font CLS/preload budget closure remain open (`PUBLIC-290` stays `[~]`).
 
+### F-09 — PUBLIC-060 locale font computed-style probes (not acceptance)
+
+`cx/public-page-families-060` merged to `main` @ `56658c4`: Playwright `@foundation` computed-style checks on home EN/FA for `--font-display` / `--font-body` locale wiring, body + h1 `font-family`, and 200% root font-size stability. Evidence: `docs/quality/PUBLIC-060-FONT-COMPUTED-EVIDENCE.md`. FONT-ACQUISITION-PLAN subset/coverage fixtures remain open.
+
 ---
 
 ## Verdict
 
-**`REVISE`** — automated gates green including PUBLIC-270/280 visual capture scaffolds and PUBLIC-290 local performance probes; manual owner visual acceptance remains open before `PUBLIC-190` may close.
+**`REVISE`** — automated gates green including PUBLIC-060 font computed probes, PUBLIC-270/280 visual capture scaffolds, and PUBLIC-290 local performance probes; manual owner visual acceptance remains open before `PUBLIC-190` may close.
