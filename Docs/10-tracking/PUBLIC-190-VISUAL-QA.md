@@ -2,14 +2,14 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `3652fc6` (`main` after PUBLIC-013 architecture decision records)
-**Coordination commit:** `f02d4f1`
+**Public-site commit:** `f3acb24` (`main` after PUBLIC-350 release evidence scaffold + gate sweep)
+**Coordination commit:** `201d91c`
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
 ---
 
-## Automated gate summary (`3652fc6`)
+## Automated gate summary (`f3acb24`)
 
 | Command | Exit | Summary |
 |---|---:|---|
@@ -20,10 +20,11 @@
 | `npm run build` | 0 | 23 static pages |
 | `npm run validate:seo` | 0 | sitemap-index.xml, robots.txt, canonical/hreflang, per-locale Pagefind bundles |
 | `npm run test:foundation -- --grep PUBLIC-060` | 0 | **4 passed** — locale font computed-style probes re-run on this commit |
-| `npm run test:performance` | not re-run | Last green on `95df072` (6 passed) |
+| `npm run test:foundation` | 0 | **6 passed** — full foundation gate re-run 2026-09-01 gate sweep |
+| `npm run test:performance` | 0 | **6 passed** — re-run 2026-09-01 gate sweep |
 | `npm run test:visual -- --grep PUBLIC-270` | not re-run | Last green on `95df072` (36 passed, 1 skipped) |
-| `npm run test:visual -- --grep PUBLIC-280` | not re-run | Last green on `95df072` (216 passed) |
-| `npm run test:nojs` | not re-run | Last green on `95df072` (23 passed) |
+| `npm run test:visual -- --grep PUBLIC-280` | 0 | **216 passed** — re-run 2026-09-01 gate sweep |
+| `npm run test:nojs` | 0 | **23 passed** — re-run 2026-09-01 gate sweep |
 | `npm run test:smoke` | not re-run | Last run on `95df072` (1 skipped) |
 | CI workflow | present | `.github/workflows/ci.yml` — lint, format check, unit, design, SEO, build on push/PR |
 | Atlas leak check | pass | no `/_design` in production build |
@@ -124,8 +125,12 @@ Six-width dual-theme capture harness (320–1440 CSS px, light + dark) now cover
 
 `main` @ `3652fc6`: repository-local ADRs in `docs/architecture/` for npm, Astro static `fa`/`en` routing, static `dist/` deployment, Vitest + Playwright tag matrix, and Chromium/WCAG 2.2 AA browser targets; `src/public-013.adr.test.ts` guard. Does **not** close `PUBLIC-190`.
 
+### F-15 — PUBLIC-350 release evidence scaffold (not acceptance)
+
+Gate sweep on `f3acb24` re-ran Playwright foundation (6), performance (6), PUBLIC-280 visual (216), and no-JS (23) — all green after clean `dist/` rebuild. `PUBLIC-350` ships `docs/quality/PUBLIC-350-RELEASE-EVIDENCE.md`, `src/test-harness/release-evidence.ts`, and `public-350.release-evidence.test.ts` with honest `ready: false` until owner acceptance, staging smoke, and frozen page-family routes close. Does **not** close `PUBLIC-190` or mark R4/R8 complete.
+
 ---
 
 ## Verdict
 
-**`REVISE`** — automated gates green on `3652fc6` including PUBLIC-013 ADRs and re-run PUBLIC-060 foundation probes (4 passed); Playwright visual/performance/nojs/smoke gates not re-run on this commit; manual owner visual acceptance remains open before `PUBLIC-190` may close.
+**`REVISE`** — automated gates green on `f3acb24` gate sweep (foundation 6, performance 6, PUBLIC-280 visual 216, nojs 23, Vitest 214 with PUBLIC-350 scaffold); PUBLIC-270 visual and staging smoke not re-run; manual owner visual acceptance remains open before `PUBLIC-190` may close.
