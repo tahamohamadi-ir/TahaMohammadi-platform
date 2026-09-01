@@ -3,7 +3,7 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `3652fc6` (`main` after PUBLIC-013 architecture decision records)
-**Coordination commit:** `pending` (this doc update)
+**Coordination commit:** `e6d0fdc`
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
