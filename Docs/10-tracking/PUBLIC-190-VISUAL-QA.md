@@ -22,6 +22,17 @@ Captures regenerated 2026-09-01 in one Playwright session (avoids `test-results/
 
 Open `compare-report.html` locally for side-by-side concept comparison. Does **not** change verdict to PASS.
 
+### One-sitting quick start (owner)
+
+Captures and `compare-report.html` are **gitignored** — they exist only on the machine that ran the Playwright session above. If missing, run the **Regenerate** command in the artifacts table first.
+
+1. Open `Front-End/public-site/test-results/visual/compare-report.html` in a browser (double-click or `file://` URL).
+2. Review each side-by-side pair (43 with concept references + gateway without). Note deviations inline or below.
+3. Complete **§3 Manual accessibility checks** on a running `npm run preview` build (or `dist/` static server).
+4. Paste accepted capture SHA-256 hashes into **§4 Sign-off evidence** (hashes shown in compare-report).
+5. Check manual compare columns in `Front-End/public-site/docs/quality/PUBLIC-270-PAGE-FAMILY-VISUAL-EVIDENCE.md`.
+6. Change **Result** at top of this report from `REVISE` to `PASS` only after explicit owner approval.
+
 ---
 
 ## Automated gate summary (`3a54130`)
@@ -232,7 +243,10 @@ Compare each implementation screenshot against the matching concept at the same 
 
 ### 2. Home page review
 
-- [ ] Compare home EN/FA at 1440 and 390 against concept references (light + dark).
+WP-40 visual captures use **768px reflow** and **200% zoom** evidence (not 1440/390 — those widths apply to PF index routes in PUBLIC-270). See compare-report **Home** section and `scripts/page-family-visual-compare.mjs` `HOME_VISUAL_ENTRIES`.
+
+- [ ] Compare home EN/FA **768px** captures (light + dark) against concept references in compare-report.
+- [ ] Review **200% zoom** home EN/FA + gateway captures for readability (gateway has no concept pair — review route choice manually).
 - [x] Verify draft notes on featured projects/publications are acceptable for owner preview.
 - [x] Home card link strategy (F-16): link only when slug exists in published API at build; otherwise non-link cards.
 
@@ -245,9 +259,16 @@ Compare each implementation screenshot against the matching concept at the same 
 
 ### 4. Sign-off
 
-- [ ] Record SHA-256 hashes of accepted screenshots in this report.
+- [ ] Record SHA-256 hashes of accepted screenshots in the table below (copy from compare-report).
 - [ ] Mark manual compare columns in `docs/quality/PUBLIC-270-PAGE-FAMILY-VISUAL-EVIDENCE.md`.
 - [ ] Explicit owner approval to change verdict from `REVISE` to `PASS`.
+
+#### Sign-off evidence (owner fills)
+
+| Capture file | SHA-256 (from compare-report) | Accepted |
+|---|---|:---:|
+| _(e.g. `public-270-pf01-en-1440-light.png`)_ | | [ ] |
+| _(add rows for each accepted pair)_ | | |
 
 ---
 
