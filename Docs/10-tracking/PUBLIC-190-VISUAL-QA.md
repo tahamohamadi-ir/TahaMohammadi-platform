@@ -2,14 +2,14 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `56658c4` (`main` after merge of `cx/public-page-families-060`)  
+**Public-site commit:** `4f033cc` (`main` after PUBLIC-290 INP probe)
 **Coordination commit:** `e022708`  
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
 ---
 
-## Automated gate summary (`56658c4`)
+## Automated gate summary (`4f033cc`)
 
 | Command | Exit | Summary |
 |---|---:|---|
@@ -18,7 +18,7 @@
 | `npm run build` | 0 | 23 static pages; promoted preview/rail/brand masters via Astro image pipeline |
 | `npm run validate:seo` | 0 | sitemap-index.xml, robots.txt, canonical/hreflang on sample pages, per-locale Pagefind bundles |
 | `npm run test:foundation -- --grep PUBLIC-060` | 0 | **4 passed** — home EN/FA body/display computed `font-family`, locale CSS vars, 200% zoom |
-| `npm run test:performance` | 0 | **5 passed** — home EN/FA + creative EN LCP/CLS probes, locale font preloads, font-display swap |
+| `npm run test:performance` | 0 | **6 passed** - home EN/FA + creative EN LCP/CLS probes, theme-toggle INP on EN home, locale font preloads, font-display swap |
 | `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** (PF-02 detail — no published creative detail route) |
 | `npm run test:visual -- --grep PUBLIC-280` | 0 | **108 passed** (18 routes × 6 widths; PF-01..PF-08 index matrix minus PF-02 detail) |
 | CI workflow | present | `.github/workflows/ci.yml` — unit, design, SEO, build on push/PR |
