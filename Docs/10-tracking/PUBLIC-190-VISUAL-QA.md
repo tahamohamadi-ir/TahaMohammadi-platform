@@ -3,7 +3,7 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `fad71e0` (`main` after PUBLIC-270 re-run + TASK-LIST accuracy audit)
-**Coordination commit:** `d4d5c8f`
+**Coordination commit:** `a363c4c`
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
