@@ -2,34 +2,33 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `f3acb24` (`main` after PUBLIC-350 release evidence scaffold + gate sweep)
-**Coordination commit:** `201d91c`
+**Public-site commit:** `27fc859` (`main` after PUBLIC-270 re-run + TASK-LIST accuracy audit)
+**Coordination commit:** `a075bf4` (updated after this gate sweep)
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
 ---
 
-## Automated gate summary (`f3acb24`)
+## Automated gate summary (`27fc859`)
 
 | Command | Exit | Summary |
 |---|---:|---|
-| `npm test` (Vitest) | 0 | **210 passed** — includes `public-013.adr.test.ts` ADR guard + prior toolchain/contract scaffolds |
+| `npm test` (Vitest) | 0 | **214 passed** — includes page-family behavior tests, PUBLIC-350 scaffold, contract fixtures |
 | `npm run lint` | 0 | ESLint flat config (Astro + TypeScript + Prettier disable) |
 | `npm run format:check` | 0 | Prettier + `prettier-plugin-astro`; byte-pinned paths excluded via `.prettierignore` |
 | `npm run validate:design` | 0 | 24 components, 6 templates |
 | `npm run build` | 0 | 23 static pages |
 | `npm run validate:seo` | 0 | sitemap-index.xml, robots.txt, canonical/hreflang, per-locale Pagefind bundles |
-| `npm run test:foundation -- --grep PUBLIC-060` | 0 | **4 passed** — locale font computed-style probes re-run on this commit |
-| `npm run test:foundation` | 0 | **6 passed** — full foundation gate re-run 2026-09-01 gate sweep |
-| `npm run test:performance` | 0 | **6 passed** — re-run 2026-09-01 gate sweep |
-| `npm run test:visual -- --grep PUBLIC-270` | not re-run | Last green on `95df072` (36 passed, 1 skipped) |
-| `npm run test:visual -- --grep PUBLIC-280` | 0 | **216 passed** — re-run 2026-09-01 gate sweep |
-| `npm run test:nojs` | 0 | **23 passed** — re-run 2026-09-01 gate sweep |
+| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** — re-run 2026-09-01 @ `27fc859`; PF-02 detail open |
+| `npm run test:visual -- --grep PUBLIC-280` | not re-run | Last green on `f3acb24` (216 passed) |
+| `npm run test:nojs` | not re-run | Last green on `f3acb24` (23 passed) |
+| `npm run test:foundation` | not re-run | Last green on `f3acb24` (6 passed) |
+| `npm run test:performance` | not re-run | Last green on `f3acb24` (6 passed) |
 | `npm run test:smoke` | not re-run | Last run on `95df072` (1 skipped) |
 | CI workflow | present | `.github/workflows/ci.yml` — lint, format check, unit, design, SEO, build on push/PR |
 | Atlas leak check | pass | no `/_design` in production build |
 
-### Prior gate summary (`b12b017`)
+### Prior gate summary (`f3acb24`)
 
 | Command | Exit | Summary |
 |---|---:|---|
@@ -129,8 +128,58 @@ Six-width dual-theme capture harness (320–1440 CSS px, light + dark) now cover
 
 Gate sweep on `f3acb24` re-ran Playwright foundation (6), performance (6), PUBLIC-280 visual (216), and no-JS (23) — all green after clean `dist/` rebuild. `PUBLIC-350` ships `docs/quality/PUBLIC-350-RELEASE-EVIDENCE.md`, `src/test-harness/release-evidence.ts`, and `public-350.release-evidence.test.ts` with honest `ready: false` until owner acceptance, staging smoke, and frozen page-family routes close. Does **not** close `PUBLIC-190` or mark R4/R8 complete.
 
+### F-16 — Home featured cards link to seed slugs without API-backed detail routes (known gap)
+
+Home featured projects (`pars-sql-vtd-edge`, `organizational-dashboard-research`) and publications (`visual-discourse-elections`, `vtd-edge-manuscript`) render from `src/lib/home-content.ts` seed copy with an explicit draft note. Detail routes (`/{locale}/projects/{slug}/`, `/{locale}/writing/{slug}/`) fetch only published API records; without a live backend those home card links return 404. Stub detail components exist under `src/components/stub/` but are not wired to page routes. **Owner decision required:** publish API records, wire stub fallback for static preview, or remove/disable home card links until publication.
+
+### F-17 — Page-family routes implemented but frozen (not acceptance)
+
+`PUBLIC-201` through `PUBLIC-221` (except `PUBLIC-212` books/talks/downloads) have routes, loaders, and behavior tests on `main` @ `27fc859`. TASK-LIST updated to `[~]` — implemented; frozen pending visual acceptance. Does **not** unfreeze recovery or close `PUBLIC-190`.
+
+---
+
+## Owner action required (blocking `PUBLIC-190` PASS)
+
+Complete these steps manually; agents cannot claim visual acceptance.
+
+### 1. Concept comparison matrix
+
+Compare each implementation screenshot against the matching concept at the same viewport, locale, theme, and content state per `Docs/04-design/VISUAL-QA-CONTRACT.md`.
+
+| PF | Concept reference | Capture paths (1440 / 390) |
+|---|---|---|
+| PF-01 | `concepts/page-families/creative-index-light.png` | `Front-End/public-site/test-results/visual/public-270-pf01-{en\|fa}-{1440\|390}-light.png` |
+| PF-03 | `writing-index-light.png` | `public-270-pf03-{en\|fa}-{1440\|390}-light.png` |
+| PF-04 | `projects-index-dark.png` | `public-270-pf04-{en\|fa}-{1440\|390}-dark.png` |
+| PF-05 | `research-publications-index-light.png` | `public-270-pf05-research-{en\|fa}-{1440\|390}-light.png`, `public-270-pf05-publications-{en\|fa}-{1440\|390}-light.png` |
+| PF-06 | `teaching-index-dark.png` | `public-270-pf06-{en\|fa}-{1440\|390}-dark.png` |
+| PF-07 | `about-cv-light.png` | `public-270-pf07-about-{en\|fa}-{1440\|390}-light.png`, `public-270-pf07-cv-{en\|fa}-{1440\|390}-light.png` |
+| PF-08 | `contact-dark.png` | `public-270-pf08-{en\|fa}-{1440\|390}-dark.png` |
+| Home | `concepts/page-families/home-*.png` | Run `npm run test:visual -- --grep wp40-home` or capture manually at 1440/390 EN/FA light+dark |
+
+**Regenerate captures:** `cd Front-End/public-site && npm run build && npm run test:visual -- --grep PUBLIC-270`
+
+### 2. Home page review
+
+- [ ] Compare home EN/FA at 1440 and 390 against concept references (light + dark).
+- [ ] Verify draft notes on featured projects/publications are acceptable for owner preview.
+- [ ] Decide on home card link strategy (F-16): publish API records, wire stub fallback, or disable links.
+
+### 3. Manual accessibility checks
+
+- [ ] Keyboard-only navigation on gateway, home, PF-01..PF-08, search.
+- [ ] Real 200% browser zoom on home EN/FA.
+- [ ] Screen-reader landmarks and contact form feedback.
+- [ ] Reduced-motion review.
+
+### 4. Sign-off
+
+- [ ] Record SHA-256 hashes of accepted screenshots in this report.
+- [ ] Mark manual compare columns in `docs/quality/PUBLIC-270-PAGE-FAMILY-VISUAL-EVIDENCE.md`.
+- [ ] Explicit owner approval to change verdict from `REVISE` to `PASS`.
+
 ---
 
 ## Verdict
 
-**`REVISE`** — automated gates green on `f3acb24` gate sweep (foundation 6, performance 6, PUBLIC-280 visual 216, nojs 23, Vitest 214 with PUBLIC-350 scaffold); PUBLIC-270 visual and staging smoke not re-run; manual owner visual acceptance remains open before `PUBLIC-190` may close.
+**`REVISE`** — automated gates green on `27fc859` (Vitest 214, lint, format, design, SEO, build, PUBLIC-270 visual 36 passed / 1 skipped); manual owner visual acceptance and home card link decision remain open before `PUBLIC-190` may close.
