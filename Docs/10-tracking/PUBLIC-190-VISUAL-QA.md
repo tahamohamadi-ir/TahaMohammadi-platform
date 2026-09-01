@@ -2,10 +2,23 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `3a54130` (`main` after CI standalone fixes + visual-compare formatting)
-**Coordination commit:** `72a0c0b`
+**Public-site commit:** `07f876f` (PF-01 structural empty-state chrome)
+**Coordination commit:** `b074c18`
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
+
+---
+
+## PF-01 structural empty-state (`07f876f`)
+
+Prep owner review flagged PF-01 as a bare `ContentState` vs the Gallery concept (hero, filter row, grid). Public-site now renders **structural empty chrome** on `/{locale}/creative/` when no published works exist:
+
+- `CollectionIndexTemplate` + `SectionLead` hero (H1 title, eyebrow)
+- Disabled filter shell (`All work`, Medium / Year / Role labels; Contact link to route)
+- Dashed grid placeholder cells + `ContentState` `empty` variant with honest copy
+- No invented works, titles, dates, or images
+
+PF-01 captures regenerated (PUBLIC-270 ×4, PUBLIC-280 ×24). Compare report **43 / 48** pairs ready. Visual alignment improved; owner manual compare and sign-off still required — **does not change verdict to PASS**.
 
 ---
 
@@ -274,6 +287,6 @@ WP-40 visual captures use **768px reflow** and **200% zoom** evidence (not 1440/
 
 ## Verdict
 
-**`REVISE`** — full automated gate sweep green @ `3a54130` (Vitest 228, lint, format, design, SEO, build, foundation 6, performance 6, no-JS 23, PUBLIC-270 36/1 skipped, PUBLIC-280 216, smoke 1 skipped); owner compare report regenerated (44 PNGs, 43/48 pairs); manual owner visual acceptance remains open before `PUBLIC-190` may close.
+**`REVISE`** — PF-01 structural empty-state shipped @ `07f876f` (hero + filter shell + grid placeholder; honest empty copy); full automated gates green; compare report 43/48 pairs; manual owner visual acceptance and a11y still open before `PUBLIC-190` may close.
 
 **Goal complete:** NO — owner visual compare, manual a11y, and explicit sign-off still required.
