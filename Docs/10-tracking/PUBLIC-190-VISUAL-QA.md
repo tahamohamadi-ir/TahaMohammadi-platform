@@ -2,18 +2,18 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `2b52b6e` (`main` after PUBLIC-300 no-JS crawl audit)
-**Coordination commit:** `99a1e85`  
+**Public-site commit:** `111a96e` (`main` after PUBLIC-310 contract fixture tests)
+**Coordination commit:** `958957d`  
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
 ---
 
-## Automated gate summary (`2b52b6e`)
+## Automated gate summary (`111a96e`)
 
 | Command | Exit | Summary |
 |---|---:|---|
-| `npm test` (Vitest) | 0 | **191 passed** — unit + PUBLIC-060 font tokens, PUBLIC-260/261 asset promotion, PUBLIC-270/280 visual scaffolds, PUBLIC-290 performance budget scaffold, PUBLIC-300 no-JS audit scaffold, PUBLIC-230–250 routes |
+| `npm test` (Vitest) | 0 | **196 passed** — unit + PUBLIC-060 font tokens, PUBLIC-260/261 asset promotion, PUBLIC-270/280 visual scaffolds, PUBLIC-290 performance budget scaffold, PUBLIC-300 no-JS audit scaffold, PUBLIC-310 contract fixture validation, PUBLIC-230–250 routes |
 | `npm run validate:design` | 0 | 24 components, 6 templates |
 | `npm run build` | 0 | 23 static pages; promoted preview/rail/brand masters via Astro image pipeline |
 | `npm run validate:seo` | 0 | sitemap-index.xml, robots.txt, canonical/hreflang on sample pages, per-locale Pagefind bundles |
@@ -69,8 +69,12 @@ Six-width dual-theme capture harness (320–1440 CSS px, light + dark) now cover
 
 `cx/public-page-families-300` merged to `main` @ `2b52b6e`: Playwright `@nojs` crawl of all 23 static build routes with JavaScript disabled — gateway, home EN/FA, PF-01 and PF-03..PF-08 index routes, and search utility. Evidence: `docs/quality/PUBLIC-300-NO-JS-AUDIT.md`. PF-02 creative detail excluded until a published detail route exists; search results with `?q=` remain a progressive-enhancement surface.
 
+### F-11 — PUBLIC-310 contract fixture tests (not acceptance)
+
+`main` @ `111a96e`: consumer fixtures under `tests/fixtures/contracts/` byte-aligned with backend authoritative copies; Vitest validates OpenAPI component shapes, error matrix rows, and LF-canonical hash pinning. Evidence: `docs/quality/PUBLIC-310-CONTRACT-FIXTURES.md`. Integrated staging smoke remains `PUBLIC-320`.
+
 ---
 
 ## Verdict
 
-**`REVISE`** — automated gates green including PUBLIC-060 font computed probes, PUBLIC-270/280 dual-theme visual capture scaffolds, PUBLIC-290 local performance probes, and PUBLIC-300 no-JS crawl audit; manual owner visual acceptance remains open before `PUBLIC-190` may close.
+**`REVISE`** — automated gates green including PUBLIC-060 font computed probes, PUBLIC-270/280 dual-theme visual capture scaffolds, PUBLIC-290 local performance probes, PUBLIC-300 no-JS crawl audit, and PUBLIC-310 contract fixture validation; manual owner visual acceptance remains open before `PUBLIC-190` may close.
