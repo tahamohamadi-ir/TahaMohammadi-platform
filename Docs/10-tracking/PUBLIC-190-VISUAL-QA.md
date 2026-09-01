@@ -2,18 +2,18 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `111a96e` (`main` after PUBLIC-310 contract fixture tests)
-**Coordination commit:** `958957d`  
+**Public-site commit:** `95df072` (`main` after PUBLIC-320 staging smoke scaffold)
+**Coordination commit:** pending (this update)  
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
 ---
 
-## Automated gate summary (`111a96e`)
+## Automated gate summary (`95df072`)
 
 | Command | Exit | Summary |
 |---|---:|---|
-| `npm test` (Vitest) | 0 | **196 passed** — unit + PUBLIC-060 font tokens, PUBLIC-260/261 asset promotion, PUBLIC-270/280 visual scaffolds, PUBLIC-290 performance budget scaffold, PUBLIC-300 no-JS audit scaffold, PUBLIC-310 contract fixture validation, PUBLIC-230–250 routes |
+| `npm test` (Vitest) | 0 | **201 passed** — unit + PUBLIC-060 font tokens, PUBLIC-260/261 asset promotion, PUBLIC-270/280 visual scaffolds, PUBLIC-290 performance budget scaffold, PUBLIC-300 no-JS audit scaffold, PUBLIC-310 contract fixture validation, PUBLIC-320 staging smoke scaffold, PUBLIC-230–250 routes |
 | `npm run validate:design` | 0 | 24 components, 6 templates |
 | `npm run build` | 0 | 23 static pages; promoted preview/rail/brand masters via Astro image pipeline |
 | `npm run validate:seo` | 0 | sitemap-index.xml, robots.txt, canonical/hreflang on sample pages, per-locale Pagefind bundles |
@@ -22,6 +22,7 @@
 | `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** (PF-02 detail — no published creative detail route) |
 | `npm run test:visual -- --grep PUBLIC-280` | 0 | **216 passed** (36 locale-route-theme combos × 6 widths; PF-01..PF-08 dual-theme index matrix minus PF-02 detail) |
 | `npm run test:nojs` | 0 | **23 passed** — gateway + home + PF index + search crawl with `javaScriptEnabled: false` (PF-02 detail excluded) |
+| `npm run test:smoke` | 0 | **1 skipped** — Playwright `@smoke` probes skip until `PUBLIC_STAGING_SITE_URL` + `BACKEND-180` staging |
 | CI workflow | present | `.github/workflows/ci.yml` — unit, design, SEO, build on push/PR |
 | Atlas leak check | pass | no `/_design` in production build |
 
@@ -71,10 +72,14 @@ Six-width dual-theme capture harness (320–1440 CSS px, light + dark) now cover
 
 ### F-11 — PUBLIC-310 contract fixture tests (not acceptance)
 
-`main` @ `111a96e`: consumer fixtures under `tests/fixtures/contracts/` byte-aligned with backend authoritative copies; Vitest validates OpenAPI component shapes, error matrix rows, and LF-canonical hash pinning. Evidence: `docs/quality/PUBLIC-310-CONTRACT-FIXTURES.md`. Integrated staging smoke remains `PUBLIC-320`.
+`main` @ `111a96e`: consumer fixtures under `tests/fixtures/contracts/` byte-aligned with backend authoritative copies; Vitest validates OpenAPI component shapes, error matrix rows, and LF-canonical hash pinning. Evidence: `docs/quality/PUBLIC-310-CONTRACT-FIXTURES.md`.
+
+### F-12 — PUBLIC-320 integrated staging smoke scaffold (not acceptance)
+
+`main` @ `95df072`: staging harness (`src/test-harness/staging-smoke.ts`), Vitest env-contract tests, and Playwright `@smoke` probes via `npm run test:smoke` / `playwright.staging.config.ts`. Live probes skip honestly when `PUBLIC_STAGING_SITE_URL` is unset (requires `BACKEND-180` staging deployment). Evidence: `docs/quality/PUBLIC-320-STAGING-SMOKE.md`. Does **not** close `PUBLIC-190` or claim production readiness.
 
 ---
 
 ## Verdict
 
-**`REVISE`** — automated gates green including PUBLIC-060 font computed probes, PUBLIC-270/280 dual-theme visual capture scaffolds, PUBLIC-290 local performance probes, PUBLIC-300 no-JS crawl audit, and PUBLIC-310 contract fixture validation; manual owner visual acceptance remains open before `PUBLIC-190` may close.
+**`REVISE`** — automated gates green including PUBLIC-060 font computed probes, PUBLIC-270/280 dual-theme visual capture scaffolds, PUBLIC-290 local performance probes, PUBLIC-300 no-JS crawl audit, PUBLIC-310 contract fixture validation, and PUBLIC-320 staging smoke scaffold (skipped live); manual owner visual acceptance remains open before `PUBLIC-190` may close.
