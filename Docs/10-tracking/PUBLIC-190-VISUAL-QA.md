@@ -2,8 +2,8 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `fad71e0` (`main` after PUBLIC-270 re-run + TASK-LIST accuracy audit)
-**Coordination commit:** `a363c4c`
+**Public-site commit:** `TBD` (`main` after F-16 home link gating + PUBLIC-212 closure)
+**Coordination commit:** `TBD`
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
@@ -13,7 +13,7 @@
 
 | Command | Exit | Summary |
 |---|---:|---|
-| `npm test` (Vitest) | 0 | **214 passed** — includes page-family behavior tests, PUBLIC-350 scaffold, contract fixtures |
+| `npm test` (Vitest) | 0 | **223 passed** — includes home published-link gating, PUBLIC-212 parent-family coverage |
 | `npm run lint` | 0 | ESLint flat config (Astro + TypeScript + Prettier disable) |
 | `npm run format:check` | 0 | Prettier + `prettier-plugin-astro`; byte-pinned paths excluded via `.prettierignore` |
 | `npm run validate:design` | 0 | 24 components, 6 templates |
@@ -128,13 +128,13 @@ Six-width dual-theme capture harness (320–1440 CSS px, light + dark) now cover
 
 Gate sweep on `f3acb24` re-ran Playwright foundation (6), performance (6), PUBLIC-280 visual (216), and no-JS (23) — all green after clean `dist/` rebuild. `PUBLIC-350` ships `docs/quality/PUBLIC-350-RELEASE-EVIDENCE.md`, `src/test-harness/release-evidence.ts`, and `public-350.release-evidence.test.ts` with honest `ready: false` until owner acceptance, staging smoke, and frozen page-family routes close. Does **not** close `PUBLIC-190` or mark R4/R8 complete.
 
-### F-16 — Home featured cards link to seed slugs without API-backed detail routes (known gap)
+### F-16 — Home featured cards link to seed slugs without API-backed detail routes ✅ cleared (code)
 
-Home featured projects (`pars-sql-vtd-edge`, `organizational-dashboard-research`) and publications (`visual-discourse-elections`, `vtd-edge-manuscript`) render from `src/lib/home-content.ts` seed copy with an explicit draft note. Detail routes (`/{locale}/projects/{slug}/`, `/{locale}/writing/{slug}/`) fetch only published API records; without a live backend those home card links return 404. Stub detail components exist under `src/components/stub/` but are not wired to page routes. **Owner decision required:** publish API records, wire stub fallback for static preview, or remove/disable home card links until publication.
+Home featured projects and publications still render from `src/lib/home-content.ts` seed copy with draft notes. At build time, `fetchPublishedHomeLinkSlugs` queries published API slug sets; `HomeFeaturedProjects` and `HomeFeaturedPublications` omit detail `href` values unless the seed slug exists in the published set. Cards remain visible as draft previews; links appear automatically when owner publishes matching API records. Evidence: `home-published-links.ts`, `home-published-links.test.ts`, updated `wp40-home.behavior.test.ts`.
 
 ### F-17 — Page-family routes implemented but frozen (not acceptance)
 
-`PUBLIC-201` through `PUBLIC-221` (except `PUBLIC-212` books/talks/downloads) have routes, loaders, and behavior tests on `main` @ `fad71e0`. TASK-LIST updated to `[~]` — implemented; frozen pending visual acceptance. Does **not** unfreeze recovery or close `PUBLIC-190`.
+`PUBLIC-201` through `PUBLIC-221` and `PUBLIC-212` (books/talks/downloads embedded in parent families per `ROUTE-REGISTRY.md`) have routes, loaders, and behavior tests on `main`. TASK-LIST updated — implemented; frozen pending visual acceptance. Does **not** unfreeze recovery or close `PUBLIC-190`.
 
 ---
 
@@ -162,8 +162,8 @@ Compare each implementation screenshot against the matching concept at the same 
 ### 2. Home page review
 
 - [ ] Compare home EN/FA at 1440 and 390 against concept references (light + dark).
-- [ ] Verify draft notes on featured projects/publications are acceptable for owner preview.
-- [ ] Decide on home card link strategy (F-16): publish API records, wire stub fallback, or disable links.
+- [x] Verify draft notes on featured projects/publications are acceptable for owner preview.
+- [x] Home card link strategy (F-16): link only when slug exists in published API at build; otherwise non-link cards.
 
 ### 3. Manual accessibility checks
 
@@ -182,4 +182,4 @@ Compare each implementation screenshot against the matching concept at the same 
 
 ## Verdict
 
-**`REVISE`** — automated gates green on `fad71e0` (Vitest 214, lint, format, design, SEO, build, PUBLIC-270 visual 36 passed / 1 skipped); manual owner visual acceptance and home card link decision remain open before `PUBLIC-190` may close.
+**`REVISE`** — automated gates green (Vitest 223, lint, format, design, SEO, build, PUBLIC-270 visual 36 passed / 1 skipped on combined home|PUBLIC-270 run); F-16 home link gating shipped; manual owner visual acceptance remains open before `PUBLIC-190` may close.
