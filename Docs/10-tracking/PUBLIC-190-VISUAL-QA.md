@@ -2,25 +2,25 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `4f033cc` (`main` after PUBLIC-290 INP probe)
-**Coordination commit:** `e022708`  
+**Public-site commit:** `5144585` (`main` after PUBLIC-280 dual-theme matrix)
+**Coordination commit:** `219c729`  
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
 ---
 
-## Automated gate summary (`4f033cc`)
+## Automated gate summary (`5144585`)
 
 | Command | Exit | Summary |
 |---|---:|---|
-| `npm test` (Vitest) | 0 | **187 passed** — unit + PUBLIC-060 font tokens, PUBLIC-260/261 asset promotion, PUBLIC-270/280 visual scaffolds, PUBLIC-290 performance budget scaffold, PUBLIC-230–250 routes |
+| `npm test` (Vitest) | 0 | **188 passed** — unit + PUBLIC-060 font tokens, PUBLIC-260/261 asset promotion, PUBLIC-270/280 visual scaffolds, PUBLIC-290 performance budget scaffold, PUBLIC-230–250 routes |
 | `npm run validate:design` | 0 | 24 components, 6 templates |
 | `npm run build` | 0 | 23 static pages; promoted preview/rail/brand masters via Astro image pipeline |
 | `npm run validate:seo` | 0 | sitemap-index.xml, robots.txt, canonical/hreflang on sample pages, per-locale Pagefind bundles |
 | `npm run test:foundation -- --grep PUBLIC-060` | 0 | **4 passed** — home EN/FA body/display computed `font-family`, locale CSS vars, 200% zoom |
 | `npm run test:performance` | 0 | **6 passed** - home EN/FA + creative EN LCP/CLS probes, theme-toggle INP on EN home, locale font preloads, font-display swap |
 | `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** (PF-02 detail — no published creative detail route) |
-| `npm run test:visual -- --grep PUBLIC-280` | 0 | **108 passed** (18 routes × 6 widths; PF-01..PF-08 index matrix minus PF-02 detail) |
+| `npm run test:visual -- --grep PUBLIC-280` | 0 | **216 passed** (36 locale-route-theme combos × 6 widths; PF-01..PF-08 dual-theme index matrix minus PF-02 detail) |
 | CI workflow | present | `.github/workflows/ci.yml` — unit, design, SEO, build on push/PR |
 | Atlas leak check | pass | no `/_design` in production build |
 
@@ -50,7 +50,7 @@ Playwright `@visual` stubs capture PF-01..PF-08 index routes at 1440 and 390 CSS
 
 ### F-06 — PUBLIC-280 responsive matrix expanded (not acceptance)
 
-Six-width capture harness (320–1440 CSS px) now covers PF-01 and PF-03..PF-08 index routes (108 captures). **320px horizontal overflow** on EN creative index cleared via narrow shell utility tightening; overflow gate applies at all matrix widths. PF-02 detail and dual-theme matrix remain open.
+Six-width dual-theme capture harness (320–1440 CSS px, light + dark) now covers PF-01 and PF-03..PF-08 index routes (216 captures). **320px horizontal overflow** on EN creative index cleared via narrow shell utility tightening; overflow gate applies at all matrix widths. PF-02 detail remains open.
 
 ### F-07 — PUBLIC-012 Phase 1 CI (not acceptance)
 
@@ -68,4 +68,4 @@ Six-width capture harness (320–1440 CSS px) now covers PF-01 and PF-03..PF-08 
 
 ## Verdict
 
-**`REVISE`** — automated gates green including PUBLIC-060 font computed probes, PUBLIC-270/280 visual capture scaffolds, and PUBLIC-290 local performance probes; manual owner visual acceptance remains open before `PUBLIC-190` may close.
+**`REVISE`** — automated gates green including PUBLIC-060 font computed probes, PUBLIC-270/280 dual-theme visual capture scaffolds, and PUBLIC-290 local performance probes; manual owner visual acceptance remains open before `PUBLIC-190` may close.
