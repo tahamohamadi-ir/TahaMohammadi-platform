@@ -3,7 +3,7 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `5144585` (`main` after PUBLIC-280 dual-theme matrix)
-**Coordination commit:** `219c729`  
+**Coordination commit:** `e1f52d7`  
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
