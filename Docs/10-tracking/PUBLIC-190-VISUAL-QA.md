@@ -3,7 +3,7 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `07f876f` (PF-01 structural empty-state chrome)
-**Coordination commit:** `b074c18`
+**Coordination commit:** `0510805`
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
