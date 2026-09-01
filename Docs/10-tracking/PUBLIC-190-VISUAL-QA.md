@@ -3,7 +3,7 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `2b52b6e` (`main` after PUBLIC-300 no-JS crawl audit)
-**Coordination commit:** `fdb037b`  
+**Coordination commit:** `283578e`  
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
