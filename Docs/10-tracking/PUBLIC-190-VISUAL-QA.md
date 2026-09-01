@@ -2,14 +2,33 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `95df072` (`main` after PUBLIC-320 staging smoke scaffold)
-**Coordination commit:** `db6cdbf`  
+**Public-site commit:** `b12b017` (`main` after PUBLIC-011 ESLint + Prettier toolchain)
+**Coordination commit:** `pending` (update after coordination push)  
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
 ---
 
-## Automated gate summary (`95df072`)
+## Automated gate summary (`b12b017`)
+
+| Command | Exit | Summary |
+|---|---:|---|
+| `npm test` (Vitest) | 0 | **205 passed** — includes `public-011.toolchain.test.ts`; contract fixtures re-synced with backend authoritative copies |
+| `npm run lint` | 0 | ESLint flat config (Astro + TypeScript + Prettier disable) |
+| `npm run format:check` | 0 | Prettier + `prettier-plugin-astro`; byte-pinned paths excluded via `.prettierignore` |
+| `npm run validate:design` | 0 | 24 components, 6 templates |
+| `npm run build` | 0 | 23 static pages |
+| `npm run validate:seo` | 0 | sitemap-index.xml, robots.txt, canonical/hreflang, per-locale Pagefind bundles |
+| `npm run test:foundation -- --grep PUBLIC-060` | not re-run | Last green on `95df072` (4 passed) |
+| `npm run test:performance` | not re-run | Last green on `95df072` (6 passed) |
+| `npm run test:visual -- --grep PUBLIC-270` | not re-run | Last green on `95df072` (36 passed, 1 skipped) |
+| `npm run test:visual -- --grep PUBLIC-280` | not re-run | Last green on `95df072` (216 passed) |
+| `npm run test:nojs` | not re-run | Last green on `95df072` (23 passed) |
+| `npm run test:smoke` | not re-run | Last run on `95df072` (1 skipped) |
+| CI workflow | present | `.github/workflows/ci.yml` — lint, format check, unit, design, SEO, build on push/PR |
+| Atlas leak check | pass | no `/_design` in production build |
+
+### Prior gate summary (`95df072`)
 
 | Command | Exit | Summary |
 |---|---:|---|
@@ -78,8 +97,12 @@ Six-width dual-theme capture harness (320–1440 CSS px, light + dark) now cover
 
 `main` @ `95df072`: staging harness (`src/test-harness/staging-smoke.ts`), Vitest env-contract tests, and Playwright `@smoke` probes via `npm run test:smoke` / `playwright.staging.config.ts`. Live probes skip honestly when `PUBLIC_STAGING_SITE_URL` is unset (requires `BACKEND-180` staging deployment). Evidence: `docs/quality/PUBLIC-320-STAGING-SMOKE.md`. Does **not** close `PUBLIC-190` or claim production readiness.
 
+### F-13 — PUBLIC-011 ESLint + Prettier toolchain (not acceptance)
+
+`main` @ `b12b017`: `eslint.config.js`, `.prettierrc` + `prettier-plugin-astro`, `npm run lint` / `format:check`, CI lint/format steps, and `public-011.toolchain.test.ts`. Initial Prettier pass excludes byte-pinned design authority and contract fixture paths. Consumer contract fixtures re-synced with current backend authoritative copies for green `PUBLIC-310` gate. Does **not** close `PUBLIC-190`.
+
 ---
 
 ## Verdict
 
-**`REVISE`** — automated gates green including PUBLIC-060 font computed probes, PUBLIC-270/280 dual-theme visual capture scaffolds, PUBLIC-290 local performance probes, PUBLIC-300 no-JS crawl audit, PUBLIC-310 contract fixture validation, and PUBLIC-320 staging smoke scaffold (skipped live); manual owner visual acceptance remains open before `PUBLIC-190` may close.
+**`REVISE`** — automated gates green on `b12b017` including ESLint/Prettier toolchain (`PUBLIC-011`), contract fixture re-sync, and prior PUBLIC-060/270/280/290/300/310/320 scaffolds; Playwright visual/performance/foundation/smoke gates not re-run on this commit; manual owner visual acceptance remains open before `PUBLIC-190` may close.
