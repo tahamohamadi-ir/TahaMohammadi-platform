@@ -2,8 +2,8 @@
 
 **Packet:** WP-50  
 **Tool:** Cursor (substituting Hermes automated matrix)  
-**Public-site commit:** `ea70e7b` (`main`)  
-**Coordination commit:** `1edd30c` (`main`)  
+**Public-site commit:** `f1e57a6` (`main`; includes PUBLIC-180 after initial QA run)  
+**Coordination commit:** `e000826` (`main`)  
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
@@ -72,7 +72,7 @@ Manual checks still required per `VISUAL-QA-CONTRACT.md`: concept parity review,
 | Route | design system / page families |
 | Contract | `CONTENT-STATE-MATRIX.md`; `PUBLIC-180` |
 | Expected | Shared `loading`, `empty`, `unavailable`, `error`, `untranslated` (and matrix-aligned `no-results`) primitives with state tests |
-| Observed | Per-component flags (`unavailable`, `inactive`, `loading`) exist; no dedicated content-state module or matrix tests |
+| Observed | Dedicated `ContentState` module landed in `f1e57a6` with matrix tests; **re-run WP-50 automated gates on this commit** before clearing F-01 |
 | Owning packet | **PUBLIC-180** (new implementation slice; prerequisite for closing `PUBLIC-190`) |
 
 ### F-02 — Manual visual acceptance not recorded (blocking)
