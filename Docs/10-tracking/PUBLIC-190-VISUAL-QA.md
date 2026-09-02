@@ -2,8 +2,8 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `2aa62d0` (Windows grep fix @ `2d81def` + Prettier @ `2aa62d0`; `npm run review:visual` verified 2026-09-02)
-**Coordination commit:** `fdc261e`
+**Public-site commit:** `7900ede` (DEP0190 spawn fix @ `7900ede`; Windows grep fix @ `2d81def` + Prettier @ `2aa62d0`; `npm run review:visual` verified 2026-09-02)
+**Coordination commit:** `1107e2f`
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
 
