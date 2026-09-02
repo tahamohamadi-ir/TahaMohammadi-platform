@@ -2,8 +2,8 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `1c3a3a9` (P0 #1 template void fix @ `bfc77aa`/`e83eda3`/`54f8a36` + PF-01–08 remediation stack; prior Path A @ `cfce6b4`; compare pairing fix @ `c14508a`; still `REVISE`)  
-**Coordination commit:** `1777aa4`  
+**Public-site commit:** `2f35e6e` (PUBLIC-080 a11y contrast @ `2f35e6e` atop remediation stack @ `1c3a3a9`: Phase 0 footer, PF-05, PF-07/08, PF-01–06 home gateway, CV void fix, Button centralization; prior Path A @ `cfce6b4`; compare pairing @ `c14508a`; still `REVISE`)  
+**Coordination commit:** _(pending — this doc update)_  
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
 
@@ -59,6 +59,33 @@ Full per-pair gap analysis + phased fix plan: [`PUBLIC-190-VISUAL-REMEDIATION-PL
 | Public-site commit | `cfce6b4` |
 | Subagent `9c29878c` | Committed @ `cfce6b4` — 16 new PF shells + footer + home hero reflow |
 | Top P0 themes | Template render void (PF-05P/CV) **addressed @ `bfc77aa`**, footer/header chrome, constellation/portal SVG, profile hero, home FA split layout |
+
+---
+
+## PUBLIC-080 a11y contrast gate (`2f35e6e`, agent 2026-09-02)
+
+**Verdict:** `REVISE` (unchanged — owner compare + manual a11y + sign-off still required)
+
+**Root cause:** Empty-state supporting copy used `--color-ink-muted` (alias of `--color-ink-tertiary` `#7c8a8f`) on `--color-surface` / `--color-canvas` — contrast ~3.34:1, below WCAG 2.2 AA 4.5:1. PF-07 profile hero role line used raw `--color-signature` on canvas (~3.57:1).
+
+**Fix (public-site @ `2f35e6e`, atop `1c3a3a9`):**
+
+| Area | Change |
+|---|---|
+| `ContentState` | `.ui-content-state__message` → `--color-ink-secondary` |
+| PF empty shells | 42× `page-families.css` supporting labels → `--color-ink-secondary` (ink-tertiary token unchanged) |
+| PF-07 profile hero | `.pf-index-profile-hero__role` → `color-mix` darkened signature for AA on canvas |
+
+**Remediation stack @ `1c3a3a9` (unchanged):** Phase 0 shared footer (`cfce6b4`), PF-05 publications/research shells + constellation, PF-07 About/CV timelines + profile hero, PF-08 contact atmosphere, PF-01–06 index heroes/grids/path shells, home gateway brand-first + orbital glow, CV/publications template void fix (`bfc77aa`/`e83eda3`/`54f8a36`), Button centralization.
+
+| Command | Exit | Summary |
+|---|---:|---|
+| `npm run lint` | 0 | ESLint flat config |
+| `npm test` (Vitest) | 0 | **244 passed** |
+| `npm run build` | 0 | 23 static pages |
+| `npm run test:a11y` | 0 | **29 passed** — WCAG 2.2 AA crawl + foundation probes (was 11 pass / 18 fail on `1c3a3a9`) |
+
+`review:visual` not re-run — owner must regenerate captures after deploy.
 
 ---
 
@@ -584,6 +611,6 @@ Paste accepted rows below. Check `[ ]` only for captures you explicitly accept.
 
 ## Verdict
 
-**`REVISE`** — Path A concept-shell pass @ `cfce6b4` (4-col footer, PF-07/08/05/06/04 shells, home FA hero reflow); prior pagination/theme-explore @ `dd515a0`; compare pairing fix @ `c14508a` (**39 / 48** ready pairs — re-run `review:visual` after this commit); manual owner visual compare, accepted hashes, and manual a11y still open before `PUBLIC-190` may close.
+**`REVISE`** — Remediation stack @ `1c3a3a9` (Phase 0 footer, PF-05/07/08/01–06 shells, home gateway, CV void fix, Button centralization); PUBLIC-080 automated a11y green @ `2f35e6e` (**29 / 29**); prior Path A @ `cfce6b4`; compare pairing @ `c14508a` (**39 / 48** ready pairs). Manual owner visual compare, accepted capture hashes, manual a11y, and explicit sign-off still open before `PUBLIC-190` may close.
 
 **Goal complete:** NO — owner visual compare, manual a11y, and explicit sign-off still required.
