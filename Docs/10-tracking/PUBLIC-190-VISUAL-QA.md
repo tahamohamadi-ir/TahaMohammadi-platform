@@ -3,7 +3,7 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `c14508a` (compare pairing fix @ `c14508a`; automated gate sweep @ `a6dbca1`; PF consolidation `60845bd`–`133fc14` + a11y coral fix; still `REVISE`)  
-**Coordination commit:** `dded269`  
+**Coordination commit:** `555260d`  
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
 
