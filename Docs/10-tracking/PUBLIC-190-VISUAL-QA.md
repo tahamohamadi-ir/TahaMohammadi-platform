@@ -3,7 +3,7 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `a6dbca1` (gate sweep @ `a6dbca1`; PF consolidation `60845bd`–`133fc14` + a11y coral fix; still `REVISE`)  
-**Coordination commit:** `364e791`  
+**Coordination commit:** `dff348c`  
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
 
