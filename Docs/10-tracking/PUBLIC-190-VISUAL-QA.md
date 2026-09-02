@@ -2,10 +2,12 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `dd515a0` (PF visual fidelity Path A: pagination/theme-explore shells, featured card styling, hero/masonry tweaks; compare pairing fix @ `c14508a`; still `REVISE`)  
-**Coordination commit:** `2bd4d4a`  
+**Public-site commit:** `cfce6b4` (Path A: shared 4-col footer + PF-07/08/05/06/04 concept shells, home FA hero reflow; prior pagination/theme-explore @ `dd515a0`; compare pairing fix @ `c14508a`; still `REVISE`)  
+**Coordination commit:** _(pending — this update)_  
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
+
+**Remediation pack @ 2026-09-02:** [PUBLIC-190-asset-prompts/README.md](./PUBLIC-190-asset-prompts/README.md) (owner image prompts), [PUBLIC-190-IMPLEMENTATION-REQUIREMENTS.md](./PUBLIC-190-IMPLEMENTATION-REQUIREMENTS.md) (CMS/motion/graph gap research), [PUBLIC-190-VISUAL-REMEDIATION-PLAN.md](./PUBLIC-190-VISUAL-REMEDIATION-PLAN.md) (48-pair phased plan), [ADR-0007](../09-decisions/ADR-0007-VISUAL-ASSETS-AND-CMS-BLOCKS.md).
 
 ---
 

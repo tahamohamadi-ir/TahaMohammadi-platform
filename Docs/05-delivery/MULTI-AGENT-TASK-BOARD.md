@@ -78,16 +78,19 @@ Wave 4 (release)
 | BACKEND-060 | BACKEND-050 | Add management command or script to import `content-records.v1.1-seed.json` | Command runs idempotently on empty DB |
 | BACKEND-070 | BACKEND-060 | Import seed with all records `draft`/`not-public` | DB count matches 85; zero published leak in public API |
 | BACKEND-080 | BACKEND-070 | Add pytest for seed import + public API non-leak | Tests pass in CI |
-| BACKEND-090 | BACKEND-050 | Inventory `Infra/legacy-monorepo` paths; classify rewrite vs delete | Inventory doc in `Back-End/docs/` |
-| BACKEND-100 | BACKEND-090 | Draft standalone Docker Compose for **new** platform only | Compose file uses new paths; separate DB port |
+| BACKEND-090 ✅ | BACKEND-050 | Inventory `Infra/legacy-monorepo` paths; classify rewrite vs delete | **Done** — `Back-End/docs/operations/LEGACY-MONOREPO-INVENTORY.md` (46 files: 20 rewrite / 18 reference / 8 delete-recommended; tree untouched) |
+| BACKEND-100 ✅ | BACKEND-090 | Draft standalone Docker Compose for **new** platform only | **Done** — `api` service on `127.0.0.1:18010` + root `Dockerfile`; `docker compose config` passes; runtime build/run pending Docker daemon |
+| BACKEND-101 ✅ | BACKEND-090 | Replace monorepo path assumptions in active scripts | **Done** — audit in `Back-End/docs/operations/STANDALONE-VALIDATION.md` §A; `run_e2e_stack.sh` fixed (+ regression test); `manual-rebuild.sh` blocked on rebuild-contract decision |
+| BACKEND-102 ✅ | BACKEND-100 | Validate `config.settings.local` against Docker profile | **Done (static)** — `manage.py check` passes both env variants; live-5433 `migrate --plan` pending Docker (documented §B) |
+| BACKEND-160 ✅ | BACKEND-100 | Validate backup/restore commands for new repo layout | **Done (documented)** — `Back-End/docs/operations/BACKUP-RESTORE.md`; drill is R7-gated |
 | BACKEND-110 ✅ | — | Reconcile public endpoints vs `ROUTE-REGISTRY.md` | **Done** — gap list at `Back-End/docs/contracts/PUBLIC-ROUTE-RECONCILIATION.md` (gaps A–E) |
-| BACKEND-120 | — | Reconcile admin endpoints vs admin workflow map | Gap list documented |
+| BACKEND-120 ✅ | — | Reconcile admin endpoints vs admin workflow map | **Done** — `Back-End/docs/contracts/ADMIN-ROUTE-RECONCILIATION.md` (63 ops verified; gaps G-A..G-I; G-E media-delete + G-G sibling-create are blocking decisions) |
 | BACKEND-130 ✅ | BACKEND-110, BACKEND-120 | Add response-shape fixtures per `ERROR-COMPATIBILITY-MATRIX.md` | **Done** — `Back-End/tests/fixtures/contracts/{public,admin,errors}/` + `tests/test_contract_fixtures.py` |
 | BACKEND-140 ✅ | BACKEND-130 | Schema compatibility tests for accepted OpenAPI hashes | **Done** — `tests/test_openapi_hash_drift.py` (LF-canonical; CRLF acceptance provenance documented) |
-| BACKEND-150 | — | Plan error envelope normalization (no breaking change) | ADR or contract note approved |
-| BACKEND-160 | BACKEND-100 | Validate backup/restore commands for new repo layout | Drill steps documented |
-| BACKEND-170 | PUBLIC-120, ADMIN-110 | Same-origin proxy integration test plan with frontends | Integration test checklist exists |
-| BACKEND-180 | BACKEND-170 | Session, CSRF, MFA, preview, contact smoke tests | Disposable env tests pass |
+| BACKEND-150 [~] | — | Plan error envelope normalization (no breaking change) | **Draft ready** — `Docs/09-decisions/ADR-0006-ERROR-ENVELOPE-NORMALIZATION.md` (Proposed); Done-when needs owner approval |
+| BACKEND-151 [~] | — | Deprecation plan for legacy `/admin/`, `/staff/`, `/api/admin/` routes | **Draft ready** — `Back-End/docs/contracts/LEGACY-ROUTE-DEPRECATION.md` (Proposed); phases gated on admin cutover evidence |
+| BACKEND-170 ✅ | PUBLIC-120, ADMIN-110 | Same-origin proxy integration test plan with frontends | **Done** — `Back-End/docs/quality/INTEGRATION-TEST-PLAN.md` (checklist per `DEPLOYMENT-TOPOLOGY.md` evidence list) |
+| BACKEND-180 ✅ | BACKEND-170 | Session, CSRF, MFA, preview, contact smoke tests | **Done** — `Back-End/tests/test_staging_smoke.py` 3/3 pass on disposable settings; suite 678 pass. Staging browser capture remains COORD-060/070 |
 | BACKEND-190 | ADMIN-250 | Permission regression tests for every state-changing admin route | Matrix tests pass |
 | BACKEND-200 | BACKEND-180, BACKEND-190 | Staging-ready backend artifact + migration evidence | `R7` backend slice complete |
 
@@ -115,7 +118,7 @@ Wave 4 (release)
 | PUBLIC-160 | PUBLIC-150 | Build six shared templates from `templates.json` | Templates render in atlas |
 | PUBLIC-170 | PUBLIC-160 | Local-only Visual Atlas `DESIGN_ATLAS=1` → `/_design/` | Atlas excluded from production build |
 | PUBLIC-180 | PUBLIC-100 | Content-state components: loading, empty, unavailable, error, untranslated | State matrix tests |
-| PUBLIC-190 [~] | PUBLIC-180, BACKEND-070 | Home page both locales using seed (draft-safe: no false publish) | **Structure complete; visual acceptance open.** Independent QA `PASS` and explicit owner acceptance remain required. |
+| PUBLIC-190 [~] | PUBLIC-180, BACKEND-070 | Home page both locales using seed (draft-safe: no false publish) | **Structure complete; visual acceptance open.** Path A shells @ `dd515a0`; compare **39/48** pairs @ `c14508a`. **Remediation:** owner asset prompts (`Docs/10-tracking/PUBLIC-190-asset-prompts/`), phased plan + requirements research, ADR-0007. Independent QA `PASS`, owner asset handback, and explicit sign-off remain required — **REVISE**. |
 | PUBLIC-200 | PUBLIC-190 | About + research routes | Profile fetch uses `/api/profiles/{locale}/about` only |
 | PUBLIC-210 | PUBLIC-200 | Projects + writing indexes and detail routes | Slug only from API; unavailable honest |
 | PUBLIC-220 | PUBLIC-210 | Publications, teaching, creative routes with seed empty states | Creative/teaching/CV empty copy from seed v1.1 |
