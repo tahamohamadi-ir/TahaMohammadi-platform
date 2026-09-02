@@ -2,8 +2,8 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `7900ede` (DEP0190 spawn fix @ `7900ede`; Windows grep fix @ `2d81def` + Prettier @ `2aa62d0`; `npm run review:visual` verified 2026-09-02)
-**Coordination commit:** `e920dc5`
+**Public-site commit:** `72b841f` (§4 paste helper `report:signoff-hashes`; DEP0190 spawn fix @ `7900ede`; `npm run review:visual` verified 2026-09-02)
+**Coordination commit:** `0cc6b89`
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
 
@@ -44,7 +44,7 @@ Captures regenerated 2026-09-01 in one Playwright session (avoids `test-results/
 | PNG capture count | **44** (`test-results/visual/*.png`) — 36 PUBLIC-270 index + 8 WP-40 home/gateway |
 | Compare report | `Front-End/public-site/test-results/visual/compare-report.html` |
 | Pairs ready | **39 / 48** (PF-02 detail ×4 optional; EN 768/200% and FA dark 768 are capture-only — no width-matched concept) |
-| Regenerate | `cd Front-End/public-site && npm run review:visual` (build → captures → compare report → prints `file://` path; add `-- --serve` to open via `http://127.0.0.1:4173/compare-report.html`) |
+| Regenerate | From repo root: `cd Front-End/public-site && npm run review:visual`. When already in `Front-End/public-site`, run `npm run review:visual` directly (build → captures → compare report → prints `file://` path; add `-- --serve` to open via `http://127.0.0.1:4173/compare-report.html`) |
 
 Open `compare-report.html` locally for side-by-side concept comparison. Does **not** change verdict to PASS.
 
@@ -52,11 +52,11 @@ Open `compare-report.html` locally for side-by-side concept comparison. Does **n
 
 Captures and `compare-report.html` are **gitignored** — they exist only on the machine that ran the Playwright session above. If missing, run **`npm run review:visual`** first (prints the `file://` path when done).
 
-0. `cd Front-End/public-site && npm run review:visual` — one command: build, capture PUBLIC-270 + WP-40 home/gateway, generate compare report, print open URL.
+0. From repo root: `cd Front-End/public-site && npm run review:visual` — one command: build, capture PUBLIC-270 + WP-40 home/gateway, generate compare report, print open URL. **When your shell is already in `Front-End/public-site`, run `npm run review:visual` directly** (no nested `cd`).
 1. Open the printed `file://` path (or re-run with `npm run review:visual -- --serve` and browse `http://127.0.0.1:4173/compare-report.html`).
 2. Review each side-by-side pair (39 with concept references; EN 768/200% and FA dark @768 capture-only). Note deviations inline or below.
 3. Complete **§3 Manual accessibility checks** on a running `npm run preview` build (or `dist/` static server).
-4. Paste accepted capture SHA-256 hashes into **§4 Sign-off evidence** (hashes shown in compare-report).
+4. Paste accepted capture SHA-256 hashes into **§4 Sign-off evidence** — run `npm run report:signoff-hashes` in `Front-End/public-site` (alias: `extract:visual-hashes`; add `-- --ready-only` for concept-paired rows only). Does **not** change verdict.
 5. Check manual compare columns in `Front-End/public-site/docs/quality/PUBLIC-270-PAGE-FAMILY-VISUAL-EVIDENCE.md`.
 6. Change **Result** at top of this report from `REVISE` to `PASS` only after explicit owner approval.
 
@@ -297,6 +297,10 @@ Vitest spawn uses cross-platform `npm` (not `npm.cmd` on Linux). PUBLIC-310/PUBL
 
 `main` @ `4db831d`: `npm run review:visual` runs build → PUBLIC-270 + WP-40 home/gateway captures → `report:visual-compare` → prints `file://` path; optional `-- --serve` on port 4173. QA doc one-sitting quick start updated. Does **not** close `PUBLIC-190` or change verdict to PASS.
 
+### F-22 — Owner §4 SHA-256 paste helper (not acceptance)
+
+After `72b841f`: `npm run report:signoff-hashes` (alias `extract:visual-hashes`) prints a markdown table from local PNGs or `--from-report` against `compare-report.html`. `review:visual` prints the paste helper on completion. Does **not** close `PUBLIC-190` or change verdict to PASS.
+
 ### F-20 — CI green @ `3a54130` + visual-compare formatting (not acceptance)
 
 `main` @ `3a54130`: removes unused `scriptDir` in CI-related scripts; Prettier pass on visual-compare tooling. GitHub Actions green on standalone repo. Does **not** close `PUBLIC-190` or change verdict to PASS.
@@ -324,7 +328,7 @@ Compare each implementation screenshot against the matching concept at the same 
 
 **Owner compare assist:** `npm run report:visual-compare` generates `test-results/visual/compare-report.html` — side-by-side pairs from existing PNGs. Does **not** change verdict to PASS.
 
-**Regenerate captures:** `cd Front-End/public-site && npm run review:visual`
+**Regenerate captures:** From repo root: `cd Front-End/public-site && npm run review:visual`. When already in `Front-End/public-site`, run `npm run review:visual` directly.
 
 ### 2. Home page review
 
@@ -349,11 +353,21 @@ WP-40 visual captures use **768px reflow** and **200% zoom** evidence (not 1440/
 
 ### 4. Sign-off
 
-- [ ] Record SHA-256 hashes of accepted screenshots in the table below (copy from compare-report).
+- [ ] Record SHA-256 hashes of accepted screenshots in the table below (run `npm run report:signoff-hashes` in `Front-End/public-site` after manual review; paste rows you accept).
 - [ ] Mark manual compare columns in `docs/quality/PUBLIC-270-PAGE-FAMILY-VISUAL-EVIDENCE.md`.
 - [ ] Explicit owner approval to change verdict from `REVISE` to `PASS`.
 
 #### Sign-off evidence (owner fills)
+
+Run in `Front-End/public-site` after manual compare (does **not** auto-approve):
+
+```powershell
+npm run report:signoff-hashes
+# concept-paired rows only:
+npm run report:signoff-hashes -- --ready-only
+```
+
+Paste accepted rows below. Check `[ ]` only for captures you explicitly accept.
 
 | Capture file | SHA-256 (from compare-report) | Accepted |
 |---|---|:---:|
