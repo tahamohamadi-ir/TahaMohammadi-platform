@@ -1,9 +1,9 @@
-ï»¿# PUBLIC-190 Visual and Accessibility QA Report
+# PUBLIC-190 Visual and Accessibility QA Report
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `2f35e6e` (PUBLIC-080 a11y contrast @ `2f35e6e` atop remediation stack @ `1c3a3a9`: Phase 0 footer, PF-05, PF-07/08, PF-01â€“06 home gateway, CV void fix, Button centralization; prior Path A @ `cfce6b4`; compare pairing @ `c14508a`; still `REVISE`)  
-**Coordination commit:** _(pending â€” this doc update)_  
+**Public-site commit:** `2f35e6e` (PUBLIC-080 a11y contrast @ `2f35e6e` atop remediation stack @ `1c3a3a9`: Phase 0 footer, PF-05, PF-07/08, PF-01–06 home gateway, CV void fix, Button centralization; prior Path A @ `cfce6b4`; compare pairing @ `c14508a`; still `REVISE`)  
+**Coordination commit:** `7a9df68`  
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
 
@@ -13,7 +13,7 @@
 
 ## Owner compare feedback @ 2026-09-02 (Persian: concepts much weaker than implementation)
 
-Agent gap analysis after owner screenshots (PF-01, PF-04â€“PF-08, home mobile FA, gateway). **Verdict unchanged: `REVISE`.**
+Agent gap analysis after owner screenshots (PF-01, PF-04–PF-08, home mobile FA, gateway). **Verdict unchanged: `REVISE`.**
 
 ### Deviation log (agent pass)
 
@@ -26,7 +26,7 @@ Agent gap analysis after owner screenshots (PF-01, PF-04â€“PF-08, home mobile FA
 | PF-04/05 publications rows, PF-05 constellation | **B/C** | Row placeholders with thumbnails; research `PageFamilyConstellationShell` |
 | PF-07 about / PF-07 CV timelines | **B** | `PageFamilyTimelineShell` for education/experience/download shells |
 | PF-08 contact atmosphere | **C** | Gateway atmosphere via hero theme media |
-| Hero descriptions, featured titles, grid CMS records | **A** | Blocked â€” no invented API/CMS copy |
+| Hero descriptions, featured titles, grid CMS records | **A** | Blocked — no invented API/CMS copy |
 | Nav labels Creative/Writing vs concept Gallery/Blog | **D/A** | Route registry labels; not visual chrome |
 | Home mobile FA overlay vs side-by-side concept | **B/C** | Stacked hero reflow + CTAs @ `cfce6b4`; prior overlay direction @ `cc4b851` |
 | Gateway 200% light vs dark concept | **D** | Compare pairs affordance only; theme differs by design |
@@ -41,7 +41,7 @@ Agent gap analysis after owner screenshots (PF-01, PF-04â€“PF-08, home mobile FA
 | PF-04 Projects empty | **B/C** | Sort dropdown shell @ `cfce6b4` |
 | PF-05 Research constellation | **C** | Center brand mark on constellation backplate @ `cfce6b4` |
 | Home FA mobile hero | **B/C** | Stacked layout (image top, copy+CTAs below), hero action buttons @ `cfce6b4` |
-| CMS profile copy, publication titles, contact email/ORCID | **A** | Blocked â€” honest placeholders only (`Awaiting approved CMS copy`) |
+| CMS profile copy, publication titles, contact email/ORCID | **A** | Blocked — honest placeholders only (`Awaiting approved CMS copy`) |
 | Sub-nav tab switching (About/Research) | **A/D** | Structural disabled chrome; no invented tab content |
 | Constellation concept-art fidelity | **C/D** | CSS/SVG shell; not full illustrated concept asset |
 
@@ -57,43 +57,43 @@ Full per-pair gap analysis + phased fix plan: [`PUBLIC-190-VISUAL-REMEDIATION-PL
 | Ready pairs analyzed | **39** |
 | Non-ready (PF-02 skip + home capture-only) | 9 |
 | Public-site commit | `cfce6b4` |
-| Subagent `9c29878c` | Committed @ `cfce6b4` â€” 16 new PF shells + footer + home hero reflow |
+| Subagent `9c29878c` | Committed @ `cfce6b4` — 16 new PF shells + footer + home hero reflow |
 | Top P0 themes | Template render void (PF-05P/CV) **addressed @ `bfc77aa`**, footer/header chrome, constellation/portal SVG, profile hero, home FA split layout |
 
 ---
 
 ## PUBLIC-080 a11y contrast gate (`2f35e6e`, agent 2026-09-02)
 
-**Verdict:** `REVISE` (unchanged â€” owner compare + manual a11y + sign-off still required)
+**Verdict:** `REVISE` (unchanged — owner compare + manual a11y + sign-off still required)
 
-**Root cause:** Empty-state supporting copy used `--color-ink-muted` (alias of `--color-ink-tertiary` `#7c8a8f`) on `--color-surface` / `--color-canvas` â€” contrast ~3.34:1, below WCAG 2.2 AA 4.5:1. PF-07 profile hero role line used raw `--color-signature` on canvas (~3.57:1).
+**Root cause:** Empty-state supporting copy used `--color-ink-muted` (alias of `--color-ink-tertiary` `#7c8a8f`) on `--color-surface` / `--color-canvas` — contrast ~3.34:1, below WCAG 2.2 AA 4.5:1. PF-07 profile hero role line used raw `--color-signature` on canvas (~3.57:1).
 
 **Fix (public-site @ `2f35e6e`, atop `1c3a3a9`):**
 
 | Area | Change |
 |---|---|
-| `ContentState` | `.ui-content-state__message` â†’ `--color-ink-secondary` |
-| PF empty shells | 42Ã— `page-families.css` supporting labels â†’ `--color-ink-secondary` (ink-tertiary token unchanged) |
-| PF-07 profile hero | `.pf-index-profile-hero__role` â†’ `color-mix` darkened signature for AA on canvas |
+| `ContentState` | `.ui-content-state__message` ? `--color-ink-secondary` |
+| PF empty shells | 42× `page-families.css` supporting labels ? `--color-ink-secondary` (ink-tertiary token unchanged) |
+| PF-07 profile hero | `.pf-index-profile-hero__role` ? `color-mix` darkened signature for AA on canvas |
 
-**Remediation stack @ `1c3a3a9` (unchanged):** Phase 0 shared footer (`cfce6b4`), PF-05 publications/research shells + constellation, PF-07 About/CV timelines + profile hero, PF-08 contact atmosphere, PF-01â€“06 index heroes/grids/path shells, home gateway brand-first + orbital glow, CV/publications template void fix (`bfc77aa`/`e83eda3`/`54f8a36`), Button centralization.
+**Remediation stack @ `1c3a3a9` (unchanged):** Phase 0 shared footer (`cfce6b4`), PF-05 publications/research shells + constellation, PF-07 About/CV timelines + profile hero, PF-08 contact atmosphere, PF-01–06 index heroes/grids/path shells, home gateway brand-first + orbital glow, CV/publications template void fix (`bfc77aa`/`e83eda3`/`54f8a36`), Button centralization.
 
 | Command | Exit | Summary |
 |---|---:|---|
 | `npm run lint` | 0 | ESLint flat config |
 | `npm test` (Vitest) | 0 | **244 passed** |
 | `npm run build` | 0 | 23 static pages |
-| `npm run test:a11y` | 0 | **29 passed** â€” WCAG 2.2 AA crawl + foundation probes (was 11 pass / 18 fail on `1c3a3a9`) |
+| `npm run test:a11y` | 0 | **29 passed** — WCAG 2.2 AA crawl + foundation probes (was 11 pass / 18 fail on `1c3a3a9`) |
 
-`review:visual` not re-run â€” owner must regenerate captures after deploy.
+`review:visual` not re-run — owner must regenerate captures after deploy.
 
 ---
 
-## P0 #1 gate note â€” PF index template void (`1c3a3a9`, agent e7b5ea02)
+## P0 #1 gate note — PF index template void (`1c3a3a9`, agent e7b5ea02)
 
-**Verdict:** `REVISE` (unchanged â€” owner compare + sign-off still required)
+**Verdict:** `REVISE` (unchanged — owner compare + sign-off still required)
 
-**Root cause:** PF index shells (`pf-index-*`, `tm-template__*`) were not co-loaded on all routes â€” About imported legacy `about.css` only; empty-state pages lacked full-width override for publications/research; `template-base.css` layout tokens could fail to bundle when templates rendered without the page-family stylesheet graph.
+**Root cause:** PF index shells (`pf-index-*`, `tm-template__*`) were not co-loaded on all routes — About imported legacy `about.css` only; empty-state pages lacked full-width override for publications/research; `template-base.css` layout tokens could fail to bundle when templates rendered without the page-family stylesheet graph.
 
 **Fix (public-site):** `@import template-base.css` in `page-families.css`; About routes load `page-families.css`; `.publications-page--empty` / `.research-page--empty` full-width parity with CV; `tm-template__main` min-height guard; publications collaborate band `context="publications"`; dist HTML chrome regression test `public-190.pf-index-chrome-build.test.ts`.
 
@@ -103,7 +103,7 @@ Full per-pair gap analysis + phased fix plan: [`PUBLIC-190-VISUAL-REMEDIATION-PL
 | `npm test` (Vitest) | 0 | **244 passed** (includes PF index dist chrome test) |
 | `npm run build` | 0 | 23 static pages |
 
-`review:visual` not re-run â€” owner must regenerate PF-05P/CV captures after deploy.
+`review:visual` not re-run — owner must regenerate PF-05P/CV captures after deploy.
 
 ---
 
@@ -113,13 +113,13 @@ Path A concept-shell pass @ `cfce6b4` (2026-09-02). Shared footer + PF-07/08/05/
 
 | Command | Exit | Summary |
 |---|---:|---|
-| `npm test` (Vitest) | 0 | **242 passed** â€” PF shell behavior tests updated |
+| `npm test` (Vitest) | 0 | **242 passed** — PF shell behavior tests updated |
 | `npm run lint` | 0 | ESLint flat config |
 | `npm run format:check` | 0 | Prettier + `prettier-plugin-astro` |
 | `npm run build` | 0 | 23 static pages |
-| `npm run test:a11y` | 0 | **29 passed** â€” footer cms-note contrast fix |
+| `npm run test:a11y` | 0 | **29 passed** — footer cms-note contrast fix |
 
-`review:visual` not re-run in agent sweep â€” owner must regenerate captures and compare after deploy.
+`review:visual` not re-run in agent sweep — owner must regenerate captures and compare after deploy.
 
 ### Prior gate summary (`dd515a0`)
 
@@ -127,41 +127,41 @@ Path A visual fidelity slice @ `dd515a0` (2026-09-02). Pagination/theme-explore 
 
 | Command | Exit | Summary |
 |---|---:|---|
-| `npm test` (Vitest) | 0 | **239 passed** â€” includes new pagination/theme-explore behavior tests |
+| `npm test` (Vitest) | 0 | **239 passed** — includes new pagination/theme-explore behavior tests |
 | `npm run lint` | 0 | ESLint flat config |
 | `npm run build` | 0 | 23 static pages |
 
 ### Prior gate summary (`c14508a`)
 
-Compare pairing fix @ `c14508a` (2026-09-02). `page-family-visual-compare.mjs` resolves concept PNG root when `DESIGN_AUTHORITY_ROOT` points at `agent-kit/` (JSON only) â€” restores honest **39 / 48** ready pairs (was 0 after mis-rooted lookup). Full automated gate sweep remains green from parent `a6dbca1`; `review:visual` re-run confirms captures + compare report.
+Compare pairing fix @ `c14508a` (2026-09-02). `page-family-visual-compare.mjs` resolves concept PNG root when `DESIGN_AUTHORITY_ROOT` points at `agent-kit/` (JSON only) — restores honest **39 / 48** ready pairs (was 0 after mis-rooted lookup). Full automated gate sweep remains green from parent `a6dbca1`; `review:visual` re-run confirms captures + compare report.
 
 | Command | Exit | Summary |
 |---|---:|---|
-| `npm run review:visual` | 0 | Owner assist â€” **38 passed**, compare **39 / 48** ready pairs (pairing fix @ `c14508a`) |
+| `npm run review:visual` | 0 | Owner assist — **38 passed**, compare **39 / 48** ready pairs (pairing fix @ `c14508a`) |
 | `npm run report:visual-compare` | 0 | **39 / 48** ready pairs (concept root fix) |
 
 ### Prior gate summary (`a6dbca1`)
 
-Full local gate sweep @ `a6dbca1` (2026-09-02). Consolidated parallel PF agent work (`60845bd`â€“`133fc14`): PF-06/07 list-card, skills, download shells; PF-01/03 creative/writing concept fidelity; PF-04 project featured/row chrome; PF-05 bibliography + research-fit shells; home/gateway rhythm; writing coral contrast fix for WCAG AA. Clean `dist/` rebuild once; Playwright suites run with `TM_E2E_SKIP_BUILD=1` after build (Windows `npm.cmd` spawn without skip-build fails EINVAL in webServer â€” known; `review:visual` pre-builds + snapshots dist).
+Full local gate sweep @ `a6dbca1` (2026-09-02). Consolidated parallel PF agent work (`60845bd`–`133fc14`): PF-06/07 list-card, skills, download shells; PF-01/03 creative/writing concept fidelity; PF-04 project featured/row chrome; PF-05 bibliography + research-fit shells; home/gateway rhythm; writing coral contrast fix for WCAG AA. Clean `dist/` rebuild once; Playwright suites run with `TM_E2E_SKIP_BUILD=1` after build (Windows `npm.cmd` spawn without skip-build fails EINVAL in webServer — known; `review:visual` pre-builds + snapshots dist).
 
 | Command | Exit | Summary |
 |---|---:|---|
-| `npm test` (Vitest) | 0 | **237 passed** â€” includes `public-080.a11y-audit.test.ts`, `public-350.release-evidence.test.ts` |
+| `npm test` (Vitest) | 0 | **237 passed** — includes `public-080.a11y-audit.test.ts`, `public-350.release-evidence.test.ts` |
 | `npm run lint` | 0 | ESLint flat config (`.e2e-serve-dist/` ignored) |
 | `npm run format:check` | 0 | Prettier + `prettier-plugin-astro` |
 | `npm run validate:design` | 0 | 24 components, 6 templates |
 | `npm run validate:seo` | 0 | sitemap, canonical/hreflang, Pagefind bundles |
 | `npm run build` | 0 | 23 static pages |
-| `npm run test:a11y` | 0 | **29 passed** â€” WCAG 2.2 AA crawl + foundation probes (`PUBLIC-080`) |
-| `npm run review:visual` | 0 | Owner assist â€” **38 passed**, compare **39 / 48** ready pairs (agent re-run 2026-09-02 @ `a6dbca1`) |
+| `npm run test:a11y` | 0 | **29 passed** — WCAG 2.2 AA crawl + foundation probes (`PUBLIC-080`) |
+| `npm run review:visual` | 0 | Owner assist — **38 passed**, compare **39 / 48** ready pairs (agent re-run 2026-09-02 @ `a6dbca1`) |
 
 ### Prior gate summary (`d5e5f1b`)
 
-Full local gate sweep @ `d5e5f1b` (2026-09-02). Base implementation `c38cfa9`; tooling fix ignores `.e2e-serve-dist/` in ESLint/Prettier (stops CI lint noise from Playwright dist snapshots). Clean `dist/` rebuild once; Playwright suites run with `TM_E2E_SKIP_BUILD=1` after build (Windows `npm.cmd` spawn without skip-build fails EINVAL in webServer â€” known; `review:visual` pre-builds + snapshots dist).
+Full local gate sweep @ `d5e5f1b` (2026-09-02). Base implementation `c38cfa9`; tooling fix ignores `.e2e-serve-dist/` in ESLint/Prettier (stops CI lint noise from Playwright dist snapshots). Clean `dist/` rebuild once; Playwright suites run with `TM_E2E_SKIP_BUILD=1` after build (Windows `npm.cmd` spawn without skip-build fails EINVAL in webServer — known; `review:visual` pre-builds + snapshots dist).
 
 | Command | Exit | Summary |
 |---|---:|---|
-| `npm test` (Vitest) | 0 | **235 passed** â€” includes `public-080.a11y-audit.test.ts`, `public-350.release-evidence.test.ts` |
+| `npm test` (Vitest) | 0 | **235 passed** — includes `public-080.a11y-audit.test.ts`, `public-350.release-evidence.test.ts` |
 | `npm run lint` | 0 | ESLint flat config (`.e2e-serve-dist/` ignored) |
 | `npm run format:check` | 0 | Prettier + `prettier-plugin-astro` |
 | `npm run validate:design` | 0 | 24 components, 6 templates |
@@ -170,19 +170,19 @@ Full local gate sweep @ `d5e5f1b` (2026-09-02). Base implementation `c38cfa9`; t
 | `npm run test:foundation` | 0 | **6 passed** (`TM_E2E_SKIP_BUILD=1`) |
 | `npm run test:performance` | 0 | **6 passed** |
 | `npm run test:nojs` | 0 | **23 passed** |
-| `npm run test:a11y` | 0 | **29 passed** â€” WCAG 2.2 AA crawl + foundation probes (`PUBLIC-080`) |
-| `npm run test:visual -- --grep PUBLIC-270` | â€” | Covered by `review:visual` (38 passed, 1 skipped) |
+| `npm run test:a11y` | 0 | **29 passed** — WCAG 2.2 AA crawl + foundation probes (`PUBLIC-080`) |
+| `npm run test:visual -- --grep PUBLIC-270` | — | Covered by `review:visual` (38 passed, 1 skipped) |
 | `npm run test:visual -- --grep PUBLIC-280` | 0 | **216 passed** |
-| `npm run test:smoke` | â€” | **1 skipped** â€” `PUBLIC_STAGING_SITE_URL` unset (expected until BACKEND-180 staging) |
-| `npm run review:visual` | 0 | Owner assist â€” **38 passed**, compare **39 / 48** ready pairs (agent re-run 2026-09-02 @ `d5e5f1b`) |
+| `npm run test:smoke` | — | **1 skipped** — `PUBLIC_STAGING_SITE_URL` unset (expected until BACKEND-180 staging) |
+| `npm run review:visual` | 0 | Owner assist — **38 passed**, compare **39 / 48** ready pairs (agent re-run 2026-09-02 @ `d5e5f1b`) |
 
 ### Prior gate summary (`0e84e69`)
 
-Full local gate sweep @ `0e84e69` (2026-09-02). Clean `dist/` rebuild once; Playwright suites run with `TM_E2E_SKIP_BUILD=1` after build (Windows `npm.cmd` spawn without skip-build fails EINVAL in webServer â€” known; `review:visual` pre-builds + snapshots dist @ `0e84e69`).
+Full local gate sweep @ `0e84e69` (2026-09-02). Clean `dist/` rebuild once; Playwright suites run with `TM_E2E_SKIP_BUILD=1` after build (Windows `npm.cmd` spawn without skip-build fails EINVAL in webServer — known; `review:visual` pre-builds + snapshots dist @ `0e84e69`).
 
 | Command | Exit | Summary |
 |---|---:|---|
-| `npm test` (Vitest) | 0 | **232 passed** â€” includes `public-080.a11y-audit.test.ts`, `public-350.release-evidence.test.ts` |
+| `npm test` (Vitest) | 0 | **232 passed** — includes `public-080.a11y-audit.test.ts`, `public-350.release-evidence.test.ts` |
 | `npm run lint` | 0 | ESLint flat config |
 | `npm run format:check` | 0 | Prettier + `prettier-plugin-astro` |
 | `npm run validate:design` | 0 | 24 components, 6 templates |
@@ -191,20 +191,20 @@ Full local gate sweep @ `0e84e69` (2026-09-02). Clean `dist/` rebuild once; Play
 | `npm run test:foundation` | 0 | **6 passed** (`TM_E2E_SKIP_BUILD=1`) |
 | `npm run test:performance` | 0 | **6 passed** |
 | `npm run test:nojs` | 0 | **23 passed** |
-| `npm run test:a11y` | 0 | **29 passed** â€” WCAG 2.2 AA crawl + foundation probes (`PUBLIC-080`) |
-| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** â€” PF-02 detail open |
+| `npm run test:a11y` | 0 | **29 passed** — WCAG 2.2 AA crawl + foundation probes (`PUBLIC-080`) |
+| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** — PF-02 detail open |
 | `npm run test:visual -- --grep PUBLIC-280` | 0 | **216 passed** |
-| `npm run test:smoke` | â€” | **1 skipped** â€” `PUBLIC_STAGING_SITE_URL` unset (expected until BACKEND-180 staging) |
-| `npm run review:visual` | 0 | Owner assist â€” **38 passed**, compare **39 / 48** ready pairs (owner run 2026-09-02; signoff hashes extracted via `report:signoff-hashes`) |
-| GitHub Actions CI @ `0e84e69` | pass | [run 33621056144](https://github.com/tahamohammadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33621056144) â€” `main` + `cx/public-recovery-integration` |
+| `npm run test:smoke` | — | **1 skipped** — `PUBLIC_STAGING_SITE_URL` unset (expected until BACKEND-180 staging) |
+| `npm run review:visual` | 0 | Owner assist — **38 passed**, compare **39 / 48** ready pairs (owner run 2026-09-02; signoff hashes extracted via `report:signoff-hashes`) |
+| GitHub Actions CI @ `0e84e69` | pass | [run 33621056144](https://github.com/tahamohammadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33621056144) — `main` + `cx/public-recovery-integration` |
 
 ### Prior gate summary (`888ccc1`)
 
-Full local gate sweep @ `888ccc1` (2026-09-02). Playwright suites run with `--workers=1` after clean `dist/` rebuild between commands; a11y webServer failed once on concurrent build (Windows EPERM) â€” green after clean rebuild (known @ `cc4b851`); nojs search-fa flaky once â€” green on retry.
+Full local gate sweep @ `888ccc1` (2026-09-02). Playwright suites run with `--workers=1` after clean `dist/` rebuild between commands; a11y webServer failed once on concurrent build (Windows EPERM) — green after clean rebuild (known @ `cc4b851`); nojs search-fa flaky once — green on retry.
 
 | Command | Exit | Summary |
 |---|---:|---|
-| `npm test` (Vitest) | 0 | **232 passed** â€” includes `public-080.a11y-audit.test.ts` |
+| `npm test` (Vitest) | 0 | **232 passed** — includes `public-080.a11y-audit.test.ts` |
 | `npm run lint` | 0 | ESLint flat config |
 | `npm run format:check` | 0 | Prettier + `prettier-plugin-astro` |
 | `npm run validate:design` | 0 | 24 components, 6 templates |
@@ -213,16 +213,16 @@ Full local gate sweep @ `888ccc1` (2026-09-02). Playwright suites run with `--wo
 | `npm run test:foundation` | 0 | **6 passed** |
 | `npm run test:performance` | 0 | **6 passed** |
 | `npm run test:nojs` | 0 | **23 passed** (1 flaky search-fa miss first run; green retry) |
-| `npm run test:a11y` | 0 | **29 passed** â€” WCAG 2.2 AA crawl + foundation probes (`PUBLIC-080`) |
-| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** â€” PF-02 detail open |
+| `npm run test:a11y` | 0 | **29 passed** — WCAG 2.2 AA crawl + foundation probes (`PUBLIC-080`) |
+| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** — PF-02 detail open |
 | `npm run test:visual -- --grep PUBLIC-280` | 0 | **216 passed** |
-| `npm run test:smoke` | â€” | **1 skipped** â€” `PUBLIC_STAGING_SITE_URL` unset (expected until BACKEND-180 staging) |
-| `npm run review:visual` | â€” | Owner assist â€” not re-run in agent sweep |
-| GitHub Actions CI @ `ab9647c` | fail | [run 33618987256](https://github.com/tahamohammadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33618987256) â€” format:check on 3 evidence docs; fixed @ `888ccc1` |
+| `npm run test:smoke` | — | **1 skipped** — `PUBLIC_STAGING_SITE_URL` unset (expected until BACKEND-180 staging) |
+| `npm run review:visual` | — | Owner assist — not re-run in agent sweep |
+| GitHub Actions CI @ `ab9647c` | fail | [run 33618987256](https://github.com/tahamohammadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33618987256) — format:check on 3 evidence docs; fixed @ `888ccc1` |
 
 ### Prior gate summary (`67a5c4c`)
 
-Full local gate sweep @ `67a5c4c` (2026-09-02). Playwright suites run with `--workers=1` after clean `dist/` rebuild between commands; performance webServer failed once on concurrent build (Windows) â€” green after clean rebuild (known @ `cc4b851`).
+Full local gate sweep @ `67a5c4c` (2026-09-02). Playwright suites run with `--workers=1` after clean `dist/` rebuild between commands; performance webServer failed once on concurrent build (Windows) — green after clean rebuild (known @ `cc4b851`).
 
 | Command | Exit | Summary |
 |---|---:|---|
@@ -235,10 +235,10 @@ Full local gate sweep @ `67a5c4c` (2026-09-02). Playwright suites run with `--wo
 | `npm run test:foundation` | 0 | **6 passed** |
 | `npm run test:performance` | 0 | **6 passed** (clean rebuild after concurrent-build miss) |
 | `npm run test:nojs` | 0 | **23 passed** |
-| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** â€” PF-02 detail open |
+| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** — PF-02 detail open |
 | `npm run test:visual -- --grep PUBLIC-280` | 0 | **216 passed** |
-| `npm run test:smoke` | 0 | **1 skipped** â€” `PUBLIC_STAGING_SITE_URL` unset (expected until BACKEND-180 staging) |
-| `npm run review:visual` | â€” | Owner assist â€” not re-run in agent sweep |
+| `npm run test:smoke` | 0 | **1 skipped** — `PUBLIC_STAGING_SITE_URL` unset (expected until BACKEND-180 staging) |
+| `npm run review:visual` | — | Owner assist — not re-run in agent sweep |
 
 ### Prior gate summary (`4db831d`)
 
@@ -255,7 +255,7 @@ Full local gate sweep @ `4db831d` (2026-09-02). Playwright suites run after clea
 | `npm run test:foundation` | 0 | **6 passed** |
 | `npm run test:performance` | 0 | **6 passed** (1 flaky INP miss first run; green retry) |
 | `npm run test:nojs` | 0 | **23 passed** |
-| `npm run review:visual` | â€” | Owner assist â€” not re-run in agent sweep (build + 44 captures + compare report) |
+| `npm run review:visual` | — | Owner assist — not re-run in agent sweep (build + 44 captures + compare report) |
 | GitHub Actions CI @ `2aa62d0` | pass | [run 33611693823](https://github.com/tahamohammadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33611693823) - `main` after format fix; [run 33608674272](https://github.com/tahamohammadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33608674272) - `4db831d` review:visual pipeline |
 | `npm run review:visual` @ `2aa62d0` | 0 | build + **38 passed, 1 skipped** captures + compare **39/48** (agent re-run 2026-09-02) |
 | Prior visual gates @ `cc4b851` | 0 | PUBLIC-270 36+1 skip; PUBLIC-280 216; compare **39/48** |
@@ -278,13 +278,13 @@ Prep owner review flagged PF-01..PF-08 index routes as bare `ContentState` vs pa
 | PF-07 | CV | Hero, downloads section placeholders |
 | PF-08 | Contact | Hero, topic chips, details + disabled form shell |
 
-All families keep honest `ContentState` `empty` copy â€” no invented records, titles, dates, or images. `template-base.css` uses `box-sizing: border-box` on `tm-template__main` for PUBLIC-280 @320 overflow.
+All families keep honest `ContentState` `empty` copy — no invented records, titles, dates, or images. `template-base.css` uses `box-sizing: border-box` on `tm-template__main` for PUBLIC-280 @320 overflow.
 
-PF-01..PF-08 captures regenerated (PUBLIC-270 Ã—36, PUBLIC-280 Ã—216, WP-40 home Ã—8). Compare report **39 / 48** pairs ready (viewport-aware home pairing @ `cc4b851`). Visual alignment improved; owner manual compare and sign-off still required â€” **does not change verdict to PASS**.
+PF-01..PF-08 captures regenerated (PUBLIC-270 ×36, PUBLIC-280 ×216, WP-40 home ×8). Compare report **39 / 48** pairs ready (viewport-aware home pairing @ `cc4b851`). Visual alignment improved; owner manual compare and sign-off still required — **does not change verdict to PASS**.
 
 ---
 
-## PF-01 structural empty-state (`07f876f`) â€” superseded by table above
+## PF-01 structural empty-state (`07f876f`) — superseded by table above
 
 ---
 
@@ -294,22 +294,22 @@ Captures regenerated 2026-09-01 in one Playwright session (avoids `test-results/
 
 | Artifact | Value |
 |---|---|
-| PNG capture count | **44** (`test-results/visual/*.png`) â€” 36 PUBLIC-270 index + 8 WP-40 home/gateway |
+| PNG capture count | **44** (`test-results/visual/*.png`) — 36 PUBLIC-270 index + 8 WP-40 home/gateway |
 | Compare report | `Front-End/public-site/test-results/visual/compare-report.html` |
-| Pairs ready | **39 / 48** (PF-02 detail Ã—4 optional; EN 768/200% and FA dark 768 are capture-only â€” no width-matched concept) |
-| Regenerate | From repo root: `cd Front-End/public-site && npm run review:visual`. When already in `Front-End/public-site`, run `npm run review:visual` directly (build â†’ captures â†’ compare report â†’ prints `file://` path; add `-- --serve` to open via `http://127.0.0.1:4173/compare-report.html`) |
+| Pairs ready | **39 / 48** (PF-02 detail ×4 optional; EN 768/200% and FA dark 768 are capture-only — no width-matched concept) |
+| Regenerate | From repo root: `cd Front-End/public-site && npm run review:visual`. When already in `Front-End/public-site`, run `npm run review:visual` directly (build ? captures ? compare report ? prints `file://` path; add `-- --serve` to open via `http://127.0.0.1:4173/compare-report.html`) |
 
 Open `compare-report.html` locally for side-by-side concept comparison. Does **not** change verdict to PASS.
 
 ### One-sitting quick start (owner)
 
-Captures and `compare-report.html` are **gitignored** â€” they exist only on the machine that ran the Playwright session above. If missing, run **`npm run review:visual`** first (prints the `file://` path when done).
+Captures and `compare-report.html` are **gitignored** — they exist only on the machine that ran the Playwright session above. If missing, run **`npm run review:visual`** first (prints the `file://` path when done).
 
-0. From repo root: `cd Front-End/public-site && npm run review:visual` â€” one command: build, capture PUBLIC-270 + WP-40 home/gateway, generate compare report, print open URL. **When your shell is already in `Front-End/public-site`, run `npm run review:visual` directly** (no nested `cd`).
+0. From repo root: `cd Front-End/public-site && npm run review:visual` — one command: build, capture PUBLIC-270 + WP-40 home/gateway, generate compare report, print open URL. **When your shell is already in `Front-End/public-site`, run `npm run review:visual` directly** (no nested `cd`).
 1. Open the printed `file://` path (or re-run with `npm run review:visual -- --serve` and browse `http://127.0.0.1:4173/compare-report.html`).
 2. Review each side-by-side pair (39 with concept references; EN 768/200% and FA dark @768 capture-only). Note deviations inline or below.
-3. Complete **Â§3 Manual accessibility checks** on a running `npm run preview` build (or `dist/` static server).
-4. Paste accepted capture SHA-256 hashes into **Â§4 Sign-off evidence** â€” run `npm run report:signoff-hashes` in `Front-End/public-site` (alias: `extract:visual-hashes`; add `-- --ready-only` for concept-paired rows only). Does **not** change verdict.
+3. Complete **§3 Manual accessibility checks** on a running `npm run preview` build (or `dist/` static server).
+4. Paste accepted capture SHA-256 hashes into **§4 Sign-off evidence** — run `npm run report:signoff-hashes` in `Front-End/public-site` (alias: `extract:visual-hashes`; add `-- --ready-only` for concept-paired rows only). Does **not** change verdict.
 5. Check manual compare columns in `Front-End/public-site/docs/quality/PUBLIC-270-PAGE-FAMILY-VISUAL-EVIDENCE.md`.
 6. Change **Result** at top of this report from `REVISE` to `PASS` only after explicit owner approval.
 
@@ -321,7 +321,7 @@ Full local gate sweep @ `cc4b851` (2026-09-02). Playwright suites run with `--wo
 
 | Command | Exit | Summary |
 |---|---:|---|
-| `npm test` (Vitest) | 0 | **228 passed** â€” includes `public-270-visual-compare.test.ts` viewport-aware home pairing |
+| `npm test` (Vitest) | 0 | **228 passed** — includes `public-270-visual-compare.test.ts` viewport-aware home pairing |
 | `npm run lint` | 0 | ESLint flat config |
 | `npm run format:check` | 0 | Prettier + `prettier-plugin-astro` |
 | `npm run validate:design` | 0 | 24 components, 6 templates |
@@ -330,45 +330,45 @@ Full local gate sweep @ `cc4b851` (2026-09-02). Playwright suites run with `--wo
 | `npm run test:foundation` | 0 | **6 passed** |
 | `npm run test:performance` | 0 | **6 passed** |
 | `npm run test:nojs` | 0 | **23 passed** |
-| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** â€” PF-02 detail open |
+| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** — PF-02 detail open |
 | `npm run test:visual -- --grep PUBLIC-280` | 0 | **216 passed** |
-| `npm run test:visual -- --grep "PUBLIC-270\|WP-40 home"` | 0 | **38 passed, 1 skipped** â€” WP-40 home Ã—8 |
+| `npm run test:visual -- --grep "PUBLIC-270\|WP-40 home"` | 0 | **38 passed, 1 skipped** — WP-40 home ×8 |
 | `npm run report:visual-compare` | 0 | **39 / 48** honest pairs (home viewport-aware pairing @ `cc4b851`) |
-| GitHub Actions CI @ `cc4b851` | pass | [run 33576370767](https://github.com/tahamohammadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33576370767) â€” `main`; [run 33576373403](https://github.com/tahamohammadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33576373403) â€” `cx/public-recovery-integration` |
+| GitHub Actions CI @ `cc4b851` | pass | [run 33576370767](https://github.com/tahamohammadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33576370767) — `main`; [run 33576373403](https://github.com/tahamohammadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33576373403) — `cx/public-recovery-integration` |
 
 ### Prior gate summary (`7c6efc3`)
 
 | Command | Exit | Summary |
 |---|---:|---|
-| `npm test` (Vitest) | 0 | **228 passed** â€” PF-03..PF-08 structural empty-state behavior tests |
+| `npm test` (Vitest) | 0 | **228 passed** — PF-03..PF-08 structural empty-state behavior tests |
 | `npm run lint` | 0 | ESLint flat config |
 | `npm run format:check` | 0 | Prettier + `prettier-plugin-astro` |
 | `npm run validate:design` | 0 | 24 components, 6 templates |
 | `npm run validate:seo` | 0 | sitemap, canonical/hreflang, Pagefind bundles |
 | `npm run build` | 0 | 23 static pages |
 | `npm run test:nojs` | 0 | **23 passed** |
-| `npm run test:visual -- --grep "PUBLIC-270\|WP-40 home"` | 0 | **38 passed, 1 skipped** â€” PF-02 detail open; WP-40 home Ã—8 |
+| `npm run test:visual -- --grep "PUBLIC-270\|WP-40 home"` | 0 | **38 passed, 1 skipped** — PF-02 detail open; WP-40 home ×8 |
 | `npm run report:visual-compare` | 0 | **39 / 48** pairs ready (44 PNGs; home pairing fixed @ `cc4b851`) |
-| GitHub Actions CI @ `7c6efc3` | pass | [run 33575027666](https://github.com/tahamohammadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33575027666) â€” `main`; [run 33575042389](https://github.com/tahamohammadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33575042389) â€” `cx/public-recovery-integration` |
+| GitHub Actions CI @ `7c6efc3` | pass | [run 33575027666](https://github.com/tahamohammadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33575027666) — `main`; [run 33575042389](https://github.com/tahamohammadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33575042389) — `cx/public-recovery-integration` |
 
 ### Prior gate summary (`3a54130`)
 
 | Command | Exit | Summary |
 |---|---:|---|
-| `npm test` (Vitest) | 0 | **228 passed** â€” includes `public-270-visual-compare.test.ts` harness |
+| `npm test` (Vitest) | 0 | **228 passed** — includes `public-270-visual-compare.test.ts` harness |
 | `npm run lint` | 0 | ESLint flat config (Astro + TypeScript + Prettier disable) |
 | `npm run format:check` | 0 | Prettier + `prettier-plugin-astro`; byte-pinned paths excluded via `.prettierignore` |
 | `npm run validate:design` | 0 | 24 components, 6 templates |
 | `npm run validate:seo` | 0 | sitemap-index.xml, robots.txt, canonical/hreflang, per-locale Pagefind bundles |
 | `npm run build` | 0 | 23 static pages |
-| `npm run test:foundation` | 0 | **6 passed** â€” WP-10 theme + PUBLIC-060 locale font computed styles |
-| `npm run test:performance` | 0 | **6 passed** â€” home EN/FA + creative EN LCP/CLS, font preloads, font-display swap, theme-toggle INP (1 flaky retry on first run) |
-| `npm run test:nojs` | 0 | **23 passed** â€” gateway, home, PF index routes, search with JS disabled |
-| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** â€” PF-02 creative detail open |
-| `npm run test:visual -- --grep PUBLIC-280` | 0 | **216 passed** â€” 6 widths Ã— 2 locales Ã— 2 themes on PF-01, PF-03..PF-08 index routes |
-| `npm run test:smoke` | 0 | **1 skipped** â€” `PUBLIC_STAGING_SITE_URL` unset (expected until BACKEND-180 staging) |
+| `npm run test:foundation` | 0 | **6 passed** — WP-10 theme + PUBLIC-060 locale font computed styles |
+| `npm run test:performance` | 0 | **6 passed** — home EN/FA + creative EN LCP/CLS, font preloads, font-display swap, theme-toggle INP (1 flaky retry on first run) |
+| `npm run test:nojs` | 0 | **23 passed** — gateway, home, PF index routes, search with JS disabled |
+| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** — PF-02 creative detail open |
+| `npm run test:visual -- --grep PUBLIC-280` | 0 | **216 passed** — 6 widths × 2 locales × 2 themes on PF-01, PF-03..PF-08 index routes |
+| `npm run test:smoke` | 0 | **1 skipped** — `PUBLIC_STAGING_SITE_URL` unset (expected until BACKEND-180 staging) |
 | `npm run report:visual-compare` | 0 | **43 / 48** pairs ready from 44 PNG captures (see Owner visual review artifacts) |
-| GitHub Actions CI @ `3a54130` | pass | [run 33569434903](https://github.com/tahamohamadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33569434903) â€” lint, format check, unit, design, SEO, build |
+| GitHub Actions CI @ `3a54130` | pass | [run 33569434903](https://github.com/tahamohamadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33569434903) — lint, format check, unit, design, SEO, build |
 
 ### Prior gate summary (`faafdac`)
 
@@ -376,45 +376,45 @@ Full local gate sweep @ `faafdac` / coordination `a07b49f` (2026-09-01). Playwri
 
 | Command | Exit | Summary |
 |---|---:|---|
-| `npm test` (Vitest) | 0 | **223 passed** â€” home published-link gating, PUBLIC-212 parent-family coverage |
+| `npm test` (Vitest) | 0 | **223 passed** — home published-link gating, PUBLIC-212 parent-family coverage |
 | `npm run lint` | 0 | ESLint flat config (Astro + TypeScript + Prettier disable) |
 | `npm run format:check` | 0 | Prettier + `prettier-plugin-astro`; byte-pinned paths excluded via `.prettierignore` |
 | `npm run validate:design` | 0 | 24 components, 6 templates |
 | `npm run build` | 0 | 23 static pages |
 | `npm run validate:seo` | 0 | sitemap-index.xml, robots.txt, canonical/hreflang, per-locale Pagefind bundles |
-| `npm run test:foundation` | 0 | **6 passed** â€” WP-10 theme + PUBLIC-060 locale font computed styles |
-| `npm run test:performance` | 0 | **6 passed** â€” home EN/FA + creative EN LCP/CLS, font preloads, font-display swap, theme-toggle INP |
-| `npm run test:nojs` | 0 | **23 passed** â€” gateway, home, PF index routes, search with JS disabled |
-| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** â€” PF-02 creative detail open |
-| `npm run test:visual -- --grep PUBLIC-280` | 0 | **216 passed** â€” 6 widths Ã— 2 locales Ã— 2 themes on PF-01, PF-03..PF-08 index routes |
-| `npm run test:smoke` | 0 | **1 skipped** â€” `PUBLIC_STAGING_SITE_URL` unset (expected until BACKEND-180 staging) |
-| CI workflow | present | `.github/workflows/ci.yml` â€” lint, format check, unit, design, SEO, build on push/PR |
+| `npm run test:foundation` | 0 | **6 passed** — WP-10 theme + PUBLIC-060 locale font computed styles |
+| `npm run test:performance` | 0 | **6 passed** — home EN/FA + creative EN LCP/CLS, font preloads, font-display swap, theme-toggle INP |
+| `npm run test:nojs` | 0 | **23 passed** — gateway, home, PF index routes, search with JS disabled |
+| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** — PF-02 creative detail open |
+| `npm run test:visual -- --grep PUBLIC-280` | 0 | **216 passed** — 6 widths × 2 locales × 2 themes on PF-01, PF-03..PF-08 index routes |
+| `npm run test:smoke` | 0 | **1 skipped** — `PUBLIC_STAGING_SITE_URL` unset (expected until BACKEND-180 staging) |
+| CI workflow | present | `.github/workflows/ci.yml` — lint, format check, unit, design, SEO, build on push/PR |
 | Atlas leak check | pass | no `/_design` in production build |
 
 ### Prior gate summary (`fad71e0`)
 
 | Command | Exit | Summary |
 |---|---:|---|
-| `npm test` (Vitest) | 0 | **223 passed** â€” includes home published-link gating, PUBLIC-212 parent-family coverage |
+| `npm test` (Vitest) | 0 | **223 passed** — includes home published-link gating, PUBLIC-212 parent-family coverage |
 | `npm run lint` | 0 | ESLint flat config (Astro + TypeScript + Prettier disable) |
 | `npm run format:check` | 0 | Prettier + `prettier-plugin-astro`; byte-pinned paths excluded via `.prettierignore` |
 | `npm run validate:design` | 0 | 24 components, 6 templates |
 | `npm run build` | 0 | 23 static pages |
 | `npm run validate:seo` | 0 | sitemap-index.xml, robots.txt, canonical/hreflang, per-locale Pagefind bundles |
-| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** â€” re-run 2026-09-01 @ `fad71e0`; PF-02 detail open |
+| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** — re-run 2026-09-01 @ `fad71e0`; PF-02 detail open |
 | `npm run test:visual -- --grep PUBLIC-280` | not re-run | Last green on `f3acb24` (216 passed) |
 | `npm run test:nojs` | not re-run | Last green on `f3acb24` (23 passed) |
 | `npm run test:foundation` | not re-run | Last green on `f3acb24` (6 passed) |
 | `npm run test:performance` | not re-run | Last green on `f3acb24` (6 passed) |
 | `npm run test:smoke` | not re-run | Last run on `95df072` (1 skipped) |
-| CI workflow | present | `.github/workflows/ci.yml` â€” lint, format check, unit, design, SEO, build on push/PR |
+| CI workflow | present | `.github/workflows/ci.yml` — lint, format check, unit, design, SEO, build on push/PR |
 | Atlas leak check | pass | no `/_design` in production build |
 
 ### Prior gate summary (`f3acb24`)
 
 | Command | Exit | Summary |
 |---|---:|---|
-| `npm test` (Vitest) | 0 | **205 passed** â€” includes `public-011.toolchain.test.ts`; contract fixtures re-synced with backend authoritative copies |
+| `npm test` (Vitest) | 0 | **205 passed** — includes `public-011.toolchain.test.ts`; contract fixtures re-synced with backend authoritative copies |
 | `npm run lint` | 0 | ESLint flat config (Astro + TypeScript + Prettier disable) |
 | `npm run format:check` | 0 | Prettier + `prettier-plugin-astro`; byte-pinned paths excluded via `.prettierignore` |
 | `npm run validate:design` | 0 | 24 components, 6 templates |
@@ -426,115 +426,115 @@ Full local gate sweep @ `faafdac` / coordination `a07b49f` (2026-09-01). Playwri
 | `npm run test:visual -- --grep PUBLIC-280` | not re-run | Last green on `95df072` (216 passed) |
 | `npm run test:nojs` | not re-run | Last green on `95df072` (23 passed) |
 | `npm run test:smoke` | not re-run | Last run on `95df072` (1 skipped) |
-| CI workflow | present | `.github/workflows/ci.yml` â€” lint, format check, unit, design, SEO, build on push/PR |
+| CI workflow | present | `.github/workflows/ci.yml` — lint, format check, unit, design, SEO, build on push/PR |
 | Atlas leak check | pass | no `/_design` in production build |
 
 ### Prior gate summary (`95df072`)
 
 | Command | Exit | Summary |
 |---|---:|---|
-| `npm test` (Vitest) | 0 | **201 passed** â€” unit + PUBLIC-060 font tokens, PUBLIC-260/261 asset promotion, PUBLIC-270/280 visual scaffolds, PUBLIC-290 performance budget scaffold, PUBLIC-300 no-JS audit scaffold, PUBLIC-310 contract fixture validation, PUBLIC-320 staging smoke scaffold, PUBLIC-230â€“250 routes |
+| `npm test` (Vitest) | 0 | **201 passed** — unit + PUBLIC-060 font tokens, PUBLIC-260/261 asset promotion, PUBLIC-270/280 visual scaffolds, PUBLIC-290 performance budget scaffold, PUBLIC-300 no-JS audit scaffold, PUBLIC-310 contract fixture validation, PUBLIC-320 staging smoke scaffold, PUBLIC-230–250 routes |
 | `npm run validate:design` | 0 | 24 components, 6 templates |
 | `npm run build` | 0 | 23 static pages; promoted preview/rail/brand masters via Astro image pipeline |
 | `npm run validate:seo` | 0 | sitemap-index.xml, robots.txt, canonical/hreflang on sample pages, per-locale Pagefind bundles |
-| `npm run test:foundation -- --grep PUBLIC-060` | 0 | **4 passed** â€” home EN/FA body/display computed `font-family`, locale CSS vars, 200% zoom |
+| `npm run test:foundation -- --grep PUBLIC-060` | 0 | **4 passed** — home EN/FA body/display computed `font-family`, locale CSS vars, 200% zoom |
 | `npm run test:performance` | 0 | **6 passed** - home EN/FA + creative EN LCP/CLS probes, theme-toggle INP on EN home, locale font preloads, font-display swap |
-| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** (PF-02 detail â€” no published creative detail route) |
-| `npm run test:visual -- --grep PUBLIC-280` | 0 | **216 passed** (36 locale-route-theme combos Ã— 6 widths; PF-01..PF-08 dual-theme index matrix minus PF-02 detail) |
-| `npm run test:nojs` | 0 | **23 passed** â€” gateway + home + PF index + search crawl with `javaScriptEnabled: false` (PF-02 detail excluded) |
-| `npm run test:smoke` | 0 | **1 skipped** â€” Playwright `@smoke` probes skip until `PUBLIC_STAGING_SITE_URL` + `BACKEND-180` staging |
-| CI workflow | present | `.github/workflows/ci.yml` â€” unit, design, SEO, build on push/PR |
+| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** (PF-02 detail — no published creative detail route) |
+| `npm run test:visual -- --grep PUBLIC-280` | 0 | **216 passed** (36 locale-route-theme combos × 6 widths; PF-01..PF-08 dual-theme index matrix minus PF-02 detail) |
+| `npm run test:nojs` | 0 | **23 passed** — gateway + home + PF index + search crawl with `javaScriptEnabled: false` (PF-02 detail excluded) |
+| `npm run test:smoke` | 0 | **1 skipped** — Playwright `@smoke` probes skip until `PUBLIC_STAGING_SITE_URL` + `BACKEND-180` staging |
+| CI workflow | present | `.github/workflows/ci.yml` — unit, design, SEO, build on push/PR |
 | Atlas leak check | pass | no `/_design` in production build |
 
 ---
 
 ## Findings
 
-### F-01 â€” PUBLIC-180 âœ… cleared (2026-09-01)
+### F-01 — PUBLIC-180 ? cleared (2026-09-01)
 
 Dedicated `ContentState` components with matrix tests landed in `f1e57a6`. Re-verified on subsequent commit with 118 Vitest tests.
 
-### F-02 â€” Manual visual acceptance (blocking)
+### F-02 — Manual visual acceptance (blocking)
 
 Owner/concept comparison matrix and screenshot SHA-256 evidence still required per `VISUAL-QA-CONTRACT.md`. PUBLIC-270 automated index captures at 1440/390 are green (36 passed); manual owner compare columns remain open.
 
-### F-03 â€” Page-family utility routes expanded
+### F-03 — Page-family utility routes expanded
 
 `PUBLIC-230` Contact/CV and `PUBLIC-240` Search routes are built with API-only/unavailable honesty. `PUBLIC-250` adds sitemap, robots, and `validate:seo` gate. Header links for contact, cv, and search resolve to built pages.
 
-### F-04 â€” Asset promotion Group A/B staged (not visual acceptance)
+### F-04 — Asset promotion Group A/B staged (not visual acceptance)
 
 `PUBLIC-260` (decorative atmosphere) and `PUBLIC-261` (project previews, rail decorative, brand shell) promote masters to `src/assets/media`, wire Header/Footer to `PromotedPicture brand.mark`, and remove legacy `public/media` copies. Runtime contract staged per ledger; manual concept comparison and owner sign-off still required.
 
-### F-05 â€” PUBLIC-270 visual capture scaffold (not acceptance)
+### F-05 — PUBLIC-270 visual capture scaffold (not acceptance)
 
 Playwright `@visual` stubs capture PF-01..PF-08 index routes at 1440 and 390 CSS px. Evidence checklist: `Front-End/public-site/docs/quality/PUBLIC-270-PAGE-FAMILY-VISUAL-EVIDENCE.md`. PF-02 detail remains skipped until a published creative detail route exists in the static build.
 
-### F-06 â€” PUBLIC-280 responsive matrix expanded (not acceptance)
+### F-06 — PUBLIC-280 responsive matrix expanded (not acceptance)
 
-Six-width dual-theme capture harness (320â€“1440 CSS px, light + dark) now covers PF-01 and PF-03..PF-08 index routes (216 captures). **320px horizontal overflow** on EN creative index cleared via narrow shell utility tightening; overflow gate applies at all matrix widths. PF-02 detail remains open.
+Six-width dual-theme capture harness (320–1440 CSS px, light + dark) now covers PF-01 and PF-03..PF-08 index routes (216 captures). **320px horizontal overflow** on EN creative index cleared via narrow shell utility tightening; overflow gate applies at all matrix widths. PF-02 detail remains open.
 
-### F-07 â€” PUBLIC-012 Phase 1 CI (not acceptance)
+### F-07 — PUBLIC-012 Phase 1 CI (not acceptance)
 
 `.github/workflows/ci.yml` added on `main` @ `4931455`: `npm ci`, unit tests, `validate:design`, `validate:seo`, `build` on push/PR. Playwright visual gates remain local-only.
 
-### F-08 â€” PUBLIC-290 performance budget scaffold (not acceptance)
+### F-08 — PUBLIC-290 performance budget scaffold (not acceptance)
 
 `cx/public-page-families-290` merged to `main` @ `e65b1ec`: local LCP/CLS probes on home EN/FA and creative EN, locale font-preload contract, and `font-display: swap` CSS gate. Evidence: `docs/quality/PUBLIC-290-PERFORMANCE-BUDGET.md`. Production 75th-percentile telemetry and font CLS/preload budget closure remain open (`PUBLIC-290` stays `[~]`).
 
-### F-09 â€” PUBLIC-060 locale font computed-style probes (not acceptance)
+### F-09 — PUBLIC-060 locale font computed-style probes (not acceptance)
 
 `cx/public-page-families-060` merged to `main` @ `56658c4`: Playwright `@foundation` computed-style checks on home EN/FA for `--font-display` / `--font-body` locale wiring, body + h1 `font-family`, and 200% root font-size stability. Evidence: `docs/quality/PUBLIC-060-FONT-COMPUTED-EVIDENCE.md`. FONT-ACQUISITION-PLAN subset/coverage fixtures remain open.
 
-### F-10 â€” PUBLIC-300 no-JS crawl audit (not acceptance)
+### F-10 — PUBLIC-300 no-JS crawl audit (not acceptance)
 
-`cx/public-page-families-300` merged to `main` @ `2b52b6e`: Playwright `@nojs` crawl of all 23 static build routes with JavaScript disabled â€” gateway, home EN/FA, PF-01 and PF-03..PF-08 index routes, and search utility. Evidence: `docs/quality/PUBLIC-300-NO-JS-AUDIT.md`. PF-02 creative detail excluded until a published detail route exists; search results with `?q=` remain a progressive-enhancement surface.
+`cx/public-page-families-300` merged to `main` @ `2b52b6e`: Playwright `@nojs` crawl of all 23 static build routes with JavaScript disabled — gateway, home EN/FA, PF-01 and PF-03..PF-08 index routes, and search utility. Evidence: `docs/quality/PUBLIC-300-NO-JS-AUDIT.md`. PF-02 creative detail excluded until a published detail route exists; search results with `?q=` remain a progressive-enhancement surface.
 
-### F-11 â€” PUBLIC-310 contract fixture tests (not acceptance)
+### F-11 — PUBLIC-310 contract fixture tests (not acceptance)
 
 `main` @ `111a96e`: consumer fixtures under `tests/fixtures/contracts/` byte-aligned with backend authoritative copies; Vitest validates OpenAPI component shapes, error matrix rows, and LF-canonical hash pinning. Evidence: `docs/quality/PUBLIC-310-CONTRACT-FIXTURES.md`.
 
-### F-12 â€” PUBLIC-320 integrated staging smoke scaffold (not acceptance)
+### F-12 — PUBLIC-320 integrated staging smoke scaffold (not acceptance)
 
 `main` @ `95df072`: staging harness (`src/test-harness/staging-smoke.ts`), Vitest env-contract tests, and Playwright `@smoke` probes via `npm run test:smoke` / `playwright.staging.config.ts`. Live probes skip honestly when `PUBLIC_STAGING_SITE_URL` is unset (requires `BACKEND-180` staging deployment). Evidence: `docs/quality/PUBLIC-320-STAGING-SMOKE.md`. Does **not** close `PUBLIC-190` or claim production readiness.
 
-### F-13 â€” PUBLIC-011 ESLint + Prettier toolchain (not acceptance)
+### F-13 — PUBLIC-011 ESLint + Prettier toolchain (not acceptance)
 
 `main` @ `b12b017`: `eslint.config.js`, `.prettierrc` + `prettier-plugin-astro`, `npm run lint` / `format:check`, CI lint/format steps, and `public-011.toolchain.test.ts`. Initial Prettier pass excludes byte-pinned design authority and contract fixture paths. Consumer contract fixtures re-synced with current backend authoritative copies for green `PUBLIC-310` gate. Does **not** close `PUBLIC-190`.
 
-### F-14 â€” PUBLIC-013 architecture decision records (not acceptance)
+### F-14 — PUBLIC-013 architecture decision records (not acceptance)
 
 `main` @ `3652fc6`: repository-local ADRs in `docs/architecture/` for npm, Astro static `fa`/`en` routing, static `dist/` deployment, Vitest + Playwright tag matrix, and Chromium/WCAG 2.2 AA browser targets; `src/public-013.adr.test.ts` guard. Does **not** close `PUBLIC-190`.
 
-### F-15 â€” PUBLIC-350 release evidence scaffold (not acceptance)
+### F-15 — PUBLIC-350 release evidence scaffold (not acceptance)
 
-Gate sweep on `f3acb24` re-ran Playwright foundation (6), performance (6), PUBLIC-280 visual (216), and no-JS (23) â€” all green after clean `dist/` rebuild. `PUBLIC-350` ships `docs/quality/PUBLIC-350-RELEASE-EVIDENCE.md`, `src/test-harness/release-evidence.ts`, and `public-350.release-evidence.test.ts` with honest `ready: false` until owner acceptance, staging smoke, and frozen page-family routes close. Does **not** close `PUBLIC-190` or mark R4/R8 complete.
+Gate sweep on `f3acb24` re-ran Playwright foundation (6), performance (6), PUBLIC-280 visual (216), and no-JS (23) — all green after clean `dist/` rebuild. `PUBLIC-350` ships `docs/quality/PUBLIC-350-RELEASE-EVIDENCE.md`, `src/test-harness/release-evidence.ts`, and `public-350.release-evidence.test.ts` with honest `ready: false` until owner acceptance, staging smoke, and frozen page-family routes close. Does **not** close `PUBLIC-190` or mark R4/R8 complete.
 
-### F-16 â€” Home featured cards link to seed slugs without API-backed detail routes âœ… cleared (code)
+### F-16 — Home featured cards link to seed slugs without API-backed detail routes ? cleared (code)
 
 Home featured projects and publications still render from `src/lib/home-content.ts` seed copy with draft notes. At build time, `fetchPublishedHomeLinkSlugs` queries published API slug sets; `HomeFeaturedProjects` and `HomeFeaturedPublications` omit detail `href` values unless the seed slug exists in the published set. Cards remain visible as draft previews; links appear automatically when owner publishes matching API records. Evidence: `home-published-links.ts`, `home-published-links.test.ts`, updated `wp40-home.behavior.test.ts`.
 
-### F-17 â€” Page-family routes implemented but frozen (not acceptance)
+### F-17 — Page-family routes implemented but frozen (not acceptance)
 
-`PUBLIC-201` through `PUBLIC-221` and `PUBLIC-212` (books/talks/downloads embedded in parent families per `ROUTE-REGISTRY.md`) have routes, loaders, and behavior tests on `main`. TASK-LIST updated â€” implemented; frozen pending visual acceptance. Does **not** unfreeze recovery or close `PUBLIC-190`.
+`PUBLIC-201` through `PUBLIC-221` and `PUBLIC-212` (books/talks/downloads embedded in parent families per `ROUTE-REGISTRY.md`) have routes, loaders, and behavior tests on `main`. TASK-LIST updated — implemented; frozen pending visual acceptance. Does **not** unfreeze recovery or close `PUBLIC-190`.
 
-### F-18 â€” Owner visual compare assist (not acceptance)
+### F-18 — Owner visual compare assist (not acceptance)
 
 `scripts/page-family-visual-compare.mjs` maps PUBLIC-270 captures to concept references; `npm run report:visual-compare` generates HTML side-by-side report from existing PNGs with SHA-256 hashes for owner sign-off. Evidence checklist updated in `docs/quality/PUBLIC-270-PAGE-FAMILY-VISUAL-EVIDENCE.md`. Does **not** close `PUBLIC-190` or change verdict to PASS.
 
-### F-19 â€” CI standalone repo fixes (not acceptance)
+### F-19 — CI standalone repo fixes (not acceptance)
 
 Vitest spawn uses cross-platform `npm` (not `npm.cmd` on Linux). PUBLIC-310/PUBLIC-350 skip workspace-sibling checks when Back-End/coordination repos are absent in standalone GitHub CI. Does **not** close `PUBLIC-190`.
 
-### F-21 â€” Owner `review:visual` one-command pipeline (not acceptance)
+### F-21 — Owner `review:visual` one-command pipeline (not acceptance)
 
-`main` @ `4db831d`: `npm run review:visual` runs build â†’ PUBLIC-270 + WP-40 home/gateway captures â†’ `report:visual-compare` â†’ prints `file://` path; optional `-- --serve` on port 4173. QA doc one-sitting quick start updated. Does **not** close `PUBLIC-190` or change verdict to PASS.
+`main` @ `4db831d`: `npm run review:visual` runs build ? PUBLIC-270 + WP-40 home/gateway captures ? `report:visual-compare` ? prints `file://` path; optional `-- --serve` on port 4173. QA doc one-sitting quick start updated. Does **not** close `PUBLIC-190` or change verdict to PASS.
 
-### F-22 â€” Owner Â§4 SHA-256 paste helper (not acceptance)
+### F-22 — Owner §4 SHA-256 paste helper (not acceptance)
 
 After `72b841f`: `npm run report:signoff-hashes` (alias `extract:visual-hashes`) prints a markdown table from local PNGs or `--from-report` against `compare-report.html`. `review:visual` prints the paste helper on completion. Does **not** close `PUBLIC-190` or change verdict to PASS.
 
-### F-20 â€” CI green @ `3a54130` + visual-compare formatting (not acceptance)
+### F-20 — CI green @ `3a54130` + visual-compare formatting (not acceptance)
 
 `main` @ `3a54130`: removes unused `scriptDir` in CI-related scripts; Prettier pass on visual-compare tooling. GitHub Actions green on standalone repo. Does **not** close `PUBLIC-190` or change verdict to PASS.
 
@@ -559,20 +559,20 @@ Compare each implementation screenshot against the matching concept at the same 
 | PF-08 | `contact-dark.png` | `public-270-pf08-{en\|fa}-{1440\|390}-dark.png` |
 | Home | `concepts/home-*.png` (see mapping table in `PUBLIC-270-PAGE-FAMILY-VISUAL-EVIDENCE.md`) | Run `npm run test:visual -- --grep "WP-40 home captures"` then `npm run report:visual-compare` |
 
-**Owner compare assist:** `npm run report:visual-compare` generates `test-results/visual/compare-report.html` â€” side-by-side pairs from existing PNGs. Does **not** change verdict to PASS.
+**Owner compare assist:** `npm run report:visual-compare` generates `test-results/visual/compare-report.html` — side-by-side pairs from existing PNGs. Does **not** change verdict to PASS.
 
 **Regenerate captures:** From repo root: `cd Front-End/public-site && npm run review:visual`. When already in `Front-End/public-site`, run `npm run review:visual` directly.
 
 ### 2. Home page review
 
-WP-40 visual captures use **768px reflow** and **200% zoom** evidence (not 1440/390 â€” those widths apply to PF index routes in PUBLIC-270). See compare-report **Home** section and `scripts/page-family-visual-compare.mjs` `HOME_VISUAL_ENTRIES`.
+WP-40 visual captures use **768px reflow** and **200% zoom** evidence (not 1440/390 — those widths apply to PF index routes in PUBLIC-270). See compare-report **Home** section and `scripts/page-family-visual-compare.mjs` `HOME_VISUAL_ENTRIES`.
 
 **Agent audit @ `7c6efc3` (2026-09-02):** Home structure matches WP-40 authority (orbit hero + tokenized scrim, semantic graph list, section slots). FA 768 pairs against `home-mobile-fa-light-concept-v1.png` (narrow reference); overlay-hero vs side-by-side concept layout reflects WP-40 implementation direction, not missing chrome. **No home code changes warranted.**
 
-**Compare mapping fix @ `cc4b851` (2026-09-02):** `resolveHomeConceptReference()` stops pairing 768px/720px EN captures with 1440 desktop composition concepts. FA light @768/200% keeps `home-mobile-fa-light-concept-v1.png` (390 mobile authority). Gateway 200% now pairs with `language-gateway-dark-concept-v1.png` (layout/affordance only â€” capture is light). Pairs **43 â†’ 39** (removed 5 misleading home pairs; added 1 gateway pair). EN 768/200% and FA dark @768 show capture-only in compare-report.
+**Compare mapping fix @ `cc4b851` (2026-09-02):** `resolveHomeConceptReference()` stops pairing 768px/720px EN captures with 1440 desktop composition concepts. FA light @768/200% keeps `home-mobile-fa-light-concept-v1.png` (390 mobile authority). Gateway 200% now pairs with `language-gateway-dark-concept-v1.png` (layout/affordance only — capture is light). Pairs **43 ? 39** (removed 5 misleading home pairs; added 1 gateway pair). EN 768/200% and FA dark @768 show capture-only in compare-report.
 
 - [ ] Compare home FA **768px light** and **200% zoom** captures against mobile concept in compare-report.
-- [ ] Review home EN **768px** and **200% zoom** captures (capture-only â€” no EN tablet concept in authority).
+- [ ] Review home EN **768px** and **200% zoom** captures (capture-only — no EN tablet concept in authority).
 - [ ] Review **gateway 200% zoom** vs dark gateway concept (theme differs; compare language-choice affordance only).
 - [x] Verify draft notes on featured projects/publications are acceptable for owner preview.
 - [x] Home card link strategy (F-16): link only when slug exists in published API at build; otherwise non-link cards.
@@ -611,6 +611,6 @@ Paste accepted rows below. Check `[ ]` only for captures you explicitly accept.
 
 ## Verdict
 
-**`REVISE`** â€” Remediation stack @ `1c3a3a9` (Phase 0 footer, PF-05/07/08/01â€“06 shells, home gateway, CV void fix, Button centralization); PUBLIC-080 automated a11y green @ `2f35e6e` (**29 / 29**); prior Path A @ `cfce6b4`; compare pairing @ `c14508a` (**39 / 48** ready pairs). Manual owner visual compare, accepted capture hashes, manual a11y, and explicit sign-off still open before `PUBLIC-190` may close.
+**`REVISE`** — Remediation stack @ `1c3a3a9` (Phase 0 footer, PF-05/07/08/01–06 shells, home gateway, CV void fix, Button centralization); PUBLIC-080 automated a11y green @ `2f35e6e` (**29 / 29**); prior Path A @ `cfce6b4`; compare pairing @ `c14508a` (**39 / 48** ready pairs). Manual owner visual compare, accepted capture hashes, manual a11y, and explicit sign-off still open before `PUBLIC-190` may close.
 
-**Goal complete:** NO â€” owner visual compare, manual a11y, and explicit sign-off still required.
+**Goal complete:** NO — owner visual compare, manual a11y, and explicit sign-off still required.
