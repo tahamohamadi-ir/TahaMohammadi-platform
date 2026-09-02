@@ -3,7 +3,7 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `dd515a0` (PF visual fidelity Path A: pagination/theme-explore shells, featured card styling, hero/masonry tweaks; compare pairing fix @ `c14508a`; still `REVISE`)  
-**Coordination commit:** `041d61d` (pending update)  
+**Coordination commit:** `2bd4d4a`  
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
 
