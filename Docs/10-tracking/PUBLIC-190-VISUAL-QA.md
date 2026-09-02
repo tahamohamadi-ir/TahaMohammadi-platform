@@ -3,7 +3,7 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `2f35e6e` (PUBLIC-080 a11y contrast @ `2f35e6e` atop remediation stack @ `1c3a3a9`: Phase 0 footer, PF-05, PF-07/08, PF-01?06 home gateway, CV void fix, Button centralization; prior Path A @ `cfce6b4`; compare pairing @ `c14508a`; still `REVISE`)  
-**Coordination commit:** `54c02b0`  
+**Coordination commit:** `9732e8a`  
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
 
