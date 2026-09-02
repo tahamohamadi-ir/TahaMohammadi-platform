@@ -2,14 +2,36 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `888ccc1` (PUBLIC-080 a11y crawl @ `572d6de`; format fix @ `888ccc1`; still `REVISE` — manual compare required)
-**Coordination commit:** `bd21b3f`
+**Public-site commit:** `0e84e69` (WP-40 `review:visual` Windows dist snapshot @ `0e84e69`; still `REVISE` — manual compare required)
+**Coordination commit:** `301a2e6` (prior pin @ `888ccc1`; this sweep updates to `0e84e69`)
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
 
 ---
 
-## Automated gate summary (`888ccc1`)
+## Automated gate summary (`0e84e69`)
+
+Full local gate sweep @ `0e84e69` (2026-09-02). Clean `dist/` rebuild once; Playwright suites run with `TM_E2E_SKIP_BUILD=1` after build (Windows `npm.cmd` spawn without skip-build fails EINVAL in webServer — known; `review:visual` pre-builds + snapshots dist @ `0e84e69`).
+
+| Command | Exit | Summary |
+|---|---:|---|
+| `npm test` (Vitest) | 0 | **232 passed** — includes `public-080.a11y-audit.test.ts`, `public-350.release-evidence.test.ts` |
+| `npm run lint` | 0 | ESLint flat config |
+| `npm run format:check` | 0 | Prettier + `prettier-plugin-astro` |
+| `npm run validate:design` | 0 | 24 components, 6 templates |
+| `npm run validate:seo` | 0 | sitemap, canonical/hreflang, Pagefind bundles |
+| `npm run build` | 0 | 23 static pages |
+| `npm run test:foundation` | 0 | **6 passed** (`TM_E2E_SKIP_BUILD=1`) |
+| `npm run test:performance` | 0 | **6 passed** |
+| `npm run test:nojs` | 0 | **23 passed** |
+| `npm run test:a11y` | 0 | **29 passed** — WCAG 2.2 AA crawl + foundation probes (`PUBLIC-080`) |
+| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** — PF-02 detail open |
+| `npm run test:visual -- --grep PUBLIC-280` | 0 | **216 passed** |
+| `npm run test:smoke` | — | **1 skipped** — `PUBLIC_STAGING_SITE_URL` unset (expected until BACKEND-180 staging) |
+| `npm run review:visual` | 0 | Owner assist — **38 passed**, compare **39 / 48** ready pairs (owner run 2026-09-02; signoff hashes extracted via `report:signoff-hashes`) |
+| GitHub Actions CI @ `0e84e69` | pass | [run 33621056144](https://github.com/tahamohammadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33621056144) — `main` + `cx/public-recovery-integration` |
+
+### Prior gate summary (`888ccc1`)
 
 Full local gate sweep @ `888ccc1` (2026-09-02). Playwright suites run with `--workers=1` after clean `dist/` rebuild between commands; a11y webServer failed once on concurrent build (Windows EPERM) — green after clean rebuild (known @ `cc4b851`); nojs search-fa flaky once — green on retry.
 
@@ -422,6 +444,6 @@ Paste accepted rows below. Check `[ ]` only for captures you explicitly accept.
 
 ## Verdict
 
-**`REVISE`** — Owner `review:visual` one-command assist @ `4db831d`; home compare mappings fixed @ `cc4b851` (39/48 honest pairs); PF-01..PF-08 structural empty-state @ `7c6efc3`; manual owner visual acceptance and a11y still open before `PUBLIC-190` may close.
+**`REVISE`** — Full automated gate sweep green @ `0e84e69`; owner `review:visual` **38 passed / 39 ready pairs** (signoff hash table extracted); home compare mappings fixed @ `cc4b851`; PF-01..PF-08 structural empty-state @ `7c6efc3`; manual owner visual acceptance, §4 accepted hashes, and manual a11y still open before `PUBLIC-190` may close.
 
 **Goal complete:** NO — owner visual compare, manual a11y, and explicit sign-off still required.
