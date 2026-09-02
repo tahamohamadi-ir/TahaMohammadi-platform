@@ -2,8 +2,8 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `7c6efc3` (PF-01..PF-08 structural empty-state chrome)
-**Coordination commit:** `7a7d3f4`
+**Public-site commit:** `cc4b851` (viewport-aware home visual compare pairing)
+**Coordination commit:** `aa3360b`
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
 
@@ -27,7 +27,7 @@ Prep owner review flagged PF-01..PF-08 index routes as bare `ContentState` vs pa
 
 All families keep honest `ContentState` `empty` copy — no invented records, titles, dates, or images. `template-base.css` uses `box-sizing: border-box` on `tm-template__main` for PUBLIC-280 @320 overflow.
 
-PF-01..PF-08 captures regenerated (PUBLIC-270 ×36, PUBLIC-280 ×216, WP-40 home ×8). Compare report **43 / 48** pairs ready. Visual alignment improved; owner manual compare and sign-off still required — **does not change verdict to PASS**.
+PF-01..PF-08 captures regenerated (PUBLIC-270 ×36, PUBLIC-280 ×216, WP-40 home ×8). Compare report **39 / 48** pairs ready (viewport-aware home pairing @ `cc4b851`). Visual alignment improved; owner manual compare and sign-off still required — **does not change verdict to PASS**.
 
 ---
 
@@ -43,7 +43,7 @@ Captures regenerated 2026-09-01 in one Playwright session (avoids `test-results/
 |---|---|
 | PNG capture count | **44** (`test-results/visual/*.png`) — 36 PUBLIC-270 index + 8 WP-40 home/gateway |
 | Compare report | `Front-End/public-site/test-results/visual/compare-report.html` |
-| Pairs ready | **43 / 48** (PF-02 detail ×4 optional; gateway has no concept pair) |
+| Pairs ready | **39 / 48** (PF-02 detail ×4 optional; EN 768/200% and FA dark 768 are capture-only — no width-matched concept) |
 | Regenerate | `cd Front-End/public-site && npm run build && npx playwright test --grep "PUBLIC-270\|WP-40 home captures\|WP-40 home and gateway capture" --workers=1 && npm run report:visual-compare` |
 
 Open `compare-report.html` locally for side-by-side concept comparison. Does **not** change verdict to PASS.
@@ -75,7 +75,7 @@ Full local gate sweep @ `7c6efc3` / coordination `7a7d3f4` (2026-09-02). Playwri
 | `npm run build` | 0 | 23 static pages |
 | `npm run test:nojs` | 0 | **23 passed** |
 | `npm run test:visual -- --grep "PUBLIC-270\|WP-40 home"` | 0 | **38 passed, 1 skipped** — PF-02 detail open; WP-40 home ×8 |
-| `npm run report:visual-compare` | 0 | **43 / 48** pairs ready (44 PNGs) |
+| `npm run report:visual-compare` | 0 | **39 / 48** pairs ready (44 PNGs; home pairing fixed @ `cc4b851`) |
 | GitHub Actions CI @ `7c6efc3` | pass | [run 33575027666](https://github.com/tahamohamadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33575027666) — `main`; [run 33575042389](https://github.com/tahamohamadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33575042389) — `cx/public-recovery-integration` |
 
 ### Prior gate summary (`3a54130`)
@@ -286,10 +286,13 @@ Compare each implementation screenshot against the matching concept at the same 
 
 WP-40 visual captures use **768px reflow** and **200% zoom** evidence (not 1440/390 — those widths apply to PF index routes in PUBLIC-270). See compare-report **Home** section and `scripts/page-family-visual-compare.mjs` `HOME_VISUAL_ENTRIES`.
 
-**Agent audit @ `7c6efc3` (2026-09-02):** Home structure matches WP-40 authority (orbit hero + tokenized scrim, semantic graph list, section slots). EN 768 captures pair against 1440 desktop concepts — width mismatch is documented in `HOME_VISUAL_ENTRIES` notes, not a structural defect. FA 768 pairs against `home-mobile-fa-light-concept-v1.png` (narrow reference); overlay-hero vs side-by-side concept layout reflects WP-40 implementation direction, not missing chrome. **No home code changes warranted.**
+**Agent audit @ `7c6efc3` (2026-09-02):** Home structure matches WP-40 authority (orbit hero + tokenized scrim, semantic graph list, section slots). FA 768 pairs against `home-mobile-fa-light-concept-v1.png` (narrow reference); overlay-hero vs side-by-side concept layout reflects WP-40 implementation direction, not missing chrome. **No home code changes warranted.**
 
-- [ ] Compare home EN/FA **768px** captures (light + dark) against concept references in compare-report.
-- [ ] Review **200% zoom** home EN/FA + gateway captures for readability (gateway has no concept pair — review route choice manually).
+**Compare mapping fix @ `cc4b851` (2026-09-02):** `resolveHomeConceptReference()` stops pairing 768px/720px EN captures with 1440 desktop composition concepts. FA light @768/200% keeps `home-mobile-fa-light-concept-v1.png` (390 mobile authority). Gateway 200% now pairs with `language-gateway-dark-concept-v1.png` (layout/affordance only — capture is light). Pairs **43 → 39** (removed 5 misleading home pairs; added 1 gateway pair). EN 768/200% and FA dark @768 show capture-only in compare-report.
+
+- [ ] Compare home FA **768px light** and **200% zoom** captures against mobile concept in compare-report.
+- [ ] Review home EN **768px** and **200% zoom** captures (capture-only — no EN tablet concept in authority).
+- [ ] Review **gateway 200% zoom** vs dark gateway concept (theme differs; compare language-choice affordance only).
 - [x] Verify draft notes on featured projects/publications are acceptable for owner preview.
 - [x] Home card link strategy (F-16): link only when slug exists in published API at build; otherwise non-link cards.
 
@@ -317,6 +320,6 @@ WP-40 visual captures use **768px reflow** and **200% zoom** evidence (not 1440/
 
 ## Verdict
 
-**`REVISE`** — PF-01..PF-08 structural empty-state shipped @ `7c6efc3` (hero + filter/section shells + placeholders; honest empty copy); GitHub CI green @ `7c6efc3`; full automated gates re-verified locally (2026-09-02); compare report 43/48 pairs; home 768px audit found documented width/concept pairing only — no code fix; manual owner visual acceptance and a11y still open before `PUBLIC-190` may close.
+**`REVISE`** — Home compare mappings fixed @ `cc4b851` (`resolveHomeConceptReference`; 39/48 honest pairs); PF-01..PF-08 structural empty-state @ `7c6efc3`; GitHub CI green; manual owner visual acceptance and a11y still open before `PUBLIC-190` may close.
 
 **Goal complete:** NO — owner visual compare, manual a11y, and explicit sign-off still required.
