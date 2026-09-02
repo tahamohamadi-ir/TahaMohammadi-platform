@@ -28,10 +28,22 @@ Agent gap analysis after owner screenshots (PF-01, PF-04–PF-08, home mobile FA
 | PF-08 contact atmosphere | **C** | Gateway atmosphere via hero theme media |
 | Hero descriptions, featured titles, grid CMS records | **A** | Blocked — no invented API/CMS copy |
 | Nav labels Creative/Writing vs concept Gallery/Blog | **D/A** | Route registry labels; not visual chrome |
-| Home mobile FA overlay vs side-by-side concept | **D/C** | WP-40 overlay direction documented @ `cc4b851`; not re-opened |
+| Home mobile FA overlay vs side-by-side concept | **B/C** | Stacked hero reflow + CTAs @ `cfce6b4`; prior overlay direction @ `cc4b851` |
 | Gateway 200% light vs dark concept | **D** | Compare pairs affordance only; theme differs by design |
 | PF-01/03/04 pagination + writing theme-explore | **B/C** | `PageFamilyPaginationShell`, `PageFamilyThemeExploreShell`; per-family featured card styling @ `dd515a0` |
 | PF-01 hero media proportion + masonry dense grid | **B/C** | Hero 42% media column, taller min-height; grid-auto-flow dense @ `dd515a0` |
+| Shared SiteFooter | **B/C** | 4-col brand+bio+social, Explore, Resources, Connect; legal row @ `cfce6b4` |
+| PF-07 About empty | **B/C** | Profile hero + CTAs, sub-nav, How I Work, journey flow, split timeline, skills 4-col, selected outputs, downloads, collaborate band @ `cfce6b4` |
+| PF-07 CV empty | **B/C** | Profile hero, sub-nav, skills, outputs, downloads, collaborate @ `cfce6b4` |
+| PF-08 Contact empty | **B/C** | Sidebar checklist, topic/method cards, full form fields, FAQ, send workflow @ `cfce6b4` |
+| PF-05 Publications empty | **B/C** | Related-records sidebar, selected publications badges, collaborate band @ `cfce6b4` |
+| PF-06 Teaching empty | **B/C** | Path process row (4 steps), list-card tags/level/duration, collaborate band @ `cfce6b4` |
+| PF-04 Projects empty | **B/C** | Sort dropdown shell @ `cfce6b4` |
+| PF-05 Research constellation | **C** | Center brand mark on constellation backplate @ `cfce6b4` |
+| Home FA mobile hero | **B/C** | Stacked layout (image top, copy+CTAs below), hero action buttons @ `cfce6b4` |
+| CMS profile copy, publication titles, contact email/ORCID | **A** | Blocked — honest placeholders only (`Awaiting approved CMS copy`) |
+| Sub-nav tab switching (About/Research) | **A/D** | Structural disabled chrome; no invented tab content |
+| Constellation concept-art fidelity | **C/D** | CSS/SVG shell; not full illustrated concept asset |
 
 Owner manual compare, a11y checks, and explicit sign-off still required before PASS.
 
@@ -44,13 +56,27 @@ Full per-pair gap analysis + phased fix plan: [`PUBLIC-190-VISUAL-REMEDIATION-PL
 | Compare rows | 48 |
 | Ready pairs analyzed | **39** |
 | Non-ready (PF-02 skip + home capture-only) | 9 |
-| Public-site commit | `dd515a0` |
-| Subagent `9c29878c` | No commits — shells exist @ `dd515a0`; next pass = CSS/SVG fidelity |
+| Public-site commit | `cfce6b4` |
+| Subagent `9c29878c` | Committed @ `cfce6b4` — 16 new PF shells + footer + home hero reflow |
 | Top P0 themes | Template render void (PF-05P/CV), footer/header chrome, constellation/portal SVG, profile hero, home FA split layout |
 
 ---
 
-## Automated gate summary (`dd515a0`)
+## Automated gate summary (`cfce6b4`)
+
+Path A concept-shell pass @ `cfce6b4` (2026-09-02). Shared footer + PF-07/08/05/06/04 empty-state shells; home FA hero reflow. Gates: **242** Vitest passed, lint 0, format 0, build 0 (23 pages), a11y **29** passed.
+
+| Command | Exit | Summary |
+|---|---:|---|
+| `npm test` (Vitest) | 0 | **242 passed** — PF shell behavior tests updated |
+| `npm run lint` | 0 | ESLint flat config |
+| `npm run format:check` | 0 | Prettier + `prettier-plugin-astro` |
+| `npm run build` | 0 | 23 static pages |
+| `npm run test:a11y` | 0 | **29 passed** — footer cms-note contrast fix |
+
+`review:visual` not re-run in agent sweep — owner must regenerate captures and compare after deploy.
+
+### Prior gate summary (`dd515a0`)
 
 Path A visual fidelity slice @ `dd515a0` (2026-09-02). Pagination/theme-explore shells, per-family featured styling, hero/masonry proportion tweaks. Gates: **239** Vitest passed, lint 0, build 0 (23 pages).
 
@@ -540,6 +566,6 @@ Paste accepted rows below. Check `[ ]` only for captures you explicitly accept.
 
 ## Verdict
 
-**`REVISE`** — Path A visual fidelity @ `dd515a0` (pagination/theme-explore shells, featured card styling, hero/masonry tweaks); compare pairing fix @ `c14508a` (**39 / 48** ready pairs); manual owner visual compare, ≤4 accepted hashes, and manual a11y still open before `PUBLIC-190` may close.
+**`REVISE`** — Path A concept-shell pass @ `cfce6b4` (4-col footer, PF-07/08/05/06/04 shells, home FA hero reflow); prior pagination/theme-explore @ `dd515a0`; compare pairing fix @ `c14508a` (**39 / 48** ready pairs — re-run `review:visual` after this commit); manual owner visual compare, accepted hashes, and manual a11y still open before `PUBLIC-190` may close.
 
 **Goal complete:** NO — owner visual compare, manual a11y, and explicit sign-off still required.
