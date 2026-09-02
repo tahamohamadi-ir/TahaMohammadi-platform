@@ -3,7 +3,7 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `d5e5f1b` (gate sweep @ `c38cfa9` + tooling fix; page-family shells `6246b12` + portal/home/gateway + ADR-ANIMATION.md; still `REVISE`)  
-**Coordination commit:** _(pending sync)_  
+**Coordination commit:** `6d7742d`  
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
 
