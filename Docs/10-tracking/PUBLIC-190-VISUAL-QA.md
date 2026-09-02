@@ -3,7 +3,7 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `4db831d` (owner `npm run review:visual` one-command pipeline)
-**Coordination commit:** `pending` (sync after gate sweep)
+**Coordination commit:** `e05b995`
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
 
