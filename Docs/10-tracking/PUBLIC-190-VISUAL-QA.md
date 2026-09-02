@@ -3,7 +3,7 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `67a5c4c` (§4 paste helper `npm run report:signoff-hashes` / `extract:visual-hashes`; feature @ `72b841f`; format @ `67a5c4c`; still `REVISE` — manual compare required)
-**Coordination commit:** `1c43690`
+**Coordination commit:** `9ca3e76`
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
 
