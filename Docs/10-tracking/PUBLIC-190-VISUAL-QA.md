@@ -2,8 +2,8 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `cfce6b4` (Path A: shared 4-col footer + PF-07/08/05/06/04 concept shells, home FA hero reflow; prior pagination/theme-explore @ `dd515a0`; compare pairing fix @ `c14508a`; still `REVISE`)  
-**Coordination commit:** `4339080`  
+**Public-site commit:** `1c3a3a9` (P0 #1 template void fix @ `bfc77aa`/`e83eda3`/`54f8a36` + PF-01–08 remediation stack; prior Path A @ `cfce6b4`; compare pairing fix @ `c14508a`; still `REVISE`)  
+**Coordination commit:** `1777aa4`  
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
 
@@ -58,7 +58,25 @@ Full per-pair gap analysis + phased fix plan: [`PUBLIC-190-VISUAL-REMEDIATION-PL
 | Non-ready (PF-02 skip + home capture-only) | 9 |
 | Public-site commit | `cfce6b4` |
 | Subagent `9c29878c` | Committed @ `cfce6b4` — 16 new PF shells + footer + home hero reflow |
-| Top P0 themes | Template render void (PF-05P/CV), footer/header chrome, constellation/portal SVG, profile hero, home FA split layout |
+| Top P0 themes | Template render void (PF-05P/CV) **addressed @ `bfc77aa`**, footer/header chrome, constellation/portal SVG, profile hero, home FA split layout |
+
+---
+
+## P0 #1 gate note — PF index template void (`1c3a3a9`, agent e7b5ea02)
+
+**Verdict:** `REVISE` (unchanged — owner compare + sign-off still required)
+
+**Root cause:** PF index shells (`pf-index-*`, `tm-template__*`) were not co-loaded on all routes — About imported legacy `about.css` only; empty-state pages lacked full-width override for publications/research; `template-base.css` layout tokens could fail to bundle when templates rendered without the page-family stylesheet graph.
+
+**Fix (public-site):** `@import template-base.css` in `page-families.css`; About routes load `page-families.css`; `.publications-page--empty` / `.research-page--empty` full-width parity with CV; `tm-template__main` min-height guard; publications collaborate band `context="publications"`; dist HTML chrome regression test `public-190.pf-index-chrome-build.test.ts`.
+
+| Command | Exit | Summary |
+|---|---:|---|
+| `npm run lint` | 0 | ESLint flat config |
+| `npm test` (Vitest) | 0 | **244 passed** (includes PF index dist chrome test) |
+| `npm run build` | 0 | 23 static pages |
+
+`review:visual` not re-run — owner must regenerate PF-05P/CV captures after deploy.
 
 ---
 
