@@ -2,8 +2,8 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `6246b12` (page-family empty chrome @ agent sweep 2026-09-02; still `REVISE`)  
-**Coordination commit:** `3b84e91`  
+**Public-site commit:** `d5e5f1b` (gate sweep @ `c38cfa9` + tooling fix; page-family shells `6246b12` + portal/home/gateway + ADR-ANIMATION.md; still `REVISE`)  
+**Coordination commit:** _(pending sync)_  
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
 
@@ -33,7 +33,28 @@ Owner manual compare, a11y checks, and explicit sign-off still required before P
 
 ---
 
-## Automated gate summary (`0e84e69`)
+## Automated gate summary (`d5e5f1b`)
+
+Full local gate sweep @ `d5e5f1b` (2026-09-02). Base implementation `c38cfa9`; tooling fix ignores `.e2e-serve-dist/` in ESLint/Prettier (stops CI lint noise from Playwright dist snapshots). Clean `dist/` rebuild once; Playwright suites run with `TM_E2E_SKIP_BUILD=1` after build (Windows `npm.cmd` spawn without skip-build fails EINVAL in webServer — known; `review:visual` pre-builds + snapshots dist).
+
+| Command | Exit | Summary |
+|---|---:|---|
+| `npm test` (Vitest) | 0 | **235 passed** — includes `public-080.a11y-audit.test.ts`, `public-350.release-evidence.test.ts` |
+| `npm run lint` | 0 | ESLint flat config (`.e2e-serve-dist/` ignored) |
+| `npm run format:check` | 0 | Prettier + `prettier-plugin-astro` |
+| `npm run validate:design` | 0 | 24 components, 6 templates |
+| `npm run validate:seo` | 0 | sitemap, canonical/hreflang, Pagefind bundles |
+| `npm run build` | 0 | 23 static pages |
+| `npm run test:foundation` | 0 | **6 passed** (`TM_E2E_SKIP_BUILD=1`) |
+| `npm run test:performance` | 0 | **6 passed** |
+| `npm run test:nojs` | 0 | **23 passed** |
+| `npm run test:a11y` | 0 | **29 passed** — WCAG 2.2 AA crawl + foundation probes (`PUBLIC-080`) |
+| `npm run test:visual -- --grep PUBLIC-270` | — | Covered by `review:visual` (38 passed, 1 skipped) |
+| `npm run test:visual -- --grep PUBLIC-280` | 0 | **216 passed** |
+| `npm run test:smoke` | — | **1 skipped** — `PUBLIC_STAGING_SITE_URL` unset (expected until BACKEND-180 staging) |
+| `npm run review:visual` | 0 | Owner assist — **38 passed**, compare **39 / 48** ready pairs (agent re-run 2026-09-02 @ `d5e5f1b`) |
+
+### Prior gate summary (`0e84e69`)
 
 Full local gate sweep @ `0e84e69` (2026-09-02). Clean `dist/` rebuild once; Playwright suites run with `TM_E2E_SKIP_BUILD=1` after build (Windows `npm.cmd` spawn without skip-build fails EINVAL in webServer — known; `review:visual` pre-builds + snapshots dist @ `0e84e69`).
 
@@ -468,6 +489,6 @@ Paste accepted rows below. Check `[ ]` only for captures you explicitly accept.
 
 ## Verdict
 
-**`REVISE`** — Full automated gate sweep green @ `0e84e69`; owner `review:visual` **38 passed / 39 ready pairs** (signoff hash table extracted); home compare mappings fixed @ `cc4b851`; PF-01..PF-08 structural empty-state @ `7c6efc3`; manual owner visual acceptance, §4 accepted hashes, and manual a11y still open before `PUBLIC-190` may close.
+**`REVISE`** — Full automated gate sweep green @ `d5e5f1b` (`c38cfa9` implementation + tooling fix); owner `review:visual` **38 passed / 39 ready pairs** re-run after shell changes; PF-01..PF-08 decorative chrome @ `6246b12`/`c38cfa9`; manual owner visual compare, §4 accepted hashes, and manual a11y still open before `PUBLIC-190` may close.
 
 **Goal complete:** NO — owner visual compare, manual a11y, and explicit sign-off still required.
