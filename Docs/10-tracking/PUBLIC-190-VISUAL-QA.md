@@ -3,7 +3,7 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `cc4b851` (viewport-aware home visual compare pairing)
-**Coordination commit:** `aa3360b`
+**Coordination commit:** `810ae42`
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
 
@@ -53,7 +53,7 @@ Open `compare-report.html` locally for side-by-side concept comparison. Does **n
 Captures and `compare-report.html` are **gitignored** — they exist only on the machine that ran the Playwright session above. If missing, run the **Regenerate** command in the artifacts table first.
 
 1. Open `Front-End/public-site/test-results/visual/compare-report.html` in a browser (double-click or `file://` URL).
-2. Review each side-by-side pair (43 with concept references + gateway without). Note deviations inline or below.
+2. Review each side-by-side pair (39 with concept references; EN 768/200% and FA dark @768 capture-only). Note deviations inline or below.
 3. Complete **§3 Manual accessibility checks** on a running `npm run preview` build (or `dist/` static server).
 4. Paste accepted capture SHA-256 hashes into **§4 Sign-off evidence** (hashes shown in compare-report).
 5. Check manual compare columns in `Front-End/public-site/docs/quality/PUBLIC-270-PAGE-FAMILY-VISUAL-EVIDENCE.md`.
@@ -61,9 +61,28 @@ Captures and `compare-report.html` are **gitignored** — they exist only on the
 
 ---
 
-## Automated gate summary (`7c6efc3`)
+## Automated gate summary (`cc4b851`)
 
-Full local gate sweep @ `7c6efc3` / coordination `7a7d3f4` (2026-09-02). Playwright suites run with clean `dist/` between commands.
+Full local gate sweep @ `cc4b851` (2026-09-02). Playwright suites run with `--workers=1` after clean `dist/` rebuild between commands.
+
+| Command | Exit | Summary |
+|---|---:|---|
+| `npm test` (Vitest) | 0 | **228 passed** — includes `public-270-visual-compare.test.ts` viewport-aware home pairing |
+| `npm run lint` | 0 | ESLint flat config |
+| `npm run format:check` | 0 | Prettier + `prettier-plugin-astro` |
+| `npm run validate:design` | 0 | 24 components, 6 templates |
+| `npm run validate:seo` | 0 | sitemap, canonical/hreflang, Pagefind bundles |
+| `npm run build` | 0 | 23 static pages |
+| `npm run test:foundation` | 0 | **6 passed** |
+| `npm run test:performance` | 0 | **6 passed** |
+| `npm run test:nojs` | 0 | **23 passed** |
+| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** — PF-02 detail open |
+| `npm run test:visual -- --grep PUBLIC-280` | 0 | **216 passed** |
+| `npm run test:visual -- --grep "PUBLIC-270\|WP-40 home"` | 0 | **38 passed, 1 skipped** — WP-40 home ×8 |
+| `npm run report:visual-compare` | 0 | **39 / 48** honest pairs (home viewport-aware pairing @ `cc4b851`) |
+| GitHub Actions CI @ `cc4b851` | pass | [run 33576370767](https://github.com/tahamohammadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33576370767) — `main`; [run 33576373403](https://github.com/tahamohammadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33576373403) — `cx/public-recovery-integration` |
+
+### Prior gate summary (`7c6efc3`)
 
 | Command | Exit | Summary |
 |---|---:|---|
@@ -76,7 +95,7 @@ Full local gate sweep @ `7c6efc3` / coordination `7a7d3f4` (2026-09-02). Playwri
 | `npm run test:nojs` | 0 | **23 passed** |
 | `npm run test:visual -- --grep "PUBLIC-270\|WP-40 home"` | 0 | **38 passed, 1 skipped** — PF-02 detail open; WP-40 home ×8 |
 | `npm run report:visual-compare` | 0 | **39 / 48** pairs ready (44 PNGs; home pairing fixed @ `cc4b851`) |
-| GitHub Actions CI @ `7c6efc3` | pass | [run 33575027666](https://github.com/tahamohamadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33575027666) — `main`; [run 33575042389](https://github.com/tahamohamadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33575042389) — `cx/public-recovery-integration` |
+| GitHub Actions CI @ `7c6efc3` | pass | [run 33575027666](https://github.com/tahamohammadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33575027666) — `main`; [run 33575042389](https://github.com/tahamohammadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33575042389) — `cx/public-recovery-integration` |
 
 ### Prior gate summary (`3a54130`)
 
