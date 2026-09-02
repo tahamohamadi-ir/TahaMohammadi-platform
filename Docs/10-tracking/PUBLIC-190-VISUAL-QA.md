@@ -33,6 +33,19 @@ Agent gap analysis after owner screenshots (PF-01, PF-04–PF-08, home mobile FA
 
 Owner manual compare, a11y checks, and explicit sign-off still required before PASS.
 
+### Remediation plan (analysis pass @ 2026-09-02)
+
+Full per-pair gap analysis + phased fix plan: [`PUBLIC-190-VISUAL-REMEDIATION-PLAN.md`](PUBLIC-190-VISUAL-REMEDIATION-PLAN.md)
+
+| Metric | Value |
+|--------|------:|
+| Compare rows | 48 |
+| Ready pairs analyzed | **39** |
+| Non-ready (PF-02 skip + home capture-only) | 9 |
+| Public-site commit | `dd515a0` |
+| Subagent `9c29878c` | No commits — shells exist @ `dd515a0`; next pass = CSS/SVG fidelity |
+| Top P0 themes | Template render void (PF-05P/CV), footer/header chrome, constellation/portal SVG, profile hero, home FA split layout |
+
 ---
 
 ## Automated gate summary (`dd515a0`)
