@@ -2,8 +2,8 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `c14508a` (compare pairing fix @ `c14508a`; automated gate sweep @ `a6dbca1`; PF consolidation `60845bd`–`133fc14` + a11y coral fix; still `REVISE`)  
-**Coordination commit:** `555260d`  
+**Public-site commit:** `dd515a0` (PF visual fidelity Path A: pagination/theme-explore shells, featured card styling, hero/masonry tweaks; compare pairing fix @ `c14508a`; still `REVISE`)  
+**Coordination commit:** `041d61d` (pending update)  
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
 
@@ -28,12 +28,24 @@ Agent gap analysis after owner screenshots (PF-01, PF-04–PF-08, home mobile FA
 | Nav labels Creative/Writing vs concept Gallery/Blog | **D/A** | Route registry labels; not visual chrome |
 | Home mobile FA overlay vs side-by-side concept | **D/C** | WP-40 overlay direction documented @ `cc4b851`; not re-opened |
 | Gateway 200% light vs dark concept | **D** | Compare pairs affordance only; theme differs by design |
+| PF-01/03/04 pagination + writing theme-explore | **B/C** | `PageFamilyPaginationShell`, `PageFamilyThemeExploreShell`; per-family featured card styling @ `dd515a0` |
+| PF-01 hero media proportion + masonry dense grid | **B/C** | Hero 42% media column, taller min-height; grid-auto-flow dense @ `dd515a0` |
 
 Owner manual compare, a11y checks, and explicit sign-off still required before PASS.
 
 ---
 
-## Automated gate summary (`c14508a`)
+## Automated gate summary (`dd515a0`)
+
+Path A visual fidelity slice @ `dd515a0` (2026-09-02). Pagination/theme-explore shells, per-family featured styling, hero/masonry proportion tweaks. Gates: **239** Vitest passed, lint 0, build 0 (23 pages).
+
+| Command | Exit | Summary |
+|---|---:|---|
+| `npm test` (Vitest) | 0 | **239 passed** — includes new pagination/theme-explore behavior tests |
+| `npm run lint` | 0 | ESLint flat config |
+| `npm run build` | 0 | 23 static pages |
+
+### Prior gate summary (`c14508a`)
 
 Compare pairing fix @ `c14508a` (2026-09-02). `page-family-visual-compare.mjs` resolves concept PNG root when `DESIGN_AUTHORITY_ROOT` points at `agent-kit/` (JSON only) — restores honest **39 / 48** ready pairs (was 0 after mis-rooted lookup). Full automated gate sweep remains green from parent `a6dbca1`; `review:visual` re-run confirms captures + compare report.
 
@@ -513,6 +525,6 @@ Paste accepted rows below. Check `[ ]` only for captures you explicitly accept.
 
 ## Verdict
 
-**`REVISE`** — Automated gate sweep green @ `a6dbca1` (PF consolidation `60845bd`–`133fc14` + a11y coral fix); compare pairing fix @ `c14508a` (**39 / 48** ready pairs); owner `review:visual` **38 passed**; manual owner visual compare, ≤4 accepted hashes, and manual a11y still open before `PUBLIC-190` may close.
+**`REVISE`** — Path A visual fidelity @ `dd515a0` (pagination/theme-explore shells, featured card styling, hero/masonry tweaks); compare pairing fix @ `c14508a` (**39 / 48** ready pairs); manual owner visual compare, ≤4 accepted hashes, and manual a11y still open before `PUBLIC-190` may close.
 
 **Goal complete:** NO — owner visual compare, manual a11y, and explicit sign-off still required.
