@@ -2,23 +2,36 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `07f876f` (PF-01 structural empty-state chrome)
-**Coordination commit:** `0510805`
+**Public-site commit:** `7c6efc3` (PF-01..PF-08 structural empty-state chrome)
+**Coordination commit:** `4694dd1`
 **Run date:** 2026-09-01  
 **Result:** `REVISE`
 
 ---
 
-## PF-01 structural empty-state (`07f876f`)
+## PF-01..PF-08 structural empty-state (`7c6efc3`)
 
-Prep owner review flagged PF-01 as a bare `ContentState` vs the Gallery concept (hero, filter row, grid). Public-site now renders **structural empty chrome** on `/{locale}/creative/` when no published works exist:
+Prep owner review flagged PF-01..PF-08 index routes as bare `ContentState` vs page-family concepts (hero, filter/section shells, list/grid placeholders). Public-site now renders **structural empty chrome** on index routes when published API content is absent:
 
-- `CollectionIndexTemplate` + `SectionLead` hero (H1 title, eyebrow)
-- Disabled filter shell (`All work`, Medium / Year / Role labels; Contact link to route)
-- Dashed grid placeholder cells + `ContentState` `empty` variant with honest copy
-- No invented works, titles, dates, or images
+| PF | Family | Empty chrome |
+|---|---|---|
+| PF-01 | Creative | Hero, disabled filter shell, grid placeholder (`07f876f`) |
+| PF-03 | Writing | Hero, disabled filter tabs + search shell, list placeholders |
+| PF-04 | Projects | Hero, disabled filter chips + search shell, row placeholders |
+| PF-05 | Research | Hero, disabled section tabs, graph placeholder, focus-area shell |
+| PF-05 | Publications | Hero, disabled filter chips + search shell, row placeholders |
+| PF-06 | Teaching | Hero, disabled filter tabs + search shell, list placeholders |
+| PF-07 | About | Hero, intro/education/experience section shells |
+| PF-07 | CV | Hero, downloads section placeholders |
+| PF-08 | Contact | Hero, topic chips, details + disabled form shell |
 
-PF-01 captures regenerated (PUBLIC-270 ×4, PUBLIC-280 ×24). Compare report **43 / 48** pairs ready. Visual alignment improved; owner manual compare and sign-off still required — **does not change verdict to PASS**.
+All families keep honest `ContentState` `empty` copy — no invented records, titles, dates, or images. `template-base.css` uses `box-sizing: border-box` on `tm-template__main` for PUBLIC-280 @320 overflow.
+
+PF-01..PF-08 captures regenerated (PUBLIC-270 ×36, PUBLIC-280 ×216, WP-40 home ×8). Compare report **43 / 48** pairs ready. Visual alignment improved; owner manual compare and sign-off still required — **does not change verdict to PASS**.
+
+---
+
+## PF-01 structural empty-state (`07f876f`) — superseded by table above
 
 ---
 
@@ -48,9 +61,27 @@ Captures and `compare-report.html` are **gitignored** — they exist only on the
 
 ---
 
-## Automated gate summary (`3a54130`)
+## Automated gate summary (`7c6efc3`)
 
-Full local gate sweep @ `3a54130` / coordination `72a0c0b` (2026-09-01). Playwright suites run with clean `dist/` between commands to avoid Windows concurrent-build corruption.
+Full local gate sweep @ `7c6efc3` / coordination `4694dd1` (2026-09-01). Playwright suites run with clean `dist/` between commands.
+
+| Command | Exit | Summary |
+|---|---:|---|
+| `npm test` (Vitest) | 0 | **228 passed** — PF-03..PF-08 structural empty-state behavior tests |
+| `npm run lint` | 0 | ESLint flat config |
+| `npm run format:check` | 0 | Prettier + `prettier-plugin-astro` |
+| `npm run validate:design` | 0 | 24 components, 6 templates |
+| `npm run validate:seo` | 0 | sitemap, canonical/hreflang, Pagefind bundles |
+| `npm run build` | 0 | 23 static pages |
+| `npm run test:foundation` | 0 | **6 passed** |
+| `npm run test:performance` | 0 | **6 passed** |
+| `npm run test:nojs` | 0 | **23 passed** |
+| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** — PF-02 detail open |
+| `npm run test:visual -- --grep PUBLIC-280` | 0 | **252 passed, 1 skipped** — PF-01..PF-08 index matrix @ six widths |
+| `npm run report:visual-compare` | 0 | **43 / 48** pairs ready |
+| GitHub Actions CI @ `7c6efc3` | pending | Push to `main` — check Actions after run completes |
+
+### Prior gate summary (`3a54130`)
 
 | Command | Exit | Summary |
 |---|---:|---|
@@ -287,6 +318,6 @@ WP-40 visual captures use **768px reflow** and **200% zoom** evidence (not 1440/
 
 ## Verdict
 
-**`REVISE`** — PF-01 structural empty-state shipped @ `07f876f` (hero + filter shell + grid placeholder; honest empty copy); full automated gates green; compare report 43/48 pairs; manual owner visual acceptance and a11y still open before `PUBLIC-190` may close.
+**`REVISE`** — PF-01..PF-08 structural empty-state shipped @ `7c6efc3` (hero + filter/section shells + placeholders; honest empty copy); full automated gates green locally; compare report 43/48 pairs; manual owner visual acceptance and a11y still open before `PUBLIC-190` may close.
 
 **Goal complete:** NO — owner visual compare, manual a11y, and explicit sign-off still required.
