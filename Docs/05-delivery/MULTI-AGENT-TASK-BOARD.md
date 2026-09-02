@@ -87,8 +87,8 @@ Wave 4 (release)
 | BACKEND-120 ✅ | — | Reconcile admin endpoints vs admin workflow map | **Done** — `Back-End/docs/contracts/ADMIN-ROUTE-RECONCILIATION.md` (63 ops verified; gaps G-A..G-I; G-E media-delete + G-G sibling-create are blocking decisions) |
 | BACKEND-130 ✅ | BACKEND-110, BACKEND-120 | Add response-shape fixtures per `ERROR-COMPATIBILITY-MATRIX.md` | **Done** — `Back-End/tests/fixtures/contracts/{public,admin,errors}/` + `tests/test_contract_fixtures.py` |
 | BACKEND-140 ✅ | BACKEND-130 | Schema compatibility tests for accepted OpenAPI hashes | **Done** — `tests/test_openapi_hash_drift.py` (LF-canonical; CRLF acceptance provenance documented) |
-| BACKEND-150 [~] | — | Plan error envelope normalization (no breaking change) | **Draft ready** — `Docs/09-decisions/ADR-0006-ERROR-ENVELOPE-NORMALIZATION.md` (Proposed); Done-when needs owner approval |
-| BACKEND-151 [~] | — | Deprecation plan for legacy `/admin/`, `/staff/`, `/api/admin/` routes | **Draft ready** — `Back-End/docs/contracts/LEGACY-ROUTE-DEPRECATION.md` (Proposed); phases gated on admin cutover evidence |
+| BACKEND-150 ✅ | — | Plan error envelope normalization (no breaking change) | **Done** — ADR-0006 Accepted 2026-09-02 (owner-delegated review; DECISION-LOG); phase 1 (`field_errors` on AdminError) shipped and tested |
+| BACKEND-151 ✅ | — | Deprecation plan for legacy `/admin/`, `/staff/`, `/api/admin/` routes | **Done** — plan approved by owner 2026-09-02 (`Back-End/docs/contracts/LEGACY-ROUTE-DEPRECATION.md`); removals evidence-gated via separate ADR |
 | BACKEND-170 ✅ | PUBLIC-120, ADMIN-110 | Same-origin proxy integration test plan with frontends | **Done** — `Back-End/docs/quality/INTEGRATION-TEST-PLAN.md` (checklist per `DEPLOYMENT-TOPOLOGY.md` evidence list) |
 | BACKEND-180 ✅ | BACKEND-170 | Session, CSRF, MFA, preview, contact smoke tests | **Done** — `Back-End/tests/test_staging_smoke.py` 3/3 pass on disposable settings; suite 678 pass. Staging browser capture remains COORD-060/070 |
 | BACKEND-190 | ADMIN-250 | Permission regression tests for every state-changing admin route | Matrix tests pass |

@@ -26,3 +26,53 @@ This acceptance locks the reviewed, source-generated snapshot for type generatio
 ## Change control
 
 Any schema or backend-source change that changes one of these hashes immediately reopens PS-05. Regenerate the snapshots, run the public/admin OpenAPI access tests, update the review report, and create a new acceptance record before regenerated client types are adopted.
+
+## Addendum 2026-09-02 — admin API additions (G-E, G-G) and ADR-0006 phase 1 envelope
+
+Status: **accepted addendum** (owner decisions G-E and G-G recorded in `Docs/10-tracking/DECISION-LOG.md`, 2026-09-02). This addendum re-locks the regenerated artifacts after two additive admin API changes and the ADR-0006 phase-1 error-envelope step. Public schema content is unchanged (same hash); only the admin schema and the endpoint inventory moved.
+
+### Owner decisions implemented
+
+- **G-E — media deletion.** `DELETE /api/v1/admin/media/{media_id}` added with a usage guard (gap documented in `Back-End/docs/contracts/ADMIN-ROUTE-RECONCILIATION.md`).
+- **G-G — profile sibling-locale creation.** The legacy `POST /api/admin/profiles/{locale}/{slug}/siblings/{target_locale}` behavior (`apps/content/admin_api.py:admin_profile_create_sibling`) is migrated onto the accepted admin API as `POST /api/v1/admin/content/profile/{id}/sibling-locale`. The legacy route stays in place untouched; its deprecation remains a BACKEND-151 decision.
+
+### New paths (admin schema)
+
+| Operation | Guards | Response codes |
+|---|---|---|
+| `DELETE /api/v1/admin/media/{media_id}` | staff session + verified OTP (`401 AUTH_REQUIRED`, `403 FORBIDDEN`, `403 OTP_REQUIRED`), same-origin CSRF (`403 CSRF_FAILED`) | `200 {ok, id}`; `404 NOT_FOUND`; `409 MEDIA_IN_USE` (body extension key `usageCount`) when the row is referenced by any `MEDIA_REFERENCE_FIELDS` FK or composition-block JSON setting; deletion removes the DB row and the stored file and writes an audit row (`action="media.delete"`, `model_name="media"`) |
+| `POST /api/v1/admin/content/profile/{id}/sibling-locale` | staff session + verified OTP, CSRF | `201 {editorUrl, profile}` (legacy projection: empty draft inheriting the source's slug, `translation_key`, and `updated_at`, `status=draft`); `404 NOT_FOUND` (unknown profile); `400 VALIDATION` (invalid target locale / same-locale target); `409 DUPLICATE` (sibling already exists for the translation family / slug conflict in the target locale); audit row `action="admin.profile.sibling_created"` (same action string as the legacy route) |
+
+Stable-code registry: no existing code was renamed. `MEDIA_IN_USE` was **added** to the declare-once registry in `Back-End/apps/api/admin_common.py`. The legacy local codes (`INVALID_TARGET_LOCALE`, `PROFILE_LOCALE_EXISTS`, `SLUG_CONFLICT`) are **not** emitted on the new `/api/v1/` surface; the registry codes above replace them there. Deviation note: the legacy 409 `PROFILE_LOCALE_EXISTS` response carried an `editorUrl` extension key; the new-surface 409 uses the normalized envelope (`code`, `message`, `field_errors`) without `editorUrl`, because the AdminError handler does not carry surface extras and no consumer exists for the new endpoint yet. Success responses keep `editorUrl` exactly as the legacy route returned it.
+
+### Regenerated artifacts (SHA-256)
+
+Hashes are computed over CRLF-encoded bytes (same rule as the original acceptance; see `OPENAPI-ARTIFACT-CONTRACT.md` for the LF/CRLF provenance note). `scripts/verify_openapi_export.py` exits 0 with 3/3 MATCH against these values.
+
+| Artifact | Old → New SHA-256 (CRLF) | Count |
+|---|---|---|
+| `public-openapi.json` | `0f672693de28ed33286789e5119eb3226c062693fb15168b1aba5513c257c0a5` (unchanged) | 40 paths, version `0.4.0` |
+| `admin-openapi.json` | `1328f8244c5541f225648082891a0a1244961c0dead6692488992ac8c7606f09` → `60e5aba0e19426ced2b0386aad23cef388f5909c22294fd5799aea533cf13bfc` | 47 → 48 paths, version `0.1.0` |
+| `endpoint-inventory.md` | `618ab18826875a5f27357ab87a3917082291d2e8610959b18aa2f936a7f3aa96` → `df2d1921d7fda90169dd5e1926a94c5d3e229be245ed6cac3a3abdb19fb70605` | 103 → 105 operations |
+
+`PROVENANCE.json` records `scaffold-accepted`, source commit `edecc10188c207df88a3c7bceaf31dcd6fcfc5ec`, settings `config.settings.development`, generated 2026-09-02. `Back-End/tests/test_openapi_hash_drift.py` (which pins the accepted hashes) was updated to the new values.
+
+### Access-test evidence
+
+New tests (all written failing first, then passing):
+
+- `tests/test_admin_media_api.py`: `test_delete_media_requires_auth`, `test_delete_media_requires_otp`, `test_delete_media_requires_csrf`, `test_delete_media_404`, `test_delete_media_in_use_409`, `test_delete_media_success_removes_row_file_and_audits`.
+- `tests/test_admin_content_api.py`: `test_sibling_locale_requires_auth`, `test_sibling_locale_requires_otp`, `test_sibling_locale_requires_csrf`, `test_sibling_locale_unknown_profile_404`, `test_sibling_locale_invalid_target_locale_400`, `test_sibling_locale_same_locale_400`, `test_sibling_locale_creates_draft_sibling_201`, `test_sibling_locale_existing_sibling_409`, `test_sibling_locale_slug_conflict_409`.
+- `tests/test_admin_api_auth.py` (ADR-0006 phase 1): `test_admin_error_envelope_includes_empty_field_errors`, `test_admin_error_envelope_keeps_fields_dual_key`.
+- Pre-existing gate evidence still passing: `tests/test_public_openapi.py` + `tests/test_admin_openapi.py` (anonymous public / verified staff+OTP admin access) and `tests/test_openapi_hash_drift.py`.
+
+### ADR-0006 phase-1 note (`field_errors` on AdminError responses)
+
+Per ADR-0006 phase 1 (additive-key changes on existing endpoints), `_api_error_handler` in `apps/api/admin_common.py` now emits `field_errors` (always present; `{}` when empty; same dict-of-lists structure as `fields`) on every `AdminError` response, while `fields` continues to be emitted exactly as before (dual-key safety, ADR mapping row 1). The 409 `CONFLICT` conflict-extension handlers (`apps/api/admin_media.py`, `apps/api/admin_content.py`) also gained additive `field_errors: {}` (mapping row 2), and the new 409 `MEDIA_IN_USE` response includes it. No `request_id` is emitted or fabricated. Error responses are not documented in `admin-openapi.json` (no documented error schemas existed), so this step alone would not have changed artifact hashes; the hash movement in this addendum comes from the two new operations. No existing error fixture was edited.
+
+### Compatibility / frontend impact / migration notes
+
+- **Compatibility:** additive only. Existing admin operations keep their shapes, status codes, and stable codes verbatim; the success/error keys listed above are new or legacy-preserving. `DELETE` on `/api/v1/admin/media/{media_id}` and the new sibling-locale POST do not collide with existing routes.
+- **admin-panel (ADMIN repo):** the media delete UX (workflow-map row 3) is now implementable against `DELETE /api/v1/admin/media/{id}` — the client must render the `409 MEDIA_IN_USE` + `usageCount` state and pass the CSRF header. The profile translation flow may target the new sibling-locale endpoint; `editorUrl` on 409 is not available there (see deviation note). New-surface error handling should read `field_errors` per ADR-0006.
+- **public-site (PUBLIC repo):** no impact; the public schema and `/api/` surface are untouched (hash unchanged).
+- **Migration notes:** no schema/data migration. The legacy sibling route remains functional until BACKEND-151 retires it; both surfaces write the same `admin.profile.sibling_created` audit action during the dual-surface period. Media deletion is permanent (row + stored file); the `usageCount` guard is the only protection — clients must confirm before calling.
