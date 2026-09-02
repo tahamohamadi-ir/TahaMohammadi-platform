@@ -2,7 +2,7 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `72b841f` (§4 paste helper `report:signoff-hashes`; DEP0190 spawn fix @ `7900ede`; `npm run review:visual` verified 2026-09-02)
+**Public-site commit:** `67a5c4c` (§4 paste helper `npm run report:signoff-hashes` / `extract:visual-hashes`; feature @ `72b841f`; format @ `67a5c4c`; still `REVISE` — manual compare required)
 **Coordination commit:** `a541a83`
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
