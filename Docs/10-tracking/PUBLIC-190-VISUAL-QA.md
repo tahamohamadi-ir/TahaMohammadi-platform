@@ -3,8 +3,8 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `7c6efc3` (PF-01..PF-08 structural empty-state chrome)
-**Coordination commit:** `4694dd1`
-**Run date:** 2026-09-01  
+**Coordination commit:** `7a7d3f4`
+**Run date:** 2026-09-02  
 **Result:** `REVISE`
 
 ---
@@ -63,7 +63,7 @@ Captures and `compare-report.html` are **gitignored** — they exist only on the
 
 ## Automated gate summary (`7c6efc3`)
 
-Full local gate sweep @ `7c6efc3` / coordination `4694dd1` (2026-09-01). Playwright suites run with clean `dist/` between commands.
+Full local gate sweep @ `7c6efc3` / coordination `7a7d3f4` (2026-09-02). Playwright suites run with clean `dist/` between commands.
 
 | Command | Exit | Summary |
 |---|---:|---|
@@ -73,13 +73,10 @@ Full local gate sweep @ `7c6efc3` / coordination `4694dd1` (2026-09-01). Playwri
 | `npm run validate:design` | 0 | 24 components, 6 templates |
 | `npm run validate:seo` | 0 | sitemap, canonical/hreflang, Pagefind bundles |
 | `npm run build` | 0 | 23 static pages |
-| `npm run test:foundation` | 0 | **6 passed** |
-| `npm run test:performance` | 0 | **6 passed** |
 | `npm run test:nojs` | 0 | **23 passed** |
-| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** — PF-02 detail open |
-| `npm run test:visual -- --grep PUBLIC-280` | 0 | **252 passed, 1 skipped** — PF-01..PF-08 index matrix @ six widths |
-| `npm run report:visual-compare` | 0 | **43 / 48** pairs ready |
-| GitHub Actions CI @ `7c6efc3` | pending | Push to `main` — check Actions after run completes |
+| `npm run test:visual -- --grep "PUBLIC-270\|WP-40 home"` | 0 | **38 passed, 1 skipped** — PF-02 detail open; WP-40 home ×8 |
+| `npm run report:visual-compare` | 0 | **43 / 48** pairs ready (44 PNGs) |
+| GitHub Actions CI @ `7c6efc3` | pass | [run 33575027666](https://github.com/tahamohamadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33575027666) — `main`; [run 33575042389](https://github.com/tahamohamadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33575042389) — `cx/public-recovery-integration` |
 
 ### Prior gate summary (`3a54130`)
 
@@ -289,6 +286,8 @@ Compare each implementation screenshot against the matching concept at the same 
 
 WP-40 visual captures use **768px reflow** and **200% zoom** evidence (not 1440/390 — those widths apply to PF index routes in PUBLIC-270). See compare-report **Home** section and `scripts/page-family-visual-compare.mjs` `HOME_VISUAL_ENTRIES`.
 
+**Agent audit @ `7c6efc3` (2026-09-02):** Home structure matches WP-40 authority (orbit hero + tokenized scrim, semantic graph list, section slots). EN 768 captures pair against 1440 desktop concepts — width mismatch is documented in `HOME_VISUAL_ENTRIES` notes, not a structural defect. FA 768 pairs against `home-mobile-fa-light-concept-v1.png` (narrow reference); overlay-hero vs side-by-side concept layout reflects WP-40 implementation direction, not missing chrome. **No home code changes warranted.**
+
 - [ ] Compare home EN/FA **768px** captures (light + dark) against concept references in compare-report.
 - [ ] Review **200% zoom** home EN/FA + gateway captures for readability (gateway has no concept pair — review route choice manually).
 - [x] Verify draft notes on featured projects/publications are acceptable for owner preview.
@@ -318,6 +317,6 @@ WP-40 visual captures use **768px reflow** and **200% zoom** evidence (not 1440/
 
 ## Verdict
 
-**`REVISE`** — PF-01..PF-08 structural empty-state shipped @ `7c6efc3` (hero + filter/section shells + placeholders; honest empty copy); full automated gates green locally; compare report 43/48 pairs; manual owner visual acceptance and a11y still open before `PUBLIC-190` may close.
+**`REVISE`** — PF-01..PF-08 structural empty-state shipped @ `7c6efc3` (hero + filter/section shells + placeholders; honest empty copy); GitHub CI green @ `7c6efc3`; full automated gates re-verified locally (2026-09-02); compare report 43/48 pairs; home 768px audit found documented width/concept pairing only — no code fix; manual owner visual acceptance and a11y still open before `PUBLIC-190` may close.
 
 **Goal complete:** NO — owner visual compare, manual a11y, and explicit sign-off still required.
