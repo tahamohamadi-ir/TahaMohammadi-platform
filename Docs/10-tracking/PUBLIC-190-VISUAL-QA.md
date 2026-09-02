@@ -3,7 +3,7 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `cc4b851` (viewport-aware home visual compare pairing)
-**Coordination commit:** `810ae42`
+**Coordination commit:** `af24876`
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
 
