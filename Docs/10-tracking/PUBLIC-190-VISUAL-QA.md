@@ -3,9 +3,51 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `67a5c4c` (§4 paste helper `npm run report:signoff-hashes` / `extract:visual-hashes`; feature @ `72b841f`; format @ `67a5c4c`; still `REVISE` — manual compare required)
-**Coordination commit:** `a541a83`
+**Coordination commit:** `1c43690`
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
+
+---
+
+## Automated gate summary (`67a5c4c`)
+
+Full local gate sweep @ `67a5c4c` (2026-09-02). Playwright suites run with `--workers=1` after clean `dist/` rebuild between commands; performance webServer failed once on concurrent build (Windows) — green after clean rebuild (known @ `cc4b851`).
+
+| Command | Exit | Summary |
+|---|---:|---|
+| `npm test` (Vitest) | 0 | **229 passed** |
+| `npm run lint` | 0 | ESLint flat config |
+| `npm run format:check` | 0 | Prettier + `prettier-plugin-astro` |
+| `npm run validate:design` | 0 | 24 components, 6 templates |
+| `npm run validate:seo` | 0 | sitemap, canonical/hreflang, Pagefind bundles |
+| `npm run build` | 0 | 23 static pages |
+| `npm run test:foundation` | 0 | **6 passed** |
+| `npm run test:performance` | 0 | **6 passed** (clean rebuild after concurrent-build miss) |
+| `npm run test:nojs` | 0 | **23 passed** |
+| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** — PF-02 detail open |
+| `npm run test:visual -- --grep PUBLIC-280` | 0 | **216 passed** |
+| `npm run test:smoke` | 0 | **1 skipped** — `PUBLIC_STAGING_SITE_URL` unset (expected until BACKEND-180 staging) |
+| `npm run review:visual` | — | Owner assist — not re-run in agent sweep |
+
+### Prior gate summary (`4db831d`)
+
+Full local gate sweep @ `4db831d` (2026-09-02). Playwright suites run after clean `dist/` rebuild; performance INP probe flaky once, green on retry (known @ `cc4b851`).
+
+| Command | Exit | Summary |
+|---|---:|---|
+| `npm test` (Vitest) | 0 | **228 passed** |
+| `npm run lint` | 0 | ESLint flat config |
+| `npm run format:check` | 0 | Prettier + `prettier-plugin-astro` |
+| `npm run validate:design` | 0 | 24 components, 6 templates |
+| `npm run validate:seo` | 0 | sitemap, canonical/hreflang, Pagefind bundles |
+| `npm run build` | 0 | 23 static pages |
+| `npm run test:foundation` | 0 | **6 passed** |
+| `npm run test:performance` | 0 | **6 passed** (1 flaky INP miss first run; green retry) |
+| `npm run test:nojs` | 0 | **23 passed** |
+| `npm run review:visual` | — | Owner assist — not re-run in agent sweep (build + 44 captures + compare report) |
+| GitHub Actions CI @ `2aa62d0` | pass | [run 33611693823](https://github.com/tahamohammadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33611693823) - `main` after format fix; [run 33608674272](https://github.com/tahamohammadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33608674272) - `4db831d` review:visual pipeline |
+| `npm run review:visual` @ `2aa62d0` | 0 | build + **38 passed, 1 skipped** captures + compare **39/48** (agent re-run 2026-09-02) |
+| Prior visual gates @ `cc4b851` | 0 | PUBLIC-270 36+1 skip; PUBLIC-280 216; compare **39/48** |
 
 ---
 
@@ -61,26 +103,6 @@ Captures and `compare-report.html` are **gitignored** — they exist only on the
 6. Change **Result** at top of this report from `REVISE` to `PASS` only after explicit owner approval.
 
 ---
-
-## Automated gate summary (`4db831d`)
-
-Full local gate sweep @ `4db831d` (2026-09-02). Playwright suites run after clean `dist/` rebuild; performance INP probe flaky once, green on retry (known @ `cc4b851`).
-
-| Command | Exit | Summary |
-|---|---:|---|
-| `npm test` (Vitest) | 0 | **228 passed** |
-| `npm run lint` | 0 | ESLint flat config |
-| `npm run format:check` | 0 | Prettier + `prettier-plugin-astro` |
-| `npm run validate:design` | 0 | 24 components, 6 templates |
-| `npm run validate:seo` | 0 | sitemap, canonical/hreflang, Pagefind bundles |
-| `npm run build` | 0 | 23 static pages |
-| `npm run test:foundation` | 0 | **6 passed** |
-| `npm run test:performance` | 0 | **6 passed** (1 flaky INP miss first run; green retry) |
-| `npm run test:nojs` | 0 | **23 passed** |
-| `npm run review:visual` | — | Owner assist — not re-run in agent sweep (build + 44 captures + compare report) |
-| GitHub Actions CI @ `2aa62d0` | pass | [run 33611693823](https://github.com/tahamohammadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33611693823) - `main` after format fix; [run 33608674272](https://github.com/tahamohammadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33608674272) - `4db831d` review:visual pipeline |
-| `npm run review:visual` @ `2aa62d0` | 0 | build + **38 passed, 1 skipped** captures + compare **39/48** (agent re-run 2026-09-02) |
-| Prior visual gates @ `cc4b851` | 0 | PUBLIC-270 36+1 skip; PUBLIC-280 216; compare **39/48** |
 
 ### Prior gate summary (`cc4b851`)
 
