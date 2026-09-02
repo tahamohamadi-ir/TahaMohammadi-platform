@@ -2,8 +2,8 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `4db831d` (owner `npm run review:visual` one-command pipeline)
-**Coordination commit:** `e05b995`
+**Public-site commit:** `2aa62d0` (Windows grep fix @ `2d81def` + Prettier @ `2aa62d0`; `npm run review:visual` verified 2026-09-02)
+**Coordination commit:** `3f9d4ba`
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
 
@@ -78,6 +78,8 @@ Full local gate sweep @ `4db831d` (2026-09-02). Playwright suites run after clea
 | `npm run test:performance` | 0 | **6 passed** (1 flaky INP miss first run; green retry) |
 | `npm run test:nojs` | 0 | **23 passed** |
 | `npm run review:visual` | — | Owner assist — not re-run in agent sweep (build + 44 captures + compare report) |
+| GitHub Actions CI @ `2aa62d0` | pass | [run 33611693823](https://github.com/tahamohammadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33611693823) - `main` after format fix; [run 33608674272](https://github.com/tahamohammadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33608674272) - `4db831d` review:visual pipeline |
+| `npm run review:visual` @ `2aa62d0` | 0 | build + **38 passed, 1 skipped** captures + compare **39/48** (agent re-run 2026-09-02) |
 | Prior visual gates @ `cc4b851` | 0 | PUBLIC-270 36+1 skip; PUBLIC-280 216; compare **39/48** |
 
 ### Prior gate summary (`cc4b851`)
