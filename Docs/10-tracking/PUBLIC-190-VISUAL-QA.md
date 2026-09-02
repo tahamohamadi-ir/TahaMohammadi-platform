@@ -2,14 +2,36 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `67a5c4c` (§4 paste helper `npm run report:signoff-hashes` / `extract:visual-hashes`; feature @ `72b841f`; format @ `67a5c4c`; still `REVISE` — manual compare required)
-**Coordination commit:** `9ca3e76`
+**Public-site commit:** `888ccc1` (PUBLIC-080 a11y crawl @ `572d6de`; format fix @ `888ccc1`; still `REVISE` — manual compare required)
+**Coordination commit:** `bd21b3f`
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
 
 ---
 
-## Automated gate summary (`67a5c4c`)
+## Automated gate summary (`888ccc1`)
+
+Full local gate sweep @ `888ccc1` (2026-09-02). Playwright suites run with `--workers=1` after clean `dist/` rebuild between commands; a11y webServer failed once on concurrent build (Windows EPERM) — green after clean rebuild (known @ `cc4b851`); nojs search-fa flaky once — green on retry.
+
+| Command | Exit | Summary |
+|---|---:|---|
+| `npm test` (Vitest) | 0 | **232 passed** — includes `public-080.a11y-audit.test.ts` |
+| `npm run lint` | 0 | ESLint flat config |
+| `npm run format:check` | 0 | Prettier + `prettier-plugin-astro` |
+| `npm run validate:design` | 0 | 24 components, 6 templates |
+| `npm run validate:seo` | 0 | sitemap, canonical/hreflang, Pagefind bundles |
+| `npm run build` | 0 | 23 static pages |
+| `npm run test:foundation` | 0 | **6 passed** |
+| `npm run test:performance` | 0 | **6 passed** |
+| `npm run test:nojs` | 0 | **23 passed** (1 flaky search-fa miss first run; green retry) |
+| `npm run test:a11y` | 0 | **29 passed** — WCAG 2.2 AA crawl + foundation probes (`PUBLIC-080`) |
+| `npm run test:visual -- --grep PUBLIC-270` | 0 | **36 passed, 1 skipped** — PF-02 detail open |
+| `npm run test:visual -- --grep PUBLIC-280` | 0 | **216 passed** |
+| `npm run test:smoke` | — | **1 skipped** — `PUBLIC_STAGING_SITE_URL` unset (expected until BACKEND-180 staging) |
+| `npm run review:visual` | — | Owner assist — not re-run in agent sweep |
+| GitHub Actions CI @ `ab9647c` | fail | [run 33618987256](https://github.com/tahamohammadi-ir/TahaMohammadi-platform-FrontEnd-publicSite/actions/runs/33618987256) — format:check on 3 evidence docs; fixed @ `888ccc1` |
+
+### Prior gate summary (`67a5c4c`)
 
 Full local gate sweep @ `67a5c4c` (2026-09-02). Playwright suites run with `--workers=1` after clean `dist/` rebuild between commands; performance webServer failed once on concurrent build (Windows) — green after clean rebuild (known @ `cc4b851`).
 
