@@ -2,10 +2,34 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `0e84e69` (WP-40 `review:visual` Windows dist snapshot @ `0e84e69`; still `REVISE` — manual compare required)
-**Coordination commit:** `3b84e91`
+**Public-site commit:** `6246b12` (page-family empty chrome @ agent sweep 2026-09-02; still `REVISE`)  
+**Coordination commit:** `3b84e91`  
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
+
+---
+
+## Owner compare feedback @ 2026-09-02 (Persian: concepts much weaker than implementation)
+
+Agent gap analysis after owner screenshots (PF-01, PF-04–PF-08, home mobile FA, gateway). **Verdict unchanged: `REVISE`.**
+
+### Deviation log (agent pass)
+
+| Area | Category | Action |
+|---|---|---|
+| PF-01..PF-08 hero + side media | **B/C** | Added `PageFamilyIndexHero` with promoted decorative assets (no CMS copy) |
+| PF-01 featured + masonry grid | **B/C** | Added `PageFamilyFeaturedShell`, `PageFamilyMediaGridPlaceholder` |
+| PF-03 writing editorial index | **B** | Switched empty state to `EditorialIndexTemplate` + featured shell + row placeholders |
+| PF-06 teaching path shell | **B** | `EditorialIndexTemplate` + `PageFamilyFeaturedPathShell` |
+| PF-04/05 publications rows, PF-05 constellation | **B/C** | Row placeholders with thumbnails; research `PageFamilyConstellationShell` |
+| PF-07 about / PF-07 CV timelines | **B** | `PageFamilyTimelineShell` for education/experience/download shells |
+| PF-08 contact atmosphere | **C** | Gateway atmosphere via hero theme media |
+| Hero descriptions, featured titles, grid CMS records | **A** | Blocked — no invented API/CMS copy |
+| Nav labels Creative/Writing vs concept Gallery/Blog | **D/A** | Route registry labels; not visual chrome |
+| Home mobile FA overlay vs side-by-side concept | **D/C** | WP-40 overlay direction documented @ `cc4b851`; not re-opened |
+| Gateway 200% light vs dark concept | **D** | Compare pairs affordance only; theme differs by design |
+
+Owner manual compare, a11y checks, and explicit sign-off still required before PASS.
 
 ---
 
