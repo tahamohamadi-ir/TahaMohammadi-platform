@@ -2,8 +2,8 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `cc4b851` (viewport-aware home visual compare pairing)
-**Coordination commit:** `8e12dd0`
+**Public-site commit:** `4db831d` (owner `npm run review:visual` one-command pipeline)
+**Coordination commit:** `pending` (sync after gate sweep)
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
 
@@ -44,15 +44,16 @@ Captures regenerated 2026-09-01 in one Playwright session (avoids `test-results/
 | PNG capture count | **44** (`test-results/visual/*.png`) — 36 PUBLIC-270 index + 8 WP-40 home/gateway |
 | Compare report | `Front-End/public-site/test-results/visual/compare-report.html` |
 | Pairs ready | **39 / 48** (PF-02 detail ×4 optional; EN 768/200% and FA dark 768 are capture-only — no width-matched concept) |
-| Regenerate | `cd Front-End/public-site && npm run build && npx playwright test --grep "PUBLIC-270\|WP-40 home captures\|WP-40 home and gateway capture" --workers=1 && npm run report:visual-compare` |
+| Regenerate | `cd Front-End/public-site && npm run review:visual` (build → captures → compare report → prints `file://` path; add `-- --serve` to open via `http://127.0.0.1:4173/compare-report.html`) |
 
 Open `compare-report.html` locally for side-by-side concept comparison. Does **not** change verdict to PASS.
 
 ### One-sitting quick start (owner)
 
-Captures and `compare-report.html` are **gitignored** — they exist only on the machine that ran the Playwright session above. If missing, run the **Regenerate** command in the artifacts table first.
+Captures and `compare-report.html` are **gitignored** — they exist only on the machine that ran the Playwright session above. If missing, run **`npm run review:visual`** first (prints the `file://` path when done).
 
-1. Open `Front-End/public-site/test-results/visual/compare-report.html` in a browser (double-click or `file://` URL).
+0. `cd Front-End/public-site && npm run review:visual` — one command: build, capture PUBLIC-270 + WP-40 home/gateway, generate compare report, print open URL.
+1. Open the printed `file://` path (or re-run with `npm run review:visual -- --serve` and browse `http://127.0.0.1:4173/compare-report.html`).
 2. Review each side-by-side pair (39 with concept references; EN 768/200% and FA dark @768 capture-only). Note deviations inline or below.
 3. Complete **§3 Manual accessibility checks** on a running `npm run preview` build (or `dist/` static server).
 4. Paste accepted capture SHA-256 hashes into **§4 Sign-off evidence** (hashes shown in compare-report).
@@ -61,7 +62,25 @@ Captures and `compare-report.html` are **gitignored** — they exist only on the
 
 ---
 
-## Automated gate summary (`cc4b851`)
+## Automated gate summary (`4db831d`)
+
+Full local gate sweep @ `4db831d` (2026-09-02). Playwright suites run after clean `dist/` rebuild; performance INP probe flaky once, green on retry (known @ `cc4b851`).
+
+| Command | Exit | Summary |
+|---|---:|---|
+| `npm test` (Vitest) | 0 | **228 passed** |
+| `npm run lint` | 0 | ESLint flat config |
+| `npm run format:check` | 0 | Prettier + `prettier-plugin-astro` |
+| `npm run validate:design` | 0 | 24 components, 6 templates |
+| `npm run validate:seo` | 0 | sitemap, canonical/hreflang, Pagefind bundles |
+| `npm run build` | 0 | 23 static pages |
+| `npm run test:foundation` | 0 | **6 passed** |
+| `npm run test:performance` | 0 | **6 passed** (1 flaky INP miss first run; green retry) |
+| `npm run test:nojs` | 0 | **23 passed** |
+| `npm run review:visual` | — | Owner assist — not re-run in agent sweep (build + 44 captures + compare report) |
+| Prior visual gates @ `cc4b851` | 0 | PUBLIC-270 36+1 skip; PUBLIC-280 216; compare **39/48** |
+
+### Prior gate summary (`cc4b851`)
 
 Full local gate sweep @ `cc4b851` (2026-09-02). Playwright suites run with `--workers=1` after clean `dist/` rebuild between commands.
 
@@ -272,6 +291,10 @@ Home featured projects and publications still render from `src/lib/home-content.
 
 Vitest spawn uses cross-platform `npm` (not `npm.cmd` on Linux). PUBLIC-310/PUBLIC-350 skip workspace-sibling checks when Back-End/coordination repos are absent in standalone GitHub CI. Does **not** close `PUBLIC-190`.
 
+### F-21 — Owner `review:visual` one-command pipeline (not acceptance)
+
+`main` @ `4db831d`: `npm run review:visual` runs build → PUBLIC-270 + WP-40 home/gateway captures → `report:visual-compare` → prints `file://` path; optional `-- --serve` on port 4173. QA doc one-sitting quick start updated. Does **not** close `PUBLIC-190` or change verdict to PASS.
+
 ### F-20 — CI green @ `3a54130` + visual-compare formatting (not acceptance)
 
 `main` @ `3a54130`: removes unused `scriptDir` in CI-related scripts; Prettier pass on visual-compare tooling. GitHub Actions green on standalone repo. Does **not** close `PUBLIC-190` or change verdict to PASS.
@@ -299,7 +322,7 @@ Compare each implementation screenshot against the matching concept at the same 
 
 **Owner compare assist:** `npm run report:visual-compare` generates `test-results/visual/compare-report.html` — side-by-side pairs from existing PNGs. Does **not** change verdict to PASS.
 
-**Regenerate captures:** `cd Front-End/public-site && npm run build && npm run test:visual -- --grep PUBLIC-270`
+**Regenerate captures:** `cd Front-End/public-site && npm run review:visual`
 
 ### 2. Home page review
 
@@ -339,6 +362,6 @@ WP-40 visual captures use **768px reflow** and **200% zoom** evidence (not 1440/
 
 ## Verdict
 
-**`REVISE`** — Home compare mappings fixed @ `cc4b851` (`resolveHomeConceptReference`; 39/48 honest pairs); PF-01..PF-08 structural empty-state @ `7c6efc3`; GitHub CI green; manual owner visual acceptance and a11y still open before `PUBLIC-190` may close.
+**`REVISE`** — Owner `review:visual` one-command assist @ `4db831d`; home compare mappings fixed @ `cc4b851` (39/48 honest pairs); PF-01..PF-08 structural empty-state @ `7c6efc3`; manual owner visual acceptance and a11y still open before `PUBLIC-190` may close.
 
 **Goal complete:** NO — owner visual compare, manual a11y, and explicit sign-off still required.
