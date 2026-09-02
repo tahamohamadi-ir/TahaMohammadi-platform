@@ -3,7 +3,7 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `0e84e69` (WP-40 `review:visual` Windows dist snapshot @ `0e84e69`; still `REVISE` — manual compare required)
-**Coordination commit:** `301a2e6` (prior pin @ `888ccc1`; this sweep updates to `0e84e69`)
+**Coordination commit:** `3b84e91`
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
 
