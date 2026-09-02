@@ -2,8 +2,8 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `a6dbca1` (gate sweep @ `a6dbca1`; PF consolidation `60845bd`–`133fc14` + a11y coral fix; still `REVISE`)  
-**Coordination commit:** `dff348c`  
+**Public-site commit:** `c14508a` (compare pairing fix @ `c14508a`; automated gate sweep @ `a6dbca1`; PF consolidation `60845bd`–`133fc14` + a11y coral fix; still `REVISE`)  
+**Coordination commit:** `dded269`  
 **Run date:** 2026-09-02  
 **Result:** `REVISE`
 
@@ -33,7 +33,16 @@ Owner manual compare, a11y checks, and explicit sign-off still required before P
 
 ---
 
-## Automated gate summary (`a6dbca1`)
+## Automated gate summary (`c14508a`)
+
+Compare pairing fix @ `c14508a` (2026-09-02). `page-family-visual-compare.mjs` resolves concept PNG root when `DESIGN_AUTHORITY_ROOT` points at `agent-kit/` (JSON only) — restores honest **39 / 48** ready pairs (was 0 after mis-rooted lookup). Full automated gate sweep remains green from parent `a6dbca1`; `review:visual` re-run confirms captures + compare report.
+
+| Command | Exit | Summary |
+|---|---:|---|
+| `npm run review:visual` | 0 | Owner assist — **38 passed**, compare **39 / 48** ready pairs (pairing fix @ `c14508a`) |
+| `npm run report:visual-compare` | 0 | **39 / 48** ready pairs (concept root fix) |
+
+### Prior gate summary (`a6dbca1`)
 
 Full local gate sweep @ `a6dbca1` (2026-09-02). Consolidated parallel PF agent work (`60845bd`–`133fc14`): PF-06/07 list-card, skills, download shells; PF-01/03 creative/writing concept fidelity; PF-04 project featured/row chrome; PF-05 bibliography + research-fit shells; home/gateway rhythm; writing coral contrast fix for WCAG AA. Clean `dist/` rebuild once; Playwright suites run with `TM_E2E_SKIP_BUILD=1` after build (Windows `npm.cmd` spawn without skip-build fails EINVAL in webServer — known; `review:visual` pre-builds + snapshots dist).
 
@@ -504,6 +513,6 @@ Paste accepted rows below. Check `[ ]` only for captures you explicitly accept.
 
 ## Verdict
 
-**`REVISE`** — Full automated gate sweep green @ `a6dbca1` (PF consolidation `60845bd`–`133fc14` + a11y coral fix); owner `review:visual` **38 passed / 39 ready pairs**; manual owner visual compare, §4 accepted hashes, and manual a11y still open before `PUBLIC-190` may close.
+**`REVISE`** — Automated gate sweep green @ `a6dbca1` (PF consolidation `60845bd`–`133fc14` + a11y coral fix); compare pairing fix @ `c14508a` (**39 / 48** ready pairs); owner `review:visual` **38 passed**; manual owner visual compare, ≤4 accepted hashes, and manual a11y still open before `PUBLIC-190` may close.
 
 **Goal complete:** NO — owner visual compare, manual a11y, and explicit sign-off still required.
