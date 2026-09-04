@@ -2,8 +2,8 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `cf81f6f` (PUBLIC-190 evidence grid + constellation icons + PF chrome polish atop PUBLIC-080 a11y @ `2f35e6e` / remediation stack @ `1c3a3a9`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a`; still `REVISE`)  
-**Coordination commit:** `e0beefca4f21b9cb862769133136b07645dd18a3`  
+**Public-site commit:** `0e6a552` (PUBLIC-190 Phase 6 writing/creative empty chrome atop `cf81f6f` evidence grid / PUBLIC-080 a11y @ `2f35e6e`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a`; still `REVISE`)  
+**Coordination commit:** _(this commit)_  
 **Run date:** 2026-09-04  
 **Result:** `REVISE`
 
@@ -46,6 +46,35 @@ Agent gap analysis after owner screenshots (PF-01, PF-04?PF-08, home mobile FA, 
 | Constellation concept-art fidelity | **C/D** | CSS/SVG shell; not full illustrated concept asset |
 
 Owner manual compare, a11y checks, and explicit sign-off still required before PASS.
+
+---
+
+## PUBLIC-190 Phase 6 writing/creative chrome (`0e6a552`, agent 2026-09-04)
+
+**Verdict:** `REVISE` (unchanged — owner compare + manual a11y + sign-off still required)
+
+**Inventory:** Base tip `cf81f6f`. Largest remaining agent-actionable structural gaps were PF-03 newsletter/collaborate bands, theme-explore icons, writing hero ornament + row category chrome, and PF-01 masonry asset monotony. No Category A CMS copy invented.
+
+**Fix (public-site @ `0e6a552`):**
+
+| Area | Change |
+|---|---|
+| PF-03 Writing | `PageFamilyOptionalUpdatesShell`; writing collaborate band (Connect + CV); Independent writing eyebrow + hero summary; gold diamond ornament |
+| PF-03 Theme explore | Per-tone SVG icons (essay/note/memory/society/archive); coral section title |
+| PF-03 Rows | 6-row shell; structural ESSAY/NOTE/… labels; SVG arrows; alternating promoted thumbs |
+| PF-03 Filters | Outline-active All chip (`--outline`) |
+| PF-01 Creative | Masonry cycles multiple promoted assets + object-position shifts |
+| Shared | `Button` reused for updates/collaborate CTAs; EN/FA chrome helpers in `page-family-empty-chrome.ts` |
+
+| Command | Exit | Summary |
+|---|---:|---|
+| `npm run lint` | 0 | ESLint flat config |
+| `npm test` (Vitest) | 0 | **246 passed** |
+| `npm run build` | 0 | 23 static pages |
+| `npm run format:check` | 0 | Prettier green |
+| `npm run test:a11y` | 0 | **29 passed** (`TM_E2E_SKIP_BUILD=1`) |
+
+`review:visual` not re-run — owner should regenerate captures after pull.
 
 ---
 
@@ -641,6 +670,6 @@ Paste accepted rows below. Check `[ ]` only for captures you explicitly accept.
 
 ## Verdict
 
-**`REVISE`** — PUBLIC-190 structural chrome @ `cf81f6f` (Evidence Available grid, constellation node icons, sanitized project rows, teaching path step chrome, About skill icons, FA home publications parity); PUBLIC-080 automated a11y green @ `2f35e6e` (**29 / 29**); remediation stack @ `1c3a3a9`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a` (**39 / 48** ready pairs). Manual owner visual compare, accepted capture hashes, manual a11y, and explicit sign-off still open before `PUBLIC-190` may close.
+**`REVISE`** — PUBLIC-190 Phase 6 writing/creative chrome @ `0e6a552` (newsletter band, writing collaborate CTA, theme-explore icons, hero ornament, row categories, masonry asset diversity) atop structural chrome @ `cf81f6f`; PUBLIC-080 automated a11y green @ `2f35e6e` (**29 / 29**); remediation stack @ `1c3a3a9`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a` (**39 / 48** ready pairs). Manual owner visual compare, accepted capture hashes, manual a11y, and explicit sign-off still open before `PUBLIC-190` may close.
 
 **Goal complete:** NO — owner visual compare, manual a11y, and explicit sign-off still required.
