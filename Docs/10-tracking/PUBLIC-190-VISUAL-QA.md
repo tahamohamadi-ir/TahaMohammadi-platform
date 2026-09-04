@@ -2,12 +2,39 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `798e8b2` (PF-02 honest creative detail empty-shell atop Phase 8 @ `84e83e9` / collaborate bands @ `e608146` / Phase 6 @ `0e6a552` / evidence grid @ `cf81f6f` / PUBLIC-080 a11y @ `2f35e6e`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a`; still `REVISE`)  
-**Coordination commit:** `680fcf9`  
+**Public-site commit:** `c7581b7` (About/Contact/Research leftover chrome atop PF-02 empty-shell @ `798e8b2` / Phase 8 @ `84e83e9` / collaborate bands @ `e608146` / Phase 6 @ `0e6a552` / evidence grid @ `cf81f6f` / PUBLIC-080 a11y @ `2f35e6e`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a`; still `REVISE`)  
+**Coordination commit:** pending stamp after this docs commit  
 **Run date:** 2026-09-04  
 **Result:** `REVISE`
 
 **Remediation pack @ 2026-09-02:** [PUBLIC-190-asset-prompts/README.md](./PUBLIC-190-asset-prompts/README.md) (owner image prompts), [PUBLIC-190-IMPLEMENTATION-REQUIREMENTS.md](./PUBLIC-190-IMPLEMENTATION-REQUIREMENTS.md) (CMS/motion/graph gap research), [PUBLIC-190-VISUAL-REMEDIATION-PLAN.md](./PUBLIC-190-VISUAL-REMEDIATION-PLAN.md) (48-pair phased plan), [ADR-0007](../09-decisions/ADR-0007-VISUAL-ASSETS-AND-CMS-BLOCKS.md).
+
+---
+
+## PUBLIC-190 About/Contact/Research leftover chrome (`c7581b7`, agent 2026-09-04)
+
+**Verdict:** `REVISE` (unchanged — owner compare + manual a11y + sign-off still required)
+
+**Inventory:** Base tip `e54dad7` / code `798e8b2`. Largest remaining agent-actionable gaps per the remediation plan were PF-08 Contact leftovers (topic-card selection, sidebar methods, form privacy/anti-spam chrome), PF-05 Research/Publications leftovers (shared sub-nav, constellation headline hierarchy, bibliography type chips + dual actions, duplicate bibliography), and PF-07 journey icons — all Category B/C shell work, no CMS copy invented.
+
+**Fix (public-site @ `c7581b7`):**
+
+| Area | Change |
+|---|---|
+| Contact (PF-08) | Topics band with selected-state topic cards (inline SVG icons, `aria-pressed`); sidebar contact-methods block (email/LinkedIn/ORCID icons, honest `From approved CMS record` values); form privacy note + anti-spam `Ready` pill; methods deduplicated into sidebar shell |
+| Research/Publications (PF-05) | Shared `PageFamilySubNavShell` on both routes (active Overview / Publications); constellation headline hierarchy (`Interconnected themes…`); bibliography rows with 4 type tones + status pill + Details/Available-files actions; duplicate bibliography removed (single source via `PageFamilySelectedPublicationsShell` count=4) |
+| About (PF-07) | Journey-flow step icons (inline SVG, 5 paths) |
+| Honesty | New labels are structural UI chrome (`page-family-empty-chrome.ts`); bibliography chapter/report chip text uses `--color-ink` after axe flagged 3.32/4.46 contrast |
+| Tests | `public-190.pf-index-chrome-build.test.ts` extended: publications SubNav + bibliography markers, new research + contact route entries |
+
+| Command | Exit | Summary |
+|---|---:|---|
+| `npm run lint` | 0 | clean |
+| `npx vitest run` | 0 | **251 passed** (53 files) |
+| `npm run build` | 0 | 25 pages; fresh dist re-verified |
+| `npm run test:a11y` | 0 | **29 passed** (chapter/report chip contrast fixed) |
+
+Owner must regenerate PUBLIC-270 captures + compare report before sign-off. CMS Category A, Category D nav labels, and owner asset handback remain open.
 
 ---
 
