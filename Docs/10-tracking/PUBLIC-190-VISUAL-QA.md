@@ -3,7 +3,7 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `cf81f6f` (PUBLIC-190 evidence grid + constellation icons + PF chrome polish atop PUBLIC-080 a11y @ `2f35e6e` / remediation stack @ `1c3a3a9`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a`; still `REVISE`)  
-**Coordination commit:** _(stamped after this commit)_  
+**Coordination commit:** `e0beefca4f21b9cb862769133136b07645dd18a3`  
 **Run date:** 2026-09-04  
 **Result:** `REVISE`
 
