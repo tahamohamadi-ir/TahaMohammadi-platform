@@ -199,7 +199,7 @@ Wave 4 (release)
 | A | COORD | COORD-010, COORD-020, COORD-030 | workspace root |
 | B | BACKEND | BACKEND-010 → 050 | `Back-End/` |
 | C | PUBLIC | PUBLIC-010 → 080 | `Front-End/public-site/` |
-| D | ADMIN | ADMIN-010 → 171, 180–200, 210, 220, 230 | `Front-End/admin-panel/` |
+| D | ADMIN | ADMIN-010 → 171, 180–200, 210, 220, 230, 240, 260–281 | `Front-End/admin-panel/` |
 
 After BACKEND-050 and PUBLIC-010/ADMIN-010 complete, start Wave 1 (seed import + API clients) without waiting for full UI.
 
