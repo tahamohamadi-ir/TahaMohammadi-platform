@@ -111,3 +111,25 @@ PROVENANCE.json records scaffold-accepted, settings config.settings.development,
 - **Compatibility:** additive only; existing operations keep shapes and codes. The transition 	o=published on seed-linked rows changes behavior exactly as decided (was: always allowed).
 - **admin-panel:** regenerates src/generated/admin-api.ts; the editor renders pprovalState, disables publish while it is not pproved, and maps APPROVAL_REQUIRED to the conflict kind; a new Approval queue page consumes the read endpoint.
 - **public-site:** no impact (public schema unchanged).
+
+## Addendum 2026-09-04b - seed policy projection (BACKEND-211 / ADMIN-281)
+
+Status: **accepted addendum** (owner decision recorded 2026-09-04: the seed policy is persisted server-side and surfaced to the admin, not bundled statically). One additive response field on GET /api/v1/admin/site; no new path. Public schema unchanged (same hash).
+
+### Changes implemented
+
+- SiteSettings.seed_policy JSONField added (migration siteconfig.0004), written only by pply_seed_settings during the seed import; the admin PUT schema does not include it (verified by test).
+- SiteSettingsOut gained seedPolicy: object | null - the raw supplement/seed-settings.json payload, so the site settings admin can label seed-managed surfaces (phone, city/country, CV/resume slots) instead of guessing.
+
+### Regenerated artifacts (SHA-256, CRLF rule)
+
+| Artifact | Old -> New SHA-256 (CRLF) | Count |
+|---|---|---|
+| public-openapi.json |  f672693de28ed33286789e5119eb3226c062693fb15168b1aba5513c257c0a5 (unchanged) | 40 paths |
+| dmin-openapi.json | 5856a37dbefbae60ea5e27ed48a1a2ab37767c9352800fe389371ab94a94b49a -> 38ff4d81d454287bd0e6c437ad84bfada41255e8fa6acc13704144223014fd7a | 49 paths (unchanged count), version  .1.0 |
+| endpoint-inventory.md | 452de5ab13f5e0b9ea57bf22cd7687ef04cadad96edb0fd2057918f7d8ffd7ef (unchanged) | 106 operations |
+
+### Tests (written failing first, then passing)
+
+- 	ests/test_admin_seed_policy.py: 	est_apply_seed_settings_persists_policy, 	est_missing_policy_file_leaves_seed_policy_empty, 	est_admin_site_response_carries_seed_policy, 	est_seed_policy_is_not_writable_via_update.
+- 	ests/test_openapi_hash_drift.py re-pinned to the new admin hash.
