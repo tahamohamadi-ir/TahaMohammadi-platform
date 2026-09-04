@@ -130,8 +130,8 @@ Status markers: `[x]` verified complete, `[ ]` not complete.
 - [x] Implement research, publications, and projects.
 - [x] Implement books, talks, downloads, courses, and creative work.
 - [x] Implement media upload, metadata, and selection.
-- [ ] Implement Home composition.
-- [ ] Implement timeline editing.
+- [x] Implement Home composition.
+- [x] Implement timeline editing.
 - [ ] Implement graph version, node, group, and edge editing.
 - [ ] Implement preview-share workflow.
 - [x] Implement revision history and restore.
