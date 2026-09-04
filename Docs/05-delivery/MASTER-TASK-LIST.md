@@ -133,7 +133,7 @@ Status markers: `[x]` verified complete, `[ ]` not complete.
 - [x] Implement Home composition.
 - [x] Implement timeline editing.
 - [ ] Implement graph version, node, group, and edge editing.
-- [ ] Implement preview-share workflow.
+- [x] Implement preview-share workflow.
 - [x] Implement revision history and restore.
 - [ ] Implement schedule, publish, archive, and bulk actions.
 - [ ] Verify server permissions for every state-changing action.
