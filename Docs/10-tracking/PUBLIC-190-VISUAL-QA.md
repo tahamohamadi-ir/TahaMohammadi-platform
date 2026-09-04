@@ -29,6 +29,8 @@
 
 **Follow-up fix (@ `05c87a0`, owner `review:visual` run 2026-09-04):** publications `@390` captures failed the PUBLIC-270 no-horizontal-overflow predicate (page 927px). Cause: the new `.publications-page__nav-stack` wrapper let the ≤479px column-direction filter row wrap into side-by-side flex columns. Fix: `grid-template-columns: minmax(0, 1fr)` on the wrapper + `flex-wrap: nowrap` for the wrapped filters. Probe-verified `scrollWidth 390 == innerWidth 390`; publications EN/FA @390/@1440 captures pass (4/4).
 
+**Owner rerun confirmed (@ `675a08f`, 2026-09-04):** `review:visual` **39/39 @visual captures passed**; compare report regenerated → **43/48 pairs ready** (39 index + 4 PF-02 empty-shell; 5 HOME capture-only rows have no concept reference and remain capture-only). Owner manual compare + `npm run report:signoff-hashes` hashing + sign-off remain the acceptance gate — not yet performed.
+
 | Command | Exit | Summary |
 |---|---:|---|
 | `npm run lint` | 0 | clean |
@@ -36,7 +38,7 @@
 | `npm run build` | 0 | 25 pages; fresh dist re-verified |
 | `npm run test:a11y` | 0 | **29 passed** (chapter/report chip contrast fixed) |
 
-Owner must regenerate PUBLIC-270 captures + compare report before sign-off. CMS Category A, Category D nav labels, and owner asset handback remain open.
+Owner regenerated PUBLIC-270 captures + compare report @ `675a08f` (43/48 ready). Remaining before sign-off: owner manual compare review + SHA-256 hashes + explicit sign-off. CMS Category A, Category D nav labels, and owner asset handback remain open.
 
 ---
 

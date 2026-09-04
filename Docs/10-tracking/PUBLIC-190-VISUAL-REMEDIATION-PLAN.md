@@ -3,7 +3,7 @@
 **Packet:** PUBLIC-190 gap analysis (analysis + plan only — does **not** set PASS)  
 **Public-site base:** `c7581b7` (About/Contact/Research leftover chrome PF-05/07/08; PF-02 honest creative detail empty-shell @ `798e8b2`; Phase 8 Home split hero + Gateway 200% @ `84e83e9`; collaborate bands PF-01/04/05 @ `e608146`; Phase 6 writing/creative chrome @ `0e6a552`; prior evidence grid @ `cf81f6f`; Path A + shared footer/PF shells + home FA hero reflow @ `cfce6b4`; prior pagination @ `dd515a0`)  
 **Compare pairing fix:** `c14508a` (`page-family-visual-compare.mjs` concept root)  
-**Generated:** 2026-09-02 (gate tip stamped 2026-09-04 About/Contact/Research leftover chrome)  
+**Generated:** 2026-09-02 (gate tip stamped 2026-09-04 About/Contact/Research leftover chrome; owner rerun @ `675a08f` confirmed **43/48** compare-ready — 39 index + 4 PF-02 empty-shell, 5 capture-only)  
 **Pairs analyzed:** **48 / 48** (39 ready + 5 capture-only + 4 empty-shell-ready / previously blocked-route)  
 **Asset prompts:** [`PUBLIC-190-asset-prompts/`](./PUBLIC-190-asset-prompts/) (sibling agent 65eccafb — stub IDs linked below; populate prompt files as delivered)  
 **QA verdict:** remains `REVISE` — owner manual compare + sign-off still required
