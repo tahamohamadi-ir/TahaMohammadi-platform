@@ -2,12 +2,40 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `0e6a552` (PUBLIC-190 Phase 6 writing/creative empty chrome atop `cf81f6f` evidence grid / PUBLIC-080 a11y @ `2f35e6e`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a`; still `REVISE`)  
-**Coordination commit:** `f18f3d4c783238890a0eb49a697217988fc4383a`  
+**Public-site commit:** `e608146` (PUBLIC-190 collaborate bands for PF-01/04/05 atop Phase 6 @ `0e6a552` / evidence grid @ `cf81f6f` / PUBLIC-080 a11y @ `2f35e6e`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a`; still `REVISE`)  
+**Coordination commit:** _(pending this stamp)_  
 **Run date:** 2026-09-04  
 **Result:** `REVISE`
 
 **Remediation pack @ 2026-09-02:** [PUBLIC-190-asset-prompts/README.md](./PUBLIC-190-asset-prompts/README.md) (owner image prompts), [PUBLIC-190-IMPLEMENTATION-REQUIREMENTS.md](./PUBLIC-190-IMPLEMENTATION-REQUIREMENTS.md) (CMS/motion/graph gap research), [PUBLIC-190-VISUAL-REMEDIATION-PLAN.md](./PUBLIC-190-VISUAL-REMEDIATION-PLAN.md) (48-pair phased plan), [ADR-0007](../09-decisions/ADR-0007-VISUAL-ASSETS-AND-CMS-BLOCKS.md).
+
+---
+
+## PUBLIC-190 collaborate bands PF-01/04/05 (`e608146`, agent 2026-09-04)
+
+**Verdict:** `REVISE` (unchanged — owner compare + manual a11y + sign-off still required)
+
+**Inventory:** Base tip `0e6a552`. Largest remaining agent-actionable chrome gaps after Phase 6 were missing concept collaborate CTA bands on Projects/Creative/Research empty indexes (Writing/Teaching/About/Publications already had them), plus Projects featured carousel dots and All-chip filter rhythm.
+
+**Fix (public-site @ `e608146`):**
+
+| Area | Change |
+|---|---|
+| Shared | `getIndexCollaborateChrome()` + flat Connect+CV band variants for writing/projects/creative/research |
+| PF-04 Projects | Collaborate band; All projects active filter chip; featured carousel dots |
+| PF-01 Creative | Collaborate band after pagination |
+| PF-05 Research | Collaborate band after empty sections |
+| CSS | Flat band surfaces + projects filter toolbar rhythm |
+
+| Command | Exit | Summary |
+|---|---:|---|
+| `npm run lint` | 0 | ESLint flat config |
+| `npm test` (Vitest) | 0 | **246 passed** |
+| `npm run build` | 0 | 23 static pages |
+| `npm run format:check` | 0 | Prettier green |
+| `npm run test:a11y` | 0 | **29 passed** (`TM_E2E_SKIP_BUILD=1`) |
+
+`review:visual` not re-run — owner should regenerate captures after pull.
 
 ---
 
