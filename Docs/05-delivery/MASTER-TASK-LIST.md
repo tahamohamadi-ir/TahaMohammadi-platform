@@ -135,7 +135,7 @@ Status markers: `[x]` verified complete, `[ ]` not complete.
 - [x] Implement graph version, node, group, and edge editing.
 - [x] Implement preview-share workflow.
 - [x] Implement revision history and restore.
-- [ ] Implement schedule, publish, archive, and bulk actions.
+- [x] Implement schedule, publish, archive, and bulk actions.
 - [ ] Verify server permissions for every state-changing action.
 
 ## R7 — Integrated staging
