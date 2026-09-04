@@ -13,7 +13,7 @@ Status values: `PASS` is evidenced now; `OPEN` needs implementation or owner inp
 | PS-07 auth/topology | PASS | Same-origin reverse-proxy baseline documented; staging browser evidence remains open |
 | PS-08 owner content | OPEN | Seed v1.1 ingested at `owner-content-seed-v1/` (85 structured records incl. supplement; 0 published); production approval still required per record |
 | PS-09 media | OPEN | Owner approved all local Asset sources; derivatives, route assignment, accessibility text/crop, and QA remain required |
-| PS-10 fonts | OPEN | Vazirmatn/Estedad open-font direction is recommended; final family selection plus pinned binaries, licenses, subsets, and computed-style evidence remain required |
+| PS-10 fonts | PASS | 4 variable families pinned with SHA-256 + OFL (`public/fonts/MANIFEST.md`); 6 latin/arabic subsets via pyftsubset with fixture-backed cmap coverage (`tests/fixtures/fonts/subset-coverage.json`, `src/public-050.font-subsets.test.ts`); unicode-range faces + full fallback; preloads switched to subsets; computed-style QA both locales via `npm run test:foundation` (6/6) + `npm run test:performance` (6/6) |
 | PS-11 CI | OPEN | Two-phase CI rollout is defined; Phase 0 can be activated now and Phase 1 requires the selected scaffold commands/lockfiles |
 | PS-12 tracking | PASS | Central/repository task updates, stale-reference scan, checksum validation, JSON validation, and cross-repo whitespace checks recorded |
 

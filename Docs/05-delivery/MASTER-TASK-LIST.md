@@ -113,19 +113,19 @@ Status markers: `[x]` verified complete, `[ ]` not complete.
 ## R5 — Admin foundation
 
 - [x] Scaffold React 19, TypeScript 5.9, and Vite.
-- [ ] Configure routing and guarded layouts.
-- [ ] Implement session and CSRF client behavior.
-- [ ] Generate or validate the admin API client.
-- [ ] Build admin design tokens and primitives.
-- [ ] Implement accessible form controls and validation summaries.
-- [ ] Implement permission-aware navigation.
-- [ ] Implement global loading, error, unauthorized, and forbidden states.
+- [x] Configure routing and guarded layouts.
+- [x] Implement session and CSRF client behavior.
+- [x] Generate or validate the admin API client.
+- [x] Build admin design tokens and primitives.
+- [x] Implement accessible form controls and validation summaries.
+- [x] Implement permission-aware navigation.
+- [x] Implement global loading, error, unauthorized, and forbidden states.
 - [ ] Add unit, component, and browser test infrastructure.
 
 ## R6 — Admin workflows
 
-- [ ] Implement dashboard health and release status.
-- [ ] Implement profile and site settings.
+- [x] Implement dashboard health (release status still open).
+- [x] Implement profile and site settings.
 - [ ] Implement articles and series.
 - [ ] Implement research, publications, and projects.
 - [ ] Implement books, talks, downloads, courses, and creative work.
