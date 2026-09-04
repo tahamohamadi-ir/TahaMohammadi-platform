@@ -3,7 +3,7 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `84e83e9` (Phase 8 Home split hero + Gateway 200% affordance atop collaborate bands @ `e608146` / Phase 6 @ `0e6a552` / evidence grid @ `cf81f6f` / PUBLIC-080 a11y @ `2f35e6e`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a`; still `REVISE`)  
-**Coordination commit:** _(pending this stamp)_  
+**Coordination commit:** `d008efdbc851bc5a619f0e90145e7cbeace3009b`  
 **Run date:** 2026-09-04  
 **Result:** `REVISE`
 
