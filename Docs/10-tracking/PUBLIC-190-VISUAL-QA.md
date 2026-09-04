@@ -2,12 +2,38 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `84e83e9` (Phase 8 Home split hero + Gateway 200% affordance atop collaborate bands @ `e608146` / Phase 6 @ `0e6a552` / evidence grid @ `cf81f6f` / PUBLIC-080 a11y @ `2f35e6e`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a`; still `REVISE`)  
-**Coordination commit:** `d008efdbc851bc5a619f0e90145e7cbeace3009b`  
+**Public-site commit:** `798e8b2` (PF-02 honest creative detail empty-shell atop Phase 8 @ `84e83e9` / collaborate bands @ `e608146` / Phase 6 @ `0e6a552` / evidence grid @ `cf81f6f` / PUBLIC-080 a11y @ `2f35e6e`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a`; still `REVISE`)  
+**Coordination commit:** pending stamp after this docs commit  
 **Run date:** 2026-09-04  
 **Result:** `REVISE`
 
 **Remediation pack @ 2026-09-02:** [PUBLIC-190-asset-prompts/README.md](./PUBLIC-190-asset-prompts/README.md) (owner image prompts), [PUBLIC-190-IMPLEMENTATION-REQUIREMENTS.md](./PUBLIC-190-IMPLEMENTATION-REQUIREMENTS.md) (CMS/motion/graph gap research), [PUBLIC-190-VISUAL-REMEDIATION-PLAN.md](./PUBLIC-190-VISUAL-REMEDIATION-PLAN.md) (48-pair phased plan), [ADR-0007](../09-decisions/ADR-0007-VISUAL-ASSETS-AND-CMS-BLOCKS.md).
+
+---
+
+## PUBLIC-190 PF-02 creative detail empty-shell (`798e8b2`, agent 2026-09-04)
+
+**Verdict:** `REVISE` (unchanged — owner compare + manual a11y + sign-off still required)
+
+**Inventory:** Base tip `9c30c44` / code `84e83e9`. Largest remaining agent-actionable structural gap after Phase 8 was PF-02 (4 blocked compare pairs) — no static creative detail route without inventing CMS content.
+
+**Fix (public-site @ `798e8b2`):**
+
+| Area | Change |
+|---|---|
+| Route | Reserved `/{locale}/creative/empty-shell/` always built; sitemap-excluded; never fetched from CMS |
+| Shell | `PageFamilyCreativeDetailShell` — breadcrumb, gallery frame, meta dashes, process chrome, credits, related placeholders, disabled pager, collaborate band |
+| Capture | PUBLIC-270 PF-02 EN/FA @1440/390 dark no longer skipped |
+| Honesty | Titles/statement use `Awaiting approved CMS copy` only; no invented bios/emails/ORCID/work titles |
+
+| Command | Exit | Summary |
+|---|---:|---|
+| `npm run lint` | 0 | clean |
+| `npm test` | 0 | **251 passed** |
+| `npm run build` | 0 | includes EN/FA empty-shell pages |
+| `npm run test:a11y` | 0 | **29 passed** |
+
+Owner must regenerate PUBLIC-270 captures + compare report before sign-off. Published CMS creative `{slug}` detail remains Category A.
 
 ---
 
@@ -725,6 +751,6 @@ Paste accepted rows below. Check `[ ]` only for captures you explicitly accept.
 
 ## Verdict
 
-**`REVISE`** — PUBLIC-190 Phase 8 Home split hero + Gateway 200% affordance @ `84e83e9` atop collaborate bands for PF-01/04/05 @ `e608146` (Connect+CV CTA chrome, projects All chip + featured dots) atop Phase 6 writing/creative chrome @ `0e6a552`; structural chrome @ `cf81f6f`; PUBLIC-080 automated a11y green @ `2f35e6e` (**29 / 29**); remediation stack @ `1c3a3a9`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a` (**39 / 48** ready pairs). Manual owner visual compare, accepted capture hashes, manual a11y, and explicit sign-off still open before `PUBLIC-190` may close.
+**`REVISE`** — PUBLIC-190 PF-02 honest creative detail empty-shell @ `798e8b2` atop Phase 8 Home split hero + Gateway 200% @ `84e83e9` atop collaborate bands for PF-01/04/05 @ `e608146` atop Phase 6 writing/creative chrome @ `0e6a552`; structural chrome @ `cf81f6f`; PUBLIC-080 automated a11y green @ `2f35e6e` (**29 / 29**); remediation stack @ `1c3a3a9`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a` (**39 / 48** ready pairs; PF-02 shell now capturable). Manual owner visual compare, accepted capture hashes, manual a11y, and explicit sign-off still open before `PUBLIC-190` may close.
 
 **Goal complete:** NO — owner visual compare, manual a11y, and explicit sign-off still required.

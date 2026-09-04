@@ -1,10 +1,10 @@
 # PUBLIC-190 Visual Remediation Plan
 
 **Packet:** PUBLIC-190 gap analysis (analysis + plan only — does **not** set PASS)  
-**Public-site base:** `84e83e9` (Phase 8 Home split hero + Gateway 200% affordance; collaborate bands PF-01/04/05 @ `e608146`; Phase 6 writing/creative chrome @ `0e6a552`; prior evidence grid @ `cf81f6f`; Path A + shared footer/PF shells + home FA hero reflow @ `cfce6b4`; prior pagination @ `dd515a0`)  
+**Public-site base:** `798e8b2` (PF-02 honest creative detail empty-shell; Phase 8 Home split hero + Gateway 200% @ `84e83e9`; collaborate bands PF-01/04/05 @ `e608146`; Phase 6 writing/creative chrome @ `0e6a552`; prior evidence grid @ `cf81f6f`; Path A + shared footer/PF shells + home FA hero reflow @ `cfce6b4`; prior pagination @ `dd515a0`)  
 **Compare pairing fix:** `c14508a` (`page-family-visual-compare.mjs` concept root)  
-**Generated:** 2026-09-02 (gate tip stamped 2026-09-04 Phase 8)  
-**Pairs analyzed:** **48 / 48** (39 ready + 5 capture-only + 4 blocked-route)  
+**Generated:** 2026-09-02 (gate tip stamped 2026-09-04 PF-02 empty-shell)  
+**Pairs analyzed:** **48 / 48** (39 ready + 5 capture-only + 4 empty-shell-ready / previously blocked-route)  
 **Asset prompts:** [`PUBLIC-190-asset-prompts/`](./PUBLIC-190-asset-prompts/) (sibling agent 65eccafb — stub IDs linked below; populate prompt files as delivered)  
 **QA verdict:** remains `REVISE` — owner manual compare + sign-off still required
 
@@ -82,10 +82,10 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 | PF-08-pf08-EN-390-DARK | public-270-pf08-en-390-dark.png | contact-dark.png | en | 390 | dark | ready | Critical | Phase 3 |
 | PF-08-pf08-FA-1440-DARK | public-270-pf08-fa-1440-dark.png | contact-dark.png | fa | 1440 | dark | ready | Critical | Phase 3 |
 | PF-08-pf08-FA-390-DARK | public-270-pf08-fa-390-dark.png | contact-dark.png | fa | 390 | dark | ready | Critical | Phase 3 |
-| PF-02-pf02-EN-1440-DARK | public-270-pf02-en-1440-dark.png | creative-detail-dark.png | en | 1440 | dark | blocked | Blocked | Phase 7 |
-| PF-02-pf02-EN-390-DARK | public-270-pf02-en-390-dark.png | creative-detail-dark.png | en | 390 | dark | blocked | Blocked | Phase 7 |
-| PF-02-pf02-FA-1440-DARK | public-270-pf02-fa-1440-dark.png | creative-detail-dark.png | fa | 1440 | dark | blocked | Blocked | Phase 7 |
-| PF-02-pf02-FA-390-DARK | public-270-pf02-fa-390-dark.png | creative-detail-dark.png | fa | 390 | dark | blocked | Blocked | Phase 7 |
+| PF-02-pf02-EN-1440-DARK | public-270-pf02-en-1440-dark.png | creative-detail-dark.png | en | 1440 | dark | ready | High | Phase 7 |
+| PF-02-pf02-EN-390-DARK | public-270-pf02-en-390-dark.png | creative-detail-dark.png | en | 390 | dark | ready | High | Phase 7 |
+| PF-02-pf02-FA-1440-DARK | public-270-pf02-fa-1440-dark.png | creative-detail-dark.png | fa | 1440 | dark | ready | High | Phase 7 |
+| PF-02-pf02-FA-390-DARK | public-270-pf02-fa-390-dark.png | creative-detail-dark.png | fa | 390 | dark | ready | High | Phase 7 |
 | HOME-HOME-EN-768-LIGHT | wp40-home-en-768-light.png | — | en | 768 | light | capture-only | Medium | Phase 8 |
 | HOME-HOME-EN-768-DARK | wp40-home-en-768-dark.png | — | en | 768 | dark | capture-only | Medium | Phase 8 |
 | HOME-HOME-FA-768-LIGHT | wp40-home-fa-768-light.png | home-mobile-fa-light-concept-v1.png | fa | 768 | light | ready | Medium | Phase 8 |
