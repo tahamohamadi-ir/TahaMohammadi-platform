@@ -2,9 +2,9 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `2f35e6e` (PUBLIC-080 a11y contrast @ `2f35e6e` atop remediation stack @ `1c3a3a9`: Phase 0 footer, PF-05, PF-07/08, PF-01?06 home gateway, CV void fix, Button centralization; prior Path A @ `cfce6b4`; compare pairing @ `c14508a`; still `REVISE`)  
-**Coordination commit:** `9732e8a`  
-**Run date:** 2026-09-02  
+**Public-site commit:** `cf81f6f` (PUBLIC-190 evidence grid + constellation icons + PF chrome polish atop PUBLIC-080 a11y @ `2f35e6e` / remediation stack @ `1c3a3a9`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a`; still `REVISE`)  
+**Coordination commit:** _(stamped after this commit)_  
+**Run date:** 2026-09-04  
 **Result:** `REVISE`
 
 **Remediation pack @ 2026-09-02:** [PUBLIC-190-asset-prompts/README.md](./PUBLIC-190-asset-prompts/README.md) (owner image prompts), [PUBLIC-190-IMPLEMENTATION-REQUIREMENTS.md](./PUBLIC-190-IMPLEMENTATION-REQUIREMENTS.md) (CMS/motion/graph gap research), [PUBLIC-190-VISUAL-REMEDIATION-PLAN.md](./PUBLIC-190-VISUAL-REMEDIATION-PLAN.md) (48-pair phased plan), [ADR-0007](../09-decisions/ADR-0007-VISUAL-ASSETS-AND-CMS-BLOCKS.md).
@@ -46,6 +46,36 @@ Agent gap analysis after owner screenshots (PF-01, PF-04?PF-08, home mobile FA, 
 | Constellation concept-art fidelity | **C/D** | CSS/SVG shell; not full illustrated concept asset |
 
 Owner manual compare, a11y checks, and explicit sign-off still required before PASS.
+
+---
+
+## PUBLIC-190 structural chrome pass (`cf81f6f`, agent 2026-09-04)
+
+**Verdict:** `REVISE` (unchanged — owner compare + manual a11y + sign-off still required)
+
+**Inventory:** No new public-site commits between `2f35e6e` and this pass. Parallel page-structure audit agents left Prettier-only dirty trees (no structural commits). This pass consolidated agent-actionable P0 chrome without inventing CMS Category A copy.
+
+**Fix (public-site @ `cf81f6f`):**
+
+| Area | Change |
+|---|---|
+| PF-04 Projects | `PageFamilyEvidenceGridShell` (Methods/Artifacts/Code/Documentation); sanitized row badge; hero disclosure notice; 6 placeholder rows |
+| PF-05 Research | Constellation satellite/center node SVG icons + concept-aligned structural labels |
+| PF-06 Teaching | Featured-path step chrome split into index + label |
+| PF-07 About | How I Work + Skills grid inline SVG icons |
+| PF-08 Contact | Dark-theme contact title uses `--color-accent-gold` |
+| Home FA | Publications slot parity with EN (`HomeFeaturedPublications`) |
+| Harness | Windows Playwright `npm.cmd` spawn EINVAL fix in `playwright-web-server.mjs` |
+
+| Command | Exit | Summary |
+|---|---:|---|
+| `npm run lint` | 0 | ESLint flat config |
+| `npm test` (Vitest) | 0 | **244 passed** |
+| `npm run build` | 0 | 23 static pages |
+| `npm run format:check` | 0 | Prettier green |
+| `npm run test:a11y` | 0 | **29 passed** (with `TM_E2E_SKIP_BUILD=1` after successful build; webServer spawn fixed for cold rebuild) |
+
+`review:visual` not re-run in this pass — owner should regenerate captures after pull.
 
 ### Remediation plan (analysis pass @ 2026-09-02)
 
@@ -611,6 +641,6 @@ Paste accepted rows below. Check `[ ]` only for captures you explicitly accept.
 
 ## Verdict
 
-**`REVISE`** ? Remediation stack @ `1c3a3a9` (Phase 0 footer, PF-05/07/08/01?06 shells, home gateway, CV void fix, Button centralization); PUBLIC-080 automated a11y green @ `2f35e6e` (**29 / 29**); prior Path A @ `cfce6b4`; compare pairing @ `c14508a` (**39 / 48** ready pairs). Manual owner visual compare, accepted capture hashes, manual a11y, and explicit sign-off still open before `PUBLIC-190` may close.
+**`REVISE`** — PUBLIC-190 structural chrome @ `cf81f6f` (Evidence Available grid, constellation node icons, sanitized project rows, teaching path step chrome, About skill icons, FA home publications parity); PUBLIC-080 automated a11y green @ `2f35e6e` (**29 / 29**); remediation stack @ `1c3a3a9`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a` (**39 / 48** ready pairs). Manual owner visual compare, accepted capture hashes, manual a11y, and explicit sign-off still open before `PUBLIC-190` may close.
 
-**Goal complete:** NO ? owner visual compare, manual a11y, and explicit sign-off still required.
+**Goal complete:** NO — owner visual compare, manual a11y, and explicit sign-off still required.

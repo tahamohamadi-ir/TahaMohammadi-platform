@@ -59,10 +59,10 @@ Wave 4 (release)
 | COORD-030 | — | Activate CI Phase 0 workflows (coordination validator + backend pytest/ruff/OpenAPI) | Workflows green on `main` |
 | COORD-040 ✅ | PUBLIC-090, ADMIN-080 | Add shared OpenAPI → TypeScript generation contract doc path in `Docs/03-contracts/` | **Done** — `OPENAPI-TYPESCRIPT-GENERATION.md`: generator command, output paths, hash pins |
 | COORD-050 ✅ | COORD-040 | Add public/admin contract fixture file locations in `Docs/03-contracts/` | **Done** — `CONTRACT-FIXTURE-PATHS.md`; referenced from generation doc |
-| COORD-060 | BACKEND-200, PUBLIC-350, ADMIN-320 | Staging topology checklist against `DEPLOYMENT-TOPOLOGY.md` | Browser smoke plan written with owners |
-| COORD-070 | COORD-060 | Run draft-leak + CSRF + MFA staging evidence collection | Evidence files in `Docs/10-tracking/` |
-| COORD-080 | COORD-070 | Visual/public + admin quality matrix sign-off package | `R8` evidence template filled |
-| COORD-090 | COORD-080 | Owner production acceptance record | Owner sign-off logged |
+| COORD-060 [~] | BACKEND-200, PUBLIC-350, ADMIN-320 | Staging topology checklist against `DEPLOYMENT-TOPOLOGY.md` | **Plan ready** — `Docs/10-tracking/COORD-060-STAGING-TOPOLOGY-CHECKLIST.md`; execution blocked on staging infra; owner columns awaiting owner fill |
+| COORD-070 [~] | COORD-060 | Run draft-leak + CSRF + MFA staging evidence collection | **Plan ready, NOT executed** — `Docs/10-tracking/COORD-070-STAGING-EVIDENCE-PLAN.md`; needs live staging |
+| COORD-080 [~] | COORD-070 | Visual/public + admin quality matrix sign-off package | **Template ready** — `Docs/10-tracking/COORD-080-R8-SIGNOFF-PACKAGE.md`; R8 NOT passed |
+| COORD-090 [~] | COORD-080 | Owner production acceptance record | **Template ready** — `Docs/10-tracking/COORD-090-OWNER-ACCEPTANCE-RECORD.md`; owner sign-off pending |
 
 ---
 
@@ -109,16 +109,16 @@ Wave 4 (release)
 | PUBLIC-070 ✅ | PUBLIC-020 | Light/Dark/system theme via CSS variables + island toggle | **Done** — WP-10 persists and announces requested/resolved state before paint; focused acceptance covers preference changes, persistence, event detail/count, and multiple controls. |
 | PUBLIC-080 ✅ | PUBLIC-070 | Reduced-motion and focus-visible baseline | **Done** — WP-10 visible-focus and reduced-motion acceptance pass. |
 | PUBLIC-090 | PUBLIC-010 | Generate public API types from accepted OpenAPI hash | Types committed; hash pin in repo |
-| PUBLIC-100 | PUBLIC-090 | Implement typed API client with published-only filter | Client refuses non-published records |
-| PUBLIC-110 | PUBLIC-100 | Locale route helpers + canonical/hreflang utilities | Unit tests for `fa`/`en` paths |
-| PUBLIC-120 | PUBLIC-110, BACKEND-050 | Env schema (`PUBLIC_API_BASE`, etc.) + dev proxy config | `.env.example` validated |
+| PUBLIC-100 ✅ | PUBLIC-090 | Implement typed API client with published-only filter | **Verified 2026-09-02** — `src/lib/api/client.ts` `assertPublishedOnly` + client tests pass (244-test suite green) |
+| PUBLIC-110 ✅ | PUBLIC-100 | Locale route helpers + canonical/hreflang utilities | **Verified 2026-09-02** — `routes.ts`/`seo.ts` + `routes.test.ts`/`seo.test.ts` pass |
+| PUBLIC-120 ✅ | PUBLIC-110, BACKEND-050 | Env schema (`PUBLIC_API_BASE`, etc.) + dev proxy config | **Verified 2026-09-02** — `env.ts` + astro `envField` + `/api`,`/health`,`/media` proxy; `.env.example` present |
 | PUBLIC-130 ✅ | PUBLIC-080 | Map design tokens from `agent-kit/tokens.json` | **Done** — complete primitive/semantic/type/motion/layout/component projection, portable snapshot, and authority-equal contract validate locally and centrally. |
-| PUBLIC-140 | PUBLIC-130 | Build primitives (button, link, card, tag, badge, …) per `components.json` | Story/atlas entries exist |
-| PUBLIC-150 | PUBLIC-140 | Build Header, Footer, skip link, page shell | Keyboard nav works RTL/LTR |
-| PUBLIC-160 | PUBLIC-150 | Build six shared templates from `templates.json` | Templates render in atlas |
-| PUBLIC-170 | PUBLIC-160 | Local-only Visual Atlas `DESIGN_ATLAS=1` → `/_design/` | Atlas excluded from production build |
-| PUBLIC-180 | PUBLIC-100 | Content-state components: loading, empty, unavailable, error, untranslated | State matrix tests |
-| PUBLIC-190 [~] | PUBLIC-180, BACKEND-070 | Home page both locales using seed (draft-safe: no false publish) | **Structure complete; visual acceptance open.** Path A shells @ `dd515a0`; compare **39/48** pairs @ `c14508a`. **Remediation:** owner asset prompts (`Docs/10-tracking/PUBLIC-190-asset-prompts/`), phased plan + requirements research, ADR-0007. Independent QA `PASS`, owner asset handback, and explicit sign-off remain required — **REVISE**. |
+| PUBLIC-140 ✅ | PUBLIC-130 | Build primitives (button, link, card, tag, badge, …) per `components.json` | **Verified 2026-09-02** — 24/24 components pinned vs authority snapshot; `validate:design` pass |
+| PUBLIC-150 ✅ | PUBLIC-140 | Build Header, Footer, skip link, page shell | **Verified 2026-09-02** — shell behavior tests + `@a11y` crawl (29 pass) |
+| PUBLIC-160 ✅ | PUBLIC-150 | Build six shared templates from `templates.json` | **Verified 2026-09-02** — 6/6 templates asserted; Atlas template gallery |
+| PUBLIC-170 ✅ | PUBLIC-160 | Local-only Visual Atlas `DESIGN_ATLAS=1` → `/_design/` | **Verified 2026-09-02** — prod build contains no `/_design/` (`dist\_design` absent); atlas gate e2e |
+| PUBLIC-180 ✅ | PUBLIC-100 | Content-state components: loading, empty, unavailable, error, untranslated | **Verified 2026-09-02** — `public-180.behavior.test.ts` 15 tests pass; Atlas state specimens |
+| PUBLIC-190 [~] | PUBLIC-180, BACKEND-070 | Home page both locales using seed (draft-safe: no false publish) | **Structure complete; visual acceptance open.** Gate SHA `cf81f6f` (evidence grid, constellation icons, PF chrome polish). Path A shells @ `dd515a0`; compare **39/48** pairs @ `c14508a`. **Remediation:** owner asset prompts (`Docs/10-tracking/PUBLIC-190-asset-prompts/`), phased plan + requirements research, ADR-0007. Independent QA `PASS`, owner asset handback, and explicit sign-off remain required — **REVISE**. |
 | PUBLIC-200 | PUBLIC-190 | About + research routes | Profile fetch uses `/api/profiles/{locale}/about` only |
 | PUBLIC-210 | PUBLIC-200 | Projects + writing indexes and detail routes | Slug only from API; unavailable honest |
 | PUBLIC-220 | PUBLIC-210 | Publications, teaching, creative routes with seed empty states | Creative/teaching/CV empty copy from seed v1.1 |
