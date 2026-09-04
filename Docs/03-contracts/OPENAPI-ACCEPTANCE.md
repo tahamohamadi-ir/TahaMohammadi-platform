@@ -76,3 +76,38 @@ Per ADR-0006 phase 1 (additive-key changes on existing endpoints), `_api_error_h
 - **admin-panel (ADMIN repo):** the media delete UX (workflow-map row 3) is now implementable against `DELETE /api/v1/admin/media/{id}` — the client must render the `409 MEDIA_IN_USE` + `usageCount` state and pass the CSRF header. The profile translation flow may target the new sibling-locale endpoint; `editorUrl` on 409 is not available there (see deviation note). New-surface error handling should read `field_errors` per ADR-0006.
 - **public-site (PUBLIC repo):** no impact; the public schema and `/api/` surface are untouched (hash unchanged).
 - **Migration notes:** no schema/data migration. The legacy sibling route remains functional until BACKEND-151 retires it; both surfaces write the same `admin.profile.sibling_created` audit action during the dual-surface period. Media deletion is permanent (row + stored file); the `usageCount` guard is the only protection — clients must confirm before calling.
+
+## Addendum 2026-09-04 - owner approval queue surface and publication gate (BACKEND-210)
+
+Status: **accepted addendum** (owner decisions recorded 2026-09-04 in the admin-panel workspace conversation: approval queue served from backend data - not a bundled static JSON - and the publication gate enforced on the server). This addendum re-locks the regenerated artifacts after one additive admin read endpoint, one additive response field pair, and one new stable error code on an existing operation. Public schema content is unchanged (same hash).
+
+### Changes implemented
+
+- **GET /api/v1/admin/approval-queue** (new path, admin read surface). Serves the owner approval queue from ContentSeedRecord rows imported by BACKEND-070 (per-content_id seed provenance: pproval_state, publication_state, isibility, derived isPublicationAllowed). Query state in {all, approved, not-approved}, default 
+ot-approved; response {items, counts:{total, approved, notApproved}} where counts always cover every seed record. Guards: staff session + verified OTP. Read-only by design - approving is an owner decision, not a staff toggle.
+- **Publication gate (ADMIN-280 / BACKEND-210).** POST /api/v1/admin/content/{entity}/{id}/transition with 	o=published now returns 409 APPROVAL_REQUIRED when a linked ContentSeedRecord exists and its three-part is_publication_allowed triple is not satisfied. Rows without seed provenance (admin-created content) publish without the gate: they are owner-authored through this admin. The same gate is enforced inside publish_scheduled_content (blocked rows are reported and skipped with a nonzero exit) so the scheduler cannot bypass it.
+- **pprovalState projection (additive).** ContentListItemOut and ContentDetailOut gained pprovalState: string | null - the linked seed record's pproval_state, or 
+ull for admin-created rows. List lookups are batched (one query per list page).
+
+Stable-code registry: APPROVAL_REQUIRED **added** to the declare-once registry usage on the transition operation. No existing code renamed.
+
+### Regenerated artifacts (SHA-256, CRLF rule)
+
+| Artifact | Old -> New SHA-256 (CRLF) | Count |
+|---|---|---|
+| public-openapi.json |  f672693de28ed33286789e5119eb3226c062693fb15168b1aba5513c257c0a5 (unchanged) | 40 paths, version  .4.0 |
+| dmin-openapi.json | 60e5aba0e19426ced2b0386aad23cef388f5909c22294fd5799aea533cf13bfc -> 5856a37dbefbae60ea5e27ed48a1a2ab37767c9352800fe389371ab94a94b49a | 48 -> 49 paths, version  .1.0 |
+| endpoint-inventory.md | df2d1921d7fda90169dd5e1926a94c5d3e229be245ed6cac3a3abdb19fb70605 -> 452de5ab13f5e0b9ea57bf22cd7687ef04cadad96edb0fd2057918f7d8ffd7ef | 105 -> 106 operations |
+
+PROVENANCE.json records scaffold-accepted, settings config.settings.development, generated 2026-09-04. Back-End/tests/test_openapi_hash_drift.py was updated to the new values.
+
+### Tests (written failing first, then passing)
+
+- 	ests/test_admin_approvals.py: 	est_approval_queue_requires_admin_otp, 	est_approval_queue_counts_and_default_filter, 	est_publish_blocked_without_owner_approval, 	est_publish_allowed_once_owner_triple_cleared, 	est_publish_allowed_without_seed_provenance, 	est_approval_state_exposed_in_list_and_detail, 	est_scheduled_publish_command_honors_gate.
+- Pre-existing gate evidence still passing: 	ests/test_admin_content_api.py, 	ests/test_admin_content_write.py, 	ests/test_admin_revisions_schedule.py, 	ests/test_admin_bulk_archive.py, 	ests/test_admin_openapi.py, 	ests/test_openapi_hash_drift.py.
+
+### Compatibility / frontend impact
+
+- **Compatibility:** additive only; existing operations keep shapes and codes. The transition 	o=published on seed-linked rows changes behavior exactly as decided (was: always allowed).
+- **admin-panel:** regenerates src/generated/admin-api.ts; the editor renders pprovalState, disables publish while it is not pproved, and maps APPROVAL_REQUIRED to the conflict kind; a new Approval queue page consumes the read endpoint.
+- **public-site:** no impact (public schema unchanged).
