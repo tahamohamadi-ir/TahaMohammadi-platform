@@ -129,7 +129,7 @@ Status markers: `[x]` verified complete, `[ ]` not complete.
 - [x] Implement articles and series.
 - [x] Implement research, publications, and projects.
 - [x] Implement books, talks, downloads, courses, and creative work.
-- [ ] Implement media upload, metadata, and selection.
+- [x] Implement media upload, metadata, and selection.
 - [ ] Implement Home composition.
 - [ ] Implement timeline editing.
 - [ ] Implement graph version, node, group, and edge editing.
