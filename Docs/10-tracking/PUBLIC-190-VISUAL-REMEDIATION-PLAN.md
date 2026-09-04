@@ -1,9 +1,9 @@
 # PUBLIC-190 Visual Remediation Plan
 
 **Packet:** PUBLIC-190 gap analysis (analysis + plan only — does **not** set PASS)  
-**Public-site base:** `e608146` (collaborate bands PF-01/04/05; Phase 6 writing/creative chrome @ `0e6a552`; prior evidence grid @ `cf81f6f`; Path A + shared footer/PF shells + home FA hero reflow @ `cfce6b4`; prior pagination @ `dd515a0`)  
+**Public-site base:** `84e83e9` (Phase 8 Home split hero + Gateway 200% affordance; collaborate bands PF-01/04/05 @ `e608146`; Phase 6 writing/creative chrome @ `0e6a552`; prior evidence grid @ `cf81f6f`; Path A + shared footer/PF shells + home FA hero reflow @ `cfce6b4`; prior pagination @ `dd515a0`)  
 **Compare pairing fix:** `c14508a` (`page-family-visual-compare.mjs` concept root)  
-**Generated:** 2026-09-02 (gate tip stamped 2026-09-04)  
+**Generated:** 2026-09-02 (gate tip stamped 2026-09-04 Phase 8)  
 **Pairs analyzed:** **48 / 48** (39 ready + 5 capture-only + 4 blocked-route)  
 **Asset prompts:** [`PUBLIC-190-asset-prompts/`](./PUBLIC-190-asset-prompts/) (sibling agent 65eccafb — stub IDs linked below; populate prompt files as delivered)  
 **QA verdict:** remains `REVISE` — owner manual compare + sign-off still required

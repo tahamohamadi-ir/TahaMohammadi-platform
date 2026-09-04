@@ -2,12 +2,39 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `e608146` (PUBLIC-190 collaborate bands for PF-01/04/05 atop Phase 6 @ `0e6a552` / evidence grid @ `cf81f6f` / PUBLIC-080 a11y @ `2f35e6e`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a`; still `REVISE`)  
-**Coordination commit:** `7fdc1d2ebdf84a60c38581e1c2305e48ca75096a`  
+**Public-site commit:** `84e83e9` (Phase 8 Home split hero + Gateway 200% affordance atop collaborate bands @ `e608146` / Phase 6 @ `0e6a552` / evidence grid @ `cf81f6f` / PUBLIC-080 a11y @ `2f35e6e`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a`; still `REVISE`)  
+**Coordination commit:** _(pending this stamp)_  
 **Run date:** 2026-09-04  
 **Result:** `REVISE`
 
 **Remediation pack @ 2026-09-02:** [PUBLIC-190-asset-prompts/README.md](./PUBLIC-190-asset-prompts/README.md) (owner image prompts), [PUBLIC-190-IMPLEMENTATION-REQUIREMENTS.md](./PUBLIC-190-IMPLEMENTATION-REQUIREMENTS.md) (CMS/motion/graph gap research), [PUBLIC-190-VISUAL-REMEDIATION-PLAN.md](./PUBLIC-190-VISUAL-REMEDIATION-PLAN.md) (48-pair phased plan), [ADR-0007](../09-decisions/ADR-0007-VISUAL-ASSETS-AND-CMS-BLOCKS.md).
+
+---
+
+## PUBLIC-190 Phase 8 Home FA + Gateway 200% (`84e83e9`, agent 2026-09-04)
+
+**Verdict:** `REVISE` (unchanged — owner compare + manual a11y + sign-off still required)
+
+**Inventory:** Base tip `e608146`. Largest remaining agent-actionable Phase 8 gaps were Home FA/tablet hero fidelity vs `home-mobile-fa-light-concept-v1.png` (overlay/stacked vs side-by-side) and Gateway language-choice affordance at 200% zoom.
+
+**Fix (public-site @ `84e83e9`):**
+
+| Area | Change |
+|---|---|
+| Home hero | Concept split layout (`data-hero-layout="split"`): copy column + discrete arch media + geometric ornament; EN/FA parity; AA-safe signature role mix |
+| Home CSS | Side-by-side through tablet; stack only below 480px; seed role/intro/CTAs/chips unchanged |
+| Gateway | Smaller portal + larger locale controls at ≤720px / short viewports; display-font prompt; stacked language buttons ≤480px |
+| Tests | Split-layout unit coverage; graph node e2e aligned to 3-node simple diagram; media e2e drops removed backplate slot |
+
+| Command | Exit | Summary |
+|---|---:|---|
+| `npm run lint` | 0 | ESLint flat config |
+| `npm test` (Vitest) | 0 | passed |
+| `npm run format` | 0 | Prettier write |
+| `npm run build` | 0 | 23 static pages |
+| `npm run test:a11y` | 0 | **29 passed** |
+
+`review:visual` not re-run — owner should regenerate captures after pull.
 
 ---
 
@@ -56,8 +83,8 @@ Agent gap analysis after owner screenshots (PF-01, PF-04?PF-08, home mobile FA, 
 | PF-08 contact atmosphere | **C** | Gateway atmosphere via hero theme media |
 | Hero descriptions, featured titles, grid CMS records | **A** | Blocked ? no invented API/CMS copy |
 | Nav labels Creative/Writing vs concept Gallery/Blog | **D/A** | Route registry labels; not visual chrome |
-| Home mobile FA overlay vs side-by-side concept | **B/C** | Stacked hero reflow + CTAs @ `cfce6b4`; prior overlay direction @ `cc4b851` |
-| Gateway 200% light vs dark concept | **D** | Compare pairs affordance only; theme differs by design |
+| Home mobile FA overlay vs side-by-side concept | **B/C** | Split hero (copy + media columns) @ `84e83e9`; prior stacked reflow @ `cfce6b4` / overlay @ `cc4b851` |
+| Gateway 200% light vs dark concept | **D** | Affordance polish @ `84e83e9` (locale control scale); theme differs by design |
 | PF-01/03/04 pagination + writing theme-explore | **B/C** | `PageFamilyPaginationShell`, `PageFamilyThemeExploreShell`; per-family featured card styling @ `dd515a0` |
 | PF-01 hero media proportion + masonry dense grid | **B/C** | Hero 42% media column, taller min-height; grid-auto-flow dense @ `dd515a0` |
 | Shared SiteFooter | **B/C** | 4-col brand+bio+social, Explore, Resources, Connect; legal row @ `cfce6b4` |
@@ -698,6 +725,6 @@ Paste accepted rows below. Check `[ ]` only for captures you explicitly accept.
 
 ## Verdict
 
-**`REVISE`** — PUBLIC-190 collaborate bands for PF-01/04/05 @ `e608146` (Connect+CV CTA chrome, projects All chip + featured dots) atop Phase 6 writing/creative chrome @ `0e6a552`; structural chrome @ `cf81f6f`; PUBLIC-080 automated a11y green @ `2f35e6e` (**29 / 29**); remediation stack @ `1c3a3a9`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a` (**39 / 48** ready pairs). Manual owner visual compare, accepted capture hashes, manual a11y, and explicit sign-off still open before `PUBLIC-190` may close.
+**`REVISE`** — PUBLIC-190 Phase 8 Home split hero + Gateway 200% affordance @ `84e83e9` atop collaborate bands for PF-01/04/05 @ `e608146` (Connect+CV CTA chrome, projects All chip + featured dots) atop Phase 6 writing/creative chrome @ `0e6a552`; structural chrome @ `cf81f6f`; PUBLIC-080 automated a11y green @ `2f35e6e` (**29 / 29**); remediation stack @ `1c3a3a9`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a` (**39 / 48** ready pairs). Manual owner visual compare, accepted capture hashes, manual a11y, and explicit sign-off still open before `PUBLIC-190` may close.
 
 **Goal complete:** NO — owner visual compare, manual a11y, and explicit sign-off still required.
