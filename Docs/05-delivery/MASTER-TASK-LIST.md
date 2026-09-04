@@ -126,8 +126,8 @@ Status markers: `[x]` verified complete, `[ ]` not complete.
 
 - [x] Implement dashboard health (release status still open).
 - [x] Implement profile and site settings.
-- [ ] Implement articles and series.
-- [ ] Implement research, publications, and projects.
+- [x] Implement articles and series.
+- [x] Implement research, publications, and projects.
 - [ ] Implement books, talks, downloads, courses, and creative work.
 - [ ] Implement media upload, metadata, and selection.
 - [ ] Implement Home composition.
