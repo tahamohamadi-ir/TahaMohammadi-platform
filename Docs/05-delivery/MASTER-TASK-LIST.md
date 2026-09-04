@@ -128,13 +128,13 @@ Status markers: `[x]` verified complete, `[ ]` not complete.
 - [x] Implement profile and site settings.
 - [x] Implement articles and series.
 - [x] Implement research, publications, and projects.
-- [ ] Implement books, talks, downloads, courses, and creative work.
+- [x] Implement books, talks, downloads, courses, and creative work.
 - [ ] Implement media upload, metadata, and selection.
 - [ ] Implement Home composition.
 - [ ] Implement timeline editing.
 - [ ] Implement graph version, node, group, and edge editing.
 - [ ] Implement preview-share workflow.
-- [ ] Implement revision history and restore.
+- [x] Implement revision history and restore.
 - [ ] Implement schedule, publish, archive, and bulk actions.
 - [ ] Verify server permissions for every state-changing action.
 
