@@ -132,7 +132,7 @@ Status markers: `[x]` verified complete, `[ ]` not complete.
 - [x] Implement media upload, metadata, and selection.
 - [x] Implement Home composition.
 - [x] Implement timeline editing.
-- [ ] Implement graph version, node, group, and edge editing.
+- [x] Implement graph version, node, group, and edge editing.
 - [x] Implement preview-share workflow.
 - [x] Implement revision history and restore.
 - [ ] Implement schedule, publish, archive, and bulk actions.
