@@ -2,7 +2,7 @@
 
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
-**Public-site commit:** `c7581b7` (About/Contact/Research leftover chrome atop PF-02 empty-shell @ `798e8b2` / Phase 8 @ `84e83e9` / collaborate bands @ `e608146` / Phase 6 @ `0e6a552` / evidence grid @ `cf81f6f` / PUBLIC-080 a11y @ `2f35e6e`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a`; still `REVISE`)  
+**Public-site commit:** `675a08f` (About/Contact/Research leftover chrome `c7581b7` + publications @390 overflow fix `05c87a0`, atop PF-02 empty-shell @ `798e8b2` / Phase 8 @ `84e83e9` / collaborate bands @ `e608146` / Phase 6 @ `0e6a552` / evidence grid @ `cf81f6f` / PUBLIC-080 a11y @ `2f35e6e`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a`; still `REVISE`)  
 **Coordination commit:** `b4705ba`  
 **Run date:** 2026-09-04  
 **Result:** `REVISE`
@@ -26,6 +26,8 @@
 | About (PF-07) | Journey-flow step icons (inline SVG, 5 paths) |
 | Honesty | New labels are structural UI chrome (`page-family-empty-chrome.ts`); bibliography chapter/report chip text uses `--color-ink` after axe flagged 3.32/4.46 contrast |
 | Tests | `public-190.pf-index-chrome-build.test.ts` extended: publications SubNav + bibliography markers, new research + contact route entries |
+
+**Follow-up fix (@ `05c87a0`, owner `review:visual` run 2026-09-04):** publications `@390` captures failed the PUBLIC-270 no-horizontal-overflow predicate (page 927px). Cause: the new `.publications-page__nav-stack` wrapper let the ≤479px column-direction filter row wrap into side-by-side flex columns. Fix: `grid-template-columns: minmax(0, 1fr)` on the wrapper + `flex-wrap: nowrap` for the wrapped filters. Probe-verified `scrollWidth 390 == innerWidth 390`; publications EN/FA @390/@1440 captures pass (4/4).
 
 | Command | Exit | Summary |
 |---|---:|---|
