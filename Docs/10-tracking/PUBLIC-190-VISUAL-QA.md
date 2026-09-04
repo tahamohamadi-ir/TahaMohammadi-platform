@@ -3,7 +3,7 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `e608146` (PUBLIC-190 collaborate bands for PF-01/04/05 atop Phase 6 @ `0e6a552` / evidence grid @ `cf81f6f` / PUBLIC-080 a11y @ `2f35e6e`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a`; still `REVISE`)  
-**Coordination commit:** `7314380e77fe5fc45186fb08edc5ff3eddc26eca`  
+**Coordination commit:** `bf615520dccd701ad57543df6826054d0754750b`  
 **Run date:** 2026-09-04  
 **Result:** `REVISE`
 
@@ -698,6 +698,6 @@ Paste accepted rows below. Check `[ ]` only for captures you explicitly accept.
 
 ## Verdict
 
-**`REVISE`** — PUBLIC-190 Phase 6 writing/creative chrome @ `0e6a552` (newsletter band, writing collaborate CTA, theme-explore icons, hero ornament, row categories, masonry asset diversity) atop structural chrome @ `cf81f6f`; PUBLIC-080 automated a11y green @ `2f35e6e` (**29 / 29**); remediation stack @ `1c3a3a9`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a` (**39 / 48** ready pairs). Manual owner visual compare, accepted capture hashes, manual a11y, and explicit sign-off still open before `PUBLIC-190` may close.
+**`REVISE`** — PUBLIC-190 collaborate bands for PF-01/04/05 @ `e608146` (Connect+CV CTA chrome, projects All chip + featured dots) atop Phase 6 writing/creative chrome @ `0e6a552`; structural chrome @ `cf81f6f`; PUBLIC-080 automated a11y green @ `2f35e6e` (**29 / 29**); remediation stack @ `1c3a3a9`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a` (**39 / 48** ready pairs). Manual owner visual compare, accepted capture hashes, manual a11y, and explicit sign-off still open before `PUBLIC-190` may close.
 
 **Goal complete:** NO — owner visual compare, manual a11y, and explicit sign-off still required.
