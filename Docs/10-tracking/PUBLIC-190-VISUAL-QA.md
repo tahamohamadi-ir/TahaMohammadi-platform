@@ -3,7 +3,7 @@
 **Packet:** WP-50 (re-run after PUBLIC-180; updated after PUBLIC-270/280)  
 **Tool:** Cursor  
 **Public-site commit:** `798e8b2` (PF-02 honest creative detail empty-shell atop Phase 8 @ `84e83e9` / collaborate bands @ `e608146` / Phase 6 @ `0e6a552` / evidence grid @ `cf81f6f` / PUBLIC-080 a11y @ `2f35e6e`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a`; still `REVISE`)  
-**Coordination commit:** pending stamp after this docs commit  
+**Coordination commit:** `680fcf9`  
 **Run date:** 2026-09-04  
 **Result:** `REVISE`
 
