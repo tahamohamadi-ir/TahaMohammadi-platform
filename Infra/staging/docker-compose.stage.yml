@@ -1,0 +1,76 @@
+name: taha-cms-stage
+
+services:
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - stage_postgres_data:/var/lib/postgresql/data
+    networks: [stage_internal]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  mailpit:
+    image: axllent/mailpit:v1.27
+    restart: unless-stopped
+    networks: [stage_internal]
+
+  cms:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.cms
+    image: taha-cms-stage:${RELEASE_ID}
+    restart: unless-stopped
+    env_file: [../.env.stage]
+    environment:
+      DJANGO_SETTINGS_MODULE: config.settings.production
+      POSTGRES_HOST: db
+      EMAIL_HOST: mailpit
+      EMAIL_PORT: "1025"
+      EMAIL_USE_TLS: "false"
+      OTP_TOTP_ISSUER: staging.tahamohamadi.ir
+      REBUILD_TRIGGER_ENABLED: "false"
+    volumes:
+      - stage_cms_media:/app/media
+    networks: [stage_internal, stage_ingress]
+    depends_on:
+      db:
+        condition: service_healthy
+
+  web:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.public
+      args:
+        PUBLIC_SITE_URL: https://staging.tahamohamadi.ir
+    image: taha-web-stage:${RELEASE_ID}
+    restart: unless-stopped
+    networks: [stage_ingress]
+
+  admin:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.admin
+    image: taha-admin-stage:${RELEASE_ID}
+    restart: unless-stopped
+    networks: [stage_ingress]
+
+networks:
+  stage_internal:
+    internal: true
+  stage_ingress: {}
+
+volumes:
+  stage_postgres_data: {}
+  # This is restored once from the production media volume before the first
+  # staging launch; Compose must consume that isolated volume, never recreate it.
+  stage_cms_media:
+    external: true
+    name: taha-cms-stage_stage_cms_media

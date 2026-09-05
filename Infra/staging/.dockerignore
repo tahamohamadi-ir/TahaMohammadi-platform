@@ -1,0 +1,8 @@
+.git
+src/*/.git
+src/*/node_modules
+src/*/dist
+src/*/.astro
+src/*/.venv
+src/*/.pytest_cache
+*.env
