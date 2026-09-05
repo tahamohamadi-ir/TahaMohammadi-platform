@@ -50,6 +50,7 @@ services:
       dockerfile: deploy/Dockerfile.public
       args:
         PUBLIC_SITE_URL: https://staging.tahamohamadi.ir
+        PUBLIC_API_BASE_URL: https://staging.tahamohamadi.ir
     image: taha-web-stage:${RELEASE_ID}
     restart: unless-stopped
     networks: [stage_ingress]

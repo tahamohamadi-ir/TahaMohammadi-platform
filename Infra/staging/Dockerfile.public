@@ -4,7 +4,8 @@ COPY src/public/package.json src/public/package-lock.json ./
 RUN npm ci
 COPY src/public/ ./
 ARG PUBLIC_SITE_URL
-ENV PUBLIC_SITE_URL=$PUBLIC_SITE_URL PUBLIC_API_BASE_URL=
+ARG PUBLIC_API_BASE_URL
+ENV PUBLIC_SITE_URL=$PUBLIC_SITE_URL PUBLIC_API_BASE_URL=$PUBLIC_API_BASE_URL
 RUN npm run build
 
 FROM nginx:1.27-alpine
