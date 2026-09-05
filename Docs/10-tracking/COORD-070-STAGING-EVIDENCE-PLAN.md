@@ -135,18 +135,18 @@ produce under `Docs/10-tracking/`.
 3. Record each `R7-<family>-EVIDENCE.md` with exact commands, outputs, commits,
    and observed headers; link the set from this file's index below.
 
-## Evidence index (empty — none executed)
+## Evidence index
 
-| Family               | Evidence file                     | Status       |
-| -------------------- | --------------------------------- | ------------ |
-| Draft-leak           | `R7-draft-leak-EVIDENCE.md`       | not produced |
-| CSRF                 | `R7-csrf-EVIDENCE.md`             | not produced |
-| MFA                  | `R7-mfa-EVIDENCE.md`              | not produced |
-| Session expiry       | `R7-session-expiry-EVIDENCE.md`   | not produced |
-| Contact delivery     | `R7-contact-delivery-EVIDENCE.md` | not produced |
-| Preview expiry       | `R7-preview-expiry-EVIDENCE.md`   | not produced |
-| Media boundary       | `R7-media-boundary-EVIDENCE.md`   | not produced |
-| Backup/restore drill | `R7-backup-restore-EVIDENCE.md`   | not produced |
+| Family               | Evidence file                     | Status                                                                         |
+| -------------------- | --------------------------------- | ------------------------------------------------------------------------------ |
+| Draft-leak           | `R7-draft-leak-EVIDENCE.md\       | not produced (needs deployed staging)                                          |
+| CSRF                 | `R7-csrf-EVIDENCE.md\             | not produced (needs deployed staging)                                          |
+| MFA                  | `R7-mfa-EVIDENCE.md\              | not produced (needs deployed staging)                                          |
+| Session expiry       | `R7-session-expiry-EVIDENCE.md\   | not produced (needs deployed staging)                                          |
+| Contact delivery     | `R7-contact-delivery-EVIDENCE.md\ | not produced (needs deployed staging)                                          |
+| Preview expiry       | `R7-preview-expiry-EVIDENCE.md\   | not produced (needs deployed staging)                                          |
+| Media boundary       | `R7-media-boundary-EVIDENCE.md\   | not produced (needs deployed staging)                                          |
+| Backup/restore drill | `R7-backup-restore-EVIDENCE.md`   | **PASSED 2026-09-05** (disposable profile; executable without a deployed host) |
 
 **Bottom line:** COORD-070 remains OPEN. R7 ("Integrated deployment and smoke
 tests pass; drafts remain private; backup and restore are proven on staging")
