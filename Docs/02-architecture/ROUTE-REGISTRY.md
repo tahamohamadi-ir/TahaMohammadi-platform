@@ -14,14 +14,14 @@ Locale is part of every public route. The root `/` is a language gateway. Each p
 | Research | `/{locale}/research/` | `/{locale}/research/{slug}/` only for published, localized eligible records | API/route gate open |
 | Publications | `/{locale}/publications/` | `/{locale}/publications/{slug}/` only for published, localized eligible records | API/route gate open |
 | Projects | `/{locale}/projects/` | `/{locale}/projects/{slug}/` only for sanitized, published, localized eligible records | API/route gate open |
-| Writing | `/{locale}/writing/` | `/{locale}/writing/{slug}/` for published localized articles | API/route gate open |
-| Teaching | `/{locale}/teaching/` | `/{locale}/teaching/{slug}/` for published localized courses/resources | API/route gate open |
-| Creative | `/{locale}/creative/` | `/{locale}/creative/{slug}/` for public rights-cleared work | API/route gate open |
+| Blog | `/{locale}/blog/` | `/{locale}/blog/{slug}/` for published localized articles | API/route gate open |
+| Education | `/{locale}/education/` | `/{locale}/education/{slug}/` for published localized courses/resources | API/route gate open |
+| Gallery | `/{locale}/gallery/` | `/{locale}/gallery/{slug}/` for public rights-cleared work | API/route gate open |
 | CV | `/{locale}/cv/` | Downloads only when owner-approved file is available | Content gate open |
 | Contact | `/{locale}/contact/` | None | Contact contract gate open |
 | Search | `/{locale}/search/` | Query state is URL-addressable; unavailable index remains honest | Search implementation gate open |
 
-`{locale}` is exactly `fa` or `en`. The legacy `/blog/**` family is redirect-only to the equivalent `/writing/**` path once an accepted redirect mapping exists. No other redirect is assumed.
+`{locale}` is exactly `fa` or `en`. The legacy `/writing/**`, `/teaching/**`, and `/creative/**` families are redirect-only to the equivalent `/blog/**`, `/education/**`, and `/gallery/**` paths. No other redirect is assumed.
 
 ## Alternate and fallback rules
 

@@ -52,7 +52,7 @@ Owner regenerated PUBLIC-270 captures + compare report @ `675a08f` (43/48 ready)
 
 | Area | Change |
 |---|---|
-| Route | Reserved `/{locale}/creative/empty-shell/` always built; sitemap-excluded; never fetched from CMS |
+| Route | Reserved `/{locale}/gallery/empty-shell/` always built; sitemap-excluded; never fetched from CMS |
 | Shell | `PageFamilyCreativeDetailShell` — breadcrumb, gallery frame, meta dashes, process chrome, credits, related placeholders, disabled pager, collaborate band |
 | Capture | PUBLIC-270 PF-02 EN/FA @1440/390 dark no longer skipped |
 | Honesty | Titles/statement use `Awaiting approved CMS copy` only; no invented bios/emails/ORCID/work titles |
