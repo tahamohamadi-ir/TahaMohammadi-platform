@@ -3,7 +3,7 @@
   "packets": {
     "CA-01": {
       "repository": "PUBLIC",
-      "head": "b434eb7675dd4352dae2ff88b1fc3ee6366b5edd",
+      "head": "fbcefde41cbad02b55a020acdd091491fcfb2dd5",
       "files": {
         "contracts/design-authority/v2-overlay.json": "bd4b17d8ff8b2779c2e98b9f53a11bd149d6d1b99cc7f11a71ed8dad3f122fac",
         "scripts/validate-design-authority.mjs": "c68362c722293c0532fee35ada3da84f3587be68c089eb43a7179088b6586250",
@@ -46,7 +46,7 @@
     },
     "PU-SYNC-graph": {
       "repository": "PUBLIC",
-      "head": "b434eb7675dd4352dae2ff88b1fc3ee6366b5edd",
+      "head": "fbcefde41cbad02b55a020acdd091491fcfb2dd5",
       "files": {
         "src/generated/public-api.ts": "0e31213528eb3d89ee2a75f6ca343a4c8faf81573e3b2dc64647f7302fb7554c",
         "tests/fixtures/contracts/product-record-resolver.json": "b1e62758adce80af6b22fc6afac9e813a950050468748478e2db835e6a75f3eb",
@@ -71,7 +71,7 @@
     },
     "CA-02": {
       "repository": "PUBLIC",
-      "head": "b434eb7675dd4352dae2ff88b1fc3ee6366b5edd",
+      "head": "fbcefde41cbad02b55a020acdd091491fcfb2dd5",
       "files": {
         "src/lib/hero-graph-content.ts": "d1e46ddbe8ad4264c2fb6f2017e478fb61f3e2cea18dac959d67544f97f21e44",
         "src/lib/hero-graph-content.test.ts": "1d35dd0ad3b0098f19143a75b5f553867510e4ad09878c3e57a28c867b50ff03",
@@ -97,7 +97,7 @@
     },
     "CA-03": {
       "repository": "PUBLIC",
-      "head": "b434eb7675dd4352dae2ff88b1fc3ee6366b5edd",
+      "head": "fbcefde41cbad02b55a020acdd091491fcfb2dd5",
       "files": {
         "src/components/home/HomeHero.astro": "97dc16d0ff9c93b7013d2b3f1c2b0d9b4b7a4419985080e53b42ad8313f15813",
         "src/components/home/HomeResearchGraph.astro": "184da47e063816c2dd61d51cb708d0dd362877cc653b10ca6fe62607b448c687",
@@ -133,7 +133,7 @@
     },
     "CA-04": {
       "repository": "PUBLIC",
-      "head": "b434eb7675dd4352dae2ff88b1fc3ee6366b5edd",
+      "head": "fbcefde41cbad02b55a020acdd091491fcfb2dd5",
       "files": {
         "package.json": "b66fb05209854d150463ab27c2cdf9f4e0d56dde41fa2efdf5f25748506e7497",
         "package-lock.json": "a4811c2837e1ba13cd9e2967abd0069dc5de59e57fd03f17133af9f96b7838e5",
@@ -148,7 +148,7 @@
     },
     "CA-08": {
       "repository": "PUBLIC",
-      "head": "b434eb7675dd4352dae2ff88b1fc3ee6366b5edd",
+      "head": "fbcefde41cbad02b55a020acdd091491fcfb2dd5",
       "files": {
         "src/components/Header.astro": "1a9370d0c53c74e12956cc3829a8842431d634c67724687f3c5ac8fa80b1d438",
         "src/components/Footer.astro": "d92fcf071d4cd6f91a10c9b3d138027ae36a0521b760b9e18e6445a82cfeb83d",
@@ -176,7 +176,7 @@
     },
     "CA-05": {
       "repository": "PUBLIC",
-      "head": "b434eb7675dd4352dae2ff88b1fc3ee6366b5edd",
+      "head": "fbcefde41cbad02b55a020acdd091491fcfb2dd5",
       "files": {
         "src/lib/visual/graph-controller.ts": "1bfaf0691970274bf5c7c3283a4642851276a72fb14b7e48d7947b3685180444",
         "src/lib/visual/graph-motion.ts": "f7fadf8fe2b3db13d6fe654d17742b6992f0f91eae72b549eea473fa956ccfb9",
@@ -190,7 +190,7 @@
     },
     "CA-07": {
       "repository": "PUBLIC",
-      "head": "b434eb7675dd4352dae2ff88b1fc3ee6366b5edd",
+      "head": "fbcefde41cbad02b55a020acdd091491fcfb2dd5",
       "files": {
         "src/pages/index.astro": "9973b3bd91748e20eec1c2b59188c3b199e7603b9369852a6340f5428c0245dc",
         "src/components/gateway/GatewayPortal.astro": "40aca885aa87a4e34fc5823f2e7b71c1b324bb63daa777af3b45a2d9bc0ef77d",
@@ -220,7 +220,7 @@
     },
     "CA-06": {
       "repository": "PUBLIC",
-      "head": "b434eb7675dd4352dae2ff88b1fc3ee6366b5edd",
+      "head": "fbcefde41cbad02b55a020acdd091491fcfb2dd5",
       "files": {
         "src/components/hero/HeroGraph.astro": "9c16eef3920e060828fc46f3ab24b7bb03eded6272c441650c459980da77978c",
         "src/lib/visual/hero-enhancement.ts": "45ed6cc93f22d4ebd497b51318f44dd587b70562f9ba72ecb1d79b4e98d2d358",
@@ -472,7 +472,7 @@
     },
     "PU-SYNC-public": {
       "repository": "PUBLIC",
-      "head": "b434eb7675dd4352dae2ff88b1fc3ee6366b5edd",
+      "head": "fbcefde41cbad02b55a020acdd091491fcfb2dd5",
       "files": {
         "src/generated/public-api.ts": "0e31213528eb3d89ee2a75f6ca343a4c8faf81573e3b2dc64647f7302fb7554c",
         "src/lib/product-api.contract.test.ts": "0da672c5d5719b133306c64f81da18621013ff24e242084f5ce11229e26df931",
@@ -498,7 +498,7 @@
     },
     "PU-13-story": {
       "repository": "PUBLIC",
-      "head": "b434eb7675dd4352dae2ff88b1fc3ee6366b5edd",
+      "head": "fbcefde41cbad02b55a020acdd091491fcfb2dd5",
       "files": {
         "src/components/story/StoryDocument.astro": "edc2b15595190a017a8335c8f311f65d1ea4c77cfde8a8ce2ed52194ac20c93e",
         "src/components/story/StoryBlock.astro": "9b8f595f40b4c73156efb2ca04ed161131eabb4f9e6e7afa686352140ea896f5",
@@ -763,7 +763,7 @@
     },
     "PU-13-routes": {
       "repository": "PUBLIC",
-      "head": "b434eb7675dd4352dae2ff88b1fc3ee6366b5edd",
+      "head": "fbcefde41cbad02b55a020acdd091491fcfb2dd5",
       "files": {
         "src/lib/routes.ts": "d369d1061d3ea6933cf1fe7e0825a72c14463a7103f6bd9616bc94527fc84a84",
         "src/lib/navigation.ts": "9acd2965b89691aa10c83fd3a26d1821c41eaa9e4aed5104b8c37c8b7a7c1d7d",
@@ -776,7 +776,7 @@
     },
     "PU-14-research": {
       "repository": "PUBLIC",
-      "head": "b434eb7675dd4352dae2ff88b1fc3ee6366b5edd",
+      "head": "fbcefde41cbad02b55a020acdd091491fcfb2dd5",
       "files": {
         "src/lib/research-content.ts": "a4e29fff46d953b3ebc81963010d40ecbf476e8b8d1bc5cb0a899779faccdb07",
         "src/components/research/ResearchPageContent.astro": "901691735bf680bf0adcdab12c1fb45a2720a67ff6994ad60d7984356efdb945",
@@ -805,7 +805,7 @@
     },
     "PU-14-publications": {
       "repository": "PUBLIC",
-      "head": "b434eb7675dd4352dae2ff88b1fc3ee6366b5edd",
+      "head": "fbcefde41cbad02b55a020acdd091491fcfb2dd5",
       "files": {
         "src/lib/publications-content.ts": "0dccdc641cea9226f48b63aa241553d7b5f9cc58cd2005859ae5623427354615",
         "src/components/publications/PublicationsPageContent.astro": "b4f3fccd6dea0d4f0fb578712223c3e1a72f1cbc3fa73f08b672454bc16ee399",
@@ -825,7 +825,7 @@
     },
     "PU-14-projects": {
       "repository": "PUBLIC",
-      "head": "b434eb7675dd4352dae2ff88b1fc3ee6366b5edd",
+      "head": "fbcefde41cbad02b55a020acdd091491fcfb2dd5",
       "files": {
         "src/lib/projects-content.ts": "53bdcf1e1beb362d92c2e61d6753eb33c468495eb07e7409fa08c1a1367c6889",
         "src/components/projects/ProjectsPageContent.astro": "280ebc29c8204487ed28298e11693c5b06cd2d9cbd74b1aa63538b309fe9aed7",
@@ -844,7 +844,7 @@
     },
     "PU-15-articles": {
       "repository": "PUBLIC",
-      "head": "b434eb7675dd4352dae2ff88b1fc3ee6366b5edd",
+      "head": "fbcefde41cbad02b55a020acdd091491fcfb2dd5",
       "files": {
         "src/lib/writing-content.ts": "90cb4cfa74b83bb2c88cdb20850db3e54b4ab56a09c76c0a83ec194aef4b9a78",
         "src/components/writing/WritingPageContent.astro": "d46f356977d831a639fe0981a36d1f3d135c8ea05281ce7b5b741df47eb08c73",
@@ -863,7 +863,7 @@
     },
     "PU-15-courses": {
       "repository": "PUBLIC",
-      "head": "b434eb7675dd4352dae2ff88b1fc3ee6366b5edd",
+      "head": "fbcefde41cbad02b55a020acdd091491fcfb2dd5",
       "files": {
         "src/lib/teaching-content.ts": "5ee90417e2c29cb39cd07c31a1eb545e3154418efa21c0dc59699189e1bf3009",
         "src/components/teaching/TeachingPageContent.astro": "4119c898dc78fc7193709ecd168c22564de3989d2a340b20e11e97a0c7075bab",
@@ -883,7 +883,7 @@
     },
     "PU-15-creative": {
       "repository": "PUBLIC",
-      "head": "b434eb7675dd4352dae2ff88b1fc3ee6366b5edd",
+      "head": "fbcefde41cbad02b55a020acdd091491fcfb2dd5",
       "files": {
         "src/lib/creative-content.ts": "c95ed373fcde8c189ff5345ee378be7a700f6fbde2166e5c3a3431d385f846c1",
         "src/components/creative/CreativePageContent.astro": "3a06f9cda96daf0b4888e1cbf39c526dd11e9fbdf5988cc2b17700175873ee8b",
@@ -902,7 +902,7 @@
     },
     "PU-14-statements": {
       "repository": "PUBLIC",
-      "head": "b434eb7675dd4352dae2ff88b1fc3ee6366b5edd",
+      "head": "fbcefde41cbad02b55a020acdd091491fcfb2dd5",
       "files": {
         "src/lib/research-content.ts": "a4e29fff46d953b3ebc81963010d40ecbf476e8b8d1bc5cb0a899779faccdb07",
         "src/components/research/ResearchStatementDetailContent.astro": "e172a209a956c7948704cdef1e6255f2f075e343c4668c9e97b0dd15a30deef9",
@@ -914,7 +914,7 @@
     },
     "PU-15-lessons": {
       "repository": "PUBLIC",
-      "head": "b434eb7675dd4352dae2ff88b1fc3ee6366b5edd",
+      "head": "fbcefde41cbad02b55a020acdd091491fcfb2dd5",
       "files": {
         "src/lib/lessons-content.ts": "18a81b0a388be6a57258dec015d9235b90b54223ec1f6c7d3b2786e7fd128801",
         "src/components/teaching/LessonDetailContent.astro": "a03a903cacc6daa54a5f4c808875e24fc85aae4d8bddb4fc62bb25c9acd53024",
@@ -926,7 +926,7 @@
     },
     "PU-16-books": {
       "repository": "PUBLIC",
-      "head": "b434eb7675dd4352dae2ff88b1fc3ee6366b5edd",
+      "head": "fbcefde41cbad02b55a020acdd091491fcfb2dd5",
       "files": {
         "src/lib/books-content.ts": "de20eabaa340bd77fd52dab006b181d9cac4d78cf8ed1d1ea843b2b5ed2464dd",
         "src/components/books/CollectionPage.astro": "4e608efc68ff698f0a289e03db25bc89e225e2252544fc2e64963beca17433c4",
@@ -942,7 +942,7 @@
     },
     "PU-16-talks": {
       "repository": "PUBLIC",
-      "head": "b434eb7675dd4352dae2ff88b1fc3ee6366b5edd",
+      "head": "fbcefde41cbad02b55a020acdd091491fcfb2dd5",
       "files": {
         "src/lib/talks-content.ts": "857b976a1f8eb660d1f4fe66b08fa919d41db04268cba632658f57d3e62d350e",
         "src/components/talks/CollectionPage.astro": "bac98c1beb81b59fb5b20612ff60bd96354cc1764f2d88c887f5b773fe26a8a9",
