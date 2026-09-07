@@ -3,7 +3,7 @@
   "packets": {
     "CA-01": {
       "repository": "PUBLIC",
-      "head": "5a54ce2bc2e7156dca8f921734886b58737a1e74",
+      "head": "96e4c12f5162390c6de3eebd3ce64c2c0af18645",
       "files": {
         "contracts/design-authority/v2-overlay.json": "bd4b17d8ff8b2779c2e98b9f53a11bd149d6d1b99cc7f11a71ed8dad3f122fac",
         "scripts/validate-design-authority.mjs": "c68362c722293c0532fee35ada3da84f3587be68c089eb43a7179088b6586250",
@@ -46,7 +46,7 @@
     },
     "PU-SYNC-graph": {
       "repository": "PUBLIC",
-      "head": "5a54ce2bc2e7156dca8f921734886b58737a1e74",
+      "head": "96e4c12f5162390c6de3eebd3ce64c2c0af18645",
       "files": {
         "src/generated/public-api.ts": "0e31213528eb3d89ee2a75f6ca343a4c8faf81573e3b2dc64647f7302fb7554c",
         "tests/fixtures/contracts/product-record-resolver.json": "b1e62758adce80af6b22fc6afac9e813a950050468748478e2db835e6a75f3eb",
@@ -71,7 +71,7 @@
     },
     "CA-02": {
       "repository": "PUBLIC",
-      "head": "5a54ce2bc2e7156dca8f921734886b58737a1e74",
+      "head": "96e4c12f5162390c6de3eebd3ce64c2c0af18645",
       "files": {
         "src/lib/hero-graph-content.ts": "d1e46ddbe8ad4264c2fb6f2017e478fb61f3e2cea18dac959d67544f97f21e44",
         "src/lib/hero-graph-content.test.ts": "1d35dd0ad3b0098f19143a75b5f553867510e4ad09878c3e57a28c867b50ff03",
@@ -97,7 +97,7 @@
     },
     "CA-03": {
       "repository": "PUBLIC",
-      "head": "5a54ce2bc2e7156dca8f921734886b58737a1e74",
+      "head": "96e4c12f5162390c6de3eebd3ce64c2c0af18645",
       "files": {
         "src/components/home/HomeHero.astro": "97dc16d0ff9c93b7013d2b3f1c2b0d9b4b7a4419985080e53b42ad8313f15813",
         "src/components/home/HomeResearchGraph.astro": "184da47e063816c2dd61d51cb708d0dd362877cc653b10ca6fe62607b448c687",
@@ -133,7 +133,7 @@
     },
     "CA-04": {
       "repository": "PUBLIC",
-      "head": "5a54ce2bc2e7156dca8f921734886b58737a1e74",
+      "head": "96e4c12f5162390c6de3eebd3ce64c2c0af18645",
       "files": {
         "package.json": "b66fb05209854d150463ab27c2cdf9f4e0d56dde41fa2efdf5f25748506e7497",
         "package-lock.json": "a4811c2837e1ba13cd9e2967abd0069dc5de59e57fd03f17133af9f96b7838e5",
@@ -176,7 +176,7 @@
     },
     "CA-05": {
       "repository": "PUBLIC",
-      "head": "5a54ce2bc2e7156dca8f921734886b58737a1e74",
+      "head": "96e4c12f5162390c6de3eebd3ce64c2c0af18645",
       "files": {
         "src/lib/visual/graph-controller.ts": "1bfaf0691970274bf5c7c3283a4642851276a72fb14b7e48d7947b3685180444",
         "src/lib/visual/graph-motion.ts": "f7fadf8fe2b3db13d6fe654d17742b6992f0f91eae72b549eea473fa956ccfb9",
@@ -190,7 +190,7 @@
     },
     "CA-07": {
       "repository": "PUBLIC",
-      "head": "5a54ce2bc2e7156dca8f921734886b58737a1e74",
+      "head": "96e4c12f5162390c6de3eebd3ce64c2c0af18645",
       "files": {
         "src/pages/index.astro": "9973b3bd91748e20eec1c2b59188c3b199e7603b9369852a6340f5428c0245dc",
         "src/components/gateway/GatewayPortal.astro": "40aca885aa87a4e34fc5823f2e7b71c1b324bb63daa777af3b45a2d9bc0ef77d",
@@ -220,7 +220,7 @@
     },
     "CA-06": {
       "repository": "PUBLIC",
-      "head": "5a54ce2bc2e7156dca8f921734886b58737a1e74",
+      "head": "96e4c12f5162390c6de3eebd3ce64c2c0af18645",
       "files": {
         "src/components/hero/HeroGraph.astro": "9c16eef3920e060828fc46f3ab24b7bb03eded6272c441650c459980da77978c",
         "src/lib/visual/hero-enhancement.ts": "45ed6cc93f22d4ebd497b51318f44dd587b70562f9ba72ecb1d79b4e98d2d358",
