@@ -133,3 +133,60 @@ Status: **accepted addendum** (owner decision recorded 2026-09-04: the seed poli
 
 - 	ests/test_admin_seed_policy.py: 	est_apply_seed_settings_persists_policy, 	est_missing_policy_file_leaves_seed_policy_empty, 	est_admin_site_response_carries_seed_policy, 	est_seed_policy_is_not_writable_via_update.
 - 	ests/test_openapi_hash_drift.py re-pinned to the new admin hash.
+
+## Addendum 2026-09-06 — product-v2 packet endpoints and audit-fix schema reconciliation (A01/A03/A04/A09)
+
+Status: **accepted addendum**. This addendum re-locks the regenerated artifacts after the additive product-v2 packet surfaces (resolver, localized settings, collections, series detail, lessons, publication jobs, analytics) and the additive audit-fix schema reconciliations below. Change review is purely additive: 16 new paths, zero removed paths, zero changed operations on pre-existing paths (verified by path-level diff of HEAD vs regenerated schemas).
+
+### New paths (public schema, +8)
+
+| Operation | Packet | Guards / responses |
+|---|---|---|
+| `GET /api/v1/records/{locale}/resolve` | PU-03-resolver | Exact-locale published resolution, max 50 refs, I08 envelope errors |
+| `GET /api/v1/site/{locale}` | PU-03-settings | Published localized settings or locale 404, no fallback |
+| `GET /api/v1/collections/{locale}` + `GET /api/v1/collections/{locale}/{slug}` | PU-06-collection | Ordered public membership |
+| `GET /api/v1/series/{locale}/{slug}` | PU-06-series | Ordered article members |
+| `GET /api/v1/lessons/{locale}` + `GET /api/v1/lessons/{locale}/{courseSlug}/{lessonSlug}` | PU-05-lessons | Published parent+lesson guard, ordered neighbors |
+| `POST /api/v1/analytics/events` | PU-20-events | Aggregate ingest; A09 registry/canonical/413 rules, I08 envelope errors |
+
+### New paths (admin schema, +8)
+
+| Operation | Packet |
+|---|---|
+| `GET /api/v1/admin/analytics` | PU-20-events |
+| `GET\|PUT /api/v1/admin/content/project/{id}/case-study` | PU-04-project-evidence |
+| `GET /api/v1/admin/content/{entity}/{id}/revisions/{revision_id}` | PU-07-revisions |
+| `GET /api/v1/admin/publication-jobs`, `GET .../{id}`, `POST .../{id}/retry` | PU-07-jobs |
+| `GET\|PUT /api/v1/admin/site/{locale}`, `POST .../publish` | PU-03-settings |
+
+### Audit-fix schema reconciliations (additive, on the new paths)
+
+- **A01:** `PublicationJobOut` gains `revokedPaths` (deny set: own detail/file URLs only; shared pages are rebuilt, never denied). Wire shape recorded in PRODUCT-INTERFACES-V2 §I06.
+- **A09:** analytics ingest declares `400/403/413/422/429` `ErrorEnvelopeOut` responses (I08 envelope; schema-shape 422s enveloped for this route only, legacy routes untouched).
+- **A03/A04/A08/A10:** behavior-only (exclusive claim, revision discipline, snapshot fallback reads, per-locale jobs, nonce-after-HMAC). No schema shape changes.
+
+### Regenerated artifacts (SHA-256, CRLF rule)
+
+| Artifact | Old → New SHA-256 (CRLF) | Count |
+|---|---|---|
+| `public-openapi.json` | `0f672693de28ed33286789e5119eb3226c062693fb15168b1aba5513c257c0a5` → `47980f8f1992d885398676cf984b80e7068c7aa8e8b8f76a856565ffc9033681` | 40 → 48 paths, version `0.4.0` |
+| `admin-openapi.json` | `38ff4d81d454287bd0e6c437ad84bfada41255e8fa6acc13704144223014fd7a` → `1176c0696222f9ac4c86495446d1f00988bdfde19dd147e93ece29a61e973564` | 49 → 57 paths, version `0.1.0` |
+| `endpoint-inventory.md` | `452de5ab13f5e0b9ea57bf22cd7687ef04cadad96edb0fd2057918f7d8ffd7ef` → `154a2c1bf950978f9a8332571098e4bfb2b815c9308a38426976e08dc002e4eb` | 106 → 124 operations |
+
+`PROVENANCE.json` records `scaffold-accepted`, source commit `bd6682ea9dae7e5bf6957c36691dc3a94a00ea37`, settings `config.settings.development`, generated 2026-09-06. `Back-End/tests/test_openapi_hash_drift.py` re-pinned to the new values (LF-canonical hashes recorded alongside per `OPENAPI-ARTIFACT-CONTRACT.md`).
+
+### Fixture reconciliation (from real responses, synthetic seed data)
+
+- `tests/fixtures/contracts/public/{articles,publication,project}-detail.get.200.json` regenerated via `CONTRACT_FIXTURES_WRITE=1`. Semantic diff vs baseline: only the reviewed additive I03 metadata (`seo`, `alternates`, `relatedRecords`, nullable `story`); no removals, no invented fields. Each still validates against its OpenAPI component in-test.
+- `tests/test_api.py` `ARTICLE_DETAIL_FIELDS` extended with the same reviewed keys (set stays exact); `tests/test_admin_content_write.py` schema entity set extended with the I05 `lesson`/`collection` registrations (set stays exact). No assertion was deleted to force green.
+
+### Access-test evidence
+
+- `tests/test_public_openapi.py` + `tests/test_admin_openapi.py`: 9 passing checks for anonymous public and verified staff-plus-OTP admin access (run 2026-09-06).
+- `scripts/verify_openapi_export.py` exits 0 with 3/3 MATCH against the new record.
+
+### Compatibility / frontend impact
+
+- **Compatibility:** additive only. All pre-existing operations keep their paths, methods, shapes, and status codes.
+- **public-site:** regenerate `src/generated/public-api.ts` from the accepted public snapshot and move the `public-310` pin to the new hash (PU-SYNC-public scope).
+- **admin-panel:** regenerate admin consumer types from the accepted admin snapshot (PU-SYNC-admin scope).

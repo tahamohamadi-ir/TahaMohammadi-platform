@@ -1,0 +1,116 @@
+{
+  "date": "2026-09-05",
+  "method": "read-only source and current exported schema inspection; no runtime/API request acceptance",
+  "repositories": {
+    "ROOT": {
+      "root": "D:\\Project\\tahamohammadi-platform",
+      "head": "c69e339c8c26788467d29ad346fb7df99b1c2842"
+    },
+    "PUBLIC": {
+      "root": "D:\\Project\\tahamohammadi-platform\\Front-End\\public-site",
+      "head": "b895b2cb9c6ad9519d55bd2663448461931c0a39"
+    },
+    "ADMIN": {
+      "root": "D:\\Project\\tahamohammadi-platform\\Front-End\\admin-panel",
+      "head": "ca4dd3d26484d4468465c756d302b8e3247a3cbe"
+    },
+    "BACKEND": {
+      "root": "D:\\Project\\tahamohammadi-platform\\Back-End",
+      "head": "bd6682ea9dae7e5bf6957c36691dc3a94a00ea37"
+    }
+  },
+  "sources": [
+    {
+      "path": "Back-End/docs/contracts/openapi/current/public-openapi.json",
+      "sha256": "0f672693de28ed33286789e5119eb3226c062693fb15168b1aba5513c257c0a5"
+    },
+    {
+      "path": "Back-End/docs/contracts/openapi/current/admin-openapi.json",
+      "sha256": "38ff4d81d454287bd0e6c437ad84bfada41255e8fa6acc13704144223014fd7a"
+    },
+    {
+      "path": "Back-End/apps/api/api.py",
+      "sha256": "762040803b335ff1d85d39d07ae5af6be241f44548634d843783cc0113a548a1"
+    },
+    {
+      "path": "Back-End/apps/api/admin_content.py",
+      "sha256": "a7f7f26dd57cd2799ff3a827279c8b778eebe319b775e2205249c6c72e12e8a6"
+    },
+    {
+      "path": "Back-End/apps/api/admin_composition.py",
+      "sha256": "55c5f30a6086d5034a0b7c6ff1a071574eb1c5cd229340104f1efe327e9a94a3"
+    },
+    {
+      "path": "Back-End/apps/content/models.py",
+      "sha256": "8d79378dd75a5c278062e3c1943df8e6a4f92cd682d0c3f05a66a9a9e662e94f"
+    },
+    {
+      "path": "Back-End/apps/composition/blocks.py",
+      "sha256": "cd11797d511ec7a8630e0e24ecce141b795dfe342cc9781d9614e139e31bce6e"
+    },
+    {
+      "path": "Back-End/apps/composition/projection.py",
+      "sha256": "e91f35772a53ceaf4dd4e40ea54218e1fa94db710726ac73d5547ee83eaf1c14"
+    },
+    {
+      "path": "Back-End/apps/siteconfig/models.py",
+      "sha256": "b3b3158db7d4265f3f3a766708e54b04f78263d83a127084be760f543d112551"
+    },
+    {
+      "path": "Back-End/apps/rebuild/services.py",
+      "sha256": "c7516be618856825bea905e4a0cec0cdff4f8712cf8b4abd24b5fddc064a8e00"
+    },
+    {
+      "path": "Back-End/apps/rebuild/views.py",
+      "sha256": "3bde29be963c0a7232505716bd86a4a0e666516e77b54158c41e32f984448e58"
+    },
+    {
+      "path": "Front-End/public-site/src/lib/search-content.ts",
+      "sha256": "469c24f13dfd8b11d1fa9c26587c79c8d881d8fb878a4a7615bc16a50b69446e"
+    },
+    {
+      "path": "Front-End/public-site/src/integrations/pagefind.mjs",
+      "sha256": "9c426d44d270090967e982df7a56e2e3188eb3ac1c7a4bdac24a3cc4c93f59fa"
+    },
+    {
+      "path": "Front-End/public-site/src/lib/research-content.ts",
+      "sha256": "be5627486dfc86eb4208adfacec61071fadea5825bafbeaa3e7a9dba05a4c85d"
+    },
+    {
+      "path": "Front-End/public-site/src/lib/seo-route-registry.ts",
+      "sha256": "96ab43528dc9e68dec7bb1298869c38880406536b6edad7d06fe37ec10b8ba28"
+    },
+    {
+      "path": "Front-End/public-site/package.json",
+      "sha256": "2d6c060f85e573a57eb0ea3051518fbf614e08409fce4b8e67189357894c8cdf"
+    },
+    {
+      "path": "Front-End/admin-panel/src/lib/api/content.ts",
+      "sha256": "7c540d845709335fa9d85358676b07bee52505a4f26ce0d25d41e5f2392fe808"
+    },
+    {
+      "path": "Front-End/admin-panel/src/pages/ContentEditPage.tsx",
+      "sha256": "8e8cd182a0700ef3f75d69fd0d0883d8de1628cc40c305dc76d50c25308ee3c7"
+    },
+    {
+      "path": "Front-End/admin-panel/src/app/router.tsx",
+      "sha256": "ad36d096e735d1f43e6d9ff18964a41352798f7a46132be56c50e7e10807fe36"
+    },
+    {
+      "path": "Front-End/admin-panel/package.json",
+      "sha256": "597486f6d71a4b72a9896001dd75b7580372ad3ff8000db83bf138d90ba307b9"
+    },
+    {
+      "path": "Infra/staging/docker-compose.stage.yml",
+      "sha256": "e9c0636f88ce9fc10b275ee4fc91e7be402190f740635a8726dbf781e3aee6a2"
+    },
+    {
+      "path": "Back-End/apps/api/admin_common.py",
+      "sha256": "e8d4973e01af0ef82c88237241bf1b9b8c119082e279d55c63c2bff0d706fd65"
+    },
+    {
+      "path": "Back-End/apps/content/management/commands/publish_scheduled_content.py",
+      "sha256": "499beb7c4fd44645a6dca89436c25b937dc1ff866eb76d27bca163b23682a0d9"
+    }
+  ]
+}

@@ -1,6 +1,23 @@
+> Current coordinator state (2026-09-06): execution-tasks.json and RECONCILIATION-CHECK.json under Docs/05-delivery/concept-alignment-v2 are authoritative. See reviews/COORDINATOR-REVIEW-2026-09-06.md there; older status prose is historical.
+
 # Master Task List
 
 Status markers: `[x]` verified complete, `[ ]` not complete.
+
+## Research-first product extension — 2026-09-05
+
+- [x] Define [15 page families](concept-alignment-v2/PRODUCT-SPEC.md), [CMS coverage](concept-alignment-v2/CMS-SPEC.md) and [PU-01–PU-25](concept-alignment-v2/PRODUCT-TASKS.md) under ADR-0009. Planning artifacts only.
+- [x] Reconcile actual coverage, target interfaces, active documentation and exact leaf packets under ADR-0010. Planning only.
+- [ ] Execute the [unified leaf queue](concept-alignment-v2/EXECUTION.md) with separate repository ownership.
+- [ ] Verify the complete admin-to-public publication journey and obtain product acceptance.
+
+## Current public visual recovery — 2026-09-05
+
+- [x] Prepare the [V2 design and agent handoff plan](concept-alignment-v2/README.md), with final owner-directed composition and explicit supersession in ADR-0008. This checkbox concerns the planning artifact only.
+- [ ] Implement active CA-01–08 and PU leaf packets from [the unified queue](concept-alignment-v2/EXECUTION.md); CA-09–16 are merged aliases. CA-17 remains review.
+- [ ] Independently verify V2 visuals and obtain owner acceptance; PUBLIC-190 remains open.
+
+Historical milestone rows below are not newly reverified by this planning delivery.
 
 **Detailed parallel execution:** `MULTI-AGENT-TASK-BOARD.md` (task IDs, dependencies, multi-agent lanes).  
 **Per-repository detail:** `Back-End/TASK-LIST.md`, `Front-End/public-site/TASK-LIST.md`, `Front-End/admin-panel/TASK-LIST.md`.

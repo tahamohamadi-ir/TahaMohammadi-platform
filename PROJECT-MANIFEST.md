@@ -1,5 +1,9 @@
 # Project Manifest
 
+<!-- PRODUCT-V2.1 -->
+Current product/implementation authority: ADR-0010, `Docs/03-contracts/PRODUCT-INTERFACES-V2.md` and `Docs/05-delivery/concept-alignment-v2/EXECUTION.md` (coordination-root paths). Keep Astro/TypeScript with bounded Three.js/GSAP, existing React admin/Django backend, Pagefind and first-party aggregate analytics. Earlier stack/phase assumptions apply only where compatible. Rebuild jobs/edge invalidation are a planned interface, not an already operating deployment.
+<!-- /PRODUCT-V2.1 -->
+
 ## Workspace
 
 - Root: `D:\Project\tahamohammadi-platform`
@@ -19,7 +23,7 @@
 
 | Product | Baseline |
 |---|---|
-| Public site | Astro 7, TypeScript 5.9, Tailwind CSS 4, bounded React 19 islands |
+| Public site | Astro 7, TypeScript 5.9, Tailwind CSS 4; bounded Three.js/GSAP target, React optional |
 | Admin panel | React 19, TypeScript 5.9, Vite, accessible SPA patterns |
 | Backend | Python 3.12, Django 5.2.9, Django Ninja 1.6.2, PostgreSQL 17 |
 

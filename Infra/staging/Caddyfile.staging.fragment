@@ -10,6 +10,9 @@ staging.tahamohamadi.ir {
   handle /static/* {
     reverse_proxy taha-cms-stage-cms-1:8000
   }
+  handle /api/v1/internal/* {
+    respond "Not Found" 404
+  }
   handle /api/* {
     reverse_proxy taha-cms-stage-cms-1:8000
   }

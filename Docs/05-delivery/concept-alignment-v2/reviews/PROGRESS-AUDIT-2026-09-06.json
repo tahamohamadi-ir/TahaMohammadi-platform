@@ -1,0 +1,1074 @@
+{
+  "audit_date": "2026-09-06",
+  "scope": "Read-only source and handoff inventory plus independent test/build verification. No packet acceptance or queue mutation.",
+  "checks": {
+    "admin_tests": 185,
+    "backend_tests": 910,
+    "public_tests": 376,
+    "admin_build": "PASS",
+    "queue_validator": "FAIL: PUBLIC src/lib/routes.test.ts:93 new blank line at EOF",
+    "public_build": "PASS:33 pages"
+  },
+  "packets": [
+    {
+      "id": "PU-01",
+      "repository": "ROOT",
+      "queue_status": "DOC_COMPLETE",
+      "handoff_exists": true,
+      "handoff_path": "./Docs/10-tracking/product-v2/PU-01-HANDOFF.md",
+      "depends_on": [],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-02",
+      "repository": "ROOT",
+      "queue_status": "DOC_COMPLETE",
+      "handoff_exists": true,
+      "handoff_path": "./Docs/10-tracking/product-v2/PU-02-HANDOFF.md",
+      "depends_on": [
+        "PU-01"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-19",
+      "repository": "ROOT",
+      "queue_status": "DOC_COMPLETE",
+      "handoff_exists": true,
+      "handoff_path": "./Docs/10-tracking/product-v2/PU-19-HANDOFF.md",
+      "depends_on": [
+        "PU-01"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-03-resolver",
+      "repository": "BACKEND",
+      "queue_status": "ACCEPTED_LOCAL",
+      "handoff_exists": true,
+      "handoff_path": "Back-End/docs/quality/product-v2/PU-03-resolver-HANDOFF.md",
+      "depends_on": [
+        "PU-02"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-03-settings",
+      "repository": "BACKEND",
+      "queue_status": "ACCEPTED_LOCAL",
+      "handoff_exists": true,
+      "handoff_path": "Back-End/docs/quality/product-v2/PU-03-settings-HANDOFF.md",
+      "depends_on": [
+        "PU-02",
+        "PU-03-resolver"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-04-catalog",
+      "repository": "BACKEND",
+      "queue_status": "REVISE",
+      "handoff_exists": true,
+      "handoff_path": "Back-End/docs/quality/product-v2/PU-04-catalog-HANDOFF.md",
+      "depends_on": [
+        "PU-02",
+        "PU-03-settings"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-04-metadata",
+      "repository": "BACKEND",
+      "queue_status": "IMPLEMENTED_UNREVIEWED",
+      "handoff_exists": true,
+      "handoff_path": "Back-End/docs/quality/product-v2/PU-04-metadata-HANDOFF.md",
+      "depends_on": [
+        "PU-04-catalog",
+        "PU-03-settings"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-04-publication",
+      "repository": "BACKEND",
+      "queue_status": "IMPLEMENTED_UNREVIEWED",
+      "handoff_exists": true,
+      "handoff_path": "Back-End/docs/quality/product-v2/PU-04-publication-HANDOFF.md",
+      "depends_on": [
+        "PU-04-metadata"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-04-course",
+      "repository": "BACKEND",
+      "queue_status": "IMPLEMENTED_UNREVIEWED",
+      "handoff_exists": true,
+      "handoff_path": "Back-End/docs/quality/product-v2/PU-04-course-HANDOFF.md",
+      "depends_on": [
+        "PU-04-metadata",
+        "PU-04-publication"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-04-creative",
+      "repository": "BACKEND",
+      "queue_status": "IMPLEMENTED_UNREVIEWED",
+      "handoff_exists": true,
+      "handoff_path": "Back-End/docs/quality/product-v2/PU-04-creative-HANDOFF.md",
+      "depends_on": [
+        "PU-04-metadata",
+        "PU-04-course"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-05-lessons",
+      "repository": "BACKEND",
+      "queue_status": "IMPLEMENTED_UNREVIEWED",
+      "handoff_exists": true,
+      "handoff_path": "Back-End/docs/quality/product-v2/PU-05-lessons-HANDOFF.md",
+      "depends_on": [
+        "PU-04-metadata",
+        "PU-04-course",
+        "PU-04-creative"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-06-book",
+      "repository": "BACKEND",
+      "queue_status": "IMPLEMENTED_UNREVIEWED",
+      "handoff_exists": true,
+      "handoff_path": "Back-End/docs/quality/product-v2/PU-06-book-HANDOFF.md",
+      "depends_on": [
+        "PU-04-metadata",
+        "PU-05-lessons"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-06-talk",
+      "repository": "BACKEND",
+      "queue_status": "IMPLEMENTED_UNREVIEWED",
+      "handoff_exists": true,
+      "handoff_path": "Back-End/docs/quality/product-v2/PU-06-talk-HANDOFF.md",
+      "depends_on": [
+        "PU-04-metadata",
+        "PU-06-book"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-06-resource",
+      "repository": "BACKEND",
+      "queue_status": "IMPLEMENTED_UNREVIEWED",
+      "handoff_exists": true,
+      "handoff_path": "Back-End/docs/quality/product-v2/PU-06-resource-HANDOFF.md",
+      "depends_on": [
+        "PU-04-metadata",
+        "PU-06-talk"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-06-collection",
+      "repository": "BACKEND",
+      "queue_status": "IMPLEMENTED_UNREVIEWED",
+      "handoff_exists": true,
+      "handoff_path": "Back-End/docs/quality/product-v2/PU-06-collection-HANDOFF.md",
+      "depends_on": [
+        "PU-04-metadata",
+        "PU-06-resource",
+        "PU-05-lessons"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-06-series",
+      "repository": "BACKEND",
+      "queue_status": "IMPLEMENTED_UNREVIEWED",
+      "handoff_exists": true,
+      "handoff_path": "Back-End/docs/quality/product-v2/PU-06-series-HANDOFF.md",
+      "depends_on": [
+        "PU-04-metadata",
+        "PU-06-collection"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-04-project-evidence",
+      "repository": "BACKEND",
+      "queue_status": "IMPLEMENTED_UNREVIEWED",
+      "handoff_exists": true,
+      "handoff_path": "Back-End/docs/quality/product-v2/PU-04-project-evidence-HANDOFF.md",
+      "depends_on": [
+        "PU-04-metadata",
+        "PU-06-series",
+        "PU-03-settings"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-07-revisions",
+      "repository": "BACKEND",
+      "queue_status": "IMPLEMENTED_UNREVIEWED",
+      "handoff_exists": true,
+      "handoff_path": "Back-End/docs/quality/product-v2/PU-07-revisions-HANDOFF.md",
+      "depends_on": [
+        "PU-04-catalog",
+        "PU-04-metadata",
+        "PU-04-publication",
+        "PU-04-course",
+        "PU-04-creative",
+        "PU-05-lessons",
+        "PU-06-book",
+        "PU-06-talk",
+        "PU-06-resource",
+        "PU-06-collection",
+        "PU-06-series",
+        "PU-04-project-evidence"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-07-preview",
+      "repository": "BACKEND",
+      "queue_status": "IMPLEMENTED_UNREVIEWED",
+      "handoff_exists": true,
+      "handoff_path": "Back-End/docs/quality/product-v2/PU-07-preview-HANDOFF.md",
+      "depends_on": [
+        "PU-07-revisions"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-07-jobs",
+      "repository": "BACKEND",
+      "queue_status": "IMPLEMENTED_UNREVIEWED",
+      "handoff_exists": true,
+      "handoff_path": "Back-End/docs/quality/product-v2/PU-07-jobs-HANDOFF.md",
+      "depends_on": [
+        "PU-07-revisions",
+        "PU-03-settings",
+        "PU-04-project-evidence",
+        "PU-07-preview"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-23-invalidation",
+      "repository": "BACKEND",
+      "queue_status": "IMPLEMENTED_UNREVIEWED",
+      "handoff_exists": true,
+      "handoff_path": "Back-End/docs/quality/product-v2/PU-23-invalidation-HANDOFF.md",
+      "depends_on": [
+        "PU-07-jobs",
+        "PU-07-preview",
+        "PU-03-settings"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-20-events",
+      "repository": "BACKEND",
+      "queue_status": "IMPLEMENTED_UNREVIEWED",
+      "handoff_exists": true,
+      "handoff_path": "Back-End/docs/quality/product-v2/PU-20-events-HANDOFF.md",
+      "depends_on": [
+        "PU-19",
+        "PU-06-series",
+        "PU-07-jobs",
+        "PU-23-invalidation"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-07-runner",
+      "repository": "ROOT",
+      "queue_status": "IMPLEMENTED_UNREVIEWED",
+      "handoff_exists": true,
+      "handoff_path": "./Docs/10-tracking/product-v2/PU-07-runner-HANDOFF.md",
+      "depends_on": [
+        "PU-07-jobs",
+        "PU-23-invalidation"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-SYNC-graph",
+      "repository": "PUBLIC",
+      "queue_status": "ACCEPTED_LOCAL",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/public-site/docs/quality/product-v2/PU-SYNC-graph-HANDOFF.md",
+      "depends_on": [
+        "PU-03-resolver"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "CA-01",
+      "repository": "PUBLIC",
+      "queue_status": "ACCEPTED_LOCAL",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/public-site/docs/quality/concept-alignment-v2/CA-01-HANDOFF.md",
+      "depends_on": [],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "CA-02",
+      "repository": "PUBLIC",
+      "queue_status": "REVISE",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/public-site/docs/quality/concept-alignment-v2/CA-02-HANDOFF.md",
+      "depends_on": [
+        "CA-01",
+        "PU-SYNC-graph"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "CA-03",
+      "repository": "PUBLIC",
+      "queue_status": "IMPLEMENTED_UNREVIEWED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/public-site/docs/quality/concept-alignment-v2/CA-03-HANDOFF.md",
+      "depends_on": [
+        "CA-02"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "CA-04",
+      "repository": "PUBLIC",
+      "queue_status": "IMPLEMENTED_UNREVIEWED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/public-site/docs/quality/concept-alignment-v2/CA-04-HANDOFF.md",
+      "depends_on": [
+        "CA-03"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "CA-05",
+      "repository": "PUBLIC",
+      "queue_status": "IMPLEMENTED_UNREVIEWED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/public-site/docs/quality/concept-alignment-v2/CA-05-HANDOFF.md",
+      "depends_on": [
+        "CA-04"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "CA-06",
+      "repository": "PUBLIC",
+      "queue_status": "IMPLEMENTED_UNREVIEWED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/public-site/docs/quality/concept-alignment-v2/CA-06-HANDOFF.md",
+      "depends_on": [
+        "CA-05",
+        "CA-03"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "CA-07",
+      "repository": "PUBLIC",
+      "queue_status": "IMPLEMENTED_UNREVIEWED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/public-site/docs/quality/concept-alignment-v2/CA-07-HANDOFF.md",
+      "depends_on": [
+        "CA-04"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "CA-08",
+      "repository": "PUBLIC",
+      "queue_status": "IMPLEMENTED_UNREVIEWED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/public-site/docs/quality/concept-alignment-v2/CA-08-HANDOFF.md",
+      "depends_on": [
+        "CA-03"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-SYNC-public",
+      "repository": "PUBLIC",
+      "queue_status": "IMPLEMENTED_UNREVIEWED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/public-site/docs/quality/product-v2/PU-SYNC-public-HANDOFF.md",
+      "depends_on": [
+        "PU-03-resolver",
+        "PU-03-settings",
+        "PU-04-catalog",
+        "PU-04-metadata",
+        "PU-04-publication",
+        "PU-04-course",
+        "PU-04-creative",
+        "PU-05-lessons",
+        "PU-06-book",
+        "PU-06-talk",
+        "PU-06-resource",
+        "PU-06-collection",
+        "PU-06-series",
+        "PU-04-project-evidence",
+        "PU-07-revisions",
+        "PU-07-preview",
+        "PU-07-jobs",
+        "PU-23-invalidation",
+        "PU-20-events",
+        "CA-08",
+        "PU-SYNC-graph"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-SYNC-admin",
+      "repository": "ADMIN",
+      "queue_status": "IMPLEMENTED_UNREVIEWED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/admin-panel/docs/quality/product-v2/PU-SYNC-admin-HANDOFF.md",
+      "depends_on": [
+        "PU-03-resolver",
+        "PU-03-settings",
+        "PU-04-catalog",
+        "PU-04-metadata",
+        "PU-04-publication",
+        "PU-04-course",
+        "PU-04-creative",
+        "PU-05-lessons",
+        "PU-06-book",
+        "PU-06-talk",
+        "PU-06-resource",
+        "PU-06-collection",
+        "PU-06-series",
+        "PU-04-project-evidence",
+        "PU-07-revisions",
+        "PU-07-preview",
+        "PU-07-jobs",
+        "PU-23-invalidation",
+        "PU-20-events"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-09-transport",
+      "repository": "ADMIN",
+      "queue_status": "BLOCKED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/admin-panel/docs/quality/product-v2/PU-09-transport-HANDOFF.md",
+      "depends_on": [
+        "PU-SYNC-admin"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-09-editor",
+      "repository": "ADMIN",
+      "queue_status": "BLOCKED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/admin-panel/docs/quality/product-v2/PU-09-editor-HANDOFF.md",
+      "depends_on": [
+        "PU-09-transport"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-09-host",
+      "repository": "ADMIN",
+      "queue_status": "BLOCKED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/admin-panel/docs/quality/product-v2/PU-09-host-HANDOFF.md",
+      "depends_on": [
+        "PU-09-editor"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-10-research",
+      "repository": "ADMIN",
+      "queue_status": "BLOCKED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/admin-panel/docs/quality/product-v2/PU-10-research-HANDOFF.md",
+      "depends_on": [
+        "PU-09-host"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-10-publication",
+      "repository": "ADMIN",
+      "queue_status": "BLOCKED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/admin-panel/docs/quality/product-v2/PU-10-publication-HANDOFF.md",
+      "depends_on": [
+        "PU-09-host",
+        "PU-10-research"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-10-project",
+      "repository": "ADMIN",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/admin-panel/docs/quality/product-v2/PU-10-project-HANDOFF.md",
+      "depends_on": [
+        "PU-09-host",
+        "PU-10-publication"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-10-article",
+      "repository": "ADMIN",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/admin-panel/docs/quality/product-v2/PU-10-article-HANDOFF.md",
+      "depends_on": [
+        "PU-09-host",
+        "PU-10-project"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-10-course",
+      "repository": "ADMIN",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/admin-panel/docs/quality/product-v2/PU-10-course-HANDOFF.md",
+      "depends_on": [
+        "PU-09-host",
+        "PU-10-article"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-10-lesson",
+      "repository": "ADMIN",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/admin-panel/docs/quality/product-v2/PU-10-lesson-HANDOFF.md",
+      "depends_on": [
+        "PU-09-host",
+        "PU-10-course"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-10-creative",
+      "repository": "ADMIN",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/admin-panel/docs/quality/product-v2/PU-10-creative-HANDOFF.md",
+      "depends_on": [
+        "PU-09-host",
+        "PU-10-lesson"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-10-book",
+      "repository": "ADMIN",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/admin-panel/docs/quality/product-v2/PU-10-book-HANDOFF.md",
+      "depends_on": [
+        "PU-09-host",
+        "PU-10-creative"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-10-talk",
+      "repository": "ADMIN",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/admin-panel/docs/quality/product-v2/PU-10-talk-HANDOFF.md",
+      "depends_on": [
+        "PU-09-host",
+        "PU-10-book"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-10-resource",
+      "repository": "ADMIN",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/admin-panel/docs/quality/product-v2/PU-10-resource-HANDOFF.md",
+      "depends_on": [
+        "PU-09-host",
+        "PU-10-talk"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-10-collection",
+      "repository": "ADMIN",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/admin-panel/docs/quality/product-v2/PU-10-collection-HANDOFF.md",
+      "depends_on": [
+        "PU-09-host",
+        "PU-10-resource"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-10-series",
+      "repository": "ADMIN",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/admin-panel/docs/quality/product-v2/PU-10-series-HANDOFF.md",
+      "depends_on": [
+        "PU-09-host",
+        "PU-10-collection"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-08-settings",
+      "repository": "ADMIN",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/admin-panel/docs/quality/product-v2/PU-08-settings-HANDOFF.md",
+      "depends_on": [
+        "PU-SYNC-admin"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-08-profile",
+      "repository": "ADMIN",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/admin-panel/docs/quality/product-v2/PU-08-profile-HANDOFF.md",
+      "depends_on": [
+        "PU-09-host",
+        "PU-10-series"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-11-media",
+      "repository": "ADMIN",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/admin-panel/docs/quality/product-v2/PU-11-media-HANDOFF.md",
+      "depends_on": [
+        "PU-SYNC-admin",
+        "PU-06-resource"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-12-home",
+      "repository": "ADMIN",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/admin-panel/docs/quality/product-v2/PU-12-home-HANDOFF.md",
+      "depends_on": [
+        "PU-SYNC-admin"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-12-graph",
+      "repository": "ADMIN",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/admin-panel/docs/quality/product-v2/PU-12-graph-HANDOFF.md",
+      "depends_on": [
+        "PU-SYNC-admin"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-12-jobs",
+      "repository": "ADMIN",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/admin-panel/docs/quality/product-v2/PU-12-jobs-HANDOFF.md",
+      "depends_on": [
+        "PU-09-transport",
+        "PU-07-runner"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-22-analytics",
+      "repository": "ADMIN",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/admin-panel/docs/quality/product-v2/PU-22-analytics-HANDOFF.md",
+      "depends_on": [
+        "PU-SYNC-admin",
+        "PU-12-jobs"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-13-routes",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/public-site/docs/quality/product-v2/PU-13-routes-HANDOFF.md",
+      "depends_on": [
+        "PU-SYNC-public"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-13-story",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/public-site/docs/quality/product-v2/PU-13-story-HANDOFF.md",
+      "depends_on": [
+        "PU-SYNC-public",
+        "CA-08"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-14-research",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": true,
+      "handoff_path": "Front-End/public-site/docs/quality/product-v2/PU-14-research-HANDOFF.md",
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-14-publications",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": false,
+      "handoff_path": null,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story",
+        "PU-14-research"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-14-projects",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": false,
+      "handoff_path": null,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-15-articles",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": false,
+      "handoff_path": null,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-15-courses",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": false,
+      "handoff_path": null,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-15-creative",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": false,
+      "handoff_path": null,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-14-statements",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": false,
+      "handoff_path": null,
+      "depends_on": [
+        "PU-14-research"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-15-lessons",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": false,
+      "handoff_path": null,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story",
+        "PU-15-courses"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-16-books",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": false,
+      "handoff_path": null,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-16-talks",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": false,
+      "handoff_path": null,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-16-resources",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": false,
+      "handoff_path": null,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-16-collections",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": false,
+      "handoff_path": null,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-16-series",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": false,
+      "handoff_path": null,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-17-home",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": false,
+      "handoff_path": null,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story",
+        "CA-06",
+        "PU-03-settings",
+        "CA-03"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-18-about",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": false,
+      "handoff_path": null,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-18-cv",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": false,
+      "handoff_path": null,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story",
+        "PU-18-about"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-18-contact",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": false,
+      "handoff_path": null,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-21-events",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": false,
+      "handoff_path": null,
+      "depends_on": [
+        "PU-SYNC-public",
+        "PU-17-home",
+        "PU-18-contact"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-24-search",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": false,
+      "handoff_path": null,
+      "depends_on": [
+        "PU-14-research",
+        "PU-14-publications",
+        "PU-14-projects",
+        "PU-15-articles",
+        "PU-15-courses",
+        "PU-15-creative",
+        "PU-14-statements",
+        "PU-15-lessons",
+        "PU-16-books",
+        "PU-16-talks",
+        "PU-16-resources",
+        "PU-16-collections",
+        "PU-16-series",
+        "PU-17-home",
+        "PU-18-about",
+        "PU-18-cv",
+        "PU-18-contact",
+        "PU-23-invalidation"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-24-seo",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": false,
+      "handoff_path": null,
+      "depends_on": [
+        "PU-24-search",
+        "PU-13-routes"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-25-admin-journey",
+      "repository": "ADMIN",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": false,
+      "handoff_path": null,
+      "depends_on": [
+        "PU-SYNC-admin",
+        "PU-09-transport",
+        "PU-09-editor",
+        "PU-09-host",
+        "PU-10-research",
+        "PU-10-publication",
+        "PU-10-project",
+        "PU-10-article",
+        "PU-10-course",
+        "PU-10-lesson",
+        "PU-10-creative",
+        "PU-10-book",
+        "PU-10-talk",
+        "PU-10-resource",
+        "PU-10-collection",
+        "PU-10-series",
+        "PU-08-settings",
+        "PU-08-profile",
+        "PU-11-media",
+        "PU-12-home",
+        "PU-12-graph",
+        "PU-12-jobs",
+        "PU-22-analytics"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-25-public-journey",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": false,
+      "handoff_path": null,
+      "depends_on": [
+        "PU-25-admin-journey",
+        "PU-24-seo",
+        "PU-07-runner",
+        "PU-21-events"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "CA-17",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": false,
+      "handoff_path": null,
+      "depends_on": [
+        "CA-07",
+        "PU-25-public-journey"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    },
+    {
+      "id": "PU-25-review",
+      "repository": "ROOT",
+      "queue_status": "NOT_STARTED",
+      "handoff_exists": false,
+      "handoff_path": null,
+      "depends_on": [
+        "CA-17",
+        "PU-25-admin-journey",
+        "PU-25-public-journey",
+        "PU-22-analytics"
+      ],
+      "assessment": "Inventory only; handoff existence does not establish acceptance"
+    }
+  ]
+}

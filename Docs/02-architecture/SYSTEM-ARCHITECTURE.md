@@ -1,5 +1,9 @@
 # System Architecture
 
+<!-- PRODUCT-V2.1 -->
+Current product/implementation authority: ADR-0010, `Docs/03-contracts/PRODUCT-INTERFACES-V2.md` and `Docs/05-delivery/concept-alignment-v2/EXECUTION.md` (coordination-root paths). Keep Astro/TypeScript with bounded Three.js/GSAP, existing React admin/Django backend, Pagefind and first-party aggregate analytics. Earlier stack/phase assumptions apply only where compatible. Rebuild jobs/edge invalidation are a planned interface, not an already operating deployment.
+<!-- /PRODUCT-V2.1 -->
+
 ## Decision
 
 Use three independently versioned and deployed products.
@@ -14,7 +18,7 @@ Admin browser  -> admin-panel -> admin API     -> backend -> PostgreSQL/media
 - Astro owns routes, document structure, metadata, and static output.
 - TypeScript owns typed adapters and build-time validation.
 - Tailwind CSS 4 consumes semantic CSS variables.
-- React islands own only stateful, bounded interactions.
+- Vanilla TypeScript owns bounded public interactions; Three.js/GSAP enhance only assigned scene surfaces. React is optional, not a required public runtime.
 - Public content remains complete without JavaScript.
 
 ## Admin panel

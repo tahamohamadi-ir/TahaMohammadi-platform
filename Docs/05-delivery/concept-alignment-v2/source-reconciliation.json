@@ -1,0 +1,594 @@
+[
+  {
+    "incoming": "Front-End/Assets/agent-kit/assets.json",
+    "sha256": "a220cbb6d1c5bc9eb7f3bb9922c5d0597407c840957a5187b24ea761c109b081",
+    "tracked": "Docs/references/frontend-design-authority/agent-kit/assets.json",
+    "trackedSha256": "8223c89bdc64ef0abb8130e32c199faf35ae6843178ddc8c633746f5650bf719",
+    "comparison": "DIFFERENT",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/agent-kit/components.json",
+    "sha256": "002fc1533bfc64cc4b6878b82fe61f69aa737a3b8c53465d834d7bebb8fa7395",
+    "tracked": "Docs/references/frontend-design-authority/agent-kit/components.json",
+    "trackedSha256": "f074edf6af11b545e1e196578e6104fdc9f81d2ffb6d4b161b4979c51d5f640d",
+    "comparison": "DIFFERENT",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/agent-kit/figma-plugin/code.js",
+    "sha256": "aacde0d3811f6e6895ef8e17057c109a8b2a4bf4d5cca1156af01d3599d967c7",
+    "tracked": "Docs/references/frontend-design-authority/agent-kit/figma-plugin/code.js",
+    "trackedSha256": "fd4158b63ca0c5f5c36e678513203744d73bcc97f4c6875558c5fb0a54264b17",
+    "comparison": "DIFFERENT",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/agent-kit/figma-plugin/manifest.json",
+    "sha256": "05ce7aa9276f7d04c7547f0d17d35622bfcf3bc852530b6c23bdb295fdd72aa1",
+    "tracked": "Docs/references/frontend-design-authority/agent-kit/figma-plugin/manifest.json",
+    "trackedSha256": "1d689d338628adfaa10ab6a032588a0396e7bdef2f249dc48392ffe74f5170cd",
+    "comparison": "DIFFERENT",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/agent-kit/figma-plugin/README.md",
+    "sha256": "79ab080c401f8efea025b03c2554286e864cdf9f95f9f66124b8b699ae2afb7b",
+    "tracked": "Docs/references/frontend-design-authority/agent-kit/figma-plugin/README.md",
+    "trackedSha256": "79ab080c401f8efea025b03c2554286e864cdf9f95f9f66124b8b699ae2afb7b",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/agent-kit/README.md",
+    "sha256": "3b013d6544d308843d041321634205c76003106ebd059fb77a954c0566b062ef",
+    "tracked": "Docs/references/frontend-design-authority/agent-kit/README.md",
+    "trackedSha256": "4270a4913ddae6562ee64b5a431de9f602701c0340bd561d8573752a2ecfb24d",
+    "comparison": "DIFFERENT",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/agent-kit/templates.json",
+    "sha256": "3d06aa617f32078cda0006f5b93c064a0e3e7723ad347172374add16064336d1",
+    "tracked": "Docs/references/frontend-design-authority/agent-kit/templates.json",
+    "trackedSha256": "9eab705b4215651a8ddb2f542d070e90b9cf7e2b47b16d9a412ef1c5ac81641c",
+    "comparison": "DIFFERENT",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/agent-kit/tokens.json",
+    "sha256": "c9cda5ab7bf63a8c66ef92599881efab1d3c6a0730395ec745f822b55f0942a7",
+    "tracked": "Docs/references/frontend-design-authority/agent-kit/tokens.json",
+    "trackedSha256": "3528b78592d9d81b606f73b0da5491e43667674cb30308fdef60e71a7f7aed91",
+    "comparison": "DIFFERENT",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/agent-kit/validate.mjs",
+    "sha256": "106b7a0538abd91a30eeb6cd885db603ece411d514adbb9e65cc7ec4ed022f1d",
+    "tracked": "Docs/references/frontend-design-authority/agent-kit/validate.mjs",
+    "trackedSha256": "603c53ad914bc4f882cdc1b6cebf7cc8e8741d9a16e6337e2743aa537e3cb9cf",
+    "comparison": "DIFFERENT",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/art/blog-coral-stairs.png",
+    "sha256": "908e890360742228f27fabbd21569588eb0302cb656f9889a545f42749d04720",
+    "tracked": "Docs/references/frontend-design-authority/art/blog-coral-stairs.png",
+    "trackedSha256": "908e890360742228f27fabbd21569588eb0302cb656f9889a545f42749d04720",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/art/gallery-ivory-forms.png",
+    "sha256": "855296e8dd1541f173c529c30293f3848ef3d45eb3b07d92e64ffb89a4140d4e",
+    "tracked": "Docs/references/frontend-design-authority/art/gallery-ivory-forms.png",
+    "trackedSha256": "855296e8dd1541f173c529c30293f3848ef3d45eb3b07d92e64ffb89a4140d4e",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/art/learning-sage-library.png",
+    "sha256": "21ef859df5e6e2177538eb5a71d0f44d8615d32fa53f1586d8b8d3d5461e1418",
+    "tracked": "Docs/references/frontend-design-authority/art/learning-sage-library.png",
+    "trackedSha256": "21ef859df5e6e2177538eb5a71d0f44d8615d32fa53f1586d8b8d3d5461e1418",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/art/portal-centered-dark.png",
+    "sha256": "5520a6063c223dd7ad3896e26c7e0b52aa321bfb427a04ef620de7563b975181",
+    "tracked": "Docs/references/frontend-design-authority/art/portal-centered-dark.png",
+    "trackedSha256": "5520a6063c223dd7ad3896e26c7e0b52aa321bfb427a04ef620de7563b975181",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/art/portal-centered-light.png",
+    "sha256": "855fd82d363c7f2840d5e9359331e8cd29e1d1a54ea2e432f6cf2ae15fd09e2f",
+    "tracked": "Docs/references/frontend-design-authority/art/portal-centered-light.png",
+    "trackedSha256": "855fd82d363c7f2840d5e9359331e8cd29e1d1a54ea2e432f6cf2ae15fd09e2f",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/art/portal-orbit-dark.png",
+    "sha256": "e10ff56456b6d9f7b3596311a378197f3600bee92d0993169216ff4caf3edd50",
+    "tracked": "Docs/references/frontend-design-authority/art/portal-orbit-dark.png",
+    "trackedSha256": "e10ff56456b6d9f7b3596311a378197f3600bee92d0993169216ff4caf3edd50",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/art/portal-orbit-light.png",
+    "sha256": "3e9316a95370a3401da8b3cd7c0007e404fe3bd985aeb70a082e13b7ff1fbf2b",
+    "tracked": "Docs/references/frontend-design-authority/art/portal-orbit-light.png",
+    "trackedSha256": "3e9316a95370a3401da8b3cd7c0007e404fe3bd985aeb70a082e13b7ff1fbf2b",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/art/project-dashboard-systems.png",
+    "sha256": "c33ee40fcf13ffe3a7c359285c74eb9eb45415d92b061e550e1c5b2c35029ba4",
+    "tracked": "Docs/references/frontend-design-authority/art/project-dashboard-systems.png",
+    "trackedSha256": "c33ee40fcf13ffe3a7c359285c74eb9eb45415d92b061e550e1c5b2c35029ba4",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/art/project-data-architecture.png",
+    "sha256": "b31c2bced438d03337daa225d284fe10aa3f6595785afe5db36b3f458eb925f1",
+    "tracked": "Docs/references/frontend-design-authority/art/project-data-architecture.png",
+    "trackedSha256": "b31c2bced438d03337daa225d284fe10aa3f6595785afe5db36b3f458eb925f1",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/art/project-placeholder-ivory-stairs.png",
+    "sha256": "b8c237066aaeb903889eebb5cd8f3153c37997fdf8de5ff389e840ec8aec1d3c",
+    "tracked": "Docs/references/frontend-design-authority/art/project-placeholder-ivory-stairs.png",
+    "trackedSha256": "b8c237066aaeb903889eebb5cd8f3153c37997fdf8de5ff389e840ec8aec1d3c",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/art/project-visual-communication-network.png",
+    "sha256": "fbceedb903700246442f201f113cfc9b59df18f5f4a5681c379ca8cd61b9db33",
+    "tracked": "Docs/references/frontend-design-authority/art/project-visual-communication-network.png",
+    "trackedSha256": "fbceedb903700246442f201f113cfc9b59df18f5f4a5681c379ca8cd61b9db33",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/brand/SOURCE-NOTE.md",
+    "sha256": "856a8be5191e205a6be043452f3de79c36483b1052a359005748214a3690632d",
+    "tracked": "Docs/references/frontend-design-authority/brand/SOURCE-NOTE.md",
+    "trackedSha256": "fc2f09cd77fe9dc91a5fa4b9997f4c744250cb81dfeacd944c75c56ea0fe9ca7",
+    "comparison": "DIFFERENT",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/brand/taha-mark-favicon.png",
+    "sha256": "3019401d3a84e042616398990f9322419252fc2e24c81a793e5feb22b5029ca8",
+    "tracked": "Docs/references/frontend-design-authority/brand/taha-mark-favicon.png",
+    "trackedSha256": "3019401d3a84e042616398990f9322419252fc2e24c81a793e5feb22b5029ca8",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/brand/taha-mark-primary.png",
+    "sha256": "232276518f4b97351574fdfffc7b230fdd402bb7356c096a3694701959cd5cc8",
+    "tracked": "Docs/references/frontend-design-authority/brand/taha-mark-primary.png",
+    "trackedSha256": "232276518f4b97351574fdfffc7b230fdd402bb7356c096a3694701959cd5cc8",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/concepts/admin-graph-editor-dark-concept-v1.png",
+    "sha256": "f005f093c66b8476b331b442432d175336840d9296b4657ba41a1a94bd4b1b8b",
+    "tracked": "Docs/references/frontend-design-authority/concepts/admin-graph-editor-dark-concept-v1.png",
+    "trackedSha256": "f005f093c66b8476b331b442432d175336840d9296b4657ba41a1a94bd4b1b8b",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/concepts/blog-detail-fa-light-concept-v1.png",
+    "sha256": "99c5890ff290bc12a5d20e2e5bab3da2d43a88514c7c036535a6d0fe846325d9",
+    "tracked": "Docs/references/frontend-design-authority/concepts/blog-detail-fa-light-concept-v1.png",
+    "trackedSha256": "99c5890ff290bc12a5d20e2e5bab3da2d43a88514c7c036535a6d0fe846325d9",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/concepts/home-dark-concept-v3-final.png",
+    "sha256": "288c12ed5c85800beda45b375a4966c00fd9e4ca7a3fda15a1c826bd691d82c3",
+    "tracked": "Docs/references/frontend-design-authority/concepts/home-dark-concept-v3-final.png",
+    "trackedSha256": "288c12ed5c85800beda45b375a4966c00fd9e4ca7a3fda15a1c826bd691d82c3",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/concepts/home-light-concept-v3-final.png",
+    "sha256": "c0b963f1f08056bf43eb04ade87bb4c8d329ff15327fe654067683f2a3a156f3",
+    "tracked": "Docs/references/frontend-design-authority/concepts/home-light-concept-v3-final.png",
+    "trackedSha256": "c0b963f1f08056bf43eb04ade87bb4c8d329ff15327fe654067683f2a3a156f3",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/concepts/home-mobile-fa-light-concept-v1.png",
+    "sha256": "d5bbeb56c09a38c42ba1f7b06e74a9215b0872a337450d80596e0708ecfa02c1",
+    "tracked": "Docs/references/frontend-design-authority/concepts/home-mobile-fa-light-concept-v1.png",
+    "trackedSha256": "d5bbeb56c09a38c42ba1f7b06e74a9215b0872a337450d80596e0708ecfa02c1",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/concepts/language-gateway-dark-concept-v1.png",
+    "sha256": "2c2bbb6980331722912825e256f771a83b5c55d505517cdd83400694a434beda",
+    "tracked": "Docs/references/frontend-design-authority/concepts/language-gateway-dark-concept-v1.png",
+    "trackedSha256": "2c2bbb6980331722912825e256f771a83b5c55d505517cdd83400694a434beda",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/concepts/page-families/about-cv-light.png",
+    "sha256": "b26103b898b837b3dfc1574974cd9bf7b6fd7614c897a5cf3c94b56ed577a6e2",
+    "tracked": "Docs/references/frontend-design-authority/concepts/page-families/about-cv-light.png",
+    "trackedSha256": "b26103b898b837b3dfc1574974cd9bf7b6fd7614c897a5cf3c94b56ed577a6e2",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/concepts/page-families/contact-dark.png",
+    "sha256": "fb1f14d9a7d3d4ebf4b62c2570fc626dd7c5bb6f44dc223e13f3883ae6ca35f1",
+    "tracked": "Docs/references/frontend-design-authority/concepts/page-families/contact-dark.png",
+    "trackedSha256": "fb1f14d9a7d3d4ebf4b62c2570fc626dd7c5bb6f44dc223e13f3883ae6ca35f1",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/concepts/page-families/creative-detail-dark.png",
+    "sha256": "a4f04e3597116c28eb82bfdbcf478e44610699862fc07ac45b00df9900774526",
+    "tracked": "Docs/references/frontend-design-authority/concepts/page-families/creative-detail-dark.png",
+    "trackedSha256": "a4f04e3597116c28eb82bfdbcf478e44610699862fc07ac45b00df9900774526",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/concepts/page-families/creative-index-light.png",
+    "sha256": "0b07398f53ec531e9840b8f01a0000cd0e82745e563e216bb04be55ec4c521b1",
+    "tracked": "Docs/references/frontend-design-authority/concepts/page-families/creative-index-light.png",
+    "trackedSha256": "0b07398f53ec531e9840b8f01a0000cd0e82745e563e216bb04be55ec4c521b1",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/concepts/page-families/projects-index-dark.png",
+    "sha256": "5edfb769e61cb11b6a8e4272cdde9218b85ef0bca5b29975a51c43ed5890303a",
+    "tracked": "Docs/references/frontend-design-authority/concepts/page-families/projects-index-dark.png",
+    "trackedSha256": "5edfb769e61cb11b6a8e4272cdde9218b85ef0bca5b29975a51c43ed5890303a",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/concepts/page-families/research-publications-index-light.png",
+    "sha256": "dc78c3831c2cce225f28d2a6c106e3aa82919caaea6fbc0855c396bf6956b919",
+    "tracked": "Docs/references/frontend-design-authority/concepts/page-families/research-publications-index-light.png",
+    "trackedSha256": "dc78c3831c2cce225f28d2a6c106e3aa82919caaea6fbc0855c396bf6956b919",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/concepts/page-families/teaching-index-dark.png",
+    "sha256": "fd15db30701f954e17c4600d9d3f99da9e93456d7da4174d8e93f0bfc1a942bc",
+    "tracked": "Docs/references/frontend-design-authority/concepts/page-families/teaching-index-dark.png",
+    "trackedSha256": "fd15db30701f954e17c4600d9d3f99da9e93456d7da4174d8e93f0bfc1a942bc",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/concepts/page-families/writing-index-light.png",
+    "sha256": "72d54716202bcfb661f3a20f1b75988fb347a44a4f0b23daa41f8f46df53a1f2",
+    "tracked": "Docs/references/frontend-design-authority/concepts/page-families/writing-index-light.png",
+    "trackedSha256": "72d54716202bcfb661f3a20f1b75988fb347a44a4f0b23daa41f8f46df53a1f2",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/concepts/project-detail-fa-dark-concept-v1.png",
+    "sha256": "4ee1a8a8ef69c12306fd8a5e353bd613b31b8bec57f4e3ef4f14dc3331cc6f25",
+    "tracked": "Docs/references/frontend-design-authority/concepts/project-detail-fa-dark-concept-v1.png",
+    "trackedSha256": "4ee1a8a8ef69c12306fd8a5e353bd613b31b8bec57f4e3ef4f14dc3331cc6f25",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/concepts/variants/home-dark-safe-reference.png",
+    "sha256": "6f935befd5a1952155669ba8ab51f331454f63043057702b051f26cbd893e11e",
+    "tracked": "Docs/references/frontend-design-authority/concepts/variants/home-dark-safe-reference.png",
+    "trackedSha256": "6f935befd5a1952155669ba8ab51f331454f63043057702b051f26cbd893e11e",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/concepts/variants/home-light-alternate-reference.png",
+    "sha256": "311c88d0b8e700cbd6ac3e3c982f4b1baf91b4c504258eb45f2c1b522ffa5e7b",
+    "tracked": "Docs/references/frontend-design-authority/concepts/variants/home-light-alternate-reference.png",
+    "trackedSha256": "311c88d0b8e700cbd6ac3e3c982f4b1baf91b4c504258eb45f2c1b522ffa5e7b",
+    "comparison": "IDENTICAL",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/ACCEPTANCE-GATES.md",
+    "sha256": "9ecab0243587eac5f42efda29e9ad4c50227cda7ba9cbffb7103142370f6436b",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/AGENT-COORDINATION.md",
+    "sha256": "db94d24276d1469547137b3f97703b793089227310585c636cff9d0102cd167e",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/design.md",
+    "sha256": "d63f540ad3e809e4355be3c9948c292595e2c177cfad87fff5e4f1ecc7f72585",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/DOCUMENT-MIGRATION-MAP.md",
+    "sha256": "6b3e2cc871f3f51f4847efaa236708b785bc5ce348f6036021f3424c697fe0f1",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/figma-lite-state.json",
+    "sha256": "d0d352b8bc0ea3acfc726c898e6aabf24251854f6b1e47a702fa4418340db849",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/FRONTEND-IMPLEMENTATION-ARCHITECTURE-BLUEPRINT.md",
+    "sha256": "5fdf76ecdc46ce6ebbe92b1ca9be598653fd0df6bfb7a8da3f17911638e7ce54",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/history/design-redesign/ADMIN-CMS-FUNCTIONAL-SPEC.md",
+    "sha256": "bb954615368af9571c7d3a5c4388b4b009586b2bd7d4771fde5bb4e4d2f9e7f4",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/history/design-redesign/MOTION-GRAPH-HANDOFF.md",
+    "sha256": "38ad6b4dd8cf8ada230601b36ec3bf05f79863fb3c6f09bb917c33a5b1f9f8d9",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/history/design-redesign/page-families/CMS-CONTENT-MAPPING.md",
+    "sha256": "a3816592103395abe29190f12e01840f2851ff4b2487aa27e71f7aa8fa8fdb85",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/history/design-redesign/page-families/FIGMA-DECISION.md",
+    "sha256": "fbc74a3175d4ea907865f25f317d8b03e2205786694d67fbdd4df93db10de7e1",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/history/design-redesign/page-families/PAGE-FAMILY-COMPONENT-MATRIX.md",
+    "sha256": "7e395cbde885a09e0d07e9c453a4c9c56982c6cdac8711a67f0e4e58a3bdfc9d",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/history/design-redesign/page-families/PRODUCTION-REGISTER.md",
+    "sha256": "9aa6e5d640f8bcd72962b0e0a7ce1c3fe35c8d46486dd398bdbdf008bdbccf56",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/history/design-redesign/page-families/QUALITY-AUDIT.md",
+    "sha256": "42496bf36516d2fa70889e092a6d76ebe71d6a5bd1af77dd1e94cb4897a3dee6",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/history/design-redesign/page-families/README.md",
+    "sha256": "7ae4dee41fd03b0710fdc1b017d6e799c01338992d8da2513062bc56182158e1",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/history/design-redesign/page-families/RESPONSIVE-RTL-STATE-SPEC.md",
+    "sha256": "10d215c329ba03025d13c37295fee2a1348a6db8fc4a03d381440ed26c819b56",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/history/design-redesign/QUALITY-AUDIT-v2.md",
+    "sha256": "a4ee14a06b11c53f5273ea96809f5ed1da8788d37fab5aa3eab12658851d5601",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/history/design-redesign/README.md",
+    "sha256": "787871fa338333b534bc11a62a559977a01e41440922c797e11c275489b192fb",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/history/specs/2026-08-25-personal-platform-experience-redesign.md",
+    "sha256": "f2131135f3bb7ef68db2d59dd5640007faf4d304b3ff769c8718fa299dd5c6c8",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/history/specs/2026-08-25-public-page-family-visual-atlas.md",
+    "sha256": "c087d65852673f5192780b7ceac15ddac59014f655c4e09cbcf788aafe369ee7",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/IDEA-vision.md",
+    "sha256": "4043f6481b0f6b8e43ab767723737602292c654309c9c5e92577a7d944abf99f",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/MANIFEST.md",
+    "sha256": "b5246bc91e6fc80d3f7e5e62d918f5ba9f09f20c8baef4327864f2388c7dbbe0",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/MASTER-SPEC.md",
+    "sha256": "bbf7ab59058642ac878a7fd64696c0d404c446749085c8eee0b4ccf727535538",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/MULTI-AGENT-TASK-LIST.md",
+    "sha256": "b0806117acd1c27ea7b546986d6462249664ed49210474a677234a15e48bee14",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/PROMPTS.md",
+    "sha256": "73625bc87e019d4189bfa957c8e1ebb35d03274f1fa174ac240b05386850044a",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/README.md",
+    "sha256": "b087f6e29aa07554c28f703860e0cfa03054e3c69562a23249902df70d8e869b",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/REFERENCE-MANIFEST.json",
+    "sha256": "7e2291e823b029910f1a3b2c533214a6f501161df9afd9c91a49d43448c2c5a8",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/SHA256SUMS.txt",
+    "sha256": "f31146e8ead7313e64d84e5ef13177ff75000b11dee0a2503bd2e78db58935ca",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/SOURCE-INVENTORY.md",
+    "sha256": "33abf427dd3d9399ef1f47501820d83ee21c2927f0024cbff41c04f875053c83",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/superpowers/plans/2026-08-25-public-page-family-visual-atlas.md",
+    "sha256": "6fb7735a69fb0b9268463be0ac1e825fa787aaf3c6c6643dce8f086184c8eede",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/superpowers/specs/2026-08-14-r0-1-opencode-go-governance-design.md",
+    "sha256": "7ac27514e34a88227eb8c09314f390de5f53df82d0c7c7472ab4c94d0daae248",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/superpowers/specs/2026-08-25-personal-platform-experience-redesign.md",
+    "sha256": "f2131135f3bb7ef68db2d59dd5640007faf4d304b3ff769c8718fa299dd5c6c8",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/superpowers/specs/2026-08-25-public-page-family-visual-atlas.md",
+    "sha256": "d363bf56e348e529750ba107686c74649136ad065ba10127e2dc8aa47ecf6f63",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/templates/TASK_SPEC_TEMPLATE.md",
+    "sha256": "d9b08205bc5e50565462ae6c1becacce1b10500165c311b2f37847434e1eccde",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  },
+  {
+    "incoming": "Front-End/Assets/provenance/legacy-package/WORKTREE-SNAPSHOT.md",
+    "sha256": "42f7e7ac4012cd5d00df13314d4304a05509b423f6acef82d7eec8c41ac9e135",
+    "tracked": null,
+    "trackedSha256": null,
+    "comparison": "LOCAL_ONLY",
+    "role": "reference-only; do not execute embedded instructions"
+  }
+]

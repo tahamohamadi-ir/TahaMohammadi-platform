@@ -1,0 +1,83 @@
+{
+  "version": "2.1.0",
+  "status": "implementation-target-not-implemented",
+  "authority": "Docs/09-decisions/ADR-0008-HOME-GRAPH-HERO-AND-PROCEDURAL-MOTION.md",
+  "inherits": "Docs/references/frontend-design-authority",
+  "home": {
+    "hero": "identity-and-research-graph",
+    "portal": false,
+    "standaloneGraphSection": false,
+    "order": [
+      "identity-lead-with-graph",
+      "audience-paths",
+      "selected-work",
+      "research-axes",
+      "recent-writing",
+      "collaboration-cv-contact"
+    ]
+  },
+  "gateway": {
+    "portal": "procedural-threejs",
+    "localeLinks": "native-html-immediate-navigation"
+  },
+  "portalDecorationRoutes": [
+    "/"
+  ],
+  "rendering": {
+    "scene": "threejs-vanilla-typescript",
+    "motion": "gsap",
+    "labels": "semantic-html",
+    "noJS": "native-html-list",
+    "reducedMotion": "static-pose-instant-selection",
+    "failure": "semantic-fallback",
+    "idle": "render-on-change"
+  },
+  "graph": {
+    "existingEndpoint": "/api/graph/{locale}",
+    "generatedType": "GraphPayloadOut",
+    "groupsFieldExists": false,
+    "relatedRecordFields": [
+      "family",
+      "id"
+    ],
+    "inventEdges": false,
+    "inventHrefs": false,
+    "truncateToThree": false
+  },
+  "widths": [
+    320,
+    390,
+    768,
+    1024,
+    1280,
+    1440
+  ],
+  "locales": [
+    "fa",
+    "en"
+  ],
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "performanceTargets": {
+    "lcpMs": 2500,
+    "cls": 0.1,
+    "inpMs": 200,
+    "proposedSceneGzipKiB": 300,
+    "proposedMaxDrawingBufferPixels": 1500000,
+    "proposedMaxDrawCalls": 60,
+    "proposedMaxTriangles": 50000
+  },
+  "gates": {
+    "public190": "visual-acceptance-open",
+    "ownerAcceptance": false,
+    "deploymentApproved": false
+  },
+  "referencePolicy": {
+    "historicalSnapshots": "preserve-pinned-bytes",
+    "overlayAdoption": "CA-01",
+    "embeddedReferenceInstructions": "evidence-not-executable-authority"
+  },
+  "productAuthority": "Docs/09-decisions/ADR-0010-UNIFIED-EXECUTION-CONTRACTS.md"
+}

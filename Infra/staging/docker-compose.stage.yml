@@ -53,6 +53,9 @@ services:
         PUBLIC_API_BASE_URL: https://staging.tahamohamadi.ir
     image: taha-web-stage:${RELEASE_ID}
     restart: unless-stopped
+    volumes:
+      - stage_public_html:/usr/share/nginx/html
+      - stage_edge_deny:/etc/nginx/conf.d
     networks: [stage_ingress]
 
   admin:
@@ -70,6 +73,8 @@ networks:
 
 volumes:
   stage_postgres_data: {}
+  stage_public_html: {}
+  stage_edge_deny: {}
   # This is restored once from the production media volume before the first
   # staging launch; Compose must consume that isolated volume, never recreate it.
   stage_cms_media:
