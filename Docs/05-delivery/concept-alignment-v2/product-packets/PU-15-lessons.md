@@ -1,6 +1,6 @@
 # PU-15-lessons — Render complete lesson pages, parent course links, resources and published-only ordered neighbors.
 
-Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **NOT_STARTED**.
+Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **REVISE**.
 
 Dependencies: PU-13-routes, PU-13-story, PU-15-courses. Family: F07.
 
@@ -42,3 +42,9 @@ All paths above are relative to the owner repository. Every other path is read-o
 Return exact base/result commits (or explicitly uncommitted), changed paths, tests with results, schema hash/impact, screenshots where UI changed, dirty status and remaining risks in `docs/quality/product-v2/PU-15-lessons-HANDOFF.md`.
 
 Stop: **PU-15-lessons_HANDOFF_READY**. Do not begin another packet, edit another repository, merge, push, deploy or mark owner acceptance.
+
+## Content completion amendment — 2026-09-07
+
+Authorized by owner implementation plan; preserve previous source and tests.
+
+- `src/lib/lessons-content.test.ts`

@@ -1,6 +1,6 @@
 # PU-21-events — Send bounded analytics events on successful user actions without blocking navigation or leaking input.
 
-Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **NOT_STARTED**.
+Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **IMPLEMENTED_UNREVIEWED**.
 
 Dependencies: PU-SYNC-public, PU-17-home, PU-18-contact. Family: shared.
 

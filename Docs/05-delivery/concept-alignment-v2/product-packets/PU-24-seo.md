@@ -1,6 +1,6 @@
 # PU-24-seo — Verify canonical/alternates/redirects/sitemap for every family and independently published work.
 
-Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **NOT_STARTED**.
+Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **IMPLEMENTED_UNREVIEWED**.
 
 Dependencies: PU-24-search, PU-13-routes. Family: F15.
 

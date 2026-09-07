@@ -1,6 +1,6 @@
 # PU-12-jobs — Show publication jobs, pending removal, safe errors and retry; distinguish save from site deployment.
 
-Owner: **ADMIN** (`D:/Project/tahamohammadi-platform/Front-End/admin-panel`). Status: **NOT_STARTED**.
+Owner: **ADMIN** (`D:/Project/tahamohammadi-platform/Front-End/admin-panel`). Status: **IMPLEMENTED_UNREVIEWED**.
 
 Dependencies: PU-09-transport, PU-07-runner. Family: shared.
 

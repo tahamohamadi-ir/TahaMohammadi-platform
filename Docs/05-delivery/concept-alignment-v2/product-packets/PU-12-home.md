@@ -1,6 +1,6 @@
 # PU-12-home — Complete locale-specific module selection/order and two audience entry links without fake featured records.
 
-Owner: **ADMIN** (`D:/Project/tahamohammadi-platform/Front-End/admin-panel`). Status: **NOT_STARTED**.
+Owner: **ADMIN** (`D:/Project/tahamohammadi-platform/Front-End/admin-panel`). Status: **IMPLEMENTED_UNREVIEWED**.
 
 Dependencies: PU-SYNC-admin. Family: F02.
 

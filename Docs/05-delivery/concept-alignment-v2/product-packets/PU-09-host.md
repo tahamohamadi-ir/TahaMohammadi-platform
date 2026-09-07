@@ -1,6 +1,6 @@
 # PU-09-host — Connect story selection/edit/preview to generic content editor; preserve existing metadata and revision workflow.
 
-Owner: **ADMIN** (`D:/Project/tahamohammadi-platform/Front-End/admin-panel`). Status: **BLOCKED**.
+Owner: **ADMIN** (`D:/Project/tahamohammadi-platform/Front-End/admin-panel`). Status: **IMPLEMENTED_UNREVIEWED**.
 
 Dependencies: PU-09-editor. Family: shared.
 

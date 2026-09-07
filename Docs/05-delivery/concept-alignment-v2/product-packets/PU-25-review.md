@@ -1,6 +1,6 @@
 # PU-25-review — Record independent cross-repository acceptance on exact commits and owner review; return fixes to owning packets.
 
-Owner: **ROOT** (`D:/Project/tahamohammadi-platform`). Status: **NOT_STARTED**.
+Owner: **ROOT** (`D:/Project/tahamohammadi-platform`). Status: **IMPLEMENTED_UNREVIEWED**.
 
 Dependencies: CA-17, PU-25-admin-journey, PU-25-public-journey, PU-22-analytics. Family: all.
 

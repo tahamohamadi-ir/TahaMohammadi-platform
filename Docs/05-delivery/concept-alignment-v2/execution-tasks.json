@@ -139,7 +139,7 @@
       "id": "PU-03-settings",
       "parent": "PU-03",
       "repository": "BACKEND",
-      "status": "ACCEPTED_LOCAL",
+      "status": "REVISE",
       "active": true,
       "depends_on": [
         "PU-02",
@@ -160,13 +160,15 @@
         "docs/contracts/openapi/current/endpoint-inventory.md",
         "docs/quality/product-v2/PU-03-settings-HANDOFF.md",
         "docs/contracts/openapi/current/ACCEPTANCE.json",
-        "scripts/verify_openapi_export.py"
+        "scripts/verify_openapi_export.py",
+        "apps/siteconfig/migrations/0006_managed_copy.py"
       ],
       "proposed_new_files": [
         "apps/siteconfig/migrations/0005_localized_product_settings.py",
         "tests/test_product_localized_settings.py",
         "docs/quality/product-v2/PU-03-settings-HANDOFF.md",
-        "docs/contracts/openapi/current/ACCEPTANCE.json"
+        "docs/contracts/openapi/current/ACCEPTANCE.json",
+        "apps/siteconfig/migrations/0006_managed_copy.py"
       ],
       "read_paths": [],
       "acceptance": [
@@ -181,15 +183,50 @@
         "PU-03-resolver"
       ],
       "handoff": "docs/quality/product-v2/PU-03-settings-HANDOFF.md",
-      "review_note": "reviews/ACCEPTANCE-VERIFICATION-2026-09-06.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "handoff_state": "accepted-local-uncommitted",
       "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-26-seed-safety",
+      "parent": "PU-26",
+      "repository": "BACKEND",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "active": true,
+      "depends_on": [
+        "PU-02"
+      ],
+      "goal": "Preserve owner edits during seed import and enforce safe create-missing-only initialization.",
+      "contract_section": "I04",
+      "family": "shared",
+      "allowlist": [
+        "apps/content/management/commands/import_content_seed.py",
+        "apps/content/management/commands/import_profile_seed.py",
+        "apps/content/services/content_seed_import.py",
+        "tests/test_seed_safety.py",
+        "docs/quality/product-v2/PU-26-seed-safety-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "tests/test_seed_safety.py",
+        "docs/quality/product-v2/PU-26-seed-safety-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "uv run pytest tests/test_seed_safety.py",
+        "uv run ruff check ."
+      ],
+      "packet": "product-packets/PU-26-seed-safety.md",
+      "stop_marker": "PU-26-seed-safety_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-26-seed-safety-HANDOFF.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
+      "handoff_state": "implemented-unreviewed"
     },
     {
       "id": "PU-04-catalog",
       "parent": "PU-04",
       "repository": "BACKEND",
-      "status": "REVISE",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-02",
@@ -226,7 +263,7 @@
         "PU-03-settings"
       ],
       "handoff": "docs/quality/product-v2/PU-04-catalog-HANDOFF.md",
-      "review_note": "reviews/CATALOG-GRAPH-REVIEW-2026-09-06.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "handoff_state": "uncommitted-not-accepted",
       "review": "reviews/CATALOG-GRAPH-REVIEW-2026-09-06.md"
     },
@@ -273,7 +310,7 @@
         "PU-03-settings"
       ],
       "handoff": "docs/quality/product-v2/PU-04-metadata-HANDOFF.md",
-      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "handoff_state": "uncommitted-not-accepted",
       "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
     },
@@ -317,7 +354,7 @@
       "stop_marker": "PU-04-publication_HANDOFF_READY",
       "file_serialization_dependencies": [],
       "handoff": "docs/quality/product-v2/PU-04-publication-HANDOFF.md",
-      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "handoff_state": "uncommitted-not-accepted",
       "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
     },
@@ -364,7 +401,7 @@
         "PU-04-publication"
       ],
       "handoff": "docs/quality/product-v2/PU-04-course-HANDOFF.md",
-      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "handoff_state": "uncommitted-not-accepted",
       "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
     },
@@ -411,7 +448,7 @@
         "PU-04-course"
       ],
       "handoff": "docs/quality/product-v2/PU-04-creative-HANDOFF.md",
-      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "handoff_state": "uncommitted-not-accepted",
       "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
     },
@@ -460,7 +497,7 @@
         "PU-04-creative"
       ],
       "handoff": "docs/quality/product-v2/PU-05-lessons-HANDOFF.md",
-      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "handoff_state": "uncommitted-not-accepted",
       "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
     },
@@ -507,7 +544,7 @@
         "PU-05-lessons"
       ],
       "handoff": "docs/quality/product-v2/PU-06-book-HANDOFF.md",
-      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "handoff_state": "uncommitted-not-accepted",
       "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
     },
@@ -554,7 +591,7 @@
         "PU-06-book"
       ],
       "handoff": "docs/quality/product-v2/PU-06-talk-HANDOFF.md",
-      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "handoff_state": "uncommitted-not-accepted",
       "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
     },
@@ -602,7 +639,7 @@
         "PU-06-talk"
       ],
       "handoff": "docs/quality/product-v2/PU-06-resource-HANDOFF.md",
-      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "handoff_state": "uncommitted-not-accepted",
       "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
     },
@@ -652,7 +689,7 @@
         "PU-05-lessons"
       ],
       "handoff": "docs/quality/product-v2/PU-06-collection-HANDOFF.md",
-      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "handoff_state": "uncommitted-not-accepted",
       "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
     },
@@ -699,7 +736,7 @@
         "PU-06-collection"
       ],
       "handoff": "docs/quality/product-v2/PU-06-series-HANDOFF.md",
-      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "handoff_state": "uncommitted-not-accepted",
       "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
     },
@@ -748,7 +785,7 @@
         "PU-03-settings"
       ],
       "handoff": "docs/quality/product-v2/PU-04-project-evidence-HANDOFF.md",
-      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "handoff_state": "uncommitted-not-accepted",
       "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
     },
@@ -757,7 +794,7 @@
       "parent": "PU-07",
       "repository": "BACKEND",
       "status": "IMPLEMENTED_UNREVIEWED",
-      "review_note": "reviews/EXECUTION-REVIEW-2026-09-06-PU04.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "active": true,
       "depends_on": [
         "PU-04-catalog",
@@ -851,7 +888,7 @@
       "stop_marker": "PU-07-preview_HANDOFF_READY",
       "file_serialization_dependencies": [],
       "handoff": "docs/quality/product-v2/PU-07-preview-HANDOFF.md",
-      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "handoff_state": "uncommitted-not-accepted",
       "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
     },
@@ -860,7 +897,7 @@
       "parent": "PU-07",
       "repository": "BACKEND",
       "status": "IMPLEMENTED_UNREVIEWED",
-      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "active": true,
       "depends_on": [
         "PU-07-revisions",
@@ -919,7 +956,7 @@
       "parent": "PU-23",
       "repository": "BACKEND",
       "status": "IMPLEMENTED_UNREVIEWED",
-      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "active": true,
       "depends_on": [
         "PU-07-jobs",
@@ -970,7 +1007,7 @@
       "parent": "PU-20",
       "repository": "BACKEND",
       "status": "IMPLEMENTED_UNREVIEWED",
-      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "active": true,
       "depends_on": [
         "PU-19",
@@ -1047,7 +1084,7 @@
       "parent": "PU-07",
       "repository": "ROOT",
       "status": "IMPLEMENTED_UNREVIEWED",
-      "review_note": "reviews/EXECUTION-REVIEW-2026-09-06-PU04.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "active": true,
       "depends_on": [
         "PU-07-jobs",
@@ -1157,7 +1194,7 @@
     {
       "id": "CA-02",
       "title": "Published graph adapter and route resolution",
-      "status": "REVISE",
+      "status": "ACCEPTED_LOCAL",
       "repository": "PUBLIC",
       "depends_on": [
         "CA-01",
@@ -1194,7 +1231,7 @@
     {
       "id": "CA-03",
       "title": "Semantic integrated Home hero",
-      "status": "IMPLEMENTED_UNREVIEWED",
+      "status": "ACCEPTED_LOCAL",
       "repository": "PUBLIC",
       "depends_on": [
         "CA-02"
@@ -1243,7 +1280,7 @@
     {
       "id": "CA-04",
       "title": "Three.js graph geometry and deterministic layout",
-      "status": "IMPLEMENTED_UNREVIEWED",
+      "status": "ACCEPTED_LOCAL",
       "repository": "PUBLIC",
       "depends_on": [
         "CA-03"
@@ -1286,7 +1323,7 @@
     {
       "id": "CA-05",
       "title": "Graph selection and bounded GSAP motion",
-      "status": "IMPLEMENTED_UNREVIEWED",
+      "status": "ACCEPTED_LOCAL",
       "repository": "PUBLIC",
       "depends_on": [
         "CA-04"
@@ -1329,7 +1366,7 @@
     {
       "id": "CA-06",
       "title": "Integrate progressive Home hero",
-      "status": "IMPLEMENTED_UNREVIEWED",
+      "status": "ACCEPTED_LOCAL",
       "repository": "PUBLIC",
       "depends_on": [
         "CA-05",
@@ -1370,7 +1407,7 @@
     {
       "id": "CA-07",
       "title": "Procedural gateway portal",
-      "status": "IMPLEMENTED_UNREVIEWED",
+      "status": "ACCEPTED_LOCAL",
       "repository": "PUBLIC",
       "depends_on": [
         "CA-04"
@@ -1411,7 +1448,7 @@
     {
       "id": "CA-08",
       "title": "Shared shell fidelity",
-      "status": "IMPLEMENTED_UNREVIEWED",
+      "status": "REVISE",
       "repository": "PUBLIC",
       "depends_on": [
         "CA-03"
@@ -1419,6 +1456,9 @@
       "allowlist": [
         "src/components/Header.astro",
         "src/components/Footer.astro",
+        "src/layouts/BaseLayout.astro",
+        "src/layouts/SiteLayout.astro",
+        "src/lib/site-settings-content.ts",
         "src/styles/shell.css",
         "src/components/shell/public-150.behavior.test.ts",
         "tests/e2e/public-150-shell.e2e.ts",
@@ -1439,7 +1479,7 @@
         "docs/quality/concept-alignment-v2/CA-08-HANDOFF.md"
       ],
       "file_serialization_dependencies": [],
-      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "handoff_state": "uncommitted-not-accepted",
       "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
     },
@@ -1448,7 +1488,7 @@
       "parent": "PU-SYNC",
       "repository": "PUBLIC",
       "status": "IMPLEMENTED_UNREVIEWED",
-      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "active": true,
       "depends_on": [
         "PU-03-resolver",
@@ -1512,7 +1552,7 @@
       "parent": "PU-SYNC",
       "repository": "ADMIN",
       "status": "IMPLEMENTED_UNREVIEWED",
-      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "active": true,
       "depends_on": [
         "PU-03-resolver",
@@ -1564,7 +1604,7 @@
       "id": "PU-09-transport",
       "parent": "PU-09",
       "repository": "ADMIN",
-      "status": "BLOCKED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-SYNC-admin"
@@ -1597,7 +1637,7 @@
       "stop_marker": "PU-09-transport_HANDOFF_READY",
       "file_serialization_dependencies": [],
       "handoff": "docs/quality/product-v2/PU-09-transport-HANDOFF.md",
-      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "handoff_state": "uncommitted-not-accepted",
       "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
     },
@@ -1605,7 +1645,7 @@
       "id": "PU-09-editor",
       "parent": "PU-09",
       "repository": "ADMIN",
-      "status": "BLOCKED",
+      "status": "REVISE",
       "active": true,
       "depends_on": [
         "PU-09-transport"
@@ -1617,13 +1657,17 @@
         "src/components/editor/StoryEditor.tsx",
         "src/components/editor/story-editor.css",
         "src/components/editor/StoryEditor.test.tsx",
-        "docs/quality/product-v2/PU-09-editor-HANDOFF.md"
+        "docs/quality/product-v2/PU-09-editor-HANDOFF.md",
+        "src/components/editor/story-library-fields.tsx",
+        "src/components/editor/story-validation.ts"
       ],
       "proposed_new_files": [
         "src/components/editor/StoryEditor.tsx",
         "src/components/editor/story-editor.css",
         "src/components/editor/StoryEditor.test.tsx",
-        "docs/quality/product-v2/PU-09-editor-HANDOFF.md"
+        "docs/quality/product-v2/PU-09-editor-HANDOFF.md",
+        "src/components/editor/story-library-fields.tsx",
+        "src/components/editor/story-validation.ts"
       ],
       "read_paths": [],
       "acceptance": [
@@ -1636,7 +1680,7 @@
       "stop_marker": "PU-09-editor_HANDOFF_READY",
       "file_serialization_dependencies": [],
       "handoff": "docs/quality/product-v2/PU-09-editor-HANDOFF.md",
-      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "handoff_state": "uncommitted-not-accepted",
       "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
     },
@@ -1644,7 +1688,7 @@
       "id": "PU-09-host",
       "parent": "PU-09",
       "repository": "ADMIN",
-      "status": "BLOCKED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-09-editor"
@@ -1672,7 +1716,7 @@
       "stop_marker": "PU-09-host_HANDOFF_READY",
       "file_serialization_dependencies": [],
       "handoff": "docs/quality/product-v2/PU-09-host-HANDOFF.md",
-      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "handoff_state": "uncommitted-not-accepted",
       "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
     },
@@ -1680,7 +1724,7 @@
       "id": "PU-10-research",
       "parent": "PU-10",
       "repository": "ADMIN",
-      "status": "BLOCKED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-09-host"
@@ -1712,7 +1756,7 @@
       "stop_marker": "PU-10-research_HANDOFF_READY",
       "file_serialization_dependencies": [],
       "handoff": "docs/quality/product-v2/PU-10-research-HANDOFF.md",
-      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "handoff_state": "uncommitted-not-accepted",
       "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
     },
@@ -1720,7 +1764,7 @@
       "id": "PU-10-publication",
       "parent": "PU-10",
       "repository": "ADMIN",
-      "status": "BLOCKED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-09-host",
@@ -1755,7 +1799,7 @@
         "PU-10-research"
       ],
       "handoff": "docs/quality/product-v2/PU-10-publication-HANDOFF.md",
-      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "handoff_state": "uncommitted-not-accepted",
       "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
     },
@@ -1763,7 +1807,7 @@
       "id": "PU-10-project",
       "parent": "PU-10",
       "repository": "ADMIN",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-09-host",
@@ -1797,13 +1841,14 @@
       "file_serialization_dependencies": [
         "PU-10-publication"
       ],
-      "handoff": "docs/quality/product-v2/PU-10-project-HANDOFF.md"
+      "handoff": "docs/quality/product-v2/PU-10-project-HANDOFF.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-10-article",
       "parent": "PU-10",
       "repository": "ADMIN",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-09-host",
@@ -1837,13 +1882,14 @@
       "file_serialization_dependencies": [
         "PU-10-project"
       ],
-      "handoff": "docs/quality/product-v2/PU-10-article-HANDOFF.md"
+      "handoff": "docs/quality/product-v2/PU-10-article-HANDOFF.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-10-course",
       "parent": "PU-10",
       "repository": "ADMIN",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-09-host",
@@ -1877,13 +1923,14 @@
       "file_serialization_dependencies": [
         "PU-10-article"
       ],
-      "handoff": "docs/quality/product-v2/PU-10-course-HANDOFF.md"
+      "handoff": "docs/quality/product-v2/PU-10-course-HANDOFF.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-10-lesson",
       "parent": "PU-10",
       "repository": "ADMIN",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-09-host",
@@ -1917,13 +1964,14 @@
       "file_serialization_dependencies": [
         "PU-10-course"
       ],
-      "handoff": "docs/quality/product-v2/PU-10-lesson-HANDOFF.md"
+      "handoff": "docs/quality/product-v2/PU-10-lesson-HANDOFF.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-10-creative",
       "parent": "PU-10",
       "repository": "ADMIN",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-09-host",
@@ -1957,13 +2005,14 @@
       "file_serialization_dependencies": [
         "PU-10-lesson"
       ],
-      "handoff": "docs/quality/product-v2/PU-10-creative-HANDOFF.md"
+      "handoff": "docs/quality/product-v2/PU-10-creative-HANDOFF.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-10-book",
       "parent": "PU-10",
       "repository": "ADMIN",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-09-host",
@@ -1997,13 +2046,14 @@
       "file_serialization_dependencies": [
         "PU-10-creative"
       ],
-      "handoff": "docs/quality/product-v2/PU-10-book-HANDOFF.md"
+      "handoff": "docs/quality/product-v2/PU-10-book-HANDOFF.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-10-talk",
       "parent": "PU-10",
       "repository": "ADMIN",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-09-host",
@@ -2037,13 +2087,14 @@
       "file_serialization_dependencies": [
         "PU-10-book"
       ],
-      "handoff": "docs/quality/product-v2/PU-10-talk-HANDOFF.md"
+      "handoff": "docs/quality/product-v2/PU-10-talk-HANDOFF.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-10-resource",
       "parent": "PU-10",
       "repository": "ADMIN",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-09-host",
@@ -2077,13 +2128,14 @@
       "file_serialization_dependencies": [
         "PU-10-talk"
       ],
-      "handoff": "docs/quality/product-v2/PU-10-resource-HANDOFF.md"
+      "handoff": "docs/quality/product-v2/PU-10-resource-HANDOFF.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-10-collection",
       "parent": "PU-10",
       "repository": "ADMIN",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-09-host",
@@ -2117,13 +2169,14 @@
       "file_serialization_dependencies": [
         "PU-10-resource"
       ],
-      "handoff": "docs/quality/product-v2/PU-10-collection-HANDOFF.md"
+      "handoff": "docs/quality/product-v2/PU-10-collection-HANDOFF.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-10-series",
       "parent": "PU-10",
       "repository": "ADMIN",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-09-host",
@@ -2157,13 +2210,14 @@
       "file_serialization_dependencies": [
         "PU-10-collection"
       ],
-      "handoff": "docs/quality/product-v2/PU-10-series-HANDOFF.md"
+      "handoff": "docs/quality/product-v2/PU-10-series-HANDOFF.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-08-settings",
       "parent": "PU-08",
       "repository": "ADMIN",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-SYNC-admin"
@@ -2191,13 +2245,14 @@
       "packet": "product-packets/PU-08-settings.md",
       "stop_marker": "PU-08-settings_HANDOFF_READY",
       "file_serialization_dependencies": [],
-      "handoff": "docs/quality/product-v2/PU-08-settings-HANDOFF.md"
+      "handoff": "docs/quality/product-v2/PU-08-settings-HANDOFF.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-08-profile",
       "parent": "PU-08",
       "repository": "ADMIN",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-09-host",
@@ -2230,13 +2285,14 @@
       "file_serialization_dependencies": [
         "PU-10-series"
       ],
-      "handoff": "docs/quality/product-v2/PU-08-profile-HANDOFF.md"
+      "handoff": "docs/quality/product-v2/PU-08-profile-HANDOFF.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-11-media",
       "parent": "PU-11",
       "repository": "ADMIN",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-SYNC-admin",
@@ -2265,13 +2321,14 @@
       "packet": "product-packets/PU-11-media.md",
       "stop_marker": "PU-11-media_HANDOFF_READY",
       "file_serialization_dependencies": [],
-      "handoff": "docs/quality/product-v2/PU-11-media-HANDOFF.md"
+      "handoff": "docs/quality/product-v2/PU-11-media-HANDOFF.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-12-home",
       "parent": "PU-12",
       "repository": "ADMIN",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-SYNC-admin"
@@ -2298,13 +2355,14 @@
       "packet": "product-packets/PU-12-home.md",
       "stop_marker": "PU-12-home_HANDOFF_READY",
       "file_serialization_dependencies": [],
-      "handoff": "docs/quality/product-v2/PU-12-home-HANDOFF.md"
+      "handoff": "docs/quality/product-v2/PU-12-home-HANDOFF.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-12-graph",
       "parent": "PU-12",
       "repository": "ADMIN",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-SYNC-admin"
@@ -2332,13 +2390,14 @@
       "packet": "product-packets/PU-12-graph.md",
       "stop_marker": "PU-12-graph_HANDOFF_READY",
       "file_serialization_dependencies": [],
-      "handoff": "docs/quality/product-v2/PU-12-graph-HANDOFF.md"
+      "handoff": "docs/quality/product-v2/PU-12-graph-HANDOFF.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-12-jobs",
       "parent": "PU-12",
       "repository": "ADMIN",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-09-transport",
@@ -2370,13 +2429,14 @@
       "packet": "product-packets/PU-12-jobs.md",
       "stop_marker": "PU-12-jobs_HANDOFF_READY",
       "file_serialization_dependencies": [],
-      "handoff": "docs/quality/product-v2/PU-12-jobs-HANDOFF.md"
+      "handoff": "docs/quality/product-v2/PU-12-jobs-HANDOFF.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-22-analytics",
       "parent": "PU-22",
       "repository": "ADMIN",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-SYNC-admin",
@@ -2411,13 +2471,14 @@
       "file_serialization_dependencies": [
         "PU-12-jobs"
       ],
-      "handoff": "docs/quality/product-v2/PU-22-analytics-HANDOFF.md"
+      "handoff": "docs/quality/product-v2/PU-22-analytics-HANDOFF.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-13-routes",
       "parent": "PU-13",
       "repository": "PUBLIC",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-SYNC-public"
@@ -2448,14 +2509,16 @@
       "packet": "product-packets/PU-13-routes.md",
       "stop_marker": "PU-13-routes_HANDOFF_READY",
       "file_serialization_dependencies": [],
-      "handoff": "docs/quality/product-v2/PU-13-routes-HANDOFF.md"
+      "handoff": "docs/quality/product-v2/PU-13-routes-HANDOFF.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-13-story",
       "parent": "PU-13",
       "repository": "PUBLIC",
-      "status": "NOT_STARTED",
+      "status": "REVISE",
       "active": true,
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "depends_on": [
         "PU-SYNC-public",
         "CA-08"
@@ -2469,7 +2532,8 @@
         "src/styles/story.css",
         "src/lib/story-content.ts",
         "src/lib/story-content.test.ts",
-        "docs/quality/product-v2/PU-13-story-HANDOFF.md"
+        "docs/quality/product-v2/PU-13-story-HANDOFF.md",
+        "src/components/story/story-projection.test.ts"
       ],
       "proposed_new_files": [
         "src/components/story/StoryDocument.astro",
@@ -2477,7 +2541,8 @@
         "src/styles/story.css",
         "src/lib/story-content.ts",
         "src/lib/story-content.test.ts",
-        "docs/quality/product-v2/PU-13-story-HANDOFF.md"
+        "docs/quality/product-v2/PU-13-story-HANDOFF.md",
+        "src/components/story/story-projection.test.ts"
       ],
       "read_paths": [],
       "acceptance": [
@@ -2496,7 +2561,7 @@
       "id": "PU-14-research",
       "parent": "PU-14",
       "repository": "PUBLIC",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-13-routes",
@@ -2541,13 +2606,14 @@
       "handoff": "docs/quality/product-v2/PU-14-research-HANDOFF.md",
       "visual_criteria_from": [
         "packets/CA-10.md"
-      ]
+      ],
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-14-publications",
       "parent": "PU-14",
       "repository": "PUBLIC",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-13-routes",
@@ -2595,13 +2661,14 @@
       "handoff": "docs/quality/product-v2/PU-14-publications-HANDOFF.md",
       "visual_criteria_from": [
         "packets/CA-10.md"
-      ]
+      ],
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-14-projects",
       "parent": "PU-14",
       "repository": "PUBLIC",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-13-routes",
@@ -2645,13 +2712,14 @@
       "handoff": "docs/quality/product-v2/PU-14-projects-HANDOFF.md",
       "visual_criteria_from": [
         "packets/CA-12.md"
-      ]
+      ],
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-15-articles",
       "parent": "PU-15",
       "repository": "PUBLIC",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-13-routes",
@@ -2695,13 +2763,14 @@
       "handoff": "docs/quality/product-v2/PU-15-articles-HANDOFF.md",
       "visual_criteria_from": [
         "packets/CA-13.md"
-      ]
+      ],
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-15-courses",
       "parent": "PU-15",
       "repository": "PUBLIC",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-13-routes",
@@ -2746,13 +2815,14 @@
       "handoff": "docs/quality/product-v2/PU-15-courses-HANDOFF.md",
       "visual_criteria_from": [
         "packets/CA-14.md"
-      ]
+      ],
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-15-creative",
       "parent": "PU-15",
       "repository": "PUBLIC",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-13-routes",
@@ -2796,13 +2866,14 @@
       "handoff": "docs/quality/product-v2/PU-15-creative-HANDOFF.md",
       "visual_criteria_from": [
         "packets/CA-15.md"
-      ]
+      ],
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-14-statements",
       "parent": "PU-14",
       "repository": "PUBLIC",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-14-research"
@@ -2836,13 +2907,14 @@
       "packet": "product-packets/PU-14-statements.md",
       "stop_marker": "PU-14-statements_HANDOFF_READY",
       "file_serialization_dependencies": [],
-      "handoff": "docs/quality/product-v2/PU-14-statements-HANDOFF.md"
+      "handoff": "docs/quality/product-v2/PU-14-statements-HANDOFF.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-15-lessons",
       "parent": "PU-15",
       "repository": "PUBLIC",
-      "status": "NOT_STARTED",
+      "status": "REVISE",
       "active": true,
       "depends_on": [
         "PU-13-routes",
@@ -2858,7 +2930,8 @@
         "src/pages/fa/education/[courseSlug]/lessons/[lessonSlug].astro",
         "src/pages/en/education/[courseSlug]/lessons/[lessonSlug].astro",
         "src/components/teaching/product-lessons.test.ts",
-        "docs/quality/product-v2/PU-15-lessons-HANDOFF.md"
+        "docs/quality/product-v2/PU-15-lessons-HANDOFF.md",
+        "src/lib/lessons-content.test.ts"
       ],
       "proposed_new_files": [
         "src/lib/lessons-content.ts",
@@ -2866,7 +2939,8 @@
         "src/pages/fa/education/[courseSlug]/lessons/[lessonSlug].astro",
         "src/pages/en/education/[courseSlug]/lessons/[lessonSlug].astro",
         "src/components/teaching/product-lessons.test.ts",
-        "docs/quality/product-v2/PU-15-lessons-HANDOFF.md"
+        "docs/quality/product-v2/PU-15-lessons-HANDOFF.md",
+        "src/lib/lessons-content.test.ts"
       ],
       "read_paths": [],
       "acceptance": [
@@ -2879,13 +2953,14 @@
       "packet": "product-packets/PU-15-lessons.md",
       "stop_marker": "PU-15-lessons_HANDOFF_READY",
       "file_serialization_dependencies": [],
-      "handoff": "docs/quality/product-v2/PU-15-lessons-HANDOFF.md"
+      "handoff": "docs/quality/product-v2/PU-15-lessons-HANDOFF.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-16-books",
       "parent": "PU-16",
       "repository": "PUBLIC",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-13-routes",
@@ -2929,13 +3004,14 @@
       "packet": "product-packets/PU-16-books.md",
       "stop_marker": "PU-16-books_HANDOFF_READY",
       "file_serialization_dependencies": [],
-      "handoff": "docs/quality/product-v2/PU-16-books-HANDOFF.md"
+      "handoff": "docs/quality/product-v2/PU-16-books-HANDOFF.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-16-talks",
       "parent": "PU-16",
       "repository": "PUBLIC",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-13-routes",
@@ -2979,13 +3055,14 @@
       "packet": "product-packets/PU-16-talks.md",
       "stop_marker": "PU-16-talks_HANDOFF_READY",
       "file_serialization_dependencies": [],
-      "handoff": "docs/quality/product-v2/PU-16-talks-HANDOFF.md"
+      "handoff": "docs/quality/product-v2/PU-16-talks-HANDOFF.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-16-resources",
       "parent": "PU-16",
       "repository": "PUBLIC",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-13-routes",
@@ -3029,13 +3106,15 @@
       "packet": "product-packets/PU-16-resources.md",
       "stop_marker": "PU-16-resources_HANDOFF_READY",
       "file_serialization_dependencies": [],
-      "handoff": "docs/quality/product-v2/PU-16-resources-HANDOFF.md"
+      "handoff": "docs/quality/product-v2/PU-16-resources-HANDOFF.md",
+      "review_note": "reviews/CONTENT-MANAGEMENT-REVIEW-2026-09-07.md"
     },
     {
       "id": "PU-16-collections",
       "parent": "PU-16",
       "repository": "PUBLIC",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "active": true,
       "depends_on": [
         "PU-13-routes",
@@ -3085,7 +3164,8 @@
       "id": "PU-16-series",
       "parent": "PU-16",
       "repository": "PUBLIC",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "active": true,
       "depends_on": [
         "PU-13-routes",
@@ -3131,7 +3211,8 @@
       "id": "PU-17-home",
       "parent": "PU-17",
       "repository": "PUBLIC",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "active": true,
       "depends_on": [
         "PU-13-routes",
@@ -3184,7 +3265,8 @@
       "id": "PU-18-about",
       "parent": "PU-18",
       "repository": "PUBLIC",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "active": true,
       "depends_on": [
         "PU-13-routes",
@@ -3231,7 +3313,8 @@
       "id": "PU-18-cv",
       "parent": "PU-18",
       "repository": "PUBLIC",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "active": true,
       "depends_on": [
         "PU-13-routes",
@@ -3279,7 +3362,8 @@
       "id": "PU-18-contact",
       "parent": "PU-18",
       "repository": "PUBLIC",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "active": true,
       "depends_on": [
         "PU-13-routes",
@@ -3325,7 +3409,8 @@
       "id": "PU-21-events",
       "parent": "PU-21",
       "repository": "PUBLIC",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "active": true,
       "depends_on": [
         "PU-SYNC-public",
@@ -3364,7 +3449,8 @@
       "id": "PU-24-search",
       "parent": "PU-24",
       "repository": "PUBLIC",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "active": true,
       "depends_on": [
         "PU-14-research",
@@ -3418,7 +3504,8 @@
       "id": "PU-24-seo",
       "parent": "PU-24",
       "repository": "PUBLIC",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
       "active": true,
       "depends_on": [
         "PU-24-search",
@@ -3457,7 +3544,7 @@
       "id": "PU-25-admin-journey",
       "parent": "PU-25",
       "repository": "ADMIN",
-      "status": "NOT_STARTED",
+      "status": "REVISE",
       "active": true,
       "depends_on": [
         "PU-SYNC-admin",
@@ -3507,13 +3594,14 @@
       "packet": "product-packets/PU-25-admin-journey.md",
       "stop_marker": "PU-25-admin-journey_HANDOFF_READY",
       "file_serialization_dependencies": [],
-      "handoff": "docs/quality/product-v2/PU-25-admin-journey-HANDOFF.md"
+      "handoff": "docs/quality/product-v2/PU-25-admin-journey-HANDOFF.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-25-public-journey",
       "parent": "PU-25",
       "repository": "PUBLIC",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-25-admin-journey",
@@ -3545,12 +3633,13 @@
       "packet": "product-packets/PU-25-public-journey.md",
       "stop_marker": "PU-25-public-journey_HANDOFF_READY",
       "file_serialization_dependencies": [],
-      "handoff": "docs/quality/product-v2/PU-25-public-journey-HANDOFF.md"
+      "handoff": "docs/quality/product-v2/PU-25-public-journey-HANDOFF.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "CA-17",
       "title": "Independent visual and interaction acceptance",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "repository": "PUBLIC",
       "depends_on": [
         "CA-07",
@@ -3577,13 +3666,14 @@
         "src/test-harness/concept-alignment-captures.ts",
         "docs/quality/concept-alignment-v2/CA-17-HANDOFF.md"
       ],
-      "file_serialization_dependencies": []
+      "file_serialization_dependencies": [],
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     },
     {
       "id": "PU-25-review",
       "parent": "PU-25",
       "repository": "ROOT",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "CA-17",
@@ -3610,7 +3700,8 @@
       "packet": "product-packets/PU-25-review.md",
       "stop_marker": "PU-25-review_HANDOFF_READY",
       "file_serialization_dependencies": [],
-      "handoff": "Docs/10-tracking/product-v2/PU-25-review-HANDOFF.md"
+      "handoff": "Docs/10-tracking/product-v2/PU-25-review-HANDOFF.md",
+      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
     }
   ],
   "superseded_aliases": {

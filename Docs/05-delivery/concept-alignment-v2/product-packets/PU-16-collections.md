@@ -1,6 +1,6 @@
 # PU-16-collections — Build canonical collections pages from accepted projections, full body and real file/member links; no duplicate content records.
 
-Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **NOT_STARTED**.
+Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **IMPLEMENTED_UNREVIEWED**.
 
 Dependencies: PU-13-routes, PU-13-story. Family: F12.
 

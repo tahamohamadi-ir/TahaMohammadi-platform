@@ -1,6 +1,6 @@
 # PU-09-transport — Add typed composition and publication-job API adapters using existing If-Match and server envelopes.
 
-Owner: **ADMIN** (`D:/Project/tahamohammadi-platform/Front-End/admin-panel`). Status: **BLOCKED**.
+Owner: **ADMIN** (`D:/Project/tahamohammadi-platform/Front-End/admin-panel`). Status: **IMPLEMENTED_UNREVIEWED**.
 
 Dependencies: PU-SYNC-admin. Family: shared.
 

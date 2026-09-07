@@ -1,6 +1,6 @@
 # PU-07-runner — Implement atomic static rebuild, edge revocation manifest and authenticated job completion using standalone staging topology.
 
-Owner: **ROOT** (`D:/Project/tahamohammadi-platform`). Status: **REVISE**.
+Owner: **ROOT** (`D:/Project/tahamohammadi-platform`). Status: **IMPLEMENTED_UNREVIEWED**.
 
 Dependencies: PU-07-jobs, PU-23-invalidation. Family: shared.
 

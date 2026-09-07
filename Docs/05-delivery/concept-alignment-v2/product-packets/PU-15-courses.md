@@ -1,6 +1,6 @@
 # PU-15-courses — Implement complete F07 index/detail with CMS story and original CA-14 visual acceptance; remove placeholders, retain actual published facts.
 
-Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **NOT_STARTED**.
+Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **IMPLEMENTED_UNREVIEWED**.
 
 Dependencies: PU-13-routes, PU-13-story. Family: F07.
 

@@ -1,6 +1,6 @@
 # PU-08-settings — Edit localized site identity, navigation, SEO and bounded scene presets beside existing operational settings.
 
-Owner: **ADMIN** (`D:/Project/tahamohammadi-platform/Front-End/admin-panel`). Status: **NOT_STARTED**.
+Owner: **ADMIN** (`D:/Project/tahamohammadi-platform/Front-End/admin-panel`). Status: **IMPLEMENTED_UNREVIEWED**.
 
 Dependencies: PU-SYNC-admin. Family: F01/F02.
 

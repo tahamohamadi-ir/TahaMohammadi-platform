@@ -1,3 +1,5 @@
+> Current content-completion execution: 2026-09-07. See the central reviews/IMPLEMENTATION-2026-09-07.md and execution-tasks.json; earlier narrative counts are historical.
+
 # تسک‌های محصول — ورودی نهایی
 
 صف اولیهٔ ۲۵ ردیفی به بسته‌های مستقل با فایل‌های دقیق تقسیم شد. برای اجرا از **[EXECUTION.md](EXECUTION.md)** و [execution-tasks.json](execution-tasks.json) استفاده کن؛ شماره‌های PU-01 تا PU-25 گروه‌های موضوعی‌اند، نه تکلیف مبهم چندخانواده‌ای.

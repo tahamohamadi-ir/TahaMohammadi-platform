@@ -28,7 +28,7 @@
     {
       "id": "CA-02",
       "title": "Published graph adapter and route resolution",
-      "status": "REVISE",
+      "status": "ACCEPTED_LOCAL",
       "repository": "Front-End/public-site",
       "depends_on": [
         "CA-01",
@@ -50,7 +50,7 @@
     {
       "id": "CA-03",
       "title": "Semantic integrated Home hero",
-      "status": "IMPLEMENTED_UNREVIEWED",
+      "status": "ACCEPTED_LOCAL",
       "repository": "Front-End/public-site",
       "depends_on": [
         "CA-02"
@@ -80,7 +80,7 @@
     {
       "id": "CA-04",
       "title": "Three.js graph geometry and deterministic layout",
-      "status": "IMPLEMENTED_UNREVIEWED",
+      "status": "ACCEPTED_LOCAL",
       "repository": "Front-End/public-site",
       "depends_on": [
         "CA-03"
@@ -105,7 +105,7 @@
     {
       "id": "CA-05",
       "title": "Graph selection and bounded GSAP motion",
-      "status": "IMPLEMENTED_UNREVIEWED",
+      "status": "ACCEPTED_LOCAL",
       "repository": "Front-End/public-site",
       "depends_on": [
         "CA-04"
@@ -129,7 +129,7 @@
     {
       "id": "CA-06",
       "title": "Integrate progressive Home hero",
-      "status": "IMPLEMENTED_UNREVIEWED",
+      "status": "ACCEPTED_LOCAL",
       "repository": "Front-End/public-site",
       "depends_on": [
         "CA-05",
@@ -152,7 +152,7 @@
     {
       "id": "CA-07",
       "title": "Procedural gateway portal",
-      "status": "IMPLEMENTED_UNREVIEWED",
+      "status": "ACCEPTED_LOCAL",
       "repository": "Front-End/public-site",
       "depends_on": [
         "CA-04"
@@ -176,7 +176,7 @@
     {
       "id": "CA-08",
       "title": "Shared shell fidelity",
-      "status": "IMPLEMENTED_UNREVIEWED",
+      "status": "REVISE",
       "repository": "Front-End/public-site",
       "depends_on": [
         "CA-03"
@@ -399,7 +399,7 @@
     {
       "id": "CA-17",
       "title": "Independent visual and interaction acceptance",
-      "status": "NOT_STARTED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "repository": "Front-End/public-site",
       "depends_on": [
         "CA-07",

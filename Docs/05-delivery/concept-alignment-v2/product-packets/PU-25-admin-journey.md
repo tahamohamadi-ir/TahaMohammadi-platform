@@ -1,6 +1,6 @@
 # PU-25-admin-journey — Exercise project/article publication, media replacement, graph relation, restore, locale handling and removal through actual integration.
 
-Owner: **ADMIN** (`D:/Project/tahamohammadi-platform/Front-End/admin-panel`). Status: **NOT_STARTED**.
+Owner: **ADMIN** (`D:/Project/tahamohammadi-platform/Front-End/admin-panel`). Status: **REVISE**.
 
 Dependencies: PU-SYNC-admin, PU-09-transport, PU-09-editor, PU-09-host, PU-10-research, PU-10-publication, PU-10-project, PU-10-article, PU-10-course, PU-10-lesson, PU-10-creative, PU-10-book, PU-10-talk, PU-10-resource, PU-10-collection, PU-10-series, PU-08-settings, PU-08-profile, PU-11-media, PU-12-home, PU-12-graph, PU-12-jobs, PU-22-analytics. Family: shared.
 

@@ -16,12 +16,12 @@
       "repository": "BACKEND",
       "head": "a48a6bd05d539c42765c3bb00f032343aa6d1bc4",
       "files": {
-        "apps/api/api.py": "eab1451ee0563a361ff3ca1e8746e758f4f6161a0d6abbe53e687f8c11edcfef",
+        "apps/api/api.py": "42df30699275f305aeaf9e868bc1614dfb57defe87a55bcd46e31621b9b7968c",
         "apps/api/record_resolver.py": "a5ee4d79c14cadc1092cdec8ba6561b1b7bec6e1a7c0ed6c537833509b7c8c62",
         "tests/test_product_record_resolver.py": "3c19b770f6b6f953531888e1f04fd6cbf9a9651a63d2844b6d4d2ba4f455b7fd",
-        "docs/contracts/openapi/current/public-openapi.json": "f3115a5095097e7ccc12efba4c0c59b1f0258914c1ce8a83e867b3b207c33ec9",
-        "docs/contracts/openapi/current/admin-openapi.json": "135f14e5c7f03ba1aaee50fca76a54e55e0ed5a2e0360050a8939e837859208c",
-        "docs/contracts/openapi/current/ACCEPTANCE.json": "e822d235a2f53c5e3acd55c7d8acd1e5f67d90dd4d6b00ecd7f262cd5f5fcbec",
+        "docs/contracts/openapi/current/public-openapi.json": "47980f8f1992d885398676cf984b80e7068c7aa8e8b8f76a856565ffc9033681",
+        "docs/contracts/openapi/current/admin-openapi.json": "1176c0696222f9ac4c86495446d1f00988bdfde19dd147e93ece29a61e973564",
+        "docs/contracts/openapi/current/ACCEPTANCE.json": "b3b5f6a4f1a371f00abd3603e3054a7b9a6e3712b86ca48e6bf2ec0e0a87efd0",
         "docs/contracts/openapi/current/endpoint-inventory.md": "154a2c1bf950978f9a8332571098e4bfb2b815c9308a38426976e08dc002e4eb",
         "docs/quality/product-v2/PU-03-resolver-HANDOFF.md": "435a42622ec3b40eb20f4e7edabdb01a0418108f298f6946ce0699e4cbdb8ef6"
       }
@@ -36,11 +36,11 @@
         "apps/api/admin_api.py": "125b1c8ec01e1c5883826b516c843cc65a37459a41fb98d07fce92d3a496f142",
         "apps/api/admin_siteconfig.py": "3fb093c27aacaf9e59f315e015ae650a868155cc2306dc2dd900803184b42e6d",
         "tests/test_product_localized_settings.py": "909e7366ba55740870e8600b90fb0fc23b1de5f0af040ddcff8280fc858eca4f",
-        "docs/contracts/openapi/current/public-openapi.json": "f3115a5095097e7ccc12efba4c0c59b1f0258914c1ce8a83e867b3b207c33ec9",
-        "docs/contracts/openapi/current/admin-openapi.json": "135f14e5c7f03ba1aaee50fca76a54e55e0ed5a2e0360050a8939e837859208c",
+        "docs/contracts/openapi/current/public-openapi.json": "47980f8f1992d885398676cf984b80e7068c7aa8e8b8f76a856565ffc9033681",
+        "docs/contracts/openapi/current/admin-openapi.json": "1176c0696222f9ac4c86495446d1f00988bdfde19dd147e93ece29a61e973564",
         "docs/contracts/openapi/current/endpoint-inventory.md": "154a2c1bf950978f9a8332571098e4bfb2b815c9308a38426976e08dc002e4eb",
         "docs/quality/product-v2/PU-03-settings-HANDOFF.md": "4ce4e41377ec880bbc0a7c3cd76c2f6a91a367e65484089ced90c7ff374283ea",
-        "docs/contracts/openapi/current/ACCEPTANCE.json": "e822d235a2f53c5e3acd55c7d8acd1e5f67d90dd4d6b00ecd7f262cd5f5fcbec",
+        "docs/contracts/openapi/current/ACCEPTANCE.json": "b3b5f6a4f1a371f00abd3603e3054a7b9a6e3712b86ca48e6bf2ec0e0a87efd0",
         "scripts/verify_openapi_export.py": "47adf2af2eeed071fea5b62e39f9ce38867ff2b57a0f65c465841372532c7e33"
       }
     },
@@ -48,8 +48,8 @@
       "repository": "PUBLIC",
       "head": "bfb381c7a305c723991fde5a71388f3d7172e1fa",
       "files": {
-        "src/generated/public-api.ts": "0e31213528eb3d89ee2a75f6ca343a4c8faf81573e3b2dc64647f7302fb7554c",
-        "tests/fixtures/contracts/product-record-resolver.json": "b1e62758adce80af6b22fc6afac9e813a950050468748478e2db835e6a75f3eb",
+        "src/generated/public-api.ts": "70b247b2db6feed688b33bab249dfa00f2a3c9d299faf0f598e9a8720de6318e",
+        "tests/fixtures/contracts/product-record-resolver.json": "db74cefec52e930ac9cfe408c9348a8b60e64d4c1eb62341ba2b02fa8e847da0",
         "src/lib/product-resolver.contract.test.ts": "3edee103633d36b2084a0473a36f88ac41c6c8a19fcb2241c710743dd8d8b1b7",
         "docs/quality/product-v2/PU-SYNC-graph-HANDOFF.md": "be14e701f8d97f261c98cb998ee251ba5592640a7183bd43ddafefc9f5286f8c"
       }
@@ -62,9 +62,9 @@
         "apps/composition/projection.py": "e9b3cbafc008b2df2021bf1b73f23aeab452aae8ad40198e51fa3b6b89deea1f",
         "apps/api/admin_composition.py": "e0a925b3be446d357a529f4811552c112d748213b68ca86353626828c6b74f7d",
         "tests/test_product_story_blocks.py": "aa665f56c7440c1c105830792491b4b53285750cf6e72abb7382f1a1469e5f42",
-        "docs/contracts/openapi/current/public-openapi.json": "f3115a5095097e7ccc12efba4c0c59b1f0258914c1ce8a83e867b3b207c33ec9",
-        "docs/contracts/openapi/current/admin-openapi.json": "135f14e5c7f03ba1aaee50fca76a54e55e0ed5a2e0360050a8939e837859208c",
-        "docs/contracts/openapi/current/PROVENANCE.json": "87ae47317d9b52c561b548e6d5dbf30feb5555cce26d7694ef68344f0e62614e",
+        "docs/contracts/openapi/current/public-openapi.json": "47980f8f1992d885398676cf984b80e7068c7aa8e8b8f76a856565ffc9033681",
+        "docs/contracts/openapi/current/admin-openapi.json": "1176c0696222f9ac4c86495446d1f00988bdfde19dd147e93ece29a61e973564",
+        "docs/contracts/openapi/current/PROVENANCE.json": "0fbc0b3dbb33de3a2e9591c560a54200e79731a91f0999cffe4cadba511f801c",
         "docs/contracts/openapi/current/endpoint-inventory.md": "154a2c1bf950978f9a8332571098e4bfb2b815c9308a38426976e08dc002e4eb",
         "docs/quality/product-v2/PU-04-catalog-HANDOFF.md": "c04ea4f4ff2c100ab2db026ef80b25c6edad615567ebff2ee42bd04a712a0f2d"
       }
@@ -88,9 +88,9 @@
         "apps/api/admin_content.py": "fec91a9c66c6a0ff8a38ee6ff81b4d53c53949ef20fa193748010a1dd2f0bf9f",
         "apps/api/api.py": "42df30699275f305aeaf9e868bc1614dfb57defe87a55bcd46e31621b9b7968c",
         "tests/test_product_metadata.py": "c15322cc48f43b1c43e36f29162b949a68ef21a4967f4a145d92345fd4e4bd5b",
-        "docs/contracts/openapi/current/public-openapi.json": "f3115a5095097e7ccc12efba4c0c59b1f0258914c1ce8a83e867b3b207c33ec9",
-        "docs/contracts/openapi/current/admin-openapi.json": "135f14e5c7f03ba1aaee50fca76a54e55e0ed5a2e0360050a8939e837859208c",
-        "docs/contracts/openapi/current/PROVENANCE.json": "87ae47317d9b52c561b548e6d5dbf30feb5555cce26d7694ef68344f0e62614e",
+        "docs/contracts/openapi/current/public-openapi.json": "47980f8f1992d885398676cf984b80e7068c7aa8e8b8f76a856565ffc9033681",
+        "docs/contracts/openapi/current/admin-openapi.json": "1176c0696222f9ac4c86495446d1f00988bdfde19dd147e93ece29a61e973564",
+        "docs/contracts/openapi/current/PROVENANCE.json": "0fbc0b3dbb33de3a2e9591c560a54200e79731a91f0999cffe4cadba511f801c",
         "docs/contracts/openapi/current/endpoint-inventory.md": "154a2c1bf950978f9a8332571098e4bfb2b815c9308a38426976e08dc002e4eb",
         "docs/quality/product-v2/PU-04-metadata-HANDOFF.md": "106e1ba342ac703d27cd157dd49d1824c75b7d900c2dfcffa03d55cd716fea02"
       }
@@ -99,7 +99,7 @@
       "repository": "PUBLIC",
       "head": "bfb381c7a305c723991fde5a71388f3d7172e1fa",
       "files": {
-        "src/components/home/HomeHero.astro": "97dc16d0ff9c93b7013d2b3f1c2b0d9b4b7a4419985080e53b42ad8313f15813",
+        "src/components/home/HomeHero.astro": "b4b36fe4d80247fdbaf6d265b7b169faed39427185bc4a708451b0980c4e5a57",
         "src/components/home/HomeResearchGraph.astro": "184da47e063816c2dd61d51cb708d0dd362877cc653b10ca6fe62607b448c687",
         "src/components/hero/HeroGraph.astro": "9c16eef3920e060828fc46f3ab24b7bb03eded6272c441650c459980da77978c",
         "src/components/hero/GraphNodeList.astro": "c4663c270da41521ad1f112248ddc9741de60a2a8c05e3a2f5eabc8620082f3a",
@@ -124,9 +124,9 @@
         "apps/api/api.py": "42df30699275f305aeaf9e868bc1614dfb57defe87a55bcd46e31621b9b7968c",
         "apps/api/admin_content.py": "fec91a9c66c6a0ff8a38ee6ff81b4d53c53949ef20fa193748010a1dd2f0bf9f",
         "tests/test_product_publication_story.py": "9a1bfa0205e7a2d25a98c3bd8b99b1f6f6e6c071d6f7cd24ef326c7000b982d0",
-        "docs/contracts/openapi/current/public-openapi.json": "f3115a5095097e7ccc12efba4c0c59b1f0258914c1ce8a83e867b3b207c33ec9",
-        "docs/contracts/openapi/current/admin-openapi.json": "135f14e5c7f03ba1aaee50fca76a54e55e0ed5a2e0360050a8939e837859208c",
-        "docs/contracts/openapi/current/PROVENANCE.json": "87ae47317d9b52c561b548e6d5dbf30feb5555cce26d7694ef68344f0e62614e",
+        "docs/contracts/openapi/current/public-openapi.json": "47980f8f1992d885398676cf984b80e7068c7aa8e8b8f76a856565ffc9033681",
+        "docs/contracts/openapi/current/admin-openapi.json": "1176c0696222f9ac4c86495446d1f00988bdfde19dd147e93ece29a61e973564",
+        "docs/contracts/openapi/current/PROVENANCE.json": "0fbc0b3dbb33de3a2e9591c560a54200e79731a91f0999cffe4cadba511f801c",
         "docs/contracts/openapi/current/endpoint-inventory.md": "154a2c1bf950978f9a8332571098e4bfb2b815c9308a38426976e08dc002e4eb",
         "docs/quality/product-v2/PU-04-publication-HANDOFF.md": "a3b6533cd54bee47b1d2c24a22965583b5aacf7714219d5034fbfcb6994fb9d4"
       }
@@ -167,9 +167,9 @@
         "apps/api/api.py": "42df30699275f305aeaf9e868bc1614dfb57defe87a55bcd46e31621b9b7968c",
         "apps/api/admin_content.py": "fec91a9c66c6a0ff8a38ee6ff81b4d53c53949ef20fa193748010a1dd2f0bf9f",
         "tests/test_product_course_story.py": "e75fae35c873bf7a25085edaa337c8afe0b18cd435c921630b71b716d1865dab",
-        "docs/contracts/openapi/current/public-openapi.json": "f3115a5095097e7ccc12efba4c0c59b1f0258914c1ce8a83e867b3b207c33ec9",
-        "docs/contracts/openapi/current/admin-openapi.json": "135f14e5c7f03ba1aaee50fca76a54e55e0ed5a2e0360050a8939e837859208c",
-        "docs/contracts/openapi/current/PROVENANCE.json": "87ae47317d9b52c561b548e6d5dbf30feb5555cce26d7694ef68344f0e62614e",
+        "docs/contracts/openapi/current/public-openapi.json": "47980f8f1992d885398676cf984b80e7068c7aa8e8b8f76a856565ffc9033681",
+        "docs/contracts/openapi/current/admin-openapi.json": "1176c0696222f9ac4c86495446d1f00988bdfde19dd147e93ece29a61e973564",
+        "docs/contracts/openapi/current/PROVENANCE.json": "0fbc0b3dbb33de3a2e9591c560a54200e79731a91f0999cffe4cadba511f801c",
         "docs/contracts/openapi/current/endpoint-inventory.md": "154a2c1bf950978f9a8332571098e4bfb2b815c9308a38426976e08dc002e4eb",
         "docs/quality/product-v2/PU-04-course-HANDOFF.md": "c9f58a51b7f32121a72662319372bcaf992654413c4ec24d03401f20f2db7dc7"
       }
@@ -211,9 +211,9 @@
         "apps/api/api.py": "42df30699275f305aeaf9e868bc1614dfb57defe87a55bcd46e31621b9b7968c",
         "apps/api/admin_content.py": "fec91a9c66c6a0ff8a38ee6ff81b4d53c53949ef20fa193748010a1dd2f0bf9f",
         "tests/test_product_creative_story.py": "3d90e287064485b83fe0f51494d2b31f6bc169fe0739ac74194c4eafbde6808a",
-        "docs/contracts/openapi/current/public-openapi.json": "f3115a5095097e7ccc12efba4c0c59b1f0258914c1ce8a83e867b3b207c33ec9",
-        "docs/contracts/openapi/current/admin-openapi.json": "135f14e5c7f03ba1aaee50fca76a54e55e0ed5a2e0360050a8939e837859208c",
-        "docs/contracts/openapi/current/PROVENANCE.json": "87ae47317d9b52c561b548e6d5dbf30feb5555cce26d7694ef68344f0e62614e",
+        "docs/contracts/openapi/current/public-openapi.json": "47980f8f1992d885398676cf984b80e7068c7aa8e8b8f76a856565ffc9033681",
+        "docs/contracts/openapi/current/admin-openapi.json": "1176c0696222f9ac4c86495446d1f00988bdfde19dd147e93ece29a61e973564",
+        "docs/contracts/openapi/current/PROVENANCE.json": "0fbc0b3dbb33de3a2e9591c560a54200e79731a91f0999cffe4cadba511f801c",
         "docs/contracts/openapi/current/endpoint-inventory.md": "154a2c1bf950978f9a8332571098e4bfb2b815c9308a38426976e08dc002e4eb",
         "docs/quality/product-v2/PU-04-creative-HANDOFF.md": "7f93a5c83c18ba22318fe10438e688f000bd232cf0070883ebca318aa2f6decb"
       }
@@ -239,9 +239,9 @@
         "apps/api/api.py": "42df30699275f305aeaf9e868bc1614dfb57defe87a55bcd46e31621b9b7968c",
         "apps/api/admin_content.py": "fec91a9c66c6a0ff8a38ee6ff81b4d53c53949ef20fa193748010a1dd2f0bf9f",
         "tests/test_product_lessons.py": "3eab6cf7914f66cf5b094f4eeb360e2f3eee40c61a8187c8a4c5c8412e9998c3",
-        "docs/contracts/openapi/current/public-openapi.json": "f3115a5095097e7ccc12efba4c0c59b1f0258914c1ce8a83e867b3b207c33ec9",
-        "docs/contracts/openapi/current/admin-openapi.json": "135f14e5c7f03ba1aaee50fca76a54e55e0ed5a2e0360050a8939e837859208c",
-        "docs/contracts/openapi/current/PROVENANCE.json": "87ae47317d9b52c561b548e6d5dbf30feb5555cce26d7694ef68344f0e62614e",
+        "docs/contracts/openapi/current/public-openapi.json": "47980f8f1992d885398676cf984b80e7068c7aa8e8b8f76a856565ffc9033681",
+        "docs/contracts/openapi/current/admin-openapi.json": "1176c0696222f9ac4c86495446d1f00988bdfde19dd147e93ece29a61e973564",
+        "docs/contracts/openapi/current/PROVENANCE.json": "0fbc0b3dbb33de3a2e9591c560a54200e79731a91f0999cffe4cadba511f801c",
         "docs/contracts/openapi/current/endpoint-inventory.md": "154a2c1bf950978f9a8332571098e4bfb2b815c9308a38426976e08dc002e4eb",
         "docs/quality/product-v2/PU-05-lessons-HANDOFF.md": "c209abb81fac66e56bfa8ae20758e00b40708c7da05c41664aeb8c0c281dbd72",
         "apps/api/admin_common.py": "2899ba5d643707f1a10ed24858c3028c117c8c1c5c903847f7ef1be8c0abd9a3"
@@ -256,9 +256,9 @@
         "apps/api/api.py": "42df30699275f305aeaf9e868bc1614dfb57defe87a55bcd46e31621b9b7968c",
         "apps/api/admin_content.py": "fec91a9c66c6a0ff8a38ee6ff81b4d53c53949ef20fa193748010a1dd2f0bf9f",
         "tests/test_product_book.py": "46f12dd9663e05882dcadd83316a5fd902c053c1d20c483f6659d937fabe651d",
-        "docs/contracts/openapi/current/public-openapi.json": "f3115a5095097e7ccc12efba4c0c59b1f0258914c1ce8a83e867b3b207c33ec9",
-        "docs/contracts/openapi/current/admin-openapi.json": "135f14e5c7f03ba1aaee50fca76a54e55e0ed5a2e0360050a8939e837859208c",
-        "docs/contracts/openapi/current/PROVENANCE.json": "87ae47317d9b52c561b548e6d5dbf30feb5555cce26d7694ef68344f0e62614e",
+        "docs/contracts/openapi/current/public-openapi.json": "47980f8f1992d885398676cf984b80e7068c7aa8e8b8f76a856565ffc9033681",
+        "docs/contracts/openapi/current/admin-openapi.json": "1176c0696222f9ac4c86495446d1f00988bdfde19dd147e93ece29a61e973564",
+        "docs/contracts/openapi/current/PROVENANCE.json": "0fbc0b3dbb33de3a2e9591c560a54200e79731a91f0999cffe4cadba511f801c",
         "docs/contracts/openapi/current/endpoint-inventory.md": "154a2c1bf950978f9a8332571098e4bfb2b815c9308a38426976e08dc002e4eb",
         "docs/quality/product-v2/PU-06-book-HANDOFF.md": "0dca17fd20a216951b726feef50df6af717949d81a8e31af30c924574d0ee212"
       }
@@ -272,9 +272,9 @@
         "apps/api/api.py": "42df30699275f305aeaf9e868bc1614dfb57defe87a55bcd46e31621b9b7968c",
         "apps/api/admin_content.py": "fec91a9c66c6a0ff8a38ee6ff81b4d53c53949ef20fa193748010a1dd2f0bf9f",
         "tests/test_product_talk.py": "a858bd2a09d71e4cc8be830b662f9c7622e7fb388d1abc6c622fc3c32b6759ee",
-        "docs/contracts/openapi/current/public-openapi.json": "f3115a5095097e7ccc12efba4c0c59b1f0258914c1ce8a83e867b3b207c33ec9",
-        "docs/contracts/openapi/current/admin-openapi.json": "135f14e5c7f03ba1aaee50fca76a54e55e0ed5a2e0360050a8939e837859208c",
-        "docs/contracts/openapi/current/PROVENANCE.json": "87ae47317d9b52c561b548e6d5dbf30feb5555cce26d7694ef68344f0e62614e",
+        "docs/contracts/openapi/current/public-openapi.json": "47980f8f1992d885398676cf984b80e7068c7aa8e8b8f76a856565ffc9033681",
+        "docs/contracts/openapi/current/admin-openapi.json": "1176c0696222f9ac4c86495446d1f00988bdfde19dd147e93ece29a61e973564",
+        "docs/contracts/openapi/current/PROVENANCE.json": "0fbc0b3dbb33de3a2e9591c560a54200e79731a91f0999cffe4cadba511f801c",
         "docs/contracts/openapi/current/endpoint-inventory.md": "154a2c1bf950978f9a8332571098e4bfb2b815c9308a38426976e08dc002e4eb",
         "docs/quality/product-v2/PU-06-talk-HANDOFF.md": "a2cef22f8ce7a516cc8fbe18f8b2006ed127c3f74bbe9bcb61c6e417bba081e9"
       }
@@ -289,9 +289,9 @@
         "apps/api/admin_content.py": "fec91a9c66c6a0ff8a38ee6ff81b4d53c53949ef20fa193748010a1dd2f0bf9f",
         "apps/api/admin_media_ext.py": "841dd5045de61c412b3d2022ef54b2b8edeb4d1dd89396ebeac57f0d3b4d394b",
         "tests/test_product_resource.py": "0a1a92f837309bcec5d918b8ff3c9070c2ee0dcfb4ba88cee8167bd0064337e6",
-        "docs/contracts/openapi/current/public-openapi.json": "f3115a5095097e7ccc12efba4c0c59b1f0258914c1ce8a83e867b3b207c33ec9",
-        "docs/contracts/openapi/current/admin-openapi.json": "135f14e5c7f03ba1aaee50fca76a54e55e0ed5a2e0360050a8939e837859208c",
-        "docs/contracts/openapi/current/PROVENANCE.json": "87ae47317d9b52c561b548e6d5dbf30feb5555cce26d7694ef68344f0e62614e",
+        "docs/contracts/openapi/current/public-openapi.json": "47980f8f1992d885398676cf984b80e7068c7aa8e8b8f76a856565ffc9033681",
+        "docs/contracts/openapi/current/admin-openapi.json": "1176c0696222f9ac4c86495446d1f00988bdfde19dd147e93ece29a61e973564",
+        "docs/contracts/openapi/current/PROVENANCE.json": "0fbc0b3dbb33de3a2e9591c560a54200e79731a91f0999cffe4cadba511f801c",
         "docs/contracts/openapi/current/endpoint-inventory.md": "154a2c1bf950978f9a8332571098e4bfb2b815c9308a38426976e08dc002e4eb",
         "docs/quality/product-v2/PU-06-resource-HANDOFF.md": "ea3815c715d01c115cec95999d92fae5f044414e75bc1c6b4b0f30b5513f4fae"
       }
@@ -305,9 +305,9 @@
         "apps/api/api.py": "42df30699275f305aeaf9e868bc1614dfb57defe87a55bcd46e31621b9b7968c",
         "apps/api/admin_content.py": "fec91a9c66c6a0ff8a38ee6ff81b4d53c53949ef20fa193748010a1dd2f0bf9f",
         "tests/test_product_collection.py": "f71111b34c2beebd8361477dfbf8f75d8d9ee3cef1ac1f7f71454d5809672677",
-        "docs/contracts/openapi/current/public-openapi.json": "f3115a5095097e7ccc12efba4c0c59b1f0258914c1ce8a83e867b3b207c33ec9",
-        "docs/contracts/openapi/current/admin-openapi.json": "135f14e5c7f03ba1aaee50fca76a54e55e0ed5a2e0360050a8939e837859208c",
-        "docs/contracts/openapi/current/PROVENANCE.json": "87ae47317d9b52c561b548e6d5dbf30feb5555cce26d7694ef68344f0e62614e",
+        "docs/contracts/openapi/current/public-openapi.json": "47980f8f1992d885398676cf984b80e7068c7aa8e8b8f76a856565ffc9033681",
+        "docs/contracts/openapi/current/admin-openapi.json": "1176c0696222f9ac4c86495446d1f00988bdfde19dd147e93ece29a61e973564",
+        "docs/contracts/openapi/current/PROVENANCE.json": "0fbc0b3dbb33de3a2e9591c560a54200e79731a91f0999cffe4cadba511f801c",
         "docs/contracts/openapi/current/endpoint-inventory.md": "154a2c1bf950978f9a8332571098e4bfb2b815c9308a38426976e08dc002e4eb",
         "docs/quality/product-v2/PU-06-collection-HANDOFF.md": "1cadfb1ef7e71bc5b46f119119d775066a2a4ecd81dc32e9b8e1d6e6000ae26e",
         "apps/api/admin_common.py": "2899ba5d643707f1a10ed24858c3028c117c8c1c5c903847f7ef1be8c0abd9a3"
@@ -322,9 +322,9 @@
         "apps/api/api.py": "42df30699275f305aeaf9e868bc1614dfb57defe87a55bcd46e31621b9b7968c",
         "apps/api/admin_content.py": "fec91a9c66c6a0ff8a38ee6ff81b4d53c53949ef20fa193748010a1dd2f0bf9f",
         "tests/test_product_series.py": "19f23e6c09135b26a127312020cedb8a5ba8ec092b32a51a23b31ee05ac58f0f",
-        "docs/contracts/openapi/current/public-openapi.json": "f3115a5095097e7ccc12efba4c0c59b1f0258914c1ce8a83e867b3b207c33ec9",
-        "docs/contracts/openapi/current/admin-openapi.json": "135f14e5c7f03ba1aaee50fca76a54e55e0ed5a2e0360050a8939e837859208c",
-        "docs/contracts/openapi/current/PROVENANCE.json": "87ae47317d9b52c561b548e6d5dbf30feb5555cce26d7694ef68344f0e62614e",
+        "docs/contracts/openapi/current/public-openapi.json": "47980f8f1992d885398676cf984b80e7068c7aa8e8b8f76a856565ffc9033681",
+        "docs/contracts/openapi/current/admin-openapi.json": "1176c0696222f9ac4c86495446d1f00988bdfde19dd147e93ece29a61e973564",
+        "docs/contracts/openapi/current/PROVENANCE.json": "0fbc0b3dbb33de3a2e9591c560a54200e79731a91f0999cffe4cadba511f801c",
         "docs/contracts/openapi/current/endpoint-inventory.md": "154a2c1bf950978f9a8332571098e4bfb2b815c9308a38426976e08dc002e4eb",
         "docs/quality/product-v2/PU-06-series-HANDOFF.md": "088e022fd0c1c0f00ad7e4f197febe9ca9595fea09632d49a8781543d78e756a"
       }
@@ -338,9 +338,9 @@
         "apps/api/admin_api.py": "125b1c8ec01e1c5883826b516c843cc65a37459a41fb98d07fce92d3a496f142",
         "apps/content/models.py": "f0b2257ae9bbde4c09991eef8624bd69e3dd70d9f5723913ceb2c70bf0056741",
         "tests/test_product_project_evidence.py": "f8cab3da535ec5865cc24595e054ba71cbb23888ed61ba00c511a70239d54f00",
-        "docs/contracts/openapi/current/public-openapi.json": "f3115a5095097e7ccc12efba4c0c59b1f0258914c1ce8a83e867b3b207c33ec9",
-        "docs/contracts/openapi/current/admin-openapi.json": "135f14e5c7f03ba1aaee50fca76a54e55e0ed5a2e0360050a8939e837859208c",
-        "docs/contracts/openapi/current/PROVENANCE.json": "87ae47317d9b52c561b548e6d5dbf30feb5555cce26d7694ef68344f0e62614e",
+        "docs/contracts/openapi/current/public-openapi.json": "47980f8f1992d885398676cf984b80e7068c7aa8e8b8f76a856565ffc9033681",
+        "docs/contracts/openapi/current/admin-openapi.json": "1176c0696222f9ac4c86495446d1f00988bdfde19dd147e93ece29a61e973564",
+        "docs/contracts/openapi/current/PROVENANCE.json": "0fbc0b3dbb33de3a2e9591c560a54200e79731a91f0999cffe4cadba511f801c",
         "docs/contracts/openapi/current/endpoint-inventory.md": "154a2c1bf950978f9a8332571098e4bfb2b815c9308a38426976e08dc002e4eb",
         "docs/quality/product-v2/PU-04-project-evidence-HANDOFF.md": "090f05ea8d74b5f4ebf5431e873d96fee9960636ac765a101f45a2baeeab8d7f"
       }
@@ -355,9 +355,9 @@
         "apps/api/admin_composition.py": "e0a925b3be446d357a529f4811552c112d748213b68ca86353626828c6b74f7d",
         "apps/composition/projection.py": "e9b3cbafc008b2df2021bf1b73f23aeab452aae8ad40198e51fa3b6b89deea1f",
         "tests/test_product_revision_snapshot.py": "4a03c0c87b77265d1bdcec2f0d657a134159a73063d20a0bafbf651b515f13b0",
-        "docs/contracts/openapi/current/public-openapi.json": "f3115a5095097e7ccc12efba4c0c59b1f0258914c1ce8a83e867b3b207c33ec9",
-        "docs/contracts/openapi/current/admin-openapi.json": "135f14e5c7f03ba1aaee50fca76a54e55e0ed5a2e0360050a8939e837859208c",
-        "docs/contracts/openapi/current/PROVENANCE.json": "87ae47317d9b52c561b548e6d5dbf30feb5555cce26d7694ef68344f0e62614e",
+        "docs/contracts/openapi/current/public-openapi.json": "47980f8f1992d885398676cf984b80e7068c7aa8e8b8f76a856565ffc9033681",
+        "docs/contracts/openapi/current/admin-openapi.json": "1176c0696222f9ac4c86495446d1f00988bdfde19dd147e93ece29a61e973564",
+        "docs/contracts/openapi/current/PROVENANCE.json": "0fbc0b3dbb33de3a2e9591c560a54200e79731a91f0999cffe4cadba511f801c",
         "docs/contracts/openapi/current/endpoint-inventory.md": "154a2c1bf950978f9a8332571098e4bfb2b815c9308a38426976e08dc002e4eb",
         "docs/quality/product-v2/PU-07-revisions-HANDOFF.md": "6ff2cec7e682d462e5eebffb1a255d9244e3f4c6504ab7e7cbc043d6d4502a2c",
         "apps/content/published.py": "b58b2fd38b89dab6651483361ce012334ea0e689f73d7afd5b60c4fd85d75a7d",
@@ -375,9 +375,9 @@
         "apps/content/preview_token.py": "532b46d0ffbe6b451fc7ad70828e37d989544d1fe222fb2ab090a2c286155a89",
         "apps/content/templates/content/staff_preview.html": "fe86841dfcb4e8b18bb8ab7f645189aa07aa0e4cac6678b9e336a4c1a523d128",
         "tests/test_product_preview.py": "3f2af4c66312e88b93abed6b790af845f17f0be6e085ce05468b47106beddfa2",
-        "docs/contracts/openapi/current/public-openapi.json": "f3115a5095097e7ccc12efba4c0c59b1f0258914c1ce8a83e867b3b207c33ec9",
-        "docs/contracts/openapi/current/admin-openapi.json": "135f14e5c7f03ba1aaee50fca76a54e55e0ed5a2e0360050a8939e837859208c",
-        "docs/contracts/openapi/current/PROVENANCE.json": "87ae47317d9b52c561b548e6d5dbf30feb5555cce26d7694ef68344f0e62614e",
+        "docs/contracts/openapi/current/public-openapi.json": "47980f8f1992d885398676cf984b80e7068c7aa8e8b8f76a856565ffc9033681",
+        "docs/contracts/openapi/current/admin-openapi.json": "1176c0696222f9ac4c86495446d1f00988bdfde19dd147e93ece29a61e973564",
+        "docs/contracts/openapi/current/PROVENANCE.json": "0fbc0b3dbb33de3a2e9591c560a54200e79731a91f0999cffe4cadba511f801c",
         "docs/contracts/openapi/current/endpoint-inventory.md": "154a2c1bf950978f9a8332571098e4bfb2b815c9308a38426976e08dc002e4eb",
         "docs/quality/product-v2/PU-07-preview-HANDOFF.md": "107f7091d8e4d9f9ef273ec20621e9c45927d200ee96b8f26b0d8ae4429e1942"
       }
@@ -395,9 +395,9 @@
         "apps/api/admin_publication_jobs.py": "52ae13f2a82ea1bc1e93c57efce7fd51b4edba14ba5717986c42008b61cb54f4",
         "config/urls.py": "a109e2c86a361558168460862b89b3cea17b70893893e1a67b22642bbfe1dc02",
         "tests/test_product_publication_jobs.py": "dc6b25c8f344dd9918f6febca71cb365ee0012dc60481647c4dc9d61476784bc",
-        "docs/contracts/openapi/current/public-openapi.json": "f3115a5095097e7ccc12efba4c0c59b1f0258914c1ce8a83e867b3b207c33ec9",
-        "docs/contracts/openapi/current/admin-openapi.json": "135f14e5c7f03ba1aaee50fca76a54e55e0ed5a2e0360050a8939e837859208c",
-        "docs/contracts/openapi/current/PROVENANCE.json": "87ae47317d9b52c561b548e6d5dbf30feb5555cce26d7694ef68344f0e62614e",
+        "docs/contracts/openapi/current/public-openapi.json": "47980f8f1992d885398676cf984b80e7068c7aa8e8b8f76a856565ffc9033681",
+        "docs/contracts/openapi/current/admin-openapi.json": "1176c0696222f9ac4c86495446d1f00988bdfde19dd147e93ece29a61e973564",
+        "docs/contracts/openapi/current/PROVENANCE.json": "0fbc0b3dbb33de3a2e9591c560a54200e79731a91f0999cffe4cadba511f801c",
         "docs/contracts/openapi/current/endpoint-inventory.md": "154a2c1bf950978f9a8332571098e4bfb2b815c9308a38426976e08dc002e4eb",
         "docs/quality/product-v2/PU-07-jobs-HANDOFF.md": "19567a474e152b7d3536acc64ed17593a50a6032c7ce8a712f8e7cbbd8e8dde3",
         "config/settings/production.py": "f7e1728c9bd188c576bb6bcb486834e6c0d0f0d6e564c409f5d56b6307f5a07a",
@@ -414,9 +414,9 @@
         "apps/api/admin_graph.py": "ea068aa662a798a156bab8f83185b81145e207dfb27fc02ea2524ea986de67dd",
         "apps/api/admin_siteconfig.py": "3fb093c27aacaf9e59f315e015ae650a868155cc2306dc2dd900803184b42e6d",
         "tests/test_product_publication_invalidation.py": "e9e21b6da69c7c7c267f40cbc3f16a87e423cae660f7b8fe161af9b04cf264af",
-        "docs/contracts/openapi/current/public-openapi.json": "f3115a5095097e7ccc12efba4c0c59b1f0258914c1ce8a83e867b3b207c33ec9",
-        "docs/contracts/openapi/current/admin-openapi.json": "135f14e5c7f03ba1aaee50fca76a54e55e0ed5a2e0360050a8939e837859208c",
-        "docs/contracts/openapi/current/PROVENANCE.json": "87ae47317d9b52c561b548e6d5dbf30feb5555cce26d7694ef68344f0e62614e",
+        "docs/contracts/openapi/current/public-openapi.json": "47980f8f1992d885398676cf984b80e7068c7aa8e8b8f76a856565ffc9033681",
+        "docs/contracts/openapi/current/admin-openapi.json": "1176c0696222f9ac4c86495446d1f00988bdfde19dd147e93ece29a61e973564",
+        "docs/contracts/openapi/current/PROVENANCE.json": "0fbc0b3dbb33de3a2e9591c560a54200e79731a91f0999cffe4cadba511f801c",
         "docs/contracts/openapi/current/endpoint-inventory.md": "154a2c1bf950978f9a8332571098e4bfb2b815c9308a38426976e08dc002e4eb",
         "docs/quality/product-v2/PU-23-invalidation-HANDOFF.md": "c0da8cdcfcc4812fd56e7e72ee637b55a3780712d1aa73f4c5632041b20e0b24",
         "apps/content/management/commands/publish_scheduled_content.py": "fe8d0dabf1b7c5a04f9abc4b085437f886c4199f8b341e5423bba4be4fe87918",
@@ -440,9 +440,9 @@
         "apps/api/admin_api.py": "125b1c8ec01e1c5883826b516c843cc65a37459a41fb98d07fce92d3a496f142",
         "config/settings/base.py": "af777299f1edd0e722073539da59a25d876303701e3788943023ad88a996397c",
         "tests/test_product_analytics.py": "f276567ac58a7f9306024605e32ffaa649cdb7a36fec0624ecc710a45af59d5b",
-        "docs/contracts/openapi/current/public-openapi.json": "f3115a5095097e7ccc12efba4c0c59b1f0258914c1ce8a83e867b3b207c33ec9",
-        "docs/contracts/openapi/current/admin-openapi.json": "135f14e5c7f03ba1aaee50fca76a54e55e0ed5a2e0360050a8939e837859208c",
-        "docs/contracts/openapi/current/PROVENANCE.json": "87ae47317d9b52c561b548e6d5dbf30feb5555cce26d7694ef68344f0e62614e",
+        "docs/contracts/openapi/current/public-openapi.json": "47980f8f1992d885398676cf984b80e7068c7aa8e8b8f76a856565ffc9033681",
+        "docs/contracts/openapi/current/admin-openapi.json": "1176c0696222f9ac4c86495446d1f00988bdfde19dd147e93ece29a61e973564",
+        "docs/contracts/openapi/current/PROVENANCE.json": "0fbc0b3dbb33de3a2e9591c560a54200e79731a91f0999cffe4cadba511f801c",
         "docs/contracts/openapi/current/endpoint-inventory.md": "154a2c1bf950978f9a8332571098e4bfb2b815c9308a38426976e08dc002e4eb",
         "docs/quality/product-v2/PU-20-events-HANDOFF.md": "e734028acfe05349a7b2502e8fe88b7a49dfbcfe832be2c4705d081de98715c7",
         "apps/rebuild/migrations/0002_publicationjob_revoked_paths.py": "50cd38604e42ae5214b1a402cb9ab6581786100d682c4ec141204a57f326c737",
@@ -474,11 +474,11 @@
       "repository": "PUBLIC",
       "head": "bfb381c7a305c723991fde5a71388f3d7172e1fa",
       "files": {
-        "src/generated/public-api.ts": "0e31213528eb3d89ee2a75f6ca343a4c8faf81573e3b2dc64647f7302fb7554c",
+        "src/generated/public-api.ts": "70b247b2db6feed688b33bab249dfa00f2a3c9d299faf0f598e9a8720de6318e",
         "src/lib/product-api.contract.test.ts": "0da672c5d5719b133306c64f81da18621013ff24e242084f5ce11229e26df931",
         "docs/quality/product-v2/PU-SYNC-public-HANDOFF.md": "6fbcd1d1a3bc2798332756129e5e1891624ca3d0dcfd88d02d05396e6fb3f54b",
-        "contracts/openapi.public.sha256": "b5354db3d3c5e163cf3625020dee409c78ec66d7881602dd438a1e8c969b46a5",
-        "src/generated/openapi-hash.json": "e3203827cf80b0687e3ffc1b86b560257be22ce7cc48214c96245910f5f53ce8",
+        "contracts/openapi.public.sha256": "4da84e2c61b39e70b764dcd4402eca0df73a34ea30481f095c82c08abd5f72ac",
+        "src/generated/openapi-hash.json": "d330d6d879c92cbd33097e8a51cf60c79e6dd72767d8228850ef209a247deee6",
         "src/lib/hero-graph-resolve.test.ts": "34e286108c42c40623f68f8fb6d8d145160a43a94b13ddbeeaa30aefd043dc93",
         "src/test-harness/contract-fixtures.ts": "7055ac49e61ff7b4eaef18a9b9c54987d471eddf4f45c6716dd53566ba115f42",
         "tests/fixtures/contracts/responses/articles-detail.get.200.json": "9b2c9b5179eac36b0d3fd328964bff816766f989aaa7ca995009a5956920646c",
@@ -490,10 +490,10 @@
       "repository": "ADMIN",
       "head": "7bcd412080faf5dd754c1cc4fa3d66eb358be0f2",
       "files": {
-        "src/generated/admin-api.ts": "638a30312f83151b5786b5b583762b49d4b67eaca7ac9d780c70a531cb46a378",
+        "src/generated/admin-api.ts": "d51bf82c48cac496ee4306d3e1874ff4a22afbbde7a7c4ea6c4065cedd352a25",
         "src/lib/api/product-contract.test.ts": "6a63e91c5d06600574fca6acd35b4ae755e15fe3354123f3f269d49971fa7354",
         "docs/quality/product-v2/PU-SYNC-admin-HANDOFF.md": "a118aa4ebb6b5dcc48ba49ec035aee2db3bd17c1fe5d9c71b14cd01a1989c8c8",
-        "src/generated/openapi-hash.json": "391373c6ce5c0de2fd5952b5f980f6524b3b5602ba55461c07bddf3ffeada6d0"
+        "src/generated/openapi-hash.json": "e648b048556b187dde30f33045480740aac47745151917266e04543bc24d7dd0"
       }
     },
     "PU-13-story": {

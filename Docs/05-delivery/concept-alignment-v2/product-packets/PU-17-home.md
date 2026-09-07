@@ -1,6 +1,6 @@
 # PU-17-home — Integrate research-first home, two audience paths, three selected works and CMS settings; inherit CA-09 editorial rhythm.
 
-Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **NOT_STARTED**.
+Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **IMPLEMENTED_UNREVIEWED**.
 
 Dependencies: PU-13-routes, PU-13-story, CA-06, PU-03-settings, CA-03. Family: F02.
 

@@ -1,6 +1,6 @@
 # PU-24-search — Extend existing Pagefind metadata/query normalization to all published families, with no-JS collection links and honest error states.
 
-Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **NOT_STARTED**.
+Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **IMPLEMENTED_UNREVIEWED**.
 
 Dependencies: PU-14-research, PU-14-publications, PU-14-projects, PU-15-articles, PU-15-courses, PU-15-creative, PU-14-statements, PU-15-lessons, PU-16-books, PU-16-talks, PU-16-resources, PU-16-collections, PU-16-series, PU-17-home, PU-18-about, PU-18-cv, PU-18-contact, PU-23-invalidation. Family: F15.
 

@@ -1,3 +1,5 @@
+> Current content-completion execution: 2026-09-07. See the central reviews/IMPLEMENTATION-2026-09-07.md and execution-tasks.json; earlier narrative counts are historical.
+
 # Visual packet queue — reconciled
 
 Use [EXECUTION.md](EXECUTION.md) and [execution-tasks.json](execution-tasks.json) for dispatch. This replaces the former independent CA schedule. `tasks.json` is now the synchronized CA-only view.

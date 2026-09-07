@@ -1,6 +1,6 @@
 # PU-25-public-journey — Verify the same published records on direct URLs, indexes, Pagefind, alternates and removed routes/files.
 
-Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **NOT_STARTED**.
+Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **IMPLEMENTED_UNREVIEWED**.
 
 Dependencies: PU-25-admin-journey, PU-24-seo, PU-07-runner, PU-21-events. Family: shared.
 

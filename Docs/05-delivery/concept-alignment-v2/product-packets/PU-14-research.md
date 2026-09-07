@@ -1,6 +1,6 @@
 # PU-14-research — Implement complete F03 index/detail with CMS story and original CA-10 visual acceptance; remove placeholders, retain actual published facts.
 
-Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **NOT_STARTED**.
+Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **IMPLEMENTED_UNREVIEWED**.
 
 Dependencies: PU-13-routes, PU-13-story. Family: F03.
 
