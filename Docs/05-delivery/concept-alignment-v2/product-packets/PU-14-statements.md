@@ -1,6 +1,6 @@
 # PU-14-statements — Give each research statement an unambiguous canonical detail page and migrate only source-proven legacy links.
 
-Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **NOT_STARTED**.
+Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **IMPLEMENTED_UNREVIEWED**.
 
 Dependencies: PU-14-research. Family: F03.
 

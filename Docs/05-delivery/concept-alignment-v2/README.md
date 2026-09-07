@@ -1,3 +1,5 @@
+> Current content-completion execution: 2026-09-07. See the central reviews/IMPLEMENTATION-2026-09-07.md and execution-tasks.json; earlier narrative counts are historical.
+
 > Latest review: CA-02 and PU-04-catalog are REVISE. See [catalog/graph evidence](reviews/CATALOG-GRAPH-REVIEW-2026-09-06.md); live counts and ready_for_revision are in RECONCILIATION-CHECK.json. Older counts below are historical.
 
 > Current coordinator review: see [verification](reviews/COORDINATOR-REVIEW-2026-09-06.md). Live states and eligibility are in execution-tasks.json and RECONCILIATION-CHECK.json. Earlier counts and initial-dispatch prose are historical.

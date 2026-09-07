@@ -1,6 +1,6 @@
 # PU-03-settings — Add localized draft/published site settings alongside the legacy operational settings.
 
-Owner: **BACKEND** (`D:/Project/tahamohammadi-platform/Back-End`). Status: **ACCEPTED_LOCAL**.
+Owner: **BACKEND** (`D:/Project/tahamohammadi-platform/Back-End`). Status: **REVISE**.
 
 Dependencies: PU-02, PU-03-resolver. Family: F01/F02.
 
@@ -49,3 +49,9 @@ Coordinator note (2026-09-06, provenance/acceptance split): `docs/contracts/open
 Return exact base/result commits (or explicitly uncommitted), changed paths, tests with results, schema hash/impact, screenshots where UI changed, dirty status and remaining risks in `docs/quality/product-v2/PU-03-settings-HANDOFF.md`.
 
 Stop: **PU-03-settings_HANDOFF_READY**. Do not begin another packet, edit another repository, merge, push, deploy or mark owner acceptance.
+
+## Content completion amendment — 2026-09-07
+
+Authorized by owner implementation plan; preserve previous source and tests.
+
+- `apps/siteconfig/migrations/0006_managed_copy.py`

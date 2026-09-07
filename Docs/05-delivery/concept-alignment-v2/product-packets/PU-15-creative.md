@@ -1,6 +1,6 @@
 # PU-15-creative — Implement complete F08 index/detail with CMS story and original CA-15 visual acceptance; remove placeholders, retain actual published facts.
 
-Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **NOT_STARTED**.
+Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **IMPLEMENTED_UNREVIEWED**.
 
 Dependencies: PU-13-routes, PU-13-story. Family: F08.
 

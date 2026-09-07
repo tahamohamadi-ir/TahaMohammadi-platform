@@ -1,6 +1,6 @@
 # PU-10-project — Complete project structured metadata/relations editor; inspect server schema and test real mutation payloads for this family only.
 
-Owner: **ADMIN** (`D:/Project/tahamohammadi-platform/Front-End/admin-panel`). Status: **NOT_STARTED**.
+Owner: **ADMIN** (`D:/Project/tahamohammadi-platform/Front-End/admin-panel`). Status: **IMPLEMENTED_UNREVIEWED**.
 
 Dependencies: PU-09-host, PU-10-publication. Family: F05.
 

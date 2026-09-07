@@ -1,6 +1,6 @@
 # PU-18-about — Complete about content and original CA visual scope; use owner profile and real versioned resource links; verify print when CV.
 
-Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **NOT_STARTED**.
+Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **IMPLEMENTED_UNREVIEWED**.
 
 Dependencies: PU-13-routes, PU-13-story. Family: F13.
 

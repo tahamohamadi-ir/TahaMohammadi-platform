@@ -1,6 +1,6 @@
 # PU-13-routes — Extend centralized route/SEO registries for all target families and explicit statement paths; handle reserved segments and migrations.
 
-Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **NOT_STARTED**.
+Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **IMPLEMENTED_UNREVIEWED**.
 
 Dependencies: PU-SYNC-public. Family: shared.
 

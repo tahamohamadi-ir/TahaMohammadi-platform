@@ -1,6 +1,6 @@
 # PU-07-revisions — Snapshot and restore content, attached story and ordered relations atomically; preserve history and published snapshot.
 
-Owner: **BACKEND** (`D:/Project/tahamohammadi-platform/Back-End`). Status: **REVISE**.
+Owner: **BACKEND** (`D:/Project/tahamohammadi-platform/Back-End`). Status: **IMPLEMENTED_UNREVIEWED**.
 
 Dependencies: PU-04-catalog, PU-04-metadata, PU-04-publication, PU-04-course, PU-04-creative, PU-05-lessons, PU-06-book, PU-06-talk, PU-06-resource, PU-06-collection, PU-06-series, PU-04-project-evidence. Family: shared.
 

@@ -1,6 +1,6 @@
 # PU-13-story — Render typed story blocks once with readable no-JS/print content, TOC, code/table/math/file/relations.
 
-Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **NOT_STARTED**.
+Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **REVISE**.
 
 Dependencies: PU-SYNC-public, CA-08. Family: shared.
 
@@ -42,3 +42,9 @@ All paths above are relative to the owner repository. Every other path is read-o
 Return exact base/result commits (or explicitly uncommitted), changed paths, tests with results, schema hash/impact, screenshots where UI changed, dirty status and remaining risks in `docs/quality/product-v2/PU-13-story-HANDOFF.md`.
 
 Stop: **PU-13-story_HANDOFF_READY**. Do not begin another packet, edit another repository, merge, push, deploy or mark owner acceptance.
+
+## Content completion amendment — 2026-09-07
+
+Authorized by owner implementation plan; preserve previous source and tests.
+
+- `src/components/story/story-projection.test.ts`

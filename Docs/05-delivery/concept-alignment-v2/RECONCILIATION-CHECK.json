@@ -2,39 +2,43 @@
   "status": "PASS",
   "acceptance_status": "OPEN",
   "status_counts": {
-    "ACCEPTED_LOCAL": 4,
-    "BLOCKED": 5,
+    "ACCEPTED_LOCAL": 9,
     "DOC_COMPLETE": 3,
-    "IMPLEMENTED_UNREVIEWED": 25,
-    "NOT_STARTED": 43,
-    "REVISE": 2
+    "IMPLEMENTED_UNREVIEWED": 65,
+    "REVISE": 6
   },
-  "ready_for_review": [],
+  "ready_for_review": [
+    "PU-26-seed-safety"
+  ],
   "ready_for_revision": [
-    "PU-04-catalog",
-    "CA-02"
+    "PU-03-settings",
+    "CA-08"
   ],
   "ready_to_start": [],
   "validation_scope": "plan structure only; source drift and revisions are not implementation acceptance",
   "pending_revisions": [
-    "PU-04-catalog",
-    "CA-02"
+    "PU-03-settings",
+    "CA-08",
+    "PU-09-editor",
+    "PU-13-story",
+    "PU-15-lessons",
+    "PU-25-admin-journey"
   ],
   "source_baseline_drift": [
     {
       "path": "Back-End/docs/contracts/openapi/current/public-openapi.json",
       "baseline": "0f672693de28ed33286789e5119eb3226c062693fb15168b1aba5513c257c0a5",
-      "current": "47980f8f1992d885398676cf984b80e7068c7aa8e8b8f76a856565ffc9033681"
+      "current": "f3115a5095097e7ccc12efba4c0c59b1f0258914c1ce8a83e867b3b207c33ec9"
     },
     {
       "path": "Back-End/docs/contracts/openapi/current/admin-openapi.json",
       "baseline": "38ff4d81d454287bd0e6c437ad84bfada41255e8fa6acc13704144223014fd7a",
-      "current": "1176c0696222f9ac4c86495446d1f00988bdfde19dd147e93ece29a61e973564"
+      "current": "135f14e5c7f03ba1aaee50fca76a54e55e0ed5a2e0360050a8939e837859208c"
     },
     {
       "path": "Back-End/apps/api/api.py",
       "baseline": "762040803b335ff1d85d39d07ae5af6be241f44548634d843783cc0113a548a1",
-      "current": "42df30699275f305aeaf9e868bc1614dfb57defe87a55bcd46e31621b9b7968c"
+      "current": "eab1451ee0563a361ff3ca1e8746e758f4f6161a0d6abbe53e687f8c11edcfef"
     },
     {
       "path": "Back-End/apps/api/admin_content.py",
@@ -64,7 +68,7 @@
     {
       "path": "Back-End/apps/siteconfig/models.py",
       "baseline": "b3b3158db7d4265f3f3a766708e54b04f78263d83a127084be760f543d112551",
-      "current": "1c813543ced2d8c8bdba668cc54532a76bd5f44ef23c347f46841187d9fda8e7"
+      "current": "01835e9182f8b8956f1841c9021ee9b54865029e7c8a1363fa8a58c1c25a11d3"
     },
     {
       "path": "Back-End/apps/rebuild/services.py",
@@ -77,9 +81,34 @@
       "current": "030da517efe9112af738d953f87bb4a7e3159be3468f8275bd48f352e347f8f1"
     },
     {
+      "path": "Front-End/public-site/src/lib/research-content.ts",
+      "baseline": "be5627486dfc86eb4208adfacec61071fadea5825bafbeaa3e7a9dba05a4c85d",
+      "current": "a4e29fff46d953b3ebc81963010d40ecbf476e8b8d1bc5cb0a899779faccdb07"
+    },
+    {
+      "path": "Front-End/public-site/src/lib/seo-route-registry.ts",
+      "baseline": "96ab43528dc9e68dec7bb1298869c38880406536b6edad7d06fe37ec10b8ba28",
+      "current": "673a927ba92de4bec1e9617599fa77e08de3820fcce77ec70d93ba546b71ae46"
+    },
+    {
       "path": "Front-End/public-site/package.json",
       "baseline": "2d6c060f85e573a57eb0ea3051518fbf614e08409fce4b8e67189357894c8cdf",
       "current": "b66fb05209854d150463ab27c2cdf9f4e0d56dde41fa2efdf5f25748506e7497"
+    },
+    {
+      "path": "Front-End/admin-panel/src/lib/api/content.ts",
+      "baseline": "7c540d845709335fa9d85358676b07bee52505a4f26ce0d25d41e5f2392fe808",
+      "current": "8ea095b62315f86edb839d629353ef9e0adb6af8cb41d10a35fa1e65ad86d7e2"
+    },
+    {
+      "path": "Front-End/admin-panel/src/pages/ContentEditPage.tsx",
+      "baseline": "8e8cd182a0700ef3f75d69fd0d0883d8de1628cc40c305dc76d50c25308ee3c7",
+      "current": "f54341f834ca5fa4a3c8cf961767989897bd24738bd28b3ca02be60cc3f88911"
+    },
+    {
+      "path": "Front-End/admin-panel/src/app/router.tsx",
+      "baseline": "ad36d096e735d1f43e6d9ff18964a41352798f7a46132be56c50e7e10807fe36",
+      "current": "5ebd7f0b4d8df4553a3ed4d81c1b5955f76360c7044fb95d1527440a5474dea0"
     },
     {
       "path": "Infra/staging/docker-compose.stage.yml",
@@ -97,34 +126,34 @@
       "current": "fe8d0dabf1b7c5a04f9abc4b085437f886c4199f8b341e5423bba4be4fe87918"
     }
   ],
-  "task_count": 82,
+  "task_count": 83,
   "documentation_complete": 3,
-  "runtime_not_started": 43,
+  "runtime_not_started": 0,
   "page_families": 15,
   "retired_CA_aliases": 8,
-  "allowlist_entries": 665,
-  "serialized_overlap_pairs": 1162,
-  "unchanged_source_hashes": 8,
-  "checked_local_links": 115,
+  "allowlist_entries": 678,
+  "serialized_overlap_pairs": 1164,
+  "unchanged_source_hashes": 3,
+  "checked_local_links": 116,
   "git": {
     "ROOT": {
       "diff_check": "PASS",
-      "tracked_changed_files": 34,
+      "tracked_changed_files": 67,
       "packet_runtime_changes_present": false
     },
     "PUBLIC": {
       "diff_check": "PASS",
-      "tracked_changed_files": 32,
+      "tracked_changed_files": 35,
       "packet_runtime_changes_present": true
     },
     "ADMIN": {
       "diff_check": "PASS",
-      "tracked_changed_files": 8,
+      "tracked_changed_files": 10,
       "packet_runtime_changes_present": true
     },
     "BACKEND": {
       "diff_check": "PASS",
-      "tracked_changed_files": 43,
+      "tracked_changed_files": 12,
       "packet_runtime_changes_present": true
     }
   },

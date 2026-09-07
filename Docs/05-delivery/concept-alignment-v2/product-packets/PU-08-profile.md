@@ -1,6 +1,6 @@
 # PU-08-profile — Complete owner profile, timeline links, CV and research-profile resource selection with locale-safe forms.
 
-Owner: **ADMIN** (`D:/Project/tahamohammadi-platform/Front-End/admin-panel`). Status: **NOT_STARTED**.
+Owner: **ADMIN** (`D:/Project/tahamohammadi-platform/Front-End/admin-panel`). Status: **IMPLEMENTED_UNREVIEWED**.
 
 Dependencies: PU-09-host, PU-10-series. Family: F13.
 

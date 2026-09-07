@@ -1,6 +1,6 @@
 # PU-12-graph — Complete graph version editing, record relation validation and keyboard/table alternative to drag.
 
-Owner: **ADMIN** (`D:/Project/tahamohammadi-platform/Front-End/admin-panel`). Status: **NOT_STARTED**.
+Owner: **ADMIN** (`D:/Project/tahamohammadi-platform/Front-End/admin-panel`). Status: **IMPLEMENTED_UNREVIEWED**.
 
 Dependencies: PU-SYNC-admin. Family: F02/F03.
 

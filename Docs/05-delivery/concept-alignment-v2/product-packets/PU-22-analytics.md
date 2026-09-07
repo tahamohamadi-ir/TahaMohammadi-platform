@@ -1,6 +1,6 @@
 # PU-22-analytics — Show authenticated date/locale event counts with metric definitions and empty/error/not-connected states.
 
-Owner: **ADMIN** (`D:/Project/tahamohammadi-platform/Front-End/admin-panel`). Status: **NOT_STARTED**.
+Owner: **ADMIN** (`D:/Project/tahamohammadi-platform/Front-End/admin-panel`). Status: **IMPLEMENTED_UNREVIEWED**.
 
 Dependencies: PU-SYNC-admin, PU-12-jobs. Family: shared.
 

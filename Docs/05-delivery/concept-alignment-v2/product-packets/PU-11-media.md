@@ -1,6 +1,6 @@
 # PU-11-media — Complete upload cancel/retry, locale alt, focal point, usages and version-aware replacement UI.
 
-Owner: **ADMIN** (`D:/Project/tahamohammadi-platform/Front-End/admin-panel`). Status: **NOT_STARTED**.
+Owner: **ADMIN** (`D:/Project/tahamohammadi-platform/Front-End/admin-panel`). Status: **IMPLEMENTED_UNREVIEWED**.
 
 Dependencies: PU-SYNC-admin, PU-06-resource. Family: F08/F11.
 

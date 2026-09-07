@@ -1,6 +1,6 @@
 # PU-10-research — Complete research-topic/research-statement structured metadata/relations editor; inspect server schema and test real mutation payloads for this family only.
 
-Owner: **ADMIN** (`D:/Project/tahamohammadi-platform/Front-End/admin-panel`). Status: **BLOCKED**.
+Owner: **ADMIN** (`D:/Project/tahamohammadi-platform/Front-End/admin-panel`). Status: **IMPLEMENTED_UNREVIEWED**.
 
 Dependencies: PU-09-host. Family: F03.
 
