@@ -1,4 +1,12 @@
+> Current coordinator state (2026-09-06): execution-tasks.json and RECONCILIATION-CHECK.json under Docs/05-delivery/concept-alignment-v2 are authoritative. See reviews/COORDINATOR-REVIEW-2026-09-06.md there; older status prose is historical.
+
 # Multi-Agent Task Board
+
+<!-- PRODUCT-V2.1 -->
+Current dispatch: [V2.1 EXECUTION](concept-alignment-v2/EXECUTION.md). Filter the canonical JSON by repository and active status. PU-01/02/19 are DOC_COMPLETE; nine packets are IMPLEMENTED_UNREVIEWED (code implemented + locally tested 2026-09-06, uncommitted, not owner-accepted — never a satisfied dependency); remaining runtime packets are NOT_STARTED. CA-09–16 are superseded aliases and are not concurrent work. Older wave tables below are historical registers, not a second active queue.
+<!-- /PRODUCT-V2.1 -->
+
+
 
 Status: **Wave 0 complete** (2026-08-29). Wave 1 active: seed import + OpenAPI types.  
 Canonical rollup: `MASTER-TASK-LIST.md` (milestones only).  
@@ -138,7 +146,7 @@ Wave 4 (release)
 
 - WP-10 closes only `PUBLIC-070`, `PUBLIC-080`, and `PUBLIC-130`; `PUBLIC-140` through `PUBLIC-180` remain owned by their assigned packets.
 - `PUBLIC-190` is not Done: its structure is complete, but visual acceptance is open pending `PUBLIC-180`, `BACKEND-070`, independent visual QA `PASS`, and explicit owner acceptance.
-- Page-family development `PUBLIC-200` through `PUBLIC-240` is frozen until that acceptance. `WP-25` and `PUBLIC-260` remain allowed. This does not mark R3 or R4 complete.
+- New page-family features remain gated until acceptance. Assigned V2 CA-* packets may remediate existing page-family visuals after their explicit dependencies under ADR-0008. `WP-25` and `PUBLIC-260` remain allowed; no R3/R4 completion or owner acceptance is implied.
 
 ---
 

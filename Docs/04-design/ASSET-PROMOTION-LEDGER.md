@@ -1,5 +1,9 @@
 # Asset Promotion Ledger
 
+<!-- PRODUCT-V2.1 -->
+Active V2.1 override: Home uses the graph inside the hero; portal geometry belongs only to `/`. Historical `portal-orbit-*` Home roles and graph backplates below are retained asset history, not required runtime composition. New independent page families follow PRODUCT-SPEC and share the story renderer; tracked concepts guide appearance only. ADR-0008/0010 and EXECUTION.md supersede conflicting old freeze/motion/placement assumptions. Do not rewrite pinned binary hashes or factual source content.
+<!-- /PRODUCT-V2.1 -->
+
 The owner approved the contents of `Front-End/Assets` on 2026-08-29 as source material for this project. The files below are therefore **source-approved**. Runtime contract staging for Group A/B assets is recorded by `PUBLIC-260` / `WP-30`; final runtime promotion remains open until consumer wiring, derivative inspection, crop review, byte ceilings, and network evidence close in WP-40/WP-50.
 
 | ID | Canonical source | Role | Runtime status | Remaining promotion evidence |

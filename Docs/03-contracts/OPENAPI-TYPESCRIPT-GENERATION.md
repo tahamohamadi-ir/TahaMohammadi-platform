@@ -19,8 +19,8 @@ Generate types only from the **accepted** snapshot files in the backend reposito
 
 | Surface | Repository path | OpenAPI version | Path count |
 |---|---|---|---|
-| Public | `docs/contracts/openapi/current/public-openapi.json` | `0.4.0` | 40 |
-| Admin | `docs/contracts/openapi/current/admin-openapi.json` | `0.1.0` | 47 |
+| Public | `docs/contracts/openapi/current/public-openapi.json` | `0.4.0` | 48 |
+| Admin | `docs/contracts/openapi/current/admin-openapi.json` | `0.1.0` | 57 |
 
 Workspace-relative paths:
 
@@ -34,12 +34,12 @@ Supporting inventory (not a type-generation input): `Back-End/docs/contracts/ope
 These values are copied exactly from `OPENAPI-ACCEPTANCE.md`. Any drift reopens PS-05 and blocks adoption of regenerated client types until a new acceptance record is written.
 
 | Artifact | SHA-256 |
-|---|---|
-| `public-openapi.json` | `0f672693de28ed33286789e5119eb3226c062693fb15168b1aba5513c257c0a5` |
-| `admin-openapi.json` | `1328f8244c5541f225648082891a0a1244961c0dead6692488992ac8c7606f09` |
-| `endpoint-inventory.md` | `618ab18826875a5f27357ab87a3917082291d2e8610959b18aa2f936a7f3aa96` |
+|---|---|---|
+| `public-openapi.json` | `47980f8f1992d885398676cf984b80e7068c7aa8e8b8f76a856565ffc9033681` |
+| `admin-openapi.json` | `1176c0696222f9ac4c86495446d1f00988bdfde19dd147e93ece29a61e973564` |
+| `endpoint-inventory.md` | `154a2c1bf950978f9a8332571098e4bfb2b815c9308a38426976e08dc002e4eb` |
 
-Accepted backend commit at lock time: `82e3984520154b60146009ae4a0d21eb5c30373e` (`config.settings.development`).
+Accepted backend commit at lock time: `bd6682ea9dae7e5bf6957c36691dc3a94a00ea37` (`config.settings.development`). Prior rows are preserved in `OPENAPI-ACCEPTANCE.md` addenda.
 
 ## Generator tool
 
@@ -98,8 +98,8 @@ Each frontend repository stores a single-line SHA-256 pin for its schema source.
 
 | Repository | Pin file | Expected value |
 |---|---|---|
-| `Front-End/public-site/` | `contracts/openapi.public.sha256` | `0f672693de28ed33286789e5119eb3226c062693fb15168b1aba5513c257c0a5` |
-| `Front-End/admin-panel/` | `contracts/openapi.admin.sha256` | `1328f8244c5541f225648082891a0a1244961c0dead6692488992ac8c7606f09` |
+| `Front-End/public-site/` | `contracts/openapi.public.sha256` | `47980f8f1992d885398676cf984b80e7068c7aa8e8b8f76a856565ffc9033681` |
+| `Front-End/admin-panel/` | `src/generated/openapi-hash.json` (`sha256`) | `1176c0696222f9ac4c86495446d1f00988bdfde19dd147e93ece29a61e973564` |
 
 Pin file format: one lowercase hex SHA-256 string, optional trailing newline, no other content.
 

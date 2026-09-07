@@ -1,7 +1,16 @@
 # Decision Log
 
+<!-- PRODUCT-V2.1 -->
+2026-09-05 reconciliation: ADR-0010 records target interfaces, actual coverage, canonical execution graph, retired CA aliases and synchronized three-repository entry points. See `Docs/05-delivery/concept-alignment-v2/RECONCILIATION.md` for verification. Runtime, migration, deployment and owner visual acceptance remain open.
+<!-- /PRODUCT-V2.1 -->
+
+## 2026-09-05 — Research-first product extension
+
+ADR-0009 records the owner's completed brief: unified research-driven identity, three presentation clusters, independent detail pages and broad admin editing. PRODUCT-SPEC, CMS-SPEC and PRODUCT-TASKS extend V2 with 15 families and 25 parent tasks. New routes and API capabilities are targets pending implementation; existing runtime and publication status are not advanced. User tooling was verified separately in V2 TOOLING.md.
+
 | Date | Decision | Evidence |
 |---|---|---|
+| 2026-09-05 | Owner-directed concept alignment V2: rebuild hero/graph with GSAP + Three.js, put graph inside Home hero, reserve procedural portal for gateway under delegated design judgment; permit bounded existing-page visual remediation; preserve content and release gates | ADR-0008; `Docs/05-delivery/concept-alignment-v2/`; planning complete, runtime/visual acceptance open |
 | 2026-08-28 | Use three independent GitHub repositories under one local workspace | Owner instruction and repository verification |
 | 2026-08-28 | Rebuild both frontends from scratch | Owner instruction |
 | 2026-08-28 | Copy the usable tracked backend baseline | Owner instruction and zero-mismatch copy check |

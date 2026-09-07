@@ -1,5 +1,9 @@
 # Deployment Topology
 
+<!-- PRODUCT-V2.1 -->
+Current product/implementation authority: ADR-0010, `Docs/03-contracts/PRODUCT-INTERFACES-V2.md` and `Docs/05-delivery/concept-alignment-v2/EXECUTION.md` (coordination-root paths). Keep Astro/TypeScript with bounded Three.js/GSAP, existing React admin/Django backend, Pagefind and first-party aggregate analytics. Earlier stack/phase assumptions apply only where compatible. Rebuild jobs/edge invalidation are a planned interface, not an already operating deployment.
+<!-- /PRODUCT-V2.1 -->
+
 ## Selected baseline
 
 The pre-scaffold baseline is same-origin public delivery through a reverse proxy. This matches the migrated backend production model, which assumes Caddy terminates TLS and Django uses secure same-site session and CSRF cookies. A cross-origin SPA/API deployment is not accepted until a separate CORS, cookie, CSRF, proxy, and browser-test decision replaces this baseline.

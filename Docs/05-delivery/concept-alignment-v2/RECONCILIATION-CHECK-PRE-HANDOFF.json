@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "task_count": 82,
+  "documentation_complete": 3,
+  "runtime_not_started": 79,
+  "page_families": 15,
+  "retired_CA_aliases": 8,
+  "allowlist_entries": 640,
+  "serialized_overlap_pairs": 1182,
+  "verified_source_hashes": 23,
+  "checked_local_links": 108,
+  "git": {
+    "ROOT": {
+      "diff_check": "PASS",
+      "tracked_changed_files": 29,
+      "runtime_edit_in_this_delivery": false
+    },
+    "PUBLIC": {
+      "diff_check": "PASS",
+      "tracked_changed_files": 7,
+      "runtime_edit_in_this_delivery": false
+    },
+    "ADMIN": {
+      "diff_check": "PASS",
+      "tracked_changed_files": 6,
+      "runtime_edit_in_this_delivery": false
+    },
+    "BACKEND": {
+      "diff_check": "PASS",
+      "tracked_changed_files": 6,
+      "runtime_edit_in_this_delivery": false
+    }
+  },
+  "runtime_tests_run": false,
+  "publication_acceptance": "OPEN",
+  "visual_acceptance": "OPEN"
+}

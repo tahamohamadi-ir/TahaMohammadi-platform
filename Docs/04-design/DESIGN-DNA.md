@@ -1,5 +1,9 @@
 # Design DNA
 
+<!-- PRODUCT-V2.1 -->
+Active V2.1 override: Home uses the graph inside the hero; portal geometry belongs only to `/`. Historical `portal-orbit-*` Home roles and graph backplates below are retained asset history, not required runtime composition. New independent page families follow PRODUCT-SPEC and share the story renderer; tracked concepts guide appearance only. ADR-0008/0010 and EXECUTION.md supersede conflicting old freeze/motion/placement assumptions. Do not rewrite pinned binary hashes or factual source content.
+<!-- /PRODUCT-V2.1 -->
+
 ## Authority
 
 The machine-readable source is [design-dna.json](../references/frontend-design-authority/design-dna.json). The curated visual sources are `concepts/` for system-level UI/UX and `concepts/page-families/` for page detail. Exact token values are marked as such; qualitative visual observations never override accessibility, content, or API contracts.
@@ -15,8 +19,9 @@ The machine-readable source is [design-dna.json](../references/frontend-design-a
 ## Effects boundary
 
 - Glass is limited to the language gateway and sticky header, with opaque fallback.
-- No custom cursor, shader, free decorative particle field, or required 3D scene is permitted.
-- Research graph Phase 1 is semantic HTML first with an optional bounded 2D enhancement. The list and enhanced view must expose the same information and links.
+- Current recovery direction is [ADR-0008](../09-decisions/ADR-0008-HOME-GRAPH-HERO-AND-PROCEDURAL-MOTION.md): an integrated Three.js graph hero on Home, a Three.js portal only on the language gateway, and bounded GSAP choreography. The pinned historical `design-dna.json` is read with the explicit [V2 overlay](../05-delivery/concept-alignment-v2/design-overlay.json); CA-01 owns consumer adoption.
+- Semantic HTML is implemented before scene enhancement. The list and enhanced view expose identical information and eligible links; content never requires a renderer.
+- No custom cursor or free decorative particle field. Custom shader experiments, global scroll effects, and new libraries outside assigned V2 packet scope require a specific scope amendment.
 - Reduced motion removes continuous motion and transform-based non-essential effects.
 
 ## Design decision rule

@@ -1,0 +1,134 @@
+{
+  "status": "PASS",
+  "acceptance_status": "OPEN",
+  "status_counts": {
+    "ACCEPTED_LOCAL": 4,
+    "BLOCKED": 5,
+    "DOC_COMPLETE": 3,
+    "IMPLEMENTED_UNREVIEWED": 25,
+    "NOT_STARTED": 43,
+    "REVISE": 2
+  },
+  "ready_for_review": [],
+  "ready_for_revision": [
+    "PU-04-catalog",
+    "CA-02"
+  ],
+  "ready_to_start": [],
+  "validation_scope": "plan structure only; source drift and revisions are not implementation acceptance",
+  "pending_revisions": [
+    "PU-04-catalog",
+    "CA-02"
+  ],
+  "source_baseline_drift": [
+    {
+      "path": "Back-End/docs/contracts/openapi/current/public-openapi.json",
+      "baseline": "0f672693de28ed33286789e5119eb3226c062693fb15168b1aba5513c257c0a5",
+      "current": "47980f8f1992d885398676cf984b80e7068c7aa8e8b8f76a856565ffc9033681"
+    },
+    {
+      "path": "Back-End/docs/contracts/openapi/current/admin-openapi.json",
+      "baseline": "38ff4d81d454287bd0e6c437ad84bfada41255e8fa6acc13704144223014fd7a",
+      "current": "1176c0696222f9ac4c86495446d1f00988bdfde19dd147e93ece29a61e973564"
+    },
+    {
+      "path": "Back-End/apps/api/api.py",
+      "baseline": "762040803b335ff1d85d39d07ae5af6be241f44548634d843783cc0113a548a1",
+      "current": "42df30699275f305aeaf9e868bc1614dfb57defe87a55bcd46e31621b9b7968c"
+    },
+    {
+      "path": "Back-End/apps/api/admin_content.py",
+      "baseline": "a7f7f26dd57cd2799ff3a827279c8b778eebe319b775e2205249c6c72e12e8a6",
+      "current": "fec91a9c66c6a0ff8a38ee6ff81b4d53c53949ef20fa193748010a1dd2f0bf9f"
+    },
+    {
+      "path": "Back-End/apps/api/admin_composition.py",
+      "baseline": "55c5f30a6086d5034a0b7c6ff1a071574eb1c5cd229340104f1efe327e9a94a3",
+      "current": "e0a925b3be446d357a529f4811552c112d748213b68ca86353626828c6b74f7d"
+    },
+    {
+      "path": "Back-End/apps/content/models.py",
+      "baseline": "8d79378dd75a5c278062e3c1943df8e6a4f92cd682d0c3f05a66a9a9e662e94f",
+      "current": "f0b2257ae9bbde4c09991eef8624bd69e3dd70d9f5723913ceb2c70bf0056741"
+    },
+    {
+      "path": "Back-End/apps/composition/blocks.py",
+      "baseline": "cd11797d511ec7a8630e0e24ecce141b795dfe342cc9781d9614e139e31bce6e",
+      "current": "7f9084b911f771dc5252dc16bac05b852ceb422cfa83589f2370297c09c42ddb"
+    },
+    {
+      "path": "Back-End/apps/composition/projection.py",
+      "baseline": "e91f35772a53ceaf4dd4e40ea54218e1fa94db710726ac73d5547ee83eaf1c14",
+      "current": "e9b3cbafc008b2df2021bf1b73f23aeab452aae8ad40198e51fa3b6b89deea1f"
+    },
+    {
+      "path": "Back-End/apps/siteconfig/models.py",
+      "baseline": "b3b3158db7d4265f3f3a766708e54b04f78263d83a127084be760f543d112551",
+      "current": "1c813543ced2d8c8bdba668cc54532a76bd5f44ef23c347f46841187d9fda8e7"
+    },
+    {
+      "path": "Back-End/apps/rebuild/services.py",
+      "baseline": "c7516be618856825bea905e4a0cec0cdff4f8712cf8b4abd24b5fddc064a8e00",
+      "current": "cb824f0f57741a905c256e30012c16476f0fb0002316046bfcbbf814d2b053e8"
+    },
+    {
+      "path": "Back-End/apps/rebuild/views.py",
+      "baseline": "3bde29be963c0a7232505716bd86a4a0e666516e77b54158c41e32f984448e58",
+      "current": "030da517efe9112af738d953f87bb4a7e3159be3468f8275bd48f352e347f8f1"
+    },
+    {
+      "path": "Front-End/public-site/package.json",
+      "baseline": "2d6c060f85e573a57eb0ea3051518fbf614e08409fce4b8e67189357894c8cdf",
+      "current": "b66fb05209854d150463ab27c2cdf9f4e0d56dde41fa2efdf5f25748506e7497"
+    },
+    {
+      "path": "Infra/staging/docker-compose.stage.yml",
+      "baseline": "e9c0636f88ce9fc10b275ee4fc91e7be402190f740635a8726dbf781e3aee6a2",
+      "current": "8b59fb0c33235f6c9e8c135a1d2ddde7e9406a62c5634a6b9e4bd3e6152321e7"
+    },
+    {
+      "path": "Back-End/apps/api/admin_common.py",
+      "baseline": "e8d4973e01af0ef82c88237241bf1b9b8c119082e279d55c63c2bff0d706fd65",
+      "current": "2899ba5d643707f1a10ed24858c3028c117c8c1c5c903847f7ef1be8c0abd9a3"
+    },
+    {
+      "path": "Back-End/apps/content/management/commands/publish_scheduled_content.py",
+      "baseline": "499beb7c4fd44645a6dca89436c25b937dc1ff866eb76d27bca163b23682a0d9",
+      "current": "fe8d0dabf1b7c5a04f9abc4b085437f886c4199f8b341e5423bba4be4fe87918"
+    }
+  ],
+  "task_count": 82,
+  "documentation_complete": 3,
+  "runtime_not_started": 43,
+  "page_families": 15,
+  "retired_CA_aliases": 8,
+  "allowlist_entries": 665,
+  "serialized_overlap_pairs": 1162,
+  "unchanged_source_hashes": 8,
+  "checked_local_links": 115,
+  "git": {
+    "ROOT": {
+      "diff_check": "PASS",
+      "tracked_changed_files": 34,
+      "packet_runtime_changes_present": false
+    },
+    "PUBLIC": {
+      "diff_check": "PASS",
+      "tracked_changed_files": 32,
+      "packet_runtime_changes_present": true
+    },
+    "ADMIN": {
+      "diff_check": "PASS",
+      "tracked_changed_files": 8,
+      "packet_runtime_changes_present": true
+    },
+    "BACKEND": {
+      "diff_check": "PASS",
+      "tracked_changed_files": 43,
+      "packet_runtime_changes_present": true
+    }
+  },
+  "runtime_tests_run": false,
+  "publication_acceptance": "OPEN",
+  "visual_acceptance": "OPEN"
+}

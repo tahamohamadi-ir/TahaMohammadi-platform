@@ -1,0 +1,507 @@
+{
+  "scope": "Local working-tree audit; handoff presence is not acceptance",
+  "repositories": {
+    "ROOT": {
+      "head": "c69e339c8c26788467d29ad346fb7df99b1c2842",
+      "status": [
+        " M AGENTS.md",
+        " M Docs/01-product/NON-GOALS.md",
+        " M Docs/01-product/PERSONAS-AND-JOURNEYS.md",
+        " M Docs/01-product/PRODUCT-VISION.md",
+        " M Docs/01-product/SCOPE.md",
+        " M Docs/02-architecture/DEPENDENCY-POLICY.md",
+        " M Docs/02-architecture/DEPLOYMENT-TOPOLOGY.md",
+        " M Docs/02-architecture/PUBLIC-SITE-STACK-EVALUATION.md",
+        " M Docs/02-architecture/ROUTE-REGISTRY.md",
+        " M Docs/02-architecture/SYSTEM-ARCHITECTURE.md",
+        " M Docs/03-contracts/API-CONTRACT.md",
+        " M Docs/03-contracts/CONTENT-CONTRACT.md",
+        " M Docs/03-contracts/LOCALE-CONTRACT.md",
+        " M Docs/03-contracts/MEDIA-CONTRACT.md",
+        " M Docs/04-design/ASSET-PROMOTION-LEDGER.md",
+        " M Docs/04-design/ASSET-PROMOTION-OWNER-GUIDE.md",
+        " M Docs/04-design/ASSET-REGISTER.md",
+        " M Docs/04-design/DESIGN-AUTHORITY.md",
+        " M Docs/04-design/DESIGN-DNA.md",
+        " M Docs/05-delivery/MASTER-ROADMAP.md",
+        " M Docs/05-delivery/MASTER-TASK-LIST.md",
+        " M Docs/05-delivery/MULTI-AGENT-TASK-BOARD.md",
+        " M Docs/06-quality/ACCESSIBILITY-PLAN.md",
+        " M Docs/06-quality/CI-REQUIRED-CHECKS.md",
+        " M Docs/06-quality/PERFORMANCE-BUDGET.md",
+        " M Docs/06-quality/TEST-STRATEGY.md",
+        " M Docs/09-decisions/README.md",
+        " M Docs/10-tracking/DECISION-LOG.md",
+        " M Infra/staging/Caddyfile.staging.fragment",
+        " M Infra/staging/docker-compose.stage.yml",
+        " M Infra/staging/nginx-public.conf",
+        " M PROJECT-MANIFEST.md",
+        "?? Docs/03-contracts/PRODUCT-INTERFACES-V2.md",
+        "?? Docs/05-delivery/concept-alignment-v2/",
+        "?? Docs/08-operations/PRODUCT-PUBLISHING-RUNBOOK.md",
+        "?? Docs/09-decisions/ADR-0008-HOME-GRAPH-HERO-AND-PROCEDURAL-MOTION.md",
+        "?? Docs/09-decisions/ADR-0009-RESEARCH-FIRST-CONTENT-COMPLETE-PRODUCT.md",
+        "?? Docs/09-decisions/ADR-0010-UNIFIED-EXECUTION-CONTRACTS.md",
+        "?? Docs/10-tracking/concept-alignment-2026-09-05/",
+        "?? Docs/10-tracking/product-v2/",
+        "?? EAM_User_Behavior_Quick_Analysis.ipynb",
+        "?? Infra/staging/__pycache__/",
+        "?? Infra/staging/rebuild-product.py",
+        "?? Infra/staging/test_rebuild_product.py"
+      ]
+    },
+    "BACKEND": {
+      "head": "bd6682ea9dae7e5bf6957c36691dc3a94a00ea37",
+      "status": [
+        " M AGENTS.md",
+        " M PROJECT-MANIFEST.md",
+        " M README.md",
+        " M ROADMAP.md",
+        " M TASK-LIST.md",
+        " M apps/api/admin_api.py",
+        " M apps/api/admin_common.py",
+        " M apps/api/admin_composition.py",
+        " M apps/api/admin_content.py",
+        " M apps/api/admin_graph.py",
+        " M apps/api/admin_home.py",
+        " M apps/api/admin_siteconfig.py",
+        " M apps/api/api.py",
+        " M apps/composition/blocks.py",
+        " M apps/composition/projection.py",
+        " M apps/content/management/commands/publish_scheduled_content.py",
+        " M apps/content/models.py",
+        " M apps/content/preview_token.py",
+        " M apps/content/services/lifecycle.py",
+        " M apps/content/templates/content/staff_preview.html",
+        " M apps/content/urls_public_preview.py",
+        " M apps/content/views_preview.py",
+        " M apps/rebuild/services.py",
+        " M apps/rebuild/views.py",
+        " M apps/siteconfig/models.py",
+        " M config/settings/base.py",
+        " M config/urls.py",
+        " M docs/architecture/ARCHITECTURE.md",
+        " M docs/contracts/openapi/current/PROVENANCE.json",
+        " M docs/contracts/openapi/current/admin-openapi.json",
+        " M docs/contracts/openapi/current/endpoint-inventory.md",
+        " M docs/contracts/openapi/current/public-openapi.json",
+        "?? apps/analytics/",
+        "?? apps/api/admin_project_evidence.py",
+        "?? apps/api/admin_publication_jobs.py",
+        "?? apps/api/record_resolver.py",
+        "?? apps/content/migrations/0021_pu_content_metadata.py",
+        "?? apps/content/migrations/0022_pu_publication_story.py",
+        "?? apps/content/migrations/0023_pu_course_story.py",
+        "?? apps/content/migrations/0024_pu_creative_story.py",
+        "?? apps/content/migrations/0025_pu_lessons.py",
+        "?? apps/content/migrations/0026_pu_book_story.py",
+        "?? apps/content/migrations/0027_pu_talk_story.py",
+        "?? apps/content/migrations/0028_pu_resource_story.py",
+        "?? apps/content/migrations/0029_pu_collection_members.py",
+        "?? apps/content/migrations/0030_pu_series_members.py",
+        "?? apps/content/migrations/0031_pu_publication_snapshots.py",
+        "?? apps/rebuild/migrations/",
+        "?? apps/rebuild/models.py",
+        "?? apps/siteconfig/migrations/0005_localized_product_settings.py",
+        "?? docs/architecture/ADR-PRODUCT-V2-EXECUTION.md",
+        "?? docs/quality/product-v2/",
+        "?? tests/test_product_analytics.py",
+        "?? tests/test_product_book.py",
+        "?? tests/test_product_collection.py",
+        "?? tests/test_product_course_story.py",
+        "?? tests/test_product_creative_story.py",
+        "?? tests/test_product_lessons.py",
+        "?? tests/test_product_localized_settings.py",
+        "?? tests/test_product_metadata.py",
+        "?? tests/test_product_preview.py",
+        "?? tests/test_product_project_evidence.py",
+        "?? tests/test_product_publication_invalidation.py",
+        "?? tests/test_product_publication_jobs.py",
+        "?? tests/test_product_publication_story.py",
+        "?? tests/test_product_record_resolver.py",
+        "?? tests/test_product_resource.py",
+        "?? tests/test_product_revision_snapshot.py",
+        "?? tests/test_product_series.py",
+        "?? tests/test_product_story_blocks.py",
+        "?? tests/test_product_talk.py"
+      ]
+    },
+    "PUBLIC": {
+      "head": "b895b2cb9c6ad9519d55bd2663448461931c0a39",
+      "status": [
+        " M AGENTS.md",
+        " M PROJECT-MANIFEST.md",
+        " M README.md",
+        " M ROADMAP.md",
+        " M TASK-LIST.md",
+        " M docs/architecture/ARCHITECTURE.md",
+        " M docs/architecture/README.md",
+        " M package-lock.json",
+        " M package.json",
+        " M scripts/validate-design-authority.mjs",
+        " M src/atlas/AtlasPage.astro",
+        " M src/atlas/sections/FoundationsSection.astro",
+        " M src/components/Header.astro",
+        " M src/components/home/HomeHero.astro",
+        " M src/components/home/HomeResearchGraph.astro",
+        " M src/components/home/wp40-home.behavior.test.ts",
+        " M src/components/shell/public-150.behavior.test.ts",
+        " M src/components/templates/public-160.behavior.test.ts",
+        " M src/foundation.contract.test.ts",
+        " M src/generated/public-api.ts",
+        " M src/pages/en/index.astro",
+        " M src/pages/fa/index.astro",
+        " M src/pages/index.astro",
+        " M src/styles/gateway.css",
+        " M tests/e2e/public-150-shell.e2e.ts",
+        "?? contracts/design-authority/v2-overlay.json",
+        "?? docs/architecture/ADR-CONCEPT-ALIGNMENT-V2.md",
+        "?? docs/architecture/ADR-PRODUCT-V2-EXECUTION.md",
+        "?? docs/quality/concept-alignment-v2/",
+        "?? docs/quality/product-v2/",
+        "?? src/atlas/sections/GraphInteractionSection.astro",
+        "?? src/atlas/sections/GraphSceneSection.astro",
+        "?? src/components/gateway/",
+        "?? src/components/hero/",
+        "?? src/lib/hero-graph-content.test.ts",
+        "?? src/lib/hero-graph-content.ts",
+        "?? src/lib/product-resolver.contract.test.ts",
+        "?? src/lib/visual/",
+        "?? src/styles/hero-graph.css",
+        "?? tests/e2e/ca03-hero-semantic.e2e.ts",
+        "?? tests/e2e/ca05-graph-interaction.e2e.ts",
+        "?? tests/e2e/ca06-home-scene.e2e.ts",
+        "?? tests/e2e/ca07-gateway-scene.e2e.ts",
+        "?? tests/fixtures/contracts/hero-graph.json",
+        "?? tests/fixtures/contracts/product-record-resolver.json"
+      ]
+    },
+    "ADMIN": {
+      "head": "ca4dd3d26484d4468465c756d302b8e3247a3cbe",
+      "status": [
+        " M AGENTS.md",
+        " M PROJECT-MANIFEST.md",
+        " M README.md",
+        " M ROADMAP.md",
+        " M TASK-LIST.md",
+        " M docs/architecture/ARCHITECTURE.md",
+        "?? docs/architecture/ADR-PRODUCT-V2-EXECUTION.md",
+        "?? docs/quality/product-v2/"
+      ]
+    }
+  },
+  "handoffs": [
+    {
+      "id": "PU-01",
+      "repository": "ROOT",
+      "queue_status": "DOC_COMPLETE",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Docs/10-tracking/product-v2/PU-01-HANDOFF.md",
+      "sha256": "cc5b7abc6acb9b760eab28c3b71c2cb31d1843f58fa3140be4d169f27ac6cbf0"
+    },
+    {
+      "id": "PU-02",
+      "repository": "ROOT",
+      "queue_status": "DOC_COMPLETE",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Docs/10-tracking/product-v2/PU-02-HANDOFF.md",
+      "sha256": "49dced100b3fdc3accdf6a8b43c7b051ab1964bfae311d77c45e3dbe4625a57c"
+    },
+    {
+      "id": "PU-19",
+      "repository": "ROOT",
+      "queue_status": "DOC_COMPLETE",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Docs/10-tracking/product-v2/PU-19-HANDOFF.md",
+      "sha256": "ba8c2583274a879e542d8a8a9de970867365093774709b545b656a816884587b"
+    },
+    {
+      "id": "PU-03-resolver",
+      "repository": "BACKEND",
+      "queue_status": "REVISE",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Back-End/docs/quality/product-v2/PU-03-resolver-HANDOFF.md",
+      "sha256": "435a42622ec3b40eb20f4e7edabdb01a0418108f298f6946ce0699e4cbdb8ef6"
+    },
+    {
+      "id": "PU-03-settings",
+      "repository": "BACKEND",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Back-End/docs/quality/product-v2/PU-03-settings-HANDOFF.md",
+      "sha256": "4ce4e41377ec880bbc0a7c3cd76c2f6a91a367e65484089ced90c7ff374283ea"
+    },
+    {
+      "id": "PU-04-catalog",
+      "repository": "BACKEND",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Back-End/docs/quality/product-v2/PU-04-catalog-HANDOFF.md",
+      "sha256": "2c811a625909fc9dd99845eea5917f0ccd738d70ffe46f5a6cce326b5b87394b"
+    },
+    {
+      "id": "PU-04-metadata",
+      "repository": "BACKEND",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Back-End/docs/quality/product-v2/PU-04-metadata-HANDOFF.md",
+      "sha256": "106e1ba342ac703d27cd157dd49d1824c75b7d900c2dfcffa03d55cd716fea02"
+    },
+    {
+      "id": "PU-04-publication",
+      "repository": "BACKEND",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Back-End/docs/quality/product-v2/PU-04-publication-HANDOFF.md",
+      "sha256": "a3b6533cd54bee47b1d2c24a22965583b5aacf7714219d5034fbfcb6994fb9d4"
+    },
+    {
+      "id": "PU-04-course",
+      "repository": "BACKEND",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Back-End/docs/quality/product-v2/PU-04-course-HANDOFF.md",
+      "sha256": "c9f58a51b7f32121a72662319372bcaf992654413c4ec24d03401f20f2db7dc7"
+    },
+    {
+      "id": "PU-04-creative",
+      "repository": "BACKEND",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Back-End/docs/quality/product-v2/PU-04-creative-HANDOFF.md",
+      "sha256": "7f93a5c83c18ba22318fe10438e688f000bd232cf0070883ebca318aa2f6decb"
+    },
+    {
+      "id": "PU-05-lessons",
+      "repository": "BACKEND",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Back-End/docs/quality/product-v2/PU-05-lessons-HANDOFF.md",
+      "sha256": "c209abb81fac66e56bfa8ae20758e00b40708c7da05c41664aeb8c0c281dbd72"
+    },
+    {
+      "id": "PU-06-book",
+      "repository": "BACKEND",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Back-End/docs/quality/product-v2/PU-06-book-HANDOFF.md",
+      "sha256": "0dca17fd20a216951b726feef50df6af717949d81a8e31af30c924574d0ee212"
+    },
+    {
+      "id": "PU-06-talk",
+      "repository": "BACKEND",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Back-End/docs/quality/product-v2/PU-06-talk-HANDOFF.md",
+      "sha256": "a2cef22f8ce7a516cc8fbe18f8b2006ed127c3f74bbe9bcb61c6e417bba081e9"
+    },
+    {
+      "id": "PU-06-resource",
+      "repository": "BACKEND",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Back-End/docs/quality/product-v2/PU-06-resource-HANDOFF.md",
+      "sha256": "ea3815c715d01c115cec95999d92fae5f044414e75bc1c6b4b0f30b5513f4fae"
+    },
+    {
+      "id": "PU-06-collection",
+      "repository": "BACKEND",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Back-End/docs/quality/product-v2/PU-06-collection-HANDOFF.md",
+      "sha256": "1cadfb1ef7e71bc5b46f119119d775066a2a4ecd81dc32e9b8e1d6e6000ae26e"
+    },
+    {
+      "id": "PU-06-series",
+      "repository": "BACKEND",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Back-End/docs/quality/product-v2/PU-06-series-HANDOFF.md",
+      "sha256": "088e022fd0c1c0f00ad7e4f197febe9ca9595fea09632d49a8781543d78e756a"
+    },
+    {
+      "id": "PU-04-project-evidence",
+      "repository": "BACKEND",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Back-End/docs/quality/product-v2/PU-04-project-evidence-HANDOFF.md",
+      "sha256": "090f05ea8d74b5f4ebf5431e873d96fee9960636ac765a101f45a2baeeab8d7f"
+    },
+    {
+      "id": "PU-07-revisions",
+      "repository": "BACKEND",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Back-End/docs/quality/product-v2/PU-07-revisions-HANDOFF.md",
+      "sha256": "6ff2cec7e682d462e5eebffb1a255d9244e3f4c6504ab7e7cbc043d6d4502a2c"
+    },
+    {
+      "id": "PU-07-preview",
+      "repository": "BACKEND",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Back-End/docs/quality/product-v2/PU-07-preview-HANDOFF.md",
+      "sha256": "107f7091d8e4d9f9ef273ec20621e9c45927d200ee96b8f26b0d8ae4429e1942"
+    },
+    {
+      "id": "PU-07-jobs",
+      "repository": "BACKEND",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Back-End/docs/quality/product-v2/PU-07-jobs-HANDOFF.md",
+      "sha256": "19567a474e152b7d3536acc64ed17593a50a6032c7ce8a712f8e7cbbd8e8dde3"
+    },
+    {
+      "id": "PU-23-invalidation",
+      "repository": "BACKEND",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Back-End/docs/quality/product-v2/PU-23-invalidation-HANDOFF.md",
+      "sha256": "c0da8cdcfcc4812fd56e7e72ee637b55a3780712d1aa73f4c5632041b20e0b24"
+    },
+    {
+      "id": "PU-20-events",
+      "repository": "BACKEND",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Back-End/docs/quality/product-v2/PU-20-events-HANDOFF.md",
+      "sha256": "e734028acfe05349a7b2502e8fe88b7a49dfbcfe832be2c4705d081de98715c7"
+    },
+    {
+      "id": "PU-07-runner",
+      "repository": "ROOT",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Docs/10-tracking/product-v2/PU-07-runner-HANDOFF.md",
+      "sha256": "b8011e4e2fc94c06d4ef67baf234abd0a9cf951f09fd0903fada803d76c9d536"
+    },
+    {
+      "id": "PU-SYNC-graph",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Front-End/public-site/docs/quality/product-v2/PU-SYNC-graph-HANDOFF.md",
+      "sha256": "6825621615edb53f63d6b1376a0a0798b061ba5580471997a6dba4814e064ce7"
+    },
+    {
+      "id": "CA-01",
+      "repository": "PUBLIC",
+      "queue_status": "REVISE",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Front-End/public-site/docs/quality/concept-alignment-v2/CA-01-HANDOFF.md",
+      "sha256": "22b3efc2313e216ae40b7adcd65f5a76eb397e5530a4da23785e8fb2099daabc"
+    },
+    {
+      "id": "CA-02",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Front-End/public-site/docs/quality/concept-alignment-v2/CA-02-HANDOFF.md",
+      "sha256": "33f654d8b7a9f8f1418c78431b4f325806bba89e77ddee8762e787814d050623"
+    },
+    {
+      "id": "CA-03",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Front-End/public-site/docs/quality/concept-alignment-v2/CA-03-HANDOFF.md",
+      "sha256": "35aef78da691472358bd8e6bb1911a347f0e6b6c050a5cc109feaa451db007f6"
+    },
+    {
+      "id": "CA-04",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Front-End/public-site/docs/quality/concept-alignment-v2/CA-04-HANDOFF.md",
+      "sha256": "b730e91bc203231bc81b59e109d83e7c48168e18034d95a8c55265a6d67afc82"
+    },
+    {
+      "id": "CA-05",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Front-End/public-site/docs/quality/concept-alignment-v2/CA-05-HANDOFF.md",
+      "sha256": "210e1ca1d3ec1e2dc5714978135af02686da1720a68b75be4afd8a95eab4a9cc"
+    },
+    {
+      "id": "CA-06",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Front-End/public-site/docs/quality/concept-alignment-v2/CA-06-HANDOFF.md",
+      "sha256": "1c889519c0f500a8ba349f7e3fe38630ddc4c2419c367c9554dc14929d929a63"
+    },
+    {
+      "id": "CA-07",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Front-End/public-site/docs/quality/concept-alignment-v2/CA-07-HANDOFF.md",
+      "sha256": "4e68c372d0920a5fa122d64e14a060c07518da16050f874c1f21a298f5811cab"
+    },
+    {
+      "id": "CA-08",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "PRESENT_REQUIRES_REVIEW",
+      "handoff": "Front-End/public-site/docs/quality/concept-alignment-v2/CA-08-HANDOFF.md",
+      "sha256": "2b39a8aa6e78b1cc0583d85b1c812a108fa570c3b6bda8912eeb4c7e11e612ff"
+    },
+    {
+      "id": "PU-SYNC-public",
+      "repository": "PUBLIC",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "BLOCKED",
+      "handoff": "Front-End/public-site/docs/quality/product-v2/PU-SYNC-public-HANDOFF.md",
+      "sha256": "5e816a59e4693e1be069523b6ff7117c6fa650dba6c9778ebfcfb00d34fb0c7e"
+    },
+    {
+      "id": "PU-SYNC-admin",
+      "repository": "ADMIN",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "BLOCKED",
+      "handoff": "Front-End/admin-panel/docs/quality/product-v2/PU-SYNC-admin-HANDOFF.md",
+      "sha256": "3720b564c922bf108364617613dc8c32ad4e0233dcef73e6961f36e8181b115b"
+    },
+    {
+      "id": "PU-09-transport",
+      "repository": "ADMIN",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "BLOCKED",
+      "handoff": "Front-End/admin-panel/docs/quality/product-v2/PU-09-transport-HANDOFF.md",
+      "sha256": "9d81d345c5cfff198665d2add76e39483fa589bbdbd710d3d092a7a64cd9aa96"
+    },
+    {
+      "id": "PU-09-editor",
+      "repository": "ADMIN",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "BLOCKED",
+      "handoff": "Front-End/admin-panel/docs/quality/product-v2/PU-09-editor-HANDOFF.md",
+      "sha256": "d80e20e85cb0bdd324bea79a42c18d5a29efe752a779130e2e0b9fd575038bdc"
+    },
+    {
+      "id": "PU-09-host",
+      "repository": "ADMIN",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "BLOCKED",
+      "handoff": "Front-End/admin-panel/docs/quality/product-v2/PU-09-host-HANDOFF.md",
+      "sha256": "bf18ebc49482396770884e6a6ee7b608453b8f3fbd70fec2d158240bb26c3fa3"
+    },
+    {
+      "id": "PU-10-research",
+      "repository": "ADMIN",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "BLOCKED",
+      "handoff": "Front-End/admin-panel/docs/quality/product-v2/PU-10-research-HANDOFF.md",
+      "sha256": "208089d6294bd305b066deba2ce8e712d042e89cefd342bdb424e7e5a86b8e4b"
+    },
+    {
+      "id": "PU-10-publication",
+      "repository": "ADMIN",
+      "queue_status": "NOT_STARTED",
+      "handoff_claim": "BLOCKED",
+      "handoff": "Front-End/admin-panel/docs/quality/product-v2/PU-10-publication-HANDOFF.md",
+      "sha256": "c50f8220f66c6a304e758319357b4a80e3d4a565a30dbe8f3e36b1f98888e946"
+    }
+  ]
+}

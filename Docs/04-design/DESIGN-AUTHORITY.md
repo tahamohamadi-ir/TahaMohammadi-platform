@@ -1,6 +1,12 @@
 # Design Authority
 
+<!-- PRODUCT-V2.1 -->
+Active V2.1 override: Home uses the graph inside the hero; portal geometry belongs only to `/`. Historical `portal-orbit-*` Home roles and graph backplates below are retained asset history, not required runtime composition. New independent page families follow PRODUCT-SPEC and share the story renderer; tracked concepts guide appearance only. ADR-0008/0010 and EXECUTION.md supersede conflicting old freeze/motion/placement assumptions. Do not rewrite pinned binary hashes or factual source content.
+<!-- /PRODUCT-V2.1 -->
+
 ## Binding target
+
+For the current public visual recovery, apply [ADR-0008](../09-decisions/ADR-0008-HOME-GRAPH-HERO-AND-PROCEDURAL-MOTION.md) and [V2 design specification](../05-delivery/concept-alignment-v2/DESIGN-SPEC.md) as an explicit overlay on the tracked reference. Home's separate portal/graph composition and historical disabled-3D settings are superseded for assigned CA-* packets. The reference bytes stay pinned; palette, fonts, content and release guarantees remain. No Figma output is required to dispatch these packets.
 
 The new public and admin frontends are built from scratch. The sole tracked visual reference is `Docs/references/frontend-design-authority/`.
 

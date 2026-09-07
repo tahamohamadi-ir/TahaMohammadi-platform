@@ -1,5 +1,9 @@
 # Route Registry
 
+<!-- PRODUCT-V2.1 -->
+The table below records baseline canonical families. Target additions and collision rules are finalized in PRODUCT-INTERFACES-V2 §I02; old "not scaffolded/gate open" status text is historical, not a new inspection result. Runtime coverage is recorded in V2.1 COVERAGE.md.
+<!-- /PRODUCT-V2.1 -->
+
 ## Rule
 
 Locale is part of every public route. The root `/` is a language gateway. Each published page must set `lang`, `dir`, canonical URL, and alternates from this one registry. Detail slugs come only from accepted backend projections; no frontend fallback slug is permitted.
@@ -24,6 +28,14 @@ Locale is part of every public route. The root `/` is a language gateway. Each p
 `{locale}` is exactly `fa` or `en`. The legacy `/writing/**`, `/teaching/**`, and `/creative/**` families are redirect-only to the equivalent `/blog/**`, `/education/**`, and `/gallery/**` paths. No other redirect is assumed.
 
 ## Alternate and fallback rules
+
+### Finalized target route additions — implementation pending
+
+The exact route/source table and collision rules are in [PRODUCT-INTERFACES-V2 §I02](../03-contracts/PRODUCT-INTERFACES-V2.md). Target families: `/{locale}/books/`, `talks/`, `resources/`, `collections/` with `/{slug}/` detail; `/{locale}/blog/series/{slug}/`; `/{locale}/education/{courseSlug}/lessons/{lessonSlug}/`; `/{locale}/research/statements/{slug}/`. Each abbreviated family has the locale prefix. Existing canonical table above remains compatibility evidence; its old rollout statuses are not current verification.
+
+Reserve series/statements route segments for new conflicting slugs. Migrate any existing conflict with a recorded redirect map; no silent rename. PU-02 contract design is complete; runtime support is pending the named leaf packets.
+
+### Existing alternate behavior
 
 - Render an alternate link only when the equivalent record is published in the alternate locale.
 - If a record exists but is not published in the requested locale, show the distinct `untranslated` state; do not silently substitute the other locale.

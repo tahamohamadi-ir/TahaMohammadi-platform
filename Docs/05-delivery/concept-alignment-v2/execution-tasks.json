@@ -1,0 +1,3644 @@
+{
+  "version": "2.1.0",
+  "date": "2026-09-05",
+  "runtime_implemented": false,
+  "authority": "ADR-0010",
+  "tasks": [
+    {
+      "id": "PU-01",
+      "parent": "PU-01",
+      "repository": "ROOT",
+      "status": "DOC_COMPLETE",
+      "active": true,
+      "depends_on": [],
+      "goal": "Record actual 15-family API/model/editor/route coverage and evidence hashes.",
+      "contract_section": "I01",
+      "family": "shared",
+      "allowlist": [
+        "Docs/05-delivery/concept-alignment-v2/COVERAGE.md",
+        "Docs/05-delivery/concept-alignment-v2/SOURCE-INVENTORY.json",
+        "Docs/10-tracking/product-v2/PU-01-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "Docs/05-delivery/concept-alignment-v2/COVERAGE.md",
+        "Docs/10-tracking/product-v2/PU-01-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "All 15 F IDs covered; existing versus missing interfaces tied to real source paths."
+      ],
+      "packet": "product-packets/PU-01.md",
+      "stop_marker": "PU-01_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "Docs/10-tracking/product-v2/PU-01-HANDOFF.md"
+    },
+    {
+      "id": "PU-02",
+      "parent": "PU-02",
+      "repository": "ROOT",
+      "status": "DOC_COMPLETE",
+      "active": true,
+      "depends_on": [
+        "PU-01"
+      ],
+      "goal": "Finalize target routes, schema deltas, publication and compatibility contracts.",
+      "contract_section": "I02",
+      "family": "shared",
+      "allowlist": [
+        "Docs/03-contracts/PRODUCT-INTERFACES-V2.md",
+        "Docs/02-architecture/ROUTE-REGISTRY.md",
+        "Docs/09-decisions/ADR-0010-UNIFIED-EXECUTION-CONTRACTS.md",
+        "Docs/10-tracking/product-v2/PU-02-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "Docs/10-tracking/product-v2/PU-02-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "Target routes/fields are explicit; no handwritten change to current OpenAPI."
+      ],
+      "packet": "product-packets/PU-02.md",
+      "stop_marker": "PU-02_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "Docs/10-tracking/product-v2/PU-02-HANDOFF.md"
+    },
+    {
+      "id": "PU-19",
+      "parent": "PU-19",
+      "repository": "ROOT",
+      "status": "DOC_COMPLETE",
+      "active": true,
+      "depends_on": [
+        "PU-01"
+      ],
+      "goal": "Select first-party aggregate analytics and event definitions.",
+      "contract_section": "I07",
+      "family": "shared",
+      "allowlist": [
+        "Docs/03-contracts/PRODUCT-INTERFACES-V2.md",
+        "Docs/10-tracking/product-v2/PU-19-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "Docs/10-tracking/product-v2/PU-19-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "Provider, events, retention, access and metric limitations defined."
+      ],
+      "packet": "product-packets/PU-19.md",
+      "stop_marker": "PU-19_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "Docs/10-tracking/product-v2/PU-19-HANDOFF.md"
+    },
+    {
+      "id": "PU-03-resolver",
+      "parent": "PU-03",
+      "repository": "BACKEND",
+      "status": "ACCEPTED_LOCAL",
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "active": true,
+      "depends_on": [
+        "PU-02"
+      ],
+      "goal": "Resolve published graph record IDs to canonical record descriptors without private-record enumeration.",
+      "contract_section": "I04",
+      "family": "F02/F03",
+      "allowlist": [
+        "apps/api/api.py",
+        "apps/api/record_resolver.py",
+        "tests/test_product_record_resolver.py",
+        "docs/contracts/openapi/current/public-openapi.json",
+        "docs/contracts/openapi/current/admin-openapi.json",
+        "docs/contracts/openapi/current/ACCEPTANCE.json",
+        "docs/contracts/openapi/current/endpoint-inventory.md",
+        "docs/quality/product-v2/PU-03-resolver-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "apps/api/record_resolver.py",
+        "tests/test_product_record_resolver.py",
+        "docs/quality/product-v2/PU-03-resolver-HANDOFF.md"
+      ],
+      "read_paths": [
+        "apps/api/admin_common.py",
+        "apps/api/api.py"
+      ],
+      "acceptance": [
+        "uv run pytest tests/test_product_record_resolver.py",
+        "uv run ruff check .",
+        "Source-export both APIs with scripts/export_openapi.py; validate schemas and record hashes.",
+        "For model changes: migrate a disposable database forward/backward, preserve source records and test draft/locale exclusion."
+      ],
+      "packet": "product-packets/PU-03-resolver.md",
+      "stop_marker": "PU-03-resolver_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-03-resolver-HANDOFF.md",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "handoff_state": "accepted-local-uncommitted"
+    },
+    {
+      "id": "PU-03-settings",
+      "parent": "PU-03",
+      "repository": "BACKEND",
+      "status": "ACCEPTED_LOCAL",
+      "active": true,
+      "depends_on": [
+        "PU-02",
+        "PU-03-resolver"
+      ],
+      "goal": "Add localized draft/published site settings alongside the legacy operational settings.",
+      "contract_section": "I04",
+      "family": "F01/F02",
+      "allowlist": [
+        "apps/siteconfig/models.py",
+        "apps/siteconfig/migrations/0005_localized_product_settings.py",
+        "apps/api/api.py",
+        "apps/api/admin_api.py",
+        "apps/api/admin_siteconfig.py",
+        "tests/test_product_localized_settings.py",
+        "docs/contracts/openapi/current/public-openapi.json",
+        "docs/contracts/openapi/current/admin-openapi.json",
+        "docs/contracts/openapi/current/endpoint-inventory.md",
+        "docs/quality/product-v2/PU-03-settings-HANDOFF.md",
+        "docs/contracts/openapi/current/ACCEPTANCE.json",
+        "scripts/verify_openapi_export.py"
+      ],
+      "proposed_new_files": [
+        "apps/siteconfig/migrations/0005_localized_product_settings.py",
+        "tests/test_product_localized_settings.py",
+        "docs/quality/product-v2/PU-03-settings-HANDOFF.md",
+        "docs/contracts/openapi/current/ACCEPTANCE.json"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "uv run pytest tests/test_product_localized_settings.py",
+        "uv run ruff check .",
+        "Source-export both APIs with scripts/export_openapi.py; validate schemas and record hashes.",
+        "For model changes: migrate a disposable database forward/backward, preserve source records and test draft/locale exclusion."
+      ],
+      "packet": "product-packets/PU-03-settings.md",
+      "stop_marker": "PU-03-settings_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-03-resolver"
+      ],
+      "handoff": "docs/quality/product-v2/PU-03-settings-HANDOFF.md",
+      "review_note": "reviews/ACCEPTANCE-VERIFICATION-2026-09-06.md",
+      "handoff_state": "accepted-local-uncommitted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-04-catalog",
+      "parent": "PU-04",
+      "repository": "BACKEND",
+      "status": "REVISE",
+      "active": true,
+      "depends_on": [
+        "PU-02",
+        "PU-03-settings"
+      ],
+      "goal": "Add typed code/table/file/reference/related blocks to the existing story catalog; preserve existing media/math.",
+      "contract_section": "I03",
+      "family": "shared",
+      "allowlist": [
+        "apps/composition/blocks.py",
+        "apps/composition/projection.py",
+        "apps/api/admin_composition.py",
+        "tests/test_product_story_blocks.py",
+        "docs/contracts/openapi/current/public-openapi.json",
+        "docs/contracts/openapi/current/admin-openapi.json",
+        "docs/contracts/openapi/current/PROVENANCE.json",
+        "docs/contracts/openapi/current/endpoint-inventory.md",
+        "docs/quality/product-v2/PU-04-catalog-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "tests/test_product_story_blocks.py",
+        "docs/quality/product-v2/PU-04-catalog-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "uv run pytest tests/test_product_story_blocks.py",
+        "uv run ruff check .",
+        "Source-export both APIs with scripts/export_openapi.py; validate schemas and record hashes.",
+        "For model changes: migrate a disposable database forward/backward, preserve source records and test draft/locale exclusion."
+      ],
+      "packet": "product-packets/PU-04-catalog.md",
+      "stop_marker": "PU-04-catalog_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-03-settings"
+      ],
+      "handoff": "docs/quality/product-v2/PU-04-catalog-HANDOFF.md",
+      "review_note": "reviews/CATALOG-GRAPH-REVIEW-2026-09-06.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/CATALOG-GRAPH-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-04-metadata",
+      "parent": "PU-04",
+      "repository": "BACKEND",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "active": true,
+      "depends_on": [
+        "PU-04-catalog",
+        "PU-03-settings"
+      ],
+      "goal": "Add shared SEO, explicit translation identity and related-record metadata with additive migration.",
+      "contract_section": "I03",
+      "family": "shared",
+      "allowlist": [
+        "apps/content/models.py",
+        "apps/content/migrations/0021_pu_content_metadata.py",
+        "apps/api/api.py",
+        "apps/api/admin_content.py",
+        "tests/test_product_metadata.py",
+        "docs/contracts/openapi/current/public-openapi.json",
+        "docs/contracts/openapi/current/admin-openapi.json",
+        "docs/contracts/openapi/current/PROVENANCE.json",
+        "docs/contracts/openapi/current/endpoint-inventory.md",
+        "docs/quality/product-v2/PU-04-metadata-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "apps/content/migrations/0021_pu_content_metadata.py",
+        "tests/test_product_metadata.py",
+        "docs/quality/product-v2/PU-04-metadata-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "uv run pytest tests/test_product_metadata.py",
+        "uv run ruff check .",
+        "Source-export both APIs with scripts/export_openapi.py; validate schemas and record hashes.",
+        "For model changes: migrate a disposable database forward/backward, preserve source records and test draft/locale exclusion."
+      ],
+      "packet": "product-packets/PU-04-metadata.md",
+      "stop_marker": "PU-04-metadata_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-03-settings"
+      ],
+      "handoff": "docs/quality/product-v2/PU-04-metadata-HANDOFF.md",
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-04-publication",
+      "parent": "PU-04",
+      "repository": "BACKEND",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "active": true,
+      "depends_on": [
+        "PU-04-metadata"
+      ],
+      "goal": "Attach nullable localized story to publication, validate admin storyId and expose sanitized public detail.",
+      "contract_section": "I03",
+      "family": "F04",
+      "allowlist": [
+        "apps/content/models.py",
+        "apps/content/migrations/0022_pu_publication_story.py",
+        "apps/api/api.py",
+        "apps/api/admin_content.py",
+        "tests/test_product_publication_story.py",
+        "docs/contracts/openapi/current/public-openapi.json",
+        "docs/contracts/openapi/current/admin-openapi.json",
+        "docs/contracts/openapi/current/PROVENANCE.json",
+        "docs/contracts/openapi/current/endpoint-inventory.md",
+        "docs/quality/product-v2/PU-04-publication-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "apps/content/migrations/0022_pu_publication_story.py",
+        "tests/test_product_publication_story.py",
+        "docs/quality/product-v2/PU-04-publication-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "uv run pytest tests/test_product_publication_story.py",
+        "uv run ruff check .",
+        "Source-export both APIs with scripts/export_openapi.py; validate schemas and record hashes.",
+        "For model changes: migrate a disposable database forward/backward, preserve source records and test draft/locale exclusion."
+      ],
+      "packet": "product-packets/PU-04-publication.md",
+      "stop_marker": "PU-04-publication_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-04-publication-HANDOFF.md",
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-04-course",
+      "parent": "PU-04",
+      "repository": "BACKEND",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "active": true,
+      "depends_on": [
+        "PU-04-metadata",
+        "PU-04-publication"
+      ],
+      "goal": "Attach nullable localized story to course, validate admin storyId and expose sanitized public detail.",
+      "contract_section": "I03",
+      "family": "F07",
+      "allowlist": [
+        "apps/content/models.py",
+        "apps/content/migrations/0023_pu_course_story.py",
+        "apps/api/api.py",
+        "apps/api/admin_content.py",
+        "tests/test_product_course_story.py",
+        "docs/contracts/openapi/current/public-openapi.json",
+        "docs/contracts/openapi/current/admin-openapi.json",
+        "docs/contracts/openapi/current/PROVENANCE.json",
+        "docs/contracts/openapi/current/endpoint-inventory.md",
+        "docs/quality/product-v2/PU-04-course-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "apps/content/migrations/0023_pu_course_story.py",
+        "tests/test_product_course_story.py",
+        "docs/quality/product-v2/PU-04-course-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "uv run pytest tests/test_product_course_story.py",
+        "uv run ruff check .",
+        "Source-export both APIs with scripts/export_openapi.py; validate schemas and record hashes.",
+        "For model changes: migrate a disposable database forward/backward, preserve source records and test draft/locale exclusion."
+      ],
+      "packet": "product-packets/PU-04-course.md",
+      "stop_marker": "PU-04-course_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-04-publication"
+      ],
+      "handoff": "docs/quality/product-v2/PU-04-course-HANDOFF.md",
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-04-creative",
+      "parent": "PU-04",
+      "repository": "BACKEND",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "active": true,
+      "depends_on": [
+        "PU-04-metadata",
+        "PU-04-course"
+      ],
+      "goal": "Attach nullable localized story to creative-work, validate admin storyId and expose sanitized public detail.",
+      "contract_section": "I03",
+      "family": "F08",
+      "allowlist": [
+        "apps/content/models.py",
+        "apps/content/migrations/0024_pu_creative_story.py",
+        "apps/api/api.py",
+        "apps/api/admin_content.py",
+        "tests/test_product_creative_story.py",
+        "docs/contracts/openapi/current/public-openapi.json",
+        "docs/contracts/openapi/current/admin-openapi.json",
+        "docs/contracts/openapi/current/PROVENANCE.json",
+        "docs/contracts/openapi/current/endpoint-inventory.md",
+        "docs/quality/product-v2/PU-04-creative-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "apps/content/migrations/0024_pu_creative_story.py",
+        "tests/test_product_creative_story.py",
+        "docs/quality/product-v2/PU-04-creative-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "uv run pytest tests/test_product_creative_story.py",
+        "uv run ruff check .",
+        "Source-export both APIs with scripts/export_openapi.py; validate schemas and record hashes.",
+        "For model changes: migrate a disposable database forward/backward, preserve source records and test draft/locale exclusion."
+      ],
+      "packet": "product-packets/PU-04-creative.md",
+      "stop_marker": "PU-04-creative_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-04-course"
+      ],
+      "handoff": "docs/quality/product-v2/PU-04-creative-HANDOFF.md",
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-05-lessons",
+      "parent": "PU-05",
+      "repository": "BACKEND",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "active": true,
+      "depends_on": [
+        "PU-04-metadata",
+        "PU-04-course",
+        "PU-04-creative"
+      ],
+      "goal": "Add independent course lessons with stable localized slugs, publication guards and ordered neighbors.",
+      "contract_section": "I05",
+      "family": "F07",
+      "allowlist": [
+        "apps/content/models.py",
+        "apps/content/migrations/0025_pu_lessons.py",
+        "apps/api/api.py",
+        "apps/api/admin_content.py",
+        "tests/test_product_lessons.py",
+        "docs/contracts/openapi/current/public-openapi.json",
+        "docs/contracts/openapi/current/admin-openapi.json",
+        "docs/contracts/openapi/current/PROVENANCE.json",
+        "docs/contracts/openapi/current/endpoint-inventory.md",
+        "docs/quality/product-v2/PU-05-lessons-HANDOFF.md",
+        "apps/api/admin_common.py"
+      ],
+      "proposed_new_files": [
+        "apps/content/migrations/0025_pu_lessons.py",
+        "tests/test_product_lessons.py",
+        "docs/quality/product-v2/PU-05-lessons-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "uv run pytest tests/test_product_lessons.py",
+        "uv run ruff check .",
+        "Source-export both APIs with scripts/export_openapi.py; validate schemas and record hashes.",
+        "For model changes: migrate a disposable database forward/backward, preserve source records and test draft/locale exclusion."
+      ],
+      "packet": "product-packets/PU-05-lessons.md",
+      "stop_marker": "PU-05-lessons_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-04-creative"
+      ],
+      "handoff": "docs/quality/product-v2/PU-05-lessons-HANDOFF.md",
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-06-book",
+      "parent": "PU-06",
+      "repository": "BACKEND",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "active": true,
+      "depends_on": [
+        "PU-04-metadata",
+        "PU-05-lessons"
+      ],
+      "goal": "Extend existing book detail and generic editor map with story/metadata; reuse current list/detail endpoints. ",
+      "contract_section": "I01/I03",
+      "family": "F09",
+      "allowlist": [
+        "apps/content/models.py",
+        "apps/content/migrations/0026_pu_book_story.py",
+        "apps/api/api.py",
+        "apps/api/admin_content.py",
+        "tests/test_product_book.py",
+        "docs/contracts/openapi/current/public-openapi.json",
+        "docs/contracts/openapi/current/admin-openapi.json",
+        "docs/contracts/openapi/current/PROVENANCE.json",
+        "docs/contracts/openapi/current/endpoint-inventory.md",
+        "docs/quality/product-v2/PU-06-book-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "apps/content/migrations/0026_pu_book_story.py",
+        "tests/test_product_book.py",
+        "docs/quality/product-v2/PU-06-book-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "uv run pytest tests/test_product_book.py",
+        "uv run ruff check .",
+        "Source-export both APIs with scripts/export_openapi.py; validate schemas and record hashes.",
+        "For model changes: migrate a disposable database forward/backward, preserve source records and test draft/locale exclusion."
+      ],
+      "packet": "product-packets/PU-06-book.md",
+      "stop_marker": "PU-06-book_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-05-lessons"
+      ],
+      "handoff": "docs/quality/product-v2/PU-06-book-HANDOFF.md",
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-06-talk",
+      "parent": "PU-06",
+      "repository": "BACKEND",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "active": true,
+      "depends_on": [
+        "PU-04-metadata",
+        "PU-06-book"
+      ],
+      "goal": "Extend existing talk detail and generic editor map with story/metadata; reuse current list/detail endpoints. ",
+      "contract_section": "I01/I03",
+      "family": "F10",
+      "allowlist": [
+        "apps/content/models.py",
+        "apps/content/migrations/0027_pu_talk_story.py",
+        "apps/api/api.py",
+        "apps/api/admin_content.py",
+        "tests/test_product_talk.py",
+        "docs/contracts/openapi/current/public-openapi.json",
+        "docs/contracts/openapi/current/admin-openapi.json",
+        "docs/contracts/openapi/current/PROVENANCE.json",
+        "docs/contracts/openapi/current/endpoint-inventory.md",
+        "docs/quality/product-v2/PU-06-talk-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "apps/content/migrations/0027_pu_talk_story.py",
+        "tests/test_product_talk.py",
+        "docs/quality/product-v2/PU-06-talk-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "uv run pytest tests/test_product_talk.py",
+        "uv run ruff check .",
+        "Source-export both APIs with scripts/export_openapi.py; validate schemas and record hashes.",
+        "For model changes: migrate a disposable database forward/backward, preserve source records and test draft/locale exclusion."
+      ],
+      "packet": "product-packets/PU-06-talk.md",
+      "stop_marker": "PU-06-talk_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-06-book"
+      ],
+      "handoff": "docs/quality/product-v2/PU-06-talk-HANDOFF.md",
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-06-resource",
+      "parent": "PU-06",
+      "repository": "BACKEND",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "active": true,
+      "depends_on": [
+        "PU-04-metadata",
+        "PU-06-talk"
+      ],
+      "goal": "Extend existing download detail and generic editor map with story/metadata; reuse current list/detail endpoints. Preserve versioned file replacement history and gated download behavior.",
+      "contract_section": "I01/I03",
+      "family": "F11",
+      "allowlist": [
+        "apps/content/models.py",
+        "apps/content/migrations/0028_pu_resource_story.py",
+        "apps/api/api.py",
+        "apps/api/admin_content.py",
+        "apps/api/admin_media_ext.py",
+        "tests/test_product_resource.py",
+        "docs/contracts/openapi/current/public-openapi.json",
+        "docs/contracts/openapi/current/admin-openapi.json",
+        "docs/contracts/openapi/current/PROVENANCE.json",
+        "docs/contracts/openapi/current/endpoint-inventory.md",
+        "docs/quality/product-v2/PU-06-resource-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "apps/content/migrations/0028_pu_resource_story.py",
+        "tests/test_product_resource.py",
+        "docs/quality/product-v2/PU-06-resource-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "uv run pytest tests/test_product_resource.py",
+        "uv run ruff check .",
+        "Source-export both APIs with scripts/export_openapi.py; validate schemas and record hashes.",
+        "For model changes: migrate a disposable database forward/backward, preserve source records and test draft/locale exclusion."
+      ],
+      "packet": "product-packets/PU-06-resource.md",
+      "stop_marker": "PU-06-resource_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-06-talk"
+      ],
+      "handoff": "docs/quality/product-v2/PU-06-resource-HANDOFF.md",
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-06-collection",
+      "parent": "PU-06",
+      "repository": "BACKEND",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "active": true,
+      "depends_on": [
+        "PU-04-metadata",
+        "PU-06-resource",
+        "PU-05-lessons"
+      ],
+      "goal": "Expose collection detail and ordered public membership, extending existing model and generic admin registration.",
+      "contract_section": "I05",
+      "family": "F12",
+      "allowlist": [
+        "apps/content/models.py",
+        "apps/content/migrations/0029_pu_collection_members.py",
+        "apps/api/api.py",
+        "apps/api/admin_content.py",
+        "tests/test_product_collection.py",
+        "docs/contracts/openapi/current/public-openapi.json",
+        "docs/contracts/openapi/current/admin-openapi.json",
+        "docs/contracts/openapi/current/PROVENANCE.json",
+        "docs/contracts/openapi/current/endpoint-inventory.md",
+        "docs/quality/product-v2/PU-06-collection-HANDOFF.md",
+        "apps/api/admin_common.py"
+      ],
+      "proposed_new_files": [
+        "apps/content/migrations/0029_pu_collection_members.py",
+        "tests/test_product_collection.py",
+        "docs/quality/product-v2/PU-06-collection-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "uv run pytest tests/test_product_collection.py",
+        "uv run ruff check .",
+        "Source-export both APIs with scripts/export_openapi.py; validate schemas and record hashes.",
+        "For model changes: migrate a disposable database forward/backward, preserve source records and test draft/locale exclusion."
+      ],
+      "packet": "product-packets/PU-06-collection.md",
+      "stop_marker": "PU-06-collection_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-06-resource",
+        "PU-05-lessons"
+      ],
+      "handoff": "docs/quality/product-v2/PU-06-collection-HANDOFF.md",
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-06-series",
+      "parent": "PU-06",
+      "repository": "BACKEND",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "active": true,
+      "depends_on": [
+        "PU-04-metadata",
+        "PU-06-collection"
+      ],
+      "goal": "Expose series detail and ordered public membership, extending existing model and generic admin registration.",
+      "contract_section": "I05",
+      "family": "F12",
+      "allowlist": [
+        "apps/content/models.py",
+        "apps/content/migrations/0030_pu_series_members.py",
+        "apps/api/api.py",
+        "apps/api/admin_content.py",
+        "tests/test_product_series.py",
+        "docs/contracts/openapi/current/public-openapi.json",
+        "docs/contracts/openapi/current/admin-openapi.json",
+        "docs/contracts/openapi/current/PROVENANCE.json",
+        "docs/contracts/openapi/current/endpoint-inventory.md",
+        "docs/quality/product-v2/PU-06-series-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "apps/content/migrations/0030_pu_series_members.py",
+        "tests/test_product_series.py",
+        "docs/quality/product-v2/PU-06-series-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "uv run pytest tests/test_product_series.py",
+        "uv run ruff check .",
+        "Source-export both APIs with scripts/export_openapi.py; validate schemas and record hashes.",
+        "For model changes: migrate a disposable database forward/backward, preserve source records and test draft/locale exclusion."
+      ],
+      "packet": "product-packets/PU-06-series.md",
+      "stop_marker": "PU-06-series_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-06-collection"
+      ],
+      "handoff": "docs/quality/product-v2/PU-06-series-HANDOFF.md",
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-04-project-evidence",
+      "parent": "PU-04",
+      "repository": "BACKEND",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "active": true,
+      "depends_on": [
+        "PU-04-metadata",
+        "PU-06-series",
+        "PU-03-settings"
+      ],
+      "goal": "Expose atomic admin editing of existing project case-study, evidence, collaborators and funding with parent If-Match; preserve public visibility.",
+      "contract_section": "I03",
+      "family": "F05",
+      "allowlist": [
+        "apps/api/admin_content.py",
+        "apps/api/admin_project_evidence.py",
+        "apps/api/admin_api.py",
+        "apps/content/models.py",
+        "tests/test_product_project_evidence.py",
+        "docs/contracts/openapi/current/public-openapi.json",
+        "docs/contracts/openapi/current/admin-openapi.json",
+        "docs/contracts/openapi/current/PROVENANCE.json",
+        "docs/contracts/openapi/current/endpoint-inventory.md",
+        "docs/quality/product-v2/PU-04-project-evidence-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "apps/api/admin_project_evidence.py",
+        "tests/test_product_project_evidence.py",
+        "docs/quality/product-v2/PU-04-project-evidence-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "uv run pytest tests/test_product_project_evidence.py",
+        "uv run ruff check .",
+        "Source-export both APIs with scripts/export_openapi.py; validate schemas and record hashes.",
+        "For model changes: migrate a disposable database forward/backward, preserve source records and test draft/locale exclusion."
+      ],
+      "packet": "product-packets/PU-04-project-evidence.md",
+      "stop_marker": "PU-04-project-evidence_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-06-series",
+        "PU-03-settings"
+      ],
+      "handoff": "docs/quality/product-v2/PU-04-project-evidence-HANDOFF.md",
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-07-revisions",
+      "parent": "PU-07",
+      "repository": "BACKEND",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "review_note": "reviews/EXECUTION-REVIEW-2026-09-06-PU04.md",
+      "active": true,
+      "depends_on": [
+        "PU-04-catalog",
+        "PU-04-metadata",
+        "PU-04-publication",
+        "PU-04-course",
+        "PU-04-creative",
+        "PU-05-lessons",
+        "PU-06-book",
+        "PU-06-talk",
+        "PU-06-resource",
+        "PU-06-collection",
+        "PU-06-series",
+        "PU-04-project-evidence"
+      ],
+      "goal": "Snapshot and restore content, attached story and ordered relations atomically; preserve history and published snapshot.",
+      "contract_section": "I03",
+      "family": "shared",
+      "allowlist": [
+        "apps/content/models.py",
+        "apps/content/migrations/0031_pu_publication_snapshots.py",
+        "apps/api/admin_content.py",
+        "apps/api/admin_composition.py",
+        "apps/composition/projection.py",
+        "tests/test_product_revision_snapshot.py",
+        "docs/contracts/openapi/current/public-openapi.json",
+        "docs/contracts/openapi/current/admin-openapi.json",
+        "docs/contracts/openapi/current/PROVENANCE.json",
+        "docs/contracts/openapi/current/endpoint-inventory.md",
+        "docs/quality/product-v2/PU-07-revisions-HANDOFF.md",
+        "apps/content/published.py",
+        "tests/test_product_draft_published_isolation.py",
+        "apps/api/api.py"
+      ],
+      "proposed_new_files": [
+        "apps/content/migrations/0031_pu_publication_snapshots.py",
+        "tests/test_product_revision_snapshot.py",
+        "docs/quality/product-v2/PU-07-revisions-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "uv run pytest tests/test_product_revision_snapshot.py",
+        "uv run ruff check .",
+        "Source-export both APIs with scripts/export_openapi.py; validate schemas and record hashes.",
+        "For model changes: migrate a disposable database forward/backward, preserve source records and test draft/locale exclusion."
+      ],
+      "packet": "product-packets/PU-07-revisions.md",
+      "stop_marker": "PU-07-revisions_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-07-revisions-HANDOFF.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-07-preview",
+      "parent": "PU-07",
+      "repository": "BACKEND",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "active": true,
+      "depends_on": [
+        "PU-07-revisions"
+      ],
+      "goal": "Extend existing expiring private preview to every publishable entity and its private attachments.",
+      "contract_section": "I03",
+      "family": "shared",
+      "allowlist": [
+        "apps/api/admin_content.py",
+        "apps/content/views_preview.py",
+        "apps/content/urls_public_preview.py",
+        "apps/content/preview_token.py",
+        "apps/content/templates/content/staff_preview.html",
+        "tests/test_product_preview.py",
+        "docs/contracts/openapi/current/public-openapi.json",
+        "docs/contracts/openapi/current/admin-openapi.json",
+        "docs/contracts/openapi/current/PROVENANCE.json",
+        "docs/contracts/openapi/current/endpoint-inventory.md",
+        "docs/quality/product-v2/PU-07-preview-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "tests/test_product_preview.py",
+        "docs/quality/product-v2/PU-07-preview-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "uv run pytest tests/test_product_preview.py",
+        "uv run ruff check .",
+        "Source-export both APIs with scripts/export_openapi.py; validate schemas and record hashes.",
+        "For model changes: migrate a disposable database forward/backward, preserve source records and test draft/locale exclusion."
+      ],
+      "packet": "product-packets/PU-07-preview.md",
+      "stop_marker": "PU-07-preview_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-07-preview-HANDOFF.md",
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-07-jobs",
+      "parent": "PU-07",
+      "repository": "BACKEND",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "active": true,
+      "depends_on": [
+        "PU-07-revisions",
+        "PU-03-settings",
+        "PU-04-project-evidence",
+        "PU-07-preview"
+      ],
+      "goal": "Persist idempotent publication jobs and expose admin status/retry plus authenticated build-result callback.",
+      "contract_section": "I06",
+      "family": "shared",
+      "allowlist": [
+        "apps/rebuild/models.py",
+        "apps/rebuild/migrations/__init__.py",
+        "apps/rebuild/migrations/0001_publication_jobs.py",
+        "apps/rebuild/services.py",
+        "apps/rebuild/views.py",
+        "apps/api/admin_api.py",
+        "apps/api/admin_publication_jobs.py",
+        "config/urls.py",
+        "tests/test_product_publication_jobs.py",
+        "docs/contracts/openapi/current/public-openapi.json",
+        "docs/contracts/openapi/current/admin-openapi.json",
+        "docs/contracts/openapi/current/PROVENANCE.json",
+        "docs/contracts/openapi/current/endpoint-inventory.md",
+        "docs/quality/product-v2/PU-07-jobs-HANDOFF.md",
+        "config/settings/production.py",
+        "tests/test_product_publication_lifecycle_a03.py"
+      ],
+      "proposed_new_files": [
+        "apps/rebuild/models.py",
+        "apps/rebuild/migrations/__init__.py",
+        "apps/rebuild/migrations/0001_publication_jobs.py",
+        "apps/api/admin_publication_jobs.py",
+        "tests/test_product_publication_jobs.py",
+        "docs/quality/product-v2/PU-07-jobs-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "uv run pytest tests/test_product_publication_jobs.py",
+        "uv run ruff check .",
+        "Source-export both APIs with scripts/export_openapi.py; validate schemas and record hashes.",
+        "For model changes: migrate a disposable database forward/backward, preserve source records and test draft/locale exclusion."
+      ],
+      "packet": "product-packets/PU-07-jobs.md",
+      "stop_marker": "PU-07-jobs_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-04-project-evidence",
+        "PU-07-preview"
+      ],
+      "handoff": "docs/quality/product-v2/PU-07-jobs-HANDOFF.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-23-invalidation",
+      "parent": "PU-23",
+      "repository": "BACKEND",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "active": true,
+      "depends_on": [
+        "PU-07-jobs",
+        "PU-07-preview",
+        "PU-03-settings"
+      ],
+      "goal": "Enqueue all publish/archive/restore/schedule/graph/settings changes with affected paths and removal status; no backend search engine.",
+      "contract_section": "I06/I07",
+      "family": "shared",
+      "allowlist": [
+        "apps/rebuild/services.py",
+        "apps/content/services/lifecycle.py",
+        "apps/api/admin_content.py",
+        "apps/api/admin_graph.py",
+        "apps/api/admin_siteconfig.py",
+        "tests/test_product_publication_invalidation.py",
+        "docs/contracts/openapi/current/public-openapi.json",
+        "docs/contracts/openapi/current/admin-openapi.json",
+        "docs/contracts/openapi/current/PROVENANCE.json",
+        "docs/contracts/openapi/current/endpoint-inventory.md",
+        "docs/quality/product-v2/PU-23-invalidation-HANDOFF.md",
+        "apps/content/management/commands/publish_scheduled_content.py",
+        "apps/api/admin_home.py"
+      ],
+      "proposed_new_files": [
+        "tests/test_product_publication_invalidation.py",
+        "docs/quality/product-v2/PU-23-invalidation-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "uv run pytest tests/test_product_publication_invalidation.py",
+        "uv run ruff check .",
+        "Source-export both APIs with scripts/export_openapi.py; validate schemas and record hashes.",
+        "For model changes: migrate a disposable database forward/backward, preserve source records and test draft/locale exclusion."
+      ],
+      "packet": "product-packets/PU-23-invalidation.md",
+      "stop_marker": "PU-23-invalidation_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-07-preview",
+        "PU-03-settings"
+      ],
+      "handoff": "docs/quality/product-v2/PU-23-invalidation-HANDOFF.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-20-events",
+      "parent": "PU-20",
+      "repository": "BACKEND",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "active": true,
+      "depends_on": [
+        "PU-19",
+        "PU-06-series",
+        "PU-07-jobs",
+        "PU-23-invalidation"
+      ],
+      "goal": "Implement first-party aggregate analytics ingest/reporting and 13-month retention without visitor identifiers.",
+      "contract_section": "I07",
+      "family": "shared",
+      "allowlist": [
+        "apps/analytics/__init__.py",
+        "apps/analytics/apps.py",
+        "apps/analytics/models.py",
+        "apps/analytics/migrations/__init__.py",
+        "apps/analytics/migrations/0001_aggregate_events.py",
+        "apps/analytics/api.py",
+        "apps/analytics/management/__init__.py",
+        "apps/analytics/management/commands/__init__.py",
+        "apps/analytics/management/commands/prune_analytics.py",
+        "apps/api/api.py",
+        "apps/api/admin_api.py",
+        "config/settings/base.py",
+        "tests/test_product_analytics.py",
+        "docs/contracts/openapi/current/public-openapi.json",
+        "docs/contracts/openapi/current/admin-openapi.json",
+        "docs/contracts/openapi/current/PROVENANCE.json",
+        "docs/contracts/openapi/current/endpoint-inventory.md",
+        "docs/quality/product-v2/PU-20-events-HANDOFF.md",
+        "apps/rebuild/migrations/0002_publicationjob_revoked_paths.py",
+        "tests/fixtures/contracts/public/articles-detail.get.200.json",
+        "tests/fixtures/contracts/public/project-detail.get.200.json",
+        "tests/fixtures/contracts/public/publication-detail.get.200.json",
+        "tests/test_admin_content_write.py",
+        "tests/test_admin_revisions_schedule.py",
+        "tests/test_admin_workflow_api.py",
+        "tests/test_api.py",
+        "tests/test_content_lifecycle_e2e.py",
+        "tests/test_openapi_hash_drift.py"
+      ],
+      "proposed_new_files": [
+        "apps/analytics/__init__.py",
+        "apps/analytics/apps.py",
+        "apps/analytics/models.py",
+        "apps/analytics/migrations/__init__.py",
+        "apps/analytics/migrations/0001_aggregate_events.py",
+        "apps/analytics/api.py",
+        "apps/analytics/management/__init__.py",
+        "apps/analytics/management/commands/__init__.py",
+        "apps/analytics/management/commands/prune_analytics.py",
+        "tests/test_product_analytics.py",
+        "docs/quality/product-v2/PU-20-events-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "uv run pytest tests/test_product_analytics.py",
+        "uv run ruff check .",
+        "Source-export both APIs with scripts/export_openapi.py; validate schemas and record hashes.",
+        "For model changes: migrate a disposable database forward/backward, preserve source records and test draft/locale exclusion."
+      ],
+      "packet": "product-packets/PU-20-events.md",
+      "stop_marker": "PU-20-events_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-06-series",
+        "PU-07-jobs",
+        "PU-23-invalidation"
+      ],
+      "handoff": "docs/quality/product-v2/PU-20-events-HANDOFF.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-07-runner",
+      "parent": "PU-07",
+      "repository": "ROOT",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "review_note": "reviews/EXECUTION-REVIEW-2026-09-06-PU04.md",
+      "active": true,
+      "depends_on": [
+        "PU-07-jobs",
+        "PU-23-invalidation"
+      ],
+      "goal": "Implement atomic static rebuild, edge revocation manifest and authenticated job completion using standalone staging topology.",
+      "contract_section": "I06",
+      "family": "shared",
+      "allowlist": [
+        "Infra/staging/docker-compose.stage.yml",
+        "Infra/staging/Caddyfile.staging.fragment",
+        "Infra/staging/nginx-public.conf",
+        "Infra/staging/rebuild-product.py",
+        "Infra/staging/test_rebuild_product.py",
+        "Docs/08-operations/PRODUCT-PUBLISHING-RUNBOOK.md",
+        "Docs/10-tracking/product-v2/PU-07-runner-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "Infra/staging/rebuild-product.py",
+        "Infra/staging/test_rebuild_product.py",
+        "Docs/08-operations/PRODUCT-PUBLISHING-RUNBOOK.md",
+        "Docs/10-tracking/product-v2/PU-07-runner-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "python -m unittest discover -s Infra/staging -p test_rebuild_product.py",
+        "Exercise a local fake callback/build: duplicate requests, failure, atomic rollback, revoke-before-rebuild and index removal.",
+        "Validate Compose/Caddy/Nginx config against installed runtime without contacting production."
+      ],
+      "packet": "product-packets/PU-07-runner.md",
+      "stop_marker": "PU-07-runner_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "Docs/10-tracking/product-v2/PU-07-runner-HANDOFF.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-SYNC-graph",
+      "parent": "PU-SYNC",
+      "repository": "PUBLIC",
+      "status": "ACCEPTED_LOCAL",
+      "active": true,
+      "depends_on": [
+        "PU-03-resolver"
+      ],
+      "goal": "Generate public types and resolver fixture from the accepted resolver schema.",
+      "contract_section": "I04",
+      "family": "shared",
+      "allowlist": [
+        "src/generated/public-api.ts",
+        "tests/fixtures/contracts/product-record-resolver.json",
+        "src/lib/product-resolver.contract.test.ts",
+        "docs/quality/product-v2/PU-SYNC-graph-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "tests/fixtures/contracts/product-record-resolver.json",
+        "src/lib/product-resolver.contract.test.ts",
+        "docs/quality/product-v2/PU-SYNC-graph-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd run generate:api-types",
+        "npm.cmd test -- src/lib/product-resolver.contract.test.ts",
+        "Pin source OpenAPI SHA; fixture uses synthetic records only."
+      ],
+      "packet": "product-packets/PU-SYNC-graph.md",
+      "stop_marker": "PU-SYNC-graph_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-SYNC-graph-HANDOFF.md",
+      "review_note": "reviews/ACCEPTANCE-VERIFICATION-2026-09-06.md",
+      "handoff_state": "accepted-local-uncommitted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "CA-01",
+      "title": "Version the V2 consumer contract",
+      "status": "ACCEPTED_LOCAL",
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "repository": "PUBLIC",
+      "depends_on": [],
+      "allowlist": [
+        "contracts/design-authority/v2-overlay.json",
+        "scripts/validate-design-authority.mjs",
+        "src/foundation.contract.test.ts",
+        "src/components/templates/public-160.behavior.test.ts",
+        "docs/quality/concept-alignment-v2/CA-01-HANDOFF.md"
+      ],
+      "goal": "Add a versioned public consumer overlay for the merged hero and allowed scene dependencies. Keep the old pinned reference snapshot intact. Record a reproducible baseline before runtime edits.",
+      "stop_marker": "CA-01_HANDOFF_READY",
+      "packet": "packets/CA-01.md",
+      "active": true,
+      "parent": "CA-01",
+      "contract_section": "ADR-0008",
+      "family": "F02/shared",
+      "acceptance": [
+        "Preserve all checks and visual requirements in original CA packet."
+      ],
+      "read_paths": [],
+      "proposed_new_files": [
+        "contracts/design-authority/v2-overlay.json",
+        "docs/quality/concept-alignment-v2/CA-01-HANDOFF.md"
+      ],
+      "file_serialization_dependencies": [],
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "handoff_state": "accepted-local-uncommitted"
+    },
+    {
+      "id": "CA-02",
+      "title": "Published graph adapter and route resolution",
+      "status": "REVISE",
+      "repository": "PUBLIC",
+      "depends_on": [
+        "CA-01",
+        "PU-SYNC-graph"
+      ],
+      "allowlist": [
+        "src/lib/hero-graph-content.ts",
+        "src/lib/hero-graph-content.test.ts",
+        "tests/fixtures/contracts/hero-graph.json",
+        "docs/quality/concept-alignment-v2/CA-02-HANDOFF.md"
+      ],
+      "goal": "Adapt the existing public GraphPayloadOut into deterministic, exact-locale semantic data; resolve relatedRecords by eligible record family/ID, never guessed slugs.",
+      "stop_marker": "CA-02_HANDOFF_READY",
+      "packet": "packets/CA-02.md",
+      "active": true,
+      "parent": "CA-02",
+      "contract_section": "I04",
+      "family": "F02/shared",
+      "acceptance": [
+        "Preserve all checks and visual requirements in original CA packet."
+      ],
+      "read_paths": [],
+      "proposed_new_files": [
+        "src/lib/hero-graph-content.ts",
+        "src/lib/hero-graph-content.test.ts",
+        "tests/fixtures/contracts/hero-graph.json",
+        "docs/quality/concept-alignment-v2/CA-02-HANDOFF.md"
+      ],
+      "file_serialization_dependencies": [],
+      "review_note": "reviews/CATALOG-GRAPH-REVIEW-2026-09-06.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/CATALOG-GRAPH-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "CA-03",
+      "title": "Semantic integrated Home hero",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "repository": "PUBLIC",
+      "depends_on": [
+        "CA-02"
+      ],
+      "allowlist": [
+        "src/components/home/HomeHero.astro",
+        "src/components/home/HomeResearchGraph.astro",
+        "src/components/hero/HeroGraph.astro",
+        "src/components/hero/GraphNodeList.astro",
+        "src/components/hero/hero-contract.test.ts",
+        "src/lib/visual/scene-contract.ts",
+        "src/styles/hero-graph.css",
+        "src/pages/fa/index.astro",
+        "src/pages/en/index.astro",
+        "src/components/home/wp40-home.behavior.test.ts",
+        "tests/e2e/ca03-hero-semantic.e2e.ts",
+        "src/atlas/sections/FoundationsSection.astro",
+        "docs/quality/concept-alignment-v2/CA-03-HANDOFF.md",
+        "tests/e2e/wp40-home.e2e.ts"
+      ],
+      "goal": "Build the new Home hero HTML, move semantic graph inside it and remove the separate Home graph placement in both locales. Lock renderer/controller TypeScript interfaces before graphics workers begin.",
+      "stop_marker": "CA-03_HANDOFF_READY",
+      "packet": "packets/CA-03.md",
+      "active": true,
+      "parent": "CA-03",
+      "contract_section": "ADR-0008",
+      "family": "F02/shared",
+      "acceptance": [
+        "Preserve all checks and visual requirements in original CA packet."
+      ],
+      "read_paths": [],
+      "proposed_new_files": [
+        "src/components/hero/HeroGraph.astro",
+        "src/components/hero/GraphNodeList.astro",
+        "src/components/hero/hero-contract.test.ts",
+        "src/lib/visual/scene-contract.ts",
+        "src/styles/hero-graph.css",
+        "tests/e2e/ca03-hero-semantic.e2e.ts",
+        "docs/quality/concept-alignment-v2/CA-03-HANDOFF.md"
+      ],
+      "file_serialization_dependencies": [],
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "CA-04",
+      "title": "Three.js graph geometry and deterministic layout",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "repository": "PUBLIC",
+      "depends_on": [
+        "CA-03"
+      ],
+      "allowlist": [
+        "package.json",
+        "package-lock.json",
+        "src/lib/visual/graph-scene.ts",
+        "src/lib/visual/graph-layout.ts",
+        "src/lib/visual/graph-layout.test.ts",
+        "src/components/hero/GraphSceneDemo.astro",
+        "src/atlas/sections/GraphSceneSection.astro",
+        "src/atlas/AtlasPage.astro",
+        "docs/quality/concept-alignment-v2/CA-04-HANDOFF.md"
+      ],
+      "goal": "Author an original procedural constellation renderer against the locked scene contract. This packet does not integrate routes or animate DOM.",
+      "stop_marker": "CA-04_HANDOFF_READY",
+      "packet": "packets/CA-04.md",
+      "active": true,
+      "parent": "CA-04",
+      "contract_section": "ADR-0008",
+      "family": "F02/shared",
+      "acceptance": [
+        "Preserve all checks and visual requirements in original CA packet."
+      ],
+      "read_paths": [],
+      "proposed_new_files": [
+        "src/lib/visual/graph-scene.ts",
+        "src/lib/visual/graph-layout.ts",
+        "src/lib/visual/graph-layout.test.ts",
+        "src/components/hero/GraphSceneDemo.astro",
+        "src/atlas/sections/GraphSceneSection.astro",
+        "docs/quality/concept-alignment-v2/CA-04-HANDOFF.md"
+      ],
+      "file_serialization_dependencies": [],
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "CA-05",
+      "title": "Graph selection and bounded GSAP motion",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "repository": "PUBLIC",
+      "depends_on": [
+        "CA-04"
+      ],
+      "allowlist": [
+        "src/lib/visual/graph-controller.ts",
+        "src/lib/visual/graph-motion.ts",
+        "src/lib/visual/graph-controller.test.ts",
+        "src/components/hero/GraphInteractionDemo.astro",
+        "src/atlas/sections/GraphInteractionSection.astro",
+        "src/atlas/AtlasPage.astro",
+        "tests/e2e/ca05-graph-interaction.e2e.ts",
+        "docs/quality/concept-alignment-v2/CA-05-HANDOFF.md"
+      ],
+      "goal": "Implement selection, accessible native-control enhancement, projected HTML labels, and GSAP scene choreography against the locked renderer contract.",
+      "stop_marker": "CA-05_HANDOFF_READY",
+      "packet": "packets/CA-05.md",
+      "active": true,
+      "parent": "CA-05",
+      "contract_section": "ADR-0008",
+      "family": "F02/shared",
+      "acceptance": [
+        "Preserve all checks and visual requirements in original CA packet."
+      ],
+      "read_paths": [],
+      "proposed_new_files": [
+        "src/lib/visual/graph-controller.ts",
+        "src/lib/visual/graph-motion.ts",
+        "src/lib/visual/graph-controller.test.ts",
+        "src/components/hero/GraphInteractionDemo.astro",
+        "src/atlas/sections/GraphInteractionSection.astro",
+        "tests/e2e/ca05-graph-interaction.e2e.ts",
+        "docs/quality/concept-alignment-v2/CA-05-HANDOFF.md"
+      ],
+      "file_serialization_dependencies": [],
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "CA-06",
+      "title": "Integrate progressive Home hero",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "repository": "PUBLIC",
+      "depends_on": [
+        "CA-05",
+        "CA-03"
+      ],
+      "allowlist": [
+        "src/components/hero/HeroGraph.astro",
+        "src/lib/visual/hero-enhancement.ts",
+        "src/styles/hero-graph.css",
+        "src/components/hero/hero-enhancement.test.ts",
+        "tests/e2e/ca06-home-scene.e2e.ts",
+        "docs/quality/concept-alignment-v2/CA-06-HANDOFF.md"
+      ],
+      "goal": "Wire scene and controller into the semantic Home hero, load on eligible routes, and prove fallbacks without changing graph facts.",
+      "stop_marker": "CA-06_HANDOFF_READY",
+      "packet": "packets/CA-06.md",
+      "active": true,
+      "parent": "CA-06",
+      "contract_section": "ADR-0008",
+      "family": "F02/shared",
+      "acceptance": [
+        "Preserve all checks and visual requirements in original CA packet."
+      ],
+      "read_paths": [],
+      "proposed_new_files": [
+        "src/components/hero/HeroGraph.astro",
+        "src/lib/visual/hero-enhancement.ts",
+        "src/styles/hero-graph.css",
+        "src/components/hero/hero-enhancement.test.ts",
+        "tests/e2e/ca06-home-scene.e2e.ts",
+        "docs/quality/concept-alignment-v2/CA-06-HANDOFF.md"
+      ],
+      "file_serialization_dependencies": [],
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "CA-07",
+      "title": "Procedural gateway portal",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "repository": "PUBLIC",
+      "depends_on": [
+        "CA-04"
+      ],
+      "allowlist": [
+        "src/pages/index.astro",
+        "src/components/gateway/GatewayPortal.astro",
+        "src/lib/visual/gateway-scene.ts",
+        "src/lib/visual/gateway-motion.ts",
+        "src/styles/gateway.css",
+        "tests/e2e/wp40-gateway.e2e.ts",
+        "tests/e2e/ca07-gateway-scene.e2e.ts",
+        "docs/quality/concept-alignment-v2/CA-07-HANDOFF.md"
+      ],
+      "goal": "Rebuild the language gateway portal from geometry and GSAP, keeping HTML links and brand intact. Work is independent of Home integration.",
+      "stop_marker": "CA-07_HANDOFF_READY",
+      "packet": "packets/CA-07.md",
+      "active": true,
+      "parent": "CA-07",
+      "contract_section": "ADR-0008",
+      "family": "F01",
+      "acceptance": [
+        "Preserve all checks and visual requirements in original CA packet."
+      ],
+      "read_paths": [],
+      "proposed_new_files": [
+        "src/components/gateway/GatewayPortal.astro",
+        "src/lib/visual/gateway-scene.ts",
+        "src/lib/visual/gateway-motion.ts",
+        "tests/e2e/ca07-gateway-scene.e2e.ts",
+        "docs/quality/concept-alignment-v2/CA-07-HANDOFF.md"
+      ],
+      "file_serialization_dependencies": [],
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "CA-08",
+      "title": "Shared shell fidelity",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "repository": "PUBLIC",
+      "depends_on": [
+        "CA-03"
+      ],
+      "allowlist": [
+        "src/components/Header.astro",
+        "src/components/Footer.astro",
+        "src/styles/shell.css",
+        "src/components/shell/public-150.behavior.test.ts",
+        "tests/e2e/public-150-shell.e2e.ts",
+        "docs/quality/concept-alignment-v2/CA-08-HANDOFF.md"
+      ],
+      "goal": "Align header/footer typography, spacing, navigation and truthful unavailable states. Own shared chrome before page-family workers start.",
+      "stop_marker": "CA-08_HANDOFF_READY",
+      "packet": "packets/CA-08.md",
+      "active": true,
+      "parent": "CA-08",
+      "contract_section": "ADR-0008",
+      "family": "F02/shared",
+      "acceptance": [
+        "Preserve all checks and visual requirements in original CA packet."
+      ],
+      "read_paths": [],
+      "proposed_new_files": [
+        "docs/quality/concept-alignment-v2/CA-08-HANDOFF.md"
+      ],
+      "file_serialization_dependencies": [],
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-SYNC-public",
+      "parent": "PU-SYNC",
+      "repository": "PUBLIC",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "active": true,
+      "depends_on": [
+        "PU-03-resolver",
+        "PU-03-settings",
+        "PU-04-catalog",
+        "PU-04-metadata",
+        "PU-04-publication",
+        "PU-04-course",
+        "PU-04-creative",
+        "PU-05-lessons",
+        "PU-06-book",
+        "PU-06-talk",
+        "PU-06-resource",
+        "PU-06-collection",
+        "PU-06-series",
+        "PU-04-project-evidence",
+        "PU-07-revisions",
+        "PU-07-preview",
+        "PU-07-jobs",
+        "PU-23-invalidation",
+        "PU-20-events",
+        "CA-08",
+        "PU-SYNC-graph"
+      ],
+      "goal": "Generate final public schema consumer types before family implementation.",
+      "contract_section": "I08",
+      "family": "shared",
+      "allowlist": [
+        "src/generated/public-api.ts",
+        "src/lib/product-api.contract.test.ts",
+        "docs/quality/product-v2/PU-SYNC-public-HANDOFF.md",
+        "contracts/openapi.public.sha256",
+        "src/generated/openapi-hash.json",
+        "src/lib/hero-graph-resolve.test.ts",
+        "src/test-harness/contract-fixtures.ts",
+        "tests/fixtures/contracts/responses/articles-detail.get.200.json",
+        "tests/fixtures/contracts/responses/project-detail.get.200.json",
+        "tests/fixtures/contracts/responses/publication-detail.get.200.json"
+      ],
+      "proposed_new_files": [
+        "src/lib/product-api.contract.test.ts",
+        "docs/quality/product-v2/PU-SYNC-public-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd run generate:api-types",
+        "npm.cmd test -- src/lib/product-api.contract.test.ts",
+        "Record source schema SHA and additive compatibility checks."
+      ],
+      "packet": "product-packets/PU-SYNC-public.md",
+      "stop_marker": "PU-SYNC-public_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-SYNC-graph"
+      ],
+      "handoff": "docs/quality/product-v2/PU-SYNC-public-HANDOFF.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-SYNC-admin",
+      "parent": "PU-SYNC",
+      "repository": "ADMIN",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "active": true,
+      "depends_on": [
+        "PU-03-resolver",
+        "PU-03-settings",
+        "PU-04-catalog",
+        "PU-04-metadata",
+        "PU-04-publication",
+        "PU-04-course",
+        "PU-04-creative",
+        "PU-05-lessons",
+        "PU-06-book",
+        "PU-06-talk",
+        "PU-06-resource",
+        "PU-06-collection",
+        "PU-06-series",
+        "PU-04-project-evidence",
+        "PU-07-revisions",
+        "PU-07-preview",
+        "PU-07-jobs",
+        "PU-23-invalidation",
+        "PU-20-events"
+      ],
+      "goal": "Generate final admin schema consumer types before product editors.",
+      "contract_section": "I08",
+      "family": "shared",
+      "allowlist": [
+        "src/generated/admin-api.ts",
+        "src/lib/api/product-contract.test.ts",
+        "docs/quality/product-v2/PU-SYNC-admin-HANDOFF.md",
+        "src/generated/openapi-hash.json"
+      ],
+      "proposed_new_files": [
+        "src/lib/api/product-contract.test.ts",
+        "docs/quality/product-v2/PU-SYNC-admin-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd run generate:api-types",
+        "npm.cmd test -- src/lib/api/product-contract.test.ts"
+      ],
+      "packet": "product-packets/PU-SYNC-admin.md",
+      "stop_marker": "PU-SYNC-admin_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-SYNC-admin-HANDOFF.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-09-transport",
+      "parent": "PU-09",
+      "repository": "ADMIN",
+      "status": "BLOCKED",
+      "active": true,
+      "depends_on": [
+        "PU-SYNC-admin"
+      ],
+      "goal": "Add typed composition and publication-job API adapters using existing If-Match and server envelopes.",
+      "contract_section": "I03",
+      "family": "shared",
+      "allowlist": [
+        "src/lib/api/composition.ts",
+        "src/lib/api/publication-jobs.ts",
+        "src/lib/api/hooks/useComposition.ts",
+        "src/lib/api/product-authoring.test.ts",
+        "docs/quality/product-v2/PU-09-transport-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/lib/api/composition.ts",
+        "src/lib/api/publication-jobs.ts",
+        "src/lib/api/hooks/useComposition.ts",
+        "src/lib/api/product-authoring.test.ts",
+        "docs/quality/product-v2/PU-09-transport-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/lib/api/product-authoring.test.ts",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "Verify saved/published distinction, validation, keyboard/RTL, CSRF/session expiry and relevant 409 conflicts."
+      ],
+      "packet": "product-packets/PU-09-transport.md",
+      "stop_marker": "PU-09-transport_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-09-transport-HANDOFF.md",
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-09-editor",
+      "parent": "PU-09",
+      "repository": "ADMIN",
+      "status": "BLOCKED",
+      "active": true,
+      "depends_on": [
+        "PU-09-transport"
+      ],
+      "goal": "Implement schema-driven accessible story editor with block forms, reorder controls and visible autosave/conflict states.",
+      "contract_section": "I03",
+      "family": "shared",
+      "allowlist": [
+        "src/components/editor/StoryEditor.tsx",
+        "src/components/editor/story-editor.css",
+        "src/components/editor/StoryEditor.test.tsx",
+        "docs/quality/product-v2/PU-09-editor-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/components/editor/StoryEditor.tsx",
+        "src/components/editor/story-editor.css",
+        "src/components/editor/StoryEditor.test.tsx",
+        "docs/quality/product-v2/PU-09-editor-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/editor/StoryEditor.test.tsx",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "Verify saved/published distinction, validation, keyboard/RTL, CSRF/session expiry and relevant 409 conflicts."
+      ],
+      "packet": "product-packets/PU-09-editor.md",
+      "stop_marker": "PU-09-editor_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-09-editor-HANDOFF.md",
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-09-host",
+      "parent": "PU-09",
+      "repository": "ADMIN",
+      "status": "BLOCKED",
+      "active": true,
+      "depends_on": [
+        "PU-09-editor"
+      ],
+      "goal": "Connect story selection/edit/preview to generic content editor; preserve existing metadata and revision workflow.",
+      "contract_section": "I03",
+      "family": "shared",
+      "allowlist": [
+        "src/pages/ContentEditPage.tsx",
+        "src/lib/api/content.ts",
+        "src/pages/ContentEditPage.test.tsx",
+        "docs/quality/product-v2/PU-09-host-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "docs/quality/product-v2/PU-09-host-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/pages/ContentEditPage.test.tsx",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "Verify saved/published distinction, validation, keyboard/RTL, CSRF/session expiry and relevant 409 conflicts."
+      ],
+      "packet": "product-packets/PU-09-host.md",
+      "stop_marker": "PU-09-host_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-09-host-HANDOFF.md",
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-10-research",
+      "parent": "PU-10",
+      "repository": "ADMIN",
+      "status": "BLOCKED",
+      "active": true,
+      "depends_on": [
+        "PU-09-host"
+      ],
+      "goal": "Complete research-topic/research-statement structured metadata/relations editor; inspect server schema and test real mutation payloads for this family only.",
+      "contract_section": "I01/I03/I05",
+      "family": "F03",
+      "allowlist": [
+        "src/pages/ContentEditPage.tsx",
+        "src/pages/ContentListPage.tsx",
+        "src/lib/api/content.ts",
+        "src/components/editor/research-fields.tsx",
+        "src/components/editor/research-fields.test.tsx",
+        "docs/quality/product-v2/PU-10-research-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/components/editor/research-fields.tsx",
+        "src/components/editor/research-fields.test.tsx",
+        "docs/quality/product-v2/PU-10-research-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/editor/research-fields.test.tsx",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "Verify saved/published distinction, validation, keyboard/RTL, CSRF/session expiry and relevant 409 conflicts."
+      ],
+      "packet": "product-packets/PU-10-research.md",
+      "stop_marker": "PU-10-research_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-10-research-HANDOFF.md",
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-10-publication",
+      "parent": "PU-10",
+      "repository": "ADMIN",
+      "status": "BLOCKED",
+      "active": true,
+      "depends_on": [
+        "PU-09-host",
+        "PU-10-research"
+      ],
+      "goal": "Complete publication structured metadata/relations editor; inspect server schema and test real mutation payloads for this family only.",
+      "contract_section": "I01/I03/I05",
+      "family": "F04",
+      "allowlist": [
+        "src/pages/ContentEditPage.tsx",
+        "src/pages/ContentListPage.tsx",
+        "src/lib/api/content.ts",
+        "src/components/editor/publication-fields.tsx",
+        "src/components/editor/publication-fields.test.tsx",
+        "docs/quality/product-v2/PU-10-publication-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/components/editor/publication-fields.tsx",
+        "src/components/editor/publication-fields.test.tsx",
+        "docs/quality/product-v2/PU-10-publication-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/editor/publication-fields.test.tsx",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "Verify saved/published distinction, validation, keyboard/RTL, CSRF/session expiry and relevant 409 conflicts."
+      ],
+      "packet": "product-packets/PU-10-publication.md",
+      "stop_marker": "PU-10-publication_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-10-research"
+      ],
+      "handoff": "docs/quality/product-v2/PU-10-publication-HANDOFF.md",
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "PU-10-project",
+      "parent": "PU-10",
+      "repository": "ADMIN",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-09-host",
+        "PU-10-publication"
+      ],
+      "goal": "Complete project structured metadata/relations editor; inspect server schema and test real mutation payloads for this family only.",
+      "contract_section": "I01/I03/I05",
+      "family": "F05",
+      "allowlist": [
+        "src/pages/ContentEditPage.tsx",
+        "src/pages/ContentListPage.tsx",
+        "src/lib/api/content.ts",
+        "src/components/editor/project-fields.tsx",
+        "src/components/editor/project-fields.test.tsx",
+        "docs/quality/product-v2/PU-10-project-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/components/editor/project-fields.tsx",
+        "src/components/editor/project-fields.test.tsx",
+        "docs/quality/product-v2/PU-10-project-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/editor/project-fields.test.tsx",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "Verify saved/published distinction, validation, keyboard/RTL, CSRF/session expiry and relevant 409 conflicts."
+      ],
+      "packet": "product-packets/PU-10-project.md",
+      "stop_marker": "PU-10-project_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-10-publication"
+      ],
+      "handoff": "docs/quality/product-v2/PU-10-project-HANDOFF.md"
+    },
+    {
+      "id": "PU-10-article",
+      "parent": "PU-10",
+      "repository": "ADMIN",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-09-host",
+        "PU-10-project"
+      ],
+      "goal": "Complete article structured metadata/relations editor; inspect server schema and test real mutation payloads for this family only.",
+      "contract_section": "I01/I03/I05",
+      "family": "F06",
+      "allowlist": [
+        "src/pages/ContentEditPage.tsx",
+        "src/pages/ContentListPage.tsx",
+        "src/lib/api/content.ts",
+        "src/components/editor/article-fields.tsx",
+        "src/components/editor/article-fields.test.tsx",
+        "docs/quality/product-v2/PU-10-article-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/components/editor/article-fields.tsx",
+        "src/components/editor/article-fields.test.tsx",
+        "docs/quality/product-v2/PU-10-article-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/editor/article-fields.test.tsx",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "Verify saved/published distinction, validation, keyboard/RTL, CSRF/session expiry and relevant 409 conflicts."
+      ],
+      "packet": "product-packets/PU-10-article.md",
+      "stop_marker": "PU-10-article_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-10-project"
+      ],
+      "handoff": "docs/quality/product-v2/PU-10-article-HANDOFF.md"
+    },
+    {
+      "id": "PU-10-course",
+      "parent": "PU-10",
+      "repository": "ADMIN",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-09-host",
+        "PU-10-article"
+      ],
+      "goal": "Complete course structured metadata/relations editor; inspect server schema and test real mutation payloads for this family only.",
+      "contract_section": "I01/I03/I05",
+      "family": "F07",
+      "allowlist": [
+        "src/pages/ContentEditPage.tsx",
+        "src/pages/ContentListPage.tsx",
+        "src/lib/api/content.ts",
+        "src/components/editor/course-fields.tsx",
+        "src/components/editor/course-fields.test.tsx",
+        "docs/quality/product-v2/PU-10-course-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/components/editor/course-fields.tsx",
+        "src/components/editor/course-fields.test.tsx",
+        "docs/quality/product-v2/PU-10-course-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/editor/course-fields.test.tsx",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "Verify saved/published distinction, validation, keyboard/RTL, CSRF/session expiry and relevant 409 conflicts."
+      ],
+      "packet": "product-packets/PU-10-course.md",
+      "stop_marker": "PU-10-course_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-10-article"
+      ],
+      "handoff": "docs/quality/product-v2/PU-10-course-HANDOFF.md"
+    },
+    {
+      "id": "PU-10-lesson",
+      "parent": "PU-10",
+      "repository": "ADMIN",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-09-host",
+        "PU-10-course"
+      ],
+      "goal": "Complete lesson structured metadata/relations editor; inspect server schema and test real mutation payloads for this family only.",
+      "contract_section": "I01/I03/I05",
+      "family": "F07",
+      "allowlist": [
+        "src/pages/ContentEditPage.tsx",
+        "src/pages/ContentListPage.tsx",
+        "src/lib/api/content.ts",
+        "src/components/editor/lesson-fields.tsx",
+        "src/components/editor/lesson-fields.test.tsx",
+        "docs/quality/product-v2/PU-10-lesson-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/components/editor/lesson-fields.tsx",
+        "src/components/editor/lesson-fields.test.tsx",
+        "docs/quality/product-v2/PU-10-lesson-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/editor/lesson-fields.test.tsx",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "Verify saved/published distinction, validation, keyboard/RTL, CSRF/session expiry and relevant 409 conflicts."
+      ],
+      "packet": "product-packets/PU-10-lesson.md",
+      "stop_marker": "PU-10-lesson_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-10-course"
+      ],
+      "handoff": "docs/quality/product-v2/PU-10-lesson-HANDOFF.md"
+    },
+    {
+      "id": "PU-10-creative",
+      "parent": "PU-10",
+      "repository": "ADMIN",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-09-host",
+        "PU-10-lesson"
+      ],
+      "goal": "Complete creative-work structured metadata/relations editor; inspect server schema and test real mutation payloads for this family only.",
+      "contract_section": "I01/I03/I05",
+      "family": "F08",
+      "allowlist": [
+        "src/pages/ContentEditPage.tsx",
+        "src/pages/ContentListPage.tsx",
+        "src/lib/api/content.ts",
+        "src/components/editor/creative-fields.tsx",
+        "src/components/editor/creative-fields.test.tsx",
+        "docs/quality/product-v2/PU-10-creative-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/components/editor/creative-fields.tsx",
+        "src/components/editor/creative-fields.test.tsx",
+        "docs/quality/product-v2/PU-10-creative-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/editor/creative-fields.test.tsx",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "Verify saved/published distinction, validation, keyboard/RTL, CSRF/session expiry and relevant 409 conflicts."
+      ],
+      "packet": "product-packets/PU-10-creative.md",
+      "stop_marker": "PU-10-creative_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-10-lesson"
+      ],
+      "handoff": "docs/quality/product-v2/PU-10-creative-HANDOFF.md"
+    },
+    {
+      "id": "PU-10-book",
+      "parent": "PU-10",
+      "repository": "ADMIN",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-09-host",
+        "PU-10-creative"
+      ],
+      "goal": "Complete book structured metadata/relations editor; inspect server schema and test real mutation payloads for this family only.",
+      "contract_section": "I01/I03/I05",
+      "family": "F09",
+      "allowlist": [
+        "src/pages/ContentEditPage.tsx",
+        "src/pages/ContentListPage.tsx",
+        "src/lib/api/content.ts",
+        "src/components/editor/book-fields.tsx",
+        "src/components/editor/book-fields.test.tsx",
+        "docs/quality/product-v2/PU-10-book-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/components/editor/book-fields.tsx",
+        "src/components/editor/book-fields.test.tsx",
+        "docs/quality/product-v2/PU-10-book-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/editor/book-fields.test.tsx",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "Verify saved/published distinction, validation, keyboard/RTL, CSRF/session expiry and relevant 409 conflicts."
+      ],
+      "packet": "product-packets/PU-10-book.md",
+      "stop_marker": "PU-10-book_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-10-creative"
+      ],
+      "handoff": "docs/quality/product-v2/PU-10-book-HANDOFF.md"
+    },
+    {
+      "id": "PU-10-talk",
+      "parent": "PU-10",
+      "repository": "ADMIN",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-09-host",
+        "PU-10-book"
+      ],
+      "goal": "Complete talk structured metadata/relations editor; inspect server schema and test real mutation payloads for this family only.",
+      "contract_section": "I01/I03/I05",
+      "family": "F10",
+      "allowlist": [
+        "src/pages/ContentEditPage.tsx",
+        "src/pages/ContentListPage.tsx",
+        "src/lib/api/content.ts",
+        "src/components/editor/talk-fields.tsx",
+        "src/components/editor/talk-fields.test.tsx",
+        "docs/quality/product-v2/PU-10-talk-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/components/editor/talk-fields.tsx",
+        "src/components/editor/talk-fields.test.tsx",
+        "docs/quality/product-v2/PU-10-talk-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/editor/talk-fields.test.tsx",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "Verify saved/published distinction, validation, keyboard/RTL, CSRF/session expiry and relevant 409 conflicts."
+      ],
+      "packet": "product-packets/PU-10-talk.md",
+      "stop_marker": "PU-10-talk_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-10-book"
+      ],
+      "handoff": "docs/quality/product-v2/PU-10-talk-HANDOFF.md"
+    },
+    {
+      "id": "PU-10-resource",
+      "parent": "PU-10",
+      "repository": "ADMIN",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-09-host",
+        "PU-10-talk"
+      ],
+      "goal": "Complete download structured metadata/relations editor; inspect server schema and test real mutation payloads for this family only.",
+      "contract_section": "I01/I03/I05",
+      "family": "F11",
+      "allowlist": [
+        "src/pages/ContentEditPage.tsx",
+        "src/pages/ContentListPage.tsx",
+        "src/lib/api/content.ts",
+        "src/components/editor/resource-fields.tsx",
+        "src/components/editor/resource-fields.test.tsx",
+        "docs/quality/product-v2/PU-10-resource-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/components/editor/resource-fields.tsx",
+        "src/components/editor/resource-fields.test.tsx",
+        "docs/quality/product-v2/PU-10-resource-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/editor/resource-fields.test.tsx",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "Verify saved/published distinction, validation, keyboard/RTL, CSRF/session expiry and relevant 409 conflicts."
+      ],
+      "packet": "product-packets/PU-10-resource.md",
+      "stop_marker": "PU-10-resource_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-10-talk"
+      ],
+      "handoff": "docs/quality/product-v2/PU-10-resource-HANDOFF.md"
+    },
+    {
+      "id": "PU-10-collection",
+      "parent": "PU-10",
+      "repository": "ADMIN",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-09-host",
+        "PU-10-resource"
+      ],
+      "goal": "Complete collection structured metadata/relations editor; inspect server schema and test real mutation payloads for this family only.",
+      "contract_section": "I01/I03/I05",
+      "family": "F12",
+      "allowlist": [
+        "src/pages/ContentEditPage.tsx",
+        "src/pages/ContentListPage.tsx",
+        "src/lib/api/content.ts",
+        "src/components/editor/collection-fields.tsx",
+        "src/components/editor/collection-fields.test.tsx",
+        "docs/quality/product-v2/PU-10-collection-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/components/editor/collection-fields.tsx",
+        "src/components/editor/collection-fields.test.tsx",
+        "docs/quality/product-v2/PU-10-collection-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/editor/collection-fields.test.tsx",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "Verify saved/published distinction, validation, keyboard/RTL, CSRF/session expiry and relevant 409 conflicts."
+      ],
+      "packet": "product-packets/PU-10-collection.md",
+      "stop_marker": "PU-10-collection_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-10-resource"
+      ],
+      "handoff": "docs/quality/product-v2/PU-10-collection-HANDOFF.md"
+    },
+    {
+      "id": "PU-10-series",
+      "parent": "PU-10",
+      "repository": "ADMIN",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-09-host",
+        "PU-10-collection"
+      ],
+      "goal": "Complete series structured metadata/relations editor; inspect server schema and test real mutation payloads for this family only.",
+      "contract_section": "I01/I03/I05",
+      "family": "F12",
+      "allowlist": [
+        "src/pages/ContentEditPage.tsx",
+        "src/pages/ContentListPage.tsx",
+        "src/lib/api/content.ts",
+        "src/components/editor/series-fields.tsx",
+        "src/components/editor/series-fields.test.tsx",
+        "docs/quality/product-v2/PU-10-series-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/components/editor/series-fields.tsx",
+        "src/components/editor/series-fields.test.tsx",
+        "docs/quality/product-v2/PU-10-series-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/editor/series-fields.test.tsx",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "Verify saved/published distinction, validation, keyboard/RTL, CSRF/session expiry and relevant 409 conflicts."
+      ],
+      "packet": "product-packets/PU-10-series.md",
+      "stop_marker": "PU-10-series_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-10-collection"
+      ],
+      "handoff": "docs/quality/product-v2/PU-10-series-HANDOFF.md"
+    },
+    {
+      "id": "PU-08-settings",
+      "parent": "PU-08",
+      "repository": "ADMIN",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-SYNC-admin"
+      ],
+      "goal": "Edit localized site identity, navigation, SEO and bounded scene presets beside existing operational settings.",
+      "contract_section": "I04",
+      "family": "F01/F02",
+      "allowlist": [
+        "src/pages/SettingsPage.tsx",
+        "src/lib/api/settings.ts",
+        "src/lib/api/hooks/useSiteSettings.ts",
+        "src/pages/SettingsPage.test.tsx",
+        "docs/quality/product-v2/PU-08-settings-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "docs/quality/product-v2/PU-08-settings-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/pages/SettingsPage.test.tsx",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "Verify saved/published distinction, validation, keyboard/RTL, CSRF/session expiry and relevant 409 conflicts."
+      ],
+      "packet": "product-packets/PU-08-settings.md",
+      "stop_marker": "PU-08-settings_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-08-settings-HANDOFF.md"
+    },
+    {
+      "id": "PU-08-profile",
+      "parent": "PU-08",
+      "repository": "ADMIN",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-09-host",
+        "PU-10-series"
+      ],
+      "goal": "Complete owner profile, timeline links, CV and research-profile resource selection with locale-safe forms.",
+      "contract_section": "I03",
+      "family": "F13",
+      "allowlist": [
+        "src/pages/ContentEditPage.tsx",
+        "src/pages/TimelinePage.tsx",
+        "src/components/editor/profile-fields.tsx",
+        "src/components/editor/profile-fields.test.tsx",
+        "docs/quality/product-v2/PU-08-profile-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/components/editor/profile-fields.tsx",
+        "src/components/editor/profile-fields.test.tsx",
+        "docs/quality/product-v2/PU-08-profile-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/editor/profile-fields.test.tsx",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "Verify saved/published distinction, validation, keyboard/RTL, CSRF/session expiry and relevant 409 conflicts."
+      ],
+      "packet": "product-packets/PU-08-profile.md",
+      "stop_marker": "PU-08-profile_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-10-series"
+      ],
+      "handoff": "docs/quality/product-v2/PU-08-profile-HANDOFF.md"
+    },
+    {
+      "id": "PU-11-media",
+      "parent": "PU-11",
+      "repository": "ADMIN",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-SYNC-admin",
+        "PU-06-resource"
+      ],
+      "goal": "Complete upload cancel/retry, locale alt, focal point, usages and version-aware replacement UI.",
+      "contract_section": "I01/I03",
+      "family": "F08/F11",
+      "allowlist": [
+        "src/pages/MediaPage.tsx",
+        "src/lib/api/media.ts",
+        "src/lib/api/hooks/useMedia.ts",
+        "src/pages/MediaPage.test.tsx",
+        "docs/quality/product-v2/PU-11-media-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "docs/quality/product-v2/PU-11-media-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/pages/MediaPage.test.tsx",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "Verify saved/published distinction, validation, keyboard/RTL, CSRF/session expiry and relevant 409 conflicts."
+      ],
+      "packet": "product-packets/PU-11-media.md",
+      "stop_marker": "PU-11-media_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-11-media-HANDOFF.md"
+    },
+    {
+      "id": "PU-12-home",
+      "parent": "PU-12",
+      "repository": "ADMIN",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-SYNC-admin"
+      ],
+      "goal": "Complete locale-specific module selection/order and two audience entry links without fake featured records.",
+      "contract_section": "I04",
+      "family": "F02",
+      "allowlist": [
+        "src/pages/HomePage.tsx",
+        "src/lib/api/home.ts",
+        "src/pages/HomePage.test.tsx",
+        "docs/quality/product-v2/PU-12-home-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "docs/quality/product-v2/PU-12-home-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/pages/HomePage.test.tsx",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "Verify saved/published distinction, validation, keyboard/RTL, CSRF/session expiry and relevant 409 conflicts."
+      ],
+      "packet": "product-packets/PU-12-home.md",
+      "stop_marker": "PU-12-home_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-12-home-HANDOFF.md"
+    },
+    {
+      "id": "PU-12-graph",
+      "parent": "PU-12",
+      "repository": "ADMIN",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-SYNC-admin"
+      ],
+      "goal": "Complete graph version editing, record relation validation and keyboard/table alternative to drag.",
+      "contract_section": "I04",
+      "family": "F02/F03",
+      "allowlist": [
+        "src/pages/GraphEditPage.tsx",
+        "src/pages/GraphPage.tsx",
+        "src/lib/api/graph.ts",
+        "src/pages/GraphEditPage.test.tsx",
+        "docs/quality/product-v2/PU-12-graph-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "docs/quality/product-v2/PU-12-graph-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/pages/GraphEditPage.test.tsx",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "Verify saved/published distinction, validation, keyboard/RTL, CSRF/session expiry and relevant 409 conflicts."
+      ],
+      "packet": "product-packets/PU-12-graph.md",
+      "stop_marker": "PU-12-graph_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-12-graph-HANDOFF.md"
+    },
+    {
+      "id": "PU-12-jobs",
+      "parent": "PU-12",
+      "repository": "ADMIN",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-09-transport",
+        "PU-07-runner"
+      ],
+      "goal": "Show publication jobs, pending removal, safe errors and retry; distinguish save from site deployment.",
+      "contract_section": "I06",
+      "family": "shared",
+      "allowlist": [
+        "src/pages/PublicationJobsPage.tsx",
+        "src/pages/DashboardPage.tsx",
+        "src/app/router.tsx",
+        "src/components/Nav.tsx",
+        "src/pages/PublicationJobsPage.test.tsx",
+        "docs/quality/product-v2/PU-12-jobs-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/pages/PublicationJobsPage.tsx",
+        "src/pages/PublicationJobsPage.test.tsx",
+        "docs/quality/product-v2/PU-12-jobs-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/pages/PublicationJobsPage.test.tsx",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "Verify saved/published distinction, validation, keyboard/RTL, CSRF/session expiry and relevant 409 conflicts."
+      ],
+      "packet": "product-packets/PU-12-jobs.md",
+      "stop_marker": "PU-12-jobs_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-12-jobs-HANDOFF.md"
+    },
+    {
+      "id": "PU-22-analytics",
+      "parent": "PU-22",
+      "repository": "ADMIN",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-SYNC-admin",
+        "PU-12-jobs"
+      ],
+      "goal": "Show authenticated date/locale event counts with metric definitions and empty/error/not-connected states.",
+      "contract_section": "I07",
+      "family": "shared",
+      "allowlist": [
+        "src/pages/AnalyticsPage.tsx",
+        "src/lib/api/analytics.ts",
+        "src/app/router.tsx",
+        "src/components/Nav.tsx",
+        "src/pages/AnalyticsPage.test.tsx",
+        "docs/quality/product-v2/PU-22-analytics-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/pages/AnalyticsPage.tsx",
+        "src/lib/api/analytics.ts",
+        "src/pages/AnalyticsPage.test.tsx",
+        "docs/quality/product-v2/PU-22-analytics-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/pages/AnalyticsPage.test.tsx",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "Verify saved/published distinction, validation, keyboard/RTL, CSRF/session expiry and relevant 409 conflicts."
+      ],
+      "packet": "product-packets/PU-22-analytics.md",
+      "stop_marker": "PU-22-analytics_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-12-jobs"
+      ],
+      "handoff": "docs/quality/product-v2/PU-22-analytics-HANDOFF.md"
+    },
+    {
+      "id": "PU-13-routes",
+      "parent": "PU-13",
+      "repository": "PUBLIC",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-SYNC-public"
+      ],
+      "goal": "Extend centralized route/SEO registries for all target families and explicit statement paths; handle reserved segments and migrations.",
+      "contract_section": "I02",
+      "family": "shared",
+      "allowlist": [
+        "src/lib/routes.ts",
+        "src/lib/navigation.ts",
+        "src/lib/seo-route-registry.ts",
+        "scripts/seo-route-registry.mjs",
+        "src/lib/home-published-links.ts",
+        "src/lib/routes.test.ts",
+        "docs/quality/product-v2/PU-13-routes-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "docs/quality/product-v2/PU-13-routes-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/lib/routes.test.ts",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "npm.cmd run validate:design",
+        "For UI: FA/EN + light/dark, 320/390/768/1024/1280/1440, keyboard, 200% zoom, no-JS and empty/unavailable/ready evidence."
+      ],
+      "packet": "product-packets/PU-13-routes.md",
+      "stop_marker": "PU-13-routes_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-13-routes-HANDOFF.md"
+    },
+    {
+      "id": "PU-13-story",
+      "parent": "PU-13",
+      "repository": "PUBLIC",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-SYNC-public",
+        "CA-08"
+      ],
+      "goal": "Render typed story blocks once with readable no-JS/print content, TOC, code/table/math/file/relations.",
+      "contract_section": "I03",
+      "family": "shared",
+      "allowlist": [
+        "src/components/story/StoryDocument.astro",
+        "src/components/story/StoryBlock.astro",
+        "src/styles/story.css",
+        "src/lib/story-content.ts",
+        "src/lib/story-content.test.ts",
+        "docs/quality/product-v2/PU-13-story-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/components/story/StoryDocument.astro",
+        "src/components/story/StoryBlock.astro",
+        "src/styles/story.css",
+        "src/lib/story-content.ts",
+        "src/lib/story-content.test.ts",
+        "docs/quality/product-v2/PU-13-story-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/lib/story-content.test.ts",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "npm.cmd run validate:design",
+        "For UI: FA/EN + light/dark, 320/390/768/1024/1280/1440, keyboard, 200% zoom, no-JS and empty/unavailable/ready evidence."
+      ],
+      "packet": "product-packets/PU-13-story.md",
+      "stop_marker": "PU-13-story_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-13-story-HANDOFF.md"
+    },
+    {
+      "id": "PU-14-research",
+      "parent": "PU-14",
+      "repository": "PUBLIC",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story"
+      ],
+      "goal": "Implement complete F03 index/detail with CMS story and original CA-10 visual acceptance; remove placeholders, retain actual published facts.",
+      "contract_section": "I01/I03",
+      "family": "F03",
+      "allowlist": [
+        "src/lib/research-content.ts",
+        "src/components/research/ResearchPageContent.astro",
+        "src/components/research/ResearchTopicDetailContent.astro",
+        "src/styles/product-research.css",
+        "src/pages/fa/research/index.astro",
+        "src/pages/fa/research/[slug].astro",
+        "src/pages/en/research/index.astro",
+        "src/pages/en/research/[slug].astro",
+        "src/components/page-family/PageFamilyConstellationShell.astro",
+        "src/components/page-family/PageFamilySelectedPublicationsShell.astro",
+        "src/styles/pf05-alignment.css",
+        "src/components/research/public-201.behavior.test.ts",
+        "src/components/research/product-family.test.ts",
+        "docs/quality/product-v2/PU-14-research-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/styles/product-research.css",
+        "src/styles/pf05-alignment.css",
+        "src/components/research/product-family.test.ts",
+        "docs/quality/product-v2/PU-14-research-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/research/product-family.test.ts",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "npm.cmd run validate:design",
+        "For UI: FA/EN + light/dark, 320/390/768/1024/1280/1440, keyboard, 200% zoom, no-JS and empty/unavailable/ready evidence."
+      ],
+      "packet": "product-packets/PU-14-research.md",
+      "stop_marker": "PU-14-research_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-14-research-HANDOFF.md",
+      "visual_criteria_from": [
+        "packets/CA-10.md"
+      ]
+    },
+    {
+      "id": "PU-14-publications",
+      "parent": "PU-14",
+      "repository": "PUBLIC",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story",
+        "PU-14-research"
+      ],
+      "goal": "Implement complete F04 index/detail with CMS story and original CA-10 visual acceptance; remove placeholders, retain actual published facts.",
+      "contract_section": "I01/I03",
+      "family": "F04",
+      "allowlist": [
+        "src/lib/publications-content.ts",
+        "src/components/publications/PublicationsPageContent.astro",
+        "src/components/publications/PublicationDetailContent.astro",
+        "src/styles/product-publications.css",
+        "src/pages/fa/publications/index.astro",
+        "src/pages/fa/publications/[slug].astro",
+        "src/pages/en/publications/index.astro",
+        "src/pages/en/publications/[slug].astro",
+        "src/components/page-family/PageFamilyConstellationShell.astro",
+        "src/components/page-family/PageFamilySelectedPublicationsShell.astro",
+        "src/styles/pf05-alignment.css",
+        "src/components/publications/public-201.behavior.test.ts",
+        "src/components/publications/product-family.test.ts",
+        "docs/quality/product-v2/PU-14-publications-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/styles/product-publications.css",
+        "src/styles/pf05-alignment.css",
+        "src/components/publications/product-family.test.ts",
+        "docs/quality/product-v2/PU-14-publications-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/publications/product-family.test.ts",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "npm.cmd run validate:design",
+        "For UI: FA/EN + light/dark, 320/390/768/1024/1280/1440, keyboard, 200% zoom, no-JS and empty/unavailable/ready evidence."
+      ],
+      "packet": "product-packets/PU-14-publications.md",
+      "stop_marker": "PU-14-publications_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-14-research"
+      ],
+      "handoff": "docs/quality/product-v2/PU-14-publications-HANDOFF.md",
+      "visual_criteria_from": [
+        "packets/CA-10.md"
+      ]
+    },
+    {
+      "id": "PU-14-projects",
+      "parent": "PU-14",
+      "repository": "PUBLIC",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story"
+      ],
+      "goal": "Implement complete F05 index/detail with CMS story and original CA-12 visual acceptance; remove placeholders, retain actual published facts.",
+      "contract_section": "I01/I03",
+      "family": "F05",
+      "allowlist": [
+        "src/lib/projects-content.ts",
+        "src/components/projects/ProjectsPageContent.astro",
+        "src/components/projects/ProjectDetailContent.astro",
+        "src/styles/product-projects.css",
+        "src/pages/fa/projects/index.astro",
+        "src/pages/fa/projects/[slug].astro",
+        "src/pages/en/projects/index.astro",
+        "src/pages/en/projects/[slug].astro",
+        "src/components/page-family/PageFamilyEvidenceGridShell.astro",
+        "src/styles/pf04-alignment.css",
+        "src/components/projects/public-210.behavior.test.ts",
+        "src/components/projects/product-family.test.ts",
+        "docs/quality/product-v2/PU-14-projects-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/styles/product-projects.css",
+        "src/styles/pf04-alignment.css",
+        "src/components/projects/product-family.test.ts",
+        "docs/quality/product-v2/PU-14-projects-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/projects/product-family.test.ts",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "npm.cmd run validate:design",
+        "For UI: FA/EN + light/dark, 320/390/768/1024/1280/1440, keyboard, 200% zoom, no-JS and empty/unavailable/ready evidence."
+      ],
+      "packet": "product-packets/PU-14-projects.md",
+      "stop_marker": "PU-14-projects_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-14-projects-HANDOFF.md",
+      "visual_criteria_from": [
+        "packets/CA-12.md"
+      ]
+    },
+    {
+      "id": "PU-15-articles",
+      "parent": "PU-15",
+      "repository": "PUBLIC",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story"
+      ],
+      "goal": "Implement complete F06 index/detail with CMS story and original CA-13 visual acceptance; remove placeholders, retain actual published facts.",
+      "contract_section": "I01/I03",
+      "family": "F06",
+      "allowlist": [
+        "src/lib/writing-content.ts",
+        "src/components/writing/WritingPageContent.astro",
+        "src/components/writing/WritingDetailContent.astro",
+        "src/styles/product-writing.css",
+        "src/pages/fa/blog/index.astro",
+        "src/pages/fa/blog/[slug].astro",
+        "src/pages/en/blog/index.astro",
+        "src/pages/en/blog/[slug].astro",
+        "src/components/page-family/PageFamilyThemeExploreShell.astro",
+        "src/styles/pf03-alignment.css",
+        "src/components/writing/public-211.behavior.test.ts",
+        "src/components/writing/product-family.test.ts",
+        "docs/quality/product-v2/PU-15-articles-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/styles/product-writing.css",
+        "src/styles/pf03-alignment.css",
+        "src/components/writing/product-family.test.ts",
+        "docs/quality/product-v2/PU-15-articles-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/writing/product-family.test.ts",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "npm.cmd run validate:design",
+        "For UI: FA/EN + light/dark, 320/390/768/1024/1280/1440, keyboard, 200% zoom, no-JS and empty/unavailable/ready evidence."
+      ],
+      "packet": "product-packets/PU-15-articles.md",
+      "stop_marker": "PU-15-articles_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-15-articles-HANDOFF.md",
+      "visual_criteria_from": [
+        "packets/CA-13.md"
+      ]
+    },
+    {
+      "id": "PU-15-courses",
+      "parent": "PU-15",
+      "repository": "PUBLIC",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story"
+      ],
+      "goal": "Implement complete F07 index/detail with CMS story and original CA-14 visual acceptance; remove placeholders, retain actual published facts.",
+      "contract_section": "I01/I03",
+      "family": "F07",
+      "allowlist": [
+        "src/lib/teaching-content.ts",
+        "src/components/teaching/TeachingPageContent.astro",
+        "src/components/teaching/TeachingDetailContent.astro",
+        "src/styles/product-teaching.css",
+        "src/pages/fa/education/index.astro",
+        "src/pages/fa/education/[slug].astro",
+        "src/pages/en/education/index.astro",
+        "src/pages/en/education/[slug].astro",
+        "src/components/page-family/PageFamilyFeaturedPathShell.astro",
+        "src/components/page-family/PageFamilyPathProcessShell.astro",
+        "src/styles/pf06-alignment.css",
+        "src/components/teaching/public-220.behavior.test.ts",
+        "src/components/teaching/product-family.test.ts",
+        "docs/quality/product-v2/PU-15-courses-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/styles/product-teaching.css",
+        "src/styles/pf06-alignment.css",
+        "src/components/teaching/product-family.test.ts",
+        "docs/quality/product-v2/PU-15-courses-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/teaching/product-family.test.ts",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "npm.cmd run validate:design",
+        "For UI: FA/EN + light/dark, 320/390/768/1024/1280/1440, keyboard, 200% zoom, no-JS and empty/unavailable/ready evidence."
+      ],
+      "packet": "product-packets/PU-15-courses.md",
+      "stop_marker": "PU-15-courses_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-15-courses-HANDOFF.md",
+      "visual_criteria_from": [
+        "packets/CA-14.md"
+      ]
+    },
+    {
+      "id": "PU-15-creative",
+      "parent": "PU-15",
+      "repository": "PUBLIC",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story"
+      ],
+      "goal": "Implement complete F08 index/detail with CMS story and original CA-15 visual acceptance; remove placeholders, retain actual published facts.",
+      "contract_section": "I01/I03",
+      "family": "F08",
+      "allowlist": [
+        "src/lib/creative-content.ts",
+        "src/components/creative/CreativePageContent.astro",
+        "src/components/creative/CreativeDetailContent.astro",
+        "src/styles/product-creative.css",
+        "src/pages/fa/gallery/index.astro",
+        "src/pages/fa/gallery/[slug].astro",
+        "src/pages/en/gallery/index.astro",
+        "src/pages/en/gallery/[slug].astro",
+        "src/components/page-family/PageFamilyCreativeDetailShell.astro",
+        "src/styles/pf01-pf02-alignment.css",
+        "src/components/creative/public-221.behavior.test.ts",
+        "src/components/creative/product-family.test.ts",
+        "docs/quality/product-v2/PU-15-creative-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/styles/product-creative.css",
+        "src/styles/pf01-pf02-alignment.css",
+        "src/components/creative/product-family.test.ts",
+        "docs/quality/product-v2/PU-15-creative-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/creative/product-family.test.ts",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "npm.cmd run validate:design",
+        "For UI: FA/EN + light/dark, 320/390/768/1024/1280/1440, keyboard, 200% zoom, no-JS and empty/unavailable/ready evidence."
+      ],
+      "packet": "product-packets/PU-15-creative.md",
+      "stop_marker": "PU-15-creative_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-15-creative-HANDOFF.md",
+      "visual_criteria_from": [
+        "packets/CA-15.md"
+      ]
+    },
+    {
+      "id": "PU-14-statements",
+      "parent": "PU-14",
+      "repository": "PUBLIC",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-14-research"
+      ],
+      "goal": "Give each research statement an unambiguous canonical detail page and migrate only source-proven legacy links.",
+      "contract_section": "I02",
+      "family": "F03",
+      "allowlist": [
+        "src/lib/research-content.ts",
+        "src/components/research/ResearchStatementDetailContent.astro",
+        "src/pages/fa/research/statements/[slug].astro",
+        "src/pages/en/research/statements/[slug].astro",
+        "src/components/research/product-statements.test.ts",
+        "docs/quality/product-v2/PU-14-statements-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/components/research/ResearchStatementDetailContent.astro",
+        "src/pages/fa/research/statements/[slug].astro",
+        "src/pages/en/research/statements/[slug].astro",
+        "src/components/research/product-statements.test.ts",
+        "docs/quality/product-v2/PU-14-statements-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/research/product-statements.test.ts",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "npm.cmd run validate:design",
+        "For UI: FA/EN + light/dark, 320/390/768/1024/1280/1440, keyboard, 200% zoom, no-JS and empty/unavailable/ready evidence."
+      ],
+      "packet": "product-packets/PU-14-statements.md",
+      "stop_marker": "PU-14-statements_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-14-statements-HANDOFF.md"
+    },
+    {
+      "id": "PU-15-lessons",
+      "parent": "PU-15",
+      "repository": "PUBLIC",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story",
+        "PU-15-courses"
+      ],
+      "goal": "Render complete lesson pages, parent course links, resources and published-only ordered neighbors.",
+      "contract_section": "I05",
+      "family": "F07",
+      "allowlist": [
+        "src/lib/lessons-content.ts",
+        "src/components/teaching/LessonDetailContent.astro",
+        "src/pages/fa/education/[courseSlug]/lessons/[lessonSlug].astro",
+        "src/pages/en/education/[courseSlug]/lessons/[lessonSlug].astro",
+        "src/components/teaching/product-lessons.test.ts",
+        "docs/quality/product-v2/PU-15-lessons-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/lib/lessons-content.ts",
+        "src/components/teaching/LessonDetailContent.astro",
+        "src/pages/fa/education/[courseSlug]/lessons/[lessonSlug].astro",
+        "src/pages/en/education/[courseSlug]/lessons/[lessonSlug].astro",
+        "src/components/teaching/product-lessons.test.ts",
+        "docs/quality/product-v2/PU-15-lessons-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/teaching/product-lessons.test.ts",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "npm.cmd run validate:design",
+        "For UI: FA/EN + light/dark, 320/390/768/1024/1280/1440, keyboard, 200% zoom, no-JS and empty/unavailable/ready evidence."
+      ],
+      "packet": "product-packets/PU-15-lessons.md",
+      "stop_marker": "PU-15-lessons_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-15-lessons-HANDOFF.md"
+    },
+    {
+      "id": "PU-16-books",
+      "parent": "PU-16",
+      "repository": "PUBLIC",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story"
+      ],
+      "goal": "Build canonical books pages from accepted projections, full body and real file/member links; no duplicate content records.",
+      "contract_section": "I01/I02/I05",
+      "family": "F09",
+      "allowlist": [
+        "src/lib/books-content.ts",
+        "src/components/books/CollectionPage.astro",
+        "src/components/books/DetailPage.astro",
+        "src/styles/product-books.css",
+        "src/pages/fa/books/index.astro",
+        "src/pages/fa/books/[slug].astro",
+        "src/pages/en/books/index.astro",
+        "src/pages/en/books/[slug].astro",
+        "src/lib/books-content.test.ts",
+        "docs/quality/product-v2/PU-16-books-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/lib/books-content.ts",
+        "src/components/books/CollectionPage.astro",
+        "src/components/books/DetailPage.astro",
+        "src/styles/product-books.css",
+        "src/pages/fa/books/index.astro",
+        "src/pages/fa/books/[slug].astro",
+        "src/pages/en/books/index.astro",
+        "src/pages/en/books/[slug].astro",
+        "src/lib/books-content.test.ts",
+        "docs/quality/product-v2/PU-16-books-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/lib/books-content.test.ts",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "npm.cmd run validate:design",
+        "For UI: FA/EN + light/dark, 320/390/768/1024/1280/1440, keyboard, 200% zoom, no-JS and empty/unavailable/ready evidence."
+      ],
+      "packet": "product-packets/PU-16-books.md",
+      "stop_marker": "PU-16-books_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-16-books-HANDOFF.md"
+    },
+    {
+      "id": "PU-16-talks",
+      "parent": "PU-16",
+      "repository": "PUBLIC",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story"
+      ],
+      "goal": "Build canonical talks pages from accepted projections, full body and real file/member links; no duplicate content records.",
+      "contract_section": "I01/I02/I05",
+      "family": "F10",
+      "allowlist": [
+        "src/lib/talks-content.ts",
+        "src/components/talks/CollectionPage.astro",
+        "src/components/talks/DetailPage.astro",
+        "src/styles/product-talks.css",
+        "src/pages/fa/talks/index.astro",
+        "src/pages/fa/talks/[slug].astro",
+        "src/pages/en/talks/index.astro",
+        "src/pages/en/talks/[slug].astro",
+        "src/lib/talks-content.test.ts",
+        "docs/quality/product-v2/PU-16-talks-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/lib/talks-content.ts",
+        "src/components/talks/CollectionPage.astro",
+        "src/components/talks/DetailPage.astro",
+        "src/styles/product-talks.css",
+        "src/pages/fa/talks/index.astro",
+        "src/pages/fa/talks/[slug].astro",
+        "src/pages/en/talks/index.astro",
+        "src/pages/en/talks/[slug].astro",
+        "src/lib/talks-content.test.ts",
+        "docs/quality/product-v2/PU-16-talks-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/lib/talks-content.test.ts",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "npm.cmd run validate:design",
+        "For UI: FA/EN + light/dark, 320/390/768/1024/1280/1440, keyboard, 200% zoom, no-JS and empty/unavailable/ready evidence."
+      ],
+      "packet": "product-packets/PU-16-talks.md",
+      "stop_marker": "PU-16-talks_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-16-talks-HANDOFF.md"
+    },
+    {
+      "id": "PU-16-resources",
+      "parent": "PU-16",
+      "repository": "PUBLIC",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story"
+      ],
+      "goal": "Build canonical resources pages from accepted projections, full body and real file/member links; no duplicate content records.",
+      "contract_section": "I01/I02/I05",
+      "family": "F11",
+      "allowlist": [
+        "src/lib/resources-content.ts",
+        "src/components/resources/CollectionPage.astro",
+        "src/components/resources/DetailPage.astro",
+        "src/styles/product-resources.css",
+        "src/pages/fa/resources/index.astro",
+        "src/pages/fa/resources/[slug].astro",
+        "src/pages/en/resources/index.astro",
+        "src/pages/en/resources/[slug].astro",
+        "src/lib/resources-content.test.ts",
+        "docs/quality/product-v2/PU-16-resources-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/lib/resources-content.ts",
+        "src/components/resources/CollectionPage.astro",
+        "src/components/resources/DetailPage.astro",
+        "src/styles/product-resources.css",
+        "src/pages/fa/resources/index.astro",
+        "src/pages/fa/resources/[slug].astro",
+        "src/pages/en/resources/index.astro",
+        "src/pages/en/resources/[slug].astro",
+        "src/lib/resources-content.test.ts",
+        "docs/quality/product-v2/PU-16-resources-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/lib/resources-content.test.ts",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "npm.cmd run validate:design",
+        "For UI: FA/EN + light/dark, 320/390/768/1024/1280/1440, keyboard, 200% zoom, no-JS and empty/unavailable/ready evidence."
+      ],
+      "packet": "product-packets/PU-16-resources.md",
+      "stop_marker": "PU-16-resources_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-16-resources-HANDOFF.md"
+    },
+    {
+      "id": "PU-16-collections",
+      "parent": "PU-16",
+      "repository": "PUBLIC",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story"
+      ],
+      "goal": "Build canonical collections pages from accepted projections, full body and real file/member links; no duplicate content records.",
+      "contract_section": "I01/I02/I05",
+      "family": "F12",
+      "allowlist": [
+        "src/lib/collections-content.ts",
+        "src/components/collections/CollectionPage.astro",
+        "src/components/collections/DetailPage.astro",
+        "src/styles/product-collections.css",
+        "src/pages/fa/collections/index.astro",
+        "src/pages/fa/collections/[slug].astro",
+        "src/pages/en/collections/index.astro",
+        "src/pages/en/collections/[slug].astro",
+        "src/lib/collections-content.test.ts",
+        "docs/quality/product-v2/PU-16-collections-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/lib/collections-content.ts",
+        "src/components/collections/CollectionPage.astro",
+        "src/components/collections/DetailPage.astro",
+        "src/styles/product-collections.css",
+        "src/pages/fa/collections/index.astro",
+        "src/pages/fa/collections/[slug].astro",
+        "src/pages/en/collections/index.astro",
+        "src/pages/en/collections/[slug].astro",
+        "src/lib/collections-content.test.ts",
+        "docs/quality/product-v2/PU-16-collections-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/lib/collections-content.test.ts",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "npm.cmd run validate:design",
+        "For UI: FA/EN + light/dark, 320/390/768/1024/1280/1440, keyboard, 200% zoom, no-JS and empty/unavailable/ready evidence."
+      ],
+      "packet": "product-packets/PU-16-collections.md",
+      "stop_marker": "PU-16-collections_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-16-collections-HANDOFF.md"
+    },
+    {
+      "id": "PU-16-series",
+      "parent": "PU-16",
+      "repository": "PUBLIC",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story"
+      ],
+      "goal": "Build canonical series pages from accepted projections, full body and real file/member links; no duplicate content records.",
+      "contract_section": "I01/I02/I05",
+      "family": "F12",
+      "allowlist": [
+        "src/lib/series-content.ts",
+        "src/components/series/CollectionPage.astro",
+        "src/components/series/DetailPage.astro",
+        "src/styles/product-series.css",
+        "src/pages/fa/blog/series/[slug].astro",
+        "src/pages/en/blog/series/[slug].astro",
+        "src/lib/series-content.test.ts",
+        "docs/quality/product-v2/PU-16-series-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/lib/series-content.ts",
+        "src/components/series/CollectionPage.astro",
+        "src/components/series/DetailPage.astro",
+        "src/styles/product-series.css",
+        "src/pages/fa/blog/series/[slug].astro",
+        "src/pages/en/blog/series/[slug].astro",
+        "src/lib/series-content.test.ts",
+        "docs/quality/product-v2/PU-16-series-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/lib/series-content.test.ts",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "npm.cmd run validate:design",
+        "For UI: FA/EN + light/dark, 320/390/768/1024/1280/1440, keyboard, 200% zoom, no-JS and empty/unavailable/ready evidence."
+      ],
+      "packet": "product-packets/PU-16-series.md",
+      "stop_marker": "PU-16-series_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-16-series-HANDOFF.md"
+    },
+    {
+      "id": "PU-17-home",
+      "parent": "PU-17",
+      "repository": "PUBLIC",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story",
+        "CA-06",
+        "PU-03-settings",
+        "CA-03"
+      ],
+      "goal": "Integrate research-first home, two audience paths, three selected works and CMS settings; inherit CA-09 editorial rhythm.",
+      "contract_section": "I04",
+      "family": "F02",
+      "allowlist": [
+        "src/components/home/HomeResearchInterests.astro",
+        "src/components/home/HomeJourney.astro",
+        "src/components/home/HomeFeaturedProjects.astro",
+        "src/components/home/HomeFeaturedPublications.astro",
+        "src/components/home/HomeExploreRails.astro",
+        "src/components/home/HomeCollaborationCta.astro",
+        "src/styles/home.css",
+        "src/components/home/wp40-home.behavior.test.ts",
+        "tests/e2e/wp40-home.e2e.ts",
+        "src/lib/site-settings-content.ts",
+        "src/lib/home-content.ts",
+        "src/components/home/product-home.test.ts",
+        "docs/quality/product-v2/PU-17-home-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/components/home/product-home.test.ts",
+        "docs/quality/product-v2/PU-17-home-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/home/product-home.test.ts",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "npm.cmd run validate:design",
+        "For UI: FA/EN + light/dark, 320/390/768/1024/1280/1440, keyboard, 200% zoom, no-JS and empty/unavailable/ready evidence."
+      ],
+      "packet": "product-packets/PU-17-home.md",
+      "stop_marker": "PU-17-home_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "CA-03"
+      ],
+      "handoff": "docs/quality/product-v2/PU-17-home-HANDOFF.md",
+      "visual_criteria_from": [
+        "packets/CA-09.md"
+      ]
+    },
+    {
+      "id": "PU-18-about",
+      "parent": "PU-18",
+      "repository": "PUBLIC",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story"
+      ],
+      "goal": "Complete about content and original CA visual scope; use owner profile and real versioned resource links; verify print when CV.",
+      "contract_section": "I01/I03",
+      "family": "F13",
+      "allowlist": [
+        "src/components/about/AboutPageContent.astro",
+        "src/components/page-family/PageFamilyProfileHeroShell.astro",
+        "src/components/page-family/PageFamilySplitTimelineShell.astro",
+        "src/components/page-family/PageFamilySkillsGridShell.astro",
+        "src/styles/pf07-alignment.css",
+        "src/components/about/public-200.behavior.test.ts",
+        "src/lib/about-profile.ts",
+        "src/pages/fa/about/index.astro",
+        "src/pages/en/about/index.astro",
+        "src/components/about/product-about.test.ts",
+        "docs/quality/product-v2/PU-18-about-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/styles/pf07-alignment.css",
+        "src/components/about/product-about.test.ts",
+        "docs/quality/product-v2/PU-18-about-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/about/product-about.test.ts",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "npm.cmd run validate:design",
+        "For UI: FA/EN + light/dark, 320/390/768/1024/1280/1440, keyboard, 200% zoom, no-JS and empty/unavailable/ready evidence."
+      ],
+      "packet": "product-packets/PU-18-about.md",
+      "stop_marker": "PU-18-about_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-18-about-HANDOFF.md",
+      "visual_criteria_from": [
+        "packets/CA-11.md"
+      ]
+    },
+    {
+      "id": "PU-18-cv",
+      "parent": "PU-18",
+      "repository": "PUBLIC",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story",
+        "PU-18-about"
+      ],
+      "goal": "Complete cv content and original CA visual scope; use owner profile and real versioned resource links; verify print when CV.",
+      "contract_section": "I01/I03",
+      "family": "F13",
+      "allowlist": [
+        "src/components/page-family/PageFamilyProfileHeroShell.astro",
+        "src/components/page-family/PageFamilySplitTimelineShell.astro",
+        "src/components/page-family/PageFamilySkillsGridShell.astro",
+        "src/styles/pf07-alignment.css",
+        "src/lib/cv-content.ts",
+        "src/pages/fa/cv/index.astro",
+        "src/pages/en/cv/index.astro",
+        "src/components/cv/product-cv.test.ts",
+        "docs/quality/product-v2/PU-18-cv-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/styles/pf07-alignment.css",
+        "src/components/cv/product-cv.test.ts",
+        "docs/quality/product-v2/PU-18-cv-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/cv/product-cv.test.ts",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "npm.cmd run validate:design",
+        "For UI: FA/EN + light/dark, 320/390/768/1024/1280/1440, keyboard, 200% zoom, no-JS and empty/unavailable/ready evidence."
+      ],
+      "packet": "product-packets/PU-18-cv.md",
+      "stop_marker": "PU-18-cv_HANDOFF_READY",
+      "file_serialization_dependencies": [
+        "PU-18-about"
+      ],
+      "handoff": "docs/quality/product-v2/PU-18-cv-HANDOFF.md",
+      "visual_criteria_from": [
+        "packets/CA-11.md"
+      ]
+    },
+    {
+      "id": "PU-18-contact",
+      "parent": "PU-18",
+      "repository": "PUBLIC",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-13-routes",
+        "PU-13-story"
+      ],
+      "goal": "Complete contact content and original CA visual scope; preserve real form success/error and topic selection.",
+      "contract_section": "I01/I03",
+      "family": "F14",
+      "allowlist": [
+        "src/components/contact/ContactPageContent.astro",
+        "src/components/page-family/PageFamilyContactHeroShell.astro",
+        "src/components/page-family/PageFamilyContactSidebarShell.astro",
+        "src/styles/pf08-alignment.css",
+        "src/components/contact/public-230.behavior.test.ts",
+        "src/lib/contact-content.ts",
+        "src/pages/fa/contact/index.astro",
+        "src/pages/en/contact/index.astro",
+        "src/components/contact/product-contact.test.ts",
+        "docs/quality/product-v2/PU-18-contact-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/styles/pf08-alignment.css",
+        "src/components/contact/product-contact.test.ts",
+        "docs/quality/product-v2/PU-18-contact-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/contact/product-contact.test.ts",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "npm.cmd run validate:design",
+        "For UI: FA/EN + light/dark, 320/390/768/1024/1280/1440, keyboard, 200% zoom, no-JS and empty/unavailable/ready evidence."
+      ],
+      "packet": "product-packets/PU-18-contact.md",
+      "stop_marker": "PU-18-contact_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-18-contact-HANDOFF.md",
+      "visual_criteria_from": [
+        "packets/CA-16.md"
+      ]
+    },
+    {
+      "id": "PU-21-events",
+      "parent": "PU-21",
+      "repository": "PUBLIC",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-SYNC-public",
+        "PU-17-home",
+        "PU-18-contact"
+      ],
+      "goal": "Send bounded analytics events on successful user actions without blocking navigation or leaking input.",
+      "contract_section": "I07",
+      "family": "shared",
+      "allowlist": [
+        "src/lib/analytics.ts",
+        "src/layouts/SiteLayout.astro",
+        "src/lib/contact-form-adapter.ts",
+        "src/lib/analytics.test.ts",
+        "docs/quality/product-v2/PU-21-events-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/lib/analytics.ts",
+        "src/lib/analytics.test.ts",
+        "docs/quality/product-v2/PU-21-events-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/lib/analytics.test.ts",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "npm.cmd run validate:design",
+        "For UI: FA/EN + light/dark, 320/390/768/1024/1280/1440, keyboard, 200% zoom, no-JS and empty/unavailable/ready evidence."
+      ],
+      "packet": "product-packets/PU-21-events.md",
+      "stop_marker": "PU-21-events_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-21-events-HANDOFF.md"
+    },
+    {
+      "id": "PU-24-search",
+      "parent": "PU-24",
+      "repository": "PUBLIC",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-14-research",
+        "PU-14-publications",
+        "PU-14-projects",
+        "PU-15-articles",
+        "PU-15-courses",
+        "PU-15-creative",
+        "PU-14-statements",
+        "PU-15-lessons",
+        "PU-16-books",
+        "PU-16-talks",
+        "PU-16-resources",
+        "PU-16-collections",
+        "PU-16-series",
+        "PU-17-home",
+        "PU-18-about",
+        "PU-18-cv",
+        "PU-18-contact",
+        "PU-23-invalidation"
+      ],
+      "goal": "Extend existing Pagefind metadata/query normalization to all published families, with no-JS collection links and honest error states.",
+      "contract_section": "I07",
+      "family": "F15",
+      "allowlist": [
+        "src/integrations/pagefind.mjs",
+        "src/lib/search-content.ts",
+        "src/components/search/SearchPageContent.astro",
+        "src/styles/product-search.css",
+        "src/components/search/public-240.behavior.test.ts",
+        "docs/quality/product-v2/PU-24-search-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/styles/product-search.css",
+        "docs/quality/product-v2/PU-24-search-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/components/search/public-240.behavior.test.ts",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "npm.cmd run validate:design",
+        "For UI: FA/EN + light/dark, 320/390/768/1024/1280/1440, keyboard, 200% zoom, no-JS and empty/unavailable/ready evidence."
+      ],
+      "packet": "product-packets/PU-24-search.md",
+      "stop_marker": "PU-24-search_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-24-search-HANDOFF.md"
+    },
+    {
+      "id": "PU-24-seo",
+      "parent": "PU-24",
+      "repository": "PUBLIC",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-24-search",
+        "PU-13-routes"
+      ],
+      "goal": "Verify canonical/alternates/redirects/sitemap for every family and independently published work.",
+      "contract_section": "I02/I08",
+      "family": "F15",
+      "allowlist": [
+        "src/lib/seo.ts",
+        "src/lib/seo-route-registry.ts",
+        "scripts/seo-route-registry.mjs",
+        "scripts/validate-seo.mjs",
+        "src/pages/404.astro",
+        "src/lib/seo.test.ts",
+        "docs/quality/product-v2/PU-24-seo-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "src/pages/404.astro",
+        "docs/quality/product-v2/PU-24-seo-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/lib/seo.test.ts",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "npm.cmd run validate:design",
+        "For UI: FA/EN + light/dark, 320/390/768/1024/1280/1440, keyboard, 200% zoom, no-JS and empty/unavailable/ready evidence."
+      ],
+      "packet": "product-packets/PU-24-seo.md",
+      "stop_marker": "PU-24-seo_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-24-seo-HANDOFF.md"
+    },
+    {
+      "id": "PU-25-admin-journey",
+      "parent": "PU-25",
+      "repository": "ADMIN",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-SYNC-admin",
+        "PU-09-transport",
+        "PU-09-editor",
+        "PU-09-host",
+        "PU-10-research",
+        "PU-10-publication",
+        "PU-10-project",
+        "PU-10-article",
+        "PU-10-course",
+        "PU-10-lesson",
+        "PU-10-creative",
+        "PU-10-book",
+        "PU-10-talk",
+        "PU-10-resource",
+        "PU-10-collection",
+        "PU-10-series",
+        "PU-08-settings",
+        "PU-08-profile",
+        "PU-11-media",
+        "PU-12-home",
+        "PU-12-graph",
+        "PU-12-jobs",
+        "PU-22-analytics"
+      ],
+      "goal": "Exercise project/article publication, media replacement, graph relation, restore, locale handling and removal through actual integration.",
+      "contract_section": "I08",
+      "family": "shared",
+      "allowlist": [
+        "tests/e2e/product-journey.spec.ts",
+        "src/pages/product-journey.test.tsx",
+        "docs/quality/product-v2/PU-25-admin-journey-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "tests/e2e/product-journey.spec.ts",
+        "src/pages/product-journey.test.tsx",
+        "docs/quality/product-v2/PU-25-admin-journey-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/pages/product-journey.test.tsx",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "Verify saved/published distinction, validation, keyboard/RTL, CSRF/session expiry and relevant 409 conflicts."
+      ],
+      "packet": "product-packets/PU-25-admin-journey.md",
+      "stop_marker": "PU-25-admin-journey_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-25-admin-journey-HANDOFF.md"
+    },
+    {
+      "id": "PU-25-public-journey",
+      "parent": "PU-25",
+      "repository": "PUBLIC",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "PU-25-admin-journey",
+        "PU-24-seo",
+        "PU-07-runner",
+        "PU-21-events"
+      ],
+      "goal": "Verify the same published records on direct URLs, indexes, Pagefind, alternates and removed routes/files.",
+      "contract_section": "I08",
+      "family": "shared",
+      "allowlist": [
+        "tests/product-publication.spec.ts",
+        "src/lib/product-publication.test.ts",
+        "docs/quality/product-v2/PU-25-public-journey-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "tests/product-publication.spec.ts",
+        "src/lib/product-publication.test.ts",
+        "docs/quality/product-v2/PU-25-public-journey-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "npm.cmd test -- src/lib/product-publication.test.ts",
+        "npm.cmd run lint",
+        "npm.cmd run build",
+        "npm.cmd run validate:design",
+        "For UI: FA/EN + light/dark, 320/390/768/1024/1280/1440, keyboard, 200% zoom, no-JS and empty/unavailable/ready evidence."
+      ],
+      "packet": "product-packets/PU-25-public-journey.md",
+      "stop_marker": "PU-25-public-journey_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "docs/quality/product-v2/PU-25-public-journey-HANDOFF.md"
+    },
+    {
+      "id": "CA-17",
+      "title": "Independent visual and interaction acceptance",
+      "status": "NOT_STARTED",
+      "repository": "PUBLIC",
+      "depends_on": [
+        "CA-07",
+        "PU-25-public-journey"
+      ],
+      "allowlist": [
+        "tests/e2e/ca17-concept-alignment.visual.e2e.ts",
+        "src/test-harness/concept-alignment-captures.ts",
+        "docs/quality/concept-alignment-v2/CA-17-HANDOFF.md"
+      ],
+      "goal": "Review the exact integrated public commit against V2 and recorded evidence. Report PASS or REVISE for QA independently from owner acceptance and release readiness.",
+      "stop_marker": "CA-17_HANDOFF_READY",
+      "packet": "packets/CA-17.md",
+      "active": true,
+      "parent": "CA-17",
+      "contract_section": "ADR-0008/I08",
+      "family": "all",
+      "acceptance": [
+        "Retain original CA-17 visual matrix and include every newly added family."
+      ],
+      "read_paths": [],
+      "proposed_new_files": [
+        "tests/e2e/ca17-concept-alignment.visual.e2e.ts",
+        "src/test-harness/concept-alignment-captures.ts",
+        "docs/quality/concept-alignment-v2/CA-17-HANDOFF.md"
+      ],
+      "file_serialization_dependencies": []
+    },
+    {
+      "id": "PU-25-review",
+      "parent": "PU-25",
+      "repository": "ROOT",
+      "status": "NOT_STARTED",
+      "active": true,
+      "depends_on": [
+        "CA-17",
+        "PU-25-admin-journey",
+        "PU-25-public-journey",
+        "PU-22-analytics"
+      ],
+      "goal": "Record independent cross-repository acceptance on exact commits and owner review; return fixes to owning packets.",
+      "contract_section": "I08",
+      "family": "all",
+      "allowlist": [
+        "Docs/10-tracking/product-v2/FINAL-ACCEPTANCE.md",
+        "Docs/10-tracking/product-v2/PU-25-review-HANDOFF.md"
+      ],
+      "proposed_new_files": [
+        "Docs/10-tracking/product-v2/FINAL-ACCEPTANCE.md",
+        "Docs/10-tracking/product-v2/PU-25-review-HANDOFF.md"
+      ],
+      "read_paths": [],
+      "acceptance": [
+        "All 15 families and admin-to-public flows have evidence; implementation, publication and visual acceptance stay distinct.",
+        "No failed or unrun gate is labelled PASS."
+      ],
+      "packet": "product-packets/PU-25-review.md",
+      "stop_marker": "PU-25-review_HANDOFF_READY",
+      "file_serialization_dependencies": [],
+      "handoff": "Docs/10-tracking/product-v2/PU-25-review-HANDOFF.md"
+    }
+  ],
+  "superseded_aliases": {
+    "CA-09": [
+      "PU-17-home"
+    ],
+    "CA-10": [
+      "PU-14-research",
+      "PU-14-publications"
+    ],
+    "CA-11": [
+      "PU-18-about",
+      "PU-18-cv"
+    ],
+    "CA-12": [
+      "PU-14-projects"
+    ],
+    "CA-13": [
+      "PU-15-articles"
+    ],
+    "CA-14": [
+      "PU-15-courses"
+    ],
+    "CA-15": [
+      "PU-15-creative"
+    ],
+    "CA-16": [
+      "PU-18-contact"
+    ]
+  }
+}

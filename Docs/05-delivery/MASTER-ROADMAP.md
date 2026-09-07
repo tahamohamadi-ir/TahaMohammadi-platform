@@ -1,5 +1,9 @@
 # Master Roadmap
 
+<!-- PRODUCT-V2.1 -->
+Current product/implementation authority: ADR-0010, `Docs/03-contracts/PRODUCT-INTERFACES-V2.md` and `Docs/05-delivery/concept-alignment-v2/EXECUTION.md` (coordination-root paths). Keep Astro/TypeScript with bounded Three.js/GSAP, existing React admin/Django backend, Pagefind and first-party aggregate analytics. Earlier stack/phase assumptions apply only where compatible. Rebuild jobs/edge invalidation are a planned interface, not an already operating deployment.
+<!-- /PRODUCT-V2.1 -->
+
 Goal: Deliver three production-ready repositories without importing the broken legacy frontend.
 
 ## Phase 0 — Workspace foundation

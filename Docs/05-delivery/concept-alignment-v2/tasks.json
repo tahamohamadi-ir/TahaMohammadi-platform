@@ -1,0 +1,420 @@
+{
+  "version": "2.1.0",
+  "date": "2026-09-05",
+  "runtime_implemented": false,
+  "canonical_queue": "execution-tasks.json",
+  "tasks": [
+    {
+      "id": "CA-01",
+      "title": "Version the V2 consumer contract",
+      "status": "ACCEPTED_LOCAL",
+      "repository": "Front-End/public-site",
+      "depends_on": [],
+      "allowlist": [
+        "contracts/design-authority/v2-overlay.json",
+        "scripts/validate-design-authority.mjs",
+        "src/foundation.contract.test.ts",
+        "src/components/templates/public-160.behavior.test.ts",
+        "docs/quality/concept-alignment-v2/CA-01-HANDOFF.md"
+      ],
+      "goal": "Add a versioned public consumer overlay for the merged hero and allowed scene dependencies. Keep the old pinned reference snapshot intact. Record a reproducible baseline before runtime edits.",
+      "stop_marker": "CA-01_HANDOFF_READY",
+      "packet": "packets/CA-01.md",
+      "active": true,
+      "review": "reviews/CA-01-R1.md",
+      "handoff_state": "uncommitted-not-accepted",
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "CA-02",
+      "title": "Published graph adapter and route resolution",
+      "status": "REVISE",
+      "repository": "Front-End/public-site",
+      "depends_on": [
+        "CA-01",
+        "PU-SYNC-graph"
+      ],
+      "allowlist": [
+        "src/lib/hero-graph-content.ts",
+        "src/lib/hero-graph-content.test.ts",
+        "tests/fixtures/contracts/hero-graph.json",
+        "docs/quality/concept-alignment-v2/CA-02-HANDOFF.md"
+      ],
+      "goal": "Adapt the existing public GraphPayloadOut into deterministic, exact-locale semantic data; resolve relatedRecords by eligible record family/ID, never guessed slugs.",
+      "stop_marker": "CA-02_HANDOFF_READY",
+      "packet": "packets/CA-02.md",
+      "active": true,
+      "review_note": "reviews/CATALOG-GRAPH-REVIEW-2026-09-06.md",
+      "review": "reviews/CATALOG-GRAPH-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "CA-03",
+      "title": "Semantic integrated Home hero",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "repository": "Front-End/public-site",
+      "depends_on": [
+        "CA-02"
+      ],
+      "allowlist": [
+        "src/components/home/HomeHero.astro",
+        "src/components/home/HomeResearchGraph.astro",
+        "src/components/hero/HeroGraph.astro",
+        "src/components/hero/GraphNodeList.astro",
+        "src/components/hero/hero-contract.test.ts",
+        "src/lib/visual/scene-contract.ts",
+        "src/styles/hero-graph.css",
+        "src/pages/fa/index.astro",
+        "src/pages/en/index.astro",
+        "src/components/home/wp40-home.behavior.test.ts",
+        "tests/e2e/ca03-hero-semantic.e2e.ts",
+        "src/atlas/sections/FoundationsSection.astro",
+        "docs/quality/concept-alignment-v2/CA-03-HANDOFF.md",
+        "tests/e2e/wp40-home.e2e.ts"
+      ],
+      "goal": "Build the new Home hero HTML, move semantic graph inside it and remove the separate Home graph placement in both locales. Lock renderer/controller TypeScript interfaces before graphics workers begin.",
+      "stop_marker": "CA-03_HANDOFF_READY",
+      "packet": "packets/CA-03.md",
+      "active": true,
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "CA-04",
+      "title": "Three.js graph geometry and deterministic layout",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "repository": "Front-End/public-site",
+      "depends_on": [
+        "CA-03"
+      ],
+      "allowlist": [
+        "package.json",
+        "package-lock.json",
+        "src/lib/visual/graph-scene.ts",
+        "src/lib/visual/graph-layout.ts",
+        "src/lib/visual/graph-layout.test.ts",
+        "src/components/hero/GraphSceneDemo.astro",
+        "src/atlas/sections/GraphSceneSection.astro",
+        "src/atlas/AtlasPage.astro",
+        "docs/quality/concept-alignment-v2/CA-04-HANDOFF.md"
+      ],
+      "goal": "Author an original procedural constellation renderer against the locked scene contract. This packet does not integrate routes or animate DOM.",
+      "stop_marker": "CA-04_HANDOFF_READY",
+      "packet": "packets/CA-04.md",
+      "active": true,
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "CA-05",
+      "title": "Graph selection and bounded GSAP motion",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "repository": "Front-End/public-site",
+      "depends_on": [
+        "CA-04"
+      ],
+      "allowlist": [
+        "src/lib/visual/graph-controller.ts",
+        "src/lib/visual/graph-motion.ts",
+        "src/lib/visual/graph-controller.test.ts",
+        "src/components/hero/GraphInteractionDemo.astro",
+        "src/atlas/sections/GraphInteractionSection.astro",
+        "src/atlas/AtlasPage.astro",
+        "tests/e2e/ca05-graph-interaction.e2e.ts",
+        "docs/quality/concept-alignment-v2/CA-05-HANDOFF.md"
+      ],
+      "goal": "Implement selection, accessible native-control enhancement, projected HTML labels, and GSAP scene choreography against the locked renderer contract.",
+      "stop_marker": "CA-05_HANDOFF_READY",
+      "packet": "packets/CA-05.md",
+      "active": true,
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "CA-06",
+      "title": "Integrate progressive Home hero",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "repository": "Front-End/public-site",
+      "depends_on": [
+        "CA-05",
+        "CA-03"
+      ],
+      "allowlist": [
+        "src/components/hero/HeroGraph.astro",
+        "src/lib/visual/hero-enhancement.ts",
+        "src/styles/hero-graph.css",
+        "src/components/hero/hero-enhancement.test.ts",
+        "tests/e2e/ca06-home-scene.e2e.ts",
+        "docs/quality/concept-alignment-v2/CA-06-HANDOFF.md"
+      ],
+      "goal": "Wire scene and controller into the semantic Home hero, load on eligible routes, and prove fallbacks without changing graph facts.",
+      "stop_marker": "CA-06_HANDOFF_READY",
+      "packet": "packets/CA-06.md",
+      "active": true,
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "CA-07",
+      "title": "Procedural gateway portal",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "repository": "Front-End/public-site",
+      "depends_on": [
+        "CA-04"
+      ],
+      "allowlist": [
+        "src/pages/index.astro",
+        "src/components/gateway/GatewayPortal.astro",
+        "src/lib/visual/gateway-scene.ts",
+        "src/lib/visual/gateway-motion.ts",
+        "src/styles/gateway.css",
+        "tests/e2e/wp40-gateway.e2e.ts",
+        "tests/e2e/ca07-gateway-scene.e2e.ts",
+        "docs/quality/concept-alignment-v2/CA-07-HANDOFF.md"
+      ],
+      "goal": "Rebuild the language gateway portal from geometry and GSAP, keeping HTML links and brand intact. Work is independent of Home integration.",
+      "stop_marker": "CA-07_HANDOFF_READY",
+      "packet": "packets/CA-07.md",
+      "active": true,
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "CA-08",
+      "title": "Shared shell fidelity",
+      "status": "IMPLEMENTED_UNREVIEWED",
+      "repository": "Front-End/public-site",
+      "depends_on": [
+        "CA-03"
+      ],
+      "allowlist": [
+        "src/components/Header.astro",
+        "src/components/Footer.astro",
+        "src/styles/shell.css",
+        "src/components/shell/public-150.behavior.test.ts",
+        "tests/e2e/public-150-shell.e2e.ts",
+        "docs/quality/concept-alignment-v2/CA-08-HANDOFF.md"
+      ],
+      "goal": "Align header/footer typography, spacing, navigation and truthful unavailable states. Own shared chrome before page-family workers start.",
+      "stop_marker": "CA-08_HANDOFF_READY",
+      "packet": "packets/CA-08.md",
+      "active": true,
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    },
+    {
+      "id": "CA-09",
+      "title": "Home lower-section editorial rhythm",
+      "status": "SUPERSEDED",
+      "repository": "Front-End/public-site",
+      "depends_on": [
+        "CA-06",
+        "CA-08"
+      ],
+      "allowlist": [
+        "src/components/home/HomeResearchInterests.astro",
+        "src/components/home/HomeJourney.astro",
+        "src/components/home/HomeFeaturedProjects.astro",
+        "src/components/home/HomeFeaturedPublications.astro",
+        "src/components/home/HomeExploreRails.astro",
+        "src/components/home/HomeCollaborationCta.astro",
+        "src/styles/home.css",
+        "src/components/home/wp40-home.behavior.test.ts",
+        "tests/e2e/wp40-home.e2e.ts",
+        "docs/quality/concept-alignment-v2/CA-09-HANDOFF.md"
+      ],
+      "goal": "Match the remainder of Home: fit, journey, selected work, rails and compact collaboration band without filling unpublished data.",
+      "stop_marker": "CA-09_HANDOFF_READY",
+      "packet": "packets/CA-09.md",
+      "active": false,
+      "replacement_ids": [
+        "PU-17-home"
+      ]
+    },
+    {
+      "id": "CA-10",
+      "title": "PF-05 Research and publications",
+      "status": "SUPERSEDED",
+      "repository": "Front-End/public-site",
+      "depends_on": [
+        "CA-06",
+        "CA-08"
+      ],
+      "allowlist": [
+        "src/components/research/ResearchPageContent.astro",
+        "src/components/publications/PublicationsPageContent.astro",
+        "src/components/page-family/PageFamilyConstellationShell.astro",
+        "src/components/page-family/PageFamilySelectedPublicationsShell.astro",
+        "src/styles/pf05-alignment.css",
+        "src/components/research/public-201.behavior.test.ts",
+        "src/components/publications/public-201.behavior.test.ts",
+        "docs/quality/concept-alignment-v2/CA-10-HANDOFF.md"
+      ],
+      "goal": "Adopt shared graph semantics in Research with page-specific layout and align publication bibliography rows. Keep Home graph only in its hero.",
+      "stop_marker": "CA-10_HANDOFF_READY",
+      "packet": "packets/CA-10.md",
+      "active": false,
+      "replacement_ids": [
+        "PU-14-research",
+        "PU-14-publications"
+      ]
+    },
+    {
+      "id": "CA-11",
+      "title": "PF-07 About and CV",
+      "status": "SUPERSEDED",
+      "repository": "Front-End/public-site",
+      "depends_on": [
+        "CA-08"
+      ],
+      "allowlist": [
+        "src/components/about/AboutPageContent.astro",
+        "src/components/page-family/PageFamilyProfileHeroShell.astro",
+        "src/components/page-family/PageFamilySplitTimelineShell.astro",
+        "src/components/page-family/PageFamilySkillsGridShell.astro",
+        "src/styles/pf07-alignment.css",
+        "src/components/about/public-200.behavior.test.ts",
+        "docs/quality/concept-alignment-v2/CA-11-HANDOFF.md"
+      ],
+      "goal": "Correct profile hierarchy, timeline/skills density and portrait semantics; retain honest CV/document availability.",
+      "stop_marker": "CA-11_HANDOFF_READY",
+      "packet": "packets/CA-11.md",
+      "active": false,
+      "replacement_ids": [
+        "PU-18-about",
+        "PU-18-cv"
+      ]
+    },
+    {
+      "id": "CA-12",
+      "title": "PF-04 Projects collection",
+      "status": "SUPERSEDED",
+      "repository": "Front-End/public-site",
+      "depends_on": [
+        "CA-08"
+      ],
+      "allowlist": [
+        "src/components/projects/ProjectsPageContent.astro",
+        "src/components/page-family/PageFamilyEvidenceGridShell.astro",
+        "src/styles/pf04-alignment.css",
+        "src/components/projects/public-210.behavior.test.ts",
+        "docs/quality/concept-alignment-v2/CA-12-HANDOFF.md"
+      ],
+      "goal": "Restore project editorial rows, distinct media roles and available-evidence affordances using existing sanitized records.",
+      "stop_marker": "CA-12_HANDOFF_READY",
+      "packet": "packets/CA-12.md",
+      "active": false,
+      "replacement_ids": [
+        "PU-14-projects"
+      ]
+    },
+    {
+      "id": "CA-13",
+      "title": "PF-03 Blog editorial layout",
+      "status": "SUPERSEDED",
+      "repository": "Front-End/public-site",
+      "depends_on": [
+        "CA-08"
+      ],
+      "allowlist": [
+        "src/components/writing/WritingPageContent.astro",
+        "src/components/page-family/PageFamilyThemeExploreShell.astro",
+        "src/styles/pf03-alignment.css",
+        "src/components/writing/public-211.behavior.test.ts",
+        "docs/quality/concept-alignment-v2/CA-13-HANDOFF.md"
+      ],
+      "goal": "Align Blog typography, featured/row rhythm and topic controls using the existing Writing components and canonical Blog routes.",
+      "stop_marker": "CA-13_HANDOFF_READY",
+      "packet": "packets/CA-13.md",
+      "active": false,
+      "replacement_ids": [
+        "PU-15-articles"
+      ]
+    },
+    {
+      "id": "CA-14",
+      "title": "PF-06 Education layout",
+      "status": "SUPERSEDED",
+      "repository": "Front-End/public-site",
+      "depends_on": [
+        "CA-08"
+      ],
+      "allowlist": [
+        "src/components/teaching/TeachingPageContent.astro",
+        "src/components/page-family/PageFamilyFeaturedPathShell.astro",
+        "src/components/page-family/PageFamilyPathProcessShell.astro",
+        "src/styles/pf06-alignment.css",
+        "src/components/teaching/public-220.behavior.test.ts",
+        "docs/quality/concept-alignment-v2/CA-14-HANDOFF.md"
+      ],
+      "goal": "Align learning library hero, path and course rows while preserving genuine empty course/talk states.",
+      "stop_marker": "CA-14_HANDOFF_READY",
+      "packet": "packets/CA-14.md",
+      "active": false,
+      "replacement_ids": [
+        "PU-15-courses"
+      ]
+    },
+    {
+      "id": "CA-15",
+      "title": "PF-01/02 Gallery and visual detail",
+      "status": "SUPERSEDED",
+      "repository": "Front-End/public-site",
+      "depends_on": [
+        "CA-08"
+      ],
+      "allowlist": [
+        "src/components/creative/CreativePageContent.astro",
+        "src/components/creative/CreativeDetailContent.astro",
+        "src/components/page-family/PageFamilyCreativeDetailShell.astro",
+        "src/styles/pf01-pf02-alignment.css",
+        "src/components/creative/public-221.behavior.test.ts",
+        "docs/quality/concept-alignment-v2/CA-15-HANDOFF.md"
+      ],
+      "goal": "Align gallery feature/grid and existing detail template with rights-cleared data; eliminate decorative image repetition as fake work.",
+      "stop_marker": "CA-15_HANDOFF_READY",
+      "packet": "packets/CA-15.md",
+      "active": false,
+      "replacement_ids": [
+        "PU-15-creative"
+      ]
+    },
+    {
+      "id": "CA-16",
+      "title": "PF-08 Contact layout",
+      "status": "SUPERSEDED",
+      "repository": "Front-End/public-site",
+      "depends_on": [
+        "CA-08"
+      ],
+      "allowlist": [
+        "src/components/contact/ContactPageContent.astro",
+        "src/components/page-family/PageFamilyContactHeroShell.astro",
+        "src/components/page-family/PageFamilyContactSidebarShell.astro",
+        "src/styles/pf08-alignment.css",
+        "src/components/contact/public-230.behavior.test.ts",
+        "docs/quality/concept-alignment-v2/CA-16-HANDOFF.md"
+      ],
+      "goal": "Align Contact topic/form/sidebar hierarchy, replacing portal decoration with a calm content-led hero while preserving the existing form integration.",
+      "stop_marker": "CA-16_HANDOFF_READY",
+      "packet": "packets/CA-16.md",
+      "active": false,
+      "replacement_ids": [
+        "PU-18-contact"
+      ]
+    },
+    {
+      "id": "CA-17",
+      "title": "Independent visual and interaction acceptance",
+      "status": "NOT_STARTED",
+      "repository": "Front-End/public-site",
+      "depends_on": [
+        "CA-07",
+        "PU-25-public-journey"
+      ],
+      "allowlist": [
+        "tests/e2e/ca17-concept-alignment.visual.e2e.ts",
+        "src/test-harness/concept-alignment-captures.ts",
+        "docs/quality/concept-alignment-v2/CA-17-HANDOFF.md"
+      ],
+      "goal": "Review the exact integrated public commit against V2 and recorded evidence. Report PASS or REVISE for QA independently from owner acceptance and release readiness.",
+      "stop_marker": "CA-17_HANDOFF_READY",
+      "packet": "packets/CA-17.md",
+      "active": true,
+      "review_note": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "file": "Docs/10-tracking/concept-alignment-2026-09-05/staging-about-en-light-1440.png",
+    "sha256": "b997adfcbc4e85d7066b946c90d741941ae97a9a2fdeb9f5653e991aa5aaa190",
+    "pixelSize": [
+      1425,
+      4125
+    ],
+    "provenance": "live CUA in-app browser 2026-09-05; not release evidence"
+  },
+  {
+    "file": "Docs/10-tracking/concept-alignment-2026-09-05/staging-gateway.png",
+    "sha256": "26fd50dffbfec3f24c7061efe4e1440461e888873b72aa1da9439b66d44ce385",
+    "pixelSize": [
+      364,
+      910
+    ],
+    "provenance": "live CUA in-app browser 2026-09-05; not release evidence"
+  },
+  {
+    "file": "Docs/10-tracking/concept-alignment-2026-09-05/staging-home-en-dark-1440.png",
+    "sha256": "0f59c4b6759bb4c9edd2b5d1317c1d66147b3d9979dd84e3d47fb8fece69bf8a",
+    "pixelSize": [
+      1425,
+      4165
+    ],
+    "provenance": "live CUA in-app browser 2026-09-05; not release evidence"
+  },
+  {
+    "file": "Docs/10-tracking/concept-alignment-2026-09-05/staging-home-en-light-1440.png",
+    "sha256": "b81efdbf6bbc03507eafc594baca3ef2fffefaf0092ec1fe244f2960a70cfc97",
+    "pixelSize": [
+      1425,
+      4165
+    ],
+    "provenance": "live CUA in-app browser 2026-09-05; not release evidence"
+  },
+  {
+    "file": "Docs/10-tracking/concept-alignment-2026-09-05/staging-home-fa-dark-1440.png",
+    "sha256": "d9930cb4f817b11bfa7553268a173a94f11535d4104a1482f8af446daec69dfc",
+    "pixelSize": [
+      1425,
+      3591
+    ],
+    "provenance": "live CUA in-app browser 2026-09-05; not release evidence"
+  },
+  {
+    "file": "Docs/10-tracking/concept-alignment-2026-09-05/staging-home-fa-mobile.png",
+    "sha256": "5385f29b9f29129c172fb389e7551f71bfe8b882389b3049b13f043fe90bc0d7",
+    "pixelSize": [
+      379,
+      6922
+    ],
+    "provenance": "live CUA in-app browser 2026-09-05; not release evidence"
+  },
+  {
+    "file": "Docs/10-tracking/concept-alignment-2026-09-05/staging-research-en-light-1440.png",
+    "sha256": "27897c69b34dad4f60f9c9095466732d0830d9ea5f4fa09e5bb930e508c97c63",
+    "pixelSize": [
+      1425,
+      1836
+    ],
+    "provenance": "live CUA in-app browser 2026-09-05; not release evidence"
+  }
+]

@@ -1,5 +1,9 @@
 # Public site stack evaluation
 
+<!-- PRODUCT-V2.1 -->
+Current product/implementation authority: ADR-0010, `Docs/03-contracts/PRODUCT-INTERFACES-V2.md` and `Docs/05-delivery/concept-alignment-v2/EXECUTION.md` (coordination-root paths). Keep Astro/TypeScript with bounded Three.js/GSAP, existing React admin/Django backend, Pagefind and first-party aggregate analytics. Earlier stack/phase assumptions apply only where compatible. Rebuild jobs/edge invalidation are a planned interface, not an already operating deployment.
+<!-- /PRODUCT-V2.1 -->
+
 Date: 2026-08-29  
 Status: **Accepted** — reaffirms ADR-0002 (Astro static-first public site).
 

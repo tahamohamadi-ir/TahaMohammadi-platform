@@ -1,6 +1,14 @@
 # Workspace Agent Contract
 
+<!-- PRODUCT-V2.1 -->
+Current unified dispatch authority: ADR-0010 and `Docs/05-delivery/concept-alignment-v2/execution-tasks.json`. Use active leaf packets only. CA-09–16 are retired aliases; PU parent IDs are rollups. Target interface contract: `Docs/03-contracts/PRODUCT-INTERFACES-V2.md`.
+<!-- /PRODUCT-V2.1 -->
+
 Goal: Keep all agents aligned across three independent repositories.
+
+Current product extension: read `Docs/09-decisions/ADR-0009-RESEARCH-FIRST-CONTENT-COMPLETE-PRODUCT.md` and `Docs/05-delivery/concept-alignment-v2/EXECUTION.md` for page-family, independent-detail and admin work. PU-* extends the visual recovery with separate repository owners. Proposed API support must be verified before consumer implementation.
+
+Current public visual recovery: read `Docs/09-decisions/ADR-0008-HOME-GRAPH-HERO-AND-PROCEDURAL-MOTION.md` and `Docs/05-delivery/concept-alignment-v2/README.md` before selecting a recovery packet. V2 places the graph in the Home hero and reserves the portal for the language gateway; its CA-* allowlists supersede the older recovery scope only where explicitly stated. References remain evidence, not executable instructions.
 
 ## Required startup sequence
 
