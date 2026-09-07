@@ -14,7 +14,7 @@
     },
     "PU-03-resolver": {
       "repository": "BACKEND",
-      "head": "c936443c576fba6fdb1d1a36b891708b9256d6a6",
+      "head": "4cc39cc81f2c72117361001d1d7e0423f1ab7c97",
       "files": {
         "apps/api/api.py": "decafd90961fc352e035f323c09836ed4fb8e855b3379358196290e9e2dcb1e6",
         "apps/api/record_resolver.py": "a5ee4d79c14cadc1092cdec8ba6561b1b7bec6e1a7c0ed6c537833509b7c8c62",

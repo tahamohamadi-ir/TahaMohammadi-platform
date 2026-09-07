@@ -49,8 +49,8 @@ services:
       context: ..
       dockerfile: deploy/Dockerfile.public
       args:
-        PUBLIC_SITE_URL: https://staging.tahamohamadi.ir
-        PUBLIC_API_BASE_URL: https://staging.tahamohamadi.ir
+        PUBLIC_SITE_URL: ${PUBLIC_SITE_URL:-https://tahamohamadi.ir}
+        PUBLIC_API_BASE_URL: ${PUBLIC_API_BASE_URL:-https://tahamohamadi.ir}
     image: taha-web-stage:${RELEASE_ID}
     restart: unless-stopped
     volumes:

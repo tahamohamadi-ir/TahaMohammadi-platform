@@ -113,7 +113,7 @@
     {
       "path": "Infra/staging/docker-compose.stage.yml",
       "baseline": "e9c0636f88ce9fc10b275ee4fc91e7be402190f740635a8726dbf781e3aee6a2",
-      "current": "8b59fb0c33235f6c9e8c135a1d2ddde7e9406a62c5634a6b9e4bd3e6152321e7"
+      "current": "74229bc01cd1635cf6e4353ea87f6da9aff5ef88cf08e8a9fa6d113e29bcf2d2"
     },
     {
       "path": "Back-End/apps/api/admin_common.py",
@@ -131,14 +131,14 @@
   "runtime_not_started": 0,
   "page_families": 15,
   "retired_CA_aliases": 8,
-  "allowlist_entries": 678,
+  "allowlist_entries": 680,
   "serialized_overlap_pairs": 1164,
   "unchanged_source_hashes": 3,
   "checked_local_links": 116,
   "git": {
     "ROOT": {
       "diff_check": "PASS",
-      "tracked_changed_files": 1,
+      "tracked_changed_files": 7,
       "packet_runtime_changes_present": false
     },
     "PUBLIC": {

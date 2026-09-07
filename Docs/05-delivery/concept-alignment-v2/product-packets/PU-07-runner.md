@@ -13,6 +13,8 @@ Workspace and owner AGENTS.md; EXECUTION.md common rules; PRODUCT-SPEC shared ru
 - `Infra/staging/docker-compose.stage.yml`
 - `Infra/staging/Caddyfile.staging.fragment`
 - `Infra/staging/nginx-public.conf`
+- `Infra/staging/Dockerfile.admin`
+- `Infra/staging/nginx-admin.conf`
 - `Infra/staging/rebuild-product.py` — NEW/PROPOSED
 - `Infra/staging/test_rebuild_product.py` — NEW/PROPOSED
 - `Docs/08-operations/PRODUCT-PUBLISHING-RUNBOOK.md` — NEW/PROPOSED

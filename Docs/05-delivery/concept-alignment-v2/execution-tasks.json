@@ -1097,6 +1097,8 @@
         "Infra/staging/docker-compose.stage.yml",
         "Infra/staging/Caddyfile.staging.fragment",
         "Infra/staging/nginx-public.conf",
+        "Infra/staging/Dockerfile.admin",
+        "Infra/staging/nginx-admin.conf",
         "Infra/staging/rebuild-product.py",
         "Infra/staging/test_rebuild_product.py",
         "Docs/08-operations/PRODUCT-PUBLISHING-RUNBOOK.md",
