@@ -138,7 +138,7 @@
   "git": {
     "ROOT": {
       "diff_check": "PASS",
-      "tracked_changed_files": 2,
+      "tracked_changed_files": 1,
       "packet_runtime_changes_present": false
     },
     "PUBLIC": {

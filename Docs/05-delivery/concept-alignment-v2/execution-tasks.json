@@ -204,7 +204,10 @@
         "apps/content/management/commands/import_profile_seed.py",
         "apps/content/services/content_seed_import.py",
         "tests/test_seed_safety.py",
-        "docs/quality/product-v2/PU-26-seed-safety-HANDOFF.md"
+        "docs/quality/product-v2/PU-26-seed-safety-HANDOFF.md",
+        "apps/content/management/commands/seed_managed_copy.py",
+        "tests/test_managed_copy_seed.py",
+        "apps/siteconfig/seeds/public-copy.json"
       ],
       "proposed_new_files": [
         "tests/test_seed_safety.py",
@@ -1464,7 +1467,8 @@
         "src/styles/shell.css",
         "src/components/shell/public-150.behavior.test.ts",
         "tests/e2e/public-150-shell.e2e.ts",
-        "docs/quality/concept-alignment-v2/CA-08-HANDOFF.md"
+        "docs/quality/concept-alignment-v2/CA-08-HANDOFF.md",
+        "src/components/shell/managed-shell.test.ts"
       ],
       "goal": "Align header/footer typography, spacing, navigation and truthful unavailable states. Own shared chrome before page-family workers start.",
       "stop_marker": "CA-08_HANDOFF_READY",

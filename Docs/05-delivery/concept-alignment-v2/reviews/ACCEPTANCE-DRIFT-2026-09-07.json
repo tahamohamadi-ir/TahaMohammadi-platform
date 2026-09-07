@@ -1,0 +1,61 @@
+{
+  "date": "2026-09-07",
+  "heads": {
+    "ROOT": "2b6934f9a64ad75de205fbdaf37b0d88f7a53b90",
+    "PUBLIC": "9d59e71659f3cf0433b0ba34e576559490d47e9e",
+    "ADMIN": "ee42b828d2258bcfe51bf5ac41499ed19cff722d",
+    "BACKEND": "ab25da0575469feeb5d51b123f8708ca29a299f0"
+  },
+  "my_commits": {
+    "PUBLIC": [
+      "082439b story media normalization",
+      "9a3a4c1 shell regressions",
+      "69701bf books SEO",
+      "9d59e71 14-page SEO"
+    ],
+    "ADMIN": [
+      "ee42b82 test-type build fix"
+    ],
+    "BACKEND": []
+  },
+  "note": "validate-plan.py line 78 fails: ALL evidence heads stale (merges 06d26d6/368d243 + ROOT 2b6934f predate this work). 54/66 accepted packets show file drift, mostly from previously committed concurrent work. Packets below drift partly due to this session's verified fixes and need coordinator re-review, not silent re-baselining.",
+  "packets_needing_rereview_from_this_session": {
+    "PU-13-story": [
+      "src/components/story/StoryBlock.astro",
+      "src/lib/story-content.ts",
+      "src/lib/story-content.test.ts"
+    ],
+    "PU-09-editor": [
+      "src/components/editor/StoryEditor.test.tsx"
+    ],
+    "PU-14-research": [
+      "src/pages/fa/research/[slug].astro",
+      "src/pages/en/research/[slug].astro"
+    ],
+    "PU-14-publications": [
+      "src/pages/fa/publications/[slug].astro",
+      "src/pages/en/publications/[slug].astro"
+    ],
+    "PU-14-projects": [
+      "src/pages/fa/projects/[slug].astro",
+      "src/pages/en/projects/[slug].astro"
+    ],
+    "PU-14-statements": [
+      "src/pages/fa/research/statements/[slug].astro",
+      "src/pages/en/research/statements/[slug].astro"
+    ],
+    "PU-15-lessons": [
+      "src/pages/fa/education/[courseSlug]/lessons/[lessonSlug].astro",
+      "src/pages/en/education/[courseSlug]/lessons/[lessonSlug].astro"
+    ],
+    "PU-16-books": [
+      "src/pages/fa/books/[slug].astro",
+      "src/pages/en/books/[slug].astro"
+    ],
+    "PU-16-talks": [
+      "src/pages/fa/talks/[slug].astro",
+      "src/pages/en/talks/[slug].astro"
+    ]
+  },
+  "total_drift_packets": 66
+}
