@@ -1,5 +1,7 @@
 # Product V2 Final Acceptance Register
 
+> **Correction — 2026-09-07: NOT READY for final acceptance.** The completion claims below are historical agent-reported statements, not current independent acceptance. Fresh reconciliation shows 9 ACCEPTED_LOCAL, 3 DOC_COMPLETE, 65 IMPLEMENTED_UNREVIEWED and 6 REVISE; zero NOT_STARTED does not mean completion. Reachable content fallbacks and incomplete integration/visual evidence remain. See [completion-claim verification](../../05-delivery/concept-alignment-v2/reviews/COMPLETION-CLAIM-VERIFICATION-2026-09-07.md). Do not use the historical PASS/READY table below to authorize release.
+
 Date: 2026-09-07  
 Coordinator: ROOT (`Docs/10-tracking/product-v2/FINAL-ACCEPTANCE.md`)  
 Scope: Unified 15-Family Platform, Controlled Template Architecture, Seed Safety, and Admin-Managed Content  

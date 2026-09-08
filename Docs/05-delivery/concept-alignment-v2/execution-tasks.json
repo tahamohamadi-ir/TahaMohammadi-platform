@@ -161,7 +161,8 @@
         "docs/quality/product-v2/PU-03-settings-HANDOFF.md",
         "docs/contracts/openapi/current/ACCEPTANCE.json",
         "scripts/verify_openapi_export.py",
-        "apps/siteconfig/migrations/0006_managed_copy.py"
+        "apps/siteconfig/migrations/0006_managed_copy.py",
+        "apps/siteconfig/migrations/0007_localized_featured_brand.py"
       ],
       "proposed_new_files": [
         "apps/siteconfig/migrations/0005_localized_product_settings.py",
@@ -204,7 +205,13 @@
         "apps/content/management/commands/import_profile_seed.py",
         "apps/content/services/content_seed_import.py",
         "tests/test_seed_safety.py",
-        "docs/quality/product-v2/PU-26-seed-safety-HANDOFF.md"
+        "docs/quality/product-v2/PU-26-seed-safety-HANDOFF.md",
+        "apps/content/management/commands/seed_managed_copy.py",
+        "tests/test_managed_copy_seed.py",
+        "apps/siteconfig/seeds/public-copy.json",
+        "apps/content/management/commands/seed_site_content.py",
+        "tests/test_admin_seed_policy.py",
+        "tests/test_seed_admin_only_records.py"
       ],
       "proposed_new_files": [
         "tests/test_seed_safety.py",
@@ -1450,7 +1457,7 @@
     {
       "id": "CA-08",
       "title": "Shared shell fidelity",
-      "status": "REVISE",
+      "status": "ACCEPTED_LOCAL",
       "repository": "PUBLIC",
       "depends_on": [
         "CA-03"
@@ -1464,7 +1471,19 @@
         "src/styles/shell.css",
         "src/components/shell/public-150.behavior.test.ts",
         "tests/e2e/public-150-shell.e2e.ts",
-        "docs/quality/concept-alignment-v2/CA-08-HANDOFF.md"
+        "docs/quality/concept-alignment-v2/CA-08-HANDOFF.md",
+        "src/components/shell/managed-shell.test.ts",
+        "src/components/LanguageToggle.astro",
+        "src/components/SkipLink.astro",
+        "src/components/ThemeToggle.astro",
+        "src/components/page-family/PageFamilyJourneyFlowShell.astro",
+        "src/components/stub/StubProjectDetail.astro",
+        "src/components/stub/StubProjectsIndex.astro",
+        "src/components/stub/StubWritingDetail.astro",
+        "src/components/stub/StubWritingIndex.astro",
+        "src/lib/stub-detail-content.ts",
+        "src/lib/stub-detail.test.ts",
+        "src/styles/page-families.css"
       ],
       "goal": "Align header/footer typography, spacing, navigation and truthful unavailable states. Own shared chrome before page-family workers start.",
       "stop_marker": "CA-08_HANDOFF_READY",
@@ -1481,9 +1500,9 @@
         "docs/quality/concept-alignment-v2/CA-08-HANDOFF.md"
       ],
       "file_serialization_dependencies": [],
-      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
-      "handoff_state": "uncommitted-not-accepted",
-      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+      "review_note": "reviews/COORDINATOR-ACCEPTANCE-2026-09-08.md",
+      "handoff_state": "accepted-local-committed",
+      "review": "reviews/COORDINATOR-ACCEPTANCE-2026-09-08.md"
     },
     {
       "id": "PU-SYNC-public",
@@ -2518,9 +2537,9 @@
       "id": "PU-13-story",
       "parent": "PU-13",
       "repository": "PUBLIC",
-      "status": "REVISE",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
-      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
+      "review_note": "reviews/COORDINATOR-ACCEPTANCE-2026-09-08.md",
       "depends_on": [
         "PU-SYNC-public",
         "CA-08"
@@ -3239,7 +3258,9 @@
         "src/lib/site-settings-content.ts",
         "src/lib/home-content.ts",
         "src/components/home/product-home.test.ts",
-        "docs/quality/product-v2/PU-17-home-HANDOFF.md"
+        "docs/quality/product-v2/PU-17-home-HANDOFF.md",
+        "src/components/home/HomeContent.astro",
+        "src/lib/home-content.test.ts"
       ],
       "proposed_new_files": [
         "src/components/home/product-home.test.ts",
@@ -3579,7 +3600,8 @@
       "allowlist": [
         "tests/e2e/product-journey.spec.ts",
         "src/pages/product-journey.test.tsx",
-        "docs/quality/product-v2/PU-25-admin-journey-HANDOFF.md"
+        "docs/quality/product-v2/PU-25-admin-journey-HANDOFF.md",
+        "tests/e2e/product-journey-live.e2e.ts"
       ],
       "proposed_new_files": [
         "tests/e2e/product-journey.spec.ts",
@@ -3650,7 +3672,9 @@
       "allowlist": [
         "tests/e2e/ca17-concept-alignment.visual.e2e.ts",
         "src/test-harness/concept-alignment-captures.ts",
-        "docs/quality/concept-alignment-v2/CA-17-HANDOFF.md"
+        "docs/quality/concept-alignment-v2/CA-17-HANDOFF.md",
+        "docs/quality/PUBLIC-270-PAGE-FAMILY-VISUAL-EVIDENCE.md",
+        "docs/quality/PUBLIC-280-RESPONSIVE-MATRIX-EVIDENCE.md"
       ],
       "goal": "Review the exact integrated public commit against V2 and recorded evidence. Report PASS or REVISE for QA independently from owner acceptance and release readiness.",
       "stop_marker": "CA-17_HANDOFF_READY",

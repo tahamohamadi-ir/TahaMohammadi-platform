@@ -1,6 +1,6 @@
 # PU-13-story — Render typed story blocks once with readable no-JS/print content, TOC, code/table/math/file/relations.
 
-Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **REVISE**.
+Owner: **PUBLIC** (`D:/Project/tahamohammadi-platform/Front-End/public-site`). Status: **IMPLEMENTED_UNREVIEWED**. The corrected implementation is locally approved but awaits acceptance of its `PU-SYNC-public` dependency.
 
 Dependencies: PU-SYNC-public, CA-08. Family: shared.
 
