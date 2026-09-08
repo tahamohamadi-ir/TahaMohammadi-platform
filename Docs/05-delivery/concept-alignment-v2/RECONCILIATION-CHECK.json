@@ -1,26 +1,24 @@
 {
-  "status": "PASS",
+  "status": "STALE",
+  "validation_note": "Not regenerated on 2026-09-08: validate-plan.py stops at pre-existing accepted-head assertions for PU-03-resolver, PU-SYNC-graph and CA-01 through CA-07. No broad re-baseline was performed.",
   "acceptance_status": "OPEN",
   "status_counts": {
-    "ACCEPTED_LOCAL": 9,
+    "ACCEPTED_LOCAL": 10,
     "DOC_COMPLETE": 3,
-    "IMPLEMENTED_UNREVIEWED": 65,
-    "REVISE": 6
+    "IMPLEMENTED_UNREVIEWED": 66,
+    "REVISE": 4
   },
   "ready_for_review": [
     "PU-26-seed-safety"
   ],
   "ready_for_revision": [
-    "PU-03-settings",
-    "CA-08"
+    "PU-03-settings"
   ],
   "ready_to_start": [],
   "validation_scope": "plan structure only; source drift and revisions are not implementation acceptance",
   "pending_revisions": [
     "PU-03-settings",
-    "CA-08",
     "PU-09-editor",
-    "PU-13-story",
     "PU-15-lessons",
     "PU-25-admin-journey"
   ],

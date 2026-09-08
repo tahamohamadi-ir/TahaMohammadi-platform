@@ -176,7 +176,7 @@
     {
       "id": "CA-08",
       "title": "Shared shell fidelity",
-      "status": "REVISE",
+      "status": "ACCEPTED_LOCAL",
       "repository": "Front-End/public-site",
       "depends_on": [
         "CA-03"

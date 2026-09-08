@@ -6,7 +6,7 @@
 
 # صف یکپارچهٔ اجرا — نسخهٔ ۲٫۱
 
-این تنها ورودی انتخاب بسته است. [فایل ماشینی](execution-tasks.json) مالکیت، وابستگی و allowlist را نگه می‌دارد. 82 بستهٔ فعال/ثبت‌شده؛ سه بستهٔ بررسی و قرارداد DOC_COMPLETE، ۴ بسته ACCEPTED_LOCAL، ۲۷ بسته IMPLEMENTED_UNREVIEWED، ۰ بسته REVISE، ۵ بسته BLOCKED و ۴۳ بسته NOT_STARTED هستند.
+این تنها ورودی انتخاب بسته است. [فایل ماشینی](execution-tasks.json) مالکیت، وابستگی و allowlist را نگه می‌دارد. 83 بستهٔ فعال/ثبت‌شده؛ ۳ بستهٔ بررسی و قرارداد DOC_COMPLETE، ۱۰ بسته ACCEPTED_LOCAL، ۶۶ بسته IMPLEMENTED_UNREVIEWED، ۴ بسته REVISE و ۰ بسته NOT_STARTED هستند.
 
 ## معنای وضعیت‌ها
 
@@ -78,7 +78,7 @@ worker فقط handoff داخل allowlist را به‌روز می‌کند. پس 
 | [CA-05](packets/CA-05.md) | PUBLIC | ACCEPTED_LOCAL | CA-04 | Implement selection, accessible native-control enhancement, projected HTML labels, and GSAP scene choreography against the locked renderer contract. |
 | [CA-06](packets/CA-06.md) | PUBLIC | ACCEPTED_LOCAL | CA-05, CA-03 | Wire scene and controller into the semantic Home hero, load on eligible routes, and prove fallbacks without changing graph facts. |
 | [CA-07](packets/CA-07.md) | PUBLIC | ACCEPTED_LOCAL | CA-04 | Rebuild the language gateway portal from geometry and GSAP, keeping HTML links and brand intact. Work is independent of Home integration. |
-| [CA-08](packets/CA-08.md) | PUBLIC | REVISE | CA-03 | Align header/footer typography, spacing, navigation and truthful unavailable states. Own shared chrome before page-family workers start. |
+| [CA-08](packets/CA-08.md) | PUBLIC | ACCEPTED_LOCAL | CA-03 | Align header/footer typography, spacing, navigation and truthful unavailable states. Own shared chrome before page-family workers start. |
 | [PU-SYNC-public](product-packets/PU-SYNC-public.md) | PUBLIC | IMPLEMENTED_UNREVIEWED | PU-03-resolver, PU-03-settings, PU-04-catalog, PU-04-metadata, PU-04-publication, PU-04-course, PU-04-creative, PU-05-lessons, PU-06-book, PU-06-talk, PU-06-resource, PU-06-collection, PU-06-series, PU-04-project-evidence, PU-07-revisions, PU-07-preview, PU-07-jobs, PU-23-invalidation, PU-20-events, CA-08, PU-SYNC-graph | Generate final public schema consumer types before family implementation. |
 | [PU-SYNC-admin](product-packets/PU-SYNC-admin.md) | ADMIN | IMPLEMENTED_UNREVIEWED | PU-03-resolver, PU-03-settings, PU-04-catalog, PU-04-metadata, PU-04-publication, PU-04-course, PU-04-creative, PU-05-lessons, PU-06-book, PU-06-talk, PU-06-resource, PU-06-collection, PU-06-series, PU-04-project-evidence, PU-07-revisions, PU-07-preview, PU-07-jobs, PU-23-invalidation, PU-20-events | Generate final admin schema consumer types before product editors. |
 | [PU-09-transport](product-packets/PU-09-transport.md) | ADMIN | IMPLEMENTED_UNREVIEWED | PU-SYNC-admin | Add typed composition and publication-job API adapters using existing If-Match and server envelopes. |
@@ -104,7 +104,7 @@ worker فقط handoff داخل allowlist را به‌روز می‌کند. پس 
 | [PU-12-jobs](product-packets/PU-12-jobs.md) | ADMIN | IMPLEMENTED_UNREVIEWED | PU-09-transport, PU-07-runner | Show publication jobs, pending removal, safe errors and retry; distinguish save from site deployment. |
 | [PU-22-analytics](product-packets/PU-22-analytics.md) | ADMIN | IMPLEMENTED_UNREVIEWED | PU-SYNC-admin, PU-12-jobs | Show authenticated date/locale event counts with metric definitions and empty/error/not-connected states. |
 | [PU-13-routes](product-packets/PU-13-routes.md) | PUBLIC | IMPLEMENTED_UNREVIEWED | PU-SYNC-public | Extend centralized route/SEO registries for all target families and explicit statement paths; handle reserved segments and migrations. |
-| [PU-13-story](product-packets/PU-13-story.md) | PUBLIC | REVISE | PU-SYNC-public, CA-08 | Render typed story blocks once with readable no-JS/print content, TOC, code/table/math/file/relations. |
+| [PU-13-story](product-packets/PU-13-story.md) | PUBLIC | IMPLEMENTED_UNREVIEWED | PU-SYNC-public, CA-08 | Render typed story blocks once with readable no-JS/print content, TOC, code/table/math/file/relations. |
 | [PU-14-research](product-packets/PU-14-research.md) | PUBLIC | IMPLEMENTED_UNREVIEWED | PU-13-routes, PU-13-story | Implement complete F03 index/detail with CMS story and original CA-10 visual acceptance; remove placeholders, retain actual published facts. |
 | [PU-14-publications](product-packets/PU-14-publications.md) | PUBLIC | IMPLEMENTED_UNREVIEWED | PU-13-routes, PU-13-story, PU-14-research | Implement complete F04 index/detail with CMS story and original CA-10 visual acceptance; remove placeholders, retain actual published facts. |
 | [PU-14-projects](product-packets/PU-14-projects.md) | PUBLIC | IMPLEMENTED_UNREVIEWED | PU-13-routes, PU-13-story | Implement complete F05 index/detail with CMS story and original CA-12 visual acceptance; remove placeholders, retain actual published facts. |

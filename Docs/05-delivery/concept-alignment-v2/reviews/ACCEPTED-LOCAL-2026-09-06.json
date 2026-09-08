@@ -1,5 +1,5 @@
 {
-  "scope": "Local uncommitted packet acceptance; not visual or deployment acceptance",
+  "scope": "Pinned local packet acceptance; entries may cite uncommitted or committed heads and never imply visual, publication or deployment acceptance",
   "packets": {
     "CA-01": {
       "repository": "PUBLIC",
@@ -148,14 +148,29 @@
     },
     "CA-08": {
       "repository": "PUBLIC",
-      "head": "aa06bdd28ef208a7afcdfcdbbf83c48b1d9b16c8",
+      "head": "a033a730b89c1465cbaa8655b7dfd96072559d3a",
       "files": {
-        "src/components/Header.astro": "1a9370d0c53c74e12956cc3829a8842431d634c67724687f3c5ac8fa80b1d438",
-        "src/components/Footer.astro": "d92fcf071d4cd6f91a10c9b3d138027ae36a0521b760b9e18e6445a82cfeb83d",
+        "src/components/Header.astro": "5d8401bce0bc8ecd664602412b938f92602c218e5112d4a87389e5b167068aef",
+        "src/components/Footer.astro": "987f68124d2f879b07d7805471d4f2439fb5c65353a2a07cd7d0d26a03ebc225",
+        "src/layouts/BaseLayout.astro": "fd9dc337ea1742b814a58ce68c8ac3f262ec7f2b3e7c284e4659489f0cfe05de",
+        "src/layouts/SiteLayout.astro": "0ed0c2b01d30b76e8290ecd8f521b4806572e9b6724954d6a9b3708f9fc9fbaf",
+        "src/lib/site-settings-content.ts": "5521b914acaae0f2dbbdc8a84547174db775e19dd9f0698cccae08124a44eef3",
         "src/styles/shell.css": "7e323dd0d283908bc201727510991c975882bd0e910152e1c8b23531bc3098b7",
-        "src/components/shell/public-150.behavior.test.ts": "869b6cea3b6eba7ebd219a0b3df2c662e8043deb2169480942e7854962b5b5b5",
-        "tests/e2e/public-150-shell.e2e.ts": "17475afa7f7a17e15bfeaa9becccd8e4ffee9976626f4c0b03bd96112b78a320",
-        "docs/quality/concept-alignment-v2/CA-08-HANDOFF.md": "2b39a8aa6e78b1cc0583d85b1c812a108fa570c3b6bda8912eeb4c7e11e612ff"
+        "src/components/shell/public-150.behavior.test.ts": "f0abc23b75ef2e1e1a8b6729edea0bf48a4edc69d48916084cdede8eff6ba897",
+        "tests/e2e/public-150-shell.e2e.ts": "8e891a41236661d178d41556158eecfb18bb97dcaae25101a5eb9063df02fc4b",
+        "docs/quality/concept-alignment-v2/CA-08-HANDOFF.md": "8f21cdb3f65e4c85c0a36457f32850c0f462f7a14bf847ed1df2e25a2f0656b3",
+        "src/components/shell/managed-shell.test.ts": "5c1d787bdf973da4c6c3e268bfd5fadf58b1bf36b0b5de7e6513d23c00463bb5",
+        "src/components/LanguageToggle.astro": "d0c45903df70e6c1c5ba7fdfb21cc79c3c7ac9273321b260c71137c5feacb99a",
+        "src/components/SkipLink.astro": "31594a0f4e8a208fe67fad160d3c8798a6bbfe79a284170774a3df83ab2f602d",
+        "src/components/ThemeToggle.astro": "4b8b92ad47459af0d6a5b3be43588194a2e231a1409a776e91d589b64c077c16",
+        "src/components/page-family/PageFamilyJourneyFlowShell.astro": "73279e7362729fb73ebfc52e2fe437893a44d679afca9b832dba4180773e38af",
+        "src/components/stub/StubProjectDetail.astro": "58d5ce811d18697ccffc2870451a43d1f00836c40289a51e5c27424488b9a286",
+        "src/components/stub/StubProjectsIndex.astro": "bd125fa34c85f6a85fe02aafb63ce564452d2ecdbd1875cb78b9993099a2a982",
+        "src/components/stub/StubWritingDetail.astro": "2221efc7efa28752716f5e923d28d5d5d362d119346e611bea5bc4bd0f017789",
+        "src/components/stub/StubWritingIndex.astro": "cb13993f81a53aef764e06df9cceee3d3108e72e08db7b23bbd4e1d89543a6ec",
+        "src/lib/stub-detail-content.ts": "7d4eddbc7ea5020c39b6a181e5cc6054b03c0efaa7a9d09f5e46d9033b6facae",
+        "src/lib/stub-detail.test.ts": "d2514c1538d82173cedae38e0be84bd3da2930e3c5dc4e65ec929a1dcf87c0d3",
+        "src/styles/page-families.css": "51d6504801b2743ed71eb0e3a8d8239aeb791f16aab5dcc243fcdfa52d1d455a"
       }
     },
     "PU-04-course": {

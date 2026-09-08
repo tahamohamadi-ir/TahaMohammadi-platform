@@ -1457,7 +1457,7 @@
     {
       "id": "CA-08",
       "title": "Shared shell fidelity",
-      "status": "REVISE",
+      "status": "ACCEPTED_LOCAL",
       "repository": "PUBLIC",
       "depends_on": [
         "CA-03"
@@ -1500,9 +1500,9 @@
         "docs/quality/concept-alignment-v2/CA-08-HANDOFF.md"
       ],
       "file_serialization_dependencies": [],
-      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
-      "handoff_state": "uncommitted-not-accepted",
-      "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
+      "review_note": "reviews/COORDINATOR-ACCEPTANCE-2026-09-08.md",
+      "handoff_state": "accepted-local-committed",
+      "review": "reviews/COORDINATOR-ACCEPTANCE-2026-09-08.md"
     },
     {
       "id": "PU-SYNC-public",
@@ -2537,9 +2537,9 @@
       "id": "PU-13-story",
       "parent": "PU-13",
       "repository": "PUBLIC",
-      "status": "REVISE",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
-      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
+      "review_note": "reviews/COORDINATOR-ACCEPTANCE-2026-09-08.md",
       "depends_on": [
         "PU-SYNC-public",
         "CA-08"
