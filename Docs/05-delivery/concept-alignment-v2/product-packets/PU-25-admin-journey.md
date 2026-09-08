@@ -37,3 +37,7 @@ All paths above are relative to the owner repository. Every other path is read-o
 Return exact base/result commits (or explicitly uncommitted), changed paths, tests with results, schema hash/impact, screenshots where UI changed, dirty status and remaining risks in `docs/quality/product-v2/PU-25-admin-journey-HANDOFF.md`.
 
 Stop: **PU-25-admin-journey_HANDOFF_READY**. Do not begin another packet, edit another repository, merge, push, deploy or mark owner acceptance.
+
+## Continued content completion scope
+
+- `tests/e2e/product-journey-live.e2e.ts`

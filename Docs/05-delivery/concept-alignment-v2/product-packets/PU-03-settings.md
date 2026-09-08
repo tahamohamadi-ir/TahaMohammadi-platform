@@ -55,3 +55,4 @@ Stop: **PU-03-settings_HANDOFF_READY**. Do not begin another packet, edit anothe
 Authorized by owner implementation plan; preserve previous source and tests.
 
 - `apps/siteconfig/migrations/0006_managed_copy.py`
+- `apps/siteconfig/migrations/0007_localized_featured_brand.py`

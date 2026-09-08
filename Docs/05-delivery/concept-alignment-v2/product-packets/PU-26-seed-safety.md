@@ -45,3 +45,6 @@ Stop: **PU-26-seed-safety_HANDOFF_READY**. Do not begin another packet, edit ano
 - `apps/content/management/commands/seed_managed_copy.py`
 - `tests/test_managed_copy_seed.py`
 - `apps/siteconfig/seeds/public-copy.json`
+- `apps/content/management/commands/seed_site_content.py`
+- `tests/test_admin_seed_policy.py`
+- `tests/test_seed_admin_only_records.py`

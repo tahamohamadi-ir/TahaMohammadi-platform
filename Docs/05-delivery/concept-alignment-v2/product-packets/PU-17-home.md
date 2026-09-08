@@ -51,3 +51,8 @@ Visual criteria source (read-only): packets/CA-09.md. Transfer its Done when / v
 Return exact base/result commits (or explicitly uncommitted), changed paths, tests with results, schema hash/impact, screenshots where UI changed, dirty status and remaining risks in `docs/quality/product-v2/PU-17-home-HANDOFF.md`.
 
 Stop: **PU-17-home_HANDOFF_READY**. Do not begin another packet, edit another repository, merge, push, deploy or mark owner acceptance.
+
+## Continued content completion scope
+
+- `src/components/home/HomeContent.astro`
+- `src/lib/home-content.test.ts`
