@@ -190,3 +190,57 @@ Status: **accepted addendum**. This addendum re-locks the regenerated artifacts 
 - **Compatibility:** additive only. All pre-existing operations keep their paths, methods, shapes, and status codes.
 - **public-site:** regenerate `src/generated/public-api.ts` from the accepted public snapshot and move the `public-310` pin to the new hash (PU-SYNC-public scope).
 - **admin-panel:** regenerate admin consumer types from the accepted admin snapshot (PU-SYNC-admin scope).
+
+## Addendum 2026-09-08 — featured/brand additive fields, featured bound 3→6, journey projection (owner-directed)
+
+Status: **recorded from backend evidence; coordinator confirmation pending**.
+This mirror records two same-day backend re-pins (both `scaffold-accepted` in
+`Back-End/docs/contracts/openapi/current/ACCEPTANCE.json`, Backend CI green
+on merge). No owner content decisions beyond the explicit continue/both
+orders; no invented fields.
+
+### Changes implemented
+
+- **Featured/brand additive schema (PU-03-settings):** public
+  `LocalizedSiteSettingsPublicOut` gains optional `featuredRecords`
+  (`LocalizedFeaturedRecordOut`) and `brandMedia`; admin featured/brand
+  shapes added. Purely additive (zero removed schema lines).
+- **Featured-records bound 3→6:** admin `max_length` and the public
+  `references[:6]` slice move together so Home can render three selected
+  projects plus three selected publications. Regression test accepts 6
+  end-to-end and rejects the 7th.
+- **Journey projection:** new read-only `GET /api/v1/site/{locale}/journey`
+  projecting the live-published `about` profile's experience/education
+  entries as `{kind, title, subtitle, period}` (no snapshot fallback, 404
+  fail-closed). No new admin surface.
+
+### Regenerated artifacts (SHA-256, CRLF rule; backend record chain)
+
+| Artifact | Old → New SHA-256 (CRLF) | Count |
+|---|---|---|
+| `public-openapi.json` | `f3115a5095097e7ccc12efba4c0c59b1f0258914c1ce8a83e867b3b207c33ec9` → `02dcfff0188cd2512853f3998f991be4b96d88d47d43f3404ffdc9452fc1c971` → `469bd51ed7e1e0d3bed7c64affaf9d488c8ee124da69496e8f5b8acc36eda914` | 48 → 48 → 49 paths, version `0.4.0` |
+| `admin-openapi.json` | `135f14e5c7f03ba1aaee50fca76a54e55e0ed5a2e0360050a8939e837859208c` → `b529e29a9658822b6804c3d5b0be143692f68ddfa37e3b11d2c7fe6232a0deb5` → `274407a8fa3ad3b4b78c677bed76cc14871276468a70fb0d8542d0a637b1876b` | 57 paths, version `0.1.0` |
+| `endpoint-inventory.md` | `154a2c1bf950978f9a8332571098e4bfb2b815c9308a38426976e08dc002e4eb` → `b4ca00dfa302130dd250211705637614b11e8761078b6f00fd2d160b581af166` | 124 → 125 operations |
+
+Backend source: branch `cx/content-completion-2026-09-07`,
+backend `main` at `e3a43bb` (PRs #3, #4, #5 merged, Backend CI green).
+`Back-End/tests/test_openapi_hash_drift.py` re-pinned (CRLF + LF-canonical).
+
+### Access-test and evidence
+
+- `tests/test_public_openapi.py` + `tests/test_admin_openapi.py` + drift:
+  green on the merging CI runs.
+- Journey: `tests/test_product_profile_journey.py` 3/3 (shape/order,
+  draft-locale fail-closed, empty). Featured: 6-accept/7th-reject test.
+- Public-site consumed both snapshots the same day (PRs #9, #10, #11;
+  public-site CI + Deploy staging green): structural nav fallback, journey
+  wiring, regenerated `public-api.ts` (49 paths).
+
+### Coordinator notes (open, not papered over)
+
+- The 2026-09-06 table above lists different hashes
+  (`47980f8f…`/`1176c069…`) than the backend record chain used here
+  (`f3115a…`/`135f14e5…`). The backend chain is what Backend CI gates on
+  and is verified byte-identical; the divergence predates this addendum
+  and needs a coordinator ruling, not a silent rewrite.
+- Admin-panel consumer-type regen (PU-SYNC-admin scope) is still open.
