@@ -41,7 +41,11 @@ services:
       - stage_cms_media:/app/media
     ports:
       - "127.0.0.1:28001:8000"
-    networks: [stage_internal, stage_ingress]
+    networks:
+      stage_internal: {}
+      stage_ingress: {}
+      host-edge:
+        aliases: [taha-stage-cms]
     depends_on:
       db:
         condition: service_healthy
@@ -60,7 +64,10 @@ services:
       - stage_edge_deny:/etc/nginx/conf.d
     ports:
       - "127.0.0.1:23080:8080"
-    networks: [stage_ingress]
+    networks:
+      stage_ingress: {}
+      host-edge:
+        aliases: [taha-stage-web]
 
   admin:
     build:
@@ -70,12 +77,18 @@ services:
     restart: unless-stopped
     ports:
       - "127.0.0.1:23081:8080"
-    networks: [stage_ingress]
+    networks:
+      stage_ingress: {}
+      host-edge:
+        aliases: [taha-stage-admin]
 
 networks:
   stage_internal:
     internal: true
   stage_ingress: {}
+  host-edge:
+    external: true
+    name: host-edge
 
 volumes:
   stage_postgres_data: {}
