@@ -3,29 +3,29 @@ staging.tahamohamadi.ir {
   header X-Robots-Tag "noindex, nofollow, noarchive"
   redir /admin /admin/ 308
   handle /admin/* {
-    reverse_proxy 127.0.0.1:13081
+    reverse_proxy 127.0.0.1:23081
   }
   handle /health/* {
-    reverse_proxy 127.0.0.1:18001
+    reverse_proxy 127.0.0.1:28001
   }
   handle /static/* {
-    reverse_proxy 127.0.0.1:18001
+    reverse_proxy 127.0.0.1:28001
   }
   handle /api/v1/internal/* {
     respond "Not Found" 404
   }
   handle /api/* {
-    reverse_proxy 127.0.0.1:18001
+    reverse_proxy 127.0.0.1:28001
   }
   handle /media/* {
-    reverse_proxy 127.0.0.1:18001
+    reverse_proxy 127.0.0.1:28001
   }
   handle /preview/* {
-    reverse_proxy 127.0.0.1:18001
+    reverse_proxy 127.0.0.1:28001
   }
   handle /staff/* {
-    reverse_proxy 127.0.0.1:18001
+    reverse_proxy 127.0.0.1:28001
   }
-  reverse_proxy 127.0.0.1:13080
+  reverse_proxy 127.0.0.1:23080
 }
 # END TAHA STAGING MANAGED

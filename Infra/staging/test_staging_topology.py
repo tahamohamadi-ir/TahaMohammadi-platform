@@ -13,9 +13,9 @@ class StagingTopologyTest(unittest.TestCase):
 
         self.assertIn("https://staging.tahamohamadi.ir", compose)
         self.assertNotIn("https://tahamohamadi.ir}", compose)
-        self.assertIn('"127.0.0.1:18001:8000"', compose)
-        self.assertIn('"127.0.0.1:13080:8080"', compose)
-        self.assertIn('"127.0.0.1:13081:8080"', compose)
+        self.assertIn('"127.0.0.1:28001:8000"', compose)
+        self.assertIn('"127.0.0.1:23080:8080"', compose)
+        self.assertIn('"127.0.0.1:23081:8080"', compose)
 
     def test_caddy_uses_the_loopback_ingress_and_blocks_internal_api(self) -> None:
         caddy = (STAGING_DIR / "Caddyfile.staging.fragment").read_text(
@@ -24,9 +24,9 @@ class StagingTopologyTest(unittest.TestCase):
 
         self.assertIn("# BEGIN TAHA STAGING MANAGED", caddy)
         self.assertIn("# END TAHA STAGING MANAGED", caddy)
-        self.assertIn("reverse_proxy 127.0.0.1:18001", caddy)
-        self.assertIn("reverse_proxy 127.0.0.1:13080", caddy)
-        self.assertIn("reverse_proxy 127.0.0.1:13081", caddy)
+        self.assertIn("reverse_proxy 127.0.0.1:28001", caddy)
+        self.assertIn("reverse_proxy 127.0.0.1:23080", caddy)
+        self.assertIn("reverse_proxy 127.0.0.1:23081", caddy)
         self.assertIn('respond "Not Found" 404', caddy)
         self.assertNotIn("taha-cms-stage-", caddy)
 
