@@ -1,29 +1,31 @@
+# BEGIN TAHA STAGING MANAGED
 staging.tahamohamadi.ir {
   header X-Robots-Tag "noindex, nofollow, noarchive"
   redir /admin /admin/ 308
   handle /admin/* {
-    reverse_proxy taha-cms-stage-admin-1:8080
+    reverse_proxy 127.0.0.1:13081
   }
   handle /health/* {
-    reverse_proxy taha-cms-stage-cms-1:8000
+    reverse_proxy 127.0.0.1:18001
   }
   handle /static/* {
-    reverse_proxy taha-cms-stage-cms-1:8000
+    reverse_proxy 127.0.0.1:18001
   }
   handle /api/v1/internal/* {
     respond "Not Found" 404
   }
   handle /api/* {
-    reverse_proxy taha-cms-stage-cms-1:8000
+    reverse_proxy 127.0.0.1:18001
   }
   handle /media/* {
-    reverse_proxy taha-cms-stage-cms-1:8000
+    reverse_proxy 127.0.0.1:18001
   }
   handle /preview/* {
-    reverse_proxy taha-cms-stage-cms-1:8000
+    reverse_proxy 127.0.0.1:18001
   }
   handle /staff/* {
-    reverse_proxy taha-cms-stage-cms-1:8000
+    reverse_proxy 127.0.0.1:18001
   }
-  reverse_proxy taha-cms-stage-web-1:8080
+  reverse_proxy 127.0.0.1:13080
 }
+# END TAHA STAGING MANAGED

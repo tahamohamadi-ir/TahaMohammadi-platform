@@ -39,6 +39,8 @@ services:
       REBUILD_TRIGGER_ENABLED: "false"
     volumes:
       - stage_cms_media:/app/media
+    ports:
+      - "127.0.0.1:18001:8000"
     networks: [stage_internal, stage_ingress]
     depends_on:
       db:
@@ -49,13 +51,15 @@ services:
       context: ..
       dockerfile: deploy/Dockerfile.public
       args:
-        PUBLIC_SITE_URL: ${PUBLIC_SITE_URL:-https://tahamohamadi.ir}
-        PUBLIC_API_BASE_URL: ${PUBLIC_API_BASE_URL:-https://tahamohamadi.ir}
+        PUBLIC_SITE_URL: ${PUBLIC_SITE_URL:-https://staging.tahamohamadi.ir}
+        PUBLIC_API_BASE_URL: ${PUBLIC_API_BASE_URL:-https://staging.tahamohamadi.ir}
     image: taha-web-stage:${RELEASE_ID}
     restart: unless-stopped
     volumes:
       - stage_public_html:/usr/share/nginx/html
       - stage_edge_deny:/etc/nginx/conf.d
+    ports:
+      - "127.0.0.1:13080:8080"
     networks: [stage_ingress]
 
   admin:
@@ -64,6 +68,8 @@ services:
       dockerfile: deploy/Dockerfile.admin
     image: taha-admin-stage:${RELEASE_ID}
     restart: unless-stopped
+    ports:
+      - "127.0.0.1:13081:8080"
     networks: [stage_ingress]
 
 networks:
