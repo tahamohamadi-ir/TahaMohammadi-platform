@@ -780,6 +780,29 @@ Paste accepted rows below. Check `[ ]` only for captures you explicitly accept.
 
 ---
 
+## 2026-09-10 evidence refresh
+
+Pinned to PUBLIC `f3e9032` / ADMIN `f1cfa37` / BACKEND `9c2c704` (staging
+release `stage-f3e90323-f1cfa37d-9c2c7045`):
+
+- `review:visual` (staging CMS content): **39/39 @visual captures passed**;
+  compare report **43/48 pairs ready** (39 index + 4 PF-02 empty-shell;
+  5 capture-only Home rows without a concept reference). Local artifact:
+  `test-results/visual/compare-report.html`.
+- Full browser matrix: **461 passed, 2 skipped, 0 failed**. Skips are honest:
+  the `@visual` atlas specimen requires `DESIGN_ATLAS=1`, and the staging smoke
+  runs separately against the live domain (**10/10 passed**).
+- Automated accessibility **31 passed**; no-JS crawl **23 passed**; performance
+  probes **6 passed**; foundation **7 passed**.
+- Keyboard order with visible focus, real 200% zoom, and live reduced-motion
+  preference changes are covered by green browser specs. The manual
+  screen-reader spot check remains open (owner/manual).
+
+This refresh does **not** change the verdict. Owner compare, accepted capture
+hashes, and explicit sign-off remain required.
+
+---
+
 ## Verdict
 
 **`REVISE`** — PUBLIC-190 PF-02 honest creative detail empty-shell @ `798e8b2` atop Phase 8 Home split hero + Gateway 200% @ `84e83e9` atop collaborate bands for PF-01/04/05 @ `e608146` atop Phase 6 writing/creative chrome @ `0e6a552`; structural chrome @ `cf81f6f`; PUBLIC-080 automated a11y green @ `2f35e6e` (**29 / 29**); remediation stack @ `1c3a3a9`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a` (**39 / 48** ready pairs; PF-02 shell now capturable). Manual owner visual compare, accepted capture hashes, manual a11y, and explicit sign-off still open before `PUBLIC-190` may close.

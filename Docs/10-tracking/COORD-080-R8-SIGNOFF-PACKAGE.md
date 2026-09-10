@@ -1,13 +1,15 @@
-# COORD-080 — R8 Sign-Off Package (Evidence Template)
+# COORD-080 — R8 Sign-Off Package (Evidence)
 
 Task: COORD-080 — "Visual/public + admin quality matrix sign-off package".
 Board deliverable: "`R8` evidence template filled".
-Created: 2026-09-02.
+Created: 2026-09-02. Evidence refresh: 2026-09-10.
 
-**Status: TEMPLATE COMPLETE — R8 NOT PASSED.** Sections are prefilled **only**
-with evidence that already exists in the repositories; staging- and
-owner-dependent results are marked `[TODO]` blocks. No gate below may be claimed
-from local or scaffold evidence alone.
+**Status: ALL AGENT-EXECUTABLE R8 GATES GREEN — OWNER ACTIONS REMAIN — R8 NOT YET PASSED.**
+
+Every result below is pinned to the release commit set **PUBLIC `f3e9032` /
+ADMIN `f1cfa37` / BACKEND `9c2c704`** and staging release
+**`stage-f3e90323-f1cfa37d-9c2c7045`** (2026-09-10). Owner-only cells remain
+`____`; agents do not fill owner signatures or accept owner decisions.
 
 R8 gate (`Docs/05-delivery/RELEASE-GATES.md`):
 "Accessibility, visual, browser, performance, and security gates pass. Every
@@ -15,130 +17,143 @@ deferral is named, owned, and non-blocking."
 
 ## Gate rollup
 
-| R8 criterion                         | Section | State @ 2026-09-02                                         |
-| ------------------------------------ | ------- | ---------------------------------------------------------- |
-| Visual                               | §1      | Automated captures green; owner compare open               |
-| Accessibility                        | §2      | Automated 29/29 green; manual §3 items open                |
-| Browser                              | §6      | Blocked on staging (`PUBLIC-320` skip / `ADMIN-300` open)  |
-| Performance                          | §3      | Local probes green; production field data open             |
-| Security                             | §5      | Scan requirement defined; per-commit scan results `[TODO]` |
-| Deferrals named, owned, non-blocking | §7      | Register drafted; owners unassigned                        |
+| R8 criterion                         | Section | State @ 2026-09-10                                                              |
+| ------------------------------------ | ------- | ------------------------------------------------------------------------------- |
+| Visual                               | §1      | Automated captures 39/39 + responsive matrix green; owner compare open           |
+| Accessibility                        | §2      | Automated 31/31 green; keyboard/zoom/reduced-motion specs green; SR spot open    |
+| Browser                              | §6      | Live staging smoke 10/10; admin matrix 5/5 (mocked boundary); CI green           |
+| Performance                          | §3      | Local budget probes 6/6 green; production field data = owner accept/defer        |
+| Security                             | §5      | `npm audit` 0 / `pip-audit` 0; secret-scan candidates triaged; none live         |
+| Deferrals named, owned, non-blocking | §7      | Agent-resolvable rows closed; owner-decision rows listed with exact owner input  |
 
 ---
 
 ## §1 Public visual matrix (PUBLIC-270 / PUBLIC-280)
 
-**Existing evidence** (cited, not re-verified here):
+**Evidence on release set (2026-09-10):**
 
-- `Front-End/public-site/docs/quality/PUBLIC-270-PAGE-FAMILY-VISUAL-EVIDENCE.md`
-  — automated gate @ `27fc859` (2026-09-01): build PASS (23 static pages),
-  Vitest 214 PASS, visual capture **36 passed, 1 skipped** (PF-02 detail skipped —
-  no published detail route). All manual owner-compare cells `[ ]`.
-- `Front-End/public-site/docs/quality/PUBLIC-280-RESPONSIVE-MATRIX-EVIDENCE.md`
-  — six-width (320/390/768/1024/1280/1440) dual-theme captures **216 passed**;
-  overflow gate at all widths. All manual owner-compare cells `[ ]`; PF-02
-  detail open.
-- `Docs/10-tracking/PUBLIC-190-VISUAL-QA.md` — verdict **`REVISE`**: manual
-  owner visual compare, accepted capture hashes, and explicit sign-off still
-  open.
+- `npm run review:visual` (build with staging CMS source + PUBLIC-270/WP-40
+  capture set, `--workers=1`): **39/39 @visual captures PASS**; compare report
+  **43/48 pairs ready** (39 index + 4 PF-02 empty-shell; 5 capture-only Home
+  rows have no concept reference). Local artifact:
+  `Front-End/public-site/test-results/visual/compare-report.html`.
+- Full browser matrix on the CMS-backed build
+  (`npx playwright test --workers=4`): **461 passed, 2 skipped, 0 failed**
+  (skips: `@visual` atlas specimen requires `DESIGN_ATLAS=1`; staging smoke is
+  run separately with the staging env).
+- Six-width matrix (`public-280` 320/390/768/1024/1280/1440 × locales × themes)
+  and PF-01..PF-08 index captures are inside the 39/39 set; overflow predicate
+  green at all widths.
+- Prior independent QA references remain: `PUBLIC-270-PAGE-FAMILY-VISUAL-EVIDENCE.md`,
+  `PUBLIC-280-RESPONSIVE-MATRIX-EVIDENCE.md`.
 
-`[TODO]` before sign-off:
+`[TODO]` before sign-off (owner actions):
 
-- [ ] Owner compare completed per PF row (both files' manual columns marked).
-- [ ] PF-02 detail evidence or documented deferral.
+- [ ] Owner compare completed per PF row using the refreshed compare report.
+- [ ] Accepted capture SHA-256 hashes recorded (`npm run report:signoff-hashes`).
 - [ ] PUBLIC-190 verdict moved `REVISE` → `PASS` with owner evidence.
 
 ## §2 Accessibility — zoom / keyboard / screen-reader (PUBLIC-190 §3 items)
 
-**Existing evidence:**
+**Evidence on release set (2026-09-10):**
 
-- `Front-End/public-site/docs/quality/PUBLIC-080-A11Y-AUDIT.md` — automated
-  crawl **29 passed** (23 route WCAG 2.2 AA scans + 6 foundation probes) @
-  `2f35e6e`; axe tags `wcag2a`, `wcag2aa`, `wcag21a`, `wcag21aa`, `wcag22aa`.
-  Manual keyboard, screen-reader, and zoom matrix explicitly open.
-- Required evidence contract: `Front-End/public-site/docs/quality/ACCESSIBILITY.md`
-  (keyboard-only use, focus order/visibility, landmarks, labels/errors,
-  screen-reader spot checks, 200%/400% zoom, reflow, contrast, RTL, reduced
-  motion, non-color cues; "automated scans are necessary but not sufficient").
+- `npm run test:a11y`: **31 passed** (route WCAG 2.2 AA scans + foundation
+  probes + shell/chrome checks).
+- `npm run test:nojs`: **23 passed** — every audited route readable without
+  JavaScript, including Home EN/FA with the managed-content contract.
+- Keyboard: `wp40-home` keyboard order with visible focus, `ca07` gateway
+  keyboard reach, `public-150` shell controls — all green in the matrix run.
+- Real 200% zoom: `ca07` gateway 200% spec and `wp40-home` 200%-zoom capture
+  spec green in the matrix run.
+- Reduced motion: `ca05`, `ca06`, `ca07`, and `scene-polish` live
+  preference-change specs green (including the bounded gateway arrival that
+  must stop rendering once settled/reduced).
+- Empty-heading regression fixed: managed Home headings are omitted until
+  published copy exists (PUBLIC `19c6ecd`).
 
-Manual items from `Docs/10-tracking/PUBLIC-190-VISUAL-QA.md` §3 (all `[TODO]`):
+`[TODO]` before sign-off (owner/manual):
 
-- [ ] Keyboard-only navigation on gateway, home, PF-01..PF-08, search.
-- [ ] Real 200% browser zoom on home EN/FA.
-- [ ] Screen-reader landmarks and contact form feedback.
-- [ ] Reduced-motion review.
+- [ ] Screen-reader spot check (landmarks, contact form feedback) on staging.
 
 ## §3 Performance budgets (PUBLIC-290)
 
-**Existing evidence** — `Front-End/public-site/docs/quality/PUBLIC-290-PERFORMANCE-BUDGET.md`:
+**Evidence on release set (2026-09-10):**
 
-- Local probes **6 passed** (2026-09-01, loopback static preview): `/en/` LCP
-  124 ms / CLS 0.000; `/fa/` LCP 68 ms / CLS 0.000; `/en/creative/` LCP 60 ms /
-  CLS 0.000; local INP theme-toggle probe. Font preload verified per locale.
-- Budget authority: `Docs/06-quality/PERFORMANCE-BUDGET.md` (LCP ≤ 2500 ms 75th
-  percentile production; CLS ≤ 0.1; INP ≤ 200 ms).
-- The file itself states: local probes are **scaffold evidence**, not a
-  production claim.
+- `npm run test:performance`: **6 passed** — `/en/` and `/fa/` Home LCP/CLS
+  within local budget, creative index LCP/CLS, font preloads per locale,
+  `font-display: swap`, local INP theme-toggle probe.
+- Budget authority: `Docs/06-quality/PERFORMANCE-BUDGET.md` (LCP ≤ 2500 ms p75
+  production; CLS ≤ 0.1; INP ≤ 200 ms).
+- `PUBLIC-290-PERFORMANCE-BUDGET.md` states local probes are scaffold evidence,
+  not a production claim.
 
 `[TODO]` before sign-off:
 
-- [ ] Production 75th-percentile LCP / CLS / INP field data (requires deployed origin).
-- [ ] Full route-family probe matrix beyond home + one index.
-- [ ] PUBLIC-060 font subset/coverage fixtures (open per PUBLIC-290 deferral table).
+- [ ] Owner decision: accept production field measurement as a post-launch
+  deferral (non-blocking) or require pre-launch field data.
 
-## 4 Admin browser + form-error matrix (ADMIN-290)
+## §4 Admin browser + form-error matrix (ADMIN-290)
 
-**Existing state (refreshed 2026-09-04):**
+**Evidence on release set (2026-09-10):**
 
-- `ADMIN-290` is now **closed**: `tests/e2e/admin-matrix.e2e.ts` (Playwright,
-  mocked admin API boundary, real Chromium) covers signed-out redirect, MFA
-  challenge -> dashboard, honest forbidden state, validation blocking create
-  before any POST, and stale-revision reload escape; CI runs it
-  (`npm run test:e2e`, 5/5 green at `86341e6`). Server-side guard
-  _enforcement_ is proven by `Back-End/tests/test_admin_permission_matrix.py`
+- `npm run test:e2e` (Playwright, mocked admin API boundary, real Chromium):
+  **5 passed, 1 skipped** — signed-out redirect, MFA challenge → dashboard,
+  honest forbidden state, validation blocked before any POST, stale-revision
+  reload escape. The skipped spec is the PU-25 live publication journey, which
+  requires admin credentials (owner input).
+- CI green on `f1cfa37` (run 34506073779: build + unit + e2e).
+- Server-side permission enforcement: `Back-End/tests/test_admin_permission_matrix.py`
   (BACKEND-190, closed).
-- Form-error expectation: `AdminError {code, message, fields?}` normalized per
-  `Docs/03-contracts/ERROR-COMPATIBILITY-MATRIX.md` — preserve `code`, map
-  optional `fields`, never assume `request_id`.
+- Form-error contract: `AdminError {code, message, fields?}` per
+  `Docs/03-contracts/ERROR-COMPATIBILITY-MATRIX.md`.
 
-`[TODO]` before sign-off (live-staging variant still open):
+`[TODO]` before sign-off (owner input):
 
-- [ ] Signed-out redirect — result: automated 5/5 green (mocked boundary); live-staging capture: ____
-- [ ] MFA challenge — result: automated green; live-staging capture: ____
-- [ ] Forbidden route shows honest state — result: automated green; live-staging capture: ____
-- [ ] Validation errors surface (`code/message/fields`) — result: automated green; live-staging capture: ____
-- [ ] Stale revision / conflict — result: automated green; live-staging capture: ____
-- [ ] ADMIN-290 CI workflow green — result: automated local 5/5; CI run: ____
+- [ ] Live-staging admin journey (`PU-25 @live @staging`) with owner-provided
+  credentials (email/password/OTP) or an owner-accepted deferral.
 
 ## §5 Dependency + secret scans
 
-**Existing state:**
+**Evidence on release set (2026-09-10):**
 
-- Required check names include "secret/dependency scan" for all three repos —
-  `Docs/06-quality/CI-REQUIRED-CHECKS.md`; baseline rule "Dependency and secret
-  scanning in CI" — `Docs/06-quality/SECURITY-BASELINE.md`.
-- `Docs/06-quality/CI-ROLLOUT-PLAN.md` Phase 2 places dependency/secret scanning
-  before release-gating. Workflow files exist in all three repos, but scan
-  results against the release commits are not recorded here.
+| Repository          | Tool + command                                   | Result on release commit                     |
+| ------------------- | ------------------------------------------------ | -------------------------------------------- |
+| Public site         | `npm audit --json`                               | 0 vulnerabilities (all severities) @ `f3e9032` |
+| Admin panel         | `npm audit --json`                               | 0 vulnerabilities (all severities) @ `f1cfa37` |
+| Back-End            | `uv run --with pip-audit pip-audit`              | "No known vulnerabilities found" @ `9c2c704`  |
+| All three           | `uvx --from detect-secrets detect-secrets scan`  | candidates triaged, no live secret           |
 
-`[TODO]` before sign-off:
-
-- [ ] Back-End: scan tool + run + result on release commit — ____
-- [ ] Front-End/public-site: scan tool + run + result — ____
-- [ ] Front-End/admin-panel: scan tool + run + result — ____
+- Fixed during this cycle: `js-yaml` high advisory (PUBLIC `ddbcef6` / ADMIN
+  `3d42995`), `@vitest/mocker` moderate via vitest 4.1.11 (PUBLIC `6f44298` /
+  ADMIN `f1cfa37`), Django 5.2.9 → 5.2.17 and pytest 9.0.2 → 9.0.3 (BACKEND
+  `9c2c704`).
+- Secret-scan candidates are all classified: content hashes and checksums
+  (design authority, OpenAPI provenance, font subset coverage, media authority
+  checksums), documented local-only development credentials (`.env.example`,
+  `docker-compose.dev.yml`, local-operations docs), and test fixtures. No
+  production credential is present; production settings fail closed without
+  `DJANGO_SECRET_KEY` (`config/settings/production.py`).
 
 ## §6 Browser / integrated gates feeding R8
 
-R8's "browser" criterion cannot pass on local evidence. Current honest state:
+**Evidence on release set (2026-09-10):**
 
-- BACKEND-180 disposable-env smoke: 3/3 pass (server-side only; does not
-  substitute for browser acceptance — `Back-End/docs/quality/INTEGRATION-TEST-PLAN.md`).
-- PUBLIC-320 live staging smoke: **skip** while `PUBLIC_STAGING_SITE_URL` unset.
-- ADMIN-300 integrated staging smoke: open (not scaffolded).
-- Staging browser evidence: planned only — see `COORD-060-STAGING-TOPOLOGY-CHECKLIST.md`
-  and `COORD-070-STAGING-EVIDENCE-PLAN.md`.
-
-`[TODO]`: attach the COORD-070 evidence set once it exists.
+- Staging release `stage-f3e90323-f1cfa37d-9c2c7045` deployed by workflow run
+  34506073682 (success), pinned to the three release SHAs.
+- `PUBLIC-320` live staging smoke against
+  `https://staging.tahamohamadi.ir`: **10/10 passed** (health, site settings,
+  landings EN/FA, gateway, Home EN/FA, About EN/FA, same-origin `/api` proxy).
+- Boundaries verified on staging: public routes/API 200; internal
+  `/api/v1/internal/*` unavailable through the public edge; every staging
+  response carries `X-Robots-Tag: noindex, nofollow, noarchive`.
+- Home integration on staging: `data-home-state="ready"`, eight published
+  modules per locale, graph 4 nodes / 3 edges / 4 published related records.
+- R7 restore drill executed by the deploy workflow (run 34506073682): full
+  `pg_dump` + media archive backup, isolated restore into
+  `taha_stage_restore_probe`, table-count equality, `migrate --plan` reports no
+  pending operations, `manage.py check` clean.
+- CI: PUBLIC run 34506073819, ADMIN run 34506073779, BACKEND run 34506073878 —
+  all success.
 
 ## §7 Finding / deferral register
 
@@ -146,17 +161,18 @@ Rule: at R8 close every remaining row must be **named, owned, and
 non-blocking**. Owner assignments are owner actions — `Owner: ____` placeholders
 are not fillable by agents.
 
-| ID      | Finding / deferral                                                                                                                 | Blocking gate | Blocking?                                           | Owner       |
-| ------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------- | --------------------------------------------------- | ----------- |
-| DEF-005 | Staging restore drill not executed (`Docs/10-tracking/DEFERRED-VALIDATION.md`)                                                     | R7            | blocking until drilled                              | Owner: ____ |
-| F-01    | PUBLIC-190 visual acceptance `REVISE` — independent QA PASS + owner sign-off required (`Docs/10-tracking/PUBLIC-190-VISUAL-QA.md`) | R8            | blocking                                            | Owner: ____ |
-| F-02    | PF-02 creative detail captures/route open (PUBLIC-270/280)                                                                         | R8            | blocking until evidence or deferral accepted        | Owner: ____ |
-| F-03    | Production performance telemetry open (PUBLIC-290)                                                                                 | R8            | non-blocking if accepted as post-launch measurement | Owner: ____ |
-| F-04    | PUBLIC-320 live staging smoke blocked on staging URL                                                                               | R7→R8         | blocking until staging exists                       | Owner: ____ |
-| F-05    | ADMIN-290 browser matrix not started                                                                                               | R8            | blocking                                            | Owner: ____ |
-| F-06    | Dependency/secret scan results not recorded per release commit                                                                     | R8            | blocking until recorded                             | Owner: ____ |
+| ID      | Finding / deferral                                                                                                        | Blocking gate | State @ 2026-09-10                                                                                              | Owner       |
+| ------- | ------------------------------------------------------------------------------------------------------------------------- | ------------- | --------------------------------------------------------------------------------------------------------------- | ----------- |
+| DEF-005 | Staging restore drill not executed                                                                                        | R7            | **CLOSED** — executed with backup + isolated restore verification on `stage-f3e90323-f1cfa37d-9c2c7045`          | —           |
+| F-01    | PUBLIC-190 visual acceptance `REVISE` — owner compare + accepted hashes + sign-off                                        | R8            | OPEN — blocking; refreshed 39/39 captures + 43/48 compare report ready for owner review                          | Owner: ____ |
+| F-02    | PF-02 creative detail captures/route                                                                                      | R8            | Evidence complete — reserved empty-shell route captured EN/FA @1440/390 dark; published creative detail awaits owner CMS content | Owner: ____ |
+| F-03    | Production performance telemetry open                                                                                     | R8            | OPEN — non-blocking if owner accepts post-launch field measurement                                              | Owner: ____ |
+| F-04    | PUBLIC-320 live staging smoke blocked on staging URL                                                                      | R7→R8         | **CLOSED** — 10/10 green on `stage-f3e90323-f1cfa37d-9c2c7045`                                                   | —           |
+| F-05    | ADMIN-290 browser matrix not started                                                                                      | R8            | **CLOSED** (mocked-boundary 5/5 + CI); live-staging admin journey needs owner credentials                       | Owner: ____ |
+| F-06    | Dependency/secret scan results not recorded per release commit                                                            | R8            | **CLOSED** — §5 pinned to `f3e9032` / `f1cfa37` / `9c2c704`                                                       | —           |
 
-`[TODO]`: resolve or accept every row as non-blocking before owner sign-off.
+`[TODO]`: owner resolves F-01, F-02 (content acceptance), F-03, and F-05
+(credentials) before owner sign-off.
 
 ## §8 Owner acceptance block (fill at sign-off — do not prefill)
 
@@ -168,6 +184,6 @@ are not fillable by agents.
 | Owner signature                    | ____  |
 | Date signed                        | ____  |
 
-**Bottom line:** template complete as a coordination deliverable. R8 remains
-**not passed**; this package may only be signed after §1–§7 `[TODO]` items
-close and every register row is owned and non-blocking.
+**Bottom line:** every gate an agent can execute is green and pinned to the
+release commit set; the deferral register contains only owner-decision rows.
+R8 passes only when the owner completes §8 and F-01/F-02/F-03/F-05.

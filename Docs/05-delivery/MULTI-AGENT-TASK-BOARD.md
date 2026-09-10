@@ -67,9 +67,9 @@ Wave 4 (release)
 | COORD-030 | — | Activate CI Phase 0 workflows (coordination validator + backend pytest/ruff/OpenAPI) | Workflows green on `main` |
 | COORD-040 ✅ | PUBLIC-090, ADMIN-080 | Add shared OpenAPI → TypeScript generation contract doc path in `Docs/03-contracts/` | **Done** — `OPENAPI-TYPESCRIPT-GENERATION.md`: generator command, output paths, hash pins |
 | COORD-050 ✅ | COORD-040 | Add public/admin contract fixture file locations in `Docs/03-contracts/` | **Done** — `CONTRACT-FIXTURE-PATHS.md`; referenced from generation doc |
-| COORD-060 [~] | BACKEND-200, PUBLIC-350, ADMIN-320 | Staging topology checklist against `DEPLOYMENT-TOPOLOGY.md` | **Plan ready** — `Docs/10-tracking/COORD-060-STAGING-TOPOLOGY-CHECKLIST.md`; execution blocked on staging infra; owner columns awaiting owner fill |
-| COORD-070 [~] | COORD-060 | Run draft-leak + CSRF + MFA staging evidence collection | **Plan ready, NOT executed** — `Docs/10-tracking/COORD-070-STAGING-EVIDENCE-PLAN.md`; needs live staging |
-| COORD-080 [~] | COORD-070 | Visual/public + admin quality matrix sign-off package | **Template ready** — `Docs/10-tracking/COORD-080-R8-SIGNOFF-PACKAGE.md`; R8 NOT passed |
+| COORD-060 [~] | BACKEND-200, PUBLIC-350, ADMIN-320 | Staging topology checklist against `DEPLOYMENT-TOPOLOGY.md` | **Executed 2026-09-10** — staging live at `staging.tahamohamadi.ir` (release `stage-f3e90323-f1cfa37d-9c2c7045`); deploy workflow proves images, migrations, backup + isolated restore, ingress. Owner columns still awaiting owner fill |
+| COORD-070 [~] | COORD-060 | Run draft-leak + CSRF + MFA staging evidence collection | **Partially executed** — live deploy, restore drill, public smoke and `noindex` boundaries recorded; live draft-leak/CSRF/MFA admin collection still needs owner credentials |
+| COORD-080 [~] | COORD-070 | Visual/public + admin quality matrix sign-off package | **Evidence complete; owner actions remain** — `Docs/10-tracking/COORD-080-R8-SIGNOFF-PACKAGE.md`; all agent-executable gates green on `f3e9032`/`f1cfa37`/`9c2c704`; R8 NOT yet passed |
 | COORD-090 [~] | COORD-080 | Owner production acceptance record | **Template ready** — `Docs/10-tracking/COORD-090-OWNER-ACCEPTANCE-RECORD.md`; owner sign-off pending |
 
 ---
@@ -126,7 +126,7 @@ Wave 4 (release)
 | PUBLIC-160 ✅ | PUBLIC-150 | Build six shared templates from `templates.json` | **Verified 2026-09-02** — 6/6 templates asserted; Atlas template gallery |
 | PUBLIC-170 ✅ | PUBLIC-160 | Local-only Visual Atlas `DESIGN_ATLAS=1` → `/_design/` | **Verified 2026-09-02** — prod build contains no `/_design/` (`dist\_design` absent); atlas gate e2e |
 | PUBLIC-180 ✅ | PUBLIC-100 | Content-state components: loading, empty, unavailable, error, untranslated | **Verified 2026-09-02** — `public-180.behavior.test.ts` 15 tests pass; Atlas state specimens |
-| PUBLIC-190 [~] | PUBLIC-180, BACKEND-070 | Home page both locales using seed (draft-safe: no false publish) | **Structure complete; visual acceptance open.** Gate SHA `c7581b7` (About/Contact/Research leftover chrome PF-05/07/08). Prior PF-02 empty-shell @ `798e8b2`; Phase 8 @ `84e83e9`; Phase 6 @ `0e6a552`; evidence grid @ `cf81f6f`; Path A shells @ `dd515a0`; compare **43/48** ready confirmed by owner `review:visual` run @ `675a08f` (39 index + 4 PF-02 empty-shell; 5 capture-only). **Remediation:** owner asset prompts (`Docs/10-tracking/PUBLIC-190-asset-prompts/`), phased plan + requirements research, ADR-0007. Independent QA `PASS`, owner asset handback, and explicit sign-off remain required — **REVISE**. |
+| PUBLIC-190 [~] | PUBLIC-180, BACKEND-070 | Home page both locales using seed (draft-safe: no false publish) | **Structure complete; visual acceptance open.** Refreshed 2026-09-10 @ `f3e9032`: `review:visual` 39/39 @visual captures, compare 43/48 ready, full browser matrix 461 passed / 0 failed against staging CMS content, a11y 31, no-JS 23, performance 6. Owner compare + accepted hashes + sign-off remain — **REVISE**. |
 | PUBLIC-200 | PUBLIC-190 | About + research routes | Profile fetch uses `/api/profiles/{locale}/about` only |
 | PUBLIC-210 | PUBLIC-200 | Projects + writing indexes and detail routes | Slug only from API; unavailable honest |
 | PUBLIC-220 | PUBLIC-210 | Publications, teaching, creative routes with seed empty states | Creative/teaching/CV empty copy from seed v1.1 |
@@ -139,7 +139,7 @@ Wave 4 (release)
 | PUBLIC-290 | PUBLIC-280 | Performance budget report (LCP, CLS) | Within budget or deferrals logged |
 | PUBLIC-300 | PUBLIC-290 | No-JS crawl test for all route families | All routes readable without JS |
 | PUBLIC-310 | PUBLIC-300 | Contract fixture tests vs OpenAPI | CI green |
-| PUBLIC-320 | BACKEND-180 | Integrated smoke with backend staging | Cookies/proxy pass |
+| PUBLIC-320 ✅ | BACKEND-180 | Integrated smoke with backend staging | **Verified 2026-09-10** — 10/10 live smoke on `stage-f3e90323-f1cfa37d-9c2c7045`; cookies/proxy/`noindex`/internal boundary pass |
 | PUBLIC-350 | PUBLIC-320 | Public release evidence package | `R4` + `R8` public slice complete |
 
 ### Home recovery hold
@@ -182,7 +182,7 @@ Wave 4 (release)
 | ADMIN-260 | ADMIN-120 | Seed admin-only records visible in admin (not public) | admin.* records from supplement |
 | ADMIN-270 | ADMIN-260 | Owner approval queue UI from `owner-approval-queue.json` | Queue renders counts |
 | ADMIN-280 | ADMIN-270 | Publication gate enforced in UI | Cannot mark published without approval |
-| ADMIN-290 | ADMIN-280 | Browser matrix (signed out, MFA, forbidden, validation) | CI workflow green |
+| ADMIN-290 ✅ | ADMIN-280 | Browser matrix (signed out, MFA, forbidden, validation) | **Verified 2026-09-10** — mocked-boundary 5/5 + CI green @ `f1cfa37`; live journey needs owner credentials |
 | ADMIN-300 | BACKEND-180 | Integrated smoke with backend staging | Session/CSRF pass |
 | ADMIN-320 | ADMIN-300 | Admin release evidence package | `R6` + `R8` admin slice complete |
 

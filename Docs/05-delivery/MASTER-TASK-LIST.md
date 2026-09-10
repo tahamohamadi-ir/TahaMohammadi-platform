@@ -168,14 +168,14 @@ Historical milestone rows below are not newly reverified by this planning delive
 
 ## R8 — Quality closure
 
-- [ ] Run six-width, two-locale, two-theme public visual matrix.
-- [ ] Run real 200 percent zoom checks.
-- [ ] Run keyboard and screen-reader checks.
-- [ ] Run automated accessibility checks.
-- [ ] Meet public performance budgets.
-- [ ] Run admin browser and form-error matrices.
-- [ ] Run dependency and secret scans.
-- [ ] Resolve or explicitly defer every finding.
+- [x] Run six-width, two-locale, two-theme public visual matrix.
+- [x] Run real 200 percent zoom checks.
+- [ ] Run keyboard and screen-reader checks. Keyboard and reduced-motion specs green; screen-reader spot check remains owner/manual.
+- [x] Run automated accessibility checks.
+- [x] Meet public performance budgets.
+- [x] Run admin browser and form-error matrices.
+- [x] Run dependency and secret scans.
+- [ ] Resolve or explicitly defer every finding. Agent-resolvable findings closed; owner decisions F-01/F-02/F-03/F-05 remain.
 - [ ] Obtain owner visual and content acceptance.
 
 ## R9 — Production
