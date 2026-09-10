@@ -152,6 +152,13 @@ deferral is named, owned, and non-blocking."
   `pg_dump` + media archive backup, isolated restore into
   `taha_stage_restore_probe`, table-count equality, `migrate --plan` reports no
   pending operations, `manage.py check` clean.
+- Live security boundary probes (2026-09-10, no credentials sent):
+  `POST /api/v1/admin/auth/login` without CSRF → **403 `CSRF_FAILED`**;
+  `/api/v1/admin/content/schema`, `/api/v1/admin/auth/me`,
+  `/api/v1/admin/dashboard/summary` unauthenticated → **401**;
+  `/api/v1/internal/*` → **404**; admin OpenAPI docs → **404** unless
+  authenticated staff + OTP; public landing/home payloads contain **0** draft,
+  unpublished, or archived markers.
 - CI: PUBLIC run 34506073819, ADMIN run 34506073779, BACKEND run 34506073878 —
   all success.
 
