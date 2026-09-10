@@ -69,7 +69,7 @@ Wave 4 (release)
 | COORD-050 ✅ | COORD-040 | Add public/admin contract fixture file locations in `Docs/03-contracts/` | **Done** — `CONTRACT-FIXTURE-PATHS.md`; referenced from generation doc |
 | COORD-060 [~] | BACKEND-200, PUBLIC-350, ADMIN-320 | Staging topology checklist against `DEPLOYMENT-TOPOLOGY.md` | **Executed 2026-09-10** — staging live at `staging.tahamohamadi.ir` (release `stage-f3e90323-f1cfa37d-9c2c7045`); deploy workflow proves images, migrations, backup + isolated restore, ingress. Owner columns still awaiting owner fill |
 | COORD-070 [~] | COORD-060 | Run draft-leak + CSRF + MFA staging evidence collection | **Partially executed** — live deploy, restore drill, public smoke and `noindex` boundaries recorded; live draft-leak/CSRF/MFA admin collection still needs owner credentials |
-| COORD-080 [~] | COORD-070 | Visual/public + admin quality matrix sign-off package | **Evidence complete; owner actions remain** — `Docs/10-tracking/COORD-080-R8-SIGNOFF-PACKAGE.md`; all agent-executable gates green on `f3e9032`/`f1cfa37`/`9c2c704`; R8 NOT yet passed |
+| COORD-080 [~] | COORD-070 | Visual/public + admin quality matrix sign-off package | **Owner review in progress** — `Docs/10-tracking/COORD-080-R8-SIGNOFF-PACKAGE.md`; all agent gates green on `f3e9032`/`f1cfa37`/`9c2c704`; F-02/F-03/F-05 + manual SR owner-accepted non-blocking; only F-01 owner visual sign-off remains |
 | COORD-090 [~] | COORD-080 | Owner production acceptance record | **Template ready** — `Docs/10-tracking/COORD-090-OWNER-ACCEPTANCE-RECORD.md`; owner sign-off pending |
 
 ---

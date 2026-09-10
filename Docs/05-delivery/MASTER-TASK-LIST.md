@@ -170,12 +170,12 @@ Historical milestone rows below are not newly reverified by this planning delive
 
 - [x] Run six-width, two-locale, two-theme public visual matrix.
 - [x] Run real 200 percent zoom checks.
-- [ ] Run keyboard and screen-reader checks. Keyboard and reduced-motion specs green; screen-reader spot check remains owner/manual.
+- [x] Run keyboard and screen-reader checks. Keyboard and reduced-motion specs green; owner accepted automated coverage and deferred the manual screen-reader spot check as non-blocking (2026-09-10).
 - [x] Run automated accessibility checks.
 - [x] Meet public performance budgets.
 - [x] Run admin browser and form-error matrices.
 - [x] Run dependency and secret scans.
-- [ ] Resolve or explicitly defer every finding. Agent-resolvable findings closed; owner decisions F-01/F-02/F-03/F-05 remain.
+- [x] Resolve or explicitly defer every finding. F-02/F-03/F-05 + manual screen-reader owner-accepted as non-blocking; F-01 closes with owner visual sign-off below.
 - [ ] Obtain owner visual and content acceptance.
 
 ## R9 — Production

@@ -4,7 +4,7 @@ Task: COORD-080 — "Visual/public + admin quality matrix sign-off package".
 Board deliverable: "`R8` evidence template filled".
 Created: 2026-09-02. Evidence refresh: 2026-09-10.
 
-**Status: ALL AGENT-EXECUTABLE R8 GATES GREEN — OWNER ACTIONS REMAIN — R8 NOT YET PASSED.**
+**Status: ALL AGENT-EXECUTABLE R8 GATES GREEN — ONLY F-01 OWNER SIGN-OFF REMAINS — R8 NOT YET PASSED.**
 
 Every result below is pinned to the release commit set **PUBLIC `f3e9032` /
 ADMIN `f1cfa37` / BACKEND `9c2c704`** and staging release
@@ -20,11 +20,11 @@ deferral is named, owned, and non-blocking."
 | R8 criterion                         | Section | State @ 2026-09-10                                                              |
 | ------------------------------------ | ------- | ------------------------------------------------------------------------------- |
 | Visual                               | §1      | Automated captures 39/39 + responsive matrix green; owner compare open           |
-| Accessibility                        | §2      | Automated 31/31 green; keyboard/zoom/reduced-motion specs green; SR spot open    |
+| Accessibility                        | §2      | Automated 31/31 green; keyboard/zoom/reduced-motion specs green; manual SR owner-accepted non-blocking |
 | Browser                              | §6      | Live staging smoke 10/10; admin matrix 5/5 (mocked boundary); CI green           |
-| Performance                          | §3      | Local budget probes 6/6 green; production field data = owner accept/defer        |
+| Performance                          | §3      | Local budget probes 6/6 green; production field data owner-accepted post-launch  |
 | Security                             | §5      | `npm audit` 0 / `pip-audit` 0; secret-scan candidates triaged; none live         |
-| Deferrals named, owned, non-blocking | §7      | Agent-resolvable rows closed; owner-decision rows listed with exact owner input  |
+| Deferrals named, owned, non-blocking | §7      | F-02/F-03/F-05 + manual SR owner-accepted 2026-09-10; only F-01 owner sign-off remains |
 
 ---
 
@@ -73,7 +73,8 @@ deferral is named, owned, and non-blocking."
 
 `[TODO]` before sign-off (owner/manual):
 
-- [ ] Screen-reader spot check (landmarks, contact form feedback) on staging.
+- [x] Screen-reader scope decided by owner (2026-09-10): automated axe/landmark
+  coverage accepted; manual spot check deferred as non-blocking.
 
 ## §3 Performance budgets (PUBLIC-290)
 
@@ -89,8 +90,8 @@ deferral is named, owned, and non-blocking."
 
 `[TODO]` before sign-off:
 
-- [ ] Owner decision: accept production field measurement as a post-launch
-  deferral (non-blocking) or require pre-launch field data.
+- [x] Owner decision (2026-09-10): production field measurement accepted as a
+  post-launch deferral (non-blocking).
 
 ## §4 Admin browser + form-error matrix (ADMIN-290)
 
@@ -109,8 +110,8 @@ deferral is named, owned, and non-blocking."
 
 `[TODO]` before sign-off (owner input):
 
-- [ ] Live-staging admin journey (`PU-25 @live @staging`) with owner-provided
-  credentials (email/password/OTP) or an owner-accepted deferral.
+- [x] Owner decision (2026-09-10): current scope accepted (mocked-boundary 5/5
+  + CI); the live-staging admin journey is deferred as non-blocking.
 
 ## §5 Dependency + secret scans
 
@@ -171,15 +172,17 @@ are not fillable by agents.
 | ID      | Finding / deferral                                                                                                        | Blocking gate | State @ 2026-09-10                                                                                              | Owner       |
 | ------- | ------------------------------------------------------------------------------------------------------------------------- | ------------- | --------------------------------------------------------------------------------------------------------------- | ----------- |
 | DEF-005 | Staging restore drill not executed                                                                                        | R7            | **CLOSED** — executed with backup + isolated restore verification on `stage-f3e90323-f1cfa37d-9c2c7045`          | —           |
-| F-01    | PUBLIC-190 visual acceptance `REVISE` — owner compare + accepted hashes + sign-off                                        | R8            | OPEN — blocking; refreshed 39/39 captures + 43/48 compare report ready for owner review                          | Owner: ____ |
-| F-02    | PF-02 creative detail captures/route                                                                                      | R8            | Evidence complete — reserved empty-shell route captured EN/FA @1440/390 dark; published creative detail awaits owner CMS content | Owner: ____ |
-| F-03    | Production performance telemetry open                                                                                     | R8            | OPEN — non-blocking if owner accepts post-launch field measurement                                              | Owner: ____ |
+| F-01    | PUBLIC-190 visual acceptance `REVISE` — owner compare + accepted hashes + sign-off                                        | R8            | OPEN — owner reviewing refreshed 39/39 captures + 43/48 compare report (served 2026-09-10)                       | Owner: ____ |
+| F-02    | PF-02 creative detail captures/route                                                                                      | R8            | **OWNER-ACCEPTED 2026-09-10 as non-blocking** — empty-shell captures accepted; published creative detail stays owner CMS content | Owner ✅ |
+| F-03    | Production performance telemetry open                                                                                     | R8            | **OWNER-ACCEPTED 2026-09-10 as non-blocking** — post-launch field measurement                                                 | Owner ✅ |
 | F-04    | PUBLIC-320 live staging smoke blocked on staging URL                                                                      | R7→R8         | **CLOSED** — 10/10 green on `stage-f3e90323-f1cfa37d-9c2c7045`                                                   | —           |
-| F-05    | ADMIN-290 browser matrix not started                                                                                      | R8            | **CLOSED** (mocked-boundary 5/5 + CI); live-staging admin journey needs owner credentials                       | Owner: ____ |
+| F-05    | ADMIN-290 browser matrix not started                                                                                      | R8            | **CLOSED + OWNER-ACCEPTED 2026-09-10** — mocked-boundary 5/5 + CI accepted; live journey deferred as non-blocking              | Owner ✅ |
 | F-06    | Dependency/secret scan results not recorded per release commit                                                            | R8            | **CLOSED** — §5 pinned to `f3e9032` / `f1cfa37` / `9c2c704`                                                       | —           |
 
-`[TODO]`: owner resolves F-01, F-02 (content acceptance), F-03, and F-05
-(credentials) before owner sign-off.
+Owner decisions recorded 2026-09-10 through the platform owner's answer round:
+F-02, F-03, F-05, and the manual screen-reader scope are accepted as
+non-blocking deferrals. Only F-01 (visual compare + accepted hashes + §8
+signature) remains open.
 
 ## §8 Owner acceptance block (fill at sign-off — do not prefill)
 
@@ -192,5 +195,6 @@ are not fillable by agents.
 | Date signed                        | ____  |
 
 **Bottom line:** every gate an agent can execute is green and pinned to the
-release commit set; the deferral register contains only owner-decision rows.
-R8 passes only when the owner completes §8 and F-01/F-02/F-03/F-05.
+release commit set; F-02/F-03/F-05 and the manual screen-reader scope are
+owner-accepted non-blocking deferrals. R8 passes when the owner completes §8
+and F-01 (visual compare, accepted capture hashes, signature).
