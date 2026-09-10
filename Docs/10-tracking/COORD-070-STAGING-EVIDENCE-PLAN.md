@@ -8,9 +8,10 @@ Created: 2026-09-02.
 `https://staging.tahamohamadi.ir` (release `stage-601b2294-f1cfa37d-9c2c7045`).
 Executed evidence: `R7-csrf-EVIDENCE.md` (partial), `R7-draft-leak-EVIDENCE.md`
 (partial), `R7-media-boundary-EVIDENCE.md` (partial),
-`R7-backup-restore-EVIDENCE.md` (PASS). Credential-gated families (MFA, session
-expiry, contact delivery, preview expiry, and the authenticated success legs of
-CSRF/draft/media) remain open and are deferred to R9 with the owner decision
+`R7-backup-restore-EVIDENCE.md` (PASS). Contact delivery executed 2026-09-10
+(`R7-contact-delivery-EVIDENCE.md`). Credential-gated families (MFA, session
+expiry, preview expiry, and the authenticated success legs of CSRF/draft/media)
+remain open and are deferred to R9 with the owner decision
 (`concept-alignment-v2/reviews/OWNER-DECISION-2026-09-10.md`). **Do not mark
 COORD-070 done.**
 
@@ -141,7 +142,7 @@ produce under `Docs/10-tracking/`.
 | CSRF                 | `R7-csrf-EVIDENCE.md`             | PARTIAL 2026-09-10 — 403 + cookie flags live; authenticated leg deferred      |
 | MFA                  | `R7-mfa-EVIDENCE.md`              | not produced (credential-gated, deferred to R9)                                |
 | Session expiry       | `R7-session-expiry-EVIDENCE.md`   | not produced (credential-gated, deferred to R9)                                |
-| Contact delivery     | `R7-contact-delivery-EVIDENCE.md` | not produced (needs owner delivery consent + provider)                         |
+| Contact delivery     | `R7-contact-delivery-EVIDENCE.md` | DELIVERED 2026-09-10 (`{ok:true}` + cross-origin 400); owner inbox confirmation at configured recipient pending |
 | Preview expiry       | `R7-preview-expiry-EVIDENCE.md`   | not produced (credential-gated, deferred to R9)                                |
 | Media boundary       | `R7-media-boundary-EVIDENCE.md`   | PARTIAL 2026-09-10 — inactive 404 + static 200; active-file leg deferred       |
 | Backup/restore drill | `R7-backup-restore-EVIDENCE.md`   | **PASSED 2026-09-10** (deploy workflow 34507930950; isolated restore verified) |

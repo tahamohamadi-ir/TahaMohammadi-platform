@@ -6,11 +6,11 @@ V2.1 acceptance adds every independent detail family and the admin→preview→p
 
 All three repositories now implement CI workflows that run on `main`
 (2026-09-10): build/unit/design/SEO for the frontends and locked sync, Ruff,
-Django check, pytest, and OpenAPI provenance for the backend. This table remains
-the required-check contract; workflow enforcement of the secret/dependency scan
-row is still pending, and those scans currently run as release-gate evidence
-(`Docs/10-tracking/COORD-080-R8-SIGNOFF-PACKAGE.md` §5). Branch protection is an
-owner GitHub setting.
+Django check, pytest, OpenAPI provenance, dependency audit
+(`npm audit --audit-level=high` / `uv run --with pip-audit pip-audit`) and a
+detect-secrets baseline gate for the backend. The secret/dependency scan row is
+therefore enforced in CI (`Front-End/public-site` CI run 34522624331; admin and
+backend equivalents). Branch protection is an owner GitHub setting.
 
 | Repository | Required checks before merge |
 |---|---|

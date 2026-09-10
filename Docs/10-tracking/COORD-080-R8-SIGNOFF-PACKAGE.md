@@ -145,6 +145,10 @@ as non-blocking capture-only evidence (owner decision 2026-09-10).
   `docker-compose.dev.yml`, local-operations docs), and test fixtures. No
   production credential is present; production settings fail closed without
   `DJANGO_SECRET_KEY` (`config/settings/production.py`).
+- **CI enforcement (2026-09-10):** dependency audit (`npm audit
+  --audit-level=high` / `uv run --with pip-audit pip-audit`) and a
+  detect-secrets baseline gate were added to all three workflows and are green
+  on PUBLIC `da0faac`, ADMIN `58ec81c`, BACKEND `b7bfccb`.
 
 ## §6 Browser / integrated gates feeding R8
 
@@ -164,6 +168,11 @@ as non-blocking capture-only evidence (owner decision 2026-09-10).
   `pg_dump` + media archive backup, isolated restore into
   `taha_stage_restore_probe`, table-count equality, `migrate --plan` reports no
   pending operations, `manage.py check` clean.
+- Contact delivery (owner-approved live probe 2026-09-10): `POST /api/contact`
+  → **200** `{"ok": true}`; foreign-origin POST → **400** rejected; owner inbox
+  confirmation at the configured recipient (`taha.mohammadi@shahed.ac.ir` per the
+  public payload unless `CONTACT_FORM_TO` overrides) pending
+  (`R7-contact-delivery-EVIDENCE.md`).
 - Live security boundary probes (2026-09-10, no credentials sent):
   `POST /api/v1/admin/auth/login` without CSRF → **403 `CSRF_FAILED`**;
   `/api/v1/admin/content/schema`, `/api/v1/admin/auth/me`,

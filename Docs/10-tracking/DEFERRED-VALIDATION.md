@@ -10,4 +10,4 @@
 | DEF-006 | Public/admin OpenAPI artifact export | Closed: `OPENAPI-ACCEPTANCE.md` locks schema hashes; `Back-End/docs/contracts/openapi/current/` provenance is `scaffold-accepted`; 9 endpoint-access tests pass | Closed |
 | DEF-007 | Owner content and document sources | Superseded under ADR-0009/0010: owner content authority is the CMS publication flow; owner content acceptance is tracked in `COORD-080` F-01/F-02 | COORD-080 |
 | DEF-008 | Font acquisition and subset verification | Closed: font tokens/coverage fixtures exist and the `@foundation` computed-font + subset gates pass (`public-060`) | Closed |
-| DEF-009 | CI workflows and branch protection | Partially closed: workflows implemented and green in all three repositories (2026-09-10); branch protection remains an owner GitHub setting | Owner |
+| DEF-009 | CI workflows and branch protection | Partially closed: workflows implemented and green in all three repositories, including dependency audit and detect-secrets baseline gates (2026-09-10); branch protection remains an owner GitHub setting | Owner |
