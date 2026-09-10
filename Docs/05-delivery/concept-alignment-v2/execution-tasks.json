@@ -139,7 +139,7 @@
       "id": "PU-03-settings",
       "parent": "PU-03",
       "repository": "BACKEND",
-      "status": "REVISE",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-02",
@@ -184,7 +184,7 @@
         "PU-03-resolver"
       ],
       "handoff": "docs/quality/product-v2/PU-03-settings-HANDOFF.md",
-      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md",
+      "review_note": "reviews/REVISE-REVERIFICATION-2026-09-10.md",
       "handoff_state": "accepted-local-uncommitted",
       "review": "reviews/COORDINATOR-REVIEW-2026-09-06.md"
     },
@@ -2935,7 +2935,7 @@
       "id": "PU-15-lessons",
       "parent": "PU-15",
       "repository": "PUBLIC",
-      "status": "REVISE",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-13-routes",
@@ -2975,7 +2975,7 @@
       "stop_marker": "PU-15-lessons_HANDOFF_READY",
       "file_serialization_dependencies": [],
       "handoff": "docs/quality/product-v2/PU-15-lessons-HANDOFF.md",
-      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
+      "review_note": "reviews/REVISE-REVERIFICATION-2026-09-10.md"
     },
     {
       "id": "PU-16-books",
@@ -3567,7 +3567,7 @@
       "id": "PU-25-admin-journey",
       "parent": "PU-25",
       "repository": "ADMIN",
-      "status": "REVISE",
+      "status": "BLOCKED",
       "active": true,
       "depends_on": [
         "PU-SYNC-admin",
@@ -3619,7 +3619,7 @@
       "stop_marker": "PU-25-admin-journey_HANDOFF_READY",
       "file_serialization_dependencies": [],
       "handoff": "docs/quality/product-v2/PU-25-admin-journey-HANDOFF.md",
-      "review_note": "reviews/IMPLEMENTATION-2026-09-07.md"
+      "review_note": "reviews/OWNER-DECISION-2026-09-10.md"
     },
     {
       "id": "PU-25-public-journey",

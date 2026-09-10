@@ -4,7 +4,7 @@ Task: COORD-080 — "Visual/public + admin quality matrix sign-off package".
 Board deliverable: "`R8` evidence template filled".
 Created: 2026-09-02. Evidence refresh: 2026-09-10.
 
-**Status: ALL AGENT-EXECUTABLE R8 GATES GREEN — ONLY F-01 OWNER SIGN-OFF REMAINS — R8 NOT YET PASSED.**
+**Status: ALL AGENT-EXECUTABLE R8 GATES GREEN — F-01 OWNER REVIEW RETURNED REVISIONS — R8 NOT YET PASSED.**
 
 Every result below is pinned to the release commit set **PUBLIC `f3e9032` /
 ADMIN `f1cfa37` / BACKEND `9c2c704`** and staging release
@@ -19,7 +19,7 @@ deferral is named, owned, and non-blocking."
 
 | R8 criterion                         | Section | State @ 2026-09-10                                                              |
 | ------------------------------------ | ------- | ------------------------------------------------------------------------------- |
-| Visual                               | §1      | Automated captures 39/39 + responsive matrix green; owner compare open           |
+| Visual                               | §1      | Automated captures 39/39 + responsive matrix green; owner review returned revisions (F-01) |
 | Accessibility                        | §2      | Automated 31/31 green; keyboard/zoom/reduced-motion specs green; manual SR owner-accepted non-blocking |
 | Browser                              | §6      | Live staging smoke 10/10; admin matrix 5/5 (mocked boundary); CI green           |
 | Performance                          | §3      | Local budget probes 6/6 green; production field data owner-accepted post-launch  |
@@ -49,9 +49,20 @@ deferral is named, owned, and non-blocking."
 
 `[TODO]` before sign-off (owner actions):
 
-- [ ] Owner compare completed per PF row using the refreshed compare report.
+- [x] Owner compare completed on the refreshed compare report (2026-09-10).
+- [ ] Revision round: owner-requested fixes applied, captures regenerated, and
+  the fixed rows re-reviewed.
 - [ ] Accepted capture SHA-256 hashes recorded (`npm run report:signoff-hashes`).
 - [ ] PUBLIC-190 verdict moved `REVISE` → `PASS` with owner evidence.
+
+**Owner revision feedback (2026-09-10, verbatim scope):** icons are wrong; no
+image should sit below the graphs; graph text is messy; node/child-node
+hierarchy is unclear; the concepts are far more professional and beautiful
+across the board. Scope: Home EN/FA, Gateway, page families, shared chrome.
+Tracked in `PUBLIC-190-VISUAL-QA.md` and `reviews/OWNER-DECISION-2026-09-10.md`.
+
+**Capture-only rows:** the 5 Home rows without a concept reference are accepted
+as non-blocking capture-only evidence (owner decision 2026-09-10).
 
 ## §2 Accessibility — zoom / keyboard / screen-reader (PUBLIC-190 §3 items)
 
@@ -172,7 +183,7 @@ are not fillable by agents.
 | ID      | Finding / deferral                                                                                                        | Blocking gate | State @ 2026-09-10                                                                                              | Owner       |
 | ------- | ------------------------------------------------------------------------------------------------------------------------- | ------------- | --------------------------------------------------------------------------------------------------------------- | ----------- |
 | DEF-005 | Staging restore drill not executed                                                                                        | R7            | **CLOSED** — executed with backup + isolated restore verification on `stage-f3e90323-f1cfa37d-9c2c7045`          | —           |
-| F-01    | PUBLIC-190 visual acceptance `REVISE` — owner compare + accepted hashes + sign-off                                        | R8            | OPEN — owner reviewing refreshed 39/39 captures + 43/48 compare report (served 2026-09-10)                       | Owner: ____ |
+| F-01    | PUBLIC-190 visual acceptance `REVISE` — owner compare + accepted hashes + sign-off                                        | R8            | **OWNER REVIEWED 2026-09-10 — REVISION REQUIRED**: icons wrong; no image below graphs; messy graph text; unclear node/child-node hierarchy; overall concept quality gap. Scope: Home EN/FA, Gateway, page families, shared chrome. Fix round then re-capture + hashes + sign-off | Owner: ____ |
 | F-02    | PF-02 creative detail captures/route                                                                                      | R8            | **OWNER-ACCEPTED 2026-09-10 as non-blocking** — empty-shell captures accepted; published creative detail stays owner CMS content | Owner ✅ |
 | F-03    | Production performance telemetry open                                                                                     | R8            | **OWNER-ACCEPTED 2026-09-10 as non-blocking** — post-launch field measurement                                                 | Owner ✅ |
 | F-04    | PUBLIC-320 live staging smoke blocked on staging URL                                                                      | R7→R8         | **CLOSED** — 10/10 green on `stage-f3e90323-f1cfa37d-9c2c7045`                                                   | —           |
@@ -196,5 +207,8 @@ signature) remains open.
 
 **Bottom line:** every gate an agent can execute is green and pinned to the
 release commit set; F-02/F-03/F-05 and the manual screen-reader scope are
-owner-accepted non-blocking deferrals. R8 passes when the owner completes §8
-and F-01 (visual compare, accepted capture hashes, signature).
+owner-accepted non-blocking deferrals. The owner reviewed the visual evidence
+and returned a revision round for F-01 (see §1). R8 passes when the revision
+round is fixed, re-captured, and the owner completes §8 with the accepted
+hashes. The owner pre-approved the signature as `Taha Mohammadi` /
+`2026-09-10`; it is held until F-01 closes.

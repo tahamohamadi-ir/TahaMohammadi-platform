@@ -803,6 +803,24 @@ hashes, and explicit sign-off remain required.
 
 ---
 
+## 2026-09-10 — Owner visual review verdict: revision required
+
+The owner reviewed the served compare report and returned concrete revision
+feedback (recorded in `concept-alignment-v2/reviews/OWNER-DECISION-2026-09-10.md`):
+
+- Icons are wrong.
+- No image should sit below the graphs.
+- Graph text is messy.
+- Node and child-node hierarchy is unclear.
+- The concepts are far more professional and beautiful across the board.
+
+Scope named by the owner: **Home EN/FA, Gateway, page families, shared chrome**.
+The 5 Home capture-only rows without a concept reference are accepted as
+non-blocking. The verdict remains `REVISE` until the revision round is applied,
+re-captured, re-reviewed, and signed off.
+
+---
+
 ## Verdict
 
 **`REVISE`** — PUBLIC-190 PF-02 honest creative detail empty-shell @ `798e8b2` atop Phase 8 Home split hero + Gateway 200% @ `84e83e9` atop collaborate bands for PF-01/04/05 @ `e608146` atop Phase 6 writing/creative chrome @ `0e6a552`; structural chrome @ `cf81f6f`; PUBLIC-080 automated a11y green @ `2f35e6e` (**29 / 29**); remediation stack @ `1c3a3a9`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a` (**39 / 48** ready pairs; PF-02 shell now capturable). Manual owner visual compare, accepted capture hashes, manual a11y, and explicit sign-off still open before `PUBLIC-190` may close.
