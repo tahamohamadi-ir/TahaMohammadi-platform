@@ -4,17 +4,21 @@ Task: COORD-060 — "Staging topology checklist against `Docs/02-architecture/DE
 Board deliverable: "Browser smoke plan written with owners".
 Created: 2026-09-02.
 
-**Status: checklist READY — execution BLOCKED.** No staging environment exists yet
-(Docker daemon down; `PUBLIC_STAGING_SITE_URL` unset). This document is the written
-plan; **no browser evidence has been captured**. Board dependencies `BACKEND-200`,
-`PUBLIC-350`, `ADMIN-320` are not complete. `Owner: ____` placeholders are
-intentional — assignment is an owner action, not an agent decision.
+**Status: staging LIVE — public/security rows executed; credential-gated rows
+deferred.** Staging runs at `https://staging.tahamohamadi.ir` (release
+`stage-601b2294-f1cfa37d-9c2c7045`, 2026-09-10) with managed ingress,
+migrations, backup + isolated restore, and live smoke. `Owner: ____` placeholders
+below remain owner actions.
 
-**Refreshed 2026-09-04:** `BACKEND-190` permission matrix is now CLOSED
-(`tests/test_admin_permission_matrix.py`, 712 backend tests pass); the admin
-browser matrix (ADMIN-290, mocked-API Playwright) now exists — the staging rows
-below still need real-environment browser captures. Preconditions P1–P5 remain
-unsatisfied.
+**Refreshed 2026-09-10:** P1 CLOSED; P2 live (TLS proxy + compose edge);
+P3 satisfied (`PUBLIC_STAGING_SITE_URL` supplied for live smoke, **10/10**);
+P4 managed staging ingress block installed and verified; P5 still open (no
+staging staff credentials) — the credential-gated browser rows (sign-in, MFA,
+session expiry, admin mutation, live PU-25 journey) are deferred to R9 by owner
+decision (`concept-alignment-v2/reviews/OWNER-DECISION-2026-09-10.md`). CSRF,
+cookie flags, proxy/TLS headers, media boundary, and the internal boundary were
+verified live (`R7-csrf-EVIDENCE.md`, `R7-media-boundary-EVIDENCE.md`,
+`R7-draft-leak-EVIDENCE.md`).
 
 ## Topology under test
 

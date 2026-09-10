@@ -1,14 +1,59 @@
-# R7 Backup/Restore Drill Evidence — Disposable Profile (COORD-070 family 8)
+# R7 Backup + Restore Drill Evidence
+
+Two drills exist: the live-staging drill (current release, below) and the
+2026-09-05 disposable-profile drill (preserved at the end).
+
+## Live staging drill — release `stage-601b2294-f1cfa37d-9c2c7045`
+
+**Status: PASS** — executed automatically by the staging deploy workflow, which
+fails the release if any verification below fails.
+
+**Release:** `stage-601b2294-f1cfa37d-9c2c7045` (PUBLIC `601b2294` / ADMIN
+`f1cfa37d` / BACKEND `9c2c7045`).
+
+**Workflow run:** `Front-End/public-site` Deploy staging run **34507930950**
+(2026-09-10, success). Log line: `Staging release
+stage-601b2294-f1cfa37d-9c2c7045 deployed with isolated ingress and restore
+verification.`
+
+### Backup artifact set
+
+Written to `$STAGING_APP_DIR/backups/<release-id>/` on the staging host
+(path value lives in the `STAGING_APP_DIR` repository secret; not printed):
+
+| Artifact                                       | Producer / assertion                                |
+| ---------------------------------------------- | --------------------------------------------------- |
+| `database.dump`                                | `pg_dump -Fc`; non-empty assert                     |
+| `media.tar`                                    | `tar -C /app/media`; non-empty assert               |
+| `backend.sha` / `admin.sha` / `public.sha`     | exact release SHAs                                  |
+| `backend-image.id` / `admin-image.id` / `public-image.id` | `docker image inspect` IDs                |
+| `caddy-base.sha256` / `Caddyfile.compose.before` | edge ingress snapshot before managed-block replace |
+
+### Isolated restore proof
+
+| Step                                             | Assertion                                              |
+| ------------------------------------------------ | ------------------------------------------------------ |
+| Create isolated DB `${POSTGRES_DB}_restore_probe` | `dropdb --if-exists` then `createdb`                  |
+| `pg_restore --exit-on-error --no-owner`          | full dump restored without errors                      |
+| Table-count equality                             | `source_tables == restored_tables` on `information_schema.tables` |
+| `manage.py migrate --plan`                       | contains `No planned migration operations`             |
+| `manage.py check`                                | exit 0 on the restored database                        |
+| Probe cleanup                                    | restore DB dropped after verification                  |
+
+**PASS assessment:** drill executed and enforced on the current release; no
+manual step or credential is required. Scheduled backups, retention, and
+monitoring/alerting for the deployed host remain owner actions.
+
+---
+
+## Disposable-profile drill — 2026-09-05 (historical, preserved)
 
 **Date:** 2026-09-05 (Docker daemon available)
-**Scope:** the only R7 family executable without a deployed staging host (the
-backup/restore drill runs against the disposable Docker profile, per
-COORD-070's own execution order).
-**Status:** drill EXECUTED and PASSED. Checklist in
-`Back-End/docs/operations/BACKUP-RESTORE.md` ("NOT yet drilled") — all steps now
-checked below. Live-staging backup schedule/monitoring remain owner actions.
+**Scope:** the only R7 family executable before a deployed staging host existed
+(per COORD-070's own execution order).
+**Status:** drill EXECUTED and PASSED.
 
-## Backup (steps 1–4 of the checklist)
+### Backup (steps 1–4 of the checklist)
 
 | Step                    | Command                                                                                                                                                     | Result                                                       |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
@@ -18,7 +63,7 @@ checked below. Live-staging backup schedule/monitoring remain owner actions.
 | Config inventory        | tracked git files; commit recorded with the backup                                                                                                          | this repo @ `da1ceac` (Back-End)                             |
 | `.env`                  | NOT copied into `backup/` (contains secrets)                                                                                                                | per checklist                                                |
 
-## Restore drill (checklist steps 1–7)
+### Restore drill (checklist steps 1–7)
 
 | Step                                                                                      | Command                                                                                                                     | Result                                                  |
 | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
@@ -27,26 +72,9 @@ checked below. Live-staging backup schedule/monitoring remain owner actions.
 | Copy dump back                                                                            | `docker cp backup/….dump taha-platform-dev-db:/tmp/restore.dump`                                                            | done                                                    |
 | Restore                                                                                   | `docker exec taha-platform-dev-db pg_restore -U taha_dev -d taha_platform_dev --no-owner --exit-on-error /tmp/restore.dump` | **OK (no errors, exit-on-error clean)**                 |
 | Remove temp dump                                                                          | `docker exec … rm /tmp/restore.dump`                                                                                        | done                                                    |
-| `manage.py migrate --plan` (settings `config.settings.local` + disposable `DATABASE_URL`) | **No planned migration operations.**                                                                                        | ✅ checklist criterion                                  |
+| `manage.py migrate --plan` (settings `config.settings.local` + disposable `DATABASE_URL`) | **No planned migration operations.**                                                                                        | checklist criterion                                     |
 | API back up + health                                                                      | `compose up -d api` → `GET /health/`                                                                                        | **200** `{"status": "ok", "db": "ok", "contact": "ok"}` |
 
 Note: `compose stop api` (not `down`) was used so the named volume/network
 stayed intact; after the destructive drop/recreate the api container was
 started again and answered healthy.
-
-## Acceptance per workspace rule
-
-`Docs/08-operations/BACKUP-RESTORE-RUNBOOK.md`: a backup is accepted only when
-it restores into an isolated environment. **Criterion met:** the dump restored
-into a freshly dropped/recreated `taha_platform_dev` with
-`pg_restore --exit-on-error` clean, zero pending migrations, and a healthy
-`/health/`.
-
-## Remaining owner actions (live staging, not this drill)
-
-- Scheduled backups + retention (7 daily / 4 weekly / 12 monthly) against the
-  deployed staging/production instances.
-- Monitoring/health alerting.
-- The other seven COORD-070 families (draft-leak, CSRF, MFA, session expiry,
-  contact delivery, preview expiry, media boundary) need the deployed staging
-  origin (COORD-060 P2–P5).

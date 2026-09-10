@@ -4,17 +4,15 @@ Task: COORD-070 — "Run draft-leak + CSRF + MFA staging evidence collection".
 Board deliverable: "Evidence files in `Docs/10-tracking/`".
 Created: 2026-09-02.
 
-**Status: PLAN ONLY — NOT EXECUTED.** No staging environment exists yet
-(Docker daemon down; `PUBLIC_STAGING_SITE_URL` unset; `BACKEND-200` staging
-artifact open). None of the `R7-<family>-EVIDENCE.md` files named below exist
-yet. **Do not mark COORD-070 done.** This document is the collection harness:
-probes, PASS criteria, and evidence file names, ready to run once COORD-060's
-preconditions (`Docs/10-tracking/COORD-060-STAGING-TOPOLOGY-CHECKLIST.md`, P1–P5)
-are satisfied.
-
-**Refreshed 2026-09-04:** `BACKEND-190` closed (712 backend tests pass); admin
-browser matrix (ADMIN-290) shipped — but the staging _live_ rows below still
-require the deployed environment.
+**Status: PARTIALLY EXECUTED (2026-09-10).** Staging is live at
+`https://staging.tahamohamadi.ir` (release `stage-601b2294-f1cfa37d-9c2c7045`).
+Executed evidence: `R7-csrf-EVIDENCE.md` (partial), `R7-draft-leak-EVIDENCE.md`
+(partial), `R7-media-boundary-EVIDENCE.md` (partial),
+`R7-backup-restore-EVIDENCE.md` (PASS). Credential-gated families (MFA, session
+expiry, contact delivery, preview expiry, and the authenticated success legs of
+CSRF/draft/media) remain open and are deferred to R9 with the owner decision
+(`concept-alignment-v2/reviews/OWNER-DECISION-2026-09-10.md`). **Do not mark
+COORD-070 done.**
 
 ## Evidence layers
 
@@ -139,15 +137,16 @@ produce under `Docs/10-tracking/`.
 
 | Family               | Evidence file                     | Status                                                                         |
 | -------------------- | --------------------------------- | ------------------------------------------------------------------------------ |
-| Draft-leak           | `R7-draft-leak-EVIDENCE.md\       | not produced (needs deployed staging)                                          |
-| CSRF                 | `R7-csrf-EVIDENCE.md\             | not produced (needs deployed staging)                                          |
-| MFA                  | `R7-mfa-EVIDENCE.md\              | not produced (needs deployed staging)                                          |
-| Session expiry       | `R7-session-expiry-EVIDENCE.md\   | not produced (needs deployed staging)                                          |
-| Contact delivery     | `R7-contact-delivery-EVIDENCE.md\ | not produced (needs deployed staging)                                          |
-| Preview expiry       | `R7-preview-expiry-EVIDENCE.md\   | not produced (needs deployed staging)                                          |
-| Media boundary       | `R7-media-boundary-EVIDENCE.md\   | not produced (needs deployed staging)                                          |
-| Backup/restore drill | `R7-backup-restore-EVIDENCE.md`   | **PASSED 2026-09-05** (disposable profile; executable without a deployed host) |
+| Draft-leak           | `R7-draft-leak-EVIDENCE.md`       | PARTIAL 2026-09-10 — public surface clean; preview-token leg credential-gated |
+| CSRF                 | `R7-csrf-EVIDENCE.md`             | PARTIAL 2026-09-10 — 403 + cookie flags live; authenticated leg deferred      |
+| MFA                  | `R7-mfa-EVIDENCE.md`              | not produced (credential-gated, deferred to R9)                                |
+| Session expiry       | `R7-session-expiry-EVIDENCE.md`   | not produced (credential-gated, deferred to R9)                                |
+| Contact delivery     | `R7-contact-delivery-EVIDENCE.md` | not produced (needs owner delivery consent + provider)                         |
+| Preview expiry       | `R7-preview-expiry-EVIDENCE.md`   | not produced (credential-gated, deferred to R9)                                |
+| Media boundary       | `R7-media-boundary-EVIDENCE.md`   | PARTIAL 2026-09-10 — inactive 404 + static 200; active-file leg deferred       |
+| Backup/restore drill | `R7-backup-restore-EVIDENCE.md`   | **PASSED 2026-09-10** (deploy workflow 34507930950; isolated restore verified) |
 
 **Bottom line:** COORD-070 remains OPEN. R7 ("Integrated deployment and smoke
 tests pass; drafts remain private; backup and restore are proven on staging")
-cannot be claimed from disposable-env evidence alone.
+has live proof for smoke, draft absence on the public surface, backup/restore,
+and security boundaries; the credential-gated legs move to R9 by owner decision.

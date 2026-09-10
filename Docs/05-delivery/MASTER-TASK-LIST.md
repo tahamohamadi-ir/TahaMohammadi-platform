@@ -157,14 +157,14 @@ Historical milestone rows below are not newly reverified by this planning delive
 
 ## R7 — Integrated staging
 
-- [ ] Build three immutable staging artifacts.
-- [ ] Run backend migrations in staging.
-- [ ] Deploy backend, admin, and public site independently.
-- [ ] Verify CORS, cookies, CSRF, proxy headers, and media URLs.
-- [ ] Run published-content and draft-leak smoke tests.
-- [ ] Run preview-token expiry and authorization tests.
-- [ ] Run contact delivery tests with the staging provider.
-- [ ] Run a staging backup and isolated restore.
+- [x] Build three immutable staging artifacts. (release `stage-601b2294-f1cfa37d-9c2c7045`; per-SHA image tags + image IDs)
+- [x] Run backend migrations in staging. (deploy workflow step; `migrate --noinput` + restore-probe `migrate --plan`)
+- [x] Deploy backend, admin, and public site independently. (three containers behind the managed compose edge)
+- [ ] Verify CORS, cookies, CSRF, proxy headers, and media URLs. CSRF 403 + `Secure`/`SameSite` cookie + HSTS/security headers + static media 200 verified live (`R7-csrf-EVIDENCE.md`, `R7-media-boundary-EVIDENCE.md`); authenticated cookie leg deferred to R9.
+- [ ] Run published-content and draft-leak smoke tests. Published-content live smoke 10/10; public payloads contain zero draft markers; preview-token leg deferred to R9 (`R7-draft-leak-EVIDENCE.md`).
+- [ ] Run preview-token expiry and authorization tests. Server-side tests green; live leg credential-gated to R9.
+- [ ] Run contact delivery tests with the staging provider. `/health/` reports `contact: ok`; a real delivery send needs owner consent.
+- [x] Run a staging backup and isolated restore. (`R7-backup-restore-EVIDENCE.md`; deploy run 34507930950)
 
 ## R8 — Quality closure
 

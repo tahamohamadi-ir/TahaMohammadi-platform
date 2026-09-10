@@ -1,6 +1,14 @@
 # Product V2 Final Acceptance Register
 
 > **Correction — 2026-09-07: NOT READY for final acceptance.** The completion claims below are historical agent-reported statements, not current independent acceptance. Fresh reconciliation shows 9 ACCEPTED_LOCAL, 3 DOC_COMPLETE, 65 IMPLEMENTED_UNREVIEWED and 6 REVISE; zero NOT_STARTED does not mean completion. Reachable content fallbacks and incomplete integration/visual evidence remain. See [completion-claim verification](../../05-delivery/concept-alignment-v2/reviews/COMPLETION-CLAIM-VERIFICATION-2026-09-07.md). Do not use the historical PASS/READY table below to authorize release.
+>
+> **Update — 2026-09-10:** current `execution-tasks.json` counts are **10
+> ACCEPTED_LOCAL, 3 DOC_COMPLETE, 66 IMPLEMENTED_UNREVIEWED, 4 REVISE, 0
+> NOT_STARTED**. `RECONCILIATION-CHECK.json` is STALE (accepted-head assertions
+> pin older heads); see
+> [reconciliation status](../../05-delivery/concept-alignment-v2/reviews/RECONCILIATION-STATUS-2026-09-10.md).
+> R8 agent gates are green with owner deferrals recorded; F-01 owner visual
+> sign-off remains.
 
 Date: 2026-09-07  
 Coordinator: ROOT (`Docs/10-tracking/product-v2/FINAL-ACCEPTANCE.md`)  
