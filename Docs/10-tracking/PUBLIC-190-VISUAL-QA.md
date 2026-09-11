@@ -846,6 +846,26 @@ across page families and shared chrome.
 
 ---
 
+## 2026-09-11 — F-01 remediation slice 2 (PUBLIC `53baeba`)
+
+- **Journey icons:** the profile journey now carries its CMS `kind`
+  (`experience`/`education`) and `TimelineNode` renders circular icon badges
+  (briefcase / graduation cap) with a dashed connector line, matching the
+  concept's journey treatment.
+- **Graph presentation:** the graph heading is now a brand eyebrow; node rows
+  are compact pills with hover/open states; relationships render as quiet chips
+  instead of a debug list; the selected-node panel reads as a card with a muted
+  prompt.
+
+Local gates: targeted home/journey unit tests green, lint, format and the
+production build green; full CI runs on the pushed commit.
+
+Remaining owner feedback for the next slices: overall concept-quality alignment
+across page families and shared chrome (publications/rails density, hero
+proportions), and any further graph/spacing refinements from owner review.
+
+---
+
 ## Verdict
 
 **`REVISE`** — PUBLIC-190 PF-02 honest creative detail empty-shell @ `798e8b2` atop Phase 8 Home split hero + Gateway 200% @ `84e83e9` atop collaborate bands for PF-01/04/05 @ `e608146` atop Phase 6 writing/creative chrome @ `0e6a552`; structural chrome @ `cf81f6f`; PUBLIC-080 automated a11y green @ `2f35e6e` (**29 / 29**); remediation stack @ `1c3a3a9`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a` (**39 / 48** ready pairs; PF-02 shell now capturable). Manual owner visual compare, accepted capture hashes, manual a11y, and explicit sign-off still open before `PUBLIC-190` may close.
