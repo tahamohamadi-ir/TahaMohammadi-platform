@@ -65,18 +65,34 @@ The legacy `taha_cms` database and the old stack remain untouched.
 | Security headers               | HSTS, nosniff, X-Frame-Options DENY present |
 | Public pages accidental noindex| none |
 
-## 6. Pending (owner)
+## 6. Production live + card interactions refresh (2026-09-11)
 
-1. **Cloudflare DNS switch for the apex:** point `tahamohamadi.ir` (A) and
-   `www.tahamohamadi.ir` to `85.192.29.196` (the staging host). The Caddy TLS
-   store already holds valid certificates for both names, so HTTPS starts
-   working as soon as DNS resolves here. DNS-only (grey) is safest for
-   certificate renewal; proxied works with the existing origin certificate.
-2. Real SMTP credentials for production contact delivery.
-3. After DNS propagates: agent runs the public production smoke, records
-   `COORD-090` numbers, then creates the separate staging stack.
+- Cloudflare DNS for `tahamohammadi.ir` was switched by the owner; the domain
+  resolves through Cloudflare and serves the new platform (HTTP 200, health ok,
+  no accidental noindex, internal API 404).
+- Production web refreshed from PUBLIC `f23deec`:
+  - full-card stretched links (whole project/research/featured card clickable,
+    keyboard focus ring preserved);
+  - pointer-following brand glow on card hover (CSS variables set by a
+    fine-pointer, reduced-motion-aware script). Live verification:
+    `--glow-x` set, `::before` opacity 1, body click navigates to the record.
+- Production web image rebuilt with production canonical/API args and the
+  `prod_public_html` volume re-synced from the image; web container recreated.
 
-## 7. Rollback
+## 7. Pending (owner)
+
+1. **Real SMTP credentials for production contact delivery.** Production
+   currently uses Mailpit. Set in `/home/deploy/taha-cms-stage/.env.prod`:
+   `EMAIL_HOST`, `EMAIL_PORT`, `EMAIL_HOST_USER`, `EMAIL_HOST_PASSWORD`,
+   `EMAIL_USE_TLS=true`, then run
+   `docker compose -p taha-cms-prod --env-file .env.prod -f deploy/docker-compose.prod.yml up -d --force-recreate cms`.
+   Django reads these keys in `config/settings/base.py:151-156`.
+2. Cloudflare DNS is currently proxied; the origin certificate is valid, so it
+   keeps working. If certificate renewal ever fails behind the proxy, either
+   switch the record to DNS-only temporarily or install a Cloudflare Origin
+   Certificate.
+
+## 8. Rollback
 
 - Ingress: restore `Caddyfile.compose.before-prod-cutover` to
   `/home/deploy/cms-repo/infra/caddy/Caddyfile.compose` and
