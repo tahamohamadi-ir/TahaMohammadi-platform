@@ -866,6 +866,23 @@ proportions), and any further graph/spacing refinements from owner review.
 
 ---
 
+## 2026-09-11 — F-01 remediation slice 3 (PUBLIC `e35f43b`)
+
+- **Project metadata no longer leaks raw enums:** `project_type` and the
+  code/data/demo availability fields are mapped to localized human labels on the
+  projects index and detail; negative states (`not_available`,
+  `not_applicable`, `none`) are omitted instead of printed. Before/after on
+  `/en/projects/`: `ai · public · not_available · not_available` →
+  `AI · Public`.
+- **Hero media fills its card:** the page-family hero image was rendering at
+  natural ratio inside a taller card (≈104px blank); the picture layer now
+  absolutely fills the media box with `object-fit: cover` across page families.
+
+Gates: new unit assertions for humanized/localized metadata, lint, format,
+production build green; CI on the pushed commit.
+
+---
+
 ## Verdict
 
 **`REVISE`** — PUBLIC-190 PF-02 honest creative detail empty-shell @ `798e8b2` atop Phase 8 Home split hero + Gateway 200% @ `84e83e9` atop collaborate bands for PF-01/04/05 @ `e608146` atop Phase 6 writing/creative chrome @ `0e6a552`; structural chrome @ `cf81f6f`; PUBLIC-080 automated a11y green @ `2f35e6e` (**29 / 29**); remediation stack @ `1c3a3a9`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a` (**39 / 48** ready pairs; PF-02 shell now capturable). Manual owner visual compare, accepted capture hashes, manual a11y, and explicit sign-off still open before `PUBLIC-190` may close.
