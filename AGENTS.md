@@ -16,9 +16,12 @@ Current public visual recovery: read `Docs/09-decisions/ADR-0008-HOME-GRAPH-HERO
 2. Read `Docs/00-governance/AUTHORITY-ORDER.md`.
 3. Read `PROJECT-MANIFEST.md`.
 4. Read `Docs/references/frontend-design-authority/README.md` for frontend design work.
-5. Read the target repository `AGENTS.md`.
-6. Read the active task specification and implementation plan.
-7. Inspect Git status before changing files.
+5. Read `PROJECT-STATUS.md` for the current live environment state.
+6. Read the target repository `AGENTS.md`.
+7. Read the active task specification and implementation plan.
+8. Inspect Git status before changing files.
+9. After any meaningful change, append a dated entry to `PROJECT-STATUS.md` §7
+   changelog and refresh the affected status tables.
 
 ## Non-negotiable boundaries
 
