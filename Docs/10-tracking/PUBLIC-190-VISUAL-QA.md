@@ -821,6 +821,31 @@ re-captured, re-reviewed, and signed off.
 
 ---
 
+## 2026-09-11 — F-01 remediation slice 1 (PUBLIC `d79391a`)
+
+First fixes from the owner revision round:
+
+- **Authored prose rendering:** `splitBodyParagraphs` now converts authored
+  HTML/Markdown block structure into clean escaped paragraphs; the Research
+  statement, About profile and topic-detail bodies no longer leak raw `<p>/<h2>/<li>`
+  tags into the page (verified on `/en/research/`; affects About, Research
+  statement detail, Research topic detail).
+- **Constellation graph:** the raster backplate image under the graph is
+  removed (owner: no image under the graphs); the section now renders vector
+  orbits, node icons/labels and a soft procedural halo only.
+- **Home graph labels:** ellipsis truncation removed (labels wrap), the hub node
+  gets a brand-emphasized label treatment, and child labels keep a lighter
+  border.
+
+Local gates on the slice: 472 unit tests, targeted Playwright graph/no-JS/home
+specs (29 passed, 1 skipped), lint, format, design validation — all green.
+
+Still open from the owner feedback for the next slices: journey/timeline icons,
+graph detail/list presentation polish, and broader concept-quality alignment
+across page families and shared chrome.
+
+---
+
 ## Verdict
 
 **`REVISE`** — PUBLIC-190 PF-02 honest creative detail empty-shell @ `798e8b2` atop Phase 8 Home split hero + Gateway 200% @ `84e83e9` atop collaborate bands for PF-01/04/05 @ `e608146` atop Phase 6 writing/creative chrome @ `0e6a552`; structural chrome @ `cf81f6f`; PUBLIC-080 automated a11y green @ `2f35e6e` (**29 / 29**); remediation stack @ `1c3a3a9`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a` (**39 / 48** ready pairs; PF-02 shell now capturable). Manual owner visual compare, accepted capture hashes, manual a11y, and explicit sign-off still open before `PUBLIC-190` may close.
