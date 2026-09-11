@@ -883,6 +883,24 @@ production build green; CI on the pushed commit.
 
 ---
 
+## 2026-09-11 — F-01 remediation slice 4 (PUBLIC `507b4bb`)
+
+- **About page rendered the unavailable shell forever:** the profile loader
+  expected snake_case (`published_at`, `excerpt`, `body`) but
+  `GET /api/profiles/{locale}/about` returns camelCase (`publishedAt`,
+  `shortBio`, `longBio`), so `assertPublishedOnly` always failed and the page
+  showed the placeholder hero ("Awaiting approved CMS copy") with skeleton
+  sections.
+- Fix: normalize the live payload (short/long bio, publishedAt, education
+  entries from `degree/field/institution/period/thesis`, experience entries
+  from `role/organization/period/bullets[0]`) and assert publication on the
+  mapped record. The About page now renders the real profile: bio hero,
+  Introduction, two education entries and five experience entries.
+- Shared authored-text helper: `splitBodyParagraphs` for About and Research now
+  delegates to one converter (`src/lib/authored-text.ts`).
+
+---
+
 ## Verdict
 
 **`REVISE`** — PUBLIC-190 PF-02 honest creative detail empty-shell @ `798e8b2` atop Phase 8 Home split hero + Gateway 200% @ `84e83e9` atop collaborate bands for PF-01/04/05 @ `e608146` atop Phase 6 writing/creative chrome @ `0e6a552`; structural chrome @ `cf81f6f`; PUBLIC-080 automated a11y green @ `2f35e6e` (**29 / 29**); remediation stack @ `1c3a3a9`; prior Path A @ `cfce6b4`; compare pairing @ `c14508a` (**39 / 48** ready pairs; PF-02 shell now capturable). Manual owner visual compare, accepted capture hashes, manual a11y, and explicit sign-off still open before `PUBLIC-190` may close.
