@@ -37,3 +37,17 @@ owner decisions, not agent inferences.
 | preview-token / MFA / session-expiry live   | Moved to R9 (consistent with F-05).                                                                    |
 | CM-02 residual (brand mark from promoted registry, nav fallback only when data is absent) | Accepted as non-blocking.                                                        |
 | Staging admin account                       | Add a manual `workflow_dispatch` bootstrap with owner-provided secrets.                                |
+
+## Third owner round — production migration request
+
+| Item                                | Decision                                                                                                        |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| Old production data                 | Full migration into the new platform database (`taha_prod_migration_probe` rehearsal first).                     |
+| Merge with new CMS content          | Controlled merge with a conflict report; old published records are the content source of truth.                  |
+| Old server access                   | Owner has SSH/panel and will provide access.                                                                     |
+| Production target                   | The current staging server; `tahamohammadi.ir` moves to it.                                                      |
+| Timing                              | Migration is tested first; domain promotion only after R8 passes (F-01 revisions + sign-off).                    |
+| Old stack                           | Stays intact for rollback; retired after owner confirmation.                                                     |
+| End state                           | `tahamohammadi.ir` = production; `staging.tahamohamadi.ir` = future changes; DNS for both managed in Cloudflare.  |
+
+Execution plan: `Docs/10-tracking/R9-PRODUCTION-MIGRATION-PLAN.md`.
