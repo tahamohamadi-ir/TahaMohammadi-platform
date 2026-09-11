@@ -9,6 +9,18 @@ Owner decisions recorded 2026-09-10 (`Docs/05-delivery/concept-alignment-v2/revi
 - End state: `tahamohammadi.ir` is the production surface; `staging.tahamohamadi.ir` remains the future-changes environment; the old stack is retired after owner confirmation.
 - DNS for both domains is managed in Cloudflare.
 
+## Progress (2026-09-11)
+
+| Phase | State | Evidence |
+| ----- | ----- | -------- |
+| 0 — Access + inventory | **COMPLETE** | Legacy stack found on the *same* server as staging (`taha-nl`): project `taha-cms` from `/home/deploy/cms-repo`, DB `taha_cms`, containers `taha-cms-{cms,web,admin,caddy,db}`. Apex DNS `213.176.74.133` is unreachable; the domain record must be replaced at promotion. |
+| 1 — Backup | **COMPLETE** | `R9-LEGACY-BACKUP-EVIDENCE.md`: DB dump (543K, SHA-256 pinned), media, 91M old static build, image tags, repo HEAD. |
+| 2 — Isolated restore rehearsal | **COMPLETE** | `taha_prod_migration_probe` restored with 0 errors; new migrations report **no pending operations**; `manage.py check` clean. |
+| 3 — Controlled merge + conflicts | **COMPLETE** | `R9-MERGE-CONFLICTS.md`: content rows identical; only two staging test artifacts to exclude. |
+| 4 — Validation on merged data | pending | runs after R8 (F-01) closes |
+| 5 — Promotion | pending | blocked until R8 passes |
+| 6 — Post-promotion | pending | second staging stack on the same host |
+
 ## Phase 0 — Access and inventory (owner + agent)
 
 1. Owner provides old-server access (SSH or panel) and confirms how the legacy stack runs.
