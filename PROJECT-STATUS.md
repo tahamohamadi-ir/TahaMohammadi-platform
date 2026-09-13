@@ -67,12 +67,12 @@ server, gates, and a dated changelog of everything done.
   `legacy-20260911-165545` (old DB/media/static) and
   `promotion-20260911-191139` (pre-promotion DBs + Caddy snapshot + checksums).
 
-## 4. Status by area (2026-09-12 04:16)
+## 4. Status by area (2026-09-12 23:49)
 
 | Area            | State | Notes |
 | --------------- | ----- | ----- |
 | Backend         | ✅ | 952 tests, Ruff clean, migrations applied; `9c2c704` (+ CI-only `6c0d349`) |
-| Public site     | ✅ live | `f23deec`: graph clarity, authored prose, journey icons, project metadata, About from live API, full-card links + pointer-follow glow; local pending: portal GLB hero integration Phase 1.1 — full-viewport world (uncommitted) |
+| Public site     | ✅ live | `f23deec`: graph clarity, authored prose, journey icons, project metadata, About from live API, full-card links + pointer-follow glow; local (unpushed): portal world integrated + frozen `79a15f1` |
 | Admin panel     | ✅ | 197 unit tests, browser matrix 5/5, CI green; `1ea469a` |
 | CI/CD           | ✅ | CI in all three repos with dependency + secret scans; deploy-staging workflow; production updates still manual |
 | R7 staging      | ✅ mostly | live smoke 10/10, backup/restore proven, security probes; credential-gated families deferred to R9 |
@@ -101,6 +101,7 @@ server, gates, and a dated changelog of everything done.
 | 12:38 | PUBLIC (local, uncommitted) — PW-1.2 material polish + fallback parity: v1.4 stone re-bake (bake-time meso contrast ×1.2, bump ×0.7; normal/roughness 2048) exported as `tahamohammadi-portal-v1.4-preview.glb` (948,252 B; WIP blend `portal-export-source-v1.4-wip.blend`); frozen master, v1.3.1 GLB and v1.3.1 textures untouched; web runtime adopts the v1.4-preview GLB; fallback parity via new `portal-world-dark/light.png` (1920×1080 renders of the same world; promoted-asset registry + ledger rows added; `GATEWAY_ATMOSPHERE_ASSETS` remapped); light threshold halo restrained; gates: lint clean, 479 unit tests (89 files), build 42 pages, gateway e2e 18/21 (3 pre-existing settings failures) |
 | 22:10 | PUBLIC (local, uncommitted) - pre-freeze audit: exported `tahamohammadi-portal-v1.4-preview2.glb` (1,588,376 B) with per-image formats (basecolor JPEG 2048 sRGB; normal PNG 1024 lossless; roughness PNG 1024 lossless as metallicRoughness; identical structure to v1.3.1). Audit correction: stone normal/roughness maps are 1024, not 2048, and v1.3.1/v1.4-preview embedded them as heavily compressed JPEG (normal 31 KB) - to be fixed by adopting preview2 at freeze. One targeted environment refinement applied (dark floor/fog/backdrop horizon: floor 0.0125, roughness 0.30, fog 0.0058, atmosphere 0.42) plus brand-mark clearance fix (tablet node collision); 8 versioned finalcheck screenshots captured; gates: lint clean, 479 unit tests, build 42 pages, gateway e2e 18/21 (same 3 pre-existing) |
 | 22:55 | PUBLIC (local, uncommitted) - PW-1 PORTAL WORLD INTEGRATION = FROZEN: runtime asset frozen as `public/portal/tahamohammadi-portal-v1.4.glb` (1,588,376 B, SHA-256 B4C11427..., byte-identical to the audited v1.4-preview2; basecolor JPEG 2048 sRGB + normal/roughness PNG 1024 lossless; 22 meshes/32 nodes/19 mats/13,888 unique-mesh tris); v1.3.1, v1.4-preview and v1.4-preview2 retained; accepted performance tradeoff (0.95 -> 1.59 MB, lossless non-color maps); freeze screenshots `portal_freeze_*` (6 web + 2 fallback) in Design-Assets/portal/validation/web; gates: lint clean, 479 unit tests, build 42 pages, gateway e2e 18/21 (3 documented pre-existing settings failures); docs updated (portal README + export manifest pw1_freeze) |
+| 23:49 | PUBLIC — PW-1 COMMITTED: frontend `79a15f1` (portal scene module + full-viewport gateway, frozen `tahamohammadi-portal-v1.4.glb` with retained versions, fallback-parity stills, gateway spec updates; 21 files) and workspace `1ca22dd` (status + promotion ledger); both unpushed. Independent re-verification (23:30–23:49): ESLint clean; 479/479 unit tests (89 files); `astro build` 42 pages; gateway e2e 18/21 reproduced — the 3 failures are `.gw__title`/“Taha” assertions, and the mechanism is now recorded (`src/pages/index.astro:82` renders the title only when the API site name exists, so builds without live settings cannot satisfy them; `index.astro` is unchanged from `f23deec`); fresh 1440×900 dark+light captures against the running preview (PID 22324, untouched) match the freeze evidence within raster noise (mean abs diff <= 0.28/255) and the served GLB hashes to B4C11427... |
 
 ### 2026-09-11
 
@@ -194,6 +195,13 @@ docker exec taha-cms-caddy-1 caddy reload --config /etc/caddy/Caddyfile --adapte
 
 ## 10. Known quirks / risks
 
+- **Light-theme pier seam (severity unverified)**: a ~2 px near-black vertical
+  line (luminance ~34 on a ~200 field) at x≈833–834, y≈473–608 in the 1440×900
+  light capture, on the right pier only (the mirrored position is clean). It is
+  present in the PW-1.1 and pre-freeze captures and reproduces in the live build,
+  so it is not a freeze regression; most likely a panel-joint/geometry seam
+  throwing a hard shadow under the raking light-theme sun. Evidence:
+  `Design-Assets/portal/validation/web/portal_freeze_light_desktop.png`.
 - **Prod web image tag**: `taha-web-prod:prod-507b4bb3` now contains the
   `f23deec` build; the tag label lags the content. Next promotion should use a
   fresh `RELEASE_ID` across all three images (or retag) for clarity.
