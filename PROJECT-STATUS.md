@@ -62,7 +62,7 @@ server, gates, and a dated changelog of everything done.
 - SSH: `85.192.29.196:2222`, user `deploy` (key on this machine, see §9).
 - Running stacks: `taha-cms` (legacy), `taha-cms-stage`, `taha-cms-prod`,
   `phd-radar`.
-- Disk: 30 GB total, ~3.8 GB free (87% used) — monitor.
+- Disk: 30 GB total, ~6.6 GB free (77% used). On 2026-09-13 it hit 99% (421 MB) and blocked a deploy; reclaimed to 9.7 GB by pruning only unused buildx cache + unused staging image tags, then ~6.6 GB after the release builds. ~11 GB of images remain reclaimable if it tightens again — monitor.
 - Backups: `/home/deploy/taha-cms-stage/backups/` — per-release deploy backups,
   `legacy-20260911-165545` (old DB/media/static) and
   `promotion-20260911-191139` (pre-promotion DBs + Caddy snapshot + checksums).
@@ -83,11 +83,23 @@ server, gates, and a dated changelog of everything done.
 
 | Repo | `main` (local = remote) | Deployed |
 | ---- | ----------------------- | -------- |
-| PUBLIC | `f23deec` | staging `stage-f23deecd-…`; production web image tag `prod-507b4bb3` (contains the `f23deec` build — see §11) |
-| ADMIN | `1ea469a` | staging + production image `prod-507b4bb3` (admin code `f1cfa37` equivalent) |
-| BACKEND | `6c0d349` | staging + production image `prod-507b4bb3` (app code `9c2c704`) |
+| PUBLIC | `7a5c495` | staging `stage-7a5c495a-1ea469ae-6c0d3491`; **production `prod-7a5c495a`** (PW-1 portal world + PW-2 language entry); previous production `prod-507b4bb3` preserved as rollback (`taha-rollback-web:20260913T111001Z`) |
+| ADMIN | `1ea469a` | staging + production image `prod-507b4bb3` (admin code `f1cfa37` equivalent; also tagged `prod-7a5c495a` for release-id alignment) |
+| BACKEND | `6c0d349` | staging + production image `prod-507b4bb3` (app code `9c2c704`; also tagged `prod-7a5c495a` for release-id alignment) |
 
 ## 6. Changelog
+
+### 2026-09-13
+
+| Time (−07:00) | Event |
+| ------------- | ----- |
+| 02:00–10:08 | PUBLIC — **PW-2 language-entry transition** implemented and released. Two blockers found and fixed before the release gate could pass: (1) a real race where `data-gateway-state="ready"` was published before the entry listeners existed — proven on a cold cache, a `pointerenter` right after `ready` was lost 5 of 6 times, which is what made PW-2 e2e test 11 flaky (the window itself was benign: a click there is a plain native navigation), fixed by publishing `ready` only once the controller and listeners are wired; (2) CI `Format check` failed on the first push because hand-edited files were never run through prettier (the documented pitfall) — fixed format-only in `7a5c495`. `window.__tmStallGatewayEntry` kept as the one documented test seam but hardened to `writable:false, enumerable:false, configurable:true`. Gates: ESLint 0; `tsc` 0 new errors in PW-2 files; vitest 482/482; build 42 pages; PW-2 e2e 11/11; scene-polish 9/9; ca07 9/12 (its 3 documented `.gw__title` failures); wp40-gateway 2/5 — **proven pre-existing** by running the same spec against the clean PW-1 baseline worktree `79a15f1` (identical 3 failures) |
+| 09:52 | Git: PW-2 committed `0188e79` + format fix `7a5c495`, pushed to PUBLIC `main` (`f23deec..7a5c495`); this also carried the previously-unpushed frozen PW-1 `79a15f1`. CI on `7a5c495`: **success** |
+| 10:00 | **DEPLOYMENT BLOCKED (server disk).** Root `/` was at 99% (554 MB free, later 421 MB). The staging deploy failed with CI's own evidence: `failed to update builder last activity time: write /home/deploy/.docker/buildx/activity/…: no space left on device`. No production change was made. Also discovered: production was still **pre-PW-1** (`portal-centered-*` fingerprints, `/portal/tahamohammadi-portal-v1.4.glb` → 404), so a deploy would land PW-1 + PW-2 together |
+| 11:00–11:12 | **Disk recovery (owner-authorized: disposable Docker build/staging space only).** `docker buildx prune -f` freed 641.5 MB (421 MB → 929 MB). Then 126 unused images removed explicitly by tag with an in-use guard — 41 `taha-web-stage:*` + 85 `taha-cms-stage:*`/`taha-admin-stage:*` — 0 skipped, 0 failed → **9.7 GB free (66%)**. KEEP SET verified intact: all running-container images, `taha-web-prod:prod-507b4bb3`, caddy/postgres/redis/mailpit, phd-radar runtime images, legacy `taha-release-*`; all 20 containers untouched; prod/stage web restarts=0. No `docker system prune`, no volume prune, no rollback artifact or unrelated data touched |
+| 11:12–11:19 | **Staging deploy PASSED** (re-ran the existing "Deploy staging" workflow on `7a5c495`) → `taha-web-stage:stage-7a5c495a-1ea469ae-6c0d3491`. Staging verified externally: `/`, `/en/`, `/fa/` 200; frozen GLB byte-identical (`b4c11427…`, 1,588,376 B); fingerprint `portal-world-*` with no `portal-centered-*`; Playwright on staging 6/6 — one canvas + zero console errors, desktop dark EN navigation, 390×844 FA, 430×932 EN, reduced motion (travel 0), no-WebGL native fallback. Disk after staging 7.7 GB |
+| 11:19–11:26 | **Production deployed and verified.** Backup first: `.env.prod` copy + 74 MB `public_html` volume tarball (`sha256 21961a9f…`) + rollback images tagged `taha-rollback-{web,cms,admin}:20260913T111001Z`; `prod-507b4bb3` left untouched. Built `taha-web-prod:prod-7a5c495a` from the verified `7a5c495` source tree (`sha256:d7e2ffa1…`), **only the `web` service recreated** — cms/admin/db/mailpit untouched. External: `/` 200, `/en/` 200, `/fa/` 200, `www` 301 unchanged, TLS valid, **GLB MATCH** (1,588,376 B, `b4c11427…`), fingerprint `portal-world-*`; Playwright on production **6/6 passed**. Disk after deploy 6.6 GB free |
+| — | Rollback target (no build required): `RELEASE_ID=prod-507b4bb3` in `.env.prod` + re-sync the volume from `taha-web-prod:prod-507b4bb3` + `up -d --force-recreate web` |
 
 ### 2026-09-12
 
@@ -209,6 +221,6 @@ docker exec taha-cms-caddy-1 caddy reload --config /etc/caddy/Caddyfile --adapte
   delivery).
 - **Cloudflare** is proxied although DNS-only was chosen; origin certificate is
   valid, but renewal behind the proxy needs care.
-- **Server disk** at 87%; clean old images/backups before large operations.
+- **Server disk**: hit 99% on 2026-09-13 and blocked deploy (ENOSPC in buildx). Reclaimed by removing only disposable buildx cache and unused staging image tags — never `docker system prune`, volumes, rollback artifacts or unrelated stacks. Check `docker system df` before large operations.
 - `www.tahamohammadi.ir` redirects to the apex; `http(s)://85.192.29.196`
   also redirects to the apex.
