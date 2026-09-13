@@ -24,6 +24,15 @@ The owner approved the contents of `Front-End/Assets` on 2026-08-29 as source ma
 | home-graph-backplate-light | `art/home-graph-backplate-light.png` | Light graph decorative backplate | **Runtime contract staged** — WP-25 Master Chat ACCEPT; 1254×1254; SHA `22D8FAF5…F63DF18`; decorative `alt=""` | Consumer wiring in WP-40; derivative inspection; crop review; byte ceilings; network evidence |
 | home-graph-backplate-dark | `art/home-graph-backplate-dark.png` | Dark graph decorative backplate | **Runtime contract staged** — WP-25 Master Chat ACCEPT; 1254×1254; SHA `6687D39E…5842D23`; decorative `alt=""` | Consumer wiring in WP-40; derivative inspection; crop review; byte ceilings; network evidence |
 
+## PW-1.2 gateway fallback parity record (owner-directed 2026-09-12)
+
+The language gateway's raster fallback was visually out of family with the approved full-viewport Three.js world. Two dedicated fallback stills were rendered from the approved v1.3.1 export scene (same theme v7.2 art direction, same camera) and promoted to the `gateway.atmosphere` slot. `portal-centered-*` remain registered and unchanged.
+
+| Theme | Authority path | Intrinsic | SHA-256 | Provenance | Decision |
+|---|---|---:|---|---|---|
+| Dark | `art/portal-world-dark.png` | 1920×1080 | `32A57A81A6649C7A41B1B6B54B58EEACAFFD1449DA5CDFAA8BE95876C143E953` | Blender render of `export/portal-export-source-v1.4-wip.blend` (v1.4-preview polish) | `owner-directed-pw12-fallback-parity` |
+| Light | `art/portal-world-light.png` | 1920×1080 | `6C293E6320C4D528C14802575C989090341C8FF4F526EB8E2F9C775A41C48690` | Blender render of `export/portal-export-source-v1.4-wip.blend` (v1.4-preview polish) | `owner-directed-pw12-fallback-parity` |
+
 ## Owner decisions recorded for Home + Gateway recovery
 
 These decisions resolve role and mapping only. Derivative generation, consumer wiring, crop review, and visual acceptance remain downstream.

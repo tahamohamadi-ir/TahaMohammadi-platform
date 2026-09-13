@@ -67,12 +67,12 @@ server, gates, and a dated changelog of everything done.
   `legacy-20260911-165545` (old DB/media/static) and
   `promotion-20260911-191139` (pre-promotion DBs + Caddy snapshot + checksums).
 
-## 4. Status by area (2026-09-11 15:20)
+## 4. Status by area (2026-09-12 04:16)
 
 | Area            | State | Notes |
 | --------------- | ----- | ----- |
 | Backend         | ✅ | 952 tests, Ruff clean, migrations applied; `9c2c704` (+ CI-only `6c0d349`) |
-| Public site     | ✅ live | `f23deec`: graph clarity, authored prose, journey icons, project metadata, About from live API, full-card links + pointer-follow glow |
+| Public site     | ✅ live | `f23deec`: graph clarity, authored prose, journey icons, project metadata, About from live API, full-card links + pointer-follow glow; local pending: portal GLB hero integration Phase 1.1 — full-viewport world (uncommitted) |
 | Admin panel     | ✅ | 197 unit tests, browser matrix 5/5, CI green; `1ea469a` |
 | CI/CD           | ✅ | CI in all three repos with dependency + secret scans; deploy-staging workflow; production updates still manual |
 | R7 staging      | ✅ mostly | live smoke 10/10, backup/restore proven, security probes; credential-gated families deferred to R9 |
@@ -88,6 +88,19 @@ server, gates, and a dated changelog of everything done.
 | BACKEND | `6c0d349` | staging + production image `prod-507b4bb3` (app code `9c2c704`) |
 
 ## 6. Changelog
+
+### 2026-09-12
+
+| Time (UTC+07:00) | Event |
+| ------------- | ----- |
+| 03:30–04:16 | PUBLIC (local, uncommitted) — Portal Web Integration Phase 1: approved v1.3.1 portal GLB integrated into the language gateway (`src/lib/visual/portal-scene.ts`, rewritten `GatewayPortal.astro`, assets under `public/portal/`); dark/light runtime themes, runtime floor + light rig + restrained glow (no post-processing), on-demand rendering with offscreen suspension and frame-budget fallback; semantic language links unchanged; no language-entry transition yet (Phase 2) |
+| 04:16 | Gates: ESLint clean; 478 unit tests pass across 89 files (incl. new `portal-scene.test.ts`); `astro build` 42 pages; gateway Playwright specs 20/23 (3 failures are a pre-existing backend-settings dependency: `.gw__title` requires live site settings, reproduced on the pre-change tree); web screenshots (desktop/tablet/mobile, both themes) in `Design-Assets/portal/validation/web/` |
+| 09:50 | PUBLIC (local, uncommitted) — Portal Web Integration Phase 1.1: full-viewport environment; removed the hero-slot framing/mask (layered gateway composition: fixed full-viewport canvas + raster fallback below, atmosphere overlays, brand layer, language controls embedded over the floor, floating theme toggle); CSS page background matched to the WebGL world color per theme; composition-aware camera (portal ≈50% viewport width desktop, threshold anchored ≈72%, height clamps, mobile near-full width) with floor/backdrop extending to every viewport edge; full-viewport fallback cover; GSAP lag-smoothing disabled so the bounded arrival settles in wall time on slow renderers |
+| 09:52 | Gates: ESLint clean; 479 unit tests pass (89 files); `astro build` 42 pages; gateway Playwright specs 18/21 (same 3 pre-existing settings-dependent failures); screenshots `portal_fullviewport_*` (desktop/tablet/mobile × dark/light) + full-viewport fallback in `Design-Assets/portal/validation/web/` |
+| 10:07 | PUBLIC (local, uncommitted) — hardening: removed the global `gsap.ticker.lagSmoothing(0)` side effect; the bounded arrival now enforces a scoped 4.2s wall-clock deadline inside `gateway-motion.ts` (kills the tween, snaps to settled state, clears on dispose); measured software-GL settle 4.4s after ready; gateway specs 18/21 again (same 3 pre-existing); lint + visual unit tests + build green; no visual change |
+| 12:38 | PUBLIC (local, uncommitted) — PW-1.2 material polish + fallback parity: v1.4 stone re-bake (bake-time meso contrast ×1.2, bump ×0.7; normal/roughness 2048) exported as `tahamohammadi-portal-v1.4-preview.glb` (948,252 B; WIP blend `portal-export-source-v1.4-wip.blend`); frozen master, v1.3.1 GLB and v1.3.1 textures untouched; web runtime adopts the v1.4-preview GLB; fallback parity via new `portal-world-dark/light.png` (1920×1080 renders of the same world; promoted-asset registry + ledger rows added; `GATEWAY_ATMOSPHERE_ASSETS` remapped); light threshold halo restrained; gates: lint clean, 479 unit tests (89 files), build 42 pages, gateway e2e 18/21 (3 pre-existing settings failures) |
+| 22:10 | PUBLIC (local, uncommitted) - pre-freeze audit: exported `tahamohammadi-portal-v1.4-preview2.glb` (1,588,376 B) with per-image formats (basecolor JPEG 2048 sRGB; normal PNG 1024 lossless; roughness PNG 1024 lossless as metallicRoughness; identical structure to v1.3.1). Audit correction: stone normal/roughness maps are 1024, not 2048, and v1.3.1/v1.4-preview embedded them as heavily compressed JPEG (normal 31 KB) - to be fixed by adopting preview2 at freeze. One targeted environment refinement applied (dark floor/fog/backdrop horizon: floor 0.0125, roughness 0.30, fog 0.0058, atmosphere 0.42) plus brand-mark clearance fix (tablet node collision); 8 versioned finalcheck screenshots captured; gates: lint clean, 479 unit tests, build 42 pages, gateway e2e 18/21 (same 3 pre-existing) |
+| 22:55 | PUBLIC (local, uncommitted) - PW-1 PORTAL WORLD INTEGRATION = FROZEN: runtime asset frozen as `public/portal/tahamohammadi-portal-v1.4.glb` (1,588,376 B, SHA-256 B4C11427..., byte-identical to the audited v1.4-preview2; basecolor JPEG 2048 sRGB + normal/roughness PNG 1024 lossless; 22 meshes/32 nodes/19 mats/13,888 unique-mesh tris); v1.3.1, v1.4-preview and v1.4-preview2 retained; accepted performance tradeoff (0.95 -> 1.59 MB, lossless non-color maps); freeze screenshots `portal_freeze_*` (6 web + 2 fallback) in Design-Assets/portal/validation/web; gates: lint clean, 479 unit tests, build 42 pages, gateway e2e 18/21 (3 documented pre-existing settings failures); docs updated (portal README + export manifest pw1_freeze) |
 
 ### 2026-09-11
 
