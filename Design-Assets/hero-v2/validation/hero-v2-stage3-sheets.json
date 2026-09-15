@@ -1,0 +1,145 @@
+{
+  "contact_sheets": {
+    "contact-desktop-dark": {
+      "frames": [
+        "01",
+        "02",
+        "03",
+        "04"
+      ],
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage3\\contact-desktop-dark.png",
+      "size": [
+        1368,
+        380
+      ]
+    },
+    "contact-desktop-light": {
+      "frames": [
+        "01",
+        "02",
+        "03",
+        "04"
+      ],
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage3\\contact-desktop-light.png",
+      "size": [
+        1368,
+        380
+      ]
+    },
+    "contact-mobile-dark": {
+      "frames": [
+        "01",
+        "02",
+        "03",
+        "04"
+      ],
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage3\\contact-mobile-dark.png",
+      "size": [
+        1200,
+        380
+      ]
+    },
+    "contact-mobile-light": {
+      "frames": [
+        "01",
+        "02",
+        "03",
+        "04"
+      ],
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage3\\contact-mobile-light.png",
+      "size": [
+        1200,
+        380
+      ]
+    }
+  },
+  "diagnostic": {
+    "desktop-dark": {
+      "metrics": {
+        "01->02": {
+          "common": 13942,
+          "iou": 0.7613,
+          "mean_absolute_alpha_delta": 0.04307,
+          "pixels_first": 16071,
+          "pixels_second": 16185
+        },
+        "01->04": {
+          "common": 11195,
+          "iou": 0.5199,
+          "mean_absolute_alpha_delta": 0.10107,
+          "pixels_first": 16071,
+          "pixels_second": 16659
+        },
+        "02->03": {
+          "common": 13354,
+          "iou": 0.6931,
+          "mean_absolute_alpha_delta": 0.05797,
+          "pixels_first": 16185,
+          "pixels_second": 16435
+        },
+        "03->04": {
+          "common": 15162,
+          "iou": 0.8455,
+          "mean_absolute_alpha_delta": 0.02732,
+          "pixels_first": 16435,
+          "pixels_second": 16659
+        }
+      },
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage3\\contact-motion-difference-desktop-dark.png",
+      "size": [
+        1368,
+        380
+      ]
+    },
+    "mobile-dark": {
+      "metrics": {
+        "01->02": {
+          "common": 18516,
+          "iou": 0.8719,
+          "mean_absolute_alpha_delta": 0.03085,
+          "pixels_first": 19880,
+          "pixels_second": 19872
+        },
+        "01->04": {
+          "common": 16150,
+          "iou": 0.6842,
+          "mean_absolute_alpha_delta": 0.08339,
+          "pixels_first": 19880,
+          "pixels_second": 19874
+        },
+        "02->03": {
+          "common": 17914,
+          "iou": 0.8204,
+          "mean_absolute_alpha_delta": 0.04414,
+          "pixels_first": 19872,
+          "pixels_second": 19878
+        },
+        "03->04": {
+          "common": 18550,
+          "iou": 0.8749,
+          "mean_absolute_alpha_delta": 0.02945,
+          "pixels_first": 19878,
+          "pixels_second": 19874
+        }
+      },
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage3\\contact-motion-difference-mobile-dark.png",
+      "size": [
+        1200,
+        380
+      ]
+    }
+  },
+  "motion_review": {
+    "bytes": 1817377,
+    "dissolve_steps": 8,
+    "frame_ms": 110,
+    "frames": 32,
+    "hold_ms_per_keyframe": 880,
+    "note": "design review only; not a web asset - no frontend reads this file",
+    "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\validation\\stage3-motion-review.gif",
+    "size": [
+      672,
+      588
+    ]
+  }
+}

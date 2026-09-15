@@ -1,0 +1,145 @@
+{
+  "contact_sheets": {
+    "contact-desktop-dark": {
+      "frames": [
+        "01",
+        "02",
+        "03",
+        "04"
+      ],
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\validation\\stage3-optimizer\\candidate-02\\renders\\stage3\\contact-desktop-dark.png",
+      "size": [
+        1368,
+        380
+      ]
+    },
+    "contact-desktop-light": {
+      "frames": [
+        "01",
+        "02",
+        "03",
+        "04"
+      ],
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\validation\\stage3-optimizer\\candidate-02\\renders\\stage3\\contact-desktop-light.png",
+      "size": [
+        1368,
+        380
+      ]
+    },
+    "contact-mobile-dark": {
+      "frames": [
+        "01",
+        "02",
+        "03",
+        "04"
+      ],
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\validation\\stage3-optimizer\\candidate-02\\renders\\stage3\\contact-mobile-dark.png",
+      "size": [
+        1200,
+        380
+      ]
+    },
+    "contact-mobile-light": {
+      "frames": [
+        "01",
+        "02",
+        "03",
+        "04"
+      ],
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\validation\\stage3-optimizer\\candidate-02\\renders\\stage3\\contact-mobile-light.png",
+      "size": [
+        1200,
+        380
+      ]
+    }
+  },
+  "diagnostic": {
+    "desktop-dark": {
+      "metrics": {
+        "01->02": {
+          "common": 13938,
+          "iou": 0.7624,
+          "mean_absolute_alpha_delta": 0.04288,
+          "pixels_first": 16060,
+          "pixels_second": 16159
+        },
+        "01->04": {
+          "common": 11228,
+          "iou": 0.5227,
+          "mean_absolute_alpha_delta": 0.10016,
+          "pixels_first": 16060,
+          "pixels_second": 16648
+        },
+        "02->03": {
+          "common": 13364,
+          "iou": 0.6954,
+          "mean_absolute_alpha_delta": 0.05746,
+          "pixels_first": 16159,
+          "pixels_second": 16424
+        },
+        "03->04": {
+          "common": 15158,
+          "iou": 0.8462,
+          "mean_absolute_alpha_delta": 0.02728,
+          "pixels_first": 16424,
+          "pixels_second": 16648
+        }
+      },
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\validation\\stage3-optimizer\\candidate-02\\renders\\stage3\\contact-motion-difference-desktop-dark.png",
+      "size": [
+        1368,
+        380
+      ]
+    },
+    "mobile-dark": {
+      "metrics": {
+        "01->02": {
+          "common": 18542,
+          "iou": 0.8733,
+          "mean_absolute_alpha_delta": 0.03055,
+          "pixels_first": 19889,
+          "pixels_second": 19886
+        },
+        "01->04": {
+          "common": 16219,
+          "iou": 0.689,
+          "mean_absolute_alpha_delta": 0.08194,
+          "pixels_first": 19889,
+          "pixels_second": 19871
+        },
+        "02->03": {
+          "common": 17939,
+          "iou": 0.8216,
+          "mean_absolute_alpha_delta": 0.04378,
+          "pixels_first": 19886,
+          "pixels_second": 19887
+        },
+        "03->04": {
+          "common": 18571,
+          "iou": 0.8765,
+          "mean_absolute_alpha_delta": 0.02926,
+          "pixels_first": 19887,
+          "pixels_second": 19871
+        }
+      },
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\validation\\stage3-optimizer\\candidate-02\\renders\\stage3\\contact-motion-difference-mobile-dark.png",
+      "size": [
+        1200,
+        380
+      ]
+    }
+  },
+  "motion_review": {
+    "bytes": 562702,
+    "dissolve_steps": 8,
+    "frame_ms": 110,
+    "frames": 32,
+    "hold_ms_per_keyframe": 880,
+    "note": "design review only; not a web asset - no frontend reads this file",
+    "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\validation\\stage3-optimizer\\candidate-02\\validation\\stage3-motion-review.gif",
+    "size": [
+      336,
+      294
+    ]
+  }
+}

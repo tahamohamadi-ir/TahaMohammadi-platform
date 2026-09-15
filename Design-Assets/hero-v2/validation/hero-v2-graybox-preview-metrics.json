@@ -1,0 +1,47 @@
+{
+  "canvas": "#f7f8f5",
+  "keys": {
+    "desktop": {
+      "background_luma": 247.6,
+      "form_luma": {
+        "max": 239,
+        "mean": 168.9,
+        "median": 184.1,
+        "min": 1,
+        "p5": 68.3,
+        "p95": 212.9
+      },
+      "form_pixels": 504718,
+      "median_delta_from_canvas": 63.4,
+      "median_delta_pass": true,
+      "pct_form_within_delta": {
+        "10": 0.01,
+        "15": 0.07,
+        "20": 0.25,
+        "5": 0.0
+      },
+      "required_median_delta": 45.0
+    },
+    "mobile": {
+      "background_luma": 247.6,
+      "form_luma": {
+        "max": 237,
+        "mean": 165.5,
+        "median": 183.1,
+        "min": 1,
+        "p5": 57.1,
+        "p95": 213.1
+      },
+      "form_pixels": 149520,
+      "median_delta_from_canvas": 64.4,
+      "median_delta_pass": true,
+      "pct_form_within_delta": {
+        "10": 0.0,
+        "15": 0.05,
+        "20": 0.2,
+        "5": 0.0
+      },
+      "required_median_delta": 45.0
+    }
+  }
+}

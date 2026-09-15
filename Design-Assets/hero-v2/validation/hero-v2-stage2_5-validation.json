@@ -1,0 +1,330 @@
+{
+  "blend": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\source\\hero-v2-stage2_5.blend",
+  "checks": {
+    "arc_hidden": {
+      "exists": true,
+      "hide_render": true,
+      "pass_": true
+    },
+    "camera_framing_safe_margin": {
+      "framing": {
+        "desktop": {
+          "gap_on_page_px": 50.3,
+          "min_edge_pct": 8.05,
+          "required_pct": 8.0
+        },
+        "mobile": {
+          "gap_on_page_px": 26.3,
+          "min_edge_pct": 3.97,
+          "required_pct": 4.0
+        }
+      },
+      "pass_": true
+    },
+    "dark_and_light_are_different_renders": {
+      "note": "a theme swap that only inverted the image would still be different, so the canvas check above carries the weight here",
+      "pass_": true
+    },
+    "exactly_four_semantic_groups": {
+      "found": [
+        "GRP_CORE",
+        "GRP_HEALTH_BEHAVIOR",
+        "GRP_HUMAN_CENTERED_AI",
+        "GRP_WEARABLE_EDGE"
+      ],
+      "pass_": true
+    },
+    "forms_readable_in_both_themes": {
+      "measured": {
+        "01-desktop-dark": {
+          "direction": "brighter",
+          "field": 0.0993,
+          "form_p50": 0.4142,
+          "form_pixels": 122185,
+          "separation": 0.3149,
+          "theme": "dark"
+        },
+        "02-desktop-light": {
+          "direction": "darker",
+          "field": 0.9249,
+          "form_p50": 0.7211,
+          "form_pixels": 178452,
+          "separation": 0.2038,
+          "theme": "light"
+        },
+        "03-mobile-dark": {
+          "direction": "brighter",
+          "field": 0.1032,
+          "form_p50": 0.4389,
+          "form_pixels": 37705,
+          "separation": 0.3357,
+          "theme": "dark"
+        },
+        "04-mobile-light": {
+          "direction": "darker",
+          "field": 0.9249,
+          "form_p50": 0.6625,
+          "form_pixels": 46240,
+          "separation": 0.2624,
+          "theme": "light"
+        }
+      },
+      "pass_": true,
+      "rule": "the forms must sit >0.12 away from their page field with real pixel coverage, in whichever direction that theme puts them"
+    },
+    "four_renders_exist_and_sized": {
+      "expected": {
+        "desktop": [
+          1600,
+          1400
+        ],
+        "mobile": [
+          800,
+          800
+        ]
+      },
+      "pass_": true,
+      "sizes": {
+        "01-desktop-dark": [
+          1600,
+          1400
+        ],
+        "02-desktop-light": [
+          1600,
+          1400
+        ],
+        "03-mobile-dark": [
+          800,
+          800
+        ],
+        "04-mobile-light": [
+          800,
+          800
+        ]
+      }
+    },
+    "no_cavity_or_inner_ball_geometry": {
+      "forbidden_objects": [],
+      "pass_": true,
+      "rule": "a companion that still carried an aperture, an inner ball or a solidified shell could not be a single closed surface (Euler 2, no boundary edges)",
+      "topology": {
+        "HCAI_SPHERE": {
+          "boundary_edges": 0,
+          "euler": 2,
+          "faces": 5760,
+          "nonmanifold_edges": 0,
+          "radial_variation_pct": 1.31,
+          "vertices": 5666
+        },
+        "HHB_SPHERE": {
+          "boundary_edges": 0,
+          "euler": 2,
+          "faces": 5760,
+          "nonmanifold_edges": 0,
+          "radial_variation_pct": 1.31,
+          "vertices": 5666
+        },
+        "WE_SPHERE": {
+          "boundary_edges": 0,
+          "euler": 2,
+          "faces": 5760,
+          "nonmanifold_edges": 0,
+          "radial_variation_pct": 1.31,
+          "vertices": 5666
+        }
+      }
+    },
+    "no_clipped_highlights": {
+      "clipped": {
+        "01-desktop-dark": 0.0,
+        "02-desktop-light": 0.0,
+        "03-mobile-dark": 0.0,
+        "04-mobile-light": 0.0
+      },
+      "pass_": true,
+      "rule": "<2% of pixels at or above 0.98"
+    },
+    "no_excessive_crushed_blacks": {
+      "crushed": {
+        "01-desktop-dark": 0.0,
+        "02-desktop-light": 0.0,
+        "03-mobile-dark": 0.007,
+        "04-mobile-light": 0.0
+      },
+      "pass_": true,
+      "rule": "<5% of pixels at or below 0.02"
+    },
+    "no_frontend_export": {
+      "found": [],
+      "pass_": true
+    },
+    "no_glb_or_web_export": {
+      "found": [],
+      "pass_": true
+    },
+    "no_metallic_shells": {
+      "metallic": {},
+      "pass_": true
+    },
+    "no_ring_band_or_groove_companions": {
+      "pass_": true,
+      "rule": "bands, rings and grooves all cut or raise the radius by more than the card's 1-2% allowance; CORE_SPHERE is excluded because its seam is the one incision this stage keeps",
+      "variation": {
+        "HCAI_SPHERE": 1.31,
+        "HHB_SPHERE": 1.31,
+        "WE_SPHERE": 1.31
+      }
+    },
+    "no_text_or_particles": {
+      "pass_": true,
+      "types": [
+        "CAMERA",
+        "EMPTY",
+        "LIGHT",
+        "MESH"
+      ]
+    },
+    "one_core_plus_three_single_spheres": {
+      "members": {
+        "GRP_CORE": [
+          "CORE_ACCENT",
+          "CORE_SPHERE"
+        ],
+        "GRP_HEALTH_BEHAVIOR": [
+          "HHB_SPHERE"
+        ],
+        "GRP_HUMAN_CENTERED_AI": [
+          "HCAI_SPHERE"
+        ],
+        "GRP_WEARABLE_EDGE": [
+          "WE_SPHERE"
+        ]
+      },
+      "pass_": true
+    },
+    "sources_unchanged": {
+      "measured": {
+        "source/hero-v2-graybox.blend": "8dace2c240d4cea9",
+        "source/hero-v2-lookdev.blend": "a440b085505cdc55"
+      },
+      "pass_": true,
+      "recorded": {
+        "source/hero-v2-graybox.blend": "8dace2c240d4cea9",
+        "source/hero-v2-lookdev.blend": "a440b085505cdc55"
+      }
+    },
+    "stage_tag": {
+      "pass_": true,
+      "value": "2.5 - geometry simplification + material calibration"
+    },
+    "theme_canvases_match_tokens": {
+      "measured": {
+        "01-desktop-dark": {
+          "delta": 8,
+          "measured": 25,
+          "theme": "dark",
+          "token_lum": 17
+        },
+        "02-desktop-light": {
+          "delta": 12,
+          "measured": 236,
+          "theme": "light",
+          "token_lum": 248
+        },
+        "03-mobile-dark": {
+          "delta": 9,
+          "measured": 26,
+          "theme": "dark",
+          "token_lum": 17
+        },
+        "04-mobile-light": {
+          "delta": 12,
+          "measured": 236,
+          "theme": "light",
+          "token_lum": 248
+        }
+      },
+      "note": "dark uses the frame median (the navy IS most of the frame); light uses p98 (the page is the bright field)",
+      "pass_": true,
+      "tolerance_levels": 24
+    },
+    "triangle_counts_reported": {
+      "pass_": true,
+      "total": 63484,
+      "triangles": {
+        "BACKDROP2_DARK": 30,
+        "BACKDROP2_LIGHT": 30,
+        "CORE_ACCENT": 4736,
+        "CORE_SPHERE": 20224,
+        "DECOR_ARC_01": 4480,
+        "HCAI_SPHERE": 11328,
+        "HHB_SPHERE": 11328,
+        "WE_SPHERE": 11328
+      }
+    }
+  },
+  "checks_all_pass": true,
+  "counts": {
+    "checks": 19,
+    "passed": 19
+  },
+  "failed": [],
+  "renders_inspected": {
+    "01-desktop-dark": {
+      "bytes": 1789177,
+      "clipped_pct": 0.0,
+      "crushed_pct": 0.0,
+      "exists": true,
+      "p02": 0.0598,
+      "p50": 0.0993,
+      "p98": 0.6387,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2_5\\01-desktop-dark.png",
+      "size": [
+        1600,
+        1400
+      ]
+    },
+    "02-desktop-light": {
+      "bytes": 1789391,
+      "clipped_pct": 0.0,
+      "crushed_pct": 0.0,
+      "exists": true,
+      "p02": 0.4271,
+      "p50": 0.8978,
+      "p98": 0.9249,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2_5\\02-desktop-light.png",
+      "size": [
+        1600,
+        1400
+      ]
+    },
+    "03-mobile-dark": {
+      "bytes": 535189,
+      "clipped_pct": 0.0,
+      "crushed_pct": 0.007,
+      "exists": true,
+      "p02": 0.0721,
+      "p50": 0.1032,
+      "p98": 0.6698,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2_5\\03-mobile-dark.png",
+      "size": [
+        800,
+        800
+      ]
+    },
+    "04-mobile-light": {
+      "bytes": 534606,
+      "clipped_pct": 0.0,
+      "crushed_pct": 0.0,
+      "exists": true,
+      "p02": 0.4136,
+      "p50": 0.9123,
+      "p98": 0.9249,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2_5\\04-mobile-light.png",
+      "size": [
+        800,
+        800
+      ]
+    }
+  }
+}

@@ -1,0 +1,697 @@
+{
+  "blend": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\source\\hero-v2-stage2_7.blend",
+  "checks": {
+    "all_nodes_simple_spheres": {
+      "pass_": true,
+      "topology": {
+        "CORE_SPHERE": {
+          "boundary_edges": 0,
+          "euler": 2,
+          "faces": 10240,
+          "nonmanifold_edges": 0,
+          "radial_variation_pct": 1.72
+        },
+        "HCAI_SPHERE": {
+          "boundary_edges": 0,
+          "euler": 2,
+          "faces": 5760,
+          "nonmanifold_edges": 0,
+          "radial_variation_pct": 1.31
+        },
+        "HHB_SPHERE": {
+          "boundary_edges": 0,
+          "euler": 2,
+          "faces": 5760,
+          "nonmanifold_edges": 0,
+          "radial_variation_pct": 1.31
+        },
+        "WE_SPHERE": {
+          "boundary_edges": 0,
+          "euler": 2,
+          "faces": 5760,
+          "nonmanifold_edges": 0,
+          "radial_variation_pct": 1.31
+        }
+      }
+    },
+    "all_twelve_renders_exist_and_sized": {
+      "alpha": {
+        "11-desktop-dark-alpha": [
+          1600,
+          1400
+        ],
+        "12-desktop-light-alpha": [
+          1600,
+          1400
+        ],
+        "13-mobile-dark-alpha": [
+          800,
+          800
+        ],
+        "14-mobile-light-alpha": [
+          800,
+          800
+        ]
+      },
+      "pass_": true,
+      "review": {
+        "01-desktop-dark": [
+          1600,
+          1400
+        ],
+        "02-desktop-light": [
+          1600,
+          1400
+        ],
+        "03-mobile-dark": [
+          800,
+          800
+        ],
+        "04-mobile-light": [
+          800,
+          800
+        ]
+      },
+      "webscale": {
+        "21-desktop-dark-webscale": [
+          686,
+          600
+        ],
+        "22-desktop-light-webscale": [
+          686,
+          600
+        ],
+        "23-mobile-dark-webscale": [
+          288,
+          288
+        ],
+        "24-mobile-light-webscale": [
+          288,
+          288
+        ]
+      }
+    },
+    "alpha_corners_are_zero": {
+      "measured": {
+        "11-desktop-dark-alpha": {
+          "alpha_coverage_pct": 19.98,
+          "corner_alpha": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "12-desktop-light-alpha": {
+          "alpha_coverage_pct": 19.98,
+          "corner_alpha": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "13-mobile-dark-alpha": {
+          "alpha_coverage_pct": 24.11,
+          "corner_alpha": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "14-mobile-light-alpha": {
+          "alpha_coverage_pct": 24.11,
+          "corner_alpha": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "pass_": true
+    },
+    "dielectric_response_plausible": {
+      "measured": {
+        "M2_7_CORE_SHELL": {
+          "ior": 1.46,
+          "metallic": 0.0,
+          "roughness": 0.62,
+          "specular": 0.5
+        },
+        "M2_7_HCAI_SHELL": {
+          "ior": 1.43,
+          "metallic": 0.0,
+          "roughness": 0.71,
+          "specular": 0.5
+        },
+        "M2_7_HEALTH_SHELL": {
+          "ior": 1.45,
+          "metallic": 0.0,
+          "roughness": 0.72,
+          "specular": 0.5
+        },
+        "M2_7_RELATION": {
+          "ior": 1.44,
+          "metallic": 0.0,
+          "roughness": 0.62,
+          "specular": 0.35
+        },
+        "M2_7_WEARABLE_SHELL": {
+          "ior": 1.44,
+          "metallic": 0.0,
+          "roughness": 0.68,
+          "specular": 0.5
+        }
+      },
+      "pass_": true,
+      "rule": "metallic 0, IOR inside 1.42-1.50, a non-zero specular level, and roughness inside the card's 0.58-0.76 band - i.e. a broad soft dielectric sheen, not a dead material and not a hotspot"
+    },
+    "forms_separate_from_background": {
+      "measured": {
+        "01-desktop-dark": {
+          "form_pixels": 105873,
+          "kind": "review",
+          "separation": 0.364,
+          "theme": "dark"
+        },
+        "02-desktop-light": {
+          "form_pixels": 112650,
+          "kind": "review",
+          "separation": 0.5974,
+          "theme": "light"
+        },
+        "03-mobile-dark": {
+          "form_pixels": 35810,
+          "kind": "review",
+          "separation": 0.3618,
+          "theme": "dark"
+        },
+        "04-mobile-light": {
+          "form_pixels": 39031,
+          "kind": "review",
+          "separation": 0.6058,
+          "theme": "light"
+        },
+        "11-desktop-dark-alpha": {
+          "form_pixels": 112847,
+          "kind": "alpha",
+          "separation": 0.4245,
+          "theme": "dark"
+        },
+        "12-desktop-light-alpha": {
+          "form_pixels": 543250,
+          "kind": "alpha",
+          "separation": 0.6071,
+          "theme": "light"
+        },
+        "13-mobile-dark-alpha": {
+          "form_pixels": 38933,
+          "kind": "alpha",
+          "separation": 0.4194,
+          "theme": "dark"
+        },
+        "14-mobile-light-alpha": {
+          "form_pixels": 154882,
+          "kind": "alpha",
+          "separation": 0.6217,
+          "theme": "light"
+        },
+        "21-desktop-dark-webscale": {
+          "form_pixels": 19530,
+          "kind": "webscale",
+          "separation": 0.3612,
+          "theme": "dark"
+        },
+        "22-desktop-light-webscale": {
+          "form_pixels": 20829,
+          "kind": "webscale",
+          "separation": 0.5938,
+          "theme": "light"
+        },
+        "23-mobile-dark-webscale": {
+          "form_pixels": 4682,
+          "kind": "webscale",
+          "separation": 0.358,
+          "theme": "dark"
+        },
+        "24-mobile-light-webscale": {
+          "form_pixels": 5130,
+          "kind": "webscale",
+          "separation": 0.5974,
+          "theme": "light"
+        }
+      },
+      "pass_": true
+    },
+    "four_nodes_only": {
+      "groups": [
+        "GRP_CORE",
+        "GRP_HEALTH_BEHAVIOR",
+        "GRP_HUMAN_CENTERED_AI",
+        "GRP_WEARABLE_EDGE"
+      ],
+      "pass_": true
+    },
+    "frontend_untouched": {
+      "found": [],
+      "pass_": true
+    },
+    "independent_cameras_kept": {
+      "camera_types": {
+        "CAM_DESKTOP": "PERSP",
+        "CAM_MOBILE": "ORTHO"
+      },
+      "pass_": true
+    },
+    "no_clipping_anywhere": {
+      "measured": {
+        "01-desktop-dark": {
+          "clipped_pct": 0.0,
+          "max_level": 202
+        },
+        "02-desktop-light": {
+          "clipped_pct": 0.0,
+          "max_level": 248
+        },
+        "03-mobile-dark": {
+          "clipped_pct": 0.0,
+          "max_level": 199
+        },
+        "04-mobile-light": {
+          "clipped_pct": 0.0,
+          "max_level": 248
+        },
+        "11-desktop-dark-alpha": {
+          "clipped_pct": 0.0,
+          "max_level": 220
+        },
+        "12-desktop-light-alpha": {
+          "clipped_pct": 0.0,
+          "max_level": 200
+        },
+        "13-mobile-dark-alpha": {
+          "clipped_pct": 0.0,
+          "max_level": 215
+        },
+        "14-mobile-light-alpha": {
+          "clipped_pct": 0.0,
+          "max_level": 201
+        },
+        "21-desktop-dark-webscale": {
+          "clipped_pct": 0.0,
+          "max_level": 200
+        },
+        "22-desktop-light-webscale": {
+          "clipped_pct": 0.0,
+          "max_level": 248
+        },
+        "23-mobile-dark-webscale": {
+          "clipped_pct": 0.0,
+          "max_level": 191
+        },
+        "24-mobile-light-webscale": {
+          "clipped_pct": 0.0,
+          "max_level": 248
+        }
+      },
+      "pass_": true,
+      "rule": "no pixel at or above 254 in any of the twelve outputs - including the web-scale previews, where resampling could otherwise invent values"
+    },
+    "no_forbidden_feature_geometry": {
+      "offenders": [],
+      "pass_": true
+    },
+    "no_glb_or_web_formats": {
+      "found": [],
+      "pass_": true
+    },
+    "no_text_or_particles": {
+      "pass_": true,
+      "types": [
+        "CAMERA",
+        "EMPTY",
+        "LIGHT",
+        "MESH"
+      ]
+    },
+    "only_spheres_and_strokes": {
+      "curves": [
+        "REL_CORE_HEALTH_BEHAVIOR",
+        "REL_CORE_HUMAN_CENTERED_AI",
+        "REL_CORE_WEARABLE_EDGE"
+      ],
+      "pass_": true,
+      "spheres": [
+        "CORE_SPHERE",
+        "HCAI_SPHERE",
+        "HHB_SPHERE",
+        "WE_SPHERE"
+      ]
+    },
+    "previous_sources_unchanged": {
+      "measured": {
+        "source/hero-v2-graybox.blend": "8dace2c240d4cea9",
+        "source/hero-v2-lookdev.blend": "a440b085505cdc55",
+        "source/hero-v2-stage2_5.blend": "5c2957d2ba2cc61f",
+        "source/hero-v2-stage2_6.blend": "d5d7ae75f2dacc62"
+      },
+      "pass_": true,
+      "recorded": {
+        "source/hero-v2-graybox.blend": "8dace2c240d4cea9",
+        "source/hero-v2-lookdev.blend": "a440b085505cdc55",
+        "source/hero-v2-stage2_5.blend": "5c2957d2ba2cc61f",
+        "source/hero-v2-stage2_6.blend": "d5d7ae75f2dacc62"
+      }
+    },
+    "safe_margins_kept": {
+      "framing": {
+        "desktop": {
+          "gap_on_page_px": 49.7,
+          "min_edge_pct": 8.05,
+          "required_pct": 8.0
+        },
+        "mobile": {
+          "gap_on_page_px": 25.9,
+          "min_edge_pct": 3.97,
+          "required_pct": 4.0
+        }
+      },
+      "pass_": true
+    },
+    "source_opens_with_stage_tag": {
+      "blend": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\source\\hero-v2-stage2_7.blend",
+      "pass_": true,
+      "value": "2.7 - material + relation polish (final look lock)"
+    },
+    "stroke_endpoints_surface_anchored": {
+      "measured": {
+        "REL_CORE_HEALTH_BEHAVIOR": {
+          "companion_distance": 0.4962,
+          "companion_ok": true,
+          "companion_radius": 0.5,
+          "core_distance": 0.7217,
+          "core_ok": true,
+          "core_radius": 0.725
+        },
+        "REL_CORE_HUMAN_CENTERED_AI": {
+          "companion_distance": 0.4772,
+          "companion_ok": true,
+          "companion_radius": 0.48,
+          "core_distance": 0.7203,
+          "core_ok": true,
+          "core_radius": 0.725
+        },
+        "REL_CORE_WEARABLE_EDGE": {
+          "companion_distance": 0.5225,
+          "companion_ok": true,
+          "companion_radius": 0.525,
+          "core_distance": 0.7178,
+          "core_ok": true,
+          "core_radius": 0.725
+        }
+      },
+      "note": "the stroke's nearest vertex to each centre is compared against that sphere's own measured radius; the tolerance is 2% or 6 mm, whichever is larger, because the tube has thickness",
+      "pass_": true
+    },
+    "theme_backgrounds_valid": {
+      "measured": {
+        "01-desktop-dark": {
+          "delta": 2,
+          "measured": 19,
+          "theme": "dark",
+          "token": 17
+        },
+        "02-desktop-light": {
+          "delta": 0,
+          "measured": 248,
+          "theme": "light",
+          "token": 248
+        },
+        "03-mobile-dark": {
+          "delta": 2,
+          "measured": 19,
+          "theme": "dark",
+          "token": 17
+        },
+        "04-mobile-light": {
+          "delta": 0,
+          "measured": 248,
+          "theme": "light",
+          "token": 248
+        }
+      },
+      "pass_": true,
+      "tolerance": 14
+    }
+  },
+  "checks_all_pass": true,
+  "counts": {
+    "checks": 18,
+    "passed": 18
+  },
+  "failed": [],
+  "node_topology": {
+    "CORE_SPHERE": {
+      "boundary_edges": 0,
+      "euler": 2,
+      "faces": 10240,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 1.72
+    },
+    "HCAI_SPHERE": {
+      "boundary_edges": 0,
+      "euler": 2,
+      "faces": 5760,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 1.31
+    },
+    "HHB_SPHERE": {
+      "boundary_edges": 0,
+      "euler": 2,
+      "faces": 5760,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 1.31
+    },
+    "WE_SPHERE": {
+      "boundary_edges": 0,
+      "euler": 2,
+      "faces": 5760,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 1.31
+    }
+  },
+  "renders_inspected": {
+    "01-desktop-dark": {
+      "bytes": 1665179,
+      "camera": "desktop",
+      "clipped_pct": 0.0,
+      "exists": true,
+      "kind": "review",
+      "max_level": 202,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2_7\\01-desktop-dark.png",
+      "size": [
+        1600,
+        1400
+      ],
+      "theme": "dark"
+    },
+    "02-desktop-light": {
+      "bytes": 397017,
+      "camera": "desktop",
+      "clipped_pct": 0.0,
+      "exists": true,
+      "kind": "review",
+      "max_level": 248,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2_7\\02-desktop-light.png",
+      "size": [
+        1600,
+        1400
+      ],
+      "theme": "light"
+    },
+    "03-mobile-dark": {
+      "bytes": 506365,
+      "camera": "mobile",
+      "clipped_pct": 0.0,
+      "exists": true,
+      "kind": "review",
+      "max_level": 199,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2_7\\03-mobile-dark.png",
+      "size": [
+        800,
+        800
+      ],
+      "theme": "dark"
+    },
+    "04-mobile-light": {
+      "bytes": 156783,
+      "camera": "mobile",
+      "clipped_pct": 0.0,
+      "exists": true,
+      "kind": "review",
+      "max_level": 248,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2_7\\04-mobile-light.png",
+      "size": [
+        800,
+        800
+      ],
+      "theme": "light"
+    },
+    "11-desktop-dark-alpha": {
+      "alpha_coverage_pct": 19.98,
+      "bytes": 1016980,
+      "camera": "desktop",
+      "clipped_pct": 0.0,
+      "corner_alpha": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exists": true,
+      "kind": "alpha",
+      "max_level": 220,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2_7\\11-desktop-dark-alpha.png",
+      "size": [
+        1600,
+        1400
+      ],
+      "theme": "dark"
+    },
+    "12-desktop-light-alpha": {
+      "alpha_coverage_pct": 19.98,
+      "bytes": 996276,
+      "camera": "desktop",
+      "clipped_pct": 0.0,
+      "corner_alpha": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exists": true,
+      "kind": "alpha",
+      "max_level": 200,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2_7\\12-desktop-light-alpha.png",
+      "size": [
+        1600,
+        1400
+      ],
+      "theme": "light"
+    },
+    "13-mobile-dark-alpha": {
+      "alpha_coverage_pct": 24.11,
+      "bytes": 351331,
+      "camera": "mobile",
+      "clipped_pct": 0.0,
+      "corner_alpha": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exists": true,
+      "kind": "alpha",
+      "max_level": 215,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2_7\\13-mobile-dark-alpha.png",
+      "size": [
+        800,
+        800
+      ],
+      "theme": "dark"
+    },
+    "14-mobile-light-alpha": {
+      "alpha_coverage_pct": 24.11,
+      "bytes": 348186,
+      "camera": "mobile",
+      "clipped_pct": 0.0,
+      "corner_alpha": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exists": true,
+      "kind": "alpha",
+      "max_level": 201,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2_7\\14-mobile-light-alpha.png",
+      "size": [
+        800,
+        800
+      ],
+      "theme": "light"
+    },
+    "21-desktop-dark-webscale": {
+      "bytes": 161215,
+      "camera": "desktop",
+      "clipped_pct": 0.0,
+      "exists": true,
+      "kind": "webscale",
+      "max_level": 200,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2_7\\21-desktop-dark-webscale.png",
+      "size": [
+        686,
+        600
+      ],
+      "theme": "dark"
+    },
+    "22-desktop-light-webscale": {
+      "bytes": 89997,
+      "camera": "desktop",
+      "clipped_pct": 0.0,
+      "exists": true,
+      "kind": "webscale",
+      "max_level": 248,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2_7\\22-desktop-light-webscale.png",
+      "size": [
+        686,
+        600
+      ],
+      "theme": "light"
+    },
+    "23-mobile-dark-webscale": {
+      "bytes": 41504,
+      "camera": "mobile",
+      "clipped_pct": 0.0,
+      "exists": true,
+      "kind": "webscale",
+      "max_level": 191,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2_7\\23-mobile-dark-webscale.png",
+      "size": [
+        288,
+        288
+      ],
+      "theme": "dark"
+    },
+    "24-mobile-light-webscale": {
+      "bytes": 29674,
+      "camera": "mobile",
+      "clipped_pct": 0.0,
+      "exists": true,
+      "kind": "webscale",
+      "max_level": 248,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2_7\\24-mobile-light-webscale.png",
+      "size": [
+        288,
+        288
+      ],
+      "theme": "light"
+    }
+  },
+  "stroke_topology": {
+    "REL_CORE_HEALTH_BEHAVIOR": {
+      "faces": 156,
+      "vertices": 170
+    },
+    "REL_CORE_HUMAN_CENTERED_AI": {
+      "faces": 156,
+      "vertices": 170
+    },
+    "REL_CORE_WEARABLE_EDGE": {
+      "faces": 156,
+      "vertices": 170
+    }
+  }
+}

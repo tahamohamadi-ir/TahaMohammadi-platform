@@ -1,0 +1,1441 @@
+{
+  "candidates": [
+    {
+      "constraints": {
+        "continuity_steps_smaller_than_total": {
+          "pass_": true,
+          "ratio": 0.5895989974937343
+        },
+        "core_drift_small": {
+          "limit": 2.5,
+          "pass_": true,
+          "value": 1.328
+        },
+        "endpoints_anchored": {
+          "pass_": true
+        },
+        "frame_04_differs_from_01": {
+          "pass_": true,
+          "value": 0.91622
+        },
+        "gap_every_frame_device": {
+          "pass_": false,
+          "required": 5.0,
+          "value": 1.0
+        },
+        "no_clipping": {
+          "desktop": 8.62,
+          "mobile": 4.39,
+          "note": "each device has its own margin contract (8% desktop, 4% mobile), so a single combined threshold would fail the mobile frame for being mobile",
+          "pass_": true,
+          "required": {
+            "desktop": 7.9,
+            "mobile": 3.9
+          }
+        },
+        "safe_region_clear": {
+          "pass_": true,
+          "value": 0
+        },
+        "scale_delta_bounded": {
+          "pass_": true,
+          "ratio": 0.5895989974937343
+        }
+      },
+      "continuity_ratio": 0.5896,
+      "core_drift_pct": 1.328,
+      "hard_pass": false,
+      "id": "k0.00-splus",
+      "min_clearance_pct": {
+        "desktop": 8.62,
+        "mobile": 4.39
+      },
+      "min_gap_px": 1.0,
+      "movement_pct": 8.378,
+      "pivot": {
+        "core_centre": [
+          -0.06,
+          -0.22,
+          -0.04
+        ],
+        "direction": [
+          0.97904,
+          0.20365,
+          0.0
+        ],
+        "note": "RIG_ROOT origin; frame 01 is unaffected by construction because the offset term is (I - R)\u00b7P and R is the identity at rest",
+        "offset": 0.0,
+        "origin": [
+          -0.06,
+          -0.22,
+          -0.04
+        ],
+        "scale": 0.0,
+        "sign": 1
+      },
+      "scale": 0.0,
+      "sign": 1
+    },
+    {
+      "constraints": {
+        "continuity_steps_smaller_than_total": {
+          "pass_": true,
+          "ratio": 0.5958348040945993
+        },
+        "core_drift_small": {
+          "limit": 2.5,
+          "pass_": true,
+          "value": 1.327
+        },
+        "endpoints_anchored": {
+          "pass_": true
+        },
+        "frame_04_differs_from_01": {
+          "pass_": true,
+          "value": 0.91793
+        },
+        "gap_every_frame_device": {
+          "pass_": false,
+          "required": 5.0,
+          "value": 2.1
+        },
+        "no_clipping": {
+          "desktop": 8.62,
+          "mobile": 4.39,
+          "note": "each device has its own margin contract (8% desktop, 4% mobile), so a single combined threshold would fail the mobile frame for being mobile",
+          "pass_": true,
+          "required": {
+            "desktop": 7.9,
+            "mobile": 3.9
+          }
+        },
+        "safe_region_clear": {
+          "pass_": true,
+          "value": 0
+        },
+        "scale_delta_bounded": {
+          "pass_": true,
+          "ratio": 0.5958348040945993
+        }
+      },
+      "continuity_ratio": 0.5958,
+      "core_drift_pct": 1.327,
+      "hard_pass": false,
+      "id": "k0.04-splus",
+      "min_clearance_pct": {
+        "desktop": 8.62,
+        "mobile": 4.39
+      },
+      "min_gap_px": 2.1,
+      "movement_pct": 8.207,
+      "pivot": {
+        "core_centre": [
+          -0.06,
+          -0.22,
+          -0.04
+        ],
+        "direction": [
+          0.97904,
+          0.20365,
+          0.0
+        ],
+        "note": "RIG_ROOT origin; frame 01 is unaffected by construction because the offset term is (I - R)\u00b7P and R is the identity at rest",
+        "offset": 0.04,
+        "origin": [
+          -0.02084,
+          -0.21185,
+          -0.04
+        ],
+        "scale": 0.04,
+        "sign": 1
+      },
+      "scale": 0.04,
+      "sign": 1
+    },
+    {
+      "constraints": {
+        "continuity_steps_smaller_than_total": {
+          "pass_": true,
+          "ratio": 0.6019660411081322
+        },
+        "core_drift_small": {
+          "limit": 2.5,
+          "pass_": true,
+          "value": 1.325
+        },
+        "endpoints_anchored": {
+          "pass_": true
+        },
+        "frame_04_differs_from_01": {
+          "pass_": true,
+          "value": 0.9187766666666667
+        },
+        "gap_every_frame_device": {
+          "pass_": false,
+          "required": 5.0,
+          "value": 2.6
+        },
+        "no_clipping": {
+          "desktop": 8.62,
+          "mobile": 4.39,
+          "note": "each device has its own margin contract (8% desktop, 4% mobile), so a single combined threshold would fail the mobile frame for being mobile",
+          "pass_": true,
+          "required": {
+            "desktop": 7.9,
+            "mobile": 3.9
+          }
+        },
+        "safe_region_clear": {
+          "pass_": true,
+          "value": 0
+        },
+        "scale_delta_bounded": {
+          "pass_": true,
+          "ratio": 0.6019660411081322
+        }
+      },
+      "continuity_ratio": 0.602,
+      "core_drift_pct": 1.325,
+      "hard_pass": false,
+      "id": "k0.06-splus",
+      "min_clearance_pct": {
+        "desktop": 8.62,
+        "mobile": 4.39
+      },
+      "min_gap_px": 2.6,
+      "movement_pct": 8.122,
+      "pivot": {
+        "core_centre": [
+          -0.06,
+          -0.22,
+          -0.04
+        ],
+        "direction": [
+          0.97904,
+          0.20365,
+          0.0
+        ],
+        "note": "RIG_ROOT origin; frame 01 is unaffected by construction because the offset term is (I - R)\u00b7P and R is the identity at rest",
+        "offset": 0.06,
+        "origin": [
+          -0.00126,
+          -0.20778,
+          -0.04
+        ],
+        "scale": 0.06,
+        "sign": 1
+      },
+      "scale": 0.06,
+      "sign": 1
+    },
+    {
+      "constraints": {
+        "continuity_steps_smaller_than_total": {
+          "pass_": true,
+          "ratio": 0.6083650190114068
+        },
+        "core_drift_small": {
+          "limit": 2.5,
+          "pass_": true,
+          "value": 1.325
+        },
+        "endpoints_anchored": {
+          "pass_": true
+        },
+        "frame_04_differs_from_01": {
+          "pass_": true,
+          "value": 0.91963
+        },
+        "gap_every_frame_device": {
+          "pass_": false,
+          "required": 5.0,
+          "value": 3.1
+        },
+        "no_clipping": {
+          "desktop": 8.62,
+          "mobile": 4.39,
+          "note": "each device has its own margin contract (8% desktop, 4% mobile), so a single combined threshold would fail the mobile frame for being mobile",
+          "pass_": true,
+          "required": {
+            "desktop": 7.9,
+            "mobile": 3.9
+          }
+        },
+        "safe_region_clear": {
+          "pass_": true,
+          "value": 0
+        },
+        "scale_delta_bounded": {
+          "pass_": true,
+          "ratio": 0.6083650190114068
+        }
+      },
+      "continuity_ratio": 0.6084,
+      "core_drift_pct": 1.325,
+      "hard_pass": false,
+      "id": "k0.08-splus",
+      "min_clearance_pct": {
+        "desktop": 8.62,
+        "mobile": 4.39
+      },
+      "min_gap_px": 3.1,
+      "movement_pct": 8.037,
+      "pivot": {
+        "core_centre": [
+          -0.06,
+          -0.22,
+          -0.04
+        ],
+        "direction": [
+          0.97904,
+          0.20365,
+          0.0
+        ],
+        "note": "RIG_ROOT origin; frame 01 is unaffected by construction because the offset term is (I - R)\u00b7P and R is the identity at rest",
+        "offset": 0.08,
+        "origin": [
+          0.01832,
+          -0.20371,
+          -0.04
+        ],
+        "scale": 0.08,
+        "sign": 1
+      },
+      "scale": 0.08,
+      "sign": 1
+    },
+    {
+      "constraints": {
+        "continuity_steps_smaller_than_total": {
+          "pass_": true,
+          "ratio": 0.6153705062362436
+        },
+        "core_drift_small": {
+          "limit": 2.5,
+          "pass_": true,
+          "value": 1.323
+        },
+        "endpoints_anchored": {
+          "pass_": true
+        },
+        "frame_04_differs_from_01": {
+          "pass_": true,
+          "value": 0.92048
+        },
+        "gap_every_frame_device": {
+          "pass_": false,
+          "required": 5.0,
+          "value": 3.7
+        },
+        "no_clipping": {
+          "desktop": 8.61,
+          "mobile": 4.39,
+          "note": "each device has its own margin contract (8% desktop, 4% mobile), so a single combined threshold would fail the mobile frame for being mobile",
+          "pass_": true,
+          "required": {
+            "desktop": 7.9,
+            "mobile": 3.9
+          }
+        },
+        "safe_region_clear": {
+          "pass_": true,
+          "value": 0
+        },
+        "scale_delta_bounded": {
+          "pass_": true,
+          "ratio": 0.6153705062362436
+        }
+      },
+      "continuity_ratio": 0.6154,
+      "core_drift_pct": 1.323,
+      "hard_pass": false,
+      "id": "k0.10-splus",
+      "min_clearance_pct": {
+        "desktop": 8.61,
+        "mobile": 4.39
+      },
+      "min_gap_px": 3.7,
+      "movement_pct": 7.952,
+      "pivot": {
+        "core_centre": [
+          -0.06,
+          -0.22,
+          -0.04
+        ],
+        "direction": [
+          0.97904,
+          0.20365,
+          0.0
+        ],
+        "note": "RIG_ROOT origin; frame 01 is unaffected by construction because the offset term is (I - R)\u00b7P and R is the identity at rest",
+        "offset": 0.1,
+        "origin": [
+          0.0379,
+          -0.19964,
+          -0.04
+        ],
+        "scale": 0.1,
+        "sign": 1
+      },
+      "scale": 0.1,
+      "sign": 1
+    },
+    {
+      "constraints": {
+        "continuity_steps_smaller_than_total": {
+          "pass_": true,
+          "ratio": 0.6221189591078067
+        },
+        "core_drift_small": {
+          "limit": 2.5,
+          "pass_": true,
+          "value": 1.323
+        },
+        "endpoints_anchored": {
+          "pass_": true
+        },
+        "frame_04_differs_from_01": {
+          "pass_": true,
+          "value": 0.92133
+        },
+        "gap_every_frame_device": {
+          "pass_": false,
+          "required": 5.0,
+          "value": 4.2
+        },
+        "no_clipping": {
+          "desktop": 8.61,
+          "mobile": 4.39,
+          "note": "each device has its own margin contract (8% desktop, 4% mobile), so a single combined threshold would fail the mobile frame for being mobile",
+          "pass_": true,
+          "required": {
+            "desktop": 7.9,
+            "mobile": 3.9
+          }
+        },
+        "safe_region_clear": {
+          "pass_": true,
+          "value": 0
+        },
+        "scale_delta_bounded": {
+          "pass_": true,
+          "ratio": 0.6221189591078067
+        }
+      },
+      "continuity_ratio": 0.6221,
+      "core_drift_pct": 1.323,
+      "hard_pass": false,
+      "id": "k0.12-splus",
+      "min_clearance_pct": {
+        "desktop": 8.61,
+        "mobile": 4.39
+      },
+      "min_gap_px": 4.2,
+      "movement_pct": 7.867,
+      "pivot": {
+        "core_centre": [
+          -0.06,
+          -0.22,
+          -0.04
+        ],
+        "direction": [
+          0.97904,
+          0.20365,
+          0.0
+        ],
+        "note": "RIG_ROOT origin; frame 01 is unaffected by construction because the offset term is (I - R)\u00b7P and R is the identity at rest",
+        "offset": 0.12,
+        "origin": [
+          0.05749,
+          -0.19556,
+          -0.04
+        ],
+        "scale": 0.12,
+        "sign": 1
+      },
+      "scale": 0.12,
+      "sign": 1
+    },
+    {
+      "constraints": {
+        "continuity_steps_smaller_than_total": {
+          "pass_": true,
+          "ratio": 0.6295458827963067
+        },
+        "core_drift_small": {
+          "limit": 2.5,
+          "pass_": true,
+          "value": 1.321
+        },
+        "endpoints_anchored": {
+          "pass_": true
+        },
+        "frame_04_differs_from_01": {
+          "pass_": true,
+          "value": 0.9221766666666666
+        },
+        "gap_every_frame_device": {
+          "pass_": false,
+          "required": 5.0,
+          "value": 4.8
+        },
+        "no_clipping": {
+          "desktop": 8.61,
+          "mobile": 4.39,
+          "note": "each device has its own margin contract (8% desktop, 4% mobile), so a single combined threshold would fail the mobile frame for being mobile",
+          "pass_": true,
+          "required": {
+            "desktop": 7.9,
+            "mobile": 3.9
+          }
+        },
+        "safe_region_clear": {
+          "pass_": true,
+          "value": 0
+        },
+        "scale_delta_bounded": {
+          "pass_": true,
+          "ratio": 0.6295458827963067
+        }
+      },
+      "continuity_ratio": 0.6295,
+      "core_drift_pct": 1.321,
+      "hard_pass": false,
+      "id": "k0.14-splus",
+      "min_clearance_pct": {
+        "desktop": 8.61,
+        "mobile": 4.39
+      },
+      "min_gap_px": 4.8,
+      "movement_pct": 7.782,
+      "pivot": {
+        "core_centre": [
+          -0.06,
+          -0.22,
+          -0.04
+        ],
+        "direction": [
+          0.97904,
+          0.20365,
+          0.0
+        ],
+        "note": "RIG_ROOT origin; frame 01 is unaffected by construction because the offset term is (I - R)\u00b7P and R is the identity at rest",
+        "offset": 0.14,
+        "origin": [
+          0.07707,
+          -0.19149,
+          -0.04
+        ],
+        "scale": 0.14,
+        "sign": 1
+      },
+      "scale": 0.14,
+      "sign": 1
+    },
+    {
+      "constraints": {
+        "continuity_steps_smaller_than_total": {
+          "pass_": true,
+          "ratio": 0.6367456073338427
+        },
+        "core_drift_small": {
+          "limit": 2.5,
+          "pass_": true,
+          "value": 1.321
+        },
+        "endpoints_anchored": {
+          "pass_": true
+        },
+        "frame_04_differs_from_01": {
+          "pass_": true,
+          "value": 0.9230233333333333
+        },
+        "gap_every_frame_device": {
+          "pass_": true,
+          "required": 5.0,
+          "value": 5.3
+        },
+        "no_clipping": {
+          "desktop": 8.61,
+          "mobile": 4.39,
+          "note": "each device has its own margin contract (8% desktop, 4% mobile), so a single combined threshold would fail the mobile frame for being mobile",
+          "pass_": true,
+          "required": {
+            "desktop": 7.9,
+            "mobile": 3.9
+          }
+        },
+        "safe_region_clear": {
+          "pass_": true,
+          "value": 0
+        },
+        "scale_delta_bounded": {
+          "pass_": true,
+          "ratio": 0.6367456073338427
+        }
+      },
+      "continuity_ratio": 0.6367,
+      "core_drift_pct": 1.321,
+      "hard_pass": true,
+      "id": "k0.16-splus",
+      "min_clearance_pct": {
+        "desktop": 8.61,
+        "mobile": 4.39
+      },
+      "min_gap_px": 5.3,
+      "movement_pct": 7.698,
+      "pivot": {
+        "core_centre": [
+          -0.06,
+          -0.22,
+          -0.04
+        ],
+        "direction": [
+          0.97904,
+          0.20365,
+          0.0
+        ],
+        "note": "RIG_ROOT origin; frame 01 is unaffected by construction because the offset term is (I - R)\u00b7P and R is the identity at rest",
+        "offset": 0.16,
+        "origin": [
+          0.09665,
+          -0.18742,
+          -0.04
+        ],
+        "scale": 0.16,
+        "sign": 1
+      },
+      "preferred_gap": false,
+      "safety_gap": false,
+      "scale": 0.16,
+      "score": 0.65,
+      "sign": 1
+    },
+    {
+      "constraints": {
+        "continuity_steps_smaller_than_total": {
+          "pass_": true,
+          "ratio": 0.6521312119426438
+        },
+        "core_drift_small": {
+          "limit": 2.5,
+          "pass_": true,
+          "value": 1.319
+        },
+        "endpoints_anchored": {
+          "pass_": true
+        },
+        "frame_04_differs_from_01": {
+          "pass_": true,
+          "value": 0.92472
+        },
+        "gap_every_frame_device": {
+          "pass_": true,
+          "required": 5.0,
+          "value": 6.1
+        },
+        "no_clipping": {
+          "desktop": 8.61,
+          "mobile": 4.39,
+          "note": "each device has its own margin contract (8% desktop, 4% mobile), so a single combined threshold would fail the mobile frame for being mobile",
+          "pass_": true,
+          "required": {
+            "desktop": 7.9,
+            "mobile": 3.9
+          }
+        },
+        "safe_region_clear": {
+          "pass_": true,
+          "value": 0
+        },
+        "scale_delta_bounded": {
+          "pass_": true,
+          "ratio": 0.6521312119426438
+        }
+      },
+      "continuity_ratio": 0.6521,
+      "core_drift_pct": 1.319,
+      "hard_pass": true,
+      "id": "k0.20-splus",
+      "min_clearance_pct": {
+        "desktop": 8.61,
+        "mobile": 4.39
+      },
+      "min_gap_px": 6.1,
+      "movement_pct": 7.528,
+      "pivot": {
+        "core_centre": [
+          -0.06,
+          -0.22,
+          -0.04
+        ],
+        "direction": [
+          0.97904,
+          0.20365,
+          0.0
+        ],
+        "note": "RIG_ROOT origin; frame 01 is unaffected by construction because the offset term is (I - R)\u00b7P and R is the identity at rest",
+        "offset": 0.2,
+        "origin": [
+          0.13581,
+          -0.17927,
+          -0.04
+        ],
+        "scale": 0.2,
+        "sign": 1
+      },
+      "preferred_gap": false,
+      "safety_gap": true,
+      "scale": 0.2,
+      "score": 0.56816,
+      "sign": 1
+    },
+    {
+      "constraints": {
+        "continuity_steps_smaller_than_total": {
+          "pass_": true,
+          "ratio": 0.6597609561752988
+        },
+        "core_drift_small": {
+          "limit": 2.5,
+          "pass_": true,
+          "value": 1.318
+        },
+        "endpoints_anchored": {
+          "pass_": true
+        },
+        "frame_04_differs_from_01": {
+          "pass_": true,
+          "value": 0.9255599999999999
+        },
+        "gap_every_frame_device": {
+          "pass_": true,
+          "required": 5.0,
+          "value": 6.4
+        },
+        "no_clipping": {
+          "desktop": 8.6,
+          "mobile": 4.39,
+          "note": "each device has its own margin contract (8% desktop, 4% mobile), so a single combined threshold would fail the mobile frame for being mobile",
+          "pass_": true,
+          "required": {
+            "desktop": 7.9,
+            "mobile": 3.9
+          }
+        },
+        "safe_region_clear": {
+          "pass_": true,
+          "value": 0
+        },
+        "scale_delta_bounded": {
+          "pass_": true,
+          "ratio": 0.6597609561752988
+        }
+      },
+      "continuity_ratio": 0.6598,
+      "core_drift_pct": 1.318,
+      "hard_pass": true,
+      "id": "k0.22-splus",
+      "min_clearance_pct": {
+        "desktop": 8.6,
+        "mobile": 4.39
+      },
+      "min_gap_px": 6.4,
+      "movement_pct": 7.444,
+      "pivot": {
+        "core_centre": [
+          -0.06,
+          -0.22,
+          -0.04
+        ],
+        "direction": [
+          0.97904,
+          0.20365,
+          0.0
+        ],
+        "note": "RIG_ROOT origin; frame 01 is unaffected by construction because the offset term is (I - R)\u00b7P and R is the identity at rest",
+        "offset": 0.22,
+        "origin": [
+          0.15539,
+          -0.1752,
+          -0.04
+        ],
+        "scale": 0.22,
+        "sign": 1
+      },
+      "preferred_gap": false,
+      "safety_gap": true,
+      "scale": 0.22,
+      "score": 0.51794,
+      "sign": 1
+    },
+    {
+      "constraints": {
+        "continuity_steps_smaller_than_total": {
+          "pass_": true,
+          "ratio": 0.6684189243833402
+        },
+        "core_drift_small": {
+          "limit": 2.5,
+          "pass_": true,
+          "value": 1.316
+        },
+        "endpoints_anchored": {
+          "pass_": true
+        },
+        "frame_04_differs_from_01": {
+          "pass_": true,
+          "value": 0.9264033333333334
+        },
+        "gap_every_frame_device": {
+          "pass_": true,
+          "required": 5.0,
+          "value": 6.7
+        },
+        "no_clipping": {
+          "desktop": 8.6,
+          "mobile": 4.39,
+          "note": "each device has its own margin contract (8% desktop, 4% mobile), so a single combined threshold would fail the mobile frame for being mobile",
+          "pass_": true,
+          "required": {
+            "desktop": 7.9,
+            "mobile": 3.9
+          }
+        },
+        "safe_region_clear": {
+          "pass_": true,
+          "value": 0
+        },
+        "scale_delta_bounded": {
+          "pass_": true,
+          "ratio": 0.6684189243833402
+        }
+      },
+      "continuity_ratio": 0.6684,
+      "core_drift_pct": 1.316,
+      "hard_pass": true,
+      "id": "k0.24-splus",
+      "min_clearance_pct": {
+        "desktop": 8.6,
+        "mobile": 4.39
+      },
+      "min_gap_px": 6.7,
+      "movement_pct": 7.36,
+      "pivot": {
+        "core_centre": [
+          -0.06,
+          -0.22,
+          -0.04
+        ],
+        "direction": [
+          0.97904,
+          0.20365,
+          0.0
+        ],
+        "note": "RIG_ROOT origin; frame 01 is unaffected by construction because the offset term is (I - R)\u00b7P and R is the identity at rest",
+        "offset": 0.24,
+        "origin": [
+          0.17497,
+          -0.17113,
+          -0.04
+        ],
+        "scale": 0.24,
+        "sign": 1
+      },
+      "preferred_gap": false,
+      "safety_gap": true,
+      "scale": 0.24,
+      "score": 0.48719,
+      "sign": 1
+    },
+    {
+      "constraints": {
+        "continuity_steps_smaller_than_total": {
+          "pass_": true,
+          "ratio": 0.6766516208453016
+        },
+        "core_drift_small": {
+          "limit": 2.5,
+          "pass_": true,
+          "value": 1.316
+        },
+        "endpoints_anchored": {
+          "pass_": true
+        },
+        "frame_04_differs_from_01": {
+          "pass_": true,
+          "value": 0.92725
+        },
+        "gap_every_frame_device": {
+          "pass_": true,
+          "required": 5.0,
+          "value": 7.0
+        },
+        "no_clipping": {
+          "desktop": 8.6,
+          "mobile": 4.39,
+          "note": "each device has its own margin contract (8% desktop, 4% mobile), so a single combined threshold would fail the mobile frame for being mobile",
+          "pass_": true,
+          "required": {
+            "desktop": 7.9,
+            "mobile": 3.9
+          }
+        },
+        "safe_region_clear": {
+          "pass_": true,
+          "value": 0
+        },
+        "scale_delta_bounded": {
+          "pass_": true,
+          "ratio": 0.6766516208453016
+        }
+      },
+      "continuity_ratio": 0.6767,
+      "core_drift_pct": 1.316,
+      "hard_pass": true,
+      "id": "k0.26-splus",
+      "min_clearance_pct": {
+        "desktop": 8.6,
+        "mobile": 4.39
+      },
+      "min_gap_px": 7.0,
+      "movement_pct": 7.275,
+      "pivot": {
+        "core_centre": [
+          -0.06,
+          -0.22,
+          -0.04
+        ],
+        "direction": [
+          0.97904,
+          0.20365,
+          0.0
+        ],
+        "note": "RIG_ROOT origin; frame 01 is unaffected by construction because the offset term is (I - R)\u00b7P and R is the identity at rest",
+        "offset": 0.26,
+        "origin": [
+          0.19455,
+          -0.16705,
+          -0.04
+        ],
+        "scale": 0.26,
+        "sign": 1
+      },
+      "preferred_gap": false,
+      "safety_gap": true,
+      "scale": 0.26,
+      "score": 0.40759,
+      "sign": 1
+    },
+    {
+      "constraints": {
+        "continuity_steps_smaller_than_total": {
+          "pass_": true,
+          "ratio": 0.68561315844264
+        },
+        "core_drift_small": {
+          "limit": 2.5,
+          "pass_": true,
+          "value": 1.315
+        },
+        "endpoints_anchored": {
+          "pass_": true
+        },
+        "frame_04_differs_from_01": {
+          "pass_": true,
+          "value": 0.9280866666666667
+        },
+        "gap_every_frame_device": {
+          "pass_": true,
+          "required": 5.0,
+          "value": 7.3
+        },
+        "no_clipping": {
+          "desktop": 8.6,
+          "mobile": 4.39,
+          "note": "each device has its own margin contract (8% desktop, 4% mobile), so a single combined threshold would fail the mobile frame for being mobile",
+          "pass_": true,
+          "required": {
+            "desktop": 7.9,
+            "mobile": 3.9
+          }
+        },
+        "safe_region_clear": {
+          "pass_": true,
+          "value": 0
+        },
+        "scale_delta_bounded": {
+          "pass_": true,
+          "ratio": 0.68561315844264
+        }
+      },
+      "continuity_ratio": 0.6856,
+      "core_drift_pct": 1.315,
+      "hard_pass": true,
+      "id": "k0.28-splus",
+      "min_clearance_pct": {
+        "desktop": 8.6,
+        "mobile": 4.39
+      },
+      "min_gap_px": 7.3,
+      "movement_pct": 7.191,
+      "pivot": {
+        "core_centre": [
+          -0.06,
+          -0.22,
+          -0.04
+        ],
+        "direction": [
+          0.97904,
+          0.20365,
+          0.0
+        ],
+        "note": "RIG_ROOT origin; frame 01 is unaffected by construction because the offset term is (I - R)\u00b7P and R is the identity at rest",
+        "offset": 0.28,
+        "origin": [
+          0.21413,
+          -0.16298,
+          -0.04
+        ],
+        "scale": 0.28,
+        "sign": 1
+      },
+      "preferred_gap": false,
+      "safety_gap": true,
+      "scale": 0.28,
+      "score": 0.35,
+      "sign": 1
+    }
+  ],
+  "contract": {
+    "core_drift_max_pct": 2.5,
+    "core_scale_max_pct": 1.0,
+    "desktop_clearance_pct": 7.9,
+    "desktop_safe_text_region": [
+      0.015,
+      0.05,
+      0.085,
+      0.95
+    ],
+    "min_gap_px": 5.0,
+    "mobile_clearance_pct": 3.9,
+    "mobile_safe_regions": [
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.045
+      ],
+      [
+        0.0,
+        0.955,
+        1.0,
+        1.0
+      ]
+    ],
+    "pivot_sweep": [
+      0.0,
+      0.04,
+      0.06,
+      0.08,
+      0.1,
+      0.12,
+      0.14,
+      0.16
+    ],
+    "preferred_gap_px": 8.0,
+    "safety_gap_px": 6.0,
+    "scale_max_pct": 12.0
+  },
+  "sweep": {
+    "authored": [
+      {
+        "frame": 1,
+        "intent": "initial Home state; identical to the look lock",
+        "key": "FRAME_01_REST",
+        "label": "rest (the approved Stage 2.7 composition)",
+        "parallax": 0.0,
+        "pitch_deg": 0.0,
+        "rig_rotation_euler_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "yaw_deg": 0.0
+      },
+      {
+        "frame": 2,
+        "intent": "small but visible depth change; one companion forward, one back",
+        "key": "FRAME_02_EARLY_ROTATION",
+        "label": "early rotation",
+        "parallax": 0.05,
+        "pitch_deg": 3.0,
+        "rig_rotation_euler_deg": [
+          3.0,
+          0.0,
+          10.0
+        ],
+        "yaw_deg": 10.0
+      },
+      {
+        "frame": 3,
+        "intent": "strongest 3D and parallax distinction, still calm",
+        "key": "FRAME_03_MID_STRONGEST_DEPTH",
+        "label": "mid / strongest depth",
+        "parallax": 0.11,
+        "pitch_deg": 10.0,
+        "rig_rotation_euler_deg": [
+          10.0,
+          0.0,
+          26.0
+        ],
+        "yaw_deg": 26.0
+      },
+      {
+        "frame": 4,
+        "intent": "another meaningful viewing angle; not a return to frame 01",
+        "key": "FRAME_04_SETTLED_REVEAL",
+        "label": "settled reveal",
+        "parallax": 0.07,
+        "pitch_deg": 7.0,
+        "rig_rotation_euler_deg": [
+          7.0,
+          0.0,
+          36.0
+        ],
+        "yaw_deg": 36.0
+      }
+    ],
+    "scales": [
+      0.0,
+      0.04,
+      0.06,
+      0.08,
+      0.1,
+      0.12,
+      0.14,
+      0.16,
+      0.2,
+      0.22,
+      0.24,
+      0.26,
+      0.28
+    ],
+    "signs": [
+      1,
+      -1
+    ]
+  },
+  "weights": {
+    "continuity": 0.3,
+    "drift": 0.15,
+    "gap": 0.2,
+    "movement": 0.35
+  },
+  "winner": "k0.20-splus",
+  "winner_detail": {
+    "authored": [
+      {
+        "frame": 1,
+        "intent": "initial Home state; identical to the look lock",
+        "key": "FRAME_01_REST",
+        "label": "rest (the approved Stage 2.7 composition)",
+        "parallax": 0.0,
+        "pitch_deg": 0.0,
+        "rig_rotation_euler_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "yaw_deg": 0.0
+      },
+      {
+        "frame": 2,
+        "intent": "small but visible depth change; one companion forward, one back",
+        "key": "FRAME_02_EARLY_ROTATION",
+        "label": "early rotation",
+        "parallax": 0.05,
+        "pitch_deg": 3.0,
+        "rig_rotation_euler_deg": [
+          3.0,
+          0.0,
+          10.0
+        ],
+        "yaw_deg": 10.0
+      },
+      {
+        "frame": 3,
+        "intent": "strongest 3D and parallax distinction, still calm",
+        "key": "FRAME_03_MID_STRONGEST_DEPTH",
+        "label": "mid / strongest depth",
+        "parallax": 0.11,
+        "pitch_deg": 10.0,
+        "rig_rotation_euler_deg": [
+          10.0,
+          0.0,
+          26.0
+        ],
+        "yaw_deg": 26.0
+      },
+      {
+        "frame": 4,
+        "intent": "another meaningful viewing angle; not a return to frame 01",
+        "key": "FRAME_04_SETTLED_REVEAL",
+        "label": "settled reveal",
+        "parallax": 0.07,
+        "pitch_deg": 7.0,
+        "rig_rotation_euler_deg": [
+          7.0,
+          0.0,
+          36.0
+        ],
+        "yaw_deg": 36.0
+      }
+    ],
+    "constraints": {
+      "continuity_steps_smaller_than_total": {
+        "pass_": true,
+        "ratio": 0.6521312119426438
+      },
+      "core_drift_small": {
+        "limit": 2.5,
+        "pass_": true,
+        "value": 1.319
+      },
+      "endpoints_anchored": {
+        "pass_": true
+      },
+      "frame_04_differs_from_01": {
+        "pass_": true,
+        "value": 0.92472
+      },
+      "gap_every_frame_device": {
+        "pass_": true,
+        "required": 5.0,
+        "value": 6.1
+      },
+      "no_clipping": {
+        "desktop": 8.61,
+        "mobile": 4.39,
+        "note": "each device has its own margin contract (8% desktop, 4% mobile), so a single combined threshold would fail the mobile frame for being mobile",
+        "pass_": true,
+        "required": {
+          "desktop": 7.9,
+          "mobile": 3.9
+        }
+      },
+      "safe_region_clear": {
+        "pass_": true,
+        "value": 0
+      },
+      "scale_delta_bounded": {
+        "pass_": true,
+        "ratio": 0.6521312119426438
+      }
+    },
+    "continuity_ratio": 0.6521,
+    "core_drift_pct": 1.319,
+    "hard_pass": true,
+    "id": "k0.20-splus",
+    "measured": {
+      "anchors_ok": true,
+      "companion_shift_pct": {
+        "1->2": {
+          "desktop": {
+            "GRP_HEALTH_BEHAVIOR": 2.315,
+            "GRP_HUMAN_CENTERED_AI": 3.32,
+            "GRP_WEARABLE_EDGE": 3.241
+          },
+          "mobile": {
+            "GRP_HEALTH_BEHAVIOR": 1.206,
+            "GRP_HUMAN_CENTERED_AI": 2.048,
+            "GRP_WEARABLE_EDGE": 3.087
+          }
+        },
+        "1->4": {
+          "desktop": {
+            "GRP_HEALTH_BEHAVIOR": 8.605,
+            "GRP_HUMAN_CENTERED_AI": 5.091,
+            "GRP_WEARABLE_EDGE": 8.888
+          },
+          "mobile": {
+            "GRP_HEALTH_BEHAVIOR": 7.6,
+            "GRP_HUMAN_CENTERED_AI": 1.088,
+            "GRP_WEARABLE_EDGE": 8.871
+          }
+        },
+        "2->3": {
+          "desktop": {
+            "GRP_HEALTH_BEHAVIOR": 4.179,
+            "GRP_HUMAN_CENTERED_AI": 2.691,
+            "GRP_WEARABLE_EDGE": 5.257
+          },
+          "mobile": {
+            "GRP_HEALTH_BEHAVIOR": 3.259,
+            "GRP_HUMAN_CENTERED_AI": 0.373,
+            "GRP_WEARABLE_EDGE": 5.445
+          }
+        },
+        "3->4": {
+          "desktop": {
+            "GRP_HEALTH_BEHAVIOR": 2.157,
+            "GRP_HUMAN_CENTERED_AI": 0.873,
+            "GRP_WEARABLE_EDGE": 2.501
+          },
+          "mobile": {
+            "GRP_HEALTH_BEHAVIOR": 3.309,
+            "GRP_HUMAN_CENTERED_AI": 1.062,
+            "GRP_WEARABLE_EDGE": 1.804
+          }
+        }
+      },
+      "core_shift_pct": {
+        "1->2": {
+          "desktop": 0.943,
+          "mobile": 0.0
+        },
+        "1->4": {
+          "desktop": 1.319,
+          "mobile": 0.0
+        },
+        "2->3": {
+          "desktop": 1.129,
+          "mobile": 0.0
+        },
+        "3->4": {
+          "desktop": 0.753,
+          "mobile": 0.0
+        }
+      },
+      "edge_clearance_pct": {
+        "FRAME_01_REST": {
+          "desktop": 11.21,
+          "mobile": 4.39
+        },
+        "FRAME_02_EARLY_ROTATION": {
+          "desktop": 10.34,
+          "mobile": 5.38
+        },
+        "FRAME_03_MID_STRONGEST_DEPTH": {
+          "desktop": 8.61,
+          "mobile": 5.74
+        },
+        "FRAME_04_SETTLED_REVEAL": {
+          "desktop": 8.71,
+          "mobile": 6.52
+        }
+      },
+      "min_gap_px": {
+        "FRAME_01_REST": {
+          "desktop": 45.9,
+          "mobile": 24.8
+        },
+        "FRAME_02_EARLY_ROTATION": {
+          "desktop": 39.6,
+          "mobile": 22.5
+        },
+        "FRAME_03_MID_STRONGEST_DEPTH": {
+          "desktop": 24.0,
+          "mobile": 15.0
+        },
+        "FRAME_04_SETTLED_REVEAL": {
+          "desktop": 6.4,
+          "mobile": 6.1
+        }
+      },
+      "notes": [],
+      "safe_region_detail": {},
+      "safe_region_overlap": 0,
+      "scale_delta_pct": {
+        "1->2": {
+          "desktop": {
+            "GRP_CORE": -0.08,
+            "GRP_HEALTH_BEHAVIOR": -2.24,
+            "GRP_HUMAN_CENTERED_AI": 3.12,
+            "GRP_WEARABLE_EDGE": 0.93
+          },
+          "mobile": {
+            "GRP_CORE": 0.0,
+            "GRP_HEALTH_BEHAVIOR": 0.1,
+            "GRP_HUMAN_CENTERED_AI": -0.17,
+            "GRP_WEARABLE_EDGE": -0.11
+          }
+        },
+        "1->4": {
+          "desktop": {
+            "GRP_CORE": -0.11,
+            "GRP_HEALTH_BEHAVIOR": -7.2,
+            "GRP_HUMAN_CENTERED_AI": 11.27,
+            "GRP_WEARABLE_EDGE": 5.44
+          },
+          "mobile": {
+            "GRP_CORE": 0.0,
+            "GRP_HEALTH_BEHAVIOR": 0.49,
+            "GRP_HUMAN_CENTERED_AI": -0.25,
+            "GRP_WEARABLE_EDGE": -0.43
+          }
+        },
+        "2->3": {
+          "desktop": {
+            "GRP_CORE": -0.09,
+            "GRP_HEALTH_BEHAVIOR": -3.1,
+            "GRP_HUMAN_CENTERED_AI": 5.73,
+            "GRP_WEARABLE_EDGE": 1.61
+          },
+          "mobile": {
+            "GRP_CORE": 0.0,
+            "GRP_HEALTH_BEHAVIOR": 0.21,
+            "GRP_HUMAN_CENTERED_AI": -0.09,
+            "GRP_WEARABLE_EDGE": -0.23
+          }
+        },
+        "3->4": {
+          "desktop": {
+            "GRP_CORE": 0.06,
+            "GRP_HEALTH_BEHAVIOR": -2.04,
+            "GRP_HUMAN_CENTERED_AI": 2.06,
+            "GRP_WEARABLE_EDGE": 2.82
+          },
+          "mobile": {
+            "GRP_CORE": 0.0,
+            "GRP_HEALTH_BEHAVIOR": 0.18,
+            "GRP_HUMAN_CENTERED_AI": 0.0,
+            "GRP_WEARABLE_EDGE": -0.08
+          }
+        }
+      }
+    },
+    "min_clearance_pct": {
+      "desktop": 8.61,
+      "mobile": 4.39
+    },
+    "min_gap_px": 6.1,
+    "movement_pct": 7.528,
+    "pivot": {
+      "core_centre": [
+        -0.06,
+        -0.22,
+        -0.04
+      ],
+      "direction": [
+        0.97904,
+        0.20365,
+        0.0
+      ],
+      "note": "RIG_ROOT origin; frame 01 is unaffected by construction because the offset term is (I - R)\u00b7P and R is the identity at rest",
+      "offset": 0.2,
+      "origin": [
+        0.13581,
+        -0.17927,
+        -0.04
+      ],
+      "scale": 0.2,
+      "sign": 1
+    },
+    "preferred_gap": false,
+    "safety_gap": true,
+    "scale": 0.2,
+    "score": 0.56816,
+    "sign": 1
+  }
+}

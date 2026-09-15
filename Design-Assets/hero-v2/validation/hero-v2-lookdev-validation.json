@@ -1,0 +1,306 @@
+{
+  "blend": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\source\\hero-v2-lookdev.blend",
+  "checks": {
+    "arc_on_with_faint_material": {
+      "hide_render": false,
+      "pass_": true
+    },
+    "arc_present_and_faint": {
+      "measured": {
+        "desktop": {
+          "max_delta": 0.3586,
+          "mean_delta": 0.00041,
+          "strong_pixel_pct": 0.168
+        },
+        "mobile": {
+          "max_delta": 0.174,
+          "mean_delta": 0.00017,
+          "strong_pixel_pct": 0.044
+        }
+      },
+      "pass_": true,
+      "rule": "presence: >=0.02% of sampled pixels changed by >0.06 AND the local change peaks above 0.10 (the arc is a 0.02 BU tube: a few pixels wide, so a whole-frame mean dilutes it into noise). faintness: <8% of pixels changed that much. mean_delta is reported for information, not asserted."
+    },
+    "backdrop_faces_the_scene": {
+      "measured": {
+        "floor_faces": 5,
+        "floor_normals_z": [
+          1.0,
+          1.0,
+          0.998,
+          0.981
+        ]
+      },
+      "pass_": true,
+      "rule": "floor faces must point up (+Z); the first build had them inverted and the floor rendered black"
+    },
+    "every_form_has_a_stage2_role": {
+      "missing": [],
+      "pass_": true
+    },
+    "family_graph_intact": {
+      "pass_": true,
+      "roles": {
+        "core_shell": {
+          "hex": [
+            0.02029,
+            0.09306,
+            0.10224,
+            1.0
+          ],
+          "metallic": 0.0,
+          "normal_driven": true,
+          "roughness": 0.4,
+          "roughness_driven": true
+        },
+        "hcai_shell": {
+          "hex": [
+            0.15593,
+            0.25818,
+            0.16827,
+            1.0
+          ],
+          "metallic": 0.0,
+          "normal_driven": true,
+          "roughness": 0.58,
+          "roughness_driven": true
+        },
+        "health_shell": {
+          "hex": [
+            0.26225,
+            0.16203,
+            0.08022,
+            1.0
+          ],
+          "metallic": 0.0,
+          "normal_driven": true,
+          "roughness": 0.6,
+          "roughness_driven": true
+        },
+        "wearable_shell": {
+          "hex": [
+            0.14413,
+            0.12477,
+            0.22697,
+            1.0
+          ],
+          "metallic": 0.0,
+          "normal_driven": true,
+          "roughness": 0.48,
+          "roughness_driven": true
+        }
+      }
+    },
+    "forms_separate_from_backdrop": {
+      "measured": {
+        "desktop": {
+          "p10": 0.1322,
+          "p50": 0.1717,
+          "p90": 0.4543,
+          "p90_minus_p10": 0.322
+        },
+        "mobile": {
+          "p10": 0.1549,
+          "p50": 0.1787,
+          "p90": 0.4604,
+          "p90_minus_p10": 0.3054
+        }
+      },
+      "pass_": true
+    },
+    "four_roles_distinct_colour": {
+      "pass_": true,
+      "role_count": 4,
+      "unique": 4
+    },
+    "no_metallic_shells": {
+      "max_metallic": 0.0,
+      "pass_": true
+    },
+    "no_text_particles_or_extra_objects": {
+      "pass_": true,
+      "types": [
+        "CAMERA",
+        "EMPTY",
+        "LIGHT",
+        "MESH"
+      ]
+    },
+    "render_settings": {
+      "color_mode": "RGB",
+      "denoise": true,
+      "engine": "CYCLES",
+      "exposure": -0.7,
+      "film_transparent": false,
+      "pass_": true,
+      "samples": 160,
+      "view_transform": "AgX"
+    },
+    "renders_not_degenerate": {
+      "offenders": {},
+      "pass_": true
+    },
+    "renders_pairwise_distinct": {
+      "pairs": {
+        "desktop/arc|mobile/arc": "different sizes",
+        "desktop/arc|mobile/clean": "different sizes",
+        "desktop/clean|mobile/arc": "different sizes",
+        "desktop/clean|mobile/clean": "different sizes"
+      },
+      "pass_": true
+    },
+    "renders_present_and_sized": {
+      "pass_": true,
+      "present": {
+        "desktop-arc": true,
+        "desktop-clean": true,
+        "mobile-arc": true,
+        "mobile-clean": true
+      },
+      "sizes": {
+        "desktop-arc": [
+          1600,
+          1400
+        ],
+        "desktop-clean": [
+          1600,
+          1400
+        ],
+        "mobile-arc": [
+          800,
+          800
+        ],
+        "mobile-clean": [
+          800,
+          800
+        ]
+      }
+    },
+    "stage1_geometry_layout_cameras_intact": {
+      "drift": {
+        "cameras": {},
+        "layout": {},
+        "triangles": {}
+      },
+      "pass_": true
+    },
+    "stage1_placeholder_removed": {
+      "offenders": [],
+      "pass_": true
+    },
+    "stage_tag": {
+      "pass_": true,
+      "value": "2 - look development (materials + light)"
+    },
+    "studio_rig_replaces_stage1_rig": {
+      "pass_": true,
+      "rig": {
+        "LG2_Fill": {
+          "exists": true,
+          "hide_render": false
+        },
+        "LG2_Key": {
+          "exists": true,
+          "hide_render": false
+        },
+        "LG2_Sep": {
+          "exists": true,
+          "hide_render": false
+        },
+        "LG_Fill": {
+          "exists": true,
+          "hide_render": true
+        },
+        "LG_Key": {
+          "exists": true,
+          "hide_render": true
+        },
+        "LG_Rim": {
+          "exists": true,
+          "hide_render": true
+        }
+      }
+    }
+  },
+  "checks_all_pass": true,
+  "failed": [],
+  "renders": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2",
+  "renders_inspected": {
+    "desktop-arc": {
+      "bytes": 1859595,
+      "clipped_pct": 0.0,
+      "crushed_pct": 0.009,
+      "exists": true,
+      "expected_size": [
+        1600,
+        1400
+      ],
+      "p02": 0.1126,
+      "p50": 0.1717,
+      "p98": 0.6816,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2\\desktop-arc.png",
+      "size": [
+        1600,
+        1400
+      ],
+      "size_matches": true
+    },
+    "desktop-clean": {
+      "bytes": 1878556,
+      "clipped_pct": 0.0,
+      "crushed_pct": 0.009,
+      "exists": true,
+      "expected_size": [
+        1600,
+        1400
+      ],
+      "p02": 0.1126,
+      "p50": 0.1717,
+      "p98": 0.6816,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2\\desktop-clean.png",
+      "size": [
+        1600,
+        1400
+      ],
+      "size_matches": true
+    },
+    "mobile-arc": {
+      "bytes": 569984,
+      "clipped_pct": 0.0,
+      "crushed_pct": 0.015,
+      "exists": true,
+      "expected_size": [
+        800,
+        800
+      ],
+      "p02": 0.133,
+      "p50": 0.1787,
+      "p98": 0.7001,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2\\mobile-arc.png",
+      "size": [
+        800,
+        800
+      ],
+      "size_matches": true
+    },
+    "mobile-clean": {
+      "bytes": 572131,
+      "clipped_pct": 0.0,
+      "crushed_pct": 0.015,
+      "exists": true,
+      "expected_size": [
+        800,
+        800
+      ],
+      "p02": 0.133,
+      "p50": 0.1787,
+      "p98": 0.7001,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2\\mobile-clean.png",
+      "size": [
+        800,
+        800
+      ],
+      "size_matches": true
+    }
+  }
+}

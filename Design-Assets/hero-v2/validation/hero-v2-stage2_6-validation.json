@@ -1,0 +1,609 @@
+{
+  "blend": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\source\\hero-v2-stage2_6.blend",
+  "checks": {
+    "all_eight_renders_exist_and_sized": {
+      "alpha_present": {
+        "11-desktop-dark-alpha": true,
+        "12-desktop-light-alpha": true,
+        "13-mobile-dark-alpha": true,
+        "14-mobile-light-alpha": true
+      },
+      "pass_": true,
+      "review_present": {
+        "01-desktop-dark": true,
+        "02-desktop-light": true,
+        "03-mobile-dark": true,
+        "04-mobile-light": true
+      },
+      "sizes": {
+        "01-desktop-dark": [
+          1600,
+          1400
+        ],
+        "02-desktop-light": [
+          1600,
+          1400
+        ],
+        "03-mobile-dark": [
+          800,
+          800
+        ],
+        "04-mobile-light": [
+          800,
+          800
+        ],
+        "11-desktop-dark-alpha": [
+          1600,
+          1400
+        ],
+        "12-desktop-light-alpha": [
+          1600,
+          1400
+        ],
+        "13-mobile-dark-alpha": [
+          800,
+          800
+        ],
+        "14-mobile-light-alpha": [
+          800,
+          800
+        ]
+      }
+    },
+    "all_nodes_are_simple_spheres": {
+      "pass_": true,
+      "topology": {
+        "CORE_SPHERE": {
+          "boundary_edges": 0,
+          "euler": 2,
+          "faces": 10240,
+          "nonmanifold_edges": 0,
+          "radial_variation_pct": 1.72
+        },
+        "HCAI_SPHERE": {
+          "boundary_edges": 0,
+          "euler": 2,
+          "faces": 5760,
+          "nonmanifold_edges": 0,
+          "radial_variation_pct": 1.31
+        },
+        "HHB_SPHERE": {
+          "boundary_edges": 0,
+          "euler": 2,
+          "faces": 5760,
+          "nonmanifold_edges": 0,
+          "radial_variation_pct": 1.31
+        },
+        "WE_SPHERE": {
+          "boundary_edges": 0,
+          "euler": 2,
+          "faces": 5760,
+          "nonmanifold_edges": 0,
+          "radial_variation_pct": 1.31
+        }
+      }
+    },
+    "alpha_frames_transparent_and_covered": {
+      "measured": {
+        "11-desktop-dark-alpha": {
+          "alpha_coverage_pct": 20.04,
+          "corner_alpha": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            1600,
+            1400
+          ],
+          "transparent_share_pct": 79.79
+        },
+        "12-desktop-light-alpha": {
+          "alpha_coverage_pct": 20.04,
+          "corner_alpha": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            1600,
+            1400
+          ],
+          "transparent_share_pct": 79.79
+        },
+        "13-mobile-dark-alpha": {
+          "alpha_coverage_pct": 24.19,
+          "corner_alpha": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            800,
+            800
+          ],
+          "transparent_share_pct": 75.44
+        },
+        "14-mobile-light-alpha": {
+          "alpha_coverage_pct": 24.19,
+          "corner_alpha": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            800,
+            800
+          ],
+          "transparent_share_pct": 75.44
+        }
+      },
+      "pass_": true,
+      "rule": "all four corners fully transparent, and the nodes+curves cover >3% of the frame"
+    },
+    "forms_separate_from_background": {
+      "measured": {
+        "01-desktop-dark": {
+          "field": 0.0756,
+          "form_p50": 0.4252,
+          "form_pixels": 105013,
+          "separation": 0.3497,
+          "theme": "dark"
+        },
+        "02-desktop-light": {
+          "field": 0.9709,
+          "form_p50": 0.3653,
+          "form_pixels": 112925,
+          "separation": 0.6056,
+          "theme": "light"
+        },
+        "03-mobile-dark": {
+          "field": 0.0756,
+          "form_p50": 0.4227,
+          "form_pixels": 35548,
+          "separation": 0.3471,
+          "theme": "dark"
+        },
+        "04-mobile-light": {
+          "field": 0.9709,
+          "form_p50": 0.3577,
+          "form_pixels": 39136,
+          "separation": 0.6131,
+          "theme": "light"
+        }
+      },
+      "pass_": true
+    },
+    "frontend_untouched": {
+      "found": [],
+      "pass_": true
+    },
+    "mobile_is_not_a_desktop_crop": {
+      "camera_types": {
+        "CAM_DESKTOP": "PERSP",
+        "CAM_MOBILE": "ORTHO"
+      },
+      "measured": {
+        "dark": {
+          "desktop_frame": [
+            1600,
+            1400
+          ],
+          "difference": 0.14103,
+          "mobile_frame": [
+            800,
+            800
+          ],
+          "threshold": 0.01
+        },
+        "light": {
+          "desktop_frame": [
+            1600,
+            1400
+          ],
+          "difference": 0.28967,
+          "mobile_frame": [
+            800,
+            800
+          ],
+          "threshold": 0.01
+        }
+      },
+      "pass_": true,
+      "rule": "the mobile frame must differ from a centre crop of the desktop frame by more than 0.010 mean luminance, and the cameras must stay a perspective/orthographic pair"
+    },
+    "no_clipped_or_blown_highlights": {
+      "measured": {
+        "01-desktop-dark": {
+          "burned_pct": 0.0,
+          "clipped_pct": 0.0,
+          "max_level": 210
+        },
+        "02-desktop-light": {
+          "burned_pct": 0.0,
+          "clipped_pct": 0.0,
+          "max_level": 248
+        },
+        "03-mobile-dark": {
+          "burned_pct": 0.0,
+          "clipped_pct": 0.0,
+          "max_level": 209
+        },
+        "04-mobile-light": {
+          "burned_pct": 0.0,
+          "clipped_pct": 0.0,
+          "max_level": 248
+        }
+      },
+      "pass_": true,
+      "rule": "no pixel may reach 254/255 and at most 0.01% may exceed 250"
+    },
+    "no_glb_or_web_formats": {
+      "found": [],
+      "pass_": true
+    },
+    "no_metallic_materials": {
+      "metallic": {
+        "M2_6_CORE_SHELL": 0.0,
+        "M2_6_HCAI_SHELL": 0.0,
+        "M2_6_HEALTH_SHELL": 0.0,
+        "M2_6_RELATION": 0.0,
+        "M2_6_WEARABLE_SHELL": 0.0
+      },
+      "pass_": true
+    },
+    "no_object_feature_geometry": {
+      "offenders": [],
+      "pass_": true,
+      "rule": "no shell, cavity, inner ball, aperture, band, ring, seam, inlay, button or decorative arc object may exist"
+    },
+    "no_text_or_particles": {
+      "pass_": true,
+      "types": [
+        "CAMERA",
+        "EMPTY",
+        "LIGHT",
+        "MESH"
+      ]
+    },
+    "node_count_preserved": {
+      "groups": [
+        "GRP_CORE",
+        "GRP_HEALTH_BEHAVIOR",
+        "GRP_HUMAN_CENTERED_AI",
+        "GRP_WEARABLE_EDGE"
+      ],
+      "pass_": true
+    },
+    "only_spheres_and_relation_curves": {
+      "all_meshes": [
+        "CORE_SPHERE",
+        "HCAI_SPHERE",
+        "HHB_SPHERE",
+        "REL_CORE_HEALTH_BEHAVIOR",
+        "REL_CORE_HUMAN_CENTERED_AI",
+        "REL_CORE_WEARABLE_EDGE",
+        "WE_SPHERE"
+      ],
+      "curves": [
+        "REL_CORE_HEALTH_BEHAVIOR",
+        "REL_CORE_HUMAN_CENTERED_AI",
+        "REL_CORE_WEARABLE_EDGE"
+      ],
+      "pass_": true,
+      "spheres": [
+        "CORE_SPHERE",
+        "HCAI_SPHERE",
+        "HHB_SPHERE",
+        "WE_SPHERE"
+      ]
+    },
+    "previous_sources_unchanged": {
+      "measured": {
+        "source/hero-v2-graybox.blend": "8dace2c240d4cea9",
+        "source/hero-v2-lookdev.blend": "a440b085505cdc55",
+        "source/hero-v2-stage2_5.blend": "5c2957d2ba2cc61f"
+      },
+      "pass_": true,
+      "recorded": {
+        "source/hero-v2-graybox.blend": "8dace2c240d4cea9",
+        "source/hero-v2-lookdev.blend": "a440b085505cdc55",
+        "source/hero-v2-stage2_5.blend": "5c2957d2ba2cc61f"
+      }
+    },
+    "relation_curves_not_one_orbit": {
+      "curve_faces": {
+        "REL_CORE_HEALTH_BEHAVIOR": 164,
+        "REL_CORE_HUMAN_CENTERED_AI": 164,
+        "REL_CORE_WEARABLE_EDGE": 164
+      },
+      "deviations": [
+        0.0206,
+        0.0388,
+        0.0406
+      ],
+      "pass_": true,
+      "rule": "three distinct deviations from their own chords, so no two curves share a curvature and none can read as an orbit"
+    },
+    "relation_curves_surface_to_surface": {
+      "measured": {
+        "GRP_HEALTH_BEHAVIOR": {
+          "companion_radius": 0.5,
+          "core_radius": 0.725,
+          "curve": "REL_CORE_HEALTH_BEHAVIOR",
+          "end_distance": 0.4968,
+          "end_ok": true,
+          "start_distance": 0.7226,
+          "start_ok": true
+        },
+        "GRP_HUMAN_CENTERED_AI": {
+          "companion_radius": 0.48,
+          "core_radius": 0.725,
+          "curve": "REL_CORE_HUMAN_CENTERED_AI",
+          "end_distance": 0.4776,
+          "end_ok": true,
+          "start_distance": 0.7195,
+          "start_ok": true
+        },
+        "GRP_WEARABLE_EDGE": {
+          "companion_radius": 0.525,
+          "core_radius": 0.725,
+          "curve": "REL_CORE_WEARABLE_EDGE",
+          "end_distance": 0.5224,
+          "end_ok": true,
+          "start_distance": 0.7175,
+          "start_ok": true
+        }
+      },
+      "pass_": true,
+      "tolerance_fraction": 0.02
+    },
+    "safe_margins_kept": {
+      "framing": {
+        "desktop": {
+          "gap_on_page_px": 49.7,
+          "min_edge_pct": 8.05,
+          "required_pct": 8.0
+        },
+        "mobile": {
+          "gap_on_page_px": 25.9,
+          "min_edge_pct": 3.97,
+          "required_pct": 4.0
+        }
+      },
+      "pass_": true
+    },
+    "source_opens_with_stage_tag": {
+      "blend": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\source\\hero-v2-stage2_6.blend",
+      "pass_": true,
+      "value": "2.6 - pure node language (spheres + relation curves)"
+    },
+    "theme_backgrounds_match_tokens": {
+      "measured": {
+        "01-desktop-dark": {
+          "delta": 2,
+          "measured": 19,
+          "theme": "dark",
+          "token": 17
+        },
+        "02-desktop-light": {
+          "delta": 0,
+          "measured": 248,
+          "theme": "light",
+          "token": 248
+        },
+        "03-mobile-dark": {
+          "delta": 2,
+          "measured": 19,
+          "theme": "dark",
+          "token": 17
+        },
+        "04-mobile-light": {
+          "delta": 0,
+          "measured": 248,
+          "theme": "light",
+          "token": 248
+        }
+      },
+      "pass_": true,
+      "tolerance": 12
+    }
+  },
+  "checks_all_pass": true,
+  "counts": {
+    "checks": 19,
+    "passed": 19
+  },
+  "failed": [],
+  "material_assignments": {
+    "CORE_SPHERE": [
+      "M2_6_CORE_SHELL"
+    ],
+    "HCAI_SPHERE": [
+      "M2_6_HCAI_SHELL"
+    ],
+    "HHB_SPHERE": [
+      "M2_6_HEALTH_SHELL"
+    ],
+    "REL_CORE_HEALTH_BEHAVIOR": [
+      "M2_6_RELATION"
+    ],
+    "REL_CORE_HUMAN_CENTERED_AI": [
+      "M2_6_RELATION"
+    ],
+    "REL_CORE_WEARABLE_EDGE": [
+      "M2_6_RELATION"
+    ],
+    "WE_SPHERE": [
+      "M2_6_WEARABLE_SHELL"
+    ]
+  },
+  "renders_inspected": {
+    "01-desktop-dark": {
+      "alpha": false,
+      "burned_pct": 0.0,
+      "bytes": 1672544,
+      "camera": "desktop",
+      "clipped_pct": 0.0,
+      "exists": true,
+      "max_level": 210,
+      "p02": 0.0744,
+      "p50": 0.0756,
+      "p98": 0.6275,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2_6\\01-desktop-dark.png",
+      "size": [
+        1600,
+        1400
+      ],
+      "theme": "dark"
+    },
+    "02-desktop-light": {
+      "alpha": false,
+      "burned_pct": 0.0,
+      "bytes": 392793,
+      "camera": "desktop",
+      "clipped_pct": 0.0,
+      "exists": true,
+      "max_level": 248,
+      "p02": 0.1339,
+      "p50": 0.9709,
+      "p98": 0.9709,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2_6\\02-desktop-light.png",
+      "size": [
+        1600,
+        1400
+      ],
+      "theme": "light"
+    },
+    "03-mobile-dark": {
+      "alpha": false,
+      "burned_pct": 0.0,
+      "bytes": 507105,
+      "camera": "mobile",
+      "clipped_pct": 0.0,
+      "exists": true,
+      "max_level": 209,
+      "p02": 0.0744,
+      "p50": 0.0756,
+      "p98": 0.6729,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2_6\\03-mobile-dark.png",
+      "size": [
+        800,
+        800
+      ],
+      "theme": "dark"
+    },
+    "04-mobile-light": {
+      "alpha": false,
+      "burned_pct": 0.0,
+      "bytes": 153410,
+      "camera": "mobile",
+      "clipped_pct": 0.0,
+      "exists": true,
+      "max_level": 248,
+      "p02": 0.1103,
+      "p50": 0.9709,
+      "p98": 0.9709,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2_6\\04-mobile-light.png",
+      "size": [
+        800,
+        800
+      ],
+      "theme": "light"
+    },
+    "11-desktop-dark-alpha": {
+      "alpha": true,
+      "alpha_coverage_pct": 20.04,
+      "bytes": 1015843,
+      "camera": "desktop",
+      "corner_alpha": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exists": true,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2_6\\11-desktop-dark-alpha.png",
+      "size": [
+        1600,
+        1400
+      ],
+      "theme": "dark",
+      "transparent_share_pct": 79.79
+    },
+    "12-desktop-light-alpha": {
+      "alpha": true,
+      "alpha_coverage_pct": 20.04,
+      "bytes": 1002634,
+      "camera": "desktop",
+      "corner_alpha": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exists": true,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2_6\\12-desktop-light-alpha.png",
+      "size": [
+        1600,
+        1400
+      ],
+      "theme": "light",
+      "transparent_share_pct": 79.79
+    },
+    "13-mobile-dark-alpha": {
+      "alpha": true,
+      "alpha_coverage_pct": 24.19,
+      "bytes": 350633,
+      "camera": "mobile",
+      "corner_alpha": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exists": true,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2_6\\13-mobile-dark-alpha.png",
+      "size": [
+        800,
+        800
+      ],
+      "theme": "dark",
+      "transparent_share_pct": 75.44
+    },
+    "14-mobile-light-alpha": {
+      "alpha": true,
+      "alpha_coverage_pct": 24.19,
+      "bytes": 346954,
+      "camera": "mobile",
+      "corner_alpha": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exists": true,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2_6\\14-mobile-light-alpha.png",
+      "size": [
+        800,
+        800
+      ],
+      "theme": "light",
+      "transparent_share_pct": 75.44
+    }
+  },
+  "total_triangles": 55132,
+  "triangle_counts": {
+    "CORE_SPHERE": 20224,
+    "HCAI_SPHERE": 11328,
+    "HHB_SPHERE": 11328,
+    "REL_CORE_HEALTH_BEHAVIOR": 308,
+    "REL_CORE_HUMAN_CENTERED_AI": 308,
+    "REL_CORE_WEARABLE_EDGE": 308,
+    "WE_SPHERE": 11328
+  }
+}

@@ -1,0 +1,2475 @@
+{
+  "anchors": {
+    "FRAME_01_REST": {
+      "GRP_HEALTH_BEHAVIOR": {
+        "core_distance": 0.7233,
+        "core_radius": 0.725,
+        "end_distance": 0.4974,
+        "end_ok": true,
+        "end_radius": 0.5,
+        "start_ok": true
+      },
+      "GRP_HUMAN_CENTERED_AI": {
+        "core_distance": 0.7216,
+        "core_radius": 0.725,
+        "end_distance": 0.4785,
+        "end_ok": true,
+        "end_radius": 0.48,
+        "start_ok": true
+      },
+      "GRP_WEARABLE_EDGE": {
+        "core_distance": 0.7193,
+        "core_radius": 0.725,
+        "end_distance": 0.5233,
+        "end_ok": true,
+        "end_radius": 0.525,
+        "start_ok": true
+      }
+    },
+    "FRAME_02_EARLY_ROTATION": {
+      "GRP_HEALTH_BEHAVIOR": {
+        "core_distance": 0.7223,
+        "core_radius": 0.725,
+        "end_distance": 0.4974,
+        "end_ok": true,
+        "end_radius": 0.5,
+        "start_ok": true
+      },
+      "GRP_HUMAN_CENTERED_AI": {
+        "core_distance": 0.7222,
+        "core_radius": 0.725,
+        "end_distance": 0.4785,
+        "end_ok": true,
+        "end_radius": 0.48,
+        "start_ok": true
+      },
+      "GRP_WEARABLE_EDGE": {
+        "core_distance": 0.7203,
+        "core_radius": 0.725,
+        "end_distance": 0.5233,
+        "end_ok": true,
+        "end_radius": 0.525,
+        "start_ok": true
+      }
+    },
+    "FRAME_03_MID_STRONGEST_DEPTH": {
+      "GRP_HEALTH_BEHAVIOR": {
+        "core_distance": 0.7205,
+        "core_radius": 0.725,
+        "end_distance": 0.4974,
+        "end_ok": true,
+        "end_radius": 0.5,
+        "start_ok": true
+      },
+      "GRP_HUMAN_CENTERED_AI": {
+        "core_distance": 0.7219,
+        "core_radius": 0.725,
+        "end_distance": 0.4785,
+        "end_ok": true,
+        "end_radius": 0.48,
+        "start_ok": true
+      },
+      "GRP_WEARABLE_EDGE": {
+        "core_distance": 0.7217,
+        "core_radius": 0.725,
+        "end_distance": 0.5234,
+        "end_ok": true,
+        "end_radius": 0.525,
+        "start_ok": true
+      }
+    },
+    "FRAME_04_SETTLED_REVEAL": {
+      "GRP_HEALTH_BEHAVIOR": {
+        "core_distance": 0.7189,
+        "core_radius": 0.725,
+        "end_distance": 0.4974,
+        "end_ok": true,
+        "end_radius": 0.5,
+        "start_ok": true
+      },
+      "GRP_HUMAN_CENTERED_AI": {
+        "core_distance": 0.7215,
+        "core_radius": 0.725,
+        "end_distance": 0.4785,
+        "end_ok": true,
+        "end_radius": 0.48,
+        "start_ok": true
+      },
+      "GRP_WEARABLE_EDGE": {
+        "core_distance": 0.7224,
+        "core_radius": 0.725,
+        "end_distance": 0.5234,
+        "end_ok": true,
+        "end_radius": 0.525,
+        "start_ok": true
+      }
+    }
+  },
+  "blender": "5.2.1 LTS",
+  "cameras": {
+    "desktop": {
+      "base_location": [
+        1.1226,
+        -10.294,
+        0.995
+      ],
+      "fit": {
+        "chosen_distance": 9.871,
+        "per_state": [
+          {
+            "distance": 9.3873,
+            "state": "FRAME_01_REST"
+          },
+          {
+            "distance": 9.4758,
+            "state": "FRAME_02_EARLY_ROTATION"
+          },
+          {
+            "distance": 9.5516,
+            "state": "FRAME_03_MID_STRONGEST_DEPTH"
+          },
+          {
+            "distance": 9.871,
+            "state": "FRAME_04_SETTLED_REVEAL"
+          }
+        ],
+        "sequenced": {
+          "history": [
+            {
+              "reference": 9.871,
+              "worst_margin_pct": 5.653
+            },
+            {
+              "reference": 10.5229,
+              "worst_margin_pct": 8.601
+            }
+          ],
+          "iterations": 2,
+          "per_state_pct": {
+            "FRAME_01_REST": 11.262,
+            "FRAME_02_EARLY_ROTATION": 10.373,
+            "FRAME_03_MID_STRONGEST_DEPTH": 8.601,
+            "FRAME_04_SETTLED_REVEAL": 8.771
+          },
+          "reference": 10.5229,
+          "target_margin_pct": 8.4,
+          "worst_margin_pct": 8.601
+        },
+        "widest_state": "FRAME_04_SETTLED_REVEAL"
+      },
+      "lens_mm": 70.0,
+      "name": "CAMERA_DESKTOP",
+      "per_state_location": {
+        "FRAME_01_REST": [
+          1.1226,
+          -10.294,
+          0.995
+        ],
+        "FRAME_02_EARLY_ROTATION": [
+          1.1726,
+          -10.294,
+          0.995
+        ],
+        "FRAME_03_MID_STRONGEST_DEPTH": [
+          1.2326,
+          -10.294,
+          0.995
+        ],
+        "FRAME_04_SETTLED_REVEAL": [
+          1.1926,
+          -10.294,
+          0.995
+        ]
+      },
+      "type": "PERSP"
+    },
+    "mobile": {
+      "base_location": [
+        1.0462,
+        -9.8297,
+        0.4232
+      ],
+      "fit": {
+        "chosen_ortho_scale": 4.129,
+        "per_state": [
+          {
+            "ortho_scale": 4.0779,
+            "state": "FRAME_01_REST"
+          },
+          {
+            "ortho_scale": 4.129,
+            "state": "FRAME_02_EARLY_ROTATION"
+          },
+          {
+            "ortho_scale": 3.9696,
+            "state": "FRAME_03_MID_STRONGEST_DEPTH"
+          },
+          {
+            "ortho_scale": 3.9489,
+            "state": "FRAME_04_SETTLED_REVEAL"
+          }
+        ],
+        "sequenced": {
+          "history": [
+            {
+              "reference": 4.129,
+              "worst_margin_pct": 2.88
+            },
+            {
+              "reference": 4.2666,
+              "worst_margin_pct": 4.4
+            },
+            {
+              "reference": 4.2666,
+              "worst_margin_pct": 4.4
+            }
+          ],
+          "iterations": 3,
+          "per_state_pct": {
+            "FRAME_01_REST": 4.4,
+            "FRAME_02_EARLY_ROTATION": 5.484,
+            "FRAME_03_MID_STRONGEST_DEPTH": 5.491,
+            "FRAME_04_SETTLED_REVEAL": 5.92
+          },
+          "reference": 4.2666,
+          "target_margin_pct": 4.4,
+          "worst_margin_pct": 4.4
+        },
+        "widest_state": "FRAME_02_EARLY_ROTATION"
+      },
+      "name": "CAMERA_MOBILE",
+      "ortho_scale": 4.2666,
+      "parallax": "none (ORTHO: a lateral move would slide the composition instead of creating parallax)",
+      "type": "ORTHO"
+    }
+  },
+  "checks": {
+    "all_nodes_simple_spheres": {
+      "pass_": true,
+      "topology": {
+        "CORE_SPHERE": {
+          "boundary_edges": 0,
+          "euler": 2,
+          "faces": 10240,
+          "nonmanifold_edges": 0,
+          "radial_variation_pct": 1.72,
+          "vertices": 10114
+        },
+        "HCAI_SPHERE": {
+          "boundary_edges": 0,
+          "euler": 2,
+          "faces": 5760,
+          "nonmanifold_edges": 0,
+          "radial_variation_pct": 1.31,
+          "vertices": 5666
+        },
+        "HHB_SPHERE": {
+          "boundary_edges": 0,
+          "euler": 2,
+          "faces": 5760,
+          "nonmanifold_edges": 0,
+          "radial_variation_pct": 1.31,
+          "vertices": 5666
+        },
+        "WE_SPHERE": {
+          "boundary_edges": 0,
+          "euler": 2,
+          "faces": 5760,
+          "nonmanifold_edges": 0,
+          "radial_variation_pct": 1.31,
+          "vertices": 5666
+        }
+      }
+    },
+    "curvature_still_distinct": {
+      "measured": {
+        "FRAME_01_REST": {
+          "GRP_HEALTH_BEHAVIOR": 0.0406,
+          "GRP_HUMAN_CENTERED_AI": 0.0665,
+          "GRP_WEARABLE_EDGE": 0.0639
+        },
+        "FRAME_02_EARLY_ROTATION": {
+          "GRP_HEALTH_BEHAVIOR": 0.0403,
+          "GRP_HUMAN_CENTERED_AI": 0.0666,
+          "GRP_WEARABLE_EDGE": 0.0653
+        },
+        "FRAME_03_MID_STRONGEST_DEPTH": {
+          "GRP_HEALTH_BEHAVIOR": 0.0393,
+          "GRP_HUMAN_CENTERED_AI": 0.0668,
+          "GRP_WEARABLE_EDGE": 0.067
+        },
+        "FRAME_04_SETTLED_REVEAL": {
+          "GRP_HEALTH_BEHAVIOR": 0.0383,
+          "GRP_HUMAN_CENTERED_AI": 0.0668,
+          "GRP_WEARABLE_EDGE": 0.069
+        }
+      },
+      "pass_": true
+    },
+    "depth_cue_visible_and_bounded": {
+      "bands_pct": {
+        "any_node_max": 12.0,
+        "every_node_min": 0.5,
+        "step_max_min": 1.5
+      },
+      "companion_diameter_change_pct": {
+        "FRAME_01_REST->FRAME_02_EARLY_ROTATION": {
+          "GRP_HEALTH_BEHAVIOR": -2.48,
+          "GRP_HUMAN_CENTERED_AI": 2.9,
+          "GRP_WEARABLE_EDGE": 0.72
+        },
+        "FRAME_02_EARLY_ROTATION->FRAME_03_MID_STRONGEST_DEPTH": {
+          "GRP_HEALTH_BEHAVIOR": -3.44,
+          "GRP_HUMAN_CENTERED_AI": 5.4,
+          "GRP_WEARABLE_EDGE": 1.31
+        },
+        "FRAME_03_MID_STRONGEST_DEPTH->FRAME_04_SETTLED_REVEAL": {
+          "GRP_HEALTH_BEHAVIOR": -2.23,
+          "GRP_HUMAN_CENTERED_AI": 1.87,
+          "GRP_WEARABLE_EDGE": 2.64
+        }
+      },
+      "core_diameter_change_pct": {
+        "FRAME_01_REST->FRAME_02_EARLY_ROTATION": -0.08,
+        "FRAME_02_EARLY_ROTATION->FRAME_03_MID_STRONGEST_DEPTH": -0.09,
+        "FRAME_03_MID_STRONGEST_DEPTH->FRAME_04_SETTLED_REVEAL": 0.06
+      },
+      "note": "apparent projected diameter per consecutive pair. Not every companion swims toward the camera: the one whose arc crosses the view plane changes depth least (measured 0.6%), so the contract is that each step shows a clear change somewhere and every node changes at all - which is what the card's depth cue actually asks for",
+      "pass_": true
+    },
+    "four_nodes_kept": {
+      "groups": {
+        "GRP_CORE": [
+          "CORE_SPHERE"
+        ],
+        "GRP_HEALTH_BEHAVIOR": [
+          "HHB_SPHERE"
+        ],
+        "GRP_HUMAN_CENTERED_AI": [
+          "HCAI_SPHERE"
+        ],
+        "GRP_WEARABLE_EDGE": [
+          "WE_SPHERE"
+        ]
+      },
+      "pass_": true
+    },
+    "four_states_keyframed": {
+      "frames": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "markers": [
+        "FRAME_01_REST",
+        "FRAME_02_EARLY_ROTATION",
+        "FRAME_03_MID_STRONGEST_DEPTH",
+        "FRAME_04_SETTLED_REVEAL"
+      ],
+      "pass_": true
+    },
+    "framing_union_fit": {
+      "pass_": true,
+      "per_state": {
+        "FRAME_01_REST": {
+          "desktop": {
+            "bottom": 13.53,
+            "left": 16.61,
+            "right": 13.62,
+            "top": 11.26
+          },
+          "mobile": {
+            "bottom": 6.02,
+            "left": 7.64,
+            "right": 4.39,
+            "top": 6.95
+          }
+        },
+        "FRAME_02_EARLY_ROTATION": {
+          "desktop": {
+            "bottom": 13.91,
+            "left": 13.02,
+            "right": 16.24,
+            "top": 10.38
+          },
+          "mobile": {
+            "bottom": 6.82,
+            "left": 5.48,
+            "right": 5.48,
+            "top": 6.83
+          }
+        },
+        "FRAME_03_MID_STRONGEST_DEPTH": {
+          "desktop": {
+            "bottom": 15.42,
+            "left": 9.85,
+            "right": 20.99,
+            "top": 8.62
+          },
+          "mobile": {
+            "bottom": 9.17,
+            "left": 5.48,
+            "right": 8.89,
+            "top": 6.56
+          }
+        },
+        "FRAME_04_SETTLED_REVEAL": {
+          "desktop": {
+            "bottom": 12.75,
+            "left": 10.24,
+            "right": 23.63,
+            "top": 8.78
+          },
+          "mobile": {
+            "bottom": 7.55,
+            "left": 5.91,
+            "right": 12.53,
+            "top": 7.3
+          }
+        }
+      }
+    },
+    "no_forbidden_feature_geometry": {
+      "offenders": [],
+      "pass_": true
+    },
+    "no_text_or_particles": {
+      "pass_": true
+    },
+    "relation_weight_identical_to_lock": {
+      "bevel_radius": [
+        0.00259,
+        0.00315,
+        0.0037
+      ],
+      "pass_": true,
+      "stage2_7": [
+        0.0037,
+        0.00315,
+        0.00259
+      ]
+    },
+    "relations_surface_anchored_every_state": {
+      "measured": {
+        "FRAME_01_REST": {
+          "GRP_HEALTH_BEHAVIOR": {
+            "core_distance": 0.7233,
+            "core_radius": 0.725,
+            "end_distance": 0.4974,
+            "end_ok": true,
+            "end_radius": 0.5,
+            "start_ok": true
+          },
+          "GRP_HUMAN_CENTERED_AI": {
+            "core_distance": 0.7216,
+            "core_radius": 0.725,
+            "end_distance": 0.4785,
+            "end_ok": true,
+            "end_radius": 0.48,
+            "start_ok": true
+          },
+          "GRP_WEARABLE_EDGE": {
+            "core_distance": 0.7193,
+            "core_radius": 0.725,
+            "end_distance": 0.5233,
+            "end_ok": true,
+            "end_radius": 0.525,
+            "start_ok": true
+          }
+        },
+        "FRAME_02_EARLY_ROTATION": {
+          "GRP_HEALTH_BEHAVIOR": {
+            "core_distance": 0.7223,
+            "core_radius": 0.725,
+            "end_distance": 0.4974,
+            "end_ok": true,
+            "end_radius": 0.5,
+            "start_ok": true
+          },
+          "GRP_HUMAN_CENTERED_AI": {
+            "core_distance": 0.7222,
+            "core_radius": 0.725,
+            "end_distance": 0.4785,
+            "end_ok": true,
+            "end_radius": 0.48,
+            "start_ok": true
+          },
+          "GRP_WEARABLE_EDGE": {
+            "core_distance": 0.7203,
+            "core_radius": 0.725,
+            "end_distance": 0.5233,
+            "end_ok": true,
+            "end_radius": 0.525,
+            "start_ok": true
+          }
+        },
+        "FRAME_03_MID_STRONGEST_DEPTH": {
+          "GRP_HEALTH_BEHAVIOR": {
+            "core_distance": 0.7205,
+            "core_radius": 0.725,
+            "end_distance": 0.4974,
+            "end_ok": true,
+            "end_radius": 0.5,
+            "start_ok": true
+          },
+          "GRP_HUMAN_CENTERED_AI": {
+            "core_distance": 0.7219,
+            "core_radius": 0.725,
+            "end_distance": 0.4785,
+            "end_ok": true,
+            "end_radius": 0.48,
+            "start_ok": true
+          },
+          "GRP_WEARABLE_EDGE": {
+            "core_distance": 0.7217,
+            "core_radius": 0.725,
+            "end_distance": 0.5234,
+            "end_ok": true,
+            "end_radius": 0.525,
+            "start_ok": true
+          }
+        },
+        "FRAME_04_SETTLED_REVEAL": {
+          "GRP_HEALTH_BEHAVIOR": {
+            "core_distance": 0.7189,
+            "core_radius": 0.725,
+            "end_distance": 0.4974,
+            "end_ok": true,
+            "end_radius": 0.5,
+            "start_ok": true
+          },
+          "GRP_HUMAN_CENTERED_AI": {
+            "core_distance": 0.7215,
+            "core_radius": 0.725,
+            "end_distance": 0.4785,
+            "end_ok": true,
+            "end_radius": 0.48,
+            "start_ok": true
+          },
+          "GRP_WEARABLE_EDGE": {
+            "core_distance": 0.7224,
+            "core_radius": 0.725,
+            "end_distance": 0.5234,
+            "end_ok": true,
+            "end_radius": 0.525,
+            "start_ok": true
+          }
+        }
+      },
+      "pass_": true
+    },
+    "rig_keys_carry_the_states": {
+      "note": "poses read back out of the animation system at scene frames 1-4",
+      "pass_": true,
+      "readback": {
+        "FRAME_01_REST": {
+          "expected_pitch_deg": 0.0,
+          "expected_yaw_deg": 0.0,
+          "pitch_deg": 0.0,
+          "yaw_deg": 0.0
+        },
+        "FRAME_02_EARLY_ROTATION": {
+          "expected_pitch_deg": 3.0,
+          "expected_yaw_deg": 10.0,
+          "pitch_deg": 3.0,
+          "yaw_deg": 10.0
+        },
+        "FRAME_03_MID_STRONGEST_DEPTH": {
+          "expected_pitch_deg": 10.0,
+          "expected_yaw_deg": 26.0,
+          "pitch_deg": 10.0,
+          "yaw_deg": 26.0
+        },
+        "FRAME_04_SETTLED_REVEAL": {
+          "expected_pitch_deg": 7.0,
+          "expected_yaw_deg": 36.0,
+          "pitch_deg": 7.0,
+          "yaw_deg": 36.0
+        }
+      }
+    },
+    "rig_root_has_no_core_child": {
+      "companion_parents": {
+        "GRP_HEALTH_BEHAVIOR": "RIG_ROOT",
+        "GRP_HUMAN_CENTERED_AI": "RIG_ROOT",
+        "GRP_WEARABLE_EDGE": "RIG_ROOT"
+      },
+      "core_parent": "outside the rig",
+      "pass_": true
+    },
+    "rotation_budget": {
+      "pass_": true,
+      "pitch_band": [
+        4.0,
+        12.0
+      ],
+      "pitch_total_deg": 10.0,
+      "yaw_band": [
+        22.0,
+        38.0
+      ],
+      "yaw_total_deg": 36.0
+    },
+    "sequence_min_form_gap": {
+      "gap_px": {
+        "FRAME_01_REST": {
+          "desktop": 46.2,
+          "mobile": 24.8
+        },
+        "FRAME_02_EARLY_ROTATION": {
+          "desktop": 39.2,
+          "mobile": 22.2
+        },
+        "FRAME_03_MID_STRONGEST_DEPTH": {
+          "desktop": 21.8,
+          "mobile": 13.9
+        },
+        "FRAME_04_SETTLED_REVEAL": {
+          "desktop": 2.6,
+          "mobile": 4.1
+        }
+      },
+      "note": "projected silhouette gap between forms, scaled to the real page slot: a sequence must not let two nodes visually collide",
+      "pass_": false,
+      "threshold_px": 5.0
+    },
+    "sources_recorded": {
+      "pass_": true,
+      "sources": {
+        "source/hero-v2-graybox.blend": {
+          "bytes": 1884872,
+          "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\source/hero-v2-graybox.blend",
+          "sha256": "8dace2c240d4cea9d565538b5ea71939f1cca19bec67800d097c6b3b6f60fb27"
+        },
+        "source/hero-v2-lookdev.blend": {
+          "bytes": 1918040,
+          "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\source/hero-v2-lookdev.blend",
+          "sha256": "a440b085505cdc5582f2523ea342e2d8e4312da864dcb375fc2435aadff6ea1a"
+        },
+        "source/hero-v2-stage2_5.blend": {
+          "bytes": 1021640,
+          "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\source/hero-v2-stage2_5.blend",
+          "sha256": "5c2957d2ba2cc61f9c05269b5f5b90707f2c72afd913b0b146abc4183eee7867"
+        },
+        "source/hero-v2-stage2_6.blend": {
+          "bytes": 935967,
+          "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\source/hero-v2-stage2_6.blend",
+          "sha256": "d5d7ae75f2dacc62ba921bad5dbc0eb70e3c7a0c9c030c1fe9bbe4cb76c6d1a3"
+        },
+        "source/hero-v2-stage2_7.blend": {
+          "bytes": 941410,
+          "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\source/hero-v2-stage2_7.blend",
+          "sha256": "78d74e51ad428430be32d49aa495b260a9dbe794c32dd49fc66a8177a18b1a31"
+        },
+        "validation/hero-v2-stage2_7-report.json": {
+          "bytes": 26731,
+          "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\validation/hero-v2-stage2_7-report.json",
+          "sha256": "d3cd61627e234cd568d31ab823908391fbd15bf31ae901136196538bbff08f7c"
+        },
+        "validation/hero-v2-stage2_7-validation.json": {
+          "bytes": 18119,
+          "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\validation/hero-v2-stage2_7-validation.json",
+          "sha256": "fcb580c9819297522d3087ed69c91c3c4fe6e25ee243dfa084f49487473dd10f"
+        }
+      }
+    },
+    "three_relations_per_state": {
+      "pass_": true,
+      "per_state": {
+        "FRAME_01_REST": [
+          "GRP_HEALTH_BEHAVIOR",
+          "GRP_HUMAN_CENTERED_AI",
+          "GRP_WEARABLE_EDGE"
+        ],
+        "FRAME_02_EARLY_ROTATION": [
+          "GRP_HEALTH_BEHAVIOR",
+          "GRP_HUMAN_CENTERED_AI",
+          "GRP_WEARABLE_EDGE"
+        ],
+        "FRAME_03_MID_STRONGEST_DEPTH": [
+          "GRP_HEALTH_BEHAVIOR",
+          "GRP_HUMAN_CENTERED_AI",
+          "GRP_WEARABLE_EDGE"
+        ],
+        "FRAME_04_SETTLED_REVEAL": [
+          "GRP_HEALTH_BEHAVIOR",
+          "GRP_HUMAN_CENTERED_AI",
+          "GRP_WEARABLE_EDGE"
+        ]
+      }
+    },
+    "three_visible_curves_per_state": {
+      "pass_": true,
+      "per_state": {
+        "FRAME_01_REST": [
+          "REL_CORE_HEALTH_BEHAVIOR_F01",
+          "REL_CORE_HUMAN_CENTERED_AI_F01",
+          "REL_CORE_WEARABLE_EDGE_F01"
+        ],
+        "FRAME_02_EARLY_ROTATION": [
+          "REL_CORE_HEALTH_BEHAVIOR_F02",
+          "REL_CORE_HUMAN_CENTERED_AI_F02",
+          "REL_CORE_WEARABLE_EDGE_F02"
+        ],
+        "FRAME_03_MID_STRONGEST_DEPTH": [
+          "REL_CORE_HEALTH_BEHAVIOR_F03",
+          "REL_CORE_HUMAN_CENTERED_AI_F03",
+          "REL_CORE_WEARABLE_EDGE_F03"
+        ],
+        "FRAME_04_SETTLED_REVEAL": [
+          "REL_CORE_HEALTH_BEHAVIOR_F04",
+          "REL_CORE_HUMAN_CENTERED_AI_F04",
+          "REL_CORE_WEARABLE_EDGE_F04"
+        ]
+      }
+    }
+  },
+  "checks_all_pass": false,
+  "composition": {
+    "FRAME_01_REST": {
+      "desktop": {
+        "content_bbox_px": [
+          265.8,
+          189.4,
+          1382.0,
+          1242.3
+        ],
+        "edge_clearance_pct": {
+          "bottom": 13.53,
+          "left": 16.61,
+          "right": 13.62,
+          "top": 11.26
+        },
+        "edge_clearance_px": {
+          "bottom": 189.4,
+          "left": 265.8,
+          "right": 218.0,
+          "top": 157.7
+        },
+        "fill_pct": {
+          "x": 69.77,
+          "y": 75.21
+        },
+        "forms": {
+          "GRP_CORE": {
+            "bbox_px": [
+              540.5,
+              544.0,
+              984.1,
+              984.1
+            ],
+            "height_px": 440.1,
+            "projected_diameter_px": 443.5,
+            "width_px": 443.5
+          },
+          "GRP_HEALTH_BEHAVIOR": {
+            "bbox_px": [
+              1078.0,
+              727.6,
+              1382.0,
+              1030.4
+            ],
+            "height_px": 302.8,
+            "projected_diameter_px": 304.0,
+            "width_px": 304.0
+          },
+          "GRP_HUMAN_CENTERED_AI": {
+            "bbox_px": [
+              265.8,
+              961.3,
+              545.7,
+              1242.3
+            ],
+            "height_px": 281.1,
+            "projected_diameter_px": 281.1,
+            "width_px": 280.0
+          },
+          "GRP_WEARABLE_EDGE": {
+            "bbox_px": [
+              404.6,
+              189.4,
+              696.8,
+              483.4
+            ],
+            "height_px": 294.0,
+            "projected_diameter_px": 294.0,
+            "width_px": 292.2
+          }
+        },
+        "meshes": {
+          "CORE_SPHERE": {
+            "height_px": 440.1,
+            "width_px": 443.5
+          },
+          "HCAI_SPHERE": {
+            "height_px": 281.1,
+            "width_px": 280.0
+          },
+          "HHB_SPHERE": {
+            "height_px": 302.8,
+            "width_px": 304.0
+          },
+          "WE_SPHERE": {
+            "height_px": 294.0,
+            "width_px": 292.2
+          }
+        },
+        "min_gap_scaled_to_page_px": 46.2,
+        "min_silhouette_gap_px": 107.8,
+        "resolution": [
+          1600,
+          1400
+        ],
+        "silhouette_gaps_px": {
+          "GRP_CORE|GRP_HEALTH_BEHAVIOR": 107.8,
+          "GRP_CORE|GRP_HUMAN_CENTERED_AI": 128.8,
+          "GRP_CORE|GRP_WEARABLE_EDGE": 109.5,
+          "GRP_HEALTH_BEHAVIOR|GRP_HUMAN_CENTERED_AI": 561.7,
+          "GRP_HEALTH_BEHAVIOR|GRP_WEARABLE_EDGE": 570.0,
+          "GRP_HUMAN_CENTERED_AI|GRP_WEARABLE_EDGE": 491.4
+        }
+      },
+      "mobile": {
+        "content_bbox_px": [
+          61.1,
+          48.2,
+          764.9,
+          744.4
+        ],
+        "edge_clearance_pct": {
+          "bottom": 6.02,
+          "left": 7.64,
+          "right": 4.39,
+          "top": 6.95
+        },
+        "edge_clearance_px": {
+          "bottom": 48.2,
+          "left": 61.1,
+          "right": 35.1,
+          "top": 55.6
+        },
+        "fill_pct": {
+          "x": 87.98,
+          "y": 87.03
+        },
+        "forms": {
+          "GRP_CORE": {
+            "bbox_px": [
+              246.2,
+              305.0,
+              518.0,
+              574.7
+            ],
+            "height_px": 269.7,
+            "projected_diameter_px": 271.8,
+            "width_px": 271.8
+          },
+          "GRP_HEALTH_BEHAVIOR": {
+            "bbox_px": [
+              578.2,
+              416.7,
+              764.9,
+              604.2
+            ],
+            "height_px": 187.5,
+            "projected_diameter_px": 187.5,
+            "width_px": 186.7
+          },
+          "GRP_HUMAN_CENTERED_AI": {
+            "bbox_px": [
+              61.1,
+              564.4,
+              240.5,
+              744.4
+            ],
+            "height_px": 180.0,
+            "projected_diameter_px": 180.0,
+            "width_px": 179.4
+          },
+          "GRP_WEARABLE_EDGE": {
+            "bbox_px": [
+              139.2,
+              48.2,
+              335.4,
+              245.0
+            ],
+            "height_px": 196.9,
+            "projected_diameter_px": 196.9,
+            "width_px": 196.2
+          }
+        },
+        "meshes": {
+          "CORE_SPHERE": {
+            "height_px": 269.7,
+            "width_px": 271.8
+          },
+          "HCAI_SPHERE": {
+            "height_px": 180.0,
+            "width_px": 179.4
+          },
+          "HHB_SPHERE": {
+            "height_px": 187.5,
+            "width_px": 186.7
+          },
+          "WE_SPHERE": {
+            "height_px": 196.9,
+            "width_px": 196.2
+          }
+        },
+        "min_gap_scaled_to_page_px": 24.8,
+        "min_silhouette_gap_px": 68.8,
+        "resolution": [
+          800,
+          800
+        ],
+        "silhouette_gaps_px": {
+          "GRP_CORE|GRP_HEALTH_BEHAVIOR": 68.8,
+          "GRP_CORE|GRP_HUMAN_CENTERED_AI": 90.2,
+          "GRP_CORE|GRP_WEARABLE_EDGE": 93.6,
+          "GRP_HEALTH_BEHAVIOR|GRP_HUMAN_CENTERED_AI": 357.2,
+          "GRP_HEALTH_BEHAVIOR|GRP_WEARABLE_EDGE": 374.7,
+          "GRP_HUMAN_CENTERED_AI|GRP_WEARABLE_EDGE": 326.8
+        }
+      }
+    },
+    "FRAME_02_EARLY_ROTATION": {
+      "desktop": {
+        "content_bbox_px": [
+          208.3,
+          194.8,
+          1340.1,
+          1254.7
+        ],
+        "edge_clearance_pct": {
+          "bottom": 13.91,
+          "left": 13.02,
+          "right": 16.24,
+          "top": 10.38
+        },
+        "edge_clearance_px": {
+          "bottom": 194.8,
+          "left": 208.3,
+          "right": 259.9,
+          "top": 145.3
+        },
+        "fill_pct": {
+          "x": 70.74,
+          "y": 75.71
+        },
+        "forms": {
+          "GRP_CORE": {
+            "bbox_px": [
+              525.4,
+              544.3,
+              968.8,
+              984.2
+            ],
+            "height_px": 439.9,
+            "projected_diameter_px": 443.4,
+            "width_px": 443.4
+          },
+          "GRP_HEALTH_BEHAVIOR": {
+            "bbox_px": [
+              1043.3,
+              740.2,
+              1340.1,
+              1036.2
+            ],
+            "height_px": 296.0,
+            "projected_diameter_px": 296.8,
+            "width_px": 296.8
+          },
+          "GRP_HUMAN_CENTERED_AI": {
+            "bbox_px": [
+              208.3,
+              965.8,
+              496.7,
+              1254.7
+            ],
+            "height_px": 288.9,
+            "projected_diameter_px": 288.9,
+            "width_px": 288.4
+          },
+          "GRP_WEARABLE_EDGE": {
+            "bbox_px": [
+              350.8,
+              194.8,
+              645.2,
+              490.6
+            ],
+            "height_px": 295.8,
+            "projected_diameter_px": 295.8,
+            "width_px": 294.4
+          }
+        },
+        "meshes": {
+          "CORE_SPHERE": {
+            "height_px": 439.9,
+            "width_px": 443.4
+          },
+          "HCAI_SPHERE": {
+            "height_px": 288.9,
+            "width_px": 288.4
+          },
+          "HHB_SPHERE": {
+            "height_px": 296.0,
+            "width_px": 296.8
+          },
+          "WE_SPHERE": {
+            "height_px": 295.8,
+            "width_px": 294.4
+          }
+        },
+        "min_gap_scaled_to_page_px": 39.2,
+        "min_silhouette_gap_px": 91.4,
+        "resolution": [
+          1600,
+          1400
+        ],
+        "silhouette_gaps_px": {
+          "GRP_CORE|GRP_HEALTH_BEHAVIOR": 91.4,
+          "GRP_CORE|GRP_HUMAN_CENTERED_AI": 158.2,
+          "GRP_CORE|GRP_WEARABLE_EDGE": 120.8,
+          "GRP_HEALTH_BEHAVIOR|GRP_HUMAN_CENTERED_AI": 575.0,
+          "GRP_HEALTH_BEHAVIOR|GRP_WEARABLE_EDGE": 585.3,
+          "GRP_HUMAN_CENTERED_AI|GRP_WEARABLE_EDGE": 488.7
+        }
+      },
+      "mobile": {
+        "content_bbox_px": [
+          43.9,
+          54.6,
+          756.1,
+          745.4
+        ],
+        "edge_clearance_pct": {
+          "bottom": 6.82,
+          "left": 5.48,
+          "right": 5.48,
+          "top": 6.83
+        },
+        "edge_clearance_px": {
+          "bottom": 54.6,
+          "left": 43.9,
+          "right": 43.9,
+          "top": 54.6
+        },
+        "fill_pct": {
+          "x": 89.03,
+          "y": 86.35
+        },
+        "forms": {
+          "GRP_CORE": {
+            "bbox_px": [
+              246.2,
+              305.0,
+              518.0,
+              574.7
+            ],
+            "height_px": 269.7,
+            "projected_diameter_px": 271.8,
+            "width_px": 271.8
+          },
+          "GRP_HEALTH_BEHAVIOR": {
+            "bbox_px": [
+              569.3,
+              422.7,
+              756.1,
+              610.1
+            ],
+            "height_px": 187.4,
+            "projected_diameter_px": 187.4,
+            "width_px": 186.8
+          },
+          "GRP_HUMAN_CENTERED_AI": {
+            "bbox_px": [
+              43.9,
+              565.4,
+              223.3,
+              745.4
+            ],
+            "height_px": 179.9,
+            "projected_diameter_px": 179.9,
+            "width_px": 179.5
+          },
+          "GRP_WEARABLE_EDGE": {
+            "bbox_px": [
+              114.4,
+              54.6,
+              310.6,
+              251.4
+            ],
+            "height_px": 196.8,
+            "projected_diameter_px": 196.8,
+            "width_px": 196.2
+          }
+        },
+        "meshes": {
+          "CORE_SPHERE": {
+            "height_px": 269.7,
+            "width_px": 271.8
+          },
+          "HCAI_SPHERE": {
+            "height_px": 179.9,
+            "width_px": 179.5
+          },
+          "HHB_SPHERE": {
+            "height_px": 187.4,
+            "width_px": 186.8
+          },
+          "WE_SPHERE": {
+            "height_px": 196.8,
+            "width_px": 196.2
+          }
+        },
+        "min_gap_scaled_to_page_px": 22.2,
+        "min_silhouette_gap_px": 61.7,
+        "resolution": [
+          800,
+          800
+        ],
+        "silhouette_gaps_px": {
+          "GRP_CORE|GRP_HEALTH_BEHAVIOR": 61.7,
+          "GRP_CORE|GRP_HUMAN_CENTERED_AI": 103.7,
+          "GRP_CORE|GRP_WEARABLE_EDGE": 99.8,
+          "GRP_HEALTH_BEHAVIOR|GRP_HUMAN_CENTERED_AI": 363.9,
+          "GRP_HEALTH_BEHAVIOR|GRP_WEARABLE_EDGE": 386.8,
+          "GRP_HUMAN_CENTERED_AI|GRP_WEARABLE_EDGE": 320.2
+        }
+      }
+    },
+    "FRAME_03_MID_STRONGEST_DEPTH": {
+      "desktop": {
+        "content_bbox_px": [
+          157.5,
+          215.9,
+          1264.2,
+          1279.4
+        ],
+        "edge_clearance_pct": {
+          "bottom": 15.42,
+          "left": 9.85,
+          "right": 20.99,
+          "top": 8.62
+        },
+        "edge_clearance_px": {
+          "bottom": 215.9,
+          "left": 157.5,
+          "right": 335.8,
+          "top": 120.6
+        },
+        "fill_pct": {
+          "x": 69.17,
+          "y": 75.96
+        },
+        "forms": {
+          "GRP_CORE": {
+            "bbox_px": [
+              507.3,
+              544.6,
+              950.4,
+              984.2
+            ],
+            "height_px": 439.6,
+            "projected_diameter_px": 443.1,
+            "width_px": 443.1
+          },
+          "GRP_HEALTH_BEHAVIOR": {
+            "bbox_px": [
+              977.4,
+              760.0,
+              1264.2,
+              1046.7
+            ],
+            "height_px": 286.7,
+            "projected_diameter_px": 286.8,
+            "width_px": 286.8
+          },
+          "GRP_HUMAN_CENTERED_AI": {
+            "bbox_px": [
+              157.5,
+              975.0,
+              461.8,
+              1279.4
+            ],
+            "height_px": 304.4,
+            "projected_diameter_px": 304.4,
+            "width_px": 304.2
+          },
+          "GRP_WEARABLE_EDGE": {
+            "bbox_px": [
+              263.9,
+              215.9,
+              562.4,
+              514.7
+            ],
+            "height_px": 298.8,
+            "projected_diameter_px": 298.8,
+            "width_px": 298.6
+          }
+        },
+        "meshes": {
+          "CORE_SPHERE": {
+            "height_px": 439.6,
+            "width_px": 443.1
+          },
+          "HCAI_SPHERE": {
+            "height_px": 304.4,
+            "width_px": 304.2
+          },
+          "HHB_SPHERE": {
+            "height_px": 286.7,
+            "width_px": 286.8
+          },
+          "WE_SPHERE": {
+            "height_px": 298.8,
+            "width_px": 298.6
+          }
+        },
+        "min_gap_scaled_to_page_px": 21.8,
+        "min_silhouette_gap_px": 50.8,
+        "resolution": [
+          1600,
+          1400
+        ],
+        "silhouette_gaps_px": {
+          "GRP_CORE|GRP_HEALTH_BEHAVIOR": 50.8,
+          "GRP_CORE|GRP_HUMAN_CENTERED_AI": 179.7,
+          "GRP_CORE|GRP_WEARABLE_EDGE": 138.0,
+          "GRP_HEALTH_BEHAVIOR|GRP_HUMAN_CENTERED_AI": 545.4,
+          "GRP_HEALTH_BEHAVIOR|GRP_WEARABLE_EDGE": 594.6,
+          "GRP_HUMAN_CENTERED_AI|GRP_WEARABLE_EDGE": 467.1
+        }
+      },
+      "mobile": {
+        "content_bbox_px": [
+          43.8,
+          73.3,
+          728.9,
+          747.5
+        ],
+        "edge_clearance_pct": {
+          "bottom": 9.17,
+          "left": 5.48,
+          "right": 8.89,
+          "top": 6.56
+        },
+        "edge_clearance_px": {
+          "bottom": 73.3,
+          "left": 43.8,
+          "right": 71.1,
+          "top": 52.5
+        },
+        "fill_pct": {
+          "x": 85.63,
+          "y": 84.27
+        },
+        "forms": {
+          "GRP_CORE": {
+            "bbox_px": [
+              246.2,
+              305.0,
+              518.0,
+              574.7
+            ],
+            "height_px": 269.7,
+            "projected_diameter_px": 271.8,
+            "width_px": 271.8
+          },
+          "GRP_HEALTH_BEHAVIOR": {
+            "bbox_px": [
+              542.1,
+              433.1,
+              728.9,
+              620.4
+            ],
+            "height_px": 187.3,
+            "projected_diameter_px": 187.3,
+            "width_px": 186.8
+          },
+          "GRP_HUMAN_CENTERED_AI": {
+            "bbox_px": [
+              43.8,
+              567.7,
+              223.1,
+              747.5
+            ],
+            "height_px": 179.8,
+            "projected_diameter_px": 179.8,
+            "width_px": 179.3
+          },
+          "GRP_WEARABLE_EDGE": {
+            "bbox_px": [
+              71.9,
+              73.3,
+              267.9,
+              270.1
+            ],
+            "height_px": 196.8,
+            "projected_diameter_px": 196.8,
+            "width_px": 196.0
+          }
+        },
+        "meshes": {
+          "CORE_SPHERE": {
+            "height_px": 269.7,
+            "width_px": 271.8
+          },
+          "HCAI_SPHERE": {
+            "height_px": 179.8,
+            "width_px": 179.3
+          },
+          "HHB_SPHERE": {
+            "height_px": 187.3,
+            "width_px": 186.8
+          },
+          "WE_SPHERE": {
+            "height_px": 196.8,
+            "width_px": 196.0
+          }
+        },
+        "min_gap_scaled_to_page_px": 13.9,
+        "min_silhouette_gap_px": 38.7,
+        "resolution": [
+          800,
+          800
+        ],
+        "silhouette_gaps_px": {
+          "GRP_CORE|GRP_HEALTH_BEHAVIOR": 38.7,
+          "GRP_CORE|GRP_HUMAN_CENTERED_AI": 105.4,
+          "GRP_CORE|GRP_WEARABLE_EDGE": 108.3,
+          "GRP_HEALTH_BEHAVIOR|GRP_HUMAN_CENTERED_AI": 335.8,
+          "GRP_HEALTH_BEHAVIOR|GRP_WEARABLE_EDGE": 393.7,
+          "GRP_HUMAN_CENTERED_AI|GRP_WEARABLE_EDGE": 298.9
+        }
+      }
+    },
+    "FRAME_04_SETTLED_REVEAL": {
+      "desktop": {
+        "content_bbox_px": [
+          163.8,
+          178.5,
+          1221.9,
+          1277.1
+        ],
+        "edge_clearance_pct": {
+          "bottom": 12.75,
+          "left": 10.24,
+          "right": 23.63,
+          "top": 8.78
+        },
+        "edge_clearance_px": {
+          "bottom": 178.5,
+          "left": 163.8,
+          "right": 378.1,
+          "top": 122.9
+        },
+        "fill_pct": {
+          "x": 66.13,
+          "y": 78.47
+        },
+        "forms": {
+          "GRP_CORE": {
+            "bbox_px": [
+              519.4,
+              544.4,
+              962.6,
+              984.2
+            ],
+            "height_px": 439.8,
+            "projected_diameter_px": 443.3,
+            "width_px": 443.3
+          },
+          "GRP_HEALTH_BEHAVIOR": {
+            "bbox_px": [
+              941.5,
+              762.9,
+              1221.9,
+              1043.8
+            ],
+            "height_px": 280.9,
+            "projected_diameter_px": 280.9,
+            "width_px": 280.4
+          },
+          "GRP_HUMAN_CENTERED_AI": {
+            "bbox_px": [
+              163.8,
+              966.9,
+              473.6,
+              1277.1
+            ],
+            "height_px": 310.2,
+            "projected_diameter_px": 310.2,
+            "width_px": 309.7
+          },
+          "GRP_WEARABLE_EDGE": {
+            "bbox_px": [
+              247.4,
+              178.5,
+              553.6,
+              485.6
+            ],
+            "height_px": 307.1,
+            "projected_diameter_px": 307.1,
+            "width_px": 306.2
+          }
+        },
+        "meshes": {
+          "CORE_SPHERE": {
+            "height_px": 439.8,
+            "width_px": 443.3
+          },
+          "HCAI_SPHERE": {
+            "height_px": 310.2,
+            "width_px": 309.7
+          },
+          "HHB_SPHERE": {
+            "height_px": 280.9,
+            "width_px": 280.4
+          },
+          "WE_SPHERE": {
+            "height_px": 307.1,
+            "width_px": 306.2
+          }
+        },
+        "min_gap_scaled_to_page_px": 2.6,
+        "min_silhouette_gap_px": 6.1,
+        "resolution": [
+          1600,
+          1400
+        ],
+        "silhouette_gaps_px": {
+          "GRP_CORE|GRP_HEALTH_BEHAVIOR": 6.1,
+          "GRP_CORE|GRP_HUMAN_CENTERED_AI": 176.0,
+          "GRP_CORE|GRP_WEARABLE_EDGE": 175.1,
+          "GRP_HEALTH_BEHAVIOR|GRP_HUMAN_CENTERED_AI": 498.1,
+          "GRP_HEALTH_BEHAVIOR|GRP_WEARABLE_EDGE": 593.8,
+          "GRP_HUMAN_CENTERED_AI|GRP_WEARABLE_EDGE": 485.5
+        }
+      },
+      "mobile": {
+        "content_bbox_px": [
+          47.3,
+          60.4,
+          699.7,
+          741.6
+        ],
+        "edge_clearance_pct": {
+          "bottom": 7.55,
+          "left": 5.91,
+          "right": 12.53,
+          "top": 7.3
+        },
+        "edge_clearance_px": {
+          "bottom": 60.4,
+          "left": 47.3,
+          "right": 100.3,
+          "top": 58.4
+        },
+        "fill_pct": {
+          "x": 81.56,
+          "y": 85.15
+        },
+        "forms": {
+          "GRP_CORE": {
+            "bbox_px": [
+              246.2,
+              305.0,
+              518.0,
+              574.7
+            ],
+            "height_px": 269.7,
+            "projected_diameter_px": 271.8,
+            "width_px": 271.8
+          },
+          "GRP_HEALTH_BEHAVIOR": {
+            "bbox_px": [
+              512.9,
+              433.7,
+              699.7,
+              621.0
+            ],
+            "height_px": 187.4,
+            "projected_diameter_px": 187.4,
+            "width_px": 186.8
+          },
+          "GRP_HUMAN_CENTERED_AI": {
+            "bbox_px": [
+              47.3,
+              561.7,
+              226.3,
+              741.6
+            ],
+            "height_px": 179.9,
+            "projected_diameter_px": 179.9,
+            "width_px": 179.0
+          },
+          "GRP_WEARABLE_EDGE": {
+            "bbox_px": [
+              62.9,
+              60.4,
+              258.7,
+              257.2
+            ],
+            "height_px": 196.8,
+            "projected_diameter_px": 196.8,
+            "width_px": 195.7
+          }
+        },
+        "meshes": {
+          "CORE_SPHERE": {
+            "height_px": 269.7,
+            "width_px": 271.8
+          },
+          "HCAI_SPHERE": {
+            "height_px": 179.9,
+            "width_px": 179.0
+          },
+          "HHB_SPHERE": {
+            "height_px": 187.4,
+            "width_px": 186.8
+          },
+          "WE_SPHERE": {
+            "height_px": 196.8,
+            "width_px": 195.7
+          }
+        },
+        "min_gap_scaled_to_page_px": 4.1,
+        "min_silhouette_gap_px": 11.5,
+        "resolution": [
+          800,
+          800
+        ],
+        "silhouette_gaps_px": {
+          "GRP_CORE|GRP_HEALTH_BEHAVIOR": 11.5,
+          "GRP_CORE|GRP_HUMAN_CENTERED_AI": 99.0,
+          "GRP_CORE|GRP_WEARABLE_EDGE": 124.2,
+          "GRP_HEALTH_BEHAVIOR|GRP_HUMAN_CENTERED_AI": 302.9,
+          "GRP_HEALTH_BEHAVIOR|GRP_WEARABLE_EDGE": 386.4,
+          "GRP_HUMAN_CENTERED_AI|GRP_WEARABLE_EDGE": 305.1
+        }
+      }
+    }
+  },
+  "curvature": {
+    "FRAME_01_REST": {
+      "GRP_HEALTH_BEHAVIOR": 0.0406,
+      "GRP_HUMAN_CENTERED_AI": 0.0665,
+      "GRP_WEARABLE_EDGE": 0.0639
+    },
+    "FRAME_02_EARLY_ROTATION": {
+      "GRP_HEALTH_BEHAVIOR": 0.0403,
+      "GRP_HUMAN_CENTERED_AI": 0.0666,
+      "GRP_WEARABLE_EDGE": 0.0653
+    },
+    "FRAME_03_MID_STRONGEST_DEPTH": {
+      "GRP_HEALTH_BEHAVIOR": 0.0393,
+      "GRP_HUMAN_CENTERED_AI": 0.0668,
+      "GRP_WEARABLE_EDGE": 0.067
+    },
+    "FRAME_04_SETTLED_REVEAL": {
+      "GRP_HEALTH_BEHAVIOR": 0.0383,
+      "GRP_HUMAN_CENTERED_AI": 0.0668,
+      "GRP_WEARABLE_EDGE": 0.069
+    }
+  },
+  "curve_topology": {
+    "REL_CORE_HEALTH_BEHAVIOR_F01": {
+      "boundary_edges": 40,
+      "euler": 2,
+      "faces": 156,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 56.83,
+      "vertices": 170
+    },
+    "REL_CORE_HEALTH_BEHAVIOR_F02": {
+      "boundary_edges": 40,
+      "euler": 2,
+      "faces": 156,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 59.57,
+      "vertices": 170
+    },
+    "REL_CORE_HEALTH_BEHAVIOR_F03": {
+      "boundary_edges": 40,
+      "euler": 2,
+      "faces": 156,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 63.5,
+      "vertices": 170
+    },
+    "REL_CORE_HEALTH_BEHAVIOR_F04": {
+      "boundary_edges": 40,
+      "euler": 2,
+      "faces": 156,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 66.44,
+      "vertices": 170
+    },
+    "REL_CORE_HUMAN_CENTERED_AI_F01": {
+      "boundary_edges": 40,
+      "euler": 2,
+      "faces": 156,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 80.38,
+      "vertices": 170
+    },
+    "REL_CORE_HUMAN_CENTERED_AI_F02": {
+      "boundary_edges": 40,
+      "euler": 2,
+      "faces": 156,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 75.72,
+      "vertices": 170
+    },
+    "REL_CORE_HUMAN_CENTERED_AI_F03": {
+      "boundary_edges": 40,
+      "euler": 2,
+      "faces": 156,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 70.46,
+      "vertices": 170
+    },
+    "REL_CORE_HUMAN_CENTERED_AI_F04": {
+      "boundary_edges": 40,
+      "euler": 2,
+      "faces": 156,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 69.02,
+      "vertices": 170
+    },
+    "REL_CORE_WEARABLE_EDGE_F01": {
+      "boundary_edges": 40,
+      "euler": 2,
+      "faces": 156,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 103.79,
+      "vertices": 170
+    },
+    "REL_CORE_WEARABLE_EDGE_F02": {
+      "boundary_edges": 40,
+      "euler": 2,
+      "faces": 156,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 99.78,
+      "vertices": 170
+    },
+    "REL_CORE_WEARABLE_EDGE_F03": {
+      "boundary_edges": 40,
+      "euler": 2,
+      "faces": 156,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 94.13,
+      "vertices": 170
+    },
+    "REL_CORE_WEARABLE_EDGE_F04": {
+      "boundary_edges": 40,
+      "euler": 2,
+      "faces": 156,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 88.17,
+      "vertices": 170
+    }
+  },
+  "node_topology": {
+    "CORE_SPHERE": {
+      "boundary_edges": 0,
+      "euler": 2,
+      "faces": 10240,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 1.72,
+      "vertices": 10114
+    },
+    "HCAI_SPHERE": {
+      "boundary_edges": 0,
+      "euler": 2,
+      "faces": 5760,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 1.31,
+      "vertices": 5666
+    },
+    "HHB_SPHERE": {
+      "boundary_edges": 0,
+      "euler": 2,
+      "faces": 5760,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 1.31,
+      "vertices": 5666
+    },
+    "WE_SPHERE": {
+      "boundary_edges": 0,
+      "euler": 2,
+      "faces": 5760,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 1.31,
+      "vertices": 5666
+    }
+  },
+  "pivot": {
+    "core_centre": [
+      -0.06,
+      -0.22,
+      -0.04
+    ],
+    "direction": [
+      0.97904,
+      0.20365,
+      0.0
+    ],
+    "note": "RIG_ROOT origin; frame 01 is unaffected by construction because the offset term is (I - R)\u00b7P and R is the identity at rest",
+    "offset": 0.06,
+    "origin": [
+      -0.00126,
+      -0.20778,
+      -0.04
+    ],
+    "scale": 0.06,
+    "sign": 1
+  },
+  "projections": {
+    "FRAME_01_REST": {
+      "desktop": {
+        "GRP_CORE": {
+          "apparent_diameter_pct": 27.639,
+          "centroid": [
+            0.47652,
+            0.45448
+          ]
+        },
+        "GRP_HEALTH_BEHAVIOR": {
+          "apparent_diameter_pct": 19.176,
+          "centroid": [
+            0.76816,
+            0.37244
+          ]
+        },
+        "GRP_HUMAN_CENTERED_AI": {
+          "apparent_diameter_pct": 17.446,
+          "centroid": [
+            0.25405,
+            0.21357
+          ]
+        },
+        "GRP_WEARABLE_EDGE": {
+          "apparent_diameter_pct": 18.235,
+          "centroid": [
+            0.34451,
+            0.75916
+          ]
+        }
+      },
+      "mobile": {
+        "GRP_CORE": {
+          "apparent_diameter_pct": 33.983,
+          "centroid": [
+            0.47758,
+            0.45017
+          ]
+        },
+        "GRP_HEALTH_BEHAVIOR": {
+          "apparent_diameter_pct": 23.189,
+          "centroid": [
+            0.83944,
+            0.36196
+          ]
+        },
+        "GRP_HUMAN_CENTERED_AI": {
+          "apparent_diameter_pct": 22.318,
+          "centroid": [
+            0.18849,
+            0.18201
+          ]
+        },
+        "GRP_WEARABLE_EDGE": {
+          "apparent_diameter_pct": 24.526,
+          "centroid": [
+            0.29667,
+            0.81677
+          ]
+        }
+      }
+    },
+    "FRAME_02_EARLY_ROTATION": {
+      "desktop": {
+        "GRP_CORE": {
+          "apparent_diameter_pct": 27.617,
+          "centroid": [
+            0.46705,
+            0.45437
+          ]
+        },
+        "GRP_HEALTH_BEHAVIOR": {
+          "apparent_diameter_pct": 18.701,
+          "centroid": [
+            0.74425,
+            0.3659
+          ]
+        },
+        "GRP_HUMAN_CENTERED_AI": {
+          "apparent_diameter_pct": 17.952,
+          "centroid": [
+            0.2209,
+            0.20762
+          ]
+        },
+        "GRP_WEARABLE_EDGE": {
+          "apparent_diameter_pct": 18.367,
+          "centroid": [
+            0.31168,
+            0.75467
+          ]
+        }
+      },
+      "mobile": {
+        "GRP_CORE": {
+          "apparent_diameter_pct": 33.983,
+          "centroid": [
+            0.47758,
+            0.45017
+          ]
+        },
+        "GRP_HEALTH_BEHAVIOR": {
+          "apparent_diameter_pct": 23.215,
+          "centroid": [
+            0.8284,
+            0.3545
+          ]
+        },
+        "GRP_HUMAN_CENTERED_AI": {
+          "apparent_diameter_pct": 22.28,
+          "centroid": [
+            0.167,
+            0.18072
+          ]
+        },
+        "GRP_WEARABLE_EDGE": {
+          "apparent_diameter_pct": 24.497,
+          "centroid": [
+            0.26567,
+            0.80876
+          ]
+        }
+      }
+    },
+    "FRAME_03_MID_STRONGEST_DEPTH": {
+      "desktop": {
+        "GRP_CORE": {
+          "apparent_diameter_pct": 27.592,
+          "centroid": [
+            0.4557,
+            0.45423
+          ]
+        },
+        "GRP_HEALTH_BEHAVIOR": {
+          "apparent_diameter_pct": 18.057,
+          "centroid": [
+            0.70008,
+            0.35507
+          ]
+        },
+        "GRP_HUMAN_CENTERED_AI": {
+          "apparent_diameter_pct": 18.921,
+          "centroid": [
+            0.1943,
+            0.19561
+          ]
+        },
+        "GRP_WEARABLE_EDGE": {
+          "apparent_diameter_pct": 18.607,
+          "centroid": [
+            0.2588,
+            0.73853
+          ]
+        }
+      },
+      "mobile": {
+        "GRP_CORE": {
+          "apparent_diameter_pct": 33.983,
+          "centroid": [
+            0.47758,
+            0.45017
+          ]
+        },
+        "GRP_HEALTH_BEHAVIOR": {
+          "apparent_diameter_pct": 23.27,
+          "centroid": [
+            0.79435,
+            0.34158
+          ]
+        },
+        "GRP_HUMAN_CENTERED_AI": {
+          "apparent_diameter_pct": 22.255,
+          "centroid": [
+            0.16683,
+            0.178
+          ]
+        },
+        "GRP_WEARABLE_EDGE": {
+          "apparent_diameter_pct": 24.437,
+          "centroid": [
+            0.21238,
+            0.78532
+          ]
+        }
+      }
+    },
+    "FRAME_04_SETTLED_REVEAL": {
+      "desktop": {
+        "GRP_CORE": {
+          "apparent_diameter_pct": 27.609,
+          "centroid": [
+            0.46327,
+            0.45432
+          ]
+        },
+        "GRP_HEALTH_BEHAVIOR": {
+          "apparent_diameter_pct": 17.654,
+          "centroid": [
+            0.67572,
+            0.35505
+          ]
+        },
+        "GRP_HUMAN_CENTERED_AI": {
+          "apparent_diameter_pct": 19.274,
+          "centroid": [
+            0.19995,
+            0.19932
+          ]
+        },
+        "GRP_WEARABLE_EDGE": {
+          "apparent_diameter_pct": 19.098,
+          "centroid": [
+            0.2509,
+            0.7622
+          ]
+        }
+      },
+      "mobile": {
+        "GRP_CORE": {
+          "apparent_diameter_pct": 33.983,
+          "centroid": [
+            0.47758,
+            0.45017
+          ]
+        },
+        "GRP_HEALTH_BEHAVIOR": {
+          "apparent_diameter_pct": 23.314,
+          "centroid": [
+            0.75791,
+            0.34081
+          ]
+        },
+        "GRP_HUMAN_CENTERED_AI": {
+          "apparent_diameter_pct": 22.251,
+          "centroid": [
+            0.17099,
+            0.18541
+          ]
+        },
+        "GRP_WEARABLE_EDGE": {
+          "apparent_diameter_pct": 24.413,
+          "centroid": [
+            0.201,
+            0.80149
+          ]
+        }
+      }
+    }
+  },
+  "quick": false,
+  "relations": {
+    "FRAME_01_REST": {
+      "GRP_HEALTH_BEHAVIOR": {
+        "bend": -0.07,
+        "bevel_radius": 0.00315,
+        "centreline_min_radius": 0.73139,
+        "chord_length": 0.4175,
+        "core_radius": 0.725,
+        "depth": 0.035,
+        "end_distance_from_companion_centre": 0.4974,
+        "interpenetration_excess": 0.0,
+        "lift": 0.035,
+        "max_deviation_fraction": 0.0406,
+        "mid_path_signed_clearance": 0.02473,
+        "min_signed_clearance": -0.00334,
+        "name": "REL_CORE_HEALTH_BEHAVIOR_F01",
+        "outward_correction": 0.0,
+        "start_distance_from_core_centre": 0.7233,
+        "swing_deg": 12.0,
+        "taper": [
+          1.0,
+          0.68
+        ],
+        "vertices": 170
+      },
+      "GRP_HUMAN_CENTERED_AI": {
+        "bend": 0.095,
+        "bevel_radius": 0.0037,
+        "centreline_min_radius": 0.73426,
+        "chord_length": 0.5834,
+        "core_radius": 0.725,
+        "depth": 0.02,
+        "end_distance_from_companion_centre": 0.4785,
+        "interpenetration_excess": 0.0,
+        "lift": 0.06,
+        "max_deviation_fraction": 0.0665,
+        "mid_path_signed_clearance": 0.03939,
+        "min_signed_clearance": -0.00465,
+        "name": "REL_CORE_HUMAN_CENTERED_AI_F01",
+        "outward_correction": 0.0,
+        "start_distance_from_core_centre": 0.7216,
+        "swing_deg": 0.0,
+        "taper": [
+          1.0,
+          0.68
+        ],
+        "vertices": 170
+      },
+      "GRP_WEARABLE_EDGE": {
+        "bend": 0.05,
+        "bevel_radius": 0.00259,
+        "centreline_min_radius": 0.73343,
+        "chord_length": 0.7698,
+        "core_radius": 0.725,
+        "depth": 0.045,
+        "end_distance_from_companion_centre": 0.5233,
+        "interpenetration_excess": 0.0,
+        "lift": -0.075,
+        "max_deviation_fraction": 0.0639,
+        "mid_path_signed_clearance": 0.04247,
+        "min_signed_clearance": -0.00723,
+        "name": "REL_CORE_WEARABLE_EDGE_F01",
+        "outward_correction": 0.0,
+        "start_distance_from_core_centre": 0.7193,
+        "swing_deg": 14.0,
+        "taper": [
+          1.0,
+          0.68
+        ],
+        "vertices": 170
+      }
+    },
+    "FRAME_02_EARLY_ROTATION": {
+      "GRP_HEALTH_BEHAVIOR": {
+        "bend": -0.07,
+        "bevel_radius": 0.00315,
+        "centreline_min_radius": 0.73058,
+        "chord_length": 0.4175,
+        "core_radius": 0.725,
+        "depth": 0.035,
+        "end_distance_from_companion_centre": 0.4974,
+        "interpenetration_excess": 0.0,
+        "lift": 0.035,
+        "max_deviation_fraction": 0.0403,
+        "mid_path_signed_clearance": 0.02419,
+        "min_signed_clearance": -0.00426,
+        "name": "REL_CORE_HEALTH_BEHAVIOR_F02",
+        "outward_correction": 0.0,
+        "start_distance_from_core_centre": 0.7223,
+        "swing_deg": 12.0,
+        "taper": [
+          1.0,
+          0.68
+        ],
+        "vertices": 170
+      },
+      "GRP_HUMAN_CENTERED_AI": {
+        "bend": 0.095,
+        "bevel_radius": 0.0037,
+        "centreline_min_radius": 0.73462,
+        "chord_length": 0.5788,
+        "core_radius": 0.725,
+        "depth": 0.02,
+        "end_distance_from_companion_centre": 0.4785,
+        "interpenetration_excess": 0.0,
+        "lift": 0.06,
+        "max_deviation_fraction": 0.0666,
+        "mid_path_signed_clearance": 0.03923,
+        "min_signed_clearance": -0.00411,
+        "name": "REL_CORE_HUMAN_CENTERED_AI_F02",
+        "outward_correction": 0.0,
+        "start_distance_from_core_centre": 0.7222,
+        "swing_deg": 0.0,
+        "taper": [
+          1.0,
+          0.68
+        ],
+        "vertices": 170
+      },
+      "GRP_WEARABLE_EDGE": {
+        "bend": 0.05,
+        "bevel_radius": 0.00259,
+        "centreline_min_radius": 0.73415,
+        "chord_length": 0.7648,
+        "core_radius": 0.725,
+        "depth": 0.045,
+        "end_distance_from_companion_centre": 0.5233,
+        "interpenetration_excess": 0.0,
+        "lift": -0.075,
+        "max_deviation_fraction": 0.0653,
+        "mid_path_signed_clearance": 0.04262,
+        "min_signed_clearance": -0.00631,
+        "name": "REL_CORE_WEARABLE_EDGE_F02",
+        "outward_correction": 0.0,
+        "start_distance_from_core_centre": 0.7203,
+        "swing_deg": 14.0,
+        "taper": [
+          1.0,
+          0.68
+        ],
+        "vertices": 170
+      }
+    },
+    "FRAME_03_MID_STRONGEST_DEPTH": {
+      "GRP_HEALTH_BEHAVIOR": {
+        "bend": -0.07,
+        "bevel_radius": 0.00315,
+        "centreline_min_radius": 0.72885,
+        "chord_length": 0.4152,
+        "core_radius": 0.725,
+        "depth": 0.035,
+        "end_distance_from_companion_centre": 0.4974,
+        "interpenetration_excess": 0.0,
+        "lift": 0.035,
+        "max_deviation_fraction": 0.0393,
+        "mid_path_signed_clearance": 0.02269,
+        "min_signed_clearance": -0.00609,
+        "name": "REL_CORE_HEALTH_BEHAVIOR_F03",
+        "outward_correction": 0.0,
+        "start_distance_from_core_centre": 0.7205,
+        "swing_deg": 12.0,
+        "taper": [
+          1.0,
+          0.68
+        ],
+        "vertices": 170
+      },
+      "GRP_HUMAN_CENTERED_AI": {
+        "bend": 0.095,
+        "bevel_radius": 0.0037,
+        "centreline_min_radius": 0.73407,
+        "chord_length": 0.5774,
+        "core_radius": 0.725,
+        "depth": 0.02,
+        "end_distance_from_companion_centre": 0.4785,
+        "interpenetration_excess": 0.0,
+        "lift": 0.06,
+        "max_deviation_fraction": 0.0668,
+        "mid_path_signed_clearance": 0.03813,
+        "min_signed_clearance": -0.00446,
+        "name": "REL_CORE_HUMAN_CENTERED_AI_F03",
+        "outward_correction": 0.0,
+        "start_distance_from_core_centre": 0.7219,
+        "swing_deg": 0.0,
+        "taper": [
+          1.0,
+          0.68
+        ],
+        "vertices": 170
+      },
+      "GRP_WEARABLE_EDGE": {
+        "bend": 0.05,
+        "bevel_radius": 0.00259,
+        "centreline_min_radius": 0.73518,
+        "chord_length": 0.7564,
+        "core_radius": 0.725,
+        "depth": 0.045,
+        "end_distance_from_companion_centre": 0.5234,
+        "interpenetration_excess": 0.0,
+        "lift": -0.075,
+        "max_deviation_fraction": 0.067,
+        "mid_path_signed_clearance": 0.04272,
+        "min_signed_clearance": -0.00494,
+        "name": "REL_CORE_WEARABLE_EDGE_F03",
+        "outward_correction": 0.0,
+        "start_distance_from_core_centre": 0.7217,
+        "swing_deg": 14.0,
+        "taper": [
+          1.0,
+          0.68
+        ],
+        "vertices": 170
+      }
+    },
+    "FRAME_04_SETTLED_REVEAL": {
+      "GRP_HEALTH_BEHAVIOR": {
+        "bend": -0.07,
+        "bevel_radius": 0.00315,
+        "centreline_min_radius": 0.72729,
+        "chord_length": 0.4119,
+        "core_radius": 0.725,
+        "depth": 0.035,
+        "end_distance_from_companion_centre": 0.4974,
+        "interpenetration_excess": 0.0,
+        "lift": 0.035,
+        "max_deviation_fraction": 0.0383,
+        "mid_path_signed_clearance": 0.02119,
+        "min_signed_clearance": -0.00768,
+        "name": "REL_CORE_HEALTH_BEHAVIOR_F04",
+        "outward_correction": 0.0,
+        "start_distance_from_core_centre": 0.7189,
+        "swing_deg": 12.0,
+        "taper": [
+          1.0,
+          0.68
+        ],
+        "vertices": 170
+      },
+      "GRP_HUMAN_CENTERED_AI": {
+        "bend": 0.095,
+        "bevel_radius": 0.0037,
+        "centreline_min_radius": 0.73363,
+        "chord_length": 0.5777,
+        "core_radius": 0.725,
+        "depth": 0.02,
+        "end_distance_from_companion_centre": 0.4785,
+        "interpenetration_excess": 0.0,
+        "lift": 0.06,
+        "max_deviation_fraction": 0.0668,
+        "mid_path_signed_clearance": 0.03756,
+        "min_signed_clearance": -0.00484,
+        "name": "REL_CORE_HUMAN_CENTERED_AI_F04",
+        "outward_correction": 0.0,
+        "start_distance_from_core_centre": 0.7215,
+        "swing_deg": 0.0,
+        "taper": [
+          1.0,
+          0.68
+        ],
+        "vertices": 170
+      },
+      "GRP_WEARABLE_EDGE": {
+        "bend": 0.05,
+        "bevel_radius": 0.00259,
+        "centreline_min_radius": 0.73542,
+        "chord_length": 0.7535,
+        "core_radius": 0.725,
+        "depth": 0.045,
+        "end_distance_from_companion_centre": 0.5234,
+        "interpenetration_excess": 0.0,
+        "lift": -0.075,
+        "max_deviation_fraction": 0.069,
+        "mid_path_signed_clearance": 0.04202,
+        "min_signed_clearance": -0.0043,
+        "name": "REL_CORE_WEARABLE_EDGE_F04",
+        "outward_correction": 0.0,
+        "start_distance_from_core_centre": 0.7224,
+        "swing_deg": 14.0,
+        "taper": [
+          1.0,
+          0.68
+        ],
+        "vertices": 170
+      }
+    }
+  },
+  "renders": {},
+  "resolution": {
+    "desktop": [
+      1600,
+      1400
+    ],
+    "mobile": [
+      800,
+      800
+    ]
+  },
+  "rigs": {
+    "dark": {
+      "ambient": 0.045,
+      "exposure": -0.55,
+      "fill": 0.17,
+      "fill_offset": [
+        3.8,
+        -2.4,
+        0.3
+      ],
+      "fill_tint": [
+        0.96,
+        0.98,
+        1.0
+      ],
+      "key": 1050.0,
+      "key_offset": [
+        -2.7,
+        -3.2,
+        3.1
+      ],
+      "key_size": 6.4,
+      "key_tint": [
+        1.0,
+        0.985,
+        0.96
+      ],
+      "look": "AgX - Medium High Contrast",
+      "sep": 0.2,
+      "sep_offset": [
+        1.3,
+        3.0,
+        3.0
+      ],
+      "view_transform": "AgX"
+    },
+    "light": {
+      "ambient": 0.05,
+      "exposure": -0.3,
+      "fill": 0.1,
+      "fill_offset": [
+        3.6,
+        -2.6,
+        0.2
+      ],
+      "fill_tint": [
+        0.98,
+        0.99,
+        1.0
+      ],
+      "key": 980.0,
+      "key_offset": [
+        -3.0,
+        -3.0,
+        3.6
+      ],
+      "key_size": 4.4,
+      "key_tint": [
+        1.0,
+        0.99,
+        0.97
+      ],
+      "look": "AgX - Medium High Contrast",
+      "sep": 0.13,
+      "sep_offset": [
+        1.2,
+        2.8,
+        3.2
+      ],
+      "view_transform": "AgX"
+    }
+  },
+  "safe_regions": {
+    "desktop_text_region_normalized": [
+      0.015,
+      0.05,
+      0.085,
+      0.95
+    ],
+    "mobile_normalized": [
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.045
+      ],
+      [
+        0.0,
+        0.955,
+        1.0,
+        1.0
+      ]
+    ],
+    "note": "desktop: left strip of the art frame, kept clear so the HTML text column beside the frame never touches the object; mobile: top and bottom margins, because the graph sits between content blocks"
+  },
+  "samples": 160,
+  "source_of_truth": "source/hero-v2-stage2_7.blend",
+  "sources": {
+    "source/hero-v2-graybox.blend": {
+      "bytes": 1884872,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\source/hero-v2-graybox.blend",
+      "sha256": "8dace2c240d4cea9d565538b5ea71939f1cca19bec67800d097c6b3b6f60fb27"
+    },
+    "source/hero-v2-lookdev.blend": {
+      "bytes": 1918040,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\source/hero-v2-lookdev.blend",
+      "sha256": "a440b085505cdc5582f2523ea342e2d8e4312da864dcb375fc2435aadff6ea1a"
+    },
+    "source/hero-v2-stage2_5.blend": {
+      "bytes": 1021640,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\source/hero-v2-stage2_5.blend",
+      "sha256": "5c2957d2ba2cc61f9c05269b5f5b90707f2c72afd913b0b146abc4183eee7867"
+    },
+    "source/hero-v2-stage2_6.blend": {
+      "bytes": 935967,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\source/hero-v2-stage2_6.blend",
+      "sha256": "d5d7ae75f2dacc62ba921bad5dbc0eb70e3c7a0c9c030c1fe9bbe4cb76c6d1a3"
+    },
+    "source/hero-v2-stage2_7.blend": {
+      "bytes": 941410,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\source/hero-v2-stage2_7.blend",
+      "sha256": "78d74e51ad428430be32d49aa495b260a9dbe794c32dd49fc66a8177a18b1a31"
+    },
+    "validation/hero-v2-stage2_7-report.json": {
+      "bytes": 26731,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\validation/hero-v2-stage2_7-report.json",
+      "sha256": "d3cd61627e234cd568d31ab823908391fbd15bf31ae901136196538bbff08f7c"
+    },
+    "validation/hero-v2-stage2_7-validation.json": {
+      "bytes": 18119,
+      "path": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\validation/hero-v2-stage2_7-validation.json",
+      "sha256": "fcb580c9819297522d3087ed69c91c3c4fe6e25ee243dfa084f49487473dd10f"
+    }
+  },
+  "stage": "3 - scroll keyframe authoring (four static states)",
+  "state_transforms": [
+    {
+      "frame": 1,
+      "intent": "initial Home state; identical to the look lock",
+      "key": "FRAME_01_REST",
+      "label": "rest (the approved Stage 2.7 composition)",
+      "parallax": 0.0,
+      "pitch_deg": 0.0,
+      "rig_rotation_euler_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "yaw_deg": 0.0
+    },
+    {
+      "frame": 2,
+      "intent": "small but visible depth change; one companion forward, one back",
+      "key": "FRAME_02_EARLY_ROTATION",
+      "label": "early rotation",
+      "parallax": 0.05,
+      "pitch_deg": 3.0,
+      "rig_rotation_euler_deg": [
+        3.0,
+        0.0,
+        10.0
+      ],
+      "yaw_deg": 10.0
+    },
+    {
+      "frame": 3,
+      "intent": "strongest 3D and parallax distinction, still calm",
+      "key": "FRAME_03_MID_STRONGEST_DEPTH",
+      "label": "mid / strongest depth",
+      "parallax": 0.11,
+      "pitch_deg": 10.0,
+      "rig_rotation_euler_deg": [
+        10.0,
+        0.0,
+        26.0
+      ],
+      "yaw_deg": 26.0
+    },
+    {
+      "frame": 4,
+      "intent": "another meaningful viewing angle; not a return to frame 01",
+      "key": "FRAME_04_SETTLED_REVEAL",
+      "label": "settled reveal",
+      "parallax": 0.07,
+      "pitch_deg": 7.0,
+      "rig_rotation_euler_deg": [
+        7.0,
+        0.0,
+        36.0
+      ],
+      "yaw_deg": 36.0
+    }
+  ],
+  "stated_pitch_total_deg": 10.0,
+  "stated_yaw_total_deg": 36.0,
+  "themes": {},
+  "total_triangles": 58784
+}

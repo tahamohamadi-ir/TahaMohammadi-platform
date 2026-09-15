@@ -1,0 +1,132 @@
+{
+  "blend": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\source\\hero-v2-graybox.blend",
+  "blender": "5.2.1 LTS",
+  "bytes": 1884872,
+  "checks": {
+    "camera:CAM_DESKTOP 70mm perspective": {
+      "lens": 70.0,
+      "pass_": true,
+      "type": "PERSP"
+    },
+    "camera:CAM_DESKTOP exists": {
+      "pass_": true
+    },
+    "camera:CAM_MOBILE exists": {
+      "pass_": true
+    },
+    "camera:CAM_MOBILE orthographic": {
+      "ortho_scale": 4.0846,
+      "pass_": true,
+      "type": "ORTHO"
+    },
+    "cycles + transparent film": {
+      "engine": "CYCLES",
+      "film_transparent": true,
+      "pass_": true
+    },
+    "decor arc authored and not rendered": {
+      "hide_render": true,
+      "pass_": true
+    },
+    "diameter:GRP_CORE": {
+      "measured": 1.45,
+      "pass_": true,
+      "target": 1.45
+    },
+    "diameter:GRP_HEALTH_BEHAVIOR": {
+      "measured": 1.0,
+      "pass_": true,
+      "target": 1.0
+    },
+    "diameter:GRP_HUMAN_CENTERED_AI": {
+      "measured": 1.0,
+      "pass_": true,
+      "target": 1.0
+    },
+    "diameter:GRP_WEARABLE_EDGE": {
+      "measured": 0.999,
+      "pass_": true,
+      "target": 1.0
+    },
+    "every mesh uses the placeholder": {
+      "offenders": [],
+      "pass_": true
+    },
+    "group:GRP_CORE members": {
+      "expected": [
+        "CORE_ACCENT",
+        "CORE_SPHERE"
+      ],
+      "found": [
+        "CORE_ACCENT",
+        "CORE_SPHERE"
+      ],
+      "pass_": true
+    },
+    "group:GRP_HEALTH_BEHAVIOR members": {
+      "expected": [
+        "HHB_SPHERE"
+      ],
+      "found": [
+        "HHB_SPHERE"
+      ],
+      "pass_": true
+    },
+    "group:GRP_HUMAN_CENTERED_AI members": {
+      "expected": [
+        "HCAI_INSET",
+        "HCAI_SHELL"
+      ],
+      "found": [
+        "HCAI_INSET",
+        "HCAI_SHELL"
+      ],
+      "pass_": true
+    },
+    "group:GRP_WEARABLE_EDGE members": {
+      "expected": [
+        "WE_SPHERE"
+      ],
+      "found": [
+        "WE_SPHERE"
+      ],
+      "pass_": true
+    },
+    "mesh scale applied": {
+      "offenders": [],
+      "pass_": true
+    },
+    "no text / labels / particles / panels": {
+      "found": {
+        "grease_pencil": [],
+        "particle_systems": [],
+        "text_objects": []
+      },
+      "pass_": true
+    },
+    "no unapplied modifiers": {
+      "offenders": [],
+      "pass_": true
+    },
+    "no zero-area faces": {
+      "offenders": [],
+      "pass_": true
+    },
+    "single placeholder material": {
+      "materials": [
+        "PREVIEW_CLAY"
+      ],
+      "pass_": true
+    },
+    "single_root": {
+      "children": [
+        "GRP_CORE",
+        "GRP_HEALTH_BEHAVIOR",
+        "GRP_HUMAN_CENTERED_AI",
+        "GRP_WEARABLE_EDGE"
+      ],
+      "pass_": true
+    }
+  },
+  "checks_all_pass": true
+}

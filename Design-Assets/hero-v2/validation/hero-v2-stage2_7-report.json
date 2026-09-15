@@ -1,0 +1,1088 @@
+{
+  "blender": "5.2.1 LTS",
+  "canvases": {
+    "dark": [
+      "#050D1C",
+      "#08142A"
+    ],
+    "light": "#f7f8f5"
+  },
+  "checks": {
+    "all_nodes_simple_spheres": {
+      "pass_": true,
+      "topology": {
+        "CORE_SPHERE": {
+          "boundary_edges": 0,
+          "euler": 2,
+          "faces": 10240,
+          "nonmanifold_edges": 0,
+          "radial_variation_pct": 1.72
+        },
+        "HCAI_SPHERE": {
+          "boundary_edges": 0,
+          "euler": 2,
+          "faces": 5760,
+          "nonmanifold_edges": 0,
+          "radial_variation_pct": 1.31
+        },
+        "HHB_SPHERE": {
+          "boundary_edges": 0,
+          "euler": 2,
+          "faces": 5760,
+          "nonmanifold_edges": 0,
+          "radial_variation_pct": 1.31
+        },
+        "WE_SPHERE": {
+          "boundary_edges": 0,
+          "euler": 2,
+          "faces": 5760,
+          "nonmanifold_edges": 0,
+          "radial_variation_pct": 1.31
+        }
+      }
+    },
+    "dielectric_response_present": {
+      "measured": {
+        "core_shell": {
+          "ior": 1.46,
+          "metallic": 0.0,
+          "roughness": 0.62,
+          "specular": 0.5
+        },
+        "hcai_shell": {
+          "ior": 1.43,
+          "metallic": 0.0,
+          "roughness": 0.71,
+          "specular": 0.5
+        },
+        "health_shell": {
+          "ior": 1.45,
+          "metallic": 0.0,
+          "roughness": 0.72,
+          "specular": 0.5
+        },
+        "relation": {
+          "ior": 1.44,
+          "metallic": 0.0,
+          "roughness": 0.62,
+          "specular": 0.35
+        },
+        "wearable_shell": {
+          "ior": 1.44,
+          "metallic": 0.0,
+          "roughness": 0.68,
+          "specular": 0.5
+        }
+      },
+      "note": "metallic 0 with a plausible IOR and a broad, rough specular lobe",
+      "pass_": true
+    },
+    "exactly_three_relations": {
+      "curves": [
+        "REL_CORE_HUMAN_CENTERED_AI",
+        "REL_CORE_HEALTH_BEHAVIOR",
+        "REL_CORE_WEARABLE_EDGE"
+      ],
+      "pass_": true
+    },
+    "framing_contract": {
+      "edge_clearance_pct": {
+        "desktop": {
+          "bottom": 8.06,
+          "left": 10.91,
+          "right": 10.9,
+          "top": 8.05
+        },
+        "mobile": {
+          "bottom": 4.47,
+          "left": 3.98,
+          "right": 3.97,
+          "top": 4.47
+        }
+      },
+      "gap_on_page_px": {
+        "desktop": 49.7,
+        "mobile": 25.9
+      },
+      "pass_": true
+    },
+    "no_forbidden_feature_geometry": {
+      "offenders": [],
+      "pass_": true
+    },
+    "node_count_preserved": {
+      "groups": {
+        "GRP_CORE": [
+          "CORE_SPHERE"
+        ],
+        "GRP_HEALTH_BEHAVIOR": [
+          "HHB_SPHERE"
+        ],
+        "GRP_HUMAN_CENTERED_AI": [
+          "HCAI_SPHERE"
+        ],
+        "GRP_WEARABLE_EDGE": [
+          "WE_SPHERE"
+        ]
+      },
+      "pass_": true
+    },
+    "relation_hairlines": {
+      "bevel_radius": {
+        "GRP_HEALTH_BEHAVIOR": 0.00315,
+        "GRP_HUMAN_CENTERED_AI": 0.0037,
+        "GRP_WEARABLE_EDGE": 0.00259
+      },
+      "pass_": true,
+      "stage26_radius": 0.0075
+    },
+    "relations_asymmetric": {
+      "deviations": [
+        0.0665,
+        0.0406,
+        0.0639
+      ],
+      "pass_": true
+    },
+    "relations_clear_the_core": {
+      "measured": {
+        "GRP_HEALTH_BEHAVIOR": {
+          "anchor": -0.00334,
+          "centreline_min_radius": 0.73139,
+          "core_radius": 0.725,
+          "correction": 0.0,
+          "excess": 0.0,
+          "mid_path": 0.02473
+        },
+        "GRP_HUMAN_CENTERED_AI": {
+          "anchor": -0.00465,
+          "centreline_min_radius": 0.73426,
+          "core_radius": 0.725,
+          "correction": 0.0,
+          "excess": 0.0,
+          "mid_path": 0.03939
+        },
+        "GRP_WEARABLE_EDGE": {
+          "anchor": -0.00723,
+          "centreline_min_radius": 0.73343,
+          "core_radius": 0.725,
+          "correction": 0.0,
+          "excess": 0.0,
+          "mid_path": 0.04247
+        }
+      },
+      "note": "mid-path burial is the failure mode (a stroke cutting through the sphere); burial at the anchor is attachment and is reported separately. A control-handle solver pushes the path outward by (correction) whenever even the centreline would enter the sphere",
+      "pass_": true
+    },
+    "relations_surface_to_surface": {
+      "pass_": true,
+      "per_relation": {
+        "GRP_HEALTH_BEHAVIOR": {
+          "companion_radius": 0.5,
+          "core_radius": 0.725,
+          "end_ok": true,
+          "start_ok": true
+        },
+        "GRP_HUMAN_CENTERED_AI": {
+          "companion_radius": 0.48,
+          "core_radius": 0.725,
+          "end_ok": true,
+          "start_ok": true
+        },
+        "GRP_WEARABLE_EDGE": {
+          "companion_radius": 0.525,
+          "core_radius": 0.725,
+          "end_ok": true,
+          "start_ok": true
+        }
+      },
+      "tolerance_fraction": 0.02
+    },
+    "sources_recorded": {
+      "pass_": true,
+      "sources": {
+        "source/hero-v2-graybox.blend": {
+          "bytes": 1884872,
+          "sha256": "8dace2c240d4cea9d565538b5ea71939f1cca19bec67800d097c6b3b6f60fb27"
+        },
+        "source/hero-v2-lookdev.blend": {
+          "bytes": 1918040,
+          "sha256": "a440b085505cdc5582f2523ea342e2d8e4312da864dcb375fc2435aadff6ea1a"
+        },
+        "source/hero-v2-stage2_5.blend": {
+          "bytes": 1021640,
+          "sha256": "5c2957d2ba2cc61f9c05269b5f5b90707f2c72afd913b0b146abc4183eee7867"
+        },
+        "source/hero-v2-stage2_6.blend": {
+          "bytes": 935967,
+          "sha256": "d5d7ae75f2dacc62ba921bad5dbc0eb70e3c7a0c9c030c1fe9bbe4cb76c6d1a3"
+        }
+      }
+    }
+  },
+  "checks_all_pass": true,
+  "composition": {
+    "desktop": {
+      "content_bbox_px": [
+        174.6,
+        112.8,
+        1425.6,
+        1287.3
+      ],
+      "edge_clearance_pct": {
+        "bottom": 8.06,
+        "left": 10.91,
+        "right": 10.9,
+        "top": 8.05
+      },
+      "edge_clearance_px": {
+        "bottom": 112.8,
+        "left": 174.6,
+        "right": 174.4,
+        "top": 112.7
+      },
+      "fill_pct": {
+        "x": 78.19,
+        "y": 83.89
+      },
+      "forms": {
+        "GRP_CORE": {
+          "bbox_px": [
+            478.6,
+            503.9,
+            977.9,
+            999.2
+          ],
+          "height_px": 495.3,
+          "projected_diameter_px": 499.3,
+          "width_px": 499.3
+        },
+        "GRP_HEALTH_BEHAVIOR": {
+          "bbox_px": [
+            1083.5,
+            710.8,
+            1425.6,
+            1051.0
+          ],
+          "height_px": 340.2,
+          "projected_diameter_px": 342.0,
+          "width_px": 342.0
+        },
+        "GRP_HUMAN_CENTERED_AI": {
+          "bbox_px": [
+            174.6,
+            972.7,
+            488.5,
+            1287.3
+          ],
+          "height_px": 314.6,
+          "projected_diameter_px": 314.6,
+          "width_px": 313.9
+        },
+        "GRP_WEARABLE_EDGE": {
+          "bbox_px": [
+            333.5,
+            112.8,
+            659.0,
+            440.8
+          ],
+          "height_px": 327.9,
+          "projected_diameter_px": 327.9,
+          "width_px": 325.5
+        }
+      },
+      "meshes": {
+        "CORE_SPHERE": {
+          "height_px": 495.3,
+          "width_px": 499.3
+        },
+        "HCAI_SPHERE": {
+          "height_px": 314.6,
+          "width_px": 313.9
+        },
+        "HHB_SPHERE": {
+          "height_px": 340.2,
+          "width_px": 342.0
+        },
+        "WE_SPHERE": {
+          "height_px": 327.9,
+          "width_px": 325.5
+        }
+      },
+      "min_gap_scaled_to_page_px": 49.7,
+      "min_silhouette_gap_px": 115.9,
+      "resolution": [
+        1600,
+        1400
+      ],
+      "silhouette_gaps_px": {
+        "GRP_CORE|GRP_HEALTH_BEHAVIOR": 121.2,
+        "GRP_CORE|GRP_HUMAN_CENTERED_AI": 140.8,
+        "GRP_CORE|GRP_WEARABLE_EDGE": 115.9,
+        "GRP_HEALTH_BEHAVIOR|GRP_HUMAN_CENTERED_AI": 627.7,
+        "GRP_HEALTH_BEHAVIOR|GRP_WEARABLE_EDGE": 633.9,
+        "GRP_HUMAN_CENTERED_AI|GRP_WEARABLE_EDGE": 547.6
+      }
+    },
+    "mobile": {
+      "content_bbox_px": [
+        31.9,
+        35.8,
+        768.2,
+        764.2
+      ],
+      "edge_clearance_pct": {
+        "bottom": 4.47,
+        "left": 3.98,
+        "right": 3.97,
+        "top": 4.47
+      },
+      "edge_clearance_px": {
+        "bottom": 35.8,
+        "left": 31.9,
+        "right": 31.8,
+        "top": 35.8
+      },
+      "fill_pct": {
+        "x": 92.05,
+        "y": 91.05
+      },
+      "forms": {
+        "GRP_CORE": {
+          "bbox_px": [
+            225.5,
+            304.6,
+            509.9,
+            586.7
+          ],
+          "height_px": 282.1,
+          "projected_diameter_px": 284.4,
+          "width_px": 284.4
+        },
+        "GRP_HEALTH_BEHAVIOR": {
+          "bbox_px": [
+            572.9,
+            421.4,
+            768.2,
+            617.5
+          ],
+          "height_px": 196.1,
+          "projected_diameter_px": 196.1,
+          "width_px": 195.3
+        },
+        "GRP_HUMAN_CENTERED_AI": {
+          "bbox_px": [
+            31.9,
+            575.9,
+            219.5,
+            764.2
+          ],
+          "height_px": 188.3,
+          "projected_diameter_px": 188.3,
+          "width_px": 187.7
+        },
+        "GRP_WEARABLE_EDGE": {
+          "bbox_px": [
+            113.6,
+            35.8,
+            318.9,
+            241.7
+          ],
+          "height_px": 206.0,
+          "projected_diameter_px": 206.0,
+          "width_px": 205.3
+        }
+      },
+      "meshes": {
+        "CORE_SPHERE": {
+          "height_px": 282.1,
+          "width_px": 284.4
+        },
+        "HCAI_SPHERE": {
+          "height_px": 188.3,
+          "width_px": 187.7
+        },
+        "HHB_SPHERE": {
+          "height_px": 196.1,
+          "width_px": 195.3
+        },
+        "WE_SPHERE": {
+          "height_px": 206.0,
+          "width_px": 205.3
+        }
+      },
+      "min_gap_scaled_to_page_px": 25.9,
+      "min_silhouette_gap_px": 72.0,
+      "resolution": [
+        800,
+        800
+      ],
+      "silhouette_gaps_px": {
+        "GRP_CORE|GRP_HEALTH_BEHAVIOR": 72.0,
+        "GRP_CORE|GRP_HUMAN_CENTERED_AI": 94.4,
+        "GRP_CORE|GRP_WEARABLE_EDGE": 98.0,
+        "GRP_HEALTH_BEHAVIOR|GRP_HUMAN_CENTERED_AI": 373.7,
+        "GRP_HEALTH_BEHAVIOR|GRP_WEARABLE_EDGE": 392.1,
+        "GRP_HUMAN_CENTERED_AI|GRP_WEARABLE_EDGE": 341.9
+      }
+    }
+  },
+  "fits": {
+    "desktop": {
+      "distance": 9.3444,
+      "fill_x": 0.7819,
+      "fill_y": 0.8389,
+      "projected_bbox": [
+        0.1091,
+        0.0806,
+        0.891,
+        0.9195
+      ],
+      "target": [
+        0.1193,
+        0.0623,
+        -0.2224
+      ]
+    },
+    "mobile": {
+      "distance": 10.0,
+      "fill_x": 0.9205,
+      "fill_y": 0.9105,
+      "projected_bbox": [
+        0.0398,
+        0.0447,
+        0.9603,
+        0.9553
+      ],
+      "target": [
+        0.0775,
+        0.0477,
+        -0.2907
+      ]
+    }
+  },
+  "node_topology": {
+    "CORE_SPHERE": {
+      "boundary_edges": 0,
+      "euler": 2,
+      "faces": 10240,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 1.72
+    },
+    "HCAI_SPHERE": {
+      "boundary_edges": 0,
+      "euler": 2,
+      "faces": 5760,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 1.31
+    },
+    "HHB_SPHERE": {
+      "boundary_edges": 0,
+      "euler": 2,
+      "faces": 5760,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 1.31
+    },
+    "WE_SPHERE": {
+      "boundary_edges": 0,
+      "euler": 2,
+      "faces": 5760,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 1.31
+    }
+  },
+  "quick": false,
+  "relation_topology": {
+    "REL_CORE_HEALTH_BEHAVIOR": {
+      "boundary_edges": 40,
+      "euler": 2,
+      "faces": 156,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 56.83
+    },
+    "REL_CORE_HUMAN_CENTERED_AI": {
+      "boundary_edges": 40,
+      "euler": 2,
+      "faces": 156,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 80.38
+    },
+    "REL_CORE_WEARABLE_EDGE": {
+      "boundary_edges": 40,
+      "euler": 2,
+      "faces": 156,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 103.79
+    }
+  },
+  "relations": {
+    "GRP_HEALTH_BEHAVIOR": {
+      "bend": -0.07,
+      "bevel_radius": 0.00315,
+      "centreline_min_radius": 0.73139,
+      "chord_length": 0.4175,
+      "core_radius": 0.725,
+      "depth": 0.035,
+      "end_distance_from_companion_centre": 0.4974,
+      "interpenetration_excess": 0.0,
+      "lift": 0.035,
+      "max_deviation_fraction": 0.0406,
+      "mid_path_signed_clearance": 0.02473,
+      "min_signed_clearance": -0.00334,
+      "name": "REL_CORE_HEALTH_BEHAVIOR",
+      "outward_correction": 0.0,
+      "start_distance_from_core_centre": 0.7233,
+      "swing_deg": 12.0,
+      "taper": [
+        1.0,
+        0.68
+      ],
+      "vertices": 170
+    },
+    "GRP_HUMAN_CENTERED_AI": {
+      "bend": 0.095,
+      "bevel_radius": 0.0037,
+      "centreline_min_radius": 0.73426,
+      "chord_length": 0.5834,
+      "core_radius": 0.725,
+      "depth": 0.02,
+      "end_distance_from_companion_centre": 0.4785,
+      "interpenetration_excess": 0.0,
+      "lift": 0.06,
+      "max_deviation_fraction": 0.0665,
+      "mid_path_signed_clearance": 0.03939,
+      "min_signed_clearance": -0.00465,
+      "name": "REL_CORE_HUMAN_CENTERED_AI",
+      "outward_correction": 0.0,
+      "start_distance_from_core_centre": 0.7216,
+      "swing_deg": 0.0,
+      "taper": [
+        1.0,
+        0.68
+      ],
+      "vertices": 170
+    },
+    "GRP_WEARABLE_EDGE": {
+      "bend": 0.05,
+      "bevel_radius": 0.00259,
+      "centreline_min_radius": 0.73343,
+      "chord_length": 0.7698,
+      "core_radius": 0.725,
+      "depth": 0.045,
+      "end_distance_from_companion_centre": 0.5233,
+      "interpenetration_excess": 0.0,
+      "lift": -0.075,
+      "max_deviation_fraction": 0.0639,
+      "mid_path_signed_clearance": 0.04247,
+      "min_signed_clearance": -0.00723,
+      "name": "REL_CORE_WEARABLE_EDGE",
+      "outward_correction": 0.0,
+      "start_distance_from_core_centre": 0.7193,
+      "swing_deg": 14.0,
+      "taper": [
+        1.0,
+        0.68
+      ],
+      "vertices": 170
+    }
+  },
+  "render_device": "CUDA(1)",
+  "renders": {
+    "01-desktop-dark": {
+      "alpha": false,
+      "bytes": 1665179,
+      "camera": "CAM_DESKTOP",
+      "path": "renders\\stage2_7\\01-desktop-dark.png",
+      "resolution": [
+        1600,
+        1400
+      ],
+      "theme": "dark"
+    },
+    "02-desktop-light": {
+      "alpha": false,
+      "bytes": 395999,
+      "camera": "desktop",
+      "path": "renders\\stage2_7\\02-desktop-light.png",
+      "produced_by": "composite_stage2_7.py",
+      "resolution": [
+        1600,
+        1400
+      ],
+      "source_alpha": "12-desktop-light-alpha",
+      "theme": "light"
+    },
+    "03-mobile-dark": {
+      "alpha": false,
+      "bytes": 506365,
+      "camera": "CAM_MOBILE",
+      "path": "renders\\stage2_7\\03-mobile-dark.png",
+      "resolution": [
+        800,
+        800
+      ],
+      "theme": "dark"
+    },
+    "04-mobile-light": {
+      "alpha": false,
+      "bytes": 156500,
+      "camera": "mobile",
+      "path": "renders\\stage2_7\\04-mobile-light.png",
+      "produced_by": "composite_stage2_7.py",
+      "resolution": [
+        800,
+        800
+      ],
+      "source_alpha": "14-mobile-light-alpha",
+      "theme": "light"
+    },
+    "11-desktop-dark-alpha": {
+      "alpha": true,
+      "bytes": 1016980,
+      "camera": "CAM_DESKTOP",
+      "path": "renders\\stage2_7\\11-desktop-dark-alpha.png",
+      "resolution": [
+        1600,
+        1400
+      ],
+      "theme": "dark"
+    },
+    "12-desktop-light-alpha": {
+      "alpha": true,
+      "bytes": 996276,
+      "camera": "CAM_DESKTOP",
+      "path": "renders\\stage2_7\\12-desktop-light-alpha.png",
+      "resolution": [
+        1600,
+        1400
+      ],
+      "theme": "light"
+    },
+    "13-mobile-dark-alpha": {
+      "alpha": true,
+      "bytes": 351331,
+      "camera": "CAM_MOBILE",
+      "path": "renders\\stage2_7\\13-mobile-dark-alpha.png",
+      "resolution": [
+        800,
+        800
+      ],
+      "theme": "dark"
+    },
+    "14-mobile-light-alpha": {
+      "alpha": true,
+      "bytes": 348186,
+      "camera": "CAM_MOBILE",
+      "path": "renders\\stage2_7\\14-mobile-light-alpha.png",
+      "resolution": [
+        800,
+        800
+      ],
+      "theme": "light"
+    },
+    "21-desktop-dark-webscale": {
+      "alpha": false,
+      "bytes": 160655,
+      "camera": "desktop",
+      "path": "renders\\stage2_7\\21-desktop-dark-webscale.png",
+      "produced_by": "composite_stage2_7.py",
+      "resolution": [
+        686,
+        600
+      ],
+      "source_review": "01-desktop-dark",
+      "theme": "dark"
+    },
+    "22-desktop-light-webscale": {
+      "alpha": false,
+      "bytes": 89853,
+      "camera": "desktop",
+      "path": "renders\\stage2_7\\22-desktop-light-webscale.png",
+      "produced_by": "composite_stage2_7.py",
+      "resolution": [
+        686,
+        600
+      ],
+      "source_review": "02-desktop-light",
+      "theme": "light"
+    },
+    "23-mobile-dark-webscale": {
+      "alpha": false,
+      "bytes": 41426,
+      "camera": "mobile",
+      "path": "renders\\stage2_7\\23-mobile-dark-webscale.png",
+      "produced_by": "composite_stage2_7.py",
+      "resolution": [
+        288,
+        288
+      ],
+      "source_review": "03-mobile-dark",
+      "theme": "dark"
+    },
+    "24-mobile-light-webscale": {
+      "alpha": false,
+      "bytes": 29643,
+      "camera": "mobile",
+      "path": "renders\\stage2_7\\24-mobile-light-webscale.png",
+      "produced_by": "composite_stage2_7.py",
+      "resolution": [
+        288,
+        288
+      ],
+      "source_review": "04-mobile-light",
+      "theme": "light"
+    }
+  },
+  "resolution": {
+    "desktop": [
+      1600,
+      1400
+    ],
+    "mobile": [
+      800,
+      800
+    ],
+    "webscale": {
+      "desktop": [
+        686,
+        600
+      ],
+      "mobile": [
+        288,
+        288
+      ]
+    }
+  },
+  "rigs": {
+    "dark": {
+      "ambient": 0.045,
+      "exposure": -0.55,
+      "fill": 0.17,
+      "fill_offset": [
+        3.8,
+        -2.4,
+        0.3
+      ],
+      "fill_tint": [
+        0.96,
+        0.98,
+        1.0
+      ],
+      "key": 1050.0,
+      "key_offset": [
+        -2.7,
+        -3.2,
+        3.1
+      ],
+      "key_size": 6.4,
+      "key_tint": [
+        1.0,
+        0.985,
+        0.96
+      ],
+      "look": "AgX - Medium High Contrast",
+      "sep": 0.2,
+      "sep_offset": [
+        1.3,
+        3.0,
+        3.0
+      ],
+      "view_transform": "AgX"
+    },
+    "light": {
+      "ambient": 0.05,
+      "exposure": -0.3,
+      "fill": 0.1,
+      "fill_offset": [
+        3.6,
+        -2.6,
+        0.2
+      ],
+      "fill_tint": [
+        0.98,
+        0.99,
+        1.0
+      ],
+      "key": 980.0,
+      "key_offset": [
+        -3.0,
+        -3.0,
+        3.6
+      ],
+      "key_size": 4.4,
+      "key_tint": [
+        1.0,
+        0.99,
+        0.97
+      ],
+      "look": "AgX - Medium High Contrast",
+      "sep": 0.13,
+      "sep_offset": [
+        1.2,
+        2.8,
+        3.2
+      ],
+      "view_transform": "AgX"
+    }
+  },
+  "samples": 160,
+  "shader_architecture": {
+    "model": "Principled BSDF, metallic 0, physical dielectric F0 (specular level 0.5) with IOR 1.43-1.46, roughness 0.62-0.72 for shells",
+    "presets": {
+      "dark": {
+        "pigment": {
+          "core_shell": 0.97,
+          "hcai_shell": 1.0,
+          "health_shell": 1.0,
+          "wearable_shell": 1.0
+        },
+        "roughness_delta": 0.0,
+        "stroke": 1.0
+      },
+      "light": {
+        "pigment": {
+          "core_shell": 0.86,
+          "hcai_shell": 0.62,
+          "health_shell": 0.82,
+          "wearable_shell": 0.6
+        },
+        "roughness_delta": 0.045,
+        "stroke": 0.22
+      }
+    },
+    "roles": {
+      "core_shell": {
+        "bump": 0.03,
+        "hex": "#27565A",
+        "ior": 1.46,
+        "note": "deep mineral teal; the authoritative one, slightly denser",
+        "roughness": 0.62,
+        "specular": 0.5,
+        "spread": 0.055,
+        "tonal": 0.1
+      },
+      "hcai_shell": {
+        "bump": 0.026,
+        "hex": "#6F8474",
+        "ior": 1.43,
+        "note": "muted eucalyptus / mineral sage; the calm, human one",
+        "roughness": 0.71,
+        "specular": 0.5,
+        "spread": 0.045,
+        "tonal": 0.09
+      },
+      "health_shell": {
+        "bump": 0.03,
+        "hex": "#877156",
+        "ior": 1.45,
+        "note": "warm sandstone / muted ochre; warm but never gold",
+        "roughness": 0.72,
+        "specular": 0.5,
+        "spread": 0.055,
+        "tonal": 0.11
+      },
+      "relation": {
+        "bump": 0.006,
+        "hex": "#C6B191",
+        "ior": 1.44,
+        "note": "champagne / aged-brass stroke; hairline, matte-ish, no sparkle",
+        "roughness": 0.62,
+        "specular": 0.35,
+        "spread": 0.02,
+        "tonal": 0.04
+      },
+      "wearable_shell": {
+        "bump": 0.028,
+        "hex": "#6B6580",
+        "ior": 1.44,
+        "note": "dusty stone violet; desaturated, never candy",
+        "roughness": 0.68,
+        "specular": 0.5,
+        "spread": 0.06,
+        "tonal": 0.1
+      }
+    },
+    "scales": {
+      "macro": {
+        "detail": 2.0,
+        "effect": "tonal drift, +/-3.5%",
+        "scale": 1.6
+      },
+      "meso": {
+        "detail": 3.0,
+        "effect": "roughness patches",
+        "scale": 6.5
+      },
+      "micro": {
+        "bump_distance": 0.004,
+        "detail": 2.5,
+        "effect": "tactile normal",
+        "scale": 22.0
+      }
+    }
+  },
+  "sources": {
+    "source/hero-v2-graybox.blend": {
+      "bytes": 1884872,
+      "sha256": "8dace2c240d4cea9d565538b5ea71939f1cca19bec67800d097c6b3b6f60fb27"
+    },
+    "source/hero-v2-lookdev.blend": {
+      "bytes": 1918040,
+      "sha256": "a440b085505cdc5582f2523ea342e2d8e4312da864dcb375fc2435aadff6ea1a"
+    },
+    "source/hero-v2-stage2_5.blend": {
+      "bytes": 1021640,
+      "sha256": "5c2957d2ba2cc61f9c05269b5f5b90707f2c72afd913b0b146abc4183eee7867"
+    },
+    "source/hero-v2-stage2_6.blend": {
+      "bytes": 935967,
+      "sha256": "d5d7ae75f2dacc62ba921bad5dbc0eb70e3c7a0c9c030c1fe9bbe4cb76c6d1a3"
+    }
+  },
+  "stage": "2.7 - material + relation polish (final look lock)",
+  "themes": {
+    "dark": {
+      "ambient": 0.045,
+      "exposure": -0.55,
+      "fill_ratio": 0.17,
+      "key_energy": 1050.0,
+      "key_offset": [
+        -2.7,
+        -3.2,
+        3.1
+      ],
+      "key_size": 6.4,
+      "look": "AgX - Medium High Contrast",
+      "material_preset": {
+        "applied": {
+          "core_shell": {
+            "pigment": [
+              0.01968,
+              0.09027,
+              0.09917
+            ],
+            "roughness": 0.62
+          },
+          "hcai_shell": {
+            "pigment": [
+              0.15896,
+              0.23074,
+              0.17465
+            ],
+            "roughness": 0.71
+          },
+          "health_shell": {
+            "pigment": [
+              0.24228,
+              0.16513,
+              0.09306
+            ],
+            "roughness": 0.72
+          },
+          "relation": {
+            "pigment": [
+              0.56471,
+              0.43966,
+              0.28315
+            ],
+            "roughness": 0.62
+          },
+          "wearable_shell": {
+            "pigment": [
+              0.14703,
+              0.13014,
+              0.21586
+            ],
+            "roughness": 0.68
+          }
+        },
+        "preset": {
+          "pigment": {
+            "core_shell": 0.97,
+            "hcai_shell": 1.0,
+            "health_shell": 1.0,
+            "wearable_shell": 1.0
+          },
+          "roughness_delta": 0.0,
+          "stroke": 1.0
+        },
+        "theme": "dark"
+      },
+      "sep_ratio": 0.2,
+      "theme": "dark",
+      "view_transform": "AgX"
+    },
+    "light": {
+      "ambient": 0.05,
+      "exposure": -0.3,
+      "fill_ratio": 0.1,
+      "key_energy": 980.0,
+      "key_offset": [
+        -3.0,
+        -3.0,
+        3.6
+      ],
+      "key_size": 4.4,
+      "look": "AgX - Medium High Contrast",
+      "material_preset": {
+        "applied": {
+          "core_shell": {
+            "pigment": [
+              0.01745,
+              0.08003,
+              0.08793
+            ],
+            "roughness": 0.665
+          },
+          "hcai_shell": {
+            "pigment": [
+              0.09856,
+              0.14306,
+              0.10828
+            ],
+            "roughness": 0.755
+          },
+          "health_shell": {
+            "pigment": [
+              0.19867,
+              0.13541,
+              0.07631
+            ],
+            "roughness": 0.765
+          },
+          "relation": {
+            "pigment": [
+              0.12424,
+              0.09672,
+              0.06229
+            ],
+            "roughness": 0.62
+          },
+          "wearable_shell": {
+            "pigment": [
+              0.08822,
+              0.07808,
+              0.12952
+            ],
+            "roughness": 0.725
+          }
+        },
+        "preset": {
+          "pigment": {
+            "core_shell": 0.86,
+            "hcai_shell": 0.62,
+            "health_shell": 0.82,
+            "wearable_shell": 0.6
+          },
+          "roughness_delta": 0.045,
+          "stroke": 0.22
+        },
+        "theme": "light"
+      },
+      "sep_ratio": 0.13,
+      "theme": "light",
+      "view_transform": "AgX"
+    }
+  },
+  "total_triangles": 55976
+}

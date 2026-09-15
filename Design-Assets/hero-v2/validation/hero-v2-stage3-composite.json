@@ -1,0 +1,92 @@
+{
+  "jobs": {
+    "desktop/light/frame-01": {
+      "bytes": 327536,
+      "clipped_pixels": 0,
+      "from_alpha": "alpha/desktop-light-01",
+      "max_level": 247,
+      "page_level": 246.7,
+      "size": [
+        1600,
+        1400
+      ]
+    },
+    "desktop/light/frame-02": {
+      "bytes": 330372,
+      "clipped_pixels": 0,
+      "from_alpha": "alpha/desktop-light-02",
+      "max_level": 247,
+      "page_level": 246.7,
+      "size": [
+        1600,
+        1400
+      ]
+    },
+    "desktop/light/frame-03": {
+      "bytes": 335377,
+      "clipped_pixels": 0,
+      "from_alpha": "alpha/desktop-light-03",
+      "max_level": 247,
+      "page_level": 246.7,
+      "size": [
+        1600,
+        1400
+      ]
+    },
+    "desktop/light/frame-04": {
+      "bytes": 338044,
+      "clipped_pixels": 0,
+      "from_alpha": "alpha/desktop-light-04",
+      "max_level": 247,
+      "page_level": 246.7,
+      "size": [
+        1600,
+        1400
+      ]
+    },
+    "mobile/light/frame-01": {
+      "bytes": 146243,
+      "clipped_pixels": 0,
+      "from_alpha": "alpha/mobile-light-01",
+      "max_level": 247,
+      "page_level": 246.7,
+      "size": [
+        800,
+        800
+      ]
+    },
+    "mobile/light/frame-02": {
+      "bytes": 147239,
+      "clipped_pixels": 0,
+      "from_alpha": "alpha/mobile-light-02",
+      "max_level": 247,
+      "page_level": 246.7,
+      "size": [
+        800,
+        800
+      ]
+    },
+    "mobile/light/frame-03": {
+      "bytes": 147859,
+      "clipped_pixels": 0,
+      "from_alpha": "alpha/mobile-light-03",
+      "max_level": 247,
+      "page_level": 246.7,
+      "size": [
+        800,
+        800
+      ]
+    },
+    "mobile/light/frame-04": {
+      "bytes": 146920,
+      "clipped_pixels": 0,
+      "from_alpha": "alpha/mobile-light-04",
+      "max_level": 247,
+      "page_level": 246.7,
+      "size": [
+        800,
+        800
+      ]
+    }
+  }
+}

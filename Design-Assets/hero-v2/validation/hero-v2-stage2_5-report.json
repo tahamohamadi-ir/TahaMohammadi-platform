@@ -1,0 +1,781 @@
+{
+  "blender": "5.2.1 LTS",
+  "canvases": {
+    "dark": "#071225",
+    "light": "#f7f8f5",
+    "source": "HERO_PRODUCTION_PLAN_v2.md section 3"
+  },
+  "checks": {
+    "arc_hidden_from_render": {
+      "hide_render": true,
+      "pass_": true
+    },
+    "companion_variation_within_2pct": {
+      "measured": {
+        "HCAI_SPHERE": 1.31,
+        "HHB_SPHERE": 1.31,
+        "WE_SPHERE": 1.31
+      },
+      "pass_": true
+    },
+    "companions_are_closed_single_surfaces": {
+      "flags": {
+        "CORE_SPHERE": {
+          "boundary_edges": 0,
+          "euler_characteristic": 2,
+          "nonmanifold_edges": 0,
+          "radial_variation_pct": 5.29
+        },
+        "HCAI_SPHERE": {
+          "boundary_edges": 0,
+          "euler_characteristic": 2,
+          "nonmanifold_edges": 0,
+          "radial_variation_pct": 1.31
+        },
+        "HHB_SPHERE": {
+          "boundary_edges": 0,
+          "euler_characteristic": 2,
+          "nonmanifold_edges": 0,
+          "radial_variation_pct": 1.31
+        },
+        "WE_SPHERE": {
+          "boundary_edges": 0,
+          "euler_characteristic": 2,
+          "nonmanifold_edges": 0,
+          "radial_variation_pct": 1.31
+        }
+      },
+      "pass_": true
+    },
+    "core_plus_three_single_spheres": {
+      "counts": {
+        "GRP_CORE": 2,
+        "GRP_HEALTH_BEHAVIOR": 1,
+        "GRP_HUMAN_CENTERED_AI": 1,
+        "GRP_WEARABLE_EDGE": 1
+      },
+      "pass_": true
+    },
+    "four_semantic_groups": {
+      "groups": [
+        "GRP_CORE",
+        "GRP_HEALTH_BEHAVIOR",
+        "GRP_HUMAN_CENTERED_AI",
+        "GRP_WEARABLE_EDGE"
+      ],
+      "pass_": true
+    },
+    "framing_contract": {
+      "edge_clearance_pct": {
+        "desktop": {
+          "bottom": 8.06,
+          "left": 10.91,
+          "right": 10.9,
+          "top": 8.05
+        },
+        "mobile": {
+          "bottom": 4.47,
+          "left": 3.98,
+          "right": 3.97,
+          "top": 4.47
+        }
+      },
+      "gap_on_page_px": {
+        "desktop": 50.3,
+        "mobile": 26.3
+      },
+      "pass_": true,
+      "required_gap_px": 12.0
+    },
+    "no_metallic_roles": {
+      "pass_": true
+    },
+    "no_text_or_particles": {
+      "pass_": true
+    },
+    "sources_recorded": {
+      "pass_": true,
+      "sources": {
+        "source/hero-v2-graybox.blend": {
+          "bytes": 1884872,
+          "sha256": "8dace2c240d4cea9d565538b5ea71939f1cca19bec67800d097c6b3b6f60fb27"
+        },
+        "source/hero-v2-lookdev.blend": {
+          "bytes": 1918040,
+          "sha256": "a440b085505cdc5582f2523ea342e2d8e4312da864dcb375fc2435aadff6ea1a"
+        }
+      }
+    }
+  },
+  "checks_all_pass": true,
+  "composition": {
+    "desktop": {
+      "content_bbox_px": [
+        174.6,
+        112.8,
+        1425.6,
+        1287.3
+      ],
+      "edge_clearance_pct": {
+        "bottom": 8.06,
+        "left": 10.91,
+        "right": 10.9,
+        "top": 8.05
+      },
+      "edge_clearance_px": {
+        "bottom": 112.8,
+        "left": 174.6,
+        "right": 174.4,
+        "top": 112.7
+      },
+      "fill_pct": {
+        "x": 78.19,
+        "y": 83.89
+      },
+      "forms": {
+        "GRP_CORE": {
+          "bbox_px": [
+            478.7,
+            505.7,
+            977.9,
+            997.4
+          ],
+          "height_px": 491.8,
+          "projected_diameter_px": 499.2,
+          "width_px": 499.2
+        },
+        "GRP_HEALTH_BEHAVIOR": {
+          "bbox_px": [
+            1083.5,
+            710.8,
+            1425.6,
+            1051.0
+          ],
+          "height_px": 340.2,
+          "projected_diameter_px": 342.0,
+          "width_px": 342.0
+        },
+        "GRP_HUMAN_CENTERED_AI": {
+          "bbox_px": [
+            174.6,
+            972.7,
+            488.5,
+            1287.3
+          ],
+          "height_px": 314.6,
+          "projected_diameter_px": 314.6,
+          "width_px": 313.9
+        },
+        "GRP_WEARABLE_EDGE": {
+          "bbox_px": [
+            333.5,
+            112.8,
+            659.0,
+            440.7
+          ],
+          "height_px": 327.9,
+          "projected_diameter_px": 327.9,
+          "width_px": 325.5
+        }
+      },
+      "meshes": {
+        "CORE_ACCENT": {
+          "height_px": 60.5,
+          "width_px": 54.4
+        },
+        "CORE_SPHERE": {
+          "height_px": 491.8,
+          "width_px": 499.2
+        },
+        "HCAI_SPHERE": {
+          "height_px": 314.6,
+          "width_px": 313.9
+        },
+        "HHB_SPHERE": {
+          "height_px": 340.2,
+          "width_px": 342.0
+        },
+        "WE_SPHERE": {
+          "height_px": 327.9,
+          "width_px": 325.5
+        }
+      },
+      "min_gap_scaled_to_page_px": 50.3,
+      "min_silhouette_gap_px": 117.3,
+      "resolution": [
+        1600,
+        1400
+      ],
+      "silhouette_gaps_px": {
+        "GRP_CORE|GRP_HEALTH_BEHAVIOR": 123.2,
+        "GRP_CORE|GRP_HUMAN_CENTERED_AI": 141.7,
+        "GRP_CORE|GRP_WEARABLE_EDGE": 117.3,
+        "GRP_HEALTH_BEHAVIOR|GRP_HUMAN_CENTERED_AI": 627.7,
+        "GRP_HEALTH_BEHAVIOR|GRP_WEARABLE_EDGE": 633.9,
+        "GRP_HUMAN_CENTERED_AI|GRP_WEARABLE_EDGE": 547.6
+      },
+      "slot_height_px": 600.0
+    },
+    "mobile": {
+      "content_bbox_px": [
+        31.9,
+        35.8,
+        768.2,
+        764.2
+      ],
+      "edge_clearance_pct": {
+        "bottom": 4.47,
+        "left": 3.98,
+        "right": 3.97,
+        "top": 4.47
+      },
+      "edge_clearance_px": {
+        "bottom": 35.8,
+        "left": 31.9,
+        "right": 31.8,
+        "top": 35.8
+      },
+      "fill_pct": {
+        "x": 92.05,
+        "y": 91.05
+      },
+      "forms": {
+        "GRP_CORE": {
+          "bbox_px": [
+            225.5,
+            305.6,
+            509.9,
+            585.7
+          ],
+          "height_px": 280.1,
+          "projected_diameter_px": 284.4,
+          "width_px": 284.4
+        },
+        "GRP_HEALTH_BEHAVIOR": {
+          "bbox_px": [
+            572.9,
+            421.4,
+            768.2,
+            617.5
+          ],
+          "height_px": 196.1,
+          "projected_diameter_px": 196.1,
+          "width_px": 195.3
+        },
+        "GRP_HUMAN_CENTERED_AI": {
+          "bbox_px": [
+            31.9,
+            575.9,
+            219.5,
+            764.2
+          ],
+          "height_px": 188.3,
+          "projected_diameter_px": 188.3,
+          "width_px": 187.7
+        },
+        "GRP_WEARABLE_EDGE": {
+          "bbox_px": [
+            113.6,
+            35.8,
+            318.9,
+            241.7
+          ],
+          "height_px": 206.0,
+          "projected_diameter_px": 206.0,
+          "width_px": 205.3
+        }
+      },
+      "meshes": {
+        "CORE_ACCENT": {
+          "height_px": 32.7,
+          "width_px": 29.3
+        },
+        "CORE_SPHERE": {
+          "height_px": 280.1,
+          "width_px": 284.4
+        },
+        "HCAI_SPHERE": {
+          "height_px": 188.3,
+          "width_px": 187.7
+        },
+        "HHB_SPHERE": {
+          "height_px": 196.1,
+          "width_px": 195.3
+        },
+        "WE_SPHERE": {
+          "height_px": 206.0,
+          "width_px": 205.3
+        }
+      },
+      "min_gap_scaled_to_page_px": 26.3,
+      "min_silhouette_gap_px": 73.1,
+      "resolution": [
+        800,
+        800
+      ],
+      "silhouette_gaps_px": {
+        "GRP_CORE|GRP_HEALTH_BEHAVIOR": 73.1,
+        "GRP_CORE|GRP_HUMAN_CENTERED_AI": 94.8,
+        "GRP_CORE|GRP_WEARABLE_EDGE": 98.8,
+        "GRP_HEALTH_BEHAVIOR|GRP_HUMAN_CENTERED_AI": 373.7,
+        "GRP_HEALTH_BEHAVIOR|GRP_WEARABLE_EDGE": 392.1,
+        "GRP_HUMAN_CENTERED_AI|GRP_WEARABLE_EDGE": 341.9
+      },
+      "slot_height_px": 288.0
+    }
+  },
+  "composition_adjustments": {
+    "core_position": "unchanged",
+    "note": "Stage 1 directions and quadrants kept. Radial distances were re-spaced outward only (1.62/1.56/1.66 -> 1.72/1.50/1.90) and the companions given a shallow +/-5% scale hierarchy, because equal radii at equal size read as an atom/solar system, which the card forbids. The first attempt pulled one companion inward, shortened its chord to a neighbour and broke the 12 px silhouette-gap contract on mobile; the framing_contract check caught it.",
+    "rhythm": {
+      "GRP_HEALTH_BEHAVIOR": 0.96,
+      "GRP_HUMAN_CENTERED_AI": 1.06,
+      "GRP_WEARABLE_EDGE": 1.14
+    },
+    "scale": {
+      "GRP_HEALTH_BEHAVIOR": 1.0,
+      "GRP_HUMAN_CENTERED_AI": 0.96,
+      "GRP_WEARABLE_EDGE": 1.05
+    }
+  },
+  "fits": {
+    "desktop": {
+      "distance": 9.3468,
+      "fill_x": 0.7819,
+      "fill_y": 0.8389,
+      "projected_bbox": [
+        0.1091,
+        0.0806,
+        0.891,
+        0.9195
+      ],
+      "target": [
+        0.119,
+        0.0648,
+        -0.2227
+      ]
+    },
+    "mobile": {
+      "distance": 10.0,
+      "fill_x": 0.9205,
+      "fill_y": 0.9105,
+      "projected_bbox": [
+        0.0398,
+        0.0447,
+        0.9603,
+        0.9553
+      ],
+      "target": [
+        0.0772,
+        0.0502,
+        -0.2909
+      ]
+    }
+  },
+  "geometry_detail": {
+    "CORE_ACCENT": {
+      "dimensions": [
+        0.1408,
+        0.1049,
+        0.1683
+      ],
+      "faces": 2432,
+      "group": "GRP_CORE",
+      "materials": [
+        "M2_CORE_ACCENT"
+      ],
+      "role": "core_accent",
+      "triangles": 4736,
+      "vertices": 2370
+    },
+    "CORE_SPHERE": {
+      "dimensions": [
+        1.45,
+        1.4155,
+        1.4281
+      ],
+      "faces": 10240,
+      "group": "GRP_CORE",
+      "materials": [
+        "M2_CORE_SHELL"
+      ],
+      "role": "core_shell",
+      "triangles": 20224,
+      "vertices": 10114
+    },
+    "HCAI_SPHERE": {
+      "dimensions": [
+        0.9571,
+        0.9476,
+        0.96
+      ],
+      "faces": 5760,
+      "group": "GRP_HUMAN_CENTERED_AI",
+      "materials": [
+        "M2_HCAI_SHELL"
+      ],
+      "role": "hcai_shell",
+      "triangles": 11328,
+      "vertices": 5666
+    },
+    "HHB_SPHERE": {
+      "dimensions": [
+        0.997,
+        0.9871,
+        1.0
+      ],
+      "faces": 5760,
+      "group": "GRP_HEALTH_BEHAVIOR",
+      "materials": [
+        "M2_HEALTH_SHELL"
+      ],
+      "role": "health_shell",
+      "triangles": 11328,
+      "vertices": 5666
+    },
+    "WE_SPHERE": {
+      "dimensions": [
+        1.0469,
+        1.0364,
+        1.05
+      ],
+      "faces": 5760,
+      "group": "GRP_WEARABLE_EDGE",
+      "materials": [
+        "M2_WEARABLE_SHELL"
+      ],
+      "role": "wearable_shell",
+      "triangles": 11328,
+      "vertices": 5666
+    },
+    "_core_seam": {
+      "accent_lift": 0.004,
+      "seam_depth_fraction": 0.028,
+      "seam_half_width_deg": 7.4,
+      "seam_vertices": 880
+    }
+  },
+  "material_list": [
+    "M2_BACKDROP_DARK",
+    "M2_BACKDROP_LIGHT",
+    "M2_CORE_ACCENT",
+    "M2_CORE_SHELL",
+    "M2_FLOOR_DARK",
+    "M2_FLOOR_LIGHT",
+    "M2_HCAI_SHELL",
+    "M2_HEALTH_SHELL",
+    "M2_WEARABLE_SHELL"
+  ],
+  "materials": {
+    "core_accent": {
+      "bump": 0.02,
+      "hex": "#8E7854",
+      "metallic": 0.0,
+      "mottle": 0.14,
+      "note": "warm stone inlay on the seam \u2014 restrained, not jewellery",
+      "roughness": 0.58,
+      "spread": 0.03
+    },
+    "core_shell": {
+      "bump": 0.024,
+      "hex": "#27565A",
+      "metallic": 0.0,
+      "mottle": 0.16,
+      "note": "deep mineral teal, tactile and dense; matte, not shiny",
+      "roughness": 0.56,
+      "spread": 0.045
+    },
+    "hcai_shell": {
+      "bump": 0.018,
+      "hex": "#6F8474",
+      "metallic": 0.0,
+      "mottle": 0.15,
+      "note": "muted eucalyptus; the calm, human, soft one",
+      "roughness": 0.66,
+      "spread": 0.03
+    },
+    "health_shell": {
+      "bump": 0.022,
+      "hex": "#877156",
+      "metallic": 0.0,
+      "mottle": 0.18,
+      "note": "warm sandstone / bronze-clay; the most tactile surface",
+      "roughness": 0.68,
+      "spread": 0.045
+    },
+    "wearable_shell": {
+      "bump": 0.02,
+      "hex": "#6B6580",
+      "metallic": 0.0,
+      "mottle": 0.17,
+      "note": "stone-violet; cooled, mineral, never neon",
+      "roughness": 0.63,
+      "spread": 0.05
+    }
+  },
+  "mesh_flags": {
+    "CORE_ACCENT": {
+      "boundary_edges": 0,
+      "euler_characteristic": 2,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 5.5
+    },
+    "CORE_SPHERE": {
+      "boundary_edges": 0,
+      "euler_characteristic": 2,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 5.29
+    },
+    "HCAI_SPHERE": {
+      "boundary_edges": 0,
+      "euler_characteristic": 2,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 1.31
+    },
+    "HHB_SPHERE": {
+      "boundary_edges": 0,
+      "euler_characteristic": 2,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 1.31
+    },
+    "WE_SPHERE": {
+      "boundary_edges": 0,
+      "euler_characteristic": 2,
+      "nonmanifold_edges": 0,
+      "radial_variation_pct": 1.31
+    }
+  },
+  "quick": false,
+  "render_device": "CUDA(1)",
+  "renders": {
+    "01-desktop-dark": {
+      "bytes": 1789177,
+      "camera": "CAM_DESKTOP",
+      "path": "renders\\stage2_5\\01-desktop-dark.png",
+      "resolution": [
+        1600,
+        1400
+      ],
+      "theme": "dark"
+    },
+    "02-desktop-light": {
+      "bytes": 1789391,
+      "camera": "CAM_DESKTOP",
+      "path": "renders\\stage2_5\\02-desktop-light.png",
+      "resolution": [
+        1600,
+        1400
+      ],
+      "theme": "light"
+    },
+    "03-mobile-dark": {
+      "bytes": 535189,
+      "camera": "CAM_MOBILE",
+      "path": "renders\\stage2_5\\03-mobile-dark.png",
+      "resolution": [
+        800,
+        800
+      ],
+      "theme": "dark"
+    },
+    "04-mobile-light": {
+      "bytes": 534606,
+      "camera": "CAM_MOBILE",
+      "path": "renders\\stage2_5\\04-mobile-light.png",
+      "resolution": [
+        800,
+        800
+      ],
+      "theme": "light"
+    }
+  },
+  "resolution": {
+    "desktop": [
+      1600,
+      1400
+    ],
+    "mobile": [
+      800,
+      800
+    ]
+  },
+  "rigs": {
+    "dark": {
+      "ambient": 0.05,
+      "exposure": -0.55,
+      "fill": 0.18,
+      "fill_offset": [
+        3.8,
+        -2.4,
+        0.3
+      ],
+      "fill_tint": [
+        0.96,
+        0.98,
+        1.0
+      ],
+      "key": 1100.0,
+      "key_offset": [
+        -2.6,
+        -3.2,
+        3.0
+      ],
+      "key_size": 6.0,
+      "key_tint": [
+        1.0,
+        0.985,
+        0.96
+      ],
+      "look": "AgX - Medium High Contrast",
+      "sep": 0.22,
+      "sep_offset": [
+        1.3,
+        3.0,
+        3.0
+      ],
+      "view_transform": "AgX"
+    },
+    "light": {
+      "ambient": 0.06,
+      "exposure": -0.3,
+      "fill": 0.075,
+      "fill_offset": [
+        3.6,
+        -2.6,
+        0.2
+      ],
+      "fill_tint": [
+        0.98,
+        0.99,
+        1.0
+      ],
+      "key": 1900.0,
+      "key_offset": [
+        -2.9,
+        -3.0,
+        3.6
+      ],
+      "key_size": 4.2,
+      "key_tint": [
+        1.0,
+        0.99,
+        0.97
+      ],
+      "look": "AgX - Medium High Contrast",
+      "sep": 0.1,
+      "sep_offset": [
+        1.2,
+        2.8,
+        3.2
+      ],
+      "view_transform": "AgX"
+    }
+  },
+  "samples": 160,
+  "sources": {
+    "source/hero-v2-graybox.blend": {
+      "bytes": 1884872,
+      "sha256": "8dace2c240d4cea9d565538b5ea71939f1cca19bec67800d097c6b3b6f60fb27"
+    },
+    "source/hero-v2-lookdev.blend": {
+      "bytes": 1918040,
+      "sha256": "a440b085505cdc5582f2523ea342e2d8e4312da864dcb375fc2435aadff6ea1a"
+    }
+  },
+  "stage": "2.5 - geometry simplification + material calibration",
+  "themes": {
+    "dark": {
+      "ambient": 0.05,
+      "exposure": -0.55,
+      "fill_ratio": 0.18,
+      "key_energy": 1100.0,
+      "key_offset": [
+        -2.6,
+        -3.2,
+        3.0
+      ],
+      "key_size": 6.0,
+      "look": "AgX - Medium High Contrast",
+      "material_preset": {
+        "applied": {
+          "core_accent": [
+            0.2705,
+            0.18782,
+            0.08866
+          ],
+          "core_shell": [
+            0.02029,
+            0.09306,
+            0.10224
+          ],
+          "hcai_shell": [
+            0.15896,
+            0.23074,
+            0.17465
+          ],
+          "health_shell": [
+            0.24228,
+            0.16513,
+            0.09306
+          ],
+          "wearable_shell": [
+            0.14703,
+            0.13014,
+            0.21586
+          ]
+        },
+        "tint": 1.0
+      },
+      "sep_ratio": 0.22,
+      "theme": "dark",
+      "view_transform": "AgX"
+    },
+    "light": {
+      "ambient": 0.06,
+      "exposure": -0.3,
+      "fill_ratio": 0.075,
+      "key_energy": 1900.0,
+      "key_offset": [
+        -2.9,
+        -3.0,
+        3.6
+      ],
+      "key_size": 4.2,
+      "look": "AgX - Medium High Contrast",
+      "material_preset": {
+        "applied": {
+          "core_accent": [
+            0.23263,
+            0.16153,
+            0.07624
+          ],
+          "core_shell": [
+            0.01745,
+            0.08003,
+            0.08793
+          ],
+          "hcai_shell": [
+            0.13671,
+            0.19844,
+            0.1502
+          ],
+          "health_shell": [
+            0.20836,
+            0.14201,
+            0.08003
+          ],
+          "wearable_shell": [
+            0.12644,
+            0.11192,
+            0.18564
+          ]
+        },
+        "tint": 0.86
+      },
+      "sep_ratio": 0.1,
+      "theme": "light",
+      "view_transform": "AgX"
+    }
+  },
+  "total_triangles": 58944
+}

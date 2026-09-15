@@ -1,0 +1,97 @@
+{
+  "jobs": {
+    "02-desktop-light": {
+      "bytes": 397017,
+      "clipped_pixels": 0,
+      "corner_level": 248,
+      "kind": "light_page_composite",
+      "max_level": 248,
+      "size": [
+        1600,
+        1400
+      ],
+      "source": "12-desktop-light-alpha.png"
+    },
+    "04-mobile-light": {
+      "bytes": 156783,
+      "clipped_pixels": 0,
+      "corner_level": 248,
+      "kind": "light_page_composite",
+      "max_level": 248,
+      "size": [
+        800,
+        800
+      ],
+      "source": "14-mobile-light-alpha.png"
+    },
+    "21-desktop-dark-webscale": {
+      "bytes": 161215,
+      "clipped_pixels": 0,
+      "kind": "webscale_preview",
+      "max_level": 205,
+      "size": [
+        686,
+        600
+      ],
+      "source": "01-desktop-dark.png",
+      "source_max": 214,
+      "source_size": [
+        1600,
+        1400
+      ]
+    },
+    "22-desktop-light-webscale": {
+      "bytes": 89997,
+      "clipped_pixels": 0,
+      "kind": "webscale_preview",
+      "max_level": 248,
+      "size": [
+        686,
+        600
+      ],
+      "source": "02-desktop-light.png",
+      "source_max": 248,
+      "source_size": [
+        1600,
+        1400
+      ]
+    },
+    "23-mobile-dark-webscale": {
+      "bytes": 41504,
+      "clipped_pixels": 0,
+      "kind": "webscale_preview",
+      "max_level": 191,
+      "size": [
+        288,
+        288
+      ],
+      "source": "03-mobile-dark.png",
+      "source_max": 209,
+      "source_size": [
+        800,
+        800
+      ]
+    },
+    "24-mobile-light-webscale": {
+      "bytes": 29674,
+      "clipped_pixels": 0,
+      "kind": "webscale_preview",
+      "max_level": 248,
+      "size": [
+        288,
+        288
+      ],
+      "source": "04-mobile-light.png",
+      "source_max": 248,
+      "source_size": [
+        800,
+        800
+      ]
+    }
+  },
+  "page": [
+    247,
+    248,
+    245
+  ]
+}

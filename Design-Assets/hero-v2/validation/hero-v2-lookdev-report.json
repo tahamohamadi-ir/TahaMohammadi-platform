@@ -1,0 +1,271 @@
+{
+  "blender": "5.2.1 LTS",
+  "cameras_preserved": {
+    "desktop": "CAM_DESKTOP",
+    "mobile": "CAM_MOBILE",
+    "note": "Stage 1 authored compositions, untouched",
+    "refit": false
+  },
+  "checks": {
+    "arc_has_faint_material": {
+      "arc_rendered": true,
+      "pass_": true
+    },
+    "cameras_unchanged": {
+      "pass_": true
+    },
+    "every_groove_recovered": {
+      "inset_faces": {
+        "CORE_SPHERE": 2718,
+        "HCAI_SHELL": 5641,
+        "HHB_SPHERE": 4728,
+        "WE_SPHERE": 6073
+      },
+      "pass_": true
+    },
+    "four_material_roles_distinct": {
+      "pass_": true
+    },
+    "geometry_unchanged": {
+      "after": {
+        "CORE_ACCENT": 4736,
+        "CORE_SPHERE": 16876,
+        "HCAI_INSET": 4992,
+        "HCAI_SHELL": 21706,
+        "HHB_SPHERE": 20318,
+        "WE_SPHERE": 21832
+      },
+      "before": {
+        "CORE_ACCENT": 4736,
+        "CORE_SPHERE": 16876,
+        "HCAI_INSET": 4992,
+        "HCAI_SHELL": 21706,
+        "HHB_SPHERE": 20318,
+        "WE_SPHERE": 21832
+      },
+      "pass_": true
+    },
+    "layout_unchanged": {
+      "pass_": true
+    },
+    "no_glb_or_web_asset": {
+      "note": "stage 2 exports no GLB; only .blend + PNG",
+      "pass_": true
+    },
+    "no_text_or_particles": {
+      "pass_": true
+    }
+  },
+  "checks_all_pass": true,
+  "decor_arc": {
+    "material": "M_ARC",
+    "policy": "hide_render toggled per render; faint matte grey",
+    "rendered": true
+  },
+  "drift": {
+    "cameras": {},
+    "layout": {},
+    "triangles": {}
+  },
+  "environment": {
+    "backdrop": "BACKDROP",
+    "collection": "Rig_ReviewEnv",
+    "note": "review furniture: never exported, no form moved",
+    "type": "cyclorama (no horizon line)"
+  },
+  "exposure": -0.7,
+  "material_slots": {
+    "CORE_ACCENT": {
+      "faces": 2432,
+      "inset": null,
+      "shell": "core_accent"
+    },
+    "CORE_SPHERE": {
+      "faces": 8296,
+      "inset": "core_inset",
+      "inset_area_pct": 9.92,
+      "inset_face_pct": 32.76,
+      "inset_faces": 2718,
+      "shell": "core_shell"
+    },
+    "HCAI_INSET": {
+      "faces": 2560,
+      "inset": null,
+      "shell": "hcai_inner"
+    },
+    "HCAI_SHELL": {
+      "faces": 11048,
+      "inset": "hcai_inset",
+      "inset_area_pct": 45.97,
+      "inset_face_pct": 51.06,
+      "inset_faces": 5641,
+      "shell": "hcai_shell"
+    },
+    "HHB_SPHERE": {
+      "faces": 9798,
+      "inset": "health_inset",
+      "inset_area_pct": 19.27,
+      "inset_face_pct": 48.25,
+      "inset_faces": 4728,
+      "shell": "health_shell"
+    },
+    "WE_SPHERE": {
+      "faces": 10558,
+      "inset": "wearable_inset",
+      "inset_area_pct": 34.01,
+      "inset_face_pct": 57.52,
+      "inset_faces": 6073,
+      "shell": "wearable_shell"
+    }
+  },
+  "materials": {
+    "arc": {
+      "hex": "#55595D",
+      "metallic": 0.0,
+      "note": "DECOR_ARC_01: faint, matte, deliberately close to the backdrop",
+      "roughness": 0.7
+    },
+    "backdrop": {
+      "hex": "#23262A",
+      "metallic": 0.0,
+      "note": "review environment only \u2014 a matte, deep, neutral graphite",
+      "roughness": 0.85
+    },
+    "core_accent": {
+      "hex": "#8A6C48",
+      "metallic": 0.25,
+      "note": "warm bronze-stone inlay \u2014 restrained, not jewellery",
+      "roughness": 0.55
+    },
+    "core_inset": {
+      "hex": "#1E4347",
+      "metallic": 0.0,
+      "note": "the core seam: same hue, darker and flatter",
+      "roughness": 0.58
+    },
+    "core_shell": {
+      "hex": "#27565A",
+      "metallic": 0.0,
+      "note": "deep mineral teal \u2014 the brand-leading anchor",
+      "roughness": 0.4
+    },
+    "hcai_inner": {
+      "hex": "#6A8070",
+      "metallic": 0.0,
+      "note": "the inset form inside the cavity: close to the shell in value, readable but understated",
+      "roughness": 0.56
+    },
+    "hcai_inset": {
+      "hex": "#5C7062",
+      "metallic": 0.0,
+      "note": "shell opening / inner wall: a mild tonal shift only, so the cavity cannot read as an iris",
+      "roughness": 0.6
+    },
+    "hcai_shell": {
+      "hex": "#6E8B72",
+      "metallic": 0.0,
+      "note": "muted eucalyptus: lighter and softer than the core",
+      "roughness": 0.58
+    },
+    "health_inset": {
+      "hex": "#775F45",
+      "metallic": 0.0,
+      "note": "the two contours: a low-contrast recess, not a band",
+      "roughness": 0.66
+    },
+    "health_shell": {
+      "hex": "#8C7050",
+      "metallic": 0.0,
+      "note": "deep mineral bronze-clay \u2014 the warm contrast role, deliberately not bread-coloured",
+      "roughness": 0.6
+    },
+    "wearable_inset": {
+      "hex": "#5A5474",
+      "metallic": 0.0,
+      "note": "the two grooves: deeper violet, still no neon",
+      "roughness": 0.62
+    },
+    "wearable_shell": {
+      "hex": "#6A6383",
+      "metallic": 0.0,
+      "note": "deep stone-violet \u2014 the cool support role, no candy",
+      "roughness": 0.48
+    }
+  },
+  "micro_relief": {
+    "coordinate": "world (Geometry.Position) \u2014 one scale across objects of different size",
+    "grain_bump": 0.055,
+    "grain_scale": 14.0,
+    "micro_bump": 0.018,
+    "micro_scale": 55.0,
+    "roughness_spread": 0.035
+  },
+  "quick": false,
+  "render_device": "CUDA(1)",
+  "renders": {
+    "desktop-arc": {
+      "absolute": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2\\desktop-arc.png",
+      "arc_visible": true,
+      "bytes": 1859595,
+      "camera": "CAM_DESKTOP",
+      "path": "stage2\\desktop-arc.png",
+      "resolution": [
+        1600,
+        1400
+      ]
+    },
+    "desktop-clean": {
+      "absolute": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2\\desktop-clean.png",
+      "arc_visible": false,
+      "bytes": 1878556,
+      "camera": "CAM_DESKTOP",
+      "path": "stage2\\desktop-clean.png",
+      "resolution": [
+        1600,
+        1400
+      ]
+    },
+    "mobile-arc": {
+      "absolute": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2\\mobile-arc.png",
+      "arc_visible": true,
+      "bytes": 569984,
+      "camera": "CAM_MOBILE",
+      "path": "stage2\\mobile-arc.png",
+      "resolution": [
+        800,
+        800
+      ]
+    },
+    "mobile-clean": {
+      "absolute": "D:\\Project\\tahamohammadi-platform\\Design-Assets\\hero-v2\\renders\\stage2\\mobile-clean.png",
+      "arc_visible": false,
+      "bytes": 572131,
+      "camera": "CAM_MOBILE",
+      "path": "stage2\\mobile-clean.png",
+      "resolution": [
+        800,
+        800
+      ]
+    }
+  },
+  "resolution": {
+    "desktop": [
+      1600,
+      1400
+    ],
+    "mobile": [
+      800,
+      800
+    ]
+  },
+  "rig": {
+    "fill": "LG2_Fill 0.22x key @ (3.8,-2.6,0.4) size 5.0",
+    "key": "LG2_Key 1200 W @ (-3.0,-3.4,3.1) size 4.0",
+    "separation": "LG2_Sep 0.30x key @ (1.5,3.4,3.2) size 2.6",
+    "stage1_rig": "kept, hide_render=True (evidence, not lighting)",
+    "world_ambient": 0.06
+  },
+  "samples": 160,
+  "source_blend": "Design-Assets/hero-v2/source/hero-v2-graybox.blend",
+  "stage": "2 - look development (materials + light)"
+}
