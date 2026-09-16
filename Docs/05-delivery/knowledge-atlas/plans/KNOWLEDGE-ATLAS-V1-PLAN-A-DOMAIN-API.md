@@ -796,6 +796,13 @@ git commit -m "feat(atlas): add relation validation rules"
 
 ### Task 10: Hierarchy DAG, locale parity and taxonomy lifecycle validation
 
+> **Execution amendments (recorded by the implementer with a runnable probe: 3 failed / 2 passed against the literal snippets).** Three of this task's test snippets are **unsatisfiable as written**; the implementation corrects them and `apps/atlas/tests/test_validation_hierarchy_locale.py` is the source of truth:
+> 1. `test_invisible_nodes_and_relations_do_not_participate` — hiding **one** one-sided node leaves the other still blocking its own parity check; the test must hide **both** one-sided nodes.
+> 2. `test_a_group_without_both_locale_labels_blocks_publish` — clearing one FA gap leaves the other EN gap; scope the assertion to the group/node under test instead of asserting an empty blocking list.
+> 3. `test_parity_gate_covers_both_directions_and_passes_when_both_locales_resolve` (the Phase 0 correction-1 test) — its overrides targeted the locale that **already** resolved; the overrides must be written on the **missing** locale, and the plan's wrong-locale calls are kept as the no-fallback proof.
+>
+> Two further execution facts: this task ships **five** validator groups — the plan names four, and `DANGLING_NODE_HIDDEN_RELATION` gets its own `validate_visibility`, because grouping it under one of the plan's names would hide a blocker; **Task 12 must aggregate all six functions** (`validate_relations` + these five). And `atlas_dag` — needed by this task's tests and owned by no task — lives in the single builders module per rulings R4/R5/R10, so the commit spans five paths rather than the two the plan's Step 6 lists.
+
 **Files:**
 - Modify: `Back-End/apps/atlas/validation.py`
 - Test: `Back-End/apps/atlas/tests/test_validation_hierarchy_locale.py`
