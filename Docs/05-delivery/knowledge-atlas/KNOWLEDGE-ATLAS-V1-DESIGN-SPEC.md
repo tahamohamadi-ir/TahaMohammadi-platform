@@ -247,7 +247,7 @@ Constraints: `UniqueConstraint(fields=["status"], condition=Q(status="active"), 
 | Field | Type | Rules |
 |---|---|---|
 | `version` | `FK(AtlasVersion, related_name="nodes")` | Same-version integrity enforced in `clean()` |
-| `public_key` | `SlugField(max_length=80)` | Assigned at creation as `<node-type-key>-<8 lowercase hex>`; immutable thereafter; unique globally (across versions, so a key never means two things) |
+| `public_key` | `SlugField(max_length=80)` | Assigned at creation as `<node-type-key>-<8 lowercase hex>`; immutable thereafter; **unique per version** — *amended during Plan A execution (ruling R9, `plans/LEDGER-A-DOMAIN-API.md`): the earlier "unique globally (across versions)" wording is superseded, because the clone flow (§8.2 `Active vN ──clone──▶ Draft vN+1`) must carry a version's keys onto a coexisting draft or deep links would break on publish, and the execution rule "stable public keys must not silently mutate" requires exactly that. A key still never means two things inside the served topology, because exactly one version is active at a time.* |
 | `node_type` | `FK(AtlasNodeType, PROTECT, related_name="nodes")` | Must be `active` to publish |
 | `canonical_model` | `CharField(choices=CANONICAL_SOURCES)` | Copied from `node_type.canonical_source` at save; `none` allows an Atlas-only structural node |
 | `canonical_translation_key` | `UUIDField(null=True, blank=True, db_index=True)` | Locale-neutral canonical reference (C6) |
@@ -257,7 +257,7 @@ Constraints: `UniqueConstraint(fields=["status"], condition=Q(status="active"), 
 | `pin_x`, `pin_y`, `pin_z` | `FloatField(null=True, blank=True)` | Optional layout pin override; `pin_x`/`pin_y` must both be present when either is set |
 | `sort_order` | `PositiveIntegerField(default=0)` | Deterministic tie-breaking for layout and lists |
 
-Constraints: `UniqueConstraint(fields=["version", "node_type", "canonical_translation_key"], condition=Q(canonical_translation_key__isnull=False))` (a canonical record appears at most once per version); unique `public_key` globally; index `(version, visible)`, `(canonical_model, canonical_translation_key)`.
+Constraints: `UniqueConstraint(fields=["version", "node_type", "canonical_translation_key"], condition=Q(canonical_translation_key__isnull=False))` (a canonical record appears at most once per version); unique `public_key` **per version** (`UniqueConstraint(["version", "public_key"])`) — *see the amendment on the `public_key` row above*; index `(version, visible)`, `(canonical_model, canonical_translation_key)`.
 
 #### `AtlasNodeTranslation` — `atlas_node_translation` (per-locale overrides)
 
@@ -302,7 +302,7 @@ Constraint: unique `(relation, locale)`.
 
 | Model / table | Fields |
 |---|---|
-| `AtlasGroup` / `atlas_group` | `version` FK; `public_key` (`group-<8 hex>`, immutable, unique); `sort_order`; `active` |
+| `AtlasGroup` / `atlas_group` | `version` FK; `public_key` (`group-<8 hex>`, immutable, **unique per version** per ruling R9); `sort_order`; `active` |
 | `AtlasGroupTranslation` / `atlas_group_translation` | `group` FK; `locale`; `label` (required for both locales at publish); `description` (blank allowed); unique `(group, locale)` |
 | `AtlasGroupMembership` / `atlas_group_membership` | `group` FK; `node` FK; `sort_order`; unique `(group, node)` |
 
@@ -396,7 +396,7 @@ Rules:
 ## 7. Multilingual topology
 
 1. **One topology.** `AtlasVersion` has no locale. Node, relation and group identities and counts are identical in EN and FA.
-2. **Stable identities.** `public_key`, relation keys and group keys are language-neutral, URL-safe (`[a-z0-9._~-]`), unique, and immutable after publish. Equal or similar copy never proves or creates identity; identity comes from `translation_key` and the stored keys.
+2. **Stable identities.** `public_key`, relation keys and group keys are language-neutral, URL-safe (`[a-z0-9._~-]`), unique **within their version** (ruling R9 — a clone carries them unchanged so a publish never re-keys the site), and immutable after publish. Equal or similar copy never proves or creates identity; identity comes from `translation_key` and the stored keys.
 3. **Localized surfaces.** Exactly these are localized: node label/summary/accessible label, node aliases, relation display copy (type label or inverse label) and per-relation explanation, group label/description, and every canonical `href` (`/en/…` vs `/fa/…`).
 4. **Resolution.** The locale projection is built by the rule in §5.4, per node, per locale.
 5. **Publish gate.** Publication is **blocked** unless every `visible` node and every `visible` relation resolves in **both** EN and FA: labels present (from override or canonical record), groups fully localized, and canonical links resolvable where a canonical record exists. The gate is enforced in the same transaction as activation (§8.3).
@@ -1202,7 +1202,7 @@ The program's coverage must include the following. Framework choice follows each
 
 | Area | Required assertions |
 |---|---|
-| Model constraints | Unique active version; unique public keys; `(version, node_type, translation_key)` uniqueness; a canonical record appears once per version; PROTECT on in-use taxonomy; composed relation key stability |
+| Model constraints | Unique active version; per-version unique public keys (ruling R9); `(version, node_type, translation_key)` uniqueness; a canonical record appears once per version; PROTECT on in-use taxonomy; composed relation key stability |
 | Taxonomy validation | Inactive type blocked; allowed source/target pairs enforced; self-loop policy; key immutability once used |
 | Multi-parent hierarchy | A node with two hierarchy parents is valid and its children/parents render in both directions |
 | Hierarchy cycle rejection | A cycle in the hierarchy subgraph produces `HIERARCHY_CYCLE` and blocks activation |

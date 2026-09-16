@@ -539,7 +539,11 @@ def test_localized_override_is_optional_and_unique_per_locale():
 
 
 @pytest.mark.django_db
-def test_node_public_key_is_globally_unique_across_versions():
+def test_node_public_key_is_unique_per_version_and_reusable_across_versions(atlas_v1):
+    # Amended during execution (ruling R9): the plan originally asserted GLOBAL uniqueness,
+    # which is unsatisfiable with the clone flow this plan's own Task 13 requires
+    # (`clone_version` copies keys onto a coexisting draft) and with the critical rule
+    # "stable public keys must not silently mutate".
     first, second = _node(), _node(version=AtlasVersion.objects.create(status="draft", label="v2"))
     second.public_key = first.public_key
     with pytest.raises(IntegrityError):
@@ -569,7 +573,7 @@ class Meta:  # AtlasNode
     db_table = "atlas_node"
     ordering = ["version", "sort_order", "public_key"]
     constraints = [
-        models.UniqueConstraint(fields=["public_key"], name="atlas_node_unique_public_key"),
+        models.UniqueConstraint(fields=["version", "public_key"], name="atlas_node_version_public_key"),  # ruling R9
         models.UniqueConstraint(fields=["version", "node_type", "canonical_translation_key"],
                                 condition=models.Q(canonical_translation_key__isnull=False),
                                 name="atlas_node_unique_canonical_per_version"),
