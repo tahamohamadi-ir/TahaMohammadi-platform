@@ -18,6 +18,9 @@
 - **Pure modules stay pure.** `validation.py` and `layout.py` import no HTTP layer and perform no queries inside the algorithm loops beyond a passed-in queryset.
 - **Validation never reshapes.** A validator returns issues; it never returns a reduced or repaired graph.
 - **No inferred relations.** The only relation rows that exist are authored ones.
+- **Locale parity is a publish blocker in both directions.** Every `visible` node must resolve EN **and** FA (canonical row for that exact locale, or a per-locale override — never a cross-locale fallback) before `activate_version` may succeed; `MISSING_LOCALE_PROJECTION` is blocking and is never emitted as a warning. Invisible nodes follow the visibility rule exactly and are therefore not parity-gated.
+- **Draft preview is credential-transported, never URL-transported.** The Atlas preview capability travels only in an `Authorization: Bearer` header to `GET /api/atlas/preview?locale=…` (spec §10.10.1); no Atlas route accepts a preview token in a path segment or query string, and the signing secret (`PREVIEW_SHARE_SECRET`) never reaches frontend code.
+- **Exactly one compact-overview field.** `mobile_overview_priority` (model) / `mobileOverviewPriority` (wire) is the only spelling; no second field, alias column or form-only variant is introduced.
 - **Exactly one active version platform-wide**, enforced by a partial unique constraint, never by application code alone.
 - **Draft invisibility is a test, not an intention:** the public route must be unable to serve draft data on any code path.
 - **Working invocation on this machine** (Hermes leaks `PYTHONPATH`; the project venv is `Back-End/.venv`):
@@ -71,7 +74,8 @@ Baseline before Task 1: **952 tests collected**, `ruff` clean, both snapshots pi
 | `clone_version(source_id, label) -> AtlasVersion` | Plan B (clone action) | New draft with copied public keys and pins |
 | `recompute_layout(version) -> int` | Plan B (layout button), Plan D (seed) | Returns new `layout_revision` |
 | `GET /api/atlas/{locale}` → payload `atlas01-1.0.0` | Plan C (frontend), Plan D (About preview) | Spec §10.2; keys identical across locales; localized text/hrefs |
-| `GET /api/atlas/preview/{token}` → draft projection | Consumed by Plan C task 8 (render mode) and Plan B task 17 (framed preview); **tokens minted by Plan B task 6** | Plan A owns the endpoint so that Plans B and C stay independent of each other |
+| `GET /api/atlas/preview?locale=<en\|fa>` + `Authorization: Bearer <token>` → draft projection | Consumed by Plan C task 8 (static preview shell fetch); **capabilities minted by Plan B task 6** | Spec §10.10/§10.10.1. The credential never appears in a request URL; Plan A owns validation, the signing/verification primitive and the endpoint, so Plans B and C stay independent of each other |
+| `build_atlas_preview_token` / `parse_atlas_preview_token` | Consumed by Plan B task 6 (mint) | One primitive, one place that can mint or verify an Atlas preview capability; reuses the existing HMAC/secret handling of `apps/content/preview_token.py` |
 
 ---
 
@@ -500,7 +504,7 @@ git commit -m "feat(atlas): add node-type and relation-type taxonomy models"
 **Interfaces:**
 - Produces: `AtlasVersion` (with the layout storage field, see below), `AtlasNode`, `AtlasNodeTranslation`
 - Produces: `AtlasVersion.layout = models.JSONField(default=dict, blank=True)` holding `{"<node public_key>": [x, y, z], ...}` (3-decimal floats) — the spec fixes the layout *behaviour* (computed once per revision and served, §12.1); the plan fixes its storage shape
-- Produces: the exact `AtlasNode` field set Plans B and C consume — `version`, `public_key`, `node_type`, `canonical_model`, `canonical_translation_key`, `importance` (0–100), `visible` (bool), `mobile_overview` (`auto` / `featured` / `hidden`, default `auto`), `pin_x` / `pin_y` / `pin_z` (all-or-none), `sort_order`, timestamps — plus `AtlasNodeTranslation(node, locale, label_override, summary_override, aliases)`. Field names come from spec §5 and are final: `mobile_overview` is the one mobile-overview field (the card's Plan B item 5 wording *mobile_overview_priority* names the same field — do not add a second one), and there is no separate `pinned` flag, only the coordinate trio.
+- Produces: the exact `AtlasNode` field set Plans B and C consume — `version`, `public_key`, `node_type`, `canonical_model`, `canonical_translation_key`, `importance` (0–100), `visible` (bool), `mobile_overview_priority` (`auto` / `featured` / `hidden`, default `auto`), `pin_x` / `pin_y` / `pin_z` (all-or-none), `sort_order`, timestamps — plus `AtlasNodeTranslation(node, locale, label_override, summary_override, aliases)`. These names are final (spec §5): `mobile_overview_priority` is the one compact-overview field, spelled `mobileOverviewPriority` on the wire — there is no `mobile_overview`, no `mobileOverview` and no other alias anywhere, and no separate `pinned` flag, only the coordinate trio.
 
 - [ ] **Step 1: Write the failing tests**
 
@@ -543,10 +547,10 @@ def test_node_public_key_is_globally_unique_across_versions():
 
 
 @pytest.mark.django_db
-def test_mobile_overview_defaults_and_rejects_unknown_values():
-    node = _node()                                   # no explicit mobile_overview
-    assert node.mobile_overview == "auto"
-    node.mobile_overview = "sometimes"
+def test_mobile_overview_priority_defaults_and_rejects_unknown_values():
+    node = _node()                                   # no explicit mobile_overview_priority
+    assert node.mobile_overview_priority == "auto"
+    node.mobile_overview_priority = "sometimes"
     with pytest.raises(ValidationError):
         node.full_clean()
 ```
@@ -573,7 +577,7 @@ class Meta:  # AtlasNode
     indexes = [models.Index(fields=["version", "visible"], name="atlas_node_version_visible_idx"),
                models.Index(fields=["canonical_model", "canonical_translation_key"], name="atlas_node_canonical_idx")]
 ```
-`AtlasNode.clean()` additionally enforces: `public_key` matches `PUBLIC_KEY_RE`; `canonical_model` equals `node_type.canonical_source`; pins are both-or-neither; `mobile_overview` is one of the three choices.
+`AtlasNode.clean()` additionally enforces: `public_key` matches `PUBLIC_KEY_RE`; `canonical_model` equals `node_type.canonical_source`; pins are both-or-neither; `mobile_overview_priority` is one of the three choices.
 - [ ] **Step 4: Migrate + test** — expect `5 passed`.
 - [ ] **Step 5: Commit**
 
@@ -820,11 +824,21 @@ def test_invisible_nodes_and_relations_do_not_participate(atlas_v1):
     report = validate_version(atlas_v1.version)
     assert "MISSING_LOCALE_PROJECTION" not in report.blocking_codes()
     assert "DANGLING_NODE_HIDDEN_RELATION" in report.blocking_codes()
+
+
+def test_parity_gate_covers_both_directions_and_passes_when_both_locales_resolve(atlas_v1):
+    report = validate_version(atlas_v1.version)
+    parity = {issue.nodeKey for issue in report.blocking if issue.code == "MISSING_LOCALE_PROJECTION"}
+    assert parity == {atlas_v1.en_missing_node.public_key, atlas_v1.fa_missing_node.public_key}   # EN ✗ and FA ✗ both block
+
+    atlas_v1.override(atlas_v1.en_missing_node, locale="fa", label="برچسب")
+    atlas_v1.override(atlas_v1.fa_missing_node, locale="en", label="Label")
+    assert "MISSING_LOCALE_PROJECTION" not in validate_version(atlas_v1.version).blocking_codes()   # both resolve → gate passes
 ```
 
 - [ ] **Step 2: Run — expect FAIL**.
 - [ ] **Step 3: Implement** — hierarchy DFS over `visible` relations whose type has `hierarchy_role=True` (iterating nodes in `public_key` order for determinism), reporting the first node on every cycle; locale projection resolution via `resolve_canonical` with override precedence (`label_override` non-blank ⇒ resolvable without a canonical row); canonical checks per spec §20.1; group copy gate; dangling visible relation to an invisible node.
-- [ ] **Step 4: Run — expect `4 passed`.**
+- [ ] **Step 4: Run — expect `5 passed`** — the parity-matrix test is the §20.1 gate proof for both missing-locale directions and for the both-resolve pass.
 - [ ] **Step 5: Commit**
 
 ```bash
@@ -972,6 +986,18 @@ def test_activation_rolls_back_completely_on_validation_failure(atlas_two_versio
     assert AtlasVersion.objects.get(pk=atlas_two_versions.draft.pk).status == "draft"
 
 
+def test_activation_rejects_either_missing_locale_direction(atlas_two_versions):
+    for break_it, restore in ((atlas_two_versions.break_fa_projection, atlas_two_versions.restore_fa_projection),
+                              (atlas_two_versions.break_en_projection, atlas_two_versions.restore_en_projection)):
+        break_it()
+        with pytest.raises(ValidationFailed) as exc:
+            activate_version(atlas_two_versions.draft.pk, expected_revision=version_revision(atlas_two_versions.draft))
+        assert "MISSING_LOCALE_PROJECTION" in {issue.code for issue in exc.value.issues}
+        assert AtlasVersion.objects.get(pk=atlas_two_versions.draft.pk).status == "draft"
+        restore()
+    activate_version(atlas_two_versions.draft.pk, expected_revision=version_revision(atlas_two_versions.draft))
+
+
 def test_stale_revision_and_already_active_are_rejected(atlas_two_versions):
     with pytest.raises(PreconditionFailed):
         activate_version(atlas_two_versions.draft.pk, expected_revision="0-stale")
@@ -1059,12 +1085,14 @@ git commit -m "feat(atlas): add locale projection and ETag digest"
 ### Task 15: Public endpoint, draft invisibility, fail-closed behaviour
 
 **Files:**
+- Create: `Back-End/apps/atlas/preview_tokens.py`
 - Modify: `Back-End/apps/api/api.py`
-- Test: `Back-End/tests/test_atlas_public_api.py`
+- Test: `Back-End/tests/test_atlas_public_api.py`, `Back-End/apps/atlas/tests/test_preview_tokens.py`
 
 **Interfaces:**
 - Produces: `GET /api/atlas/{locale}` returning the projection; `404` envelope `atlas_not_found` for unknown locale or no active version; `500` envelope with no partial payload when the active version fails its own contract check
-- Produces: `GET /api/atlas/preview/{token}` — the **token-gated draft projection** on the same public router: `Cache-Control: private, no-store`, `X-Robots-Tag: noindex`, `404` on any token failure, and a strict `kind == "atlas-version"` check. The token is minted by the admin surface (Plan B task 6) and rendered by the frontend preview mode (Plan C task 8); this module only validates and serves, and it never exposes a draft through the public `/api/atlas/{locale}` route.
+- Produces: `GET /api/atlas/preview?locale=<en|fa>` — the **draft projection behind an `Authorization` credential** (spec §10.10.1): the capability is read only from the request's `Authorization: Bearer <token>` header, never from the path or query, and is verified through `parse_atlas_preview_token` (unforgeable, unexpired, `purpose == "atlas-preview"`, locale scope equal to `?locale`, referenced version exists, read-only). Success returns the draft payload with `Cache-Control: no-store`, `Pragma: no-cache`, `X-Robots-Tag: noindex, nofollow`, `Referrer-Policy: no-referrer`. Failure is `401` (absent/unparseable credential) or `403` (expired, wrong purpose, wrong locale, unknown version) — never `404`, because a probe must not learn that a draft exists. It never exposes a draft through `GET /api/atlas/{locale}`, and no route accepts a preview token in a path segment or query string.
+- Produces: `Back-End/apps/atlas/preview_tokens.py` — `build_atlas_preview_token(version_id, locale, *, ttl_seconds=600) -> str` and `parse_atlas_preview_token(token) -> AtlasPreviewCapability | None` with `AtlasPreviewCapability(version_id, locale, purpose="atlas-preview", exp)`, signing `preview:atlas-preview:{version_id}:{locale}:{exp}` through the existing HMAC/secret handling of `apps/content/preview_token.py` (`PREVIEW_SHARE_SECRET`, falling back to `SECRET_KEY`). Consumed by Plan B task 6 for minting; the secret stays backend-only settings and is never bundled into a frontend artifact.
 - Produces (internal): `public_atlas_payload(locale: str) -> dict | None` importable by Plan B's preview minting
 
 - [ ] **Step 1: Write the failing tests**
@@ -1112,23 +1140,49 @@ def test_relations_never_reference_unknown_nodes(client, atlas_active_version):
 - [ ] **Step 4: Run — expect `5 passed`**, then add the preview-endpoint cases and re-run:
 
 ```python
-def test_preview_endpoint_serves_the_draft_projection_and_is_never_cacheable(client, draft_version_with_extra_node):
-    token = build_preview_token("atlas-version", draft_version_with_extra_node.pk)
-    response = client.get(f"/api/atlas/preview/{token}")
+def test_preview_serves_the_draft_projection_with_no_store_headers(client, draft_version_with_extra_node):
+    capability = build_atlas_preview_token(draft_version_with_extra_node.pk, "en")   # TTL 600 s
+    response = client.get("/api/atlas/preview?locale=en", HTTP_AUTHORIZATION=f"Bearer {capability}")
     assert response.status_code == 200
-    assert response["Cache-Control"] == "private, no-store"
-    assert response["X-Robots-Tag"] == "noindex"
+    assert response["Cache-Control"] == "no-store"
+    assert response["Pragma"] == "no-cache"
+    assert response["X-Robots-Tag"] == "noindex, nofollow"
+    assert response["Referrer-Policy"] == "no-referrer"
     assert response.json()["version"]["id"] == draft_version_with_extra_node.pk
+    assert response.json()["locale"] == "en"
 
 
-def test_preview_endpoint_rejects_foreign_kinds_tampering_and_expiry(client, draft_version, published_article):
-    foreign = build_preview_token("article", published_article.pk)     # a valid token of the WRONG kind
-    assert client.get(f"/api/atlas/preview/{foreign}").status_code == 404
-    assert client.get("/api/atlas/preview/atlas-version.1.9999999999.deadbeef").status_code == 404
-    expired = build_preview_token("atlas-version", draft_version.pk, ttl_seconds=-5)
-    assert client.get(f"/api/atlas/preview/{expired}").status_code == 404
+def test_preview_credential_is_only_read_from_the_authorization_header(client, draft_version):
+    capability = build_atlas_preview_token(draft_version.pk, "en")
+    assert client.get("/api/atlas/preview?locale=en").status_code == 401                        # absent
+    assert client.get("/api/atlas/preview?locale=en", HTTP_AUTHORIZATION="Bearer nope").status_code == 401
+    assert client.get(f"/api/atlas/preview?locale=en&token={capability}").status_code == 401    # query is not a credential
+    assert client.get("/api/atlas/preview?locale=en", HTTP_AUTHORIZATION=f"Token {capability}").status_code == 401
+    # the URL-carrying route of the rejected design must not exist at all (token never in a path segment)
+    assert client.get(f"/api/atlas/preview/{capability}").status_code == 404
+
+
+def test_preview_rejects_expired_wrong_locale_wrong_purpose_and_unknown_version(client, draft_version, published_article):
+    for bad in (build_atlas_preview_token(draft_version.pk, "en", ttl_seconds=-5),
+                build_atlas_preview_token(draft_version.pk, "fa"),
+                build_preview_token("article", published_article.pk),
+                build_atlas_preview_token(999_999, "en")):
+        response = client.get("/api/atlas/preview?locale=en", HTTP_AUTHORIZATION=f"Bearer {bad}")
+        assert response.status_code == 403, bad
+
+
+def test_preview_is_read_only_and_never_leaks_into_the_public_route(client, draft_version_with_extra_node):
+    capability = build_atlas_preview_token(draft_version_with_extra_node.pk, "en")
+    draft_only_key = draft_version_with_extra_node.draft_only_key
+    assert draft_only_key in json.dumps(client.get("/api/atlas/preview?locale=en",
+                                                  HTTP_AUTHORIZATION=f"Bearer {capability}").json())
+    assert client.post("/api/atlas/preview?locale=en", HTTP_AUTHORIZATION=f"Bearer {capability}").status_code == 405
+    assert draft_only_key not in json.dumps(client.get("/api/atlas/en").json())
+    assert draft_only_key not in json.dumps(client.get("/api/atlas/fa").json())
 ```
-Expected: `7 passed`. The kind check matters: the existing preview service mints tokens for content entities, and an Atlas preview must not be reachable with a token minted for a different kind.
+
+Plus the primitive's own tests in `apps/atlas/tests/test_preview_tokens.py`: a minted token round-trips to `AtlasPreviewCapability(version_id, locale, purpose="atlas-preview", exp)`; a tampered signature, a swapped version id, a swapped locale and a `hero`-style foreign purpose all parse to `None`; TTL defaults to 600 s and is never taken from the request.
+Expected: `10 passed`. The purpose/locale scope is the point: the existing preview service mints tokens for content entities, so an Atlas capability must be unreachable with a token minted for anything else, and a content preview must be unreachable with an Atlas capability.
 
 - [ ] **Step 5: Re-run the full backend suite to prove no regression**
 
@@ -1204,7 +1258,7 @@ git commit -m "feat(atlas): add ETag, conditional GET and cache headers"
 - Test: none (documentation) — validated by the drift/pin tasks that follow
 
 **Interfaces:**
-- Produces: the human-readable companion to the payload: field tables, key grammar, ordering guarantees, omission rules, the ETag formula, the `304` contract, and the preflight report format from Task 1
+- Produces: the human-readable companion to the payload: field tables, key grammar, ordering guarantees, omission rules, the ETag formula, the `304` contract, the preflight report format from Task 1, **and the preview contract** — the mint endpoint, the `Authorization` credential scheme with the documented reason it replaces the repository's path-token share preview, the `?locale=` selector rule, the `no-store`/`no-cache`/`noindex, nofollow`/`no-referrer` header set, and the `401`/`403` matrix with the explicit "never `404` for a bad credential" rule
 
 - [ ] **Step 1: Write the document** from the implemented projection (paste the real field lists; no invented fields). Cross-link `Docs/05-delivery/knowledge-atlas/KNOWLEDGE-ATLAS-V1-DESIGN-SPEC.md` §10 and the new `I09 — Atlas` section of `Docs/03-contracts/PRODUCT-INTERFACES-V2.md`.
 - [ ] **Step 2: Verify it matches the implementation** by regenerating one payload and diffing its keys against the document's tables:
@@ -1230,7 +1284,9 @@ cd ../.. && git add -- Docs/03-contracts/PRODUCT-INTERFACES-V2.md && git commit 
 - Test: `Back-End/apps/atlas/tests/test_factories.py`
 
 **Interfaces:**
-- Produces: `atlas_scale_fixture` building a deterministic **72-node / 136-relation** version (the spec's 40–80 / 60–150 target band) with: 1 identity anchor, 12 research areas, 24 projects, 20 publications, 8 methods, 7 technologies, 6 groups, a 3-level hierarchy, one `featured`/`hidden` split, and pins on 4 nodes
+- Produces: `atlas_scale_fixture` building a deterministic **72-node / 136-relation** version (the spec's 40–80 / 60–150 target band) with: 1 identity anchor, 12 research areas, 24 projects, 20 publications, 8 methods, 7 technologies, 6 groups, a 3-level hierarchy, one `featured`/`hidden` split using `mobile_overview_priority`, and pins on 4 nodes
+- Produces: `atlas_v1`/`atlas_active_version` — the small mirror of the current published graph (identity anchor + 3 research areas + 3 `research-focus` relations) whose surface Tasks 10, 13 and 15 depend on: `version`, `pinned_key`/`pinned_x`, `fa_missing_node` (canonical EN only), `en_missing_node` (canonical FA only), `override(node, *, locale, label)`, `add_draft_only_node()`/`draft_only_key`
+- Produces: `atlas_two_versions` — `draft` + `previous_active` with `break_fa_projection()`/`restore_fa_projection()` and `break_en_projection()`/`restore_en_projection()`, used by Task 13's both-directions activation test
 - Consumed by Plan C (its frontend fixture is generated from the same JSON) and Plan D (parity tests)
 
 - [ ] **Step 1: Write the failing test**
@@ -1272,7 +1328,7 @@ git commit -m "test(atlas): add deterministic 72-node scale fixtures"
 - Test: `Back-End/tests/test_openapi_hash_drift.py` (accepted hashes)
 
 **Interfaces:**
-- Produces: a re-pinned public contract containing `/api/atlas/{locale}`; `pathCount` 49 → 50; consumer types regenerated from the accepted snapshot
+- Produces: a re-pinned public contract containing both new public paths — `/api/atlas/{locale}` and `/api/atlas/preview`; `pathCount` 49 → 51; consumer types regenerated from the accepted snapshot
 - Consumed by: Plan C (typed payload) and Plan D (migration evidence)
 
 - [ ] **Step 1: Export the snapshot**
@@ -1282,7 +1338,7 @@ cd /d/Project/tahamohammadi-platform/Back-End
 env -u PYTHONPATH DJANGO_SETTINGS_MODULE=config.settings.development ./.venv/Scripts/python.exe scripts/export_openapi.py
 env -u PYTHONPATH DJANGO_SETTINGS_MODULE=config.settings.development ./.venv/Scripts/python.exe scripts/verify_openapi_export.py
 ```
-Expected: `public-openapi.json` gains `/api/atlas/{locale}`; `PROVENANCE.json` records the new source commit; verification prints OK.
+Expected: `public-openapi.json` gains `/api/atlas/{locale}` **and** `/api/atlas/preview` (both public paths, and no path that carries a preview token); `PROVENANCE.json` records the new source commit; verification prints OK.
 
 - [ ] **Step 2: Confirm the delta is additive — this is the gate**
 
@@ -1332,7 +1388,7 @@ cd Front-End/public-site && git add -- src/generated contracts/openapi.public.sh
 - Test: none (verification is the evidence/command steps below; no new test file)
 
 **Interfaces:**
-- Produces: the recorded evidence Plan B/C/D cite when they claim Plan A is done
+- Produces: the recorded evidence Plan B/C/D cite when they claim Plan A is done. The file must contain, each with its exact command and output, the twenty plan-completion proofs: Atlas domain tests green · `Method`/`Technology` tests green · taxonomy-constraint tests green · multi-parent green · hierarchy-cycle rejection green · **EN/FA activation parity green in both directions** · atomic-publish rollback green · draft invisibility green · `GET /api/atlas/en` green · `GET /api/atlas/fa` green · stable topology keys identical across the two locale payloads · ETag emitted · `If-None-Match` → `304` · `Cache-Control: public, max-age=60` · a valid short-lived capability reaches exactly its draft version and locale · invalid/expired/wrong-scope capabilities rejected (`401`/`403`) · preview response headers are `no-store`/`noindex, nofollow` · generated contracts/types synchronized · the existing `GraphVersion` system still intact · the public-site/Hero v2 runtime unchanged by this plan
 
 - [ ] **Step 1: Run the full backend gates and capture the output**
 
@@ -1352,7 +1408,7 @@ npm run lint && npm run format:check && npm test && npm run build
 ```
 Expected: lint/format clean, vitest green, build succeeds (42 pages locally without `PUBLIC_API_BASE_URL`).
 
-- [ ] **Step 3: Write the evidence file** — commands, exact outputs, counts, hashes, and the preflight report path from Task 1. No claim without its command.
+- [ ] **Step 3: Write the evidence file** — commands, exact outputs, counts, hashes, and the preflight report path from Task 1. No claim without its command. Tick the twenty proofs listed in **Interfaces** one by one; if a proof cannot be produced, the plan is not complete and the gap is recorded as a finding rather than omitted.
 - [ ] **Step 4: Commit**
 
 ```bash

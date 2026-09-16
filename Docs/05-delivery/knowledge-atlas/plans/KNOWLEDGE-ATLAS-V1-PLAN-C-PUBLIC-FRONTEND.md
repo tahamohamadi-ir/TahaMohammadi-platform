@@ -24,6 +24,8 @@
 - **Presentation layers are `aria-hidden` with no tab stops.** Canvas and SVG alike; every interactive fact is a native HTML control.
 - **No new dependency**, including no spatial index (spec §19.3) — the broad-phase fallback, if a benchmark demands it, is hand-rolled.
 - **Deterministic fixtures.** Browser specs must not depend on the production API; the hermetic fixture server carries the Atlas from `tests/fixtures/atlas/`.
+- **The draft preview capability never appears in a URL.** It is read from the URL **fragment**, stripped with `history.replaceState()` before the first fetch, sent only in an `Authorization: Bearer` header to `GET /api/atlas/preview?locale=…`, and never written to `localStorage`, `sessionStorage`, cookies, IndexedDB or a beacon. No Atlas module receives the signing secret, which stays backend-only.
+- **Exactly one compact-overview field.** The payload's `mobileOverviewPriority` (model `mobile_overview_priority`) is the only compact-overview input; no module reads a `mobile` or `mobileOverview` alias.
 
 **Commands (from `Front-End/public-site`):**
 
@@ -55,7 +57,7 @@ npm run validate:seo && npm run validate:design
 | `src/lib/atlas/inspector.ts` | Inspector projection: ordered sections with only the data that exists |
 | `src/lib/atlas/layout.ts` | Coordinate consumption: pin precedence, radius from importance, bounds, draw order, label tiers |
 | `src/lib/atlas/projection-2d.ts` | Pure 2D projection model: affine transform, node set selection, edge paths, label offsets |
-| `src/lib/atlas/preview.ts` | Preview-token mode: resolve `?preview=`, fetch the draft projection, mark `noindex` |
+| `src/lib/atlas/preview.ts` | Draft-preview bootstrap: read the capability from the URL **fragment**, strip it with `history.replaceState()` before any fetch, fetch the draft projection with an `Authorization` header, mark `noindex`; never persists the capability |
 
 **Created — presentation**
 
@@ -71,6 +73,7 @@ npm run validate:seo && npm run validate:design
 | `src/components/atlas/AtlasInspector.astro` | Node + relation inspector markup with every detail block rendered server-side |
 | `src/components/atlas/AtlasControls.astro` | Search, filter chips, view controls (all native form controls) |
 | `src/pages/en/atlas/index.astro`, `src/pages/fa/atlas/index.astro` | Routes |
+| `src/pages/en/atlas/preview/index.astro`, `src/pages/fa/atlas/preview/index.astro` | Draft-preview shells: `noindex, nofollow`, out of the sitemap and the indexable registry, same presentation code path as the Atlas route (Task 8) |
 | `src/styles/atlas.css` | Atlas presentation (logical properties only) |
 
 **Created — tests, fixtures, tooling**
@@ -90,7 +93,7 @@ npm run validate:seo && npm run validate:design
 |---|---|
 | `scripts/e2e-site-settings-fixture.mjs` | Serve `/api/atlas/{locale}` from the Atlas fixtures (the Home-content precedent) |
 | `src/lib/seo-route-registry.ts`, `scripts/seo-route-registry.mjs` | Add `atlas` to `LOCALE_INDEX_ROUTES` |
-| `astro.config.mjs` | Sitemap filter already excludes only preview/atlas-design paths; add `/atlas/` explicitly if the filter needs it — verify, do not assume |
+| `astro.config.mjs` | Sitemap filter already excludes preview/atlas-design paths; confirm `/atlas/preview/` is excluded in both locales — verify against the built sitemap, do not assume |
 | `docs/design/ROUTES-AND-PAGE-FAMILIES.md` | Record the new canonical route |
 
 **Cross-plan interfaces**
@@ -98,7 +101,7 @@ npm run validate:seo && npm run validate:design
 | Interface | Direction | Note |
 |---|---|---|
 | `GET /api/atlas/{locale}` payload | consumes | Plan A; shape frozen by `atlas01-1.0.0` |
-| `?preview=<token>` render mode | **produces** | Consumed by Plan B task 17 (its declared dependency) |
+| Draft-preview capability consumption (`/{locale}/atlas/preview/#token=…`) + the shell routes | **produces** | Consumed by Plan B task 17 (its declared dependency). The minting primitive and `GET /api/atlas/preview` are Plan A task 15's; the capability is sent only in an `Authorization` header, never in a URL |
 | `AtlasProjection2d` about-preview mode | **produces** | Consumed by Plan D task 7 |
 | `ATLAS_CONTRACT_VERSION` | produces | Must equal the backend constant; a test asserts the literal |
 
@@ -250,6 +253,7 @@ Expected: `200`, `ETag`, `Cache-Control: public, max-age=60`, JSON body; a secon
 
 **Interfaces:**
 - Produces: the two routes with `SiteLayout`, exact-locale `title`/`canonical`/`alternate`, and `data-atlas-region`; `atlas` present in both registry modules
+- Scope note: these are the **only** Atlas routes registered as indexable. The draft-preview shells (`/{locale}/atlas/preview/`) are created in Task 8 and are deliberately excluded from `LOCALE_INDEX_ROUTES` and the sitemap, so nothing here may add them.
 
 - [ ] **Step 1: Write the failing tests** — `LOCALE_INDEX_ROUTES` (both the TS and the `.mjs` copy) contains `atlas`, and the route helper produces `/en/atlas/` + `/fa/atlas/` with mutual alternates.
 - [ ] **Step 2: Run — expect FAIL.**
@@ -329,23 +333,71 @@ it('never adopts an unknown contract version', async () => { /* outcome === 'kep
 
 ---
 
-### Task 8: Preview-token render mode (declared dependency of Plan B)
+### Task 8: Draft-preview shell (declared dependency of Plan B)
 
 **Files:**
-- Create: `src/lib/atlas/preview.ts`
-- Modify: `src/components/atlas/AtlasPageContent.astro` (accept a preview payload), `src/pages/{en,fa}/atlas/index.astro`
+- Create: `src/lib/atlas/preview.ts`, `src/pages/en/atlas/preview/index.astro`, `src/pages/fa/atlas/preview/index.astro`
+- Modify: `src/components/atlas/AtlasPageContent.astro` (accept a preview payload + preview label), `astro.config.mjs` (sitemap exclusion for `/atlas/preview/`), `src/lib/seo-route-registry.ts` + `scripts/seo-route-registry.mjs` (assert **exclusion**, not inclusion)
 - Test: `src/lib/atlas/preview.test.ts`
 
 **Interfaces:**
-- Produces: `resolvePreviewRequest(url): { token: string } | null`; `fetchPreviewSnapshot(locale, token)` calling `/api/atlas/preview/{token}` — the endpoint owned by **Plan A task 15**, whose tokens are minted by **Plan B task 6**. This task therefore depends on A only; it must not implement the endpoint or the minting.
-- Produces: when in preview mode the region carries `data-atlas-preview="true"`, the document gets `<meta name="robots" content="noindex">`, and the page label states that draft data is being previewed
-- Consumed by: **Plan B task 17** (the admin's 3D preview frames this mode)
+- Produces: `consumePreviewFragment(history, location): string | null` — reads the capability from `location.hash` (`#token=…`), keeps it in memory only, and calls `history.replaceState(null, '', location.pathname + location.search)` **before** anything else, returning the capability or `null` when the fragment is absent or malformed.
+- Produces: `fetchPreviewSnapshot(locale, capability)` calling `GET /api/atlas/preview?locale=<locale>` with `Authorization: Bearer <capability>` — **Plan A task 15's** endpoint, whose capabilities are minted by **Plan B task 6**. `?locale` is the only query parameter; the capability never appears in a URL, a log, a `Referer`, history entry or any storage.
+- Produces: the preview route renders the same region markup as `/…/atlas/` with `data-atlas-preview="true"` and the real presentation when the capability is valid, `<meta name="robots" content="noindex, nofollow">` always, and the honest **active** framing (`data-atlas-preview="false"`) when there is no valid capability — never an error page and never a hint that a draft exists.
+- Critical rule: no code path in this module may touch `localStorage`, `sessionStorage`, `document.cookie`, `indexedDB` or `sendBeacon`; a test asserts the module source contains none of those identifiers.
+- Consumes: `validateAtlasPayload` (Task 2) and the presentation entry (Task 12) — the preview renders through the same code path as the public Atlas, so what the owner reviews is what will ship.
+- Consumed by: **Plan B task 17** (the admin's read-only 3D preview frames this route with the minted `preview_url`, fragment included).
 
-- [ ] **Step 1: Write the failing tests** — a `?preview=` request fetches the preview endpoint and never the public one; a missing/invalid token falls back to the public snapshot with `data-atlas-preview="false"`; preview mode sets `noindex`; the preview payload is validated by the same validator.
+- [ ] **Step 1: Write the failing tests**
+
+```ts
+it('reads the capability from the fragment and strips it before any fetch', () => {
+  const replaceState = vi.fn()
+  const capability = consumePreviewFragment({ replaceState } as any,
+                                            { hash: '#token=cap.abc', pathname: '/en/atlas/preview/', search: '' } as any)
+  expect(capability).toBe('cap.abc')
+  expect(replaceState).toHaveBeenCalledWith(null, '', '/en/atlas/preview/')
+})
+
+
+it('sends the capability only in the Authorization header', async () => {
+  const fetchMock = vi.fn().mockResolvedValue({ ok: true, json: async () => payloadFixture })
+  await fetchPreviewSnapshot('fa', 'cap.abc', { fetch: fetchMock, apiBase: 'https://example.test' })
+  const [url, init] = fetchMock.mock.calls[0]
+  expect(url).toBe('https://example.test/api/atlas/preview?locale=fa')
+  expect(url).not.toContain('cap.abc')
+  expect(init.headers.Authorization).toBe('Bearer cap.abc')
+})
+
+
+it('falls back to the honest active framing when the capability is rejected', async () => {
+  const fetchMock = vi.fn().mockResolvedValue({ ok: false, status: 403, json: async () => ({ code: 'preview_forbidden' }) })
+  expect(await fetchPreviewSnapshot('en', 'cap.expired', { fetch: fetchMock, apiBase: 'https://example.test' }))
+    .toEqual({ state: 'unavailable', preview: false })
+})
+
+
+it('never persists the capability anywhere', () => {
+  const source = readFileSync('src/lib/atlas/preview.ts', 'utf8')
+  for (const forbidden of ['localStorage', 'sessionStorage', 'document.cookie', 'indexedDB', 'sendBeacon']) {
+    expect(source).not.toContain(forbidden)
+  }
+})
+```
+
 - [ ] **Step 2: Run — expect FAIL.**
-- [ ] **Step 3: Implement.**
-- [ ] **Step 4: Run — expect green.**
-- [ ] **Step 5: Commit** — `git commit -m "feat(atlas): add the token-gated draft preview mode"`
+- [ ] **Step 3: Implement** the two shell routes (each renders `AtlasPageContent` with the preview flag), the fragment helper, the authorized fetch, and the `noindex, nofollow` metadata. Register the routes in Astro only — **never** in `LOCALE_INDEX_ROUTES`.
+- [ ] **Step 4: Run — expect green**, then prove the shells are non-indexable and the fragment leaves no trace:
+
+```bash
+npm test -- src/lib/atlas/preview.test.ts
+npm run build && ls dist/en/atlas/preview/index.html dist/fa/atlas/preview/index.html
+grep -c "noindex, nofollow" dist/en/atlas/preview/index.html
+grep -c "atlas/preview" dist/sitemap-0.xml || echo "absent from the sitemap (correct)"
+npm run validate:seo
+```
+Expected: both shells built; `noindex, nofollow` present; the preview routes absent from the sitemap; `validate:seo` green.
+- [ ] **Step 5: Commit** — `git commit -m "feat(atlas): add the fragment-scoped draft preview shell"`
 
 ---
 

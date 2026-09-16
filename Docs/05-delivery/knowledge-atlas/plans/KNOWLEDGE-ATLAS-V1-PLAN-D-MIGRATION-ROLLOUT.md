@@ -81,7 +81,7 @@ npx playwright test tests/e2e/product-atlas.e2e.ts tests/e2e/product-about.e2e.t
 |---|---|---|
 | `AtlasProjection2d` `about-preview` mode | consumes | Plan C task 13 |
 | `about-preview` node selection (6–10) | consumes | Plan C task 13 |
-| `GET /api/atlas/{locale}` + preview token | consumes | Plan A task 15/16, Plan C task 8 |
+| `GET /api/atlas/{locale}` + `GET /api/atlas/preview` (credential-scoped draft read) | consumes | Plan A task 15 (both endpoints and the header contract), Plan C task 8 (the shell that consumes the capability) |
 | Parity evidence document | produces | Cited by the rollout gate and the WORK-LOG entry |
 
 ---

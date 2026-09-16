@@ -18,7 +18,9 @@
 - **Never mutate an active version.** Editing an active version is refused with `409 IMMUTABLE_ACTIVE`. Precondition semantics follow the existing graph admin API exactly (`428 PRECONDITION_REQUIRED`, `409 STALE_REVISION`, `409 VALIDATION_BLOCKED`, `409 ALREADY_ACTIVE`).
 - **Options are data, never hard-coded lists.** Node types, relation types and their rules come from the API; the SPA contains no enumerated type or relation key.
 - **No drag-to-connect in v1** (spec §25). Node drag writes pins only and never touches semantics.
-- **The 3D preview is read-only** and is never the editing surface (spec §9.5).
+- **The 3D preview is read-only** and is never the editing surface (spec §9.5). It is driven by a short-lived staff-minted capability carried in the URL **fragment**, sent only in an `Authorization` header — never as a path or query parameter, and never persisted to storage.
+- **Locale parity is a publish blocker in both directions.** The validation panel renders `MISSING_LOCALE_PROJECTION` as a blocker that disables publish, in the missing-EN and the missing-FA direction alike; genuinely optional gaps (`SUMMARY_MISSING`, optional explanation absent, isolated node, unused taxonomy) stay warnings.
+- **Exactly one compact-overview field.** `mobile_overview_priority` (model) / `mobileOverviewPriority` (wire) is the only spelling anywhere in the admin panel — no second field, alias prop or legacy `mobileOverview` type in `src/lib/api/atlas.ts`.
 - **Accessibility is part of done:** every authoring action reachable by keyboard alone, focus visible, ≥ 44 px targets, no canvas-only workflow (spec §18, card task 19).
 - **No deployment steps in this plan.** Staging/production rollout belongs to Plan D.
 - **Existing SPA conventions are binding:** pages in `src/pages/*.tsx` with co-located `*.test.tsx`, API clients in `src/lib/api/*.ts` with co-located tests, error normalisation through `src/lib/api/errors.ts`, `adminJson` from `src/lib/api/auth.ts`, route registration in `src/app/router.tsx` + `src/components/Nav.tsx`, e2e specs in `tests/e2e/*.e2e.ts`.
@@ -45,9 +47,9 @@ npx playwright test tests/e2e/atlas-authoring.e2e.ts
 | Path | Responsibility |
 |---|---|
 | `Back-End/apps/atlas/api_admin.py` | `atlas_router` with every admin operation; no business rules (delegates to `services`, `validation`, `layout`, `projection`) |
-| `Back-End/apps/atlas/admin_preview.py` | Staff preview token minting for a draft version (`kind="atlas-version"`) reusing `apps.content.preview_token` |
+| `Back-End/apps/atlas/admin_preview.py` | Staff minting of a scoped, short-lived draft-preview capability (purpose `atlas-preview`, TTL 600 s) through Plan A's `build_atlas_preview_token` |
 | `Back-End/tests/test_admin_atlas_api.py` | Endpoint behaviour, guards, precondition matrix, audit |
-| `Back-End/tests/test_admin_atlas_preview.py` | Preview minting, TTL, staff-only, draft payload isolation |
+| `Back-End/tests/test_admin_atlas_preview.py` | Minting: staff-only, version+locale scope, 600 s TTL, no secret and no draft content in the response, refused for an active version |
 
 **Created — admin SPA**
 
@@ -82,7 +84,7 @@ npx playwright test tests/e2e/atlas-authoring.e2e.ts
 |---|---|---|
 | `admin_api.add_router("/atlas", …)` | produces | Registered alongside `"/graph"`; single registration line |
 | `services.{clone_version, activate_version, recompute_layout}`, `validation.validate_version`, `projection.build_locale_projection` | consumes | Plan A; never duplicated here |
-| Atlas preview render mode in the public site (`?preview=<token>` on `/…/atlas/`) | **consumed, declared dependency** | Owned by Plan C (task C8). Until it lands, the preview page frames the public Atlas route and labels the shown projection `Active`; the admin-side preview screen ships independently. |
+| Atlas draft-preview capability + the public preview shell (`/…/atlas/preview/#token=…`) | **consumed, declared dependency** | Owned by Plan A (task A15: minting primitive + `GET /api/atlas/preview`) and Plan C (task C8: the static shell that reads the fragment). Until C8 lands, the preview page frames the public Atlas route and labels the shown projection `Active`; the admin-side preview screen ships independently. |
 | `issue-labels.ts` code map | produces | Consumed by the editor's validation panel; codes come from Plan A's `ATLAS_ISSUE_CODES` |
 
 ---
@@ -213,7 +215,7 @@ git commit -m "feat(atlas): add guarded admin router skeleton"
 - Test: `Back-End/tests/test_admin_atlas_api.py` (extend)
 
 **Interfaces:**
-- Produces: `GET|POST /versions/{id}/nodes`, `GET|PATCH|DELETE /versions/{id}/nodes/{key}` with body fields `{nodeTypeKey, canonicalSource, canonicalTranslationKey, importance, visible, mobileOverview, groupKeys[], pin:{x,y,z}|null, overrides:{en:{label,summary,accessibleLabel,aliases},fa:{…}}}`
+- Produces: `GET|POST /versions/{id}/nodes`, `GET|PATCH|DELETE /versions/{id}/nodes/{key}` with body fields `{nodeTypeKey, canonicalSource, canonicalTranslationKey, importance, visible, mobileOverviewPriority, groupKeys[], pin:{x,y,z}|null, overrides:{en:{label,summary,accessibleLabel,aliases},fa:{…}}}`
 - Produces: `GET /canonical-candidates?source=method&q=…` → `[{translationKey, title, localeStatus:{en:bool, fa:bool}, publishable:{en:bool, fa:bool}}]` so the picker can never invent a record
 
 - [ ] **Step 1: Write the failing tests**
@@ -379,40 +381,51 @@ def test_activate_on_an_active_version_is_already_active(admin_client, active_ve
 - Test: `Back-End/tests/test_admin_atlas_preview.py`
 
 **Interfaces:**
-- Produces: `POST /versions/{id}/preview-link {locale}` → `{url, expiresAt}` where `url = f"{PUBLIC_SITE_BASE}/%s/atlas/?preview={token}"`; token minted with `apps.content.preview_token.build_preview_token("atlas-version", version_id, ttl_seconds=…)`; staff-only, noindex, never a public URL
-- Consumes (does **not** implement): `GET /api/atlas/preview/{token}` — the token-gated draft projection endpoint is **Plan A task 15**'s public surface. This task only mints the staff token that endpoint validates, so Plans B and C stay independent of each other.
+- Produces: `POST /versions/{id}/preview-token {locale}` → `{preview_url, expires_at, version_id}` where `preview_url = f"/{locale}/atlas/preview/#token={capability}"`; the capability comes from Plan A's `build_atlas_preview_token(version_id, locale)` (purpose `atlas-preview`, TTL 600 s); staff + CSRF + OTP, allowed only for a non-active version, audit-logged
+- Consumes (does **not** implement): `build_atlas_preview_token` from **Plan A task 15**. Plan B mints, Plan A validates, Plan C renders — so Plans B and C stay independent of each other. This task never verifies a capability and never returns draft content.
+- Security rule: the capability travels **only** inside a URL fragment (`#token=…`), which browsers never send to a server, never include in `Referer` and never log. It is never returned as a query parameter, never written to storage, and the signing secret (`PREVIEW_SHARE_SECRET`) never leaves backend settings or appears in any response.
 
 - [ ] **Step 1: Write the failing tests**
 
 ```python
-def test_preview_link_is_staff_only_and_short_lived(admin_client, draft_version):
-    response = _post(admin_client, draft_version, "preview-link", {"locale": "fa"})
-    assert response.status_code == 200
-    url = response.json()["url"]
-    assert "/fa/atlas/?preview=" in url
-    payload = parse_preview_token(url.split("preview=")[1])
-    assert payload.kind == "atlas-version" and payload.pk == draft_version.pk
-    assert 0 < payload.exp - int(time.time()) <= 900
+def test_preview_token_is_staff_only_scoped_and_short_lived(admin_client, draft_version):
+    body = _post(admin_client, draft_version, "preview-token", {"locale": "fa"}).json()
+    assert body["version_id"] == draft_version.pk
+    assert body["preview_url"].startswith("/fa/atlas/preview/#token=")
+    assert "?" not in body["preview_url"]                       # the credential is never a query parameter
+    capability = body["preview_url"].split("#token=")[1]
+    payload = parse_atlas_preview_token(capability)
+    assert (payload.version_id, payload.locale, payload.purpose) == (draft_version.pk, "fa", "atlas-preview")
+    assert 0 < payload.exp - int(time.time()) <= 600
+    assert body["expires_at"]
 
 
-def test_preview_link_is_refused_for_an_active_version(admin_client, active_version):
-    response = _post(admin_client, active_version, "preview-link", {"locale": "en"})
+def test_preview_token_is_refused_for_an_active_version(admin_client, active_version):
+    response = _post(admin_client, active_version, "preview-token", {"locale": "en"})
     assert response.status_code == 409
     assert response.json()["code"] == "IMMUTABLE_ACTIVE"
 
 
-def test_preview_link_targets_the_locale_asked_for(admin_client, draft_version):
-    for locale, expected in (("en", "/en/atlas/?preview="), ("fa", "/fa/atlas/?preview=")):
-        response = _post(admin_client, draft_version, "preview-link", {"locale": locale})
-        assert expected in response.json()["url"]
+def test_preview_token_leaks_neither_the_secret_nor_draft_content(admin_client, anon_client, draft_version):
+    response = _post(admin_client, draft_version, "preview-token", {"locale": "en"})
+    raw = response.content.decode()
+    assert (settings.PREVIEW_SHARE_SECRET or "\x00") not in raw   # the signing secret is never echoed
+    assert "draft_only" not in raw                               # a capability is not content
+    assert _post(anon_client, draft_version, "preview-token", {"locale": "en"}).status_code in (401, 403)
+
+
+def test_preview_token_targets_the_locale_asked_for(admin_client, draft_version):
+    for locale, expected in (("en", "/en/atlas/preview/#token="), ("fa", "/fa/atlas/preview/#token=")):
+        response = _post(admin_client, draft_version, "preview-token", {"locale": locale})
+        assert expected in response.json()["preview_url"]
 ```
 
-Endpoint-side cases (tampered tokens, expiry, foreign `kind`, draft invisibility on the public route) belong to **Plan A task 15** and are deliberately not duplicated here.
+Endpoint-side cases (absent/tampered/expired/wrong-locale/wrong-purpose credentials, header-only transport, `no-store`/`noindex` headers, draft invisibility on the public route) belong to **Plan A task 15** and are deliberately not duplicated here.
 
 - [ ] **Step 2: Run — expect FAIL**.
-- [ ] **Step 3: Implement** `admin_preview.py` — token minting only, plus the `POST /versions/{id}/preview-link` route on `atlas_router` (staff + OTP + CSRF, `_require_draft`). It does not register anything on the public API.
+- [ ] **Step 3: Implement** `admin_preview.py` — minting only: call Plan A's `build_atlas_preview_token`, compose the fragment URL, return `{preview_url, expires_at, version_id}`. Register `POST /versions/{id}/preview-token` on `atlas_router` (staff + OTP + CSRF, `_require_draft`) and register **nothing** on the public API.
 - [ ] **Step 4: Run — expect `3 passed`.**
-- [ ] **Step 5: Commit** — `git commit -m "feat(atlas): add staff preview minting for draft versions"`
+- [ ] **Step 5: Commit** — `git commit -m "feat(atlas): mint scoped draft-preview capabilities for staff"`
 
 ---
 
@@ -475,7 +488,7 @@ cd ../Front-End/admin-panel && git add -- src/generated src/lib/api/product-cont
 - Test: `src/lib/api/atlas.test.ts`
 
 **Interfaces:**
-- Produces: `fetchAtlasVersions()`, `createAtlasVersion(label)`, `cloneAtlasVersion(id, label)`, `fetchAtlasVersion(id)`, `fetchAtlasGraph(id)`, `saveAtlasGraph(id, body, revision)`, `createAtlasNode(id, body)`, `updateAtlasNode(id, key, body, revision)`, `deleteAtlasNode(id, key, revision)`, `createAtlasRelation(...)`, `updateAtlasRelation(...)`, `deleteAtlasRelation(...)`, `saveGroups(...)`, `listTaxonomy()`, `saveNodeType(...)`, `saveRelationType(...)`, `recomputeLayout(id, revision)`, `validateAtlasVersion(id)`, `activateAtlasVersion(id, revision)`, `fetchAtlasPreviewLink(id, locale)`, `fetchCanonicalCandidates(source, query)`
+- Produces: `fetchAtlasVersions()`, `createAtlasVersion(label)`, `cloneAtlasVersion(id, label)`, `fetchAtlasVersion(id)`, `fetchAtlasGraph(id)`, `saveAtlasGraph(id, body, revision)`, `createAtlasNode(id, body)`, `updateAtlasNode(id, key, body, revision)`, `deleteAtlasNode(id, key, revision)`, `createAtlasRelation(...)`, `updateAtlasRelation(...)`, `deleteAtlasRelation(...)`, `saveGroups(...)`, `listTaxonomy()`, `saveNodeType(...)`, `saveRelationType(...)`, `recomputeLayout(id, revision)`, `validateAtlasVersion(id)`, `activateAtlasVersion(id, revision)`, `fetchAtlasPreviewToken(id, locale)`, `fetchCanonicalCandidates(source, query)`
 - Types: all from `@/generated/admin-api` (`AtlasVersionRowOut`, `AtlasNodeOut`, `AtlasValidationOut`, …) — no hand-written duplicates
 
 - [ ] **Step 1: Write the failing tests** — model them on `src/lib/api/graph.test.ts`: each function asserts method, path, `If-Match` header presence, and 201/409/400 handling through `adminJson`.
@@ -549,7 +562,7 @@ it('surfaces a stale revision as a conflict', async () => {
 - Test: `src/components/atlas/NodeForm.test.tsx`
 
 **Interfaces:**
-- Produces: a form over one node — canonical record picker (async search through `fetchCanonicalCandidates`, publish-gated), node type select (active types only), importance (0–100 numeric with the band hint), visible toggle, `mobile_overview` radio (`auto`/`featured`/`hidden` — the single field spec §5 defines; the card's *mobile_overview_priority* wording refers to this same field, so do not add a second control or column), EN/FA override fields with a `blank = canonical copy` hint, alias list, group multi-select, pin controls (`Pin to current position`, `Clear pin`, numeric x/y), and a delete action
+- Produces: a form over one node — canonical record picker (async search through `fetchCanonicalCandidates`, publish-gated), node type select (active types only), importance (0–100 numeric with the band hint), visible toggle, `mobile_overview_priority` radio (`auto`/`featured`/`hidden` — the single canonical compact-overview field, sent as `mobileOverviewPriority`; there is deliberately no second control, alias column or legacy `mobileOverview` field), EN/FA override fields with a `blank = canonical copy` hint (and the rule that a visible node needs both locales before publish), alias list, group multi-select, pin controls (`Pin to current position`, `Clear pin`, numeric x/y), and a delete action
 - Consumes: `createAtlasNode`, `updateAtlasNode`, `deleteAtlasNode`
 
 - [ ] **Step 1: Write the failing tests**
@@ -679,7 +692,7 @@ it('highlights incident relations for the selected node', () => {
 
 ```tsx
 it('blocks publish on a locale-parity blocker and names the missing locale', () => {
-  render(<ValidationPanel issues={{ blocking: [{ code: 'LOCALE_PARITY_MISSING_FA', nodeKey: 'research-area-1a2b3c4d',
+  render(<ValidationPanel issues={{ blocking: [{ code: 'MISSING_LOCALE_PROJECTION', nodeKey: 'research-area-1a2b3c4d',
                                                  messageToken: 'parity.missing.fa' }], warnings: [] }} />)
   expect(screen.getByRole('button', { name: /publish/i })).toBeDisabled()
   expect(screen.getByText(/Persian|fa/i)).toBeInTheDocument()
@@ -687,9 +700,17 @@ it('blocks publish on a locale-parity blocker and names the missing locale', () 
 })
 
 
-it('raises a warning rather than a blocker when only a canonical locale copy is missing', () => {
-  render(<ValidationPanel issues={{ blocking: [], warnings: [{ code: 'CANONICAL_LOCALE_MISSING', nodeKey: 'project-9f8e7d6c',
-                                                                messageToken: 'canonical.locale.missing' }] }} />)
+it('blocks publish in the missing-EN direction too, because parity is a blocker both ways', () => {
+  render(<ValidationPanel issues={{ blocking: [{ code: 'MISSING_LOCALE_PROJECTION', nodeKey: 'project-9f8e7d6c',
+                                                 messageToken: 'parity.missing.en' }], warnings: [] }} />)
+  expect(screen.getByRole('button', { name: /publish/i })).toBeDisabled()
+  expect(screen.getByText(/English|en/i)).toBeInTheDocument()
+})
+
+
+it('keeps publish enabled for a genuine warning (SUMMARY_MISSING) while a parity blocker still disables it', () => {
+  render(<ValidationPanel issues={{ blocking: [], warnings: [{ code: 'SUMMARY_MISSING', nodeKey: 'method-11223344',
+                                                                messageToken: 'summary.missing' }] }} />)
   expect(screen.getByRole('button', { name: /publish/i })).toBeEnabled()
   expect(screen.getByText(/1 warning/i)).toBeInTheDocument()
 })
@@ -724,14 +745,14 @@ it('raises a warning rather than a blocker when only a canonical locale copy is 
 
 **Files:**
 - Create: `src/pages/AtlasPreviewPage.tsx`
-- Modify: `src/app/router.tsx`, `src/lib/api/atlas.ts` (`fetchAtlasPreviewLink` already declared in Task 8)
+- Modify: `src/app/router.tsx`, `src/lib/api/atlas.ts` (`fetchAtlasPreviewToken` already declared in Task 8)
 - Test: `src/pages/AtlasPreviewPage.test.tsx`
 
 **Interfaces:**
-- Consumes: `fetchAtlasPreviewLink(versionId, locale)` → `{url, expiresAt}`
-- Produces: a locale switch (EN/FA) that re-mints the link, and a framed preview of the real public renderer. **Declared cross-plan dependency:** the framed content requires Plan C's `?preview=<token>` render mode (task C8). Until that lands, the frame loads `/…/atlas/` and the page labels the projection shown as `Active`; the label is derived from the URL used, never hard-coded.
+- Consumes: `fetchAtlasPreviewToken(versionId, locale)` → `{preview_url, expires_at, version_id}`
+- Produces: a locale switch (EN/FA) that re-mints the capability, and a framed preview of the real public renderer. **Declared cross-plan dependency:** the framed content requires Plan C's preview shell (`/{locale}/atlas/preview/#token=…`, task C8). The frame's `src` is exactly the returned `preview_url` — fragment included, so the capability never becomes a request parameter. Until C8 lands, the frame loads `/…/atlas/` and the page labels the projection shown as `Active`; the label is derived from the URL used, never hard-coded.
 
-- [ ] **Step 1: Write the failing tests** — switching locale requests a new link (`/preview-link` called with `fa`); the frame `src` equals the returned URL; the page never renders the 3D graph itself (no canvas in this page: `expect(container.querySelector('canvas')).toBeNull()`); the read-only notice is present.
+- [ ] **Step 1: Write the failing tests** — switching locale requests a new capability (`/preview-token` called with `fa`); the frame `src` equals the returned `preview_url` and contains a `#token=` fragment while containing no `?token=`; the page never renders the 3D graph itself (no canvas in this page: `expect(container.querySelector('canvas')).toBeNull()`); the read-only notice is present; the capability is never written to `localStorage`, `sessionStorage` or a cookie by this page.
 - [ ] **Step 2: Run — expect FAIL.**
 - [ ] **Step 3: Implement** with `<iframe title="Atlas 3D preview" src={url} />` and a visible note stating that this is a read-only preview of the payload the public Atlas will serve.
 - [ ] **Step 4: Run — expect green.**

@@ -98,6 +98,7 @@ Each constraint below is verified against the current repositories and is bindin
 |---|---|---|---|
 | `/en/about/`, `/fa/about/` | **2D SVG mini Atlas preview** (6–10 important nodes) + CTA | Same active Atlas version as the full Atlas | No Three.js on About after extraction. No separate About graph exists in CMS. |
 | `/en/atlas/`, `/fa/atlas/` | **Desktop (≥ 1024 px):** full 3D Atlas · **Mobile / compact (< 1024 px):** deterministic 2D SVG Atlas · **No WebGL:** 2D SVG Atlas · **No JS:** semantic HTML index | One locale projection of the active Atlas version | The only route that may own a canvas |
+| `/en/atlas/preview/`, `/fa/atlas/preview/` | The same presentation as `/…/atlas/`, driven by a short-lived draft-preview capability carried in the URL **fragment** | The draft projection fetched with an `Authorization` header (§10.10), or the honest active framing when no valid token is present | `noindex, nofollow`, never in the sitemap, never canonicalised, never a nav entry. Not an authoring surface. |
 
 `atlas` is a new canonical index route in both locales. It is registered in `src/lib/seo-route-registry.ts`, `scripts/seo-route-registry.mjs`, the sitemap `filter` in `astro.config.mjs` (no exclusion) and, once the owner asks for it, `src/lib/navigation.ts`.
 
@@ -128,6 +129,7 @@ Rules:
 ### 4.4 SEO and indexability
 
 - `/en/atlas/` and `/fa/atlas/` are canonical, indexable, exact-locale pages with mutual `alternate` links from the existing route contract.
+- `/en/atlas/preview/` and `/fa/atlas/preview/` are **not** indexable: `noindex, nofollow`, excluded from the sitemap, no canonical link that advertises them, and never reachable from the public navigation or the About preview. A draft capability must never be crawlable or shareable as a page.
 - The canonical URL never contains a query string. `?focus=…` is a view state and is not canonicalised, indexed, or emitted in the sitemap.
 - The no-JS semantic index carries the same published facts for crawlers and assistive technology: node list with type, title, summary and canonical link, plus the relation list with labelled endpoints.
 - Pagefind keeps indexing the built page; the Atlas nodes themselves are HTML, so they are searchable by the site search as content, independent of the Atlas search UI (§16).
@@ -251,7 +253,7 @@ Constraints: `UniqueConstraint(fields=["status"], condition=Q(status="active"), 
 | `canonical_translation_key` | `UUIDField(null=True, blank=True, db_index=True)` | Locale-neutral canonical reference (C6) |
 | `importance` | `PositiveSmallIntegerField(default=50)` | 0–100 |
 | `visible` | `BooleanField(default=True)` | Invisible nodes are not published **and** are not traversed by hierarchy validation |
-| `mobile_overview` | `CharField(choices=auto \| featured \| hidden, default="auto")` | Hidden = hidden from the initial mobile overview only |
+| `mobile_overview_priority` | `CharField(choices=auto \| featured \| hidden, default="auto")` | The only compact/mobile-overview field. `auto` = the projection decides from importance and structure · `featured` = forced into the initial compact/mobile overview · `hidden` = excluded from the initial overview **only** — the node stays in the Atlas, in search, in the semantic index and in every focused neighbourhood |
 | `pin_x`, `pin_y`, `pin_z` | `FloatField(null=True, blank=True)` | Optional layout pin override; `pin_x`/`pin_y` must both be present when either is set |
 | `sort_order` | `PositiveIntegerField(default=0)` | Deterministic tie-breaking for layout and lists |
 
@@ -500,7 +502,7 @@ Columns: source label, relation type, target label, directed, weight, visible, h
 ### 9.5 Preview modes
 
 1. **2D authoring preview** — the editor itself (§9.2), optimized for editing.
-2. **3D final preview** — the real 3D presentation on the real payload, opened in a scoped preview surface. It is the validation/review step before Publish, not the primary editing surface, and it must not become the editing canvas.
+2. **3D final preview** — the real 3D presentation on the real payload, opened in a scoped preview surface. It is the validation/review step before Publish, not the primary editing surface, and it must not become the editing canvas. It is driven by the short-lived, read-only, locale-scoped draft capability of §10.10 — the token never appears in a request URL, and this surface can neither activate nor mutate a version.
 
 ### 9.6 Authoring constraints stated in the UI
 
@@ -547,7 +549,7 @@ GET /api/atlas/{locale}            locale ∈ {fa, en}
   ],
   "nodes": [
     { "key": "research-area-1a2b3c4d", "type": "research-area", "label": "PARS-SQL / VTD-Edge",
-      "summary": "…", "accessibleLabel": "…", "importance": 80, "mobile": "featured",
+      "summary": "…", "accessibleLabel": "…", "importance": 80, "mobileOverviewPriority": "featured",
       "aliases": ["Persian text-to-SQL"],
       "canonical": { "family": "researchtopic", "id": "1", "slug": "pars-sql-vtd-edge",
                      "title": "PARS-SQL / VTD-Edge", "routeFamily": "research",
@@ -567,7 +569,7 @@ GET /api/atlas/{locale}            locale ∈ {fa, en}
 
 | Rule | Detail |
 |---|---|
-| Naming | camelCase at the API layer, snake_case in storage (existing convention) |
+| Naming | camelCase at the API layer, snake_case in storage (existing convention) — the compact-overview field is `mobile_overview_priority` in the model and `mobileOverviewPriority` on the wire, and those are the only two spellings that exist anywhere |
 | Omission | `null`/empty optional fields are omitted (`exclude_none=True`), never sent as empty strings |
 | Ordering | `nodes` ordered by `(-importance, public_key)`; `relations` by `visual_priority DESC, key`; `groups` by `sort_order, key`; catalogs by `sort_order, key`. Deterministic and locale-independent |
 | Identity | `key` values are the stable public keys of §5.3; relation `key` is composed exactly as specified there |
@@ -618,6 +620,45 @@ The payload is small enough that search, filtering, neighbourhood computation an
 ### 10.9 Contract synchronization
 
 The endpoint is added to `Docs/03-contracts/PRODUCT-INTERFACES-V2.md` (a new `I09 — Atlas` section) by the backend implementation phase, the OpenAPI snapshot is exported, and the frontend regenerates `src/generated/public-api.ts` through the existing synchronization step (`npm run generate:api-types`) and re-pins `src/generated/openapi-hash.json` plus `contracts/openapi.public.sha256`. The TypeScript type of the payload comes from the generated snapshot; no hand-written duplicate of the wire shape is permitted in the frontend.
+
+### 10.10 Draft preview transport
+
+Publishing cannot be rehearsed on published data, so a draft version must be reviewable through the *same* presentation before activation — without ever exposing draft content on a durable, shareable, loggable URL.
+
+**Capability mint (admin, authenticated).**
+
+| Method | Path | Purpose |
+|---|---|---|
+| `POST` | `/api/v1/admin/atlas/versions/{version_id}/preview-token` | Mint one short-lived read-only draft-preview capability for one version and one locale |
+
+Request body: `{"locale": "en" | "fa"}`. Response: `{"preview_url": "/<locale>/atlas/preview/#token=<token>", "expires_at": "…", "version_id": "…"}`. The action follows the established admin conventions (staff session + CSRF + OTP, shared `If-Match` gate, audit entry) and mints only for a **non-active** version.
+
+**The token is never carried in a request URL.** It travels in the URL **fragment** (`#token=…`), which browsers do not send to a server, do not include in `Referer`, and do not write to access logs. The preview page is therefore a static shell:
+
+| Route | Presentation | Data |
+|---|---|---|
+| `/en/atlas/preview/`, `/fa/atlas/preview/` | The real Atlas presentation — 3D on desktop, 2D on compact or WebGL-less | The draft projection from §10.10.1 when a valid token is present; otherwise the ordinary active framing, honestly labelled |
+
+Rules:
+
+- The token is **read-only**, scoped to exactly one `AtlasVersion` **and** one locale, purpose-bound (`atlas-preview`), and short-lived (**TTL = 10 minutes**). It can never activate, publish, archive or otherwise mutate anything.
+- Client behaviour, in order: read the token from `location.hash` → hold it **in memory only** → strip it with `history.replaceState()` **before** any fetch → call §10.10.1 with the token in an `Authorization` header → render. The token is never written to `localStorage`, `sessionStorage`, cookies, IndexedDB or any beacon/telemetry surface.
+- An absent, malformed, expired, wrong-locale or wrong-version token produces the ordinary active view with no draft data and no draft-derived UI — never an error page that confirms a draft exists.
+- The preview routes are `noindex, nofollow`, absent from the sitemap and from the route registry's indexable set, and never canonicalised (§4.4).
+
+#### 10.10.1 Preview payload endpoint
+
+```
+GET /api/atlas/preview?locale=<en|fa>          Authorization: Bearer <preview-token>
+```
+
+- The **token** travels only in the `Authorization` header. The `locale` selector stays in the query string because it is not a secret and the response must be an exact-locale projection; it must equal the token's scope (a mismatch is `403`), and it is never inferred silently from the token.
+- Documented ruling: the repository's existing share preview carries its token in a **path** (`/preview/share/<token>/`), which this design deliberately rejects for the Atlas — a credential in a path or query reaches access logs, analytics, `Referer` and browser history. There is no pre-existing `Authorization` convention for public API reads, so this endpoint establishes `Authorization: Bearer <token>`, and the contract and its test name that scheme explicitly. If the repository later adopts a different header convention, this is the one place that changes.
+- Validation, in order: credential present → signature/opaque token valid and unforgeable → not expired → `purpose == "atlas-preview"` → `locale` matches the token's scope → the referenced version exists (a **draft** is the normal case) → read-only. Failures follow the existing API error conventions: `401` when the credential is absent or unparseable, `403` when it parses but is expired, wrong-purpose, wrong-locale or otherwise out of scope. A bad credential never produces `404`, because a probe must not learn whether a draft exists.
+- The response is the §10.2 payload for the referenced version and locale, with `Cache-Control: no-store`, `Pragma: no-cache`, `X-Robots-Tag: noindex, nofollow` and `Referrer-Policy: no-referrer`.
+- The signing/verification secret is **backend-only**, managed exactly like the existing backend secrets (`PREVIEW_SHARE_SECRET`, falling back to `SECRET_KEY`). No frontend bundle, build-time variable or client module ever receives a preview signing secret; no general-purpose share secret is exposed to frontend code.
+- The endpoint never mutates, never activates, and is the only place draft data is ever served — `GET /api/atlas/{locale}` remains permanently draft-free.
+- Ownership: **Plan A** owns the validation, the signing/verification primitive and this payload endpoint; **Plan B** owns the authenticated mint action; **Plan C** owns the static preview shell, the fragment consumption/removal and the `Authorization` fetch.
 
 ---
 
@@ -842,9 +883,9 @@ The SVG is a **presentation layer**: `aria-hidden="true"`, `focusable="false"`, 
 
 The initial mobile overview shows **8–15 nodes**, selected by this deterministic order:
 
-1. Every node with `mobile_overview = "featured"`.
-2. Then nodes with `mobile_overview = "auto"`, ordered by `(-importance, public_key)`.
-3. Nodes with `mobile_overview = "hidden"` are excluded from the initial overview. **Hidden means hidden from the initial mobile overview only** — the node remains in search, in the semantic index, in the inspector's neighbourhood views and in every relation. It is never removed from the Atlas.
+1. Every node with `mobile_overview_priority = "featured"`.
+2. Then nodes with `mobile_overview_priority = "auto"`, ordered by `(-importance, public_key)`.
+3. Nodes with `mobile_overview_priority = "hidden"` are excluded from the initial overview. **Hidden means hidden from the initial mobile overview only** — the node remains in search, in the semantic index, in the inspector's neighbourhood views and in every relation. It is never removed from the Atlas.
 4. The `identity` anchor is always included while it is visible.
 
 If fewer than 8 nodes qualify, the smaller set is shown; no invented filler is added.
@@ -884,7 +925,7 @@ If fewer than 8 nodes qualify, the smaller set is shown; no invented filler is a
 
 The preview shows **6–10 nodes** chosen deterministically:
 
-1. `mobile_overview = "featured"` nodes first, ordered by `(-importance, public_key)`.
+1. `mobile_overview_priority = "featured"` nodes first, ordered by `(-importance, public_key)`.
 2. Then the remaining visible nodes by `(-importance, public_key)`.
 3. The `identity` anchor is always included.
 4. If fewer than 6 nodes are visible in the active version, the preview shows exactly those nodes (a 4-node version shows 4) with no filler.
@@ -1106,6 +1147,8 @@ Codes are stable strings and are never renamed. `messageToken` is the localizati
 | `GROUP_LOCALE_MISSING` | A group lacks a localized label for en or fa |
 | `PAYLOAD_CONTRACT_INVALID` | The projected payload fails its own contract check (catalog references, key grammar, coordinate finiteness) |
 
+**Locale parity is a publish blocker in both directions.** For every `visible` node, both the EN and the FA label/summary must resolve — from that locale's canonical record or from a per-locale override, never by falling back to the other locale (§5.3, "Fallback is forbidden") — before an `AtlasVersion` may become active. `MISSING_LOCALE_PROJECTION` covers the missing-EN and the missing-FA case identically; it is never a warning, and the activation transaction rejects the version (§8.3, §20.3). A node that is not `visible` follows the visibility rule exactly — it is neither published nor traversed — and is therefore not parity-gated: no stricter rule is invented for it. Warnings remain available for genuinely optional incompleteness (`SUMMARY_MISSING`, optional explanation absent, `ISOLATED_NODE`, unused taxonomy — §20.2).
+
 ### 20.2 Warnings (never blocking)
 
 | Code | Rule |
@@ -1163,7 +1206,7 @@ The program's coverage must include the following. Framework choice follows each
 | Taxonomy validation | Inactive type blocked; allowed source/target pairs enforced; self-loop policy; key immutability once used |
 | Multi-parent hierarchy | A node with two hierarchy parents is valid and its children/parents render in both directions |
 | Hierarchy cycle rejection | A cycle in the hierarchy subgraph produces `HIERARCHY_CYCLE` and blocks activation |
-| Locale parity | A node missing FA resolution produces `MISSING_LOCALE_PROJECTION`; the same for en; an override clears it |
+| Locale parity | A node missing FA resolution produces `MISSING_LOCALE_PROJECTION` and a node missing EN resolution does the same; an override clears each; activation is rejected in both directions and passes only when both locales resolve; an invisible node is not parity-gated |
 | Canonical resolution | `translation_key` resolution across locales; ambiguity rejected; unpublished record rejected; archived record rejected (snapshot rules respected) |
 | Activation transaction | A failed validation leaves the previous active version serving; on success the previous version is archived in the same transaction; a concurrent activation attempt returns `409` |
 | API conditional GET | Identical ETag for two requests over an unchanged version; ETag changes after activation; `If-None-Match` returns `304` with no body |
@@ -1306,7 +1349,7 @@ Recorded as deferred, not planned as part of v1. Each requires its own product d
 |---|---|---|---|
 | R1 | Triangle ceiling breached as the graph grows past the v1 target | Medium / Medium | Importance-tiered tessellation (§13.7) with arithmetic at 80 and 100 nodes; measurement gate before raising any ceiling |
 | R2 | O(n) picking or label projection becomes measurable at 80 nodes | Medium / Medium | §19.2 pick and frame budgets with a benchmark gate, and the dependency-free broad-phase plan ready to implement |
-| R3 | Locale parity becomes a daily authoring tax and blocks publishing | Medium / High | Translation coverage worklist in admin, override precedence, and warnings that name the exact missing field |
+| R3 | Locale parity becomes a daily authoring tax and blocks publishing | Medium / High | Translation coverage worklist in admin, override precedence, and **blocking** issues that name the exact missing field and locale — parity is a publish blocker in both directions, never a warning, so the repair path is explicit rather than a silent pass |
 | R4 | The canonical-record reference depends on `translation_key`, which is nullable today | Medium / High | §23.2 preflight is blocking, dry-run first, with the existing admin sibling flow as the repair path |
 | R5 | Two graph engines and a live legacy storage layer exist during the transition | High / Medium | Legacy modules are never imported by Atlas code; retirement is explicit, ordered and gated by parity evidence |
 | R6 | Embedded snapshot size grows into layout-shift or HTML bloat | Low / Medium | §19.2 ceilings plus a build-time size assertion |
