@@ -549,7 +549,7 @@ it('surfaces a stale revision as a conflict', async () => {
 - Test: `src/components/atlas/NodeForm.test.tsx`
 
 **Interfaces:**
-- Produces: a form over one node — canonical record picker (async search through `fetchCanonicalCandidates`, publish-gated), node type select (active types only), importance (0–100 numeric with the band hint), visible toggle, `mobile_overview` radio (`auto`/`featured`/`hidden`), EN/FA override fields with a `blank = canonical copy` hint, alias list, group multi-select, pin controls (`Pin to current position`, `Clear pin`, numeric x/y), and a delete action
+- Produces: a form over one node — canonical record picker (async search through `fetchCanonicalCandidates`, publish-gated), node type select (active types only), importance (0–100 numeric with the band hint), visible toggle, `mobile_overview` radio (`auto`/`featured`/`hidden` — the single field spec §5 defines; the card's *mobile_overview_priority* wording refers to this same field, so do not add a second control or column), EN/FA override fields with a `blank = canonical copy` hint, alias list, group multi-select, pin controls (`Pin to current position`, `Clear pin`, numeric x/y), and a delete action
 - Consumes: `createAtlasNode`, `updateAtlasNode`, `deleteAtlasNode`
 
 - [ ] **Step 1: Write the failing tests**
@@ -675,7 +675,25 @@ it('highlights incident relations for the selected node', () => {
 - Consumes: `validateAtlasVersion(id)` → `{blocking, warnings}` with `{code, nodeKey, relationKey, groupKey, messageToken}`
 - Produces: a panel listing blockers (each with a `Go to <entity>` action that selects it in the graph and opens its form) and warnings (with counts); a `Publish` button that is **disabled** while any blocker exists, with the blocking count and the reason stated next to it; `issue-labels.ts` maps each stable code to a human sentence (the only UI copy for issues)
 
-- [ ] **Step 1: Write the failing tests** — publish is disabled with a blocker and the reason is announced; after the last blocker clears, publish becomes enabled; each blocker's `Go to` selects the right entity; every code in `ATLAS_ISSUE_CODES` (imported from a generated list or asserted against a literal array copied from the spec) has a label — a test fails if a code has no copy.
+- [ ] **Step 1: Write the failing tests** — publish is disabled with a blocker and the reason is announced; after the last blocker clears, publish becomes enabled; each blocker's `Go to` selects the right entity; every code in `ATLAS_ISSUE_CODES` (imported from a generated list or asserted against a literal array copied from the spec) has a label — a test fails if a code has no copy. Include one **locale-parity** case explicitly, since parity is the failure an editor hits most often:
+
+```tsx
+it('blocks publish on a locale-parity blocker and names the missing locale', () => {
+  render(<ValidationPanel issues={{ blocking: [{ code: 'LOCALE_PARITY_MISSING_FA', nodeKey: 'research-area-1a2b3c4d',
+                                                 messageToken: 'parity.missing.fa' }], warnings: [] }} />)
+  expect(screen.getByRole('button', { name: /publish/i })).toBeDisabled()
+  expect(screen.getByText(/Persian|fa/i)).toBeInTheDocument()
+  expect(screen.getByText(/1 blocker/i)).toBeInTheDocument()
+})
+
+
+it('raises a warning rather than a blocker when only a canonical locale copy is missing', () => {
+  render(<ValidationPanel issues={{ blocking: [], warnings: [{ code: 'CANONICAL_LOCALE_MISSING', nodeKey: 'project-9f8e7d6c',
+                                                                messageToken: 'canonical.locale.missing' }] }} />)
+  expect(screen.getByRole('button', { name: /publish/i })).toBeEnabled()
+  expect(screen.getByText(/1 warning/i)).toBeInTheDocument()
+})
+```
 - [ ] **Step 2: Run — expect FAIL.**
 - [ ] **Step 3: Implement.**
 - [ ] **Step 4: Run — expect green.**

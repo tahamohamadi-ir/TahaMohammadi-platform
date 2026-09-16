@@ -500,6 +500,7 @@ git commit -m "feat(atlas): add node-type and relation-type taxonomy models"
 **Interfaces:**
 - Produces: `AtlasVersion` (with the layout storage field, see below), `AtlasNode`, `AtlasNodeTranslation`
 - Produces: `AtlasVersion.layout = models.JSONField(default=dict, blank=True)` holding `{"<node public_key>": [x, y, z], ...}` (3-decimal floats) — the spec fixes the layout *behaviour* (computed once per revision and served, §12.1); the plan fixes its storage shape
+- Produces: the exact `AtlasNode` field set Plans B and C consume — `version`, `public_key`, `node_type`, `canonical_model`, `canonical_translation_key`, `importance` (0–100), `visible` (bool), `mobile_overview` (`auto` / `featured` / `hidden`, default `auto`), `pin_x` / `pin_y` / `pin_z` (all-or-none), `sort_order`, timestamps — plus `AtlasNodeTranslation(node, locale, label_override, summary_override, aliases)`. Field names come from spec §5 and are final: `mobile_overview` is the one mobile-overview field (the card's Plan B item 5 wording *mobile_overview_priority* names the same field — do not add a second one), and there is no separate `pinned` flag, only the coordinate trio.
 
 - [ ] **Step 1: Write the failing tests**
 
@@ -539,6 +540,15 @@ def test_node_public_key_is_globally_unique_across_versions():
     second.public_key = first.public_key
     with pytest.raises(IntegrityError):
         second.save()
+
+
+@pytest.mark.django_db
+def test_mobile_overview_defaults_and_rejects_unknown_values():
+    node = _node()                                   # no explicit mobile_overview
+    assert node.mobile_overview == "auto"
+    node.mobile_overview = "sometimes"
+    with pytest.raises(ValidationError):
+        node.full_clean()
 ```
 
 - [ ] **Step 2: Run — expect FAIL**.
@@ -563,8 +573,8 @@ class Meta:  # AtlasNode
     indexes = [models.Index(fields=["version", "visible"], name="atlas_node_version_visible_idx"),
                models.Index(fields=["canonical_model", "canonical_translation_key"], name="atlas_node_canonical_idx")]
 ```
-`AtlasNode.clean()` additionally enforces: `public_key` matches `PUBLIC_KEY_RE`; `canonical_model` equals `node_type.canonical_source`; pins are both-or-neither.
-- [ ] **Step 4: Migrate + test** — expect `4 passed`.
+`AtlasNode.clean()` additionally enforces: `public_key` matches `PUBLIC_KEY_RE`; `canonical_model` equals `node_type.canonical_source`; pins are both-or-neither; `mobile_overview` is one of the three choices.
+- [ ] **Step 4: Migrate + test** — expect `5 passed`.
 - [ ] **Step 5: Commit**
 
 ```bash
