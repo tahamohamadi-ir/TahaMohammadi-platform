@@ -546,8 +546,11 @@ def test_node_public_key_is_unique_per_version_and_reusable_across_versions(atla
     # "stable public keys must not silently mutate".
     first, second = _node(), _node(version=AtlasVersion.objects.create(status="draft", label="v2"))
     second.public_key = first.public_key
-    with pytest.raises(IntegrityError):
-        second.save()
+    second.save()                                                        # a clone keeps its keys
+    assert second.public_key == first.public_key
+
+    with pytest.raises(IntegrityError):                                  # …but not twice in one version
+        _node(version=first.version, public_key=first.public_key).save()
 
 
 @pytest.mark.django_db
