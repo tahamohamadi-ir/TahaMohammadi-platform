@@ -286,3 +286,38 @@ Backend source: worktree `D:/Project/.atlas-worktrees/backend-plan-a`, branch
   (`apps/atlas/validation.py` fail-closed serving gate is the wire contract's enforcer).
 - `mobileOverviewPriority` is the canonical field everywhere it is typed; the bare
   alternate `mobile_overview` appears nowhere in schema or generated types.
+
+## Addendum 2026-09-19 — Atlas admin authoring additive schema (Plan B, Tasks 1-6)
+
+- Additive re-pin of the **admin** snapshot only: `docs/contracts/openapi/current/admin-openapi.json`
+  57 → **79 path templates** (+22 Atlas authoring templates: versions CRUD+lifecycle,
+  layout recompute, bulk graph PUT, validate, activate, nodes/relations/groups CRUD,
+  canonical-candidates picker, taxonomy CRUD, staff preview-token mint) and 26 new
+  component schemas. THE PUBLIC SNAPSHOT IS UNTOUCHED (`bead273e…`, 51 paths) —
+  the plan registers nothing on the public API for minting; the read-only public
+  routes stay Plan A's accepted contract.
+- **Additive-check evidence** (Task 7 step 2, stronger than the text-diff scan the
+  plan asks for because the exporter rewrites the whole file): canonical
+  sorted-key JSON comparison of OLD vs NEW proves **zero removed schemas, zero
+  removed paths, zero surviving-path/schema content drift, zero top-level drift** —
+  the '-' churn in `git diff` is formatting-only from the whole-file rewrite.
+- New pins: admin CRLF sha256 `da597b5f…c9342`; LF-canonical `43b8a666…41dd3`;
+  endpoint-inventory `f215d56b…62f` (161 operations; LF `67b26266…74be`);
+  pathCount 57→79; sourceCommit `5ce30a1` (Task-6 tip).
+- Gates at the worktree: `verify_openapi_export.py` MATCH ×3; drift
+  (`test_openapi_hash_drift.py`) + access (`test_admin_openapi.py`) +
+  permission-matrix gates **25 passed**; full backend suite 1328/6.
+- admin-panel worktree `357476f`: regenerated `admin-api.ts` from the additive
+  snapshot, `openapi-hash.json` (sha256, pathCount 79) and
+  `acceptedAdminSchemaSha256` re-pinned; `product-contract.test.ts` 3/3,
+  `tsc --noEmit` exit 0, lint/format clean (6 pre-existing react-refresh
+  warnings untouched elsewhere), vitest 197/197.
+- Atlas operations carry `OTP_REQUIRED`-style security posture identical to
+  `/graph` (staff session + verified OTP, CSRF on mutations); the permission
+  matrix gate enforces the shared baseline.
+
+### Coordinator notes (carried, unchanged)
+
+- Atlas 200 responses stay runtime-validated at the serving gate; generated TS
+  remains generic for bare-dict shapes (non-blocking, carried to Plan C).
+
