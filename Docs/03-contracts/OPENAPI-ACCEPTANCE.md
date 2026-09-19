@@ -244,3 +244,45 @@ backend `main` at `e3a43bb` (PRs #3, #4, #5 merged, Backend CI green).
   and is verified byte-identical; the divergence predates this addendum
   and needs a coordinator ruling, not a silent rewrite.
 - Admin-panel consumer-type regen (PU-SYNC-admin scope) is still open.
+## 2026-09-18 addendum — Knowledge Atlas Plan A, Task 19 (Atlas public routes join the snapshot)
+
+Status: **accepted for consumer re-pin** (backend snapshot regenerated and consumers re-pinned
+in isolated contract worktrees; nothing pushed).
+
+### Artifact hashes (2026-09-18, commit `bc0baa0`)
+
+| Artifact | hash transition |
+|---|---|
+| `public-openapi.json` | `469bd51ed7e1e0d3bed7c64affaf9d488c8ee124da69496e8f5b8acc36eda914` → `bead273e13a6296030e3255b4a527e956cac8c09ccfff6b2c056df61bbf42139` (CRLF form; LF-canonical `469bd51e…`→`250c9a89d71381a9b29e39fc1a458a965ec3df4c2efd1535a0b8b7aa901536d2`) |
+| `admin-openapi.json` | unchanged `274407a8…` (CRLF) / LF-canonical `e03cacb0…` — 57 paths, no Atlas CRUD (Plan B deferred by design) |
+| `endpoint-inventory.md` | → `3dad8b12…`, 127 operations (49→51 public paths: `GET /api/atlas/{locale}`, `GET /api/atlas/preview`) |
+
+Backend source: worktree `D:/Project/.atlas-worktrees/backend-plan-a`, branch
+`feat/knowledge-atlas-domain-api`, Task 18 at `5eb7b42` + Task 19 snapshot commits
+`7afd9ed`/`bc0baa0`/`14b8afe`. `Back-End/tests/test_openapi_hash_drift.py` re-pinned
+(CRLF + LF-canonical + admin LF). Backend suite at HEAD: 1267 passed / 6 skipped.
+
+### Access-test and evidence
+
+- Backend: `/api/atlas/{locale}` (path param) and `/api/atlas/preview` (**Authorization
+  header only — the capability token never appears in path or query**; documented
+  in the exported operation description). No secret material in any artifact.
+- public-site worktree `feat/knowledge-atlas-domain-api-contract` at `587957f`:
+  regenerated `public-api.ts` (51 paths) via the repo's `generate:api-types` script;
+  double pin (`openapi-hash.json` + `contracts/openapi.public.sha256`) =
+  `bead273e…`; acceptedBackendCommit `bc0baa0`; consumer pins re-pinned
+  (`product-api.contract.test.ts`, `src/test-harness/contract-fixtures.ts`
+  CRLF + LF-canonical, `tests/fixtures/contracts/product-record-resolver.json`);
+  vitest 21/21 green on the pin consumers.
+- admin-panel worktree `a7aa0dd`: regenerated `admin-api.ts` (additive
+  `LocalizedFeaturedRecordOut`/`brandMediaId`/`featuredRecords` from the existing
+  admin siteconfig surface; no Atlas CRUD), pin hash updated; `tsc -b` green.
+
+### Coordinator notes (open, not papered over)
+
+- Atlas 200 response is a bare `dict` in django-ninja, so the generated TypeScript
+  sees a generic object: recorded as a **non-blocking limitation carried to Plan C**
+  (typed payload consumption), per the repo's runtime-validated posture
+  (`apps/atlas/validation.py` fail-closed serving gate is the wire contract's enforcer).
+- `mobileOverviewPriority` is the canonical field everywhere it is typed; the bare
+  alternate `mobile_overview` appears nowhere in schema or generated types.
