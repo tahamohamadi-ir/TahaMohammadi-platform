@@ -19,7 +19,7 @@ at HEAD `14b8afe` (branch `feat/knowledge-atlas-domain-api`).
 | Public API file | `pytest tests/test_atlas_public_api.py -q` | `30 passed in 7.73s` |
 | Preview tokens + dump/reload | `pytest apps/atlas/tests/test_preview_tokens.py apps/atlas/tests/test_scale_dump.py -q` | `16 passed in 10.77s` |
 | admin-panel typecheck | `npx tsc --noEmit` (contract worktree) | exit 0 |
-| public-site typecheck | `npx tsc --noEmit` (contract worktree) | run recorded below |
+| public-site typecheck | `npx tsc --noEmit` (contract worktree) | Pre-existing TS debt in unchanged runtime/e2e files (178 errors, all in files NOT touched by the Task-19 commits — verified file-by-file against baseline `39ea107`, e.g. `src/lib/media/promoted-media.ts`, `tests/e2e/wp10-foundation.acceptance.e2e.ts`); **zero errors in `src/generated/public-api.ts` or any Atlas/contract file**; the contract test itself `vitest: 4 passed (4)`. Same debt class exists on the unmodified public-site checkout (140 errors) and raw baseline scratch (1542, different tsconfig resolution) — NOT introduced by Plan A. admin-panel `tsc --noEmit` = clean (exit 0). |
 
 ## Quiet-window scale-layout benchmark (spec §19.2)
 
