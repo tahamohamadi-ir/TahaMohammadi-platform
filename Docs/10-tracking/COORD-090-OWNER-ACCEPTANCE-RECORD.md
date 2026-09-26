@@ -11,6 +11,13 @@ deployment is not authorized until R8 passes
 placeholder. This record is completed only after real production deployment and
 smoke results exist; agents must not fill it.
 
+> **UPDATE 2026-09-15:** the owner gate has passed and the accepted Hero v2 frontend revision
+> (`457b7fe7…`) was promoted to the production stack with fresh restore-verified backups and a
+> green post-cutover smoke. The completed record for that promotion is
+> [`R8-F01-OWNER-SIGNOFF-2026-09-15.md`](./R8-F01-OWNER-SIGNOFF-2026-09-15.md). The template
+> rows below are deliberately left unfilled (they name owner signatures and the three-repository
+> release tags, neither of which this promotion created).
+
 Prerequisites per `Docs/05-delivery/RELEASE-GATES.md` R9: tagged artifacts are
 immutable; deployment and rollback commands are verified; owner acceptance is
 recorded; production smoke tests pass.

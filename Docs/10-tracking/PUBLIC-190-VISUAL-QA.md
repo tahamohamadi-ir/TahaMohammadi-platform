@@ -7,6 +7,14 @@
 **Run date:** 2026-09-04  
 **Result:** `REVISE`
 
+> **UPDATE 2026-09-15 — accepted by the owner.** The owner signed off the Hero v2 state
+> (frontend `457b7fe7d0d4ed8e3d1ae12774449c0b3f550d5f`, staging release
+> `stage-457b7fe7-1ea469ae-6c0d3491`) and authorized the production promotion, which was
+> executed the same day (web service only). R8/F-01 is therefore closed by owner decision —
+> record: [`R8-F01-OWNER-SIGNOFF-2026-09-15.md`](./R8-F01-OWNER-SIGNOFF-2026-09-15.md).
+> The `REVISE` verdict and every result below are preserved unchanged as the 2026-09-04 run
+> against the earlier revision set.
+
 **Remediation pack @ 2026-09-02:** [PUBLIC-190-asset-prompts/README.md](./PUBLIC-190-asset-prompts/README.md) (owner image prompts), [PUBLIC-190-IMPLEMENTATION-REQUIREMENTS.md](./PUBLIC-190-IMPLEMENTATION-REQUIREMENTS.md) (CMS/motion/graph gap research), [PUBLIC-190-VISUAL-REMEDIATION-PLAN.md](./PUBLIC-190-VISUAL-REMEDIATION-PLAN.md) (48-pair phased plan), [ADR-0007](../09-decisions/ADR-0007-VISUAL-ASSETS-AND-CMS-BLOCKS.md).
 
 ---

@@ -11,6 +11,15 @@ ADMIN `f1cfa37` / BACKEND `9c2c704`** and staging release
 **`stage-f3e90323-f1cfa37d-9c2c7045`** (2026-09-10). Owner-only cells remain
 `____`; agents do not fill owner signatures or accept owner decisions.
 
+> **UPDATE 2026-09-15 — owner gate PASSED, R8 CLOSED.** The platform owner approved R8 / F-01 for
+> the accepted Hero v2 revision (frontend `457b7fe7d0d4ed8e3d1ae12774449c0b3f550d5f`, staging
+> release `stage-457b7fe7-1ea469ae-6c0d3491`) and authorized the documented production promotion.
+> Sign-off record: [`R8-F01-OWNER-SIGNOFF-2026-09-15.md`](./R8-F01-OWNER-SIGNOFF-2026-09-15.md).
+> **R8: PASSED — production promotion gate: OPEN.** Everything below is preserved unchanged as the
+> 2026-09-10 evidence snapshot; §1's visual rows remain pinned to the earlier revision set
+> (`f3e9032` / `f1cfa37` / `9c2c704`) for exactly that reason, and §8's owner cells stay unfilled by
+> agents — the sign-off lives in the record linked above.
+
 R8 gate (`Docs/05-delivery/RELEASE-GATES.md`):
 "Accessibility, visual, browser, performance, and security gates pass. Every
 deferral is named, owned, and non-blocking."
@@ -221,3 +230,9 @@ and returned a revision round for F-01 (see §1). R8 passes when the revision
 round is fixed, re-captured, and the owner completes §8 with the accepted
 hashes. The owner pre-approved the signature as `Taha Mohammadi` /
 `2026-09-10`; it is held until F-01 closes.
+
+**Update 2026-09-15:** F-01 is closed by explicit owner sign-off on the accepted
+Hero v2 revision (frontend `457b7fe7…`), so **R8 PASSES** and the production promotion
+gate is **OPEN**. Signature handling is recorded in
+[`R8-F01-OWNER-SIGNOFF-2026-09-15.md`](./R8-F01-OWNER-SIGNOFF-2026-09-15.md); the §8 block
+above is left untouched.

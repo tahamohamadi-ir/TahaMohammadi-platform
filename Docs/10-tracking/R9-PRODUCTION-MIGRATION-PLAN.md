@@ -17,8 +17,8 @@ Owner decisions recorded 2026-09-10 (`Docs/05-delivery/concept-alignment-v2/revi
 | 1 — Backup | **COMPLETE** | `R9-LEGACY-BACKUP-EVIDENCE.md`: DB dump (543K, SHA-256 pinned), media, 91M old static build, image tags, repo HEAD. |
 | 2 — Isolated restore rehearsal | **COMPLETE** | `taha_prod_migration_probe` restored with 0 errors; new migrations report **no pending operations**; `manage.py check` clean. |
 | 3 — Controlled merge + conflicts | **COMPLETE** | `R9-MERGE-CONFLICTS.md`: content rows identical; only two staging test artifacts to exclude. |
-| 4 — Validation on merged data | **IN PROGRESS** | Owner authorized promotion 2026-09-11; origin built and verified (`R9-PRODUCTION-ORIGIN-EVIDENCE.md`); waiting for the Cloudflare DNS switch. |
-| 5 — Promotion | pending | DNS switch + public smoke |
+| 4 — Validation on merged data | **COMPLETE** | Owner authorized promotion 2026-09-11; origin built and verified (`R9-PRODUCTION-ORIGIN-EVIDENCE.md`); owner accepted the Hero v2 frontend state 2026-09-15. |
+| 5 — Promotion | **IN PROGRESS** | Apex serves the platform stack through the existing Cloudflare edge; accepted frontend revision `457b7fe7…` promoted to `taha-web-prod:prod-457b7fe7` 2026-09-15 with fresh restore-verified backups and a green public smoke (`R8-F01-OWNER-SIGNOFF-2026-09-15.md`). Remaining: three-repository release tags / immutability record, real SMTP, legacy retirement. |
 | 6 — Post-promotion | pending | second staging stack on the same host |
 
 ## Phase 0 — Access and inventory (owner + agent)
