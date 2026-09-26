@@ -105,6 +105,12 @@ server, gates, and a dated changelog of everything done.
 
 ## 6. Changelog
 
+### 2026-09-26
+
+| Time (−07:00) | Event |
+| ------------- | ----- |
+| 05:11 | **DOCS READ-THROUGH + WORKSPACE HYGIENE (no product change, no deploy, nothing pushed).** Read all ~490 curated project documents (governance → product → architecture → contracts → design → delivery queue + 83 packets → quality/migration/operations → 10 ADRs → tracking/R7-R9 evidences → Atlas A/B/C/D plans + ledgers → subrepo docs/handoffs). Key confirmations: Atlas A 20/20 + B 19/19 closed; C 1–24 done (T19 evidence-skipped); D tasks 1–6 evidenced, 7–15 open; product queue 3 DOC_COMPLETE / 10 ACCEPTED_LOCAL / 68 IMPLEMENTED_UNREVIEWED / 1 REVISE (`PU-09-editor`) / 1 BLOCKED (`PU-25-admin-journey`); R8 PASSED, R9 step 5 IN PROGRESS. **Owner reports: server changed, staging deleted entirely** — recorded here as owner-reported, NOT yet verified from any host; all staging-anchored procedures (§8 commands, `Deploy staging` workflow, Plan D Task 13 staging step, R7/R9 staging legs) are therefore STALE until a new topology is established. Hygiene: root rebased onto `origin/main` (`d6d3b10`, Plan B 19/19) — local `3dd896a` (prior doc commits `41ee5e7/669236d/42ed08b` + hygiene commit incl. `HERO_VISUAL_SPEC_v1.md` first commit + graft tooling sync); Back-End merged to `e999737` (origin `c127860` PR #6 migration + tooling commit); admin-panel merged to `e50fdce` (origin `16d44e2` + tooling commit); public-site local `main` fast-forwarded to `bddcebe` (PR #16 about-wiring) while checkout stays on `feat/research-universe-prototype` (+ tooling commit `5863f17`). `DESIGN-SPEC.md` CRLF-only change verified metadata-only (`git diff --numstat` empty) and normalized, not committed. Preserved untouched: public-site stash `parallel-wip` (page-family shells), admin stash `pre-rebase temp` (Atlas generated types), all `.atlas-worktrees/` branches, Design-Assets validation artifacts, `Back-End/apps/atlas/fixtures/` leftover spec copy, `Design-References/` portal PNGs, hero-v2-stage4 captures. **Pushes NOT done — awaiting owner approval.** Next: new-server facts (host/IP/SSH/stacks/DNS/backups) → refresh §2/§3/§5/§8/§9, R9 plan, Plan D rollout steps. |
+
 ### 2026-09-16
 
 | Time (−07:00) | Event |
@@ -202,9 +208,10 @@ See git history; highlights: staging ingress isolation (`bead720`, `818f8f5`,
 | 3 | Production deploy workflow (today promotions are manual rebuild + volume sync) | Agent |
 | 4 | Remaining visual polish: blog/gallery cards, section spacing on `/fa`, broader concept alignment | Agent (on direction) |
 | 5 | Rotate `PREVIEW_SHARE_SECRET` (a value was echoed during server recon) | Owner |
-| 6 | Optional: `STAGING_ADMIN_*` secrets + dispatch **Bootstrap staging admin** workflow | Owner |
+| 6 | ~~Optional: `STAGING_ADMIN_*` secrets + dispatch **Bootstrap staging admin** workflow~~ **SUPERSEDED 2026-09-26** — staging deleted by owner; re-scoped to the new topology when it is established | Owner |
 | 7 | Monitor server disk (87% used) and Cloudflare certificate renewal behind the proxy | Owner |
 | 8 | ~~Execute the v2 Home plan when assigned~~ **SHIPPED 2026-09-15** — Hero v2 is live in the production build (`prod-457b7fe7`); About keeps the interactive graph | Developer / Blender workflow |
+| 9 | **NEW 2026-09-26 — server changed, staging deleted (owner-reported, unverified).** Provide new-server facts (host/IP/SSH user+key/stacks on it/DNS state/backups) so §2/§3/§5/§8/§9, the R9 migration plan, `Deploy staging` workflow references and Plan D Task 13 rollout steps can be rewritten; until then no staging-anchored procedure may be executed | Owner |
 
 ### Documentation changelog — 2026-09-14
 
