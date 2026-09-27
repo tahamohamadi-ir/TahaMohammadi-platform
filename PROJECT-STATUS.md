@@ -82,18 +82,25 @@ server, gates, and a dated changelog of everything done.
   `legacy-20260911-165545` (old DB/media/static) and
   `promotion-20260911-191139` (pre-promotion DBs + Caddy snapshot + checksums).
 
-## 4. Status by area (2026-09-12 23:49)
+## 4. Status by area (reconciled 2026-09-27 against merged `main` + live production)
+
+> Reconciled by the coordinator against the actual merged `main` SHAs and live HTTP
+> probes. The previous table (dated 2026-09-12) predated the Knowledge Atlas
+> program and reported stale test counts and release SHAs.
 
 | Area            | State | Notes |
 | --------------- | ----- | ----- |
-| Backend         | ✅ | 952 tests, Ruff clean, migrations applied; `9c2c704` (+ CI-only `6c0d349`) |
-| Public site     | ✅ live | `f23deec`: graph clarity, authored prose, journey icons, project metadata, About from live API, full-card links + pointer-follow glow; local (unpushed): portal world integrated + frozen `79a15f1` |
-| Admin panel     | ✅ | 197 unit tests, browser matrix 5/5, CI green; `1ea469a` |
-| CI/CD           | ✅ | CI in all three repos with dependency + secret scans; deploy-staging workflow; production updates still manual |
-| R7 staging      | ✅ mostly | live smoke 10/10, backup/restore proven, security probes; credential-gated families deferred to R9 |
-| R8 quality      | ✅ PASSED | Owner sign-off 2026-09-15 approved R8/F-01 for the Hero v2 revision `457b7fe7…`; all agent gates were already green ([`R8-F01-OWNER-SIGNOFF-2026-09-15.md`](Docs/10-tracking/R8-F01-OWNER-SIGNOFF-2026-09-15.md)) |
-| R9 production   | ✅ | Hero v2 promoted to the production stack (`taha-web-prod:prod-457b7fe7`, web only) with restore-verified backups + public smoke green; **apex DNS now verified healthy** from the authoritative path (2026-09-16, direct dale/harmony UDP+TCP, one SOA serial) — see the final closeout; real SMTP remains an owner input |
-| Home hero production plan | **Shipped** | 2026-09-15: Hero v2 (four authored stills, static-first Home) is live in the production build; About keeps the interactive graph. Witnesses: [`Design-Assets/hero-v2/validation/production-2026-09-15/`](Design-Assets/hero-v2/validation/production-2026-09-15/README.md) |
+| Backend         | ✅ | `main` = `e999737` (Atlas A/B/D mainline merged). Ledger-recorded full suite **1331 passed / 6 skipped**; coordinator re-ran the Atlas projection + migration subset locally: **30 passed**. Ruff clean, migrations applied. |
+| Public site     | ✅ live | `main` = `bddcebe` (Atlas public + About wiring merged). Live probe 2026-09-27: `/en/` 200 Hero v2 (4 frames), `/en/atlas/` 200, `/api/atlas/en` 200 (4 nodes / 3 relations, `atlas01-1.0.0`), `/api/graph/en` 200, `/api/v1/site/en` 200, records resolver 200, `/health/` ok. Checkout sits on `feat/research-universe-prototype`; 3 Plan-D commits remain unmerged on `feat/knowledge-atlas-about-retirement`. |
+| Public site — **Atlas rendering defect** | ❌ **OPEN** | Live `/en/atlas/`, `/fa/atlas/` and the About preview all ship `data-atlas-status="unavailable"` while `/api/atlas/{locale}` serves a valid published version. Build ran without `PUBLIC_API_BASE_URL`, and `atlas-runtime.ts` only enhances `status="ready"`, so there is no recovery path. Tracked for repair on `fix/atlas-runtime-availability`. |
+| Admin panel     | ✅ | `main` = `e50fdce` (Atlas B authoring mainline merged). Ledger-recorded **341 vitest passed / 61 files**, `tsc -b` clean, Playwright 6 passed + 1 by-design skip. |
+| Admin acceptance | ⚠️ open | `PU-25-admin-journey` BLOCKED and `PU-09-editor` REVISE. The live journey depends on credentials **and on staging, which the owner deleted**, so that path is dead rather than merely pending. A hermetic replacement is in progress. |
+| CI/CD           | ✅ | CI green in all three repos with dependency + secret scans. Deploy-staging workflow exists but staging is deleted, so it is currently inert. Production promotion remains manual. |
+| R7 staging      | ⚠️ invalidated | Historical evidence stands, but the staging environment itself is **gone** (owner-reported 2026-09-26, unverified). Every staging-anchored procedure is stale. |
+| R8 quality      | ✅ PASSED | Owner sign-off 2026-09-15 on Hero v2 `457b7fe7…` ([`R8-F01-OWNER-SIGNOFF-2026-09-15.md`](Docs/10-tracking/R8-F01-OWNER-SIGNOFF-2026-09-15.md)). Still the correct baseline, though it predates the Atlas work. |
+| R9 production   | ⚠️ partial | Hero v2 is live; apex DNS verified 2026-09-16. But no release tags, no artifact hashes, no owner production acceptance ([`COORD-090`](Docs/10-tracking/COORD-090-OWNER-ACCEPTANCE-RECORD.md) is still an unfilled template), and real SMTP remains an owner input. |
+| Knowledge Atlas | ⚠️ partial | Plans A (20/20) and B (19/19) closed. Plan C tasks 1–24 done (19 correctly skipped by its benchmark). Plan D tasks 1–6 evidenced, 8–10 committed but unmerged, 11–12 in progress, 13–15 not started. |
+| Home hero production plan | **Shipped** | 2026-09-15: Hero v2 (four authored stills, static-first Home) is live. Note: About no longer keeps an interactive graph — it now shows the 2D Atlas preview, 0 canvases. Witnesses: [`Design-Assets/hero-v2/validation/production-2026-09-15/`](Design-Assets/hero-v2/validation/production-2026-09-15/README.md) |
 
 ## 5. Current releases
 
@@ -212,6 +219,8 @@ See git history; highlights: staging ingress isolation (`bead720`, `818f8f5`,
 | 7 | Monitor server disk (87% used) and Cloudflare certificate renewal behind the proxy | Owner |
 | 8 | ~~Execute the v2 Home plan when assigned~~ **SHIPPED 2026-09-15** — Hero v2 is live in the production build (`prod-457b7fe7`); About keeps the interactive graph | Developer / Blender workflow |
 | 9 | **NEW 2026-09-26 — server changed, staging deleted (owner-reported, unverified).** Provide new-server facts (host/IP/SSH user+key/stacks on it/DNS state/backups) so §2/§3/§5/§8/§9, the R9 migration plan, `Deploy staging` workflow references and Plan D Task 13 rollout steps can be rewritten; until then no staging-anchored procedure may be executed | Owner |
+| 10 | **NEW 2026-09-27 — production Atlas ships a dead feature.** `/en/atlas/`, `/fa/atlas/` and the About preview render `data-atlas-status="unavailable"` while `/api/atlas/{locale}` serves a valid published version (4 nodes / 3 relations). Build ran without `PUBLIC_API_BASE_URL`; `atlas-runtime.ts` only enhances `status="ready"`, so no recovery path exists. Repair in progress on `fix/atlas-runtime-availability`; a rebuild **with** `PUBLIC_API_BASE_URL` is also required. | Agent (fix) + Owner (rebuild authorization) |
+| 11 | **NEW 2026-09-27 — `PU-25-admin-journey` needs a hermetic path, not credentials.** The live journey spec requires staging plus owner credentials, and staging is deleted, so that acceptance route is dead rather than pending. A hermetic full-stack journey is being built instead | Agent |
 
 ### Documentation changelog — 2026-09-14
 
