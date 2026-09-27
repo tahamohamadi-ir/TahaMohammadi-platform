@@ -48,8 +48,9 @@ the validator would have performed, across every accepted file:
 | **TOTAL** | 41 | **46** | **0** |
 
 **Nothing is missing** — every accepted file still exists. But **46 of 87
-accepted files have changed content**, so the `ACCEPTED_LOCAL` label is no
-longer a truthful statement about the current trees. Representative paths:
+accepted files have changed content** (44 unique paths; two files appear in two
+packets), so the `ACCEPTED_LOCAL` label is no longer a truthful statement about
+the current trees. Representative paths:
 
 - `Back-End/apps/api/api.py`, both OpenAPI snapshots, `ACCEPTANCE.json`,
   `endpoint-inventory.md`
@@ -60,6 +61,43 @@ longer a truthful statement about the current trees. Representative paths:
 
 Some of this drift is **expected and good**: the Knowledge Atlas program merged
 into `main` after the acceptance was recorded, and `HeroGraph.astro` was since
+
+## Fix applied to the validator (agent-owned part of DEBT-008)
+
+`validate-plan.py` could not report any of this, so the defect was fixed in the
+tool itself rather than only described:
+
+| Change | Why |
+|---|---|
+| Acceptance checks now **collect** defects instead of asserting in sequence | The old HEAD -> allowlist -> hash chain meant a stale HEAD masked the hash check. All 18 defects are now reported in one run. |
+| A defectful queue reports `status: STALE`, not `PASS` | `status: PASS` reads as a completion signal. The plan *structure* is still validated; only the acceptance claim is withdrawn. |
+| Human-readable defect list on stderr | `ACCEPTANCE DEFECTS: 18 across 10 packet(s); 44 file(s) drifted` plus one line per packet. |
+| Untracked files no longer count as "unassigned product change" | Agent tooling blocks and local QA captures made the validator crash, so it went unrun — which is *how* the drift stayed hidden. Only tracked modifications are a product change now. |
+
+Result after the fix — the validator runs to completion and self-reports:
+
+```
+ACCEPTANCE DEFECTS: 18 across 10 packet(s); 44 file(s) drifted
+  PU-03-resolver   stale-head    pinned 4cc39cc, repository is at e999737
+  PU-03-resolver   content-drift 5 of 8 files changed
+  PU-SYNC-graph    stale-head    pinned aa06bdd, repository is at 5863f17
+  PU-SYNC-graph    content-drift 2 of 4 files changed
+  CA-01            stale-head    pinned aa06bdd, repository is at 5863f17
+  CA-02            stale-head    pinned aa06bdd, repository is at 5863f17
+  CA-03            content-drift 11 of 14 files changed
+  ... (18 lines total)
+```
+
+`RECONCILIATION-CHECK.json` now carries `status: STALE`, `acceptance_status:
+STALE`, `accepted_content_intact: false`, `accepted_files_drifted: 44`,
+`accepted_files_missing: 0` and the full `accepted_defects` array. **CA-01 and
+CA-02 have no content drift** — only a stale HEAD — so the honest verdict is
+"8 of 10 packets have drifted content", not "all 10".
+
+Re-baselining remains an owner/coordinator decision and **was not performed**.
+
+## Required before the queue can be trusted
+
 deliberately retired (Plan D Task 11, public-site `034b73a`). Some of it may be
 unreviewed change. **The acceptance manifest cannot tell the two apart** — that
 is exactly the gap, and it is why the queue cannot currently be trusted.

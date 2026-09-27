@@ -1,45 +1,196 @@
 {
   "status": "STALE",
-  "validation_note": "Re-verified 2026-09-27. Root cause established by running validate-plan.py: it aborts at validate-plan.py:78 on the accepted-HEAD assertion, so the file-hash assertion one line later never executes. All 10 ACCEPTED_LOCAL packets pin commits that are no longer any repository HEAD. Re-running the skipped SHA-256 comparison manually: 46 of 87 accepted files have DRIFTED CONTENT (0 missing). The ACCEPTED_LOCAL label is therefore no longer a truthful statement about the current trees. Separately, execution-tasks.json carries 10 ACCEPTED_LOCAL packets while reviews/ACCEPTED-LOCAL-2026-09-06.json carries 68 entries, including packets the live queue now marks IMPLEMENTED_UNREVIEWED / REVISE / BLOCKED - that file is a superseded 2026-09-06 artifact, not a wider acceptance. No packet status was changed and no product code was touched. Full evidence and the re-baseline recommendation: reviews/RECONCILIATION-STATUS-2026-09-27.md",
-  "accepted_content_intact": false,
-  "accepted_files_drifted": 46,
+  "validation_note": "plan structure validated, but 18 ACCEPTED_LOCAL defect(s) found across 10 packet(s); 44 accepted file(s) drifted. The acceptance claim is withdrawn - this is NOT a completion signal. See reviews/RECONCILIATION-STATUS-2026-09-27.md",
+  "acceptance_status": "STALE",
+  "accepted_defects": [
+    {
+      "id": "PU-03-resolver",
+      "kind": "stale-head",
+      "detail": "pinned 4cc39cc, repository is at e999737"
+    },
+    {
+      "id": "PU-03-resolver",
+      "kind": "content-drift",
+      "detail": "5 of 8 files changed",
+      "files": [
+        "apps/api/api.py",
+        "docs/contracts/openapi/current/public-openapi.json",
+        "docs/contracts/openapi/current/admin-openapi.json",
+        "docs/contracts/openapi/current/ACCEPTANCE.json",
+        "docs/contracts/openapi/current/endpoint-inventory.md"
+      ]
+    },
+    {
+      "id": "PU-SYNC-graph",
+      "kind": "stale-head",
+      "detail": "pinned aa06bdd, repository is at 5863f17"
+    },
+    {
+      "id": "PU-SYNC-graph",
+      "kind": "content-drift",
+      "detail": "2 of 4 files changed",
+      "files": [
+        "src/generated/public-api.ts",
+        "tests/fixtures/contracts/product-record-resolver.json"
+      ]
+    },
+    {
+      "id": "CA-01",
+      "kind": "stale-head",
+      "detail": "pinned aa06bdd, repository is at 5863f17"
+    },
+    {
+      "id": "CA-02",
+      "kind": "stale-head",
+      "detail": "pinned aa06bdd, repository is at 5863f17"
+    },
+    {
+      "id": "CA-03",
+      "kind": "stale-head",
+      "detail": "pinned aa06bdd, repository is at 5863f17"
+    },
+    {
+      "id": "CA-03",
+      "kind": "content-drift",
+      "detail": "11 of 14 files changed",
+      "files": [
+        "src/components/home/HomeHero.astro",
+        "src/components/home/HomeResearchGraph.astro",
+        "src/components/hero/HeroGraph.astro",
+        "src/components/hero/GraphNodeList.astro",
+        "src/components/hero/hero-contract.test.ts",
+        "src/styles/hero-graph.css",
+        "src/pages/fa/index.astro",
+        "src/pages/en/index.astro",
+        "src/components/home/wp40-home.behavior.test.ts",
+        "tests/e2e/ca03-hero-semantic.e2e.ts",
+        "tests/e2e/wp40-home.e2e.ts"
+      ]
+    },
+    {
+      "id": "CA-04",
+      "kind": "stale-head",
+      "detail": "pinned aa06bdd, repository is at 5863f17"
+    },
+    {
+      "id": "CA-04",
+      "kind": "content-drift",
+      "detail": "4 of 9 files changed",
+      "files": [
+        "package.json",
+        "package-lock.json",
+        "src/lib/visual/graph-scene.ts",
+        "src/components/hero/GraphSceneDemo.astro"
+      ]
+    },
+    {
+      "id": "CA-05",
+      "kind": "stale-head",
+      "detail": "pinned aa06bdd, repository is at 5863f17"
+    },
+    {
+      "id": "CA-05",
+      "kind": "content-drift",
+      "detail": "3 of 8 files changed",
+      "files": [
+        "src/lib/visual/graph-controller.ts",
+        "src/lib/visual/graph-motion.ts",
+        "tests/e2e/ca05-graph-interaction.e2e.ts"
+      ]
+    },
+    {
+      "id": "CA-06",
+      "kind": "stale-head",
+      "detail": "pinned aa06bdd, repository is at 5863f17"
+    },
+    {
+      "id": "CA-06",
+      "kind": "content-drift",
+      "detail": "5 of 6 files changed",
+      "files": [
+        "src/components/hero/HeroGraph.astro",
+        "src/lib/visual/hero-enhancement.ts",
+        "src/styles/hero-graph.css",
+        "src/components/hero/hero-enhancement.test.ts",
+        "tests/e2e/ca06-home-scene.e2e.ts"
+      ]
+    },
+    {
+      "id": "CA-07",
+      "kind": "stale-head",
+      "detail": "pinned aa06bdd, repository is at 5863f17"
+    },
+    {
+      "id": "CA-07",
+      "kind": "content-drift",
+      "detail": "7 of 8 files changed",
+      "files": [
+        "src/pages/index.astro",
+        "src/components/gateway/GatewayPortal.astro",
+        "src/lib/visual/gateway-scene.ts",
+        "src/lib/visual/gateway-motion.ts",
+        "src/styles/gateway.css",
+        "tests/e2e/wp40-gateway.e2e.ts",
+        "tests/e2e/ca07-gateway-scene.e2e.ts"
+      ]
+    },
+    {
+      "id": "CA-08",
+      "kind": "stale-head",
+      "detail": "pinned a033a73, repository is at 5863f17"
+    },
+    {
+      "id": "CA-08",
+      "kind": "content-drift",
+      "detail": "9 of 21 files changed",
+      "files": [
+        "src/components/Header.astro",
+        "src/layouts/BaseLayout.astro",
+        "src/components/shell/public-150.behavior.test.ts",
+        "tests/e2e/public-150-shell.e2e.ts",
+        "docs/quality/concept-alignment-v2/CA-08-HANDOFF.md",
+        "src/components/shell/managed-shell.test.ts",
+        "src/components/SkipLink.astro",
+        "src/components/ThemeToggle.astro",
+        "src/styles/page-families.css"
+      ]
+    }
+  ],
+  "accepted_files_drifted": 44,
   "accepted_files_missing": 0,
-  "acceptance_status": "OPEN",
+  "accepted_content_intact": false,
   "status_counts": {
     "ACCEPTED_LOCAL": 10,
+    "BLOCKED": 1,
     "DOC_COMPLETE": 3,
-    "IMPLEMENTED_UNREVIEWED": 66,
-    "REVISE": 4
+    "IMPLEMENTED_UNREVIEWED": 68,
+    "REVISE": 1
   },
   "ready_for_review": [
+    "PU-03-settings",
     "PU-26-seed-safety"
   ],
-  "ready_for_revision": [
-    "PU-03-settings"
-  ],
+  "ready_for_revision": [],
   "ready_to_start": [],
   "validation_scope": "plan structure only; source drift and revisions are not implementation acceptance",
   "pending_revisions": [
-    "PU-03-settings",
-    "PU-09-editor",
-    "PU-15-lessons",
-    "PU-25-admin-journey"
+    "PU-09-editor"
   ],
   "source_baseline_drift": [
     {
       "path": "Back-End/docs/contracts/openapi/current/public-openapi.json",
       "baseline": "0f672693de28ed33286789e5119eb3226c062693fb15168b1aba5513c257c0a5",
-      "current": "9f627d6e31c624cee7a7eaf123a33e3929bdc503b9619439e13f219afe149471"
+      "current": "250c9a89d71381a9b29e39fc1a458a965ec3df4c2efd1535a0b8b7aa901536d2"
     },
     {
       "path": "Back-End/docs/contracts/openapi/current/admin-openapi.json",
       "baseline": "38ff4d81d454287bd0e6c437ad84bfada41255e8fa6acc13704144223014fd7a",
-      "current": "7ca00b3054e73a9b165561af9040386bf60e3d0d9a97d654de670416982a7c05"
+      "current": "76f29ffb5ebbe25cb7f2129f4e5c224c556bc9e0d5e5fb822701551b53cd43c5"
     },
     {
       "path": "Back-End/apps/api/api.py",
       "baseline": "762040803b335ff1d85d39d07ae5af6be241f44548634d843783cc0113a548a1",
-      "current": "decafd90961fc352e035f323c09836ed4fb8e855b3379358196290e9e2dcb1e6"
+      "current": "a69c08ae7245e30641361225271043622583eaa71615f59ceb863bfa09aaf9f2"
     },
     {
       "path": "Back-End/apps/api/admin_content.py",
@@ -54,7 +205,7 @@
     {
       "path": "Back-End/apps/content/models.py",
       "baseline": "8d79378dd75a5c278062e3c1943df8e6a4f92cd682d0c3f05a66a9a9e662e94f",
-      "current": "dc38906c3493d54cf6684a8a8cc417c4a16de6b588ca2e10d5d9398605fd45ff"
+      "current": "796de7bdc7626abae801484fc16a481bc71224f7ad72d65097277096bf1850d1"
     },
     {
       "path": "Back-End/apps/composition/blocks.py",
@@ -69,7 +220,7 @@
     {
       "path": "Back-End/apps/siteconfig/models.py",
       "baseline": "b3b3158db7d4265f3f3a766708e54b04f78263d83a127084be760f543d112551",
-      "current": "4ce8260074af4c4176e99a420b166e7a1569a776dfe61d759596c04a4463b9b2"
+      "current": "ee487491f2a3d95114e53b721eb0441175a7501a6eacd6eddd20c64c3244aeb1"
     },
     {
       "path": "Back-End/apps/rebuild/services.py",
@@ -84,7 +235,7 @@
     {
       "path": "Front-End/public-site/src/lib/research-content.ts",
       "baseline": "be5627486dfc86eb4208adfacec61071fadea5825bafbeaa3e7a9dba05a4c85d",
-      "current": "a4e29fff46d953b3ebc81963010d40ecbf476e8b8d1bc5cb0a899779faccdb07"
+      "current": "aba2a20adc404d7b8670faeef49b9568b4ceb6623ff81adb131b44b8f8e2aaa5"
     },
     {
       "path": "Front-End/public-site/src/lib/seo-route-registry.ts",
@@ -94,7 +245,7 @@
     {
       "path": "Front-End/public-site/package.json",
       "baseline": "2d6c060f85e573a57eb0ea3051518fbf614e08409fce4b8e67189357894c8cdf",
-      "current": "b66fb05209854d150463ab27c2cdf9f4e0d56dde41fa2efdf5f25748506e7497"
+      "current": "bd6f437e3258a34b4ae86bea1dc78663b38b81efb13681fdf1b9f8a61ebc723b"
     },
     {
       "path": "Front-End/admin-panel/src/lib/api/content.ts",
@@ -104,22 +255,27 @@
     {
       "path": "Front-End/admin-panel/src/pages/ContentEditPage.tsx",
       "baseline": "8e8cd182a0700ef3f75d69fd0d0883d8de1628cc40c305dc76d50c25308ee3c7",
-      "current": "f54341f834ca5fa4a3c8cf961767989897bd24738bd28b3ca02be60cc3f88911"
+      "current": "5ab9f21031f08a19677e04bc08f71e006a33419786ca82b604eb05eee41e4d06"
     },
     {
       "path": "Front-End/admin-panel/src/app/router.tsx",
       "baseline": "ad36d096e735d1f43e6d9ff18964a41352798f7a46132be56c50e7e10807fe36",
-      "current": "5ebd7f0b4d8df4553a3ed4d81c1b5955f76360c7044fb95d1527440a5474dea0"
+      "current": "d7415289821ecc9755f18396549e8bc578dbac45b2d67fee411726fd217ad861"
+    },
+    {
+      "path": "Front-End/admin-panel/package.json",
+      "baseline": "597486f6d71a4b72a9896001dd75b7580372ad3ff8000db83bf138d90ba307b9",
+      "current": "78096c5d285ae30dce15f1850ee6b6236462f0a955849bce0388d3b973022f65"
     },
     {
       "path": "Infra/staging/docker-compose.stage.yml",
       "baseline": "e9c0636f88ce9fc10b275ee4fc91e7be402190f740635a8726dbf781e3aee6a2",
-      "current": "74229bc01cd1635cf6e4353ea87f6da9aff5ef88cf08e8a9fa6d113e29bcf2d2"
+      "current": "7c9ab9a0b8dc59c4e65988a7fbf29368c9a219483596ca87368c82408935bcc0"
     },
     {
       "path": "Back-End/apps/api/admin_common.py",
       "baseline": "e8d4973e01af0ef82c88237241bf1b9b8c119082e279d55c63c2bff0d706fd65",
-      "current": "5aa50d84181b265f05e1255a757564e11a1b50bef5c157d0d1571251543ca114"
+      "current": "5a493b2fb0eb3030c302edb7fa549a47f242f2adc34209a1d3329d5a4dfcac93"
     },
     {
       "path": "Back-End/apps/content/management/commands/publish_scheduled_content.py",
@@ -132,14 +288,14 @@
   "runtime_not_started": 0,
   "page_families": 15,
   "retired_CA_aliases": 8,
-  "allowlist_entries": 680,
+  "allowlist_entries": 704,
   "serialized_overlap_pairs": 1164,
-  "unchanged_source_hashes": 3,
+  "unchanged_source_hashes": 2,
   "checked_local_links": 116,
   "git": {
     "ROOT": {
       "diff_check": "PASS",
-      "tracked_changed_files": 1,
+      "tracked_changed_files": 2,
       "packet_runtime_changes_present": false
     },
     "PUBLIC": {
