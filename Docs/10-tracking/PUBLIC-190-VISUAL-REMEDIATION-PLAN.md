@@ -139,7 +139,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Concept uses display serif for **Gallery** and teal eyebrow **Selected visual work**. Implementation: tokenized but eyebrow copy differs; FA locale needs verified display/body font pairing @390.
 
-- **Imagery/assets:** Concept requires unique gallery hero side media, featured landscape, and 9+ distinct masonry thumbnails. Implementation reuses promoted rail/project assets — visual monotony vs concept. → Asset prompts: [gallery-ivory-forms.md](../PUBLIC-190-asset-prompts/gallery-ivory-forms.md), [pf-creative-hero-editorial-light.md](../PUBLIC-190-asset-prompts/pf-creative-hero-editorial-light.md), [gallery-ivory-forms.md](../PUBLIC-190-asset-prompts/gallery-ivory-forms.md) (grid thumbs)
+- **Imagery/assets:** Concept requires unique gallery hero side media, featured landscape, and 9+ distinct masonry thumbnails. Implementation reuses promoted rail/project assets — visual monotony vs concept. → Asset prompts: [gallery-ivory-forms.md](./PUBLIC-190-asset-prompts/gallery-ivory-forms.md), [pf-creative-hero-editorial-light.md](./PUBLIC-190-asset-prompts/pf-creative-hero-editorial-light.md), [gallery-ivory-forms.md](./PUBLIC-190-asset-prompts/gallery-ivory-forms.md) (grid thumbs)
 
 - **Animation/interaction:** Concept implies subtle tile hover lift and filter affordance. Implementation: CSS-only per ADR-ANIMATION; no grid hover choreography.
 
@@ -172,7 +172,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Concept uses display serif for **Gallery** and teal eyebrow **Selected visual work**. Implementation: tokenized but eyebrow copy differs; FA locale needs verified display/body font pairing @390.
 
-- **Imagery/assets:** Concept requires unique gallery hero side media, featured landscape, and 9+ distinct masonry thumbnails. Implementation reuses promoted rail/project assets — visual monotony vs concept. → Asset prompts: [gallery-ivory-forms.md](../PUBLIC-190-asset-prompts/gallery-ivory-forms.md), [pf-creative-hero-editorial-light.md](../PUBLIC-190-asset-prompts/pf-creative-hero-editorial-light.md), [gallery-ivory-forms.md](../PUBLIC-190-asset-prompts/gallery-ivory-forms.md) (grid thumbs)
+- **Imagery/assets:** Concept requires unique gallery hero side media, featured landscape, and 9+ distinct masonry thumbnails. Implementation reuses promoted rail/project assets — visual monotony vs concept. → Asset prompts: [gallery-ivory-forms.md](./PUBLIC-190-asset-prompts/gallery-ivory-forms.md), [pf-creative-hero-editorial-light.md](./PUBLIC-190-asset-prompts/pf-creative-hero-editorial-light.md), [gallery-ivory-forms.md](./PUBLIC-190-asset-prompts/gallery-ivory-forms.md) (grid thumbs)
 
 - **Animation/interaction:** Concept implies subtle tile hover lift and filter affordance. Implementation: CSS-only per ADR-ANIMATION; no grid hover choreography.
 
@@ -205,7 +205,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Concept uses display serif for **Gallery** and teal eyebrow **Selected visual work**. Implementation: tokenized but eyebrow copy differs; FA locale needs verified display/body font pairing @390.
 
-- **Imagery/assets:** Concept requires unique gallery hero side media, featured landscape, and 9+ distinct masonry thumbnails. Implementation reuses promoted rail/project assets — visual monotony vs concept. → Asset prompts: [gallery-ivory-forms.md](../PUBLIC-190-asset-prompts/gallery-ivory-forms.md), [pf-creative-hero-editorial-light.md](../PUBLIC-190-asset-prompts/pf-creative-hero-editorial-light.md), [gallery-ivory-forms.md](../PUBLIC-190-asset-prompts/gallery-ivory-forms.md) (grid thumbs)
+- **Imagery/assets:** Concept requires unique gallery hero side media, featured landscape, and 9+ distinct masonry thumbnails. Implementation reuses promoted rail/project assets — visual monotony vs concept. → Asset prompts: [gallery-ivory-forms.md](./PUBLIC-190-asset-prompts/gallery-ivory-forms.md), [pf-creative-hero-editorial-light.md](./PUBLIC-190-asset-prompts/pf-creative-hero-editorial-light.md), [gallery-ivory-forms.md](./PUBLIC-190-asset-prompts/gallery-ivory-forms.md) (grid thumbs)
 
 - **Animation/interaction:** Concept implies subtle tile hover lift and filter affordance. Implementation: CSS-only per ADR-ANIMATION; no grid hover choreography.
 
@@ -238,7 +238,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Concept uses display serif for **Gallery** and teal eyebrow **Selected visual work**. Implementation: tokenized but eyebrow copy differs; FA locale needs verified display/body font pairing @390.
 
-- **Imagery/assets:** Concept requires unique gallery hero side media, featured landscape, and 9+ distinct masonry thumbnails. Implementation reuses promoted rail/project assets — visual monotony vs concept. → Asset prompts: [gallery-ivory-forms.md](../PUBLIC-190-asset-prompts/gallery-ivory-forms.md), [pf-creative-hero-editorial-light.md](../PUBLIC-190-asset-prompts/pf-creative-hero-editorial-light.md), [gallery-ivory-forms.md](../PUBLIC-190-asset-prompts/gallery-ivory-forms.md) (grid thumbs)
+- **Imagery/assets:** Concept requires unique gallery hero side media, featured landscape, and 9+ distinct masonry thumbnails. Implementation reuses promoted rail/project assets — visual monotony vs concept. → Asset prompts: [gallery-ivory-forms.md](./PUBLIC-190-asset-prompts/gallery-ivory-forms.md), [pf-creative-hero-editorial-light.md](./PUBLIC-190-asset-prompts/pf-creative-hero-editorial-light.md), [gallery-ivory-forms.md](./PUBLIC-190-asset-prompts/gallery-ivory-forms.md) (grid thumbs)
 
 - **Animation/interaction:** Concept implies subtle tile hover lift and filter affordance. Implementation: CSS-only per ADR-ANIMATION; no grid hover choreography.
 
@@ -272,7 +272,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Coral accent for writing family — verify WCAG AA on empty shells (@ dd515a0 fix noted in QA). FA @390: line-length and RTL tab overflow.
 
-- **Imagery/assets:** Concept coral architectural renders distinct from creative teal. Implementation reuses shared rail assets. → Asset prompts: [blog-coral-stairs.md](../PUBLIC-190-asset-prompts/blog-coral-stairs.md), [blog-coral-stairs.md](../PUBLIC-190-asset-prompts/blog-coral-stairs.md) (featured), [blog-coral-stairs.md](../PUBLIC-190-asset-prompts/blog-coral-stairs.md) (list thumbs)
+- **Imagery/assets:** Concept coral architectural renders distinct from creative teal. Implementation reuses shared rail assets. → Asset prompts: [blog-coral-stairs.md](./PUBLIC-190-asset-prompts/blog-coral-stairs.md), [blog-coral-stairs.md](./PUBLIC-190-asset-prompts/blog-coral-stairs.md) (featured), [blog-coral-stairs.md](./PUBLIC-190-asset-prompts/blog-coral-stairs.md) (list thumbs)
 
 - **Animation/interaction:** Row hover slide optional; list is static.
 
@@ -306,7 +306,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Coral accent for writing family — verify WCAG AA on empty shells (@ dd515a0 fix noted in QA). FA @390: line-length and RTL tab overflow.
 
-- **Imagery/assets:** Concept coral architectural renders distinct from creative teal. Implementation reuses shared rail assets. → Asset prompts: [blog-coral-stairs.md](../PUBLIC-190-asset-prompts/blog-coral-stairs.md), [blog-coral-stairs.md](../PUBLIC-190-asset-prompts/blog-coral-stairs.md) (featured), [blog-coral-stairs.md](../PUBLIC-190-asset-prompts/blog-coral-stairs.md) (list thumbs)
+- **Imagery/assets:** Concept coral architectural renders distinct from creative teal. Implementation reuses shared rail assets. → Asset prompts: [blog-coral-stairs.md](./PUBLIC-190-asset-prompts/blog-coral-stairs.md), [blog-coral-stairs.md](./PUBLIC-190-asset-prompts/blog-coral-stairs.md) (featured), [blog-coral-stairs.md](./PUBLIC-190-asset-prompts/blog-coral-stairs.md) (list thumbs)
 
 - **Animation/interaction:** Row hover slide optional; list is static.
 
@@ -340,7 +340,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Coral accent for writing family — verify WCAG AA on empty shells (@ dd515a0 fix noted in QA). FA @390: line-length and RTL tab overflow.
 
-- **Imagery/assets:** Concept coral architectural renders distinct from creative teal. Implementation reuses shared rail assets. → Asset prompts: [blog-coral-stairs.md](../PUBLIC-190-asset-prompts/blog-coral-stairs.md), [blog-coral-stairs.md](../PUBLIC-190-asset-prompts/blog-coral-stairs.md) (featured), [blog-coral-stairs.md](../PUBLIC-190-asset-prompts/blog-coral-stairs.md) (list thumbs)
+- **Imagery/assets:** Concept coral architectural renders distinct from creative teal. Implementation reuses shared rail assets. → Asset prompts: [blog-coral-stairs.md](./PUBLIC-190-asset-prompts/blog-coral-stairs.md), [blog-coral-stairs.md](./PUBLIC-190-asset-prompts/blog-coral-stairs.md) (featured), [blog-coral-stairs.md](./PUBLIC-190-asset-prompts/blog-coral-stairs.md) (list thumbs)
 
 - **Animation/interaction:** Row hover slide optional; list is static.
 
@@ -374,7 +374,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Coral accent for writing family — verify WCAG AA on empty shells (@ dd515a0 fix noted in QA). FA @390: line-length and RTL tab overflow.
 
-- **Imagery/assets:** Concept coral architectural renders distinct from creative teal. Implementation reuses shared rail assets. → Asset prompts: [blog-coral-stairs.md](../PUBLIC-190-asset-prompts/blog-coral-stairs.md), [blog-coral-stairs.md](../PUBLIC-190-asset-prompts/blog-coral-stairs.md) (featured), [blog-coral-stairs.md](../PUBLIC-190-asset-prompts/blog-coral-stairs.md) (list thumbs)
+- **Imagery/assets:** Concept coral architectural renders distinct from creative teal. Implementation reuses shared rail assets. → Asset prompts: [blog-coral-stairs.md](./PUBLIC-190-asset-prompts/blog-coral-stairs.md), [blog-coral-stairs.md](./PUBLIC-190-asset-prompts/blog-coral-stairs.md) (featured), [blog-coral-stairs.md](./PUBLIC-190-asset-prompts/blog-coral-stairs.md) (list thumbs)
 
 - **Animation/interaction:** Row hover slide optional; list is static.
 
@@ -408,7 +408,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Dark theme gold serif headings vs implementation flatter sans — projects-page dark tokens need display serif on h1.
 
-- **Imagery/assets:** Concept needs unique hero cluster, featured schematic, 6 row thumbnails, evidence icons — implementation repeats single project asset. → Asset prompts: [project-dashboard-systems.md](../PUBLIC-190-asset-prompts/project-dashboard-systems.md), [project-data-architecture.md](../PUBLIC-190-asset-prompts/project-data-architecture.md), [project-data-architecture.md](../PUBLIC-190-asset-prompts/project-data-architecture.md) (row set), ASSET-PF04-EVIDENCE-ICONS (stub — SVG inline preferred)
+- **Imagery/assets:** Concept needs unique hero cluster, featured schematic, 6 row thumbnails, evidence icons — implementation repeats single project asset. → Asset prompts: [project-dashboard-systems.md](./PUBLIC-190-asset-prompts/project-dashboard-systems.md), [project-data-architecture.md](./PUBLIC-190-asset-prompts/project-data-architecture.md), [project-data-architecture.md](./PUBLIC-190-asset-prompts/project-data-architecture.md) (row set), ASSET-PF04-EVIDENCE-ICONS (stub — SVG inline preferred)
 
 - **Animation/interaction:** Featured carousel implied — not implemented.
 
@@ -442,7 +442,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Dark theme gold serif headings vs implementation flatter sans — projects-page dark tokens need display serif on h1.
 
-- **Imagery/assets:** Concept needs unique hero cluster, featured schematic, 6 row thumbnails, evidence icons — implementation repeats single project asset. → Asset prompts: [project-dashboard-systems.md](../PUBLIC-190-asset-prompts/project-dashboard-systems.md), [project-data-architecture.md](../PUBLIC-190-asset-prompts/project-data-architecture.md), [project-data-architecture.md](../PUBLIC-190-asset-prompts/project-data-architecture.md) (row set), ASSET-PF04-EVIDENCE-ICONS (stub — SVG inline preferred)
+- **Imagery/assets:** Concept needs unique hero cluster, featured schematic, 6 row thumbnails, evidence icons — implementation repeats single project asset. → Asset prompts: [project-dashboard-systems.md](./PUBLIC-190-asset-prompts/project-dashboard-systems.md), [project-data-architecture.md](./PUBLIC-190-asset-prompts/project-data-architecture.md), [project-data-architecture.md](./PUBLIC-190-asset-prompts/project-data-architecture.md) (row set), ASSET-PF04-EVIDENCE-ICONS (stub — SVG inline preferred)
 
 - **Animation/interaction:** Featured carousel implied — not implemented.
 
@@ -476,7 +476,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Dark theme gold serif headings vs implementation flatter sans — projects-page dark tokens need display serif on h1.
 
-- **Imagery/assets:** Concept needs unique hero cluster, featured schematic, 6 row thumbnails, evidence icons — implementation repeats single project asset. → Asset prompts: [project-dashboard-systems.md](../PUBLIC-190-asset-prompts/project-dashboard-systems.md), [project-data-architecture.md](../PUBLIC-190-asset-prompts/project-data-architecture.md), [project-data-architecture.md](../PUBLIC-190-asset-prompts/project-data-architecture.md) (row set), ASSET-PF04-EVIDENCE-ICONS (stub — SVG inline preferred)
+- **Imagery/assets:** Concept needs unique hero cluster, featured schematic, 6 row thumbnails, evidence icons — implementation repeats single project asset. → Asset prompts: [project-dashboard-systems.md](./PUBLIC-190-asset-prompts/project-dashboard-systems.md), [project-data-architecture.md](./PUBLIC-190-asset-prompts/project-data-architecture.md), [project-data-architecture.md](./PUBLIC-190-asset-prompts/project-data-architecture.md) (row set), ASSET-PF04-EVIDENCE-ICONS (stub — SVG inline preferred)
 
 - **Animation/interaction:** Featured carousel implied — not implemented.
 
@@ -510,7 +510,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Dark theme gold serif headings vs implementation flatter sans — projects-page dark tokens need display serif on h1.
 
-- **Imagery/assets:** Concept needs unique hero cluster, featured schematic, 6 row thumbnails, evidence icons — implementation repeats single project asset. → Asset prompts: [project-dashboard-systems.md](../PUBLIC-190-asset-prompts/project-dashboard-systems.md), [project-data-architecture.md](../PUBLIC-190-asset-prompts/project-data-architecture.md), [project-data-architecture.md](../PUBLIC-190-asset-prompts/project-data-architecture.md) (row set), ASSET-PF04-EVIDENCE-ICONS (stub — SVG inline preferred)
+- **Imagery/assets:** Concept needs unique hero cluster, featured schematic, 6 row thumbnails, evidence icons — implementation repeats single project asset. → Asset prompts: [project-dashboard-systems.md](./PUBLIC-190-asset-prompts/project-dashboard-systems.md), [project-data-architecture.md](./PUBLIC-190-asset-prompts/project-data-architecture.md), [project-data-architecture.md](./PUBLIC-190-asset-prompts/project-data-architecture.md) (row set), ASSET-PF04-EVIDENCE-ICONS (stub — SVG inline preferred)
 
 - **Animation/interaction:** Featured carousel implied — not implemented.
 
@@ -543,7 +543,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Light theme teal accents — aligned directionally; constellation labels need smaller caps tracking.
 
-- **Imagery/assets:** Constellation diagram is major visual — needs SVG/React island or Canvas; hero arch recycles teaching rail asset. → Asset prompts: [home-graph-backplate-light.md](../PUBLIC-190-asset-prompts/home-graph-backplate-light.md), [home-graph-backplate-light.md](../PUBLIC-190-asset-prompts/home-graph-backplate-light.md) (constellation), ASSET-PF05-FIT-ICONS (stub — SVG inline preferred)
+- **Imagery/assets:** Constellation diagram is major visual — needs SVG/React island or Canvas; hero arch recycles teaching rail asset. → Asset prompts: [home-graph-backplate-light.md](./PUBLIC-190-asset-prompts/home-graph-backplate-light.md), [home-graph-backplate-light.md](./PUBLIC-190-asset-prompts/home-graph-backplate-light.md) (constellation), ASSET-PF05-FIT-ICONS (stub — SVG inline preferred)
 
 - **Animation/interaction:** Constellation may need subtle node pulse — GSAP/SVG acceptable per user mandate.
 
@@ -576,7 +576,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Light theme teal accents — aligned directionally; constellation labels need smaller caps tracking.
 
-- **Imagery/assets:** Constellation diagram is major visual — needs SVG/React island or Canvas; hero arch recycles teaching rail asset. → Asset prompts: [home-graph-backplate-light.md](../PUBLIC-190-asset-prompts/home-graph-backplate-light.md), [home-graph-backplate-light.md](../PUBLIC-190-asset-prompts/home-graph-backplate-light.md) (constellation), ASSET-PF05-FIT-ICONS (stub — SVG inline preferred)
+- **Imagery/assets:** Constellation diagram is major visual — needs SVG/React island or Canvas; hero arch recycles teaching rail asset. → Asset prompts: [home-graph-backplate-light.md](./PUBLIC-190-asset-prompts/home-graph-backplate-light.md), [home-graph-backplate-light.md](./PUBLIC-190-asset-prompts/home-graph-backplate-light.md) (constellation), ASSET-PF05-FIT-ICONS (stub — SVG inline preferred)
 
 - **Animation/interaction:** Constellation may need subtle node pulse — GSAP/SVG acceptable per user mandate.
 
@@ -609,7 +609,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Light theme teal accents — aligned directionally; constellation labels need smaller caps tracking.
 
-- **Imagery/assets:** Constellation diagram is major visual — needs SVG/React island or Canvas; hero arch recycles teaching rail asset. → Asset prompts: [home-graph-backplate-light.md](../PUBLIC-190-asset-prompts/home-graph-backplate-light.md), [home-graph-backplate-light.md](../PUBLIC-190-asset-prompts/home-graph-backplate-light.md) (constellation), ASSET-PF05-FIT-ICONS (stub — SVG inline preferred)
+- **Imagery/assets:** Constellation diagram is major visual — needs SVG/React island or Canvas; hero arch recycles teaching rail asset. → Asset prompts: [home-graph-backplate-light.md](./PUBLIC-190-asset-prompts/home-graph-backplate-light.md), [home-graph-backplate-light.md](./PUBLIC-190-asset-prompts/home-graph-backplate-light.md) (constellation), ASSET-PF05-FIT-ICONS (stub — SVG inline preferred)
 
 - **Animation/interaction:** Constellation may need subtle node pulse — GSAP/SVG acceptable per user mandate.
 
@@ -642,7 +642,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Light theme teal accents — aligned directionally; constellation labels need smaller caps tracking.
 
-- **Imagery/assets:** Constellation diagram is major visual — needs SVG/React island or Canvas; hero arch recycles teaching rail asset. → Asset prompts: [home-graph-backplate-light.md](../PUBLIC-190-asset-prompts/home-graph-backplate-light.md), [home-graph-backplate-light.md](../PUBLIC-190-asset-prompts/home-graph-backplate-light.md) (constellation), ASSET-PF05-FIT-ICONS (stub — SVG inline preferred)
+- **Imagery/assets:** Constellation diagram is major visual — needs SVG/React island or Canvas; hero arch recycles teaching rail asset. → Asset prompts: [home-graph-backplate-light.md](./PUBLIC-190-asset-prompts/home-graph-backplate-light.md), [home-graph-backplate-light.md](./PUBLIC-190-asset-prompts/home-graph-backplate-light.md) (constellation), ASSET-PF05-FIT-ICONS (stub — SVG inline preferred)
 
 - **Animation/interaction:** Constellation may need subtle node pulse — GSAP/SVG acceptable per user mandate.
 
@@ -800,7 +800,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Dark theme gold headings — teaching-page tokens.
 
-- **Imagery/assets:** List thumbnails need learning-specific set vs recycled assets. → Asset prompts: [learning-sage-library.md](../PUBLIC-190-asset-prompts/learning-sage-library.md), [pf-teaching-path-ribbon-dark.md](../PUBLIC-190-asset-prompts/pf-teaching-path-ribbon-dark.md), [learning-sage-library.md](../PUBLIC-190-asset-prompts/learning-sage-library.md) (list set)
+- **Imagery/assets:** List thumbnails need learning-specific set vs recycled assets. → Asset prompts: [learning-sage-library.md](./PUBLIC-190-asset-prompts/learning-sage-library.md), [pf-teaching-path-ribbon-dark.md](./PUBLIC-190-asset-prompts/pf-teaching-path-ribbon-dark.md), [learning-sage-library.md](./PUBLIC-190-asset-prompts/learning-sage-library.md) (list set)
 
 - **Animation/interaction:** Path timeline could use CSS step reveal.
 
@@ -834,7 +834,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Dark theme gold headings — teaching-page tokens.
 
-- **Imagery/assets:** List thumbnails need learning-specific set vs recycled assets. → Asset prompts: [learning-sage-library.md](../PUBLIC-190-asset-prompts/learning-sage-library.md), [pf-teaching-path-ribbon-dark.md](../PUBLIC-190-asset-prompts/pf-teaching-path-ribbon-dark.md), [learning-sage-library.md](../PUBLIC-190-asset-prompts/learning-sage-library.md) (list set)
+- **Imagery/assets:** List thumbnails need learning-specific set vs recycled assets. → Asset prompts: [learning-sage-library.md](./PUBLIC-190-asset-prompts/learning-sage-library.md), [pf-teaching-path-ribbon-dark.md](./PUBLIC-190-asset-prompts/pf-teaching-path-ribbon-dark.md), [learning-sage-library.md](./PUBLIC-190-asset-prompts/learning-sage-library.md) (list set)
 
 - **Animation/interaction:** Path timeline could use CSS step reveal.
 
@@ -868,7 +868,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Dark theme gold headings — teaching-page tokens.
 
-- **Imagery/assets:** List thumbnails need learning-specific set vs recycled assets. → Asset prompts: [learning-sage-library.md](../PUBLIC-190-asset-prompts/learning-sage-library.md), [pf-teaching-path-ribbon-dark.md](../PUBLIC-190-asset-prompts/pf-teaching-path-ribbon-dark.md), [learning-sage-library.md](../PUBLIC-190-asset-prompts/learning-sage-library.md) (list set)
+- **Imagery/assets:** List thumbnails need learning-specific set vs recycled assets. → Asset prompts: [learning-sage-library.md](./PUBLIC-190-asset-prompts/learning-sage-library.md), [pf-teaching-path-ribbon-dark.md](./PUBLIC-190-asset-prompts/pf-teaching-path-ribbon-dark.md), [learning-sage-library.md](./PUBLIC-190-asset-prompts/learning-sage-library.md) (list set)
 
 - **Animation/interaction:** Path timeline could use CSS step reveal.
 
@@ -902,7 +902,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Dark theme gold headings — teaching-page tokens.
 
-- **Imagery/assets:** List thumbnails need learning-specific set vs recycled assets. → Asset prompts: [learning-sage-library.md](../PUBLIC-190-asset-prompts/learning-sage-library.md), [pf-teaching-path-ribbon-dark.md](../PUBLIC-190-asset-prompts/pf-teaching-path-ribbon-dark.md), [learning-sage-library.md](../PUBLIC-190-asset-prompts/learning-sage-library.md) (list set)
+- **Imagery/assets:** List thumbnails need learning-specific set vs recycled assets. → Asset prompts: [learning-sage-library.md](./PUBLIC-190-asset-prompts/learning-sage-library.md), [pf-teaching-path-ribbon-dark.md](./PUBLIC-190-asset-prompts/pf-teaching-path-ribbon-dark.md), [learning-sage-library.md](./PUBLIC-190-asset-prompts/learning-sage-library.md) (list set)
 
 - **Animation/interaction:** Path timeline could use CSS step reveal.
 
@@ -937,7 +937,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Profile hero name should use display scale; FA @390 hero stack order.
 
-- **Imagery/assets:** Portrait placeholder box missing; hero arch recycles writing asset. → Asset prompts: [pf-about-identity-abstract-light.md](../PUBLIC-190-asset-prompts/pf-about-identity-abstract-light.md), [gallery-ivory-forms.md](../PUBLIC-190-asset-prompts/gallery-ivory-forms.md) (hero arch)
+- **Imagery/assets:** Portrait placeholder box missing; hero arch recycles writing asset. → Asset prompts: [pf-about-identity-abstract-light.md](./PUBLIC-190-asset-prompts/pf-about-identity-abstract-light.md), [gallery-ivory-forms.md](./PUBLIC-190-asset-prompts/gallery-ivory-forms.md) (hero arch)
 
 - **Animation/interaction:** Journey nodes could use scroll-triggered reveal (GSAP optional).
 
@@ -971,7 +971,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Profile hero name should use display scale; FA @390 hero stack order.
 
-- **Imagery/assets:** Portrait placeholder box missing; hero arch recycles writing asset. → Asset prompts: [pf-about-identity-abstract-light.md](../PUBLIC-190-asset-prompts/pf-about-identity-abstract-light.md), [gallery-ivory-forms.md](../PUBLIC-190-asset-prompts/gallery-ivory-forms.md) (hero arch)
+- **Imagery/assets:** Portrait placeholder box missing; hero arch recycles writing asset. → Asset prompts: [pf-about-identity-abstract-light.md](./PUBLIC-190-asset-prompts/pf-about-identity-abstract-light.md), [gallery-ivory-forms.md](./PUBLIC-190-asset-prompts/gallery-ivory-forms.md) (hero arch)
 
 - **Animation/interaction:** Journey nodes could use scroll-triggered reveal (GSAP optional).
 
@@ -1005,7 +1005,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Profile hero name should use display scale; FA @390 hero stack order.
 
-- **Imagery/assets:** Portrait placeholder box missing; hero arch recycles writing asset. → Asset prompts: [pf-about-identity-abstract-light.md](../PUBLIC-190-asset-prompts/pf-about-identity-abstract-light.md), [gallery-ivory-forms.md](../PUBLIC-190-asset-prompts/gallery-ivory-forms.md) (hero arch)
+- **Imagery/assets:** Portrait placeholder box missing; hero arch recycles writing asset. → Asset prompts: [pf-about-identity-abstract-light.md](./PUBLIC-190-asset-prompts/pf-about-identity-abstract-light.md), [gallery-ivory-forms.md](./PUBLIC-190-asset-prompts/gallery-ivory-forms.md) (hero arch)
 
 - **Animation/interaction:** Journey nodes could use scroll-triggered reveal (GSAP optional).
 
@@ -1039,7 +1039,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Profile hero name should use display scale; FA @390 hero stack order.
 
-- **Imagery/assets:** Portrait placeholder box missing; hero arch recycles writing asset. → Asset prompts: [pf-about-identity-abstract-light.md](../PUBLIC-190-asset-prompts/pf-about-identity-abstract-light.md), [gallery-ivory-forms.md](../PUBLIC-190-asset-prompts/gallery-ivory-forms.md) (hero arch)
+- **Imagery/assets:** Portrait placeholder box missing; hero arch recycles writing asset. → Asset prompts: [pf-about-identity-abstract-light.md](./PUBLIC-190-asset-prompts/pf-about-identity-abstract-light.md), [gallery-ivory-forms.md](./PUBLIC-190-asset-prompts/gallery-ivory-forms.md) (hero arch)
 
 - **Animation/interaction:** Journey nodes could use scroll-triggered reveal (GSAP optional).
 
@@ -1192,7 +1192,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Gold serif **Let's talk** on dark — contact-page heading tokens.
 
-- **Imagery/assets:** Portal atmosphere uses gateway assets — acceptable; concept geometric overlay denser. → Asset prompts: [pf-contact-atmosphere-dark.md](../PUBLIC-190-asset-prompts/pf-contact-atmosphere-dark.md), [portal-centered-dark.md](../PUBLIC-190-asset-prompts/portal-centered-dark.md)
+- **Imagery/assets:** Portal atmosphere uses gateway assets — acceptable; concept geometric overlay denser. → Asset prompts: [pf-contact-atmosphere-dark.md](./PUBLIC-190-asset-prompts/pf-contact-atmosphere-dark.md), [portal-centered-dark.md](./PUBLIC-190-asset-prompts/portal-centered-dark.md)
 
 - **Animation/interaction:** Form state transitions — CSS; send workflow icons.
 
@@ -1226,7 +1226,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Gold serif **Let's talk** on dark — contact-page heading tokens.
 
-- **Imagery/assets:** Portal atmosphere uses gateway assets — acceptable; concept geometric overlay denser. → Asset prompts: [pf-contact-atmosphere-dark.md](../PUBLIC-190-asset-prompts/pf-contact-atmosphere-dark.md), [portal-centered-dark.md](../PUBLIC-190-asset-prompts/portal-centered-dark.md)
+- **Imagery/assets:** Portal atmosphere uses gateway assets — acceptable; concept geometric overlay denser. → Asset prompts: [pf-contact-atmosphere-dark.md](./PUBLIC-190-asset-prompts/pf-contact-atmosphere-dark.md), [portal-centered-dark.md](./PUBLIC-190-asset-prompts/portal-centered-dark.md)
 
 - **Animation/interaction:** Form state transitions — CSS; send workflow icons.
 
@@ -1260,7 +1260,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Gold serif **Let's talk** on dark — contact-page heading tokens.
 
-- **Imagery/assets:** Portal atmosphere uses gateway assets — acceptable; concept geometric overlay denser. → Asset prompts: [pf-contact-atmosphere-dark.md](../PUBLIC-190-asset-prompts/pf-contact-atmosphere-dark.md), [portal-centered-dark.md](../PUBLIC-190-asset-prompts/portal-centered-dark.md)
+- **Imagery/assets:** Portal atmosphere uses gateway assets — acceptable; concept geometric overlay denser. → Asset prompts: [pf-contact-atmosphere-dark.md](./PUBLIC-190-asset-prompts/pf-contact-atmosphere-dark.md), [portal-centered-dark.md](./PUBLIC-190-asset-prompts/portal-centered-dark.md)
 
 - **Animation/interaction:** Form state transitions — CSS; send workflow icons.
 
@@ -1294,7 +1294,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** Gold serif **Let's talk** on dark — contact-page heading tokens.
 
-- **Imagery/assets:** Portal atmosphere uses gateway assets — acceptable; concept geometric overlay denser. → Asset prompts: [pf-contact-atmosphere-dark.md](../PUBLIC-190-asset-prompts/pf-contact-atmosphere-dark.md), [portal-centered-dark.md](../PUBLIC-190-asset-prompts/portal-centered-dark.md)
+- **Imagery/assets:** Portal atmosphere uses gateway assets — acceptable; concept geometric overlay denser. → Asset prompts: [pf-contact-atmosphere-dark.md](./PUBLIC-190-asset-prompts/pf-contact-atmosphere-dark.md), [portal-centered-dark.md](./PUBLIC-190-asset-prompts/portal-centered-dark.md)
 
 - **Animation/interaction:** Form state transitions — CSS; send workflow icons.
 
@@ -1325,7 +1325,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** N/A
 
-- **Imagery/assets:** Detail hero gallery assets — ASSET-PF02-GALLERY-SET → Asset prompts: [pf-creative-hero-editorial-light.md](../PUBLIC-190-asset-prompts/pf-creative-hero-editorial-light.md) (gallery hero), ASSET-PF02-PROCESS-ICONS (stub), ASSET-PF02-RELATED-THUMBS (stub)
+- **Imagery/assets:** Detail hero gallery assets — ASSET-PF02-GALLERY-SET → Asset prompts: [pf-creative-hero-editorial-light.md](./PUBLIC-190-asset-prompts/pf-creative-hero-editorial-light.md) (gallery hero), ASSET-PF02-PROCESS-ICONS (stub), ASSET-PF02-RELATED-THUMBS (stub)
 
 - **Animation/interaction:** Gallery carousel — React island or CSS scroll-snap.
 
@@ -1355,7 +1355,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** N/A
 
-- **Imagery/assets:** Detail hero gallery assets — ASSET-PF02-GALLERY-SET → Asset prompts: [pf-creative-hero-editorial-light.md](../PUBLIC-190-asset-prompts/pf-creative-hero-editorial-light.md) (gallery hero), ASSET-PF02-PROCESS-ICONS (stub), ASSET-PF02-RELATED-THUMBS (stub)
+- **Imagery/assets:** Detail hero gallery assets — ASSET-PF02-GALLERY-SET → Asset prompts: [pf-creative-hero-editorial-light.md](./PUBLIC-190-asset-prompts/pf-creative-hero-editorial-light.md) (gallery hero), ASSET-PF02-PROCESS-ICONS (stub), ASSET-PF02-RELATED-THUMBS (stub)
 
 - **Animation/interaction:** Gallery carousel — React island or CSS scroll-snap.
 
@@ -1385,7 +1385,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** N/A
 
-- **Imagery/assets:** Detail hero gallery assets — ASSET-PF02-GALLERY-SET → Asset prompts: [pf-creative-hero-editorial-light.md](../PUBLIC-190-asset-prompts/pf-creative-hero-editorial-light.md) (gallery hero), ASSET-PF02-PROCESS-ICONS (stub), ASSET-PF02-RELATED-THUMBS (stub)
+- **Imagery/assets:** Detail hero gallery assets — ASSET-PF02-GALLERY-SET → Asset prompts: [pf-creative-hero-editorial-light.md](./PUBLIC-190-asset-prompts/pf-creative-hero-editorial-light.md) (gallery hero), ASSET-PF02-PROCESS-ICONS (stub), ASSET-PF02-RELATED-THUMBS (stub)
 
 - **Animation/interaction:** Gallery carousel — React island or CSS scroll-snap.
 
@@ -1415,7 +1415,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** N/A
 
-- **Imagery/assets:** Detail hero gallery assets — ASSET-PF02-GALLERY-SET → Asset prompts: [pf-creative-hero-editorial-light.md](../PUBLIC-190-asset-prompts/pf-creative-hero-editorial-light.md) (gallery hero), ASSET-PF02-PROCESS-ICONS (stub), ASSET-PF02-RELATED-THUMBS (stub)
+- **Imagery/assets:** Detail hero gallery assets — ASSET-PF02-GALLERY-SET → Asset prompts: [pf-creative-hero-editorial-light.md](./PUBLIC-190-asset-prompts/pf-creative-hero-editorial-light.md) (gallery hero), ASSET-PF02-PROCESS-ICONS (stub), ASSET-PF02-RELATED-THUMBS (stub)
 
 - **Animation/interaction:** Gallery carousel — React island or CSS scroll-snap.
 
@@ -1444,7 +1444,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** 200% zoom pairs — readability audit only.
 
-- **Imagery/assets:** Home graph backplate, portal orbit — promoted assets exist; mobile crop differs. → Asset prompts: [portal-orbit-light.md](../PUBLIC-190-asset-prompts/portal-orbit-light.md), [home-graph-backplate-light.md](../PUBLIC-190-asset-prompts/home-graph-backplate-light.md)
+- **Imagery/assets:** Home graph backplate, portal orbit — promoted assets exist; mobile crop differs. → Asset prompts: [portal-orbit-light.md](./PUBLIC-190-asset-prompts/portal-orbit-light.md), [home-graph-backplate-light.md](./PUBLIC-190-asset-prompts/home-graph-backplate-light.md)
 
 - **Animation/interaction:** Orbit/graph may need reduced-motion fallbacks.
 
@@ -1474,7 +1474,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** 200% zoom pairs — readability audit only.
 
-- **Imagery/assets:** Home graph backplate, portal orbit — promoted assets exist; mobile crop differs. → Asset prompts: [portal-orbit-light.md](../PUBLIC-190-asset-prompts/portal-orbit-light.md), [home-graph-backplate-light.md](../PUBLIC-190-asset-prompts/home-graph-backplate-light.md)
+- **Imagery/assets:** Home graph backplate, portal orbit — promoted assets exist; mobile crop differs. → Asset prompts: [portal-orbit-light.md](./PUBLIC-190-asset-prompts/portal-orbit-light.md), [home-graph-backplate-light.md](./PUBLIC-190-asset-prompts/home-graph-backplate-light.md)
 
 - **Animation/interaction:** Orbit/graph may need reduced-motion fallbacks.
 
@@ -1503,7 +1503,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** 200% zoom pairs — readability audit only.
 
-- **Imagery/assets:** Home graph backplate, portal orbit — promoted assets exist; mobile crop differs. → Asset prompts: [portal-orbit-light.md](../PUBLIC-190-asset-prompts/portal-orbit-light.md), [home-graph-backplate-light.md](../PUBLIC-190-asset-prompts/home-graph-backplate-light.md)
+- **Imagery/assets:** Home graph backplate, portal orbit — promoted assets exist; mobile crop differs. → Asset prompts: [portal-orbit-light.md](./PUBLIC-190-asset-prompts/portal-orbit-light.md), [home-graph-backplate-light.md](./PUBLIC-190-asset-prompts/home-graph-backplate-light.md)
 
 - **Animation/interaction:** Orbit/graph may need reduced-motion fallbacks.
 
@@ -1533,7 +1533,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** 200% zoom pairs — readability audit only.
 
-- **Imagery/assets:** Home graph backplate, portal orbit — promoted assets exist; mobile crop differs. → Asset prompts: [portal-orbit-light.md](../PUBLIC-190-asset-prompts/portal-orbit-light.md), [home-graph-backplate-light.md](../PUBLIC-190-asset-prompts/home-graph-backplate-light.md)
+- **Imagery/assets:** Home graph backplate, portal orbit — promoted assets exist; mobile crop differs. → Asset prompts: [portal-orbit-light.md](./PUBLIC-190-asset-prompts/portal-orbit-light.md), [home-graph-backplate-light.md](./PUBLIC-190-asset-prompts/home-graph-backplate-light.md)
 
 - **Animation/interaction:** Orbit/graph may need reduced-motion fallbacks.
 
@@ -1562,7 +1562,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** 200% zoom pairs — readability audit only.
 
-- **Imagery/assets:** Home graph backplate, portal orbit — promoted assets exist; mobile crop differs. → Asset prompts: [portal-orbit-light.md](../PUBLIC-190-asset-prompts/portal-orbit-light.md), [home-graph-backplate-light.md](../PUBLIC-190-asset-prompts/home-graph-backplate-light.md)
+- **Imagery/assets:** Home graph backplate, portal orbit — promoted assets exist; mobile crop differs. → Asset prompts: [portal-orbit-light.md](./PUBLIC-190-asset-prompts/portal-orbit-light.md), [home-graph-backplate-light.md](./PUBLIC-190-asset-prompts/home-graph-backplate-light.md)
 
 - **Animation/interaction:** Orbit/graph may need reduced-motion fallbacks.
 
@@ -1592,7 +1592,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** 200% zoom pairs — readability audit only.
 
-- **Imagery/assets:** Home graph backplate, portal orbit — promoted assets exist; mobile crop differs. → Asset prompts: [portal-orbit-light.md](../PUBLIC-190-asset-prompts/portal-orbit-light.md), [home-graph-backplate-light.md](../PUBLIC-190-asset-prompts/home-graph-backplate-light.md)
+- **Imagery/assets:** Home graph backplate, portal orbit — promoted assets exist; mobile crop differs. → Asset prompts: [portal-orbit-light.md](./PUBLIC-190-asset-prompts/portal-orbit-light.md), [home-graph-backplate-light.md](./PUBLIC-190-asset-prompts/home-graph-backplate-light.md)
 
 - **Animation/interaction:** Orbit/graph may need reduced-motion fallbacks.
 
@@ -1621,7 +1621,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** 200% zoom pairs — readability audit only.
 
-- **Imagery/assets:** Home graph backplate, portal orbit — promoted assets exist; mobile crop differs. → Asset prompts: [portal-orbit-light.md](../PUBLIC-190-asset-prompts/portal-orbit-light.md), [home-graph-backplate-light.md](../PUBLIC-190-asset-prompts/home-graph-backplate-light.md)
+- **Imagery/assets:** Home graph backplate, portal orbit — promoted assets exist; mobile crop differs. → Asset prompts: [portal-orbit-light.md](./PUBLIC-190-asset-prompts/portal-orbit-light.md), [home-graph-backplate-light.md](./PUBLIC-190-asset-prompts/home-graph-backplate-light.md)
 
 - **Animation/interaction:** Orbit/graph may need reduced-motion fallbacks.
 
@@ -1650,7 +1650,7 @@ Owner feedback (2026-09-02, Persian): **concepts read much weaker than implement
 
 - **Typography/color/spacing:** 200% readability — a11y not visual concept match.
 
-- **Imagery/assets:** Gateway atmosphere assets exist. → Asset prompts: [portal-centered-dark.md](../PUBLIC-190-asset-prompts/portal-centered-dark.md)
+- **Imagery/assets:** Gateway atmosphere assets exist. → Asset prompts: [portal-centered-dark.md](./PUBLIC-190-asset-prompts/portal-centered-dark.md)
 
 - **Animation/interaction:** Static.
 

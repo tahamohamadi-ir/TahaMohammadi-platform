@@ -1,0 +1,107 @@
+name: Coordination CI
+
+# The coordination repository owns the cross-repository execution queue, the
+# contract set and the governance documents. It had NO workflow at all, which
+# is why `validate-plan.py` sat un-run for weeks while 44 accepted files
+# drifted and the queue kept reporting a clean result. This workflow is the
+# enforcement for that gap.
+#
+# It is deliberately separate from the three product CI workflows: those check
+# product code, this one checks that the DOCUMENTS describing that code are
+# still true.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-coordination-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  validate-queue:
+    name: Execution queue and acceptance integrity
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout coordination root
+        uses: actions/checkout@v5
+        with:
+          path: coordination
+
+      # `validate-plan.py` runs `git -C <repo> rev-parse HEAD` for all four
+      # repositories and compares SHA-256 of accepted files, so the three
+      # product repositories must be present next to it. Without these the
+      # validator cannot run at all - it is not a soft dependency.
+      - name: Checkout Back-End
+        uses: actions/checkout@v5
+        with:
+          repository: tahamohamadi-ir/TahaMohammadi-platform-backEnd
+          path: Back-End
+
+      - name: Checkout public-site
+        uses: actions/checkout@v5
+        with:
+          repository: tahamohamadi-ir/TahaMohammadi-platform-FrontEnd-publicSite
+          path: Front-End/public-site
+
+      - name: Checkout admin-panel
+        uses: actions/checkout@v5
+        with:
+          repository: tahamohamadi-ir/TahaMohammadi-platform-FrontEnd-adminPanel
+          path: Front-End/admin-panel
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate execution plan, queue and acceptance
+        working-directory: coordination
+        run: python Docs/05-delivery/concept-alignment-v2/validate-plan.py
+
+      - name: Upload the machine record
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reconciliation-check
+          path: coordination/Docs/05-delivery/concept-alignment-v2/RECONCILIATION-CHECK.json
+          if-no-files-found: warn
+
+  document-integrity:
+    name: Governance document integrity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          path: coordination
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Secret scan (baseline gate)
+        working-directory: coordination
+        run: |
+          python -m pip install --quiet detect-secrets
+          detect-secrets scan --all-files --baseline .secrets.baseline
+
+      - name: Broken-link check across active documentation
+        working-directory: coordination
+        run: python scripts/check-doc-links.py
+
+      - name: Coordination repository must stay clean of build output
+        working-directory: coordination
+        run: |
+          if git status --porcelain | grep -Ev '\.md$' | grep -q .; then
+            echo 'Non-documentation files changed in the coordination repository:'
+            git status --porcelain | grep -Ev '\.md$'
+            exit 1
+          fi
+          echo 'Coordination repository carries documentation only.'

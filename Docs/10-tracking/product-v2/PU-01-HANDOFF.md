@@ -13,8 +13,8 @@ Result commit: uncommitted working directory
 ## 1. Summary of Changes
 
 Recorded actual 15-family API, model, editor, and route coverage and evidence hashes:
-- Documented full status of all 15 page families (F01 Gateway through F15 Search/System) in [`COVERAGE.md`](file:///d:/Project/tahamohammadi-platform/Docs/05-delivery/concept-alignment-v2/COVERAGE.md), identifying observed implementation shapes versus missing feature packets.
-- Recorded repository heads for all 4 repositories (`ROOT`, `PUBLIC`, `ADMIN`, `BACKEND`) and computed SHA256 hashes for 23 tracked source and contract baseline files in [`SOURCE-INVENTORY.json`](file:///d:/Project/tahamohammadi-platform/Docs/05-delivery/concept-alignment-v2/SOURCE-INVENTORY.json).
+- Documented full status of all 15 page families (F01 Gateway through F15 Search/System) in [`COVERAGE.md`](../../05-delivery/concept-alignment-v2/COVERAGE.md), identifying observed implementation shapes versus missing feature packets.
+- Recorded repository heads for all 4 repositories (`ROOT`, `PUBLIC`, `ADMIN`, `BACKEND`) and computed SHA256 hashes for 23 tracked source and contract baseline files in [`SOURCE-INVENTORY.json`](../../05-delivery/concept-alignment-v2/SOURCE-INVENTORY.json).
 - Documented cross-cutting findings (story model presence across Article/Research/Project, composition optimistic locking, preview maps, graph ID resolution limitations, unlocalized `/api/site`, and rebuild service integration).
 
 ---
