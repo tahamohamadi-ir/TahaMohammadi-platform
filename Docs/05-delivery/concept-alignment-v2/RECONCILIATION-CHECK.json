@@ -1,6 +1,9 @@
 {
   "status": "STALE",
-  "validation_note": "Not regenerated on 2026-09-08: validate-plan.py stops at pre-existing accepted-head assertions for PU-03-resolver, PU-SYNC-graph and CA-01 through CA-07. No broad re-baseline was performed.",
+  "validation_note": "Re-verified 2026-09-27. Root cause established by running validate-plan.py: it aborts at validate-plan.py:78 on the accepted-HEAD assertion, so the file-hash assertion one line later never executes. All 10 ACCEPTED_LOCAL packets pin commits that are no longer any repository HEAD. Re-running the skipped SHA-256 comparison manually: 46 of 87 accepted files have DRIFTED CONTENT (0 missing). The ACCEPTED_LOCAL label is therefore no longer a truthful statement about the current trees. Separately, execution-tasks.json carries 10 ACCEPTED_LOCAL packets while reviews/ACCEPTED-LOCAL-2026-09-06.json carries 68 entries, including packets the live queue now marks IMPLEMENTED_UNREVIEWED / REVISE / BLOCKED - that file is a superseded 2026-09-06 artifact, not a wider acceptance. No packet status was changed and no product code was touched. Full evidence and the re-baseline recommendation: reviews/RECONCILIATION-STATUS-2026-09-27.md",
+  "accepted_content_intact": false,
+  "accepted_files_drifted": 46,
+  "accepted_files_missing": 0,
   "acceptance_status": "OPEN",
   "status_counts": {
     "ACCEPTED_LOCAL": 10,
