@@ -6,7 +6,7 @@
 
 # صف یکپارچهٔ اجرا — نسخهٔ ۲٫۱
 
-این تنها ورودی انتخاب بسته است. [فایل ماشینی](execution-tasks.json) مالکیت، وابستگی و allowlist را نگه می‌دارد. 83 بستهٔ فعال/ثبت‌شده؛ ۳ بستهٔ بررسی و قرارداد DOC_COMPLETE، ۱۰ بسته ACCEPTED_LOCAL، ۶۸ بسته IMPLEMENTED_UNREVIEWED، ۱ بسته REVISE، ۱ بسته BLOCKED و ۰ بسته NOT_STARTED هستند.
+این تنها ورودی انتخاب بسته است. [فایل ماشینی](execution-tasks.json) مالکیت، وابستگی و allowlist را نگه می‌دارد. 83 بستهٔ فعال/ثبت‌شده؛ ۳ بستهٔ بررسی و قرارداد DOC_COMPLETE، ۱۰ بسته ACCEPTED_LOCAL، ۶۹ بسته IMPLEMENTED_UNREVIEWED، ۰ بسته REVISE، ۱ بسته BLOCKED و ۰ بسته NOT_STARTED هستند.
 
 ## معنای وضعیت‌ها
 
@@ -82,7 +82,7 @@ worker فقط handoff داخل allowlist را به‌روز می‌کند. پس 
 | [PU-SYNC-public](product-packets/PU-SYNC-public.md) | PUBLIC | IMPLEMENTED_UNREVIEWED | PU-03-resolver, PU-03-settings, PU-04-catalog, PU-04-metadata, PU-04-publication, PU-04-course, PU-04-creative, PU-05-lessons, PU-06-book, PU-06-talk, PU-06-resource, PU-06-collection, PU-06-series, PU-04-project-evidence, PU-07-revisions, PU-07-preview, PU-07-jobs, PU-23-invalidation, PU-20-events, CA-08, PU-SYNC-graph | Generate final public schema consumer types before family implementation. |
 | [PU-SYNC-admin](product-packets/PU-SYNC-admin.md) | ADMIN | IMPLEMENTED_UNREVIEWED | PU-03-resolver, PU-03-settings, PU-04-catalog, PU-04-metadata, PU-04-publication, PU-04-course, PU-04-creative, PU-05-lessons, PU-06-book, PU-06-talk, PU-06-resource, PU-06-collection, PU-06-series, PU-04-project-evidence, PU-07-revisions, PU-07-preview, PU-07-jobs, PU-23-invalidation, PU-20-events | Generate final admin schema consumer types before product editors. |
 | [PU-09-transport](product-packets/PU-09-transport.md) | ADMIN | IMPLEMENTED_UNREVIEWED | PU-SYNC-admin | Add typed composition and publication-job API adapters using existing If-Match and server envelopes. |
-| [PU-09-editor](product-packets/PU-09-editor.md) | ADMIN | REVISE | PU-09-transport | Implement schema-driven accessible story editor with block forms, reorder controls and visible autosave/conflict states. |
+| [PU-09-editor](product-packets/PU-09-editor.md) | ADMIN | IMPLEMENTED_UNREVIEWED | PU-09-transport | Implement schema-driven accessible story editor with block forms, reorder controls and visible autosave/conflict states. |
 | [PU-09-host](product-packets/PU-09-host.md) | ADMIN | IMPLEMENTED_UNREVIEWED | PU-09-editor | Connect story selection/edit/preview to generic content editor; preserve existing metadata and revision workflow. |
 | [PU-10-research](product-packets/PU-10-research.md) | ADMIN | IMPLEMENTED_UNREVIEWED | PU-09-host | Complete research-topic/research-statement structured metadata/relations editor; inspect server schema and test real mutation payloads for this family only. |
 | [PU-10-publication](product-packets/PU-10-publication.md) | ADMIN | IMPLEMENTED_UNREVIEWED | PU-09-host, PU-10-research | Complete publication structured metadata/relations editor; inspect server schema and test real mutation payloads for this family only. |

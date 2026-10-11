@@ -2,7 +2,7 @@
 
 Living status document for the whole platform: repositories, environments,
 server, gates, and a dated changelog of everything done.
-**Last updated: 2026-09-16 03:35 −07:00 (DNS closeout: apex record verified healthy from the authoritative path; Hero v2 production complete).**
+**Last updated: 2026-10-11 02:50 −07:00 (local atlas integration on public `main`; admin autosave + CSRF fix in the working tree; nothing pushed or deployed).**
 
 > **Update convention (every session):**
 >
@@ -112,6 +112,12 @@ server, gates, and a dated changelog of everything done.
 
 ## 6. Changelog
 
+### 2026-10-11
+
+| Time (−07:00) | Event |
+| ------------- | ----- |
+| 02:50 | **LOCAL INTEGRATION — not pushed, not deployed.** Public `main` fast-forwarded locally from `bddcebe` to `76a8f4d` (`check/merge-atlas-runtime-and-retirement`): Atlas availability recovery (`ad98c57`, `837b80b`) plus Plan D About/Home retirement through `3294a7f`. Unit gate on that tree: **655 passed / 4 skipped / 119 files**. Checkout remains `feat/research-universe-prototype`. Admin working tree (uncommitted, on `main`): story autosave is a real 800ms debounce that calls `onSave`, and `ContentEditPage` reports `saving`/`saved`; the CSRF rotation fix and hermetic journey files from `test/hermetic-admin-journey` are copied in. Focused admin tests **34 passed**. Production still serves the pre-fix Atlas page until an owner-gated rebuild with `PUBLIC_API_BASE_URL`. |
+
 ### 2026-09-26
 
 | Time (−07:00) | Event |
@@ -219,10 +225,10 @@ See git history; highlights: staging ingress isolation (`bead720`, `818f8f5`,
 | 7 | Monitor server disk (87% used) and Cloudflare certificate renewal behind the proxy | Owner |
 | 8 | ~~Execute the v2 Home plan when assigned~~ **SHIPPED 2026-09-15** — Hero v2 is live in the production build (`prod-457b7fe7`); About keeps the interactive graph | Developer / Blender workflow |
 | 9 | **NEW 2026-09-26 — server changed, staging deleted (owner-reported, unverified).** Provide new-server facts (host/IP/SSH user+key/stacks on it/DNS state/backups) so §2/§3/§5/§8/§9, the R9 migration plan, `Deploy staging` workflow references and Plan D Task 13 rollout steps can be rewritten; until then no staging-anchored procedure may be executed | Owner |
-| 10 | **NEW 2026-09-27 — production Atlas ships a dead feature.** `/en/atlas/`, `/fa/atlas/` and the About preview render `data-atlas-status="unavailable"` while `/api/atlas/{locale}` serves a valid published version (4 nodes / 3 relations). Build ran without `PUBLIC_API_BASE_URL`; `atlas-runtime.ts` only enhances `status="ready"`, so no recovery path exists. **Fix landed on `fix/atlas-runtime-availability` (`ad98c57` Atlas route, `837b80b` About preview) but is NOT deployed.** A production rebuild **with** `PUBLIC_API_BASE_URL` is still an owner decision. | Agent (fix done) + Owner (deploy + rebuild) |
+| 10 | **Atlas availability fix is on local public `main` (`76a8f4d` plus a staging-deploy guard) as of 2026-10-11 and is still not pushed or deployed.** Pushing `main` now runs the verify job only. The staging SSH deploy runs solely on manual dispatch, because the staging host was reported deleted and that job rewrites the shared edge. Live `/en/atlas/` and `/fa/atlas/` were last probed 2026-09-27 as `data-atlas-status="unavailable"`. Production rebuild must pass `PUBLIC_API_BASE_URL`. | Owner (push + production deploy) |
 | 11 | **NEW 2026-09-27 — `PU-25-admin-journey` has a hermetic acceptance path now.** The live route needed staging (deleted) *and* credentials, so it was dead rather than pending. A real full-stack journey now runs the unmodified Django backend on a disposable SQLite database and serves the real built admin bundle — **4/4 green**, no owner credential required (`test/hermetic-admin-journey` `2297401`, local only). Disposition of the packet is still a coordinator decision. | Agent (done) + Coordinator (disposition) |
-| 12 | **NEW 2026-09-27 — admin post-login mutations could fail 403 `CSRF_FAILED`.** `django.contrib.auth.login` rotates the CSRF secret and re-issues the cookie; the admin client replayed the cached pre-login token, so the first save after sign-in was rejected. Found by the hermetic journey — the mocked tests could not see it because a mock never rotates a cookie. Fixed and covered by 2 regression cases on `test/hermetic-admin-journey`, **not deployed**. | Agent (done) + Owner (deploy) |
-| 13 | **NEW 2026-09-27 — `PU-09-editor` claims autosave that does not exist.** `StoryEditor.tsx` has no timer, no effect and no debounce in 932 lines, and the production parent passes `autosaveState={dirty ? 'dirty' : 'idle'}`, so the `saving`/`saved` states are unreachable and the status line can only ever read "Unsaved changes." The existing test only rerendered with a hand-injected prop. Re-reviewed adversarially; verdict is **stay REVISE** — implement debounced autosave or drop the claim from the packet and the copy. The rest of the revision holds up. | Agent (re-review done) + Coordinator (disposition) |
+| 12 | **CSRF rotation fix is in the admin working tree (2026-10-11), still uncommitted and not deployed.** `django.contrib.auth.login` rotates the CSRF secret; the client now drops the cached token after login and retries one `403 CSRF_FAILED`. Covered by `src/lib/api/auth.test.ts`. | Owner (commit + deploy) |
+| 13 | **Autosave mechanism implemented locally 2026-10-11.** `StoryEditor` waits 800ms after a valid edit, then calls `onSave`; invalid drafts and in-flight/conflict/error saves do not. `ContentEditPage` passes `saving` while the mutation is pending and `saved` after it succeeds. Queue status is `IMPLEMENTED_UNREVIEWED` pending coordinator re-review. Not deployed. | Coordinator (re-review) + Owner (deploy) |
 
 ### Documentation changelog — 2026-09-14
 

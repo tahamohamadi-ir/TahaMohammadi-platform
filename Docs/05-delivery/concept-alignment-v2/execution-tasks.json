@@ -1666,7 +1666,7 @@
       "id": "PU-09-editor",
       "parent": "PU-09",
       "repository": "ADMIN",
-      "status": "REVISE",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-09-transport"
