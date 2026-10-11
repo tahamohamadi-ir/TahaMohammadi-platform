@@ -2,7 +2,7 @@
 
 Living status document for the whole platform: repositories, environments,
 server, gates, and a dated changelog of everything done.
-**Last updated: 2026-10-11 03:05 −07:00 (atlas recovery, editor autosave, and CSRF retry pushed; production not deployed).**
+**Last updated: 2026-10-11 03:21 −07:00 (public and admin CI green on the pushed atlas and editor fixes; production not deployed).**
 
 > **Update convention (every session):**
 >
@@ -118,6 +118,7 @@ server, gates, and a dated changelog of everything done.
 | ------------- | ----- |
 | 02:50 | **LOCAL INTEGRATION.** Public `main` fast-forwarded locally from `bddcebe` to `76a8f4d` (`check/merge-atlas-runtime-and-retirement`): Atlas availability recovery (`ad98c57`, `837b80b`) plus Plan D About/Home retirement through `3294a7f`. Unit gate on that tree: **655 passed / 4 skipped / 119 files**. Checkout remains `feat/research-universe-prototype`. Admin working tree: story autosave is a real 800ms debounce that calls `onSave`, and `ContentEditPage` reports `saving`/`saved`; the CSRF rotation fix and hermetic journey files from `test/hermetic-admin-journey` are copied in. Focused admin tests **34 passed**. |
 | 03:05 | **PUSHED, NOT PRODUCTION-DEPLOYED.** Public `origin/main` = `78fa57c` (atlas recovery, Prettier, and staging deploy limited to manual dispatch). Local gates before the push: format clean, lint clean, design validation passed, build **46 pages**, SEO validation passed. Admin `origin/main` = `2eae1b9` (`20d158f` CSRF retry + hermetic journey, `2eae1b9` autosave). Coordination `origin/main` = `7231f28`. A push to public `main` runs the verify job only; it does not SSH to the deleted staging host. Production still needs an owner-gated rebuild with `PUBLIC_API_BASE_URL`. |
+| 03:21 | **CI GREEN.** Admin `39ef15b` excludes the hermetic journey from the Vite Playwright suite; that CI run passed. Public `3b4f4e3` moves to ESLint 10 and `eslint-plugin-astro` 3.2.1 so the high `braces` advisory leaves the tree; CI run `38131507148` passed audit, lint, unit tests, design validation, production build, and SEO. |
 
 ### 2026-09-26
 
