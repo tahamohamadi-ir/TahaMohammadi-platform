@@ -2,7 +2,7 @@
 
 Living status document for the whole platform: repositories, environments,
 server, gates, and a dated changelog of everything done.
-**Last updated: 2026-10-11 03:21 −07:00 (public and admin CI green on the pushed atlas and editor fixes; production not deployed).**
+**Last updated: 2026-10-11 04:45 −07:00 (Atlas recovery proven locally against the live API; production image still the September build).**
 
 > **Update convention (every session):**
 >
@@ -120,7 +120,8 @@ server, gates, and a dated changelog of everything done.
 | 03:05 | **PUSHED, NOT PRODUCTION-DEPLOYED.** Public `origin/main` = `78fa57c` (atlas recovery, Prettier, and staging deploy limited to manual dispatch). Local gates before the push: format clean, lint clean, design validation passed, build **46 pages**, SEO validation passed. Admin `origin/main` = `2eae1b9` (`20d158f` CSRF retry + hermetic journey, `2eae1b9` autosave). Coordination `origin/main` = `7231f28`. A push to public `main` runs the verify job only; it does not SSH to the deleted staging host. Production still needs an owner-gated rebuild with `PUBLIC_API_BASE_URL`. |
 | 03:21 | **CI GREEN.** Admin `39ef15b` excludes the hermetic journey from the Vite Playwright suite; that CI run passed. Public `3b4f4e3` moves to ESLint 10 and `eslint-plugin-astro` 3.2.1 so the high `braces` advisory leaves the tree; CI run `38131507148` passed audit, lint, unit tests, design validation, production build, and SEO. |
 | 03:33 | **PU-25 hermetic journey 5/5.** Added project draft → publish (EN only) → archive, which returns the public project to 404. Queue status moves from `BLOCKED` to `IMPLEMENTED_UNREVIEWED`. |
-| 04:05 | **Atlas relation leg, 6/6.** A synthetic node type, relation type, draft version, two nodes, and one relation go through the real admin API with If-Match. Live `/en/atlas/` remains `data-atlas-status="unavailable"` (script last-modified 2026-09-22); the recovery is on public `main` and is not in the production image. |
+| 04:05 | **Atlas relation leg, 6/6.** A synthetic node type, relation type, draft version, two nodes, and one relation go through the real admin API with If-Match. |
+| 04:45 | **Atlas recovery proven locally, not deployed.** A public build with an empty `PUBLIC_API_BASE_URL` embeds `data-atlas-status="unavailable"`. Served locally with `/api` proxied to the live site, Edge recovered `/en/atlas/`, `/fa/atlas/`, `/en/about/`, and `/fa/about/` to `ready` / `recovered` / `atlas01-1.0.0`, with no page errors. The production image is still the 2026-09-22 script and still serves `unavailable`. |
 
 ### 2026-09-26
 
