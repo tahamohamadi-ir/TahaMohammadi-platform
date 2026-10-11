@@ -3567,7 +3567,7 @@
       "id": "PU-25-admin-journey",
       "parent": "PU-25",
       "repository": "ADMIN",
-      "status": "BLOCKED",
+      "status": "IMPLEMENTED_UNREVIEWED",
       "active": true,
       "depends_on": [
         "PU-SYNC-admin",
