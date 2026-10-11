@@ -2,7 +2,7 @@
 
 Living status document for the whole platform: repositories, environments,
 server, gates, and a dated changelog of everything done.
-**Last updated: 2026-10-11 02:50 −07:00 (local atlas integration on public `main`; admin autosave + CSRF fix in the working tree; nothing pushed or deployed).**
+**Last updated: 2026-10-11 03:05 −07:00 (atlas recovery, editor autosave, and CSRF retry pushed; production not deployed).**
 
 > **Update convention (every session):**
 >
@@ -116,7 +116,8 @@ server, gates, and a dated changelog of everything done.
 
 | Time (−07:00) | Event |
 | ------------- | ----- |
-| 02:50 | **LOCAL INTEGRATION — not pushed, not deployed.** Public `main` fast-forwarded locally from `bddcebe` to `76a8f4d` (`check/merge-atlas-runtime-and-retirement`): Atlas availability recovery (`ad98c57`, `837b80b`) plus Plan D About/Home retirement through `3294a7f`. Unit gate on that tree: **655 passed / 4 skipped / 119 files**. Checkout remains `feat/research-universe-prototype`. Admin working tree (uncommitted, on `main`): story autosave is a real 800ms debounce that calls `onSave`, and `ContentEditPage` reports `saving`/`saved`; the CSRF rotation fix and hermetic journey files from `test/hermetic-admin-journey` are copied in. Focused admin tests **34 passed**. Production still serves the pre-fix Atlas page until an owner-gated rebuild with `PUBLIC_API_BASE_URL`. |
+| 02:50 | **LOCAL INTEGRATION.** Public `main` fast-forwarded locally from `bddcebe` to `76a8f4d` (`check/merge-atlas-runtime-and-retirement`): Atlas availability recovery (`ad98c57`, `837b80b`) plus Plan D About/Home retirement through `3294a7f`. Unit gate on that tree: **655 passed / 4 skipped / 119 files**. Checkout remains `feat/research-universe-prototype`. Admin working tree: story autosave is a real 800ms debounce that calls `onSave`, and `ContentEditPage` reports `saving`/`saved`; the CSRF rotation fix and hermetic journey files from `test/hermetic-admin-journey` are copied in. Focused admin tests **34 passed**. |
+| 03:05 | **PUSHED, NOT PRODUCTION-DEPLOYED.** Public `origin/main` = `78fa57c` (atlas recovery, Prettier, and staging deploy limited to manual dispatch). Local gates before the push: format clean, lint clean, design validation passed, build **46 pages**, SEO validation passed. Admin `origin/main` = `2eae1b9` (`20d158f` CSRF retry + hermetic journey, `2eae1b9` autosave). Coordination `origin/main` = `7231f28`. A push to public `main` runs the verify job only; it does not SSH to the deleted staging host. Production still needs an owner-gated rebuild with `PUBLIC_API_BASE_URL`. |
 
 ### 2026-09-26
 
@@ -225,10 +226,10 @@ See git history; highlights: staging ingress isolation (`bead720`, `818f8f5`,
 | 7 | Monitor server disk (87% used) and Cloudflare certificate renewal behind the proxy | Owner |
 | 8 | ~~Execute the v2 Home plan when assigned~~ **SHIPPED 2026-09-15** — Hero v2 is live in the production build (`prod-457b7fe7`); About keeps the interactive graph | Developer / Blender workflow |
 | 9 | **NEW 2026-09-26 — server changed, staging deleted (owner-reported, unverified).** Provide new-server facts (host/IP/SSH user+key/stacks on it/DNS state/backups) so §2/§3/§5/§8/§9, the R9 migration plan, `Deploy staging` workflow references and Plan D Task 13 rollout steps can be rewritten; until then no staging-anchored procedure may be executed | Owner |
-| 10 | **Atlas availability fix is on local public `main` (`76a8f4d` plus a staging-deploy guard) as of 2026-10-11 and is still not pushed or deployed.** Pushing `main` now runs the verify job only. The staging SSH deploy runs solely on manual dispatch, because the staging host was reported deleted and that job rewrites the shared edge. Live `/en/atlas/` and `/fa/atlas/` were last probed 2026-09-27 as `data-atlas-status="unavailable"`. Production rebuild must pass `PUBLIC_API_BASE_URL`. | Owner (push + production deploy) |
+| 10 | **Atlas availability fix is on public `origin/main` `78fa57c` (2026-10-11) and is not in the production web image.** Pushing `main` runs the verify job only. The staging SSH deploy runs solely on manual dispatch. Live `/en/atlas/` and `/fa/atlas/` were last probed 2026-09-27 as `data-atlas-status="unavailable"`. Production rebuild must pass `PUBLIC_API_BASE_URL`. | Owner (production deploy) |
 | 11 | **NEW 2026-09-27 — `PU-25-admin-journey` has a hermetic acceptance path now.** The live route needed staging (deleted) *and* credentials, so it was dead rather than pending. A real full-stack journey now runs the unmodified Django backend on a disposable SQLite database and serves the real built admin bundle — **4/4 green**, no owner credential required (`test/hermetic-admin-journey` `2297401`, local only). Disposition of the packet is still a coordinator decision. | Agent (done) + Coordinator (disposition) |
-| 12 | **CSRF rotation fix is in the admin working tree (2026-10-11), still uncommitted and not deployed.** `django.contrib.auth.login` rotates the CSRF secret; the client now drops the cached token after login and retries one `403 CSRF_FAILED`. Covered by `src/lib/api/auth.test.ts`. | Owner (commit + deploy) |
-| 13 | **Autosave mechanism implemented locally 2026-10-11.** `StoryEditor` waits 800ms after a valid edit, then calls `onSave`; invalid drafts and in-flight/conflict/error saves do not. `ContentEditPage` passes `saving` while the mutation is pending and `saved` after it succeeds. Queue status is `IMPLEMENTED_UNREVIEWED` pending coordinator re-review. Not deployed. | Coordinator (re-review) + Owner (deploy) |
+| 12 | **CSRF rotation fix is on admin `origin/main` `20d158f` (2026-10-11), not deployed.** Login drops the cached token, and one `403 CSRF_FAILED` is retried. Covered by `src/lib/api/auth.test.ts` and the hermetic journey files. | Owner (deploy) |
+| 13 | **Autosave is on admin `origin/main` `2eae1b9` (2026-10-11), not deployed.** `StoryEditor` waits 800ms after a valid edit, then calls `onSave`. `ContentEditPage` passes `saving` while the mutation is pending and `saved` after it succeeds. Queue status is `IMPLEMENTED_UNREVIEWED`. | Coordinator (re-review) + Owner (deploy) |
 
 ### Documentation changelog — 2026-09-14
 
