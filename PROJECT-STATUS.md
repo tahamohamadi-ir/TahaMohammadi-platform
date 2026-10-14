@@ -2,7 +2,7 @@
 
 Living status document for the whole platform: repositories, environments,
 server, gates, and a dated changelog of everything done.
-**Last updated: 2026-10-14 01:42 −07:00 (Module review: catalog labels and Atlas delete status fixed locally; production image still the September build).**
+**Last updated: 2026-10-14 02:45 −07:00 (Product mains pushed; production not promoted — documented SSH host does not complete a session).**
 
 > **Update convention (every session):**
 >
@@ -122,6 +122,7 @@ server, gates, and a dated changelog of everything done.
 | 01:40 | **ADMIN ENTITY LIST.** `CONTENT_ENTITIES` listed `landing` and `profile` twice after the family navigation work. The duplicate pair is removed. `content.test.ts` **9 passed**. |
 | 01:43 | **HERMETIC JOURNEY 7/7.** `npm run test:hermetic` on the existing admin bundle: article draft, If-Match publish, 409, project archive, media, Atlas relation, and lesson/collection/landing/profile. Exit 0. |
 | 01:43 | **OWNER STOPS, NOT CODE.** Production Atlas still depends on a web rebuild with `PUBLIC_API_BASE_URL`; the recovery path is already on public `main` and was not redeployed. Plan D tasks 13–15 stay blocked on the deleted staging host. SMTP, production promotion, and visual sign-off stay with the owner. `IMPLEMENTED_UNREVIEWED` packets were not rebaselined and `ACCEPTED_LOCAL` hashes were not rewritten. |
+| 02:45 | **PUSHED, NOT DEPLOYED.** Public `origin/main` = `dc254cd` (catalog labels `0246f36`, then Prettier on `src/components/writing/product-family.test.ts`). Admin `origin/main` = `40a91a1`. Backend `origin/main` = `5bd3c18`. No open pull requests. `feat/research-universe-prototype` was not merged: its only commit absent from `main` is the agent-tooling sync `5863f17`, and the branch is 63 commits behind. Admin CI and backend CI passed. The first public push failed format check; `dc254cd` is the fix. Production was not promoted. `taha-nl` (`85.192.29.196:2222`) accepts TCP and then times out during the SSH banner exchange. Port 22 on the same address presents a host key that does not match `known_hosts`; the stored key was not replaced. Staging remains deleted, so the staging deploy job stays manual and was skipped. | |
 
 ### 2026-10-11
 
