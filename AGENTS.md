@@ -99,3 +99,9 @@ re-read whole files.
 After big code changes, refresh the graph with `graft build` (deterministic,
 no API key, $0).
 <!-- graft:end -->
+
+## Learned User Preferences
+
+- Keep light and dark, and Persian and English, in step with each other: carry layout, color, and image treatment across both themes and both locales, including directional placement.
+- Author repeated public chrome once (header, footer, navigation, theme control, shared buttons and bands) so one edit applies on every page.
+- Call public visual acceptance passed only after the owner reviews a locally viewable slice. A green build, compare report, or extracted hashes leave that gate unsigned.
