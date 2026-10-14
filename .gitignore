@@ -14,6 +14,33 @@
 
 # Local agent tooling state
 .serena/
+/.adal/
+/.agents/
+/.claude/
+/.gemini/
+/.grok/
+/.kiro/
+/.windsurf/
+/.cursor/hooks/
+/.cursor/hooks.json
+/.cursor/mcp.json
+/.cursor/rules/graft.mdc
+/GEMINI.md
+/opencode.json
+/.mcp.json
+/.ignore
+
+# Local visual evidence. Tracked scripts, reports, and source blends stay.
+/Design-References/
+/Design-Assets/hero-v2/renders/
+/Design-Assets/portal/
+/Design-Assets/research-universe/
+/Design-Assets/hero-v2/validation/production-2026-09-15/
+/dl_raw.txt
+*.blend1
+Design-Assets/**/*.png
+Design-Assets/**/*.gif
+Design-Assets/hero-v2/validation/**/*.blend
 
 # Local outputs
 /graphify-out/
