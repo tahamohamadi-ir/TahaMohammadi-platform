@@ -2,7 +2,7 @@
 
 Living status document for the whole platform: repositories, environments,
 server, gates, and a dated changelog of everything done.
-**Last updated: 2026-10-11 04:45 −07:00 (Atlas recovery proven locally against the live API; production image still the September build).**
+**Last updated: 2026-10-14 01:42 −07:00 (Module review: catalog labels and Atlas delete status fixed locally; production image still the September build).**
 
 > **Update convention (every session):**
 >
@@ -111,6 +111,17 @@ server, gates, and a dated changelog of everything done.
 | BACKEND | `6c0d349` | staging + production image `prod-507b4bb3` (app code `9c2c704`; also tagged `prod-7a5c495a` for release-id alignment) |
 
 ## 6. Changelog
+
+### 2026-10-14
+
+| Time (−07:00) | Event |
+| ------------- | ----- |
+| 01:10 | **BASELINE.** Three product trees, no product edits yet. Public `main` is checked out in `D:\Project\.atlas-worktrees\public-site-integrate` at `38cd4e5` (the workspace checkout `feat/research-universe-prototype` `5863f17` is 61 commits behind and was not edited). Admin `main` `bff24d7`. Backend `main` `5998ccf`. Gates: public vitest **655 passed / 4 skipped / 119 files**; admin vitest **344 passed / 61 files**; backend pytest **1351 passed**, one Django Ninja deprecation warning on Atlas taxonomy delete. Live routes `/`, `/en/`, `/fa/`, and the public family indexes returned HTTP 200; an unknown path returned 404. `/api/atlas/en` and `/api/atlas/fa` returned 200. |
+| 01:40 | **CATALOG LABELS.** Public pages were printing CMS choice tokens (`metadata_only`, `book_chapter`, `in_press`, `all_levels`, `cc-by-nc-4`, and the same class of course, download, license, and creative-work tokens) in both locales. `src/lib/catalog-labels.ts` maps those tokens to the existing English and Persian labels and leaves any other string unchanged. Wired through writing, publications, books, talks, resources, teaching, and gallery cards and detail metadata. An empty header tagline no longer leaves an empty brand-role element. Focused vitest **23 passed**; ESLint and Prettier clean on the touched files. |
+| 01:40 | **ATLAS ADMIN STATUS.** The five Atlas admin deletes returned `(204, None)`, which Django Ninja warns is deprecated. They now return `Status(204, None)`. `tests/test_admin_atlas_api.py` **58 passed** with deprecation warnings treated as errors. Ruff clean. |
+| 01:40 | **ADMIN ENTITY LIST.** `CONTENT_ENTITIES` listed `landing` and `profile` twice after the family navigation work. The duplicate pair is removed. `content.test.ts` **9 passed**. |
+| 01:43 | **HERMETIC JOURNEY 7/7.** `npm run test:hermetic` on the existing admin bundle: article draft, If-Match publish, 409, project archive, media, Atlas relation, and lesson/collection/landing/profile. Exit 0. |
+| 01:43 | **OWNER STOPS, NOT CODE.** Production Atlas still depends on a web rebuild with `PUBLIC_API_BASE_URL`; the recovery path is already on public `main` and was not redeployed. Plan D tasks 13–15 stay blocked on the deleted staging host. SMTP, production promotion, and visual sign-off stay with the owner. `IMPLEMENTED_UNREVIEWED` packets were not rebaselined and `ACCEPTED_LOCAL` hashes were not rewritten. |
 
 ### 2026-10-11
 
