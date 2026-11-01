@@ -1,6 +1,6 @@
 # ADR-0011 — Home Hero v3
 
-Date: 2026-11-01. Status: **Proposed — three prototypes built behind the atlas build; the owner picks one before anything replaces the live hero.**
+Date: 2026-11-01. Status: **Accepted — the owner chose candidate B (live constellation) on 2026-11-01.**
 
 ## Context
 
@@ -23,7 +23,7 @@ Three candidates are built on atlas-only routes (`/_design/home-hero/{en,fa}/{a,
 - **B — Live constellation.** A's SVG is the poster and the no-JS / reduced-motion / no-WebGL state. When idle, visible, motion-allowed and WebGL-capable, `createGraphScene` is lazy-imported and crossfaded in; the HTML links follow the projected node positions.
 - **C — Refined still.** The promoted Hero v2 frame 04 (theme- and device-correct) with a one-time CSS reveal, plus a colour-role legend whose entries are the real topic links.
 
-The owner chooses one in a local review. The chosen candidate then replaces `HomeHero`'s visual column and the scroll shell in `HomeContent.astro`; `HeroSequence.astro`, `hero-sequence.css`, `lib/visual/hero-sequence.ts` and the unused frames 01–03 are removed in the same change.
+The owner chose **B**. `HeroV3` (copy column + `HeroV3Constellation` with the live upgrade) replaces `HomeHero` and the scroll shell in `HomeContent.astro`. Removed in the same change: `HomeHero.astro`, `HeroSequence.astro`, `hero-sequence.css`, `lib/visual/hero-sequence.ts`, the dead `.hm-hero` styles, all 16 Hero v2 frame masters (9.7 MB) with their registry, checksum and transform-recipe entries, the Stage 4 QA scripts, the lab route, and candidate C. The research-statement lead stays in the hero copy column so Home loses no content. The live scene fits the API positions to the CA-04 scene's coordinate range on the client (presentation only).
 
 This supersedes the Home portion of ADR-0008 (the procedural Three.js constellation with HTML node controls remains a valid implementation — candidate B — but is no longer mandatory) and the Hero v2 scroll-sequence direction. The gateway portal decision in ADR-0008 is unchanged.
 

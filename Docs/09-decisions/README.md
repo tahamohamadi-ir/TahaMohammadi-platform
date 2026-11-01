@@ -9,6 +9,8 @@ Supersede an old decision with a new numbered decision.
 
 Current product-extension decision: [ADR-0009](ADR-0009-RESEARCH-FIRST-CONTENT-COMPLETE-PRODUCT.md) — research-first identity, independent detail pages and CMS coverage. Runtime and interface acceptance remain open.
 
+Current Home hero decision: [ADR-0011](ADR-0011-HOME-HERO-V3.md) — copy column plus a live constellation drawn from the published graph; supersedes the Home part of ADR-0008 and the Hero v2 scroll sequence.
+
 Current visual-recovery decision: [ADR-0008](ADR-0008-HOME-GRAPH-HERO-AND-PROCEDURAL-MOTION.md) — Home graph inside the hero, gateway-only portal, bounded GSAP/Three.js. This partially supersedes ADR-0007 and the older public motion/recovery constraints without implying runtime or visual acceptance.
 
 Initial decisions:
