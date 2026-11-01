@@ -321,3 +321,21 @@ Backend source: worktree `D:/Project/.atlas-worktrees/backend-plan-a`, branch
 - Atlas 200 responses stay runtime-validated at the serving gate; generated TS
   remains generic for bare-dict shapes (non-blocking, carried to Plan C).
 
+
+## Addendum 2026-11-01 — graph version duplicate (owner-directed)
+
+Status: **accepted addendum** (owner request 2026-11-01: the Home graph — identity, fields, and
+their projects/experiences — must be editable from the admin). One additive admin path,
+`POST /api/v1/admin/graph/versions/{id}/duplicate`, copies any graph version into a new draft
+because the active version is immutable and new versions start empty. Public schema unchanged.
+
+| Artifact | sha256 (CRLF) | Count |
+|---|---|---|
+| `public-openapi.json` | `bead273e13a6296030e3255b4a527e956cac8c09ccfff6b2c056df61bbf42139` (unchanged) | 51 paths |
+| `admin-openapi.json` | `e1c580ce7f36113ae04d263e464c427f6bee1dde639dfa31e3cff6a04b6663bd` | 80 paths |
+| `endpoint-inventory.md` | `faf3ea5ce492539eaf00bb5e7ce919464a4cfbe22b58cddc27c797ae1787b913` | 162 operations |
+
+`scripts/verify_openapi_export.py` reports 3/3 MATCH; `tests/test_openapi_hash_drift.py`,
+`tests/test_admin_openapi.py` and `tests/test_public_openapi.py` pass. Backend branch
+`feat/graph-duplicate-draft` (PR #7). The admin consumer (`duplicateGraphVersion`) already
+ships in admin-panel PR #4.
